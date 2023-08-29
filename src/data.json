@@ -215,5 +215,82 @@
         "position": "QB",
         "adp": 31,
         "myIdealRound": 4
+    },
+    {
+        "player": "Deebo Samuel",
+        "team": "49ers",
+        "position": "WR",
+        "adp": 32,
+        "myIdealRound": 100
+    },
+    {
+        "player": "Travis Etienne",
+        "team": "Jaguars",
+        "position": "RB",
+        "adp": 33,
+        "myIdealRound": 100
+    },
+    {
+        "player": "Devonta Smith",
+        "team": "Eagles",
+        "position": "WR",
+        "adp": 34,
+        "myIdealRound": 100
+    },
+    {
+        "player": "Breece Hall",
+        "team": "Jets",
+        "position": "RB",
+        "adp": 35,
+        "myIdealRound": 100
+    },
+    {
+        "player": "Joe Mixon",
+        "team": "Bengals",
+        "position": "RB",
+        "adp": 36,
+        "myIdealRound": 100
+    },
+    {
+        "player": "Lamar Jackson",
+        "team": "Ravens",
+        "position": "QB",
+        "adp": 37,
+        "myIdealRound": 100
+    },
+    {
+        "player": "Aaron Jones",
+        "team": "Packers",
+        "position": "RB",
+        "adp": 38,
+        "myIdealRound": 100
+    },
+    {
+        "player": "Deekay Metcalf",
+        "team": "Seahawks",
+        "position": "WR",
+        "adp": 39,
+        "myIdealRound": 100
+    },
+    {
+        "player": "Kenneth Walker",
+        "team": "Seahawks",
+        "position": "RB",
+        "adp": 40,
+        "myIdealRound": 100
+    },
+    {
+        "player": "George Kittle",
+        "team": "49ers",
+        "position": "TE",
+        "adp": 41,
+        "myIdealRound": 100
+    },
+    {
+        "player": "Teejay Hockenson",
+        "team": "Vikings",
+        "position": "TE",
+        "adp": 42,
+        "myIdealRound": 100
     }
 ]
