@@ -35,3 +35,39 @@ button {
     padding: 5px 10px;
     font-size: 14px;
 }
+
+.RB {
+    background-color: #da1616;
+    color: white;
+    font-weight: bold;
+}
+
+.WR {
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+}
+
+.QB {
+    background-color: forestgreen;
+    color: white;
+    font-weight: bold;
+}
+
+.TE {
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+}
+
+.K {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.DEF {
+    background-color: brown;
+    color: white;
+    font-weight: bold;
+}
