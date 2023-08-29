@@ -1,0 +1,219 @@
+[
+    {
+        "name": "Ja'Marr Chase",
+        "team": "Bengals",
+        "position": "WR",
+        "adp": 1,
+        "myIdealRound": 1
+    },
+    {
+        "name": "Justin Jefferson",
+        "team": "Vikings",
+        "position": "WR",
+        "adp": 2,
+        "myIdealRound": 1
+    },
+    {
+        "name": "Christian McCaffrey",
+        "team": "Panthers",
+        "position": "RB",
+        "adp": 3,
+        "myIdealRound": 1
+    },
+    {
+        "name": "Austin Ekeler",
+        "team": "Chargers",
+        "position": "RB",
+        "adp": 4,
+        "myIdealRound": 2
+    },
+    {
+        "name": "Travis Kelce",
+        "team": "Chiefs",
+        "position": "TE",
+        "adp": 5,
+        "myIdealRound": 2
+    },
+    {
+        "name": "Tyreek Hill",
+        "team": "Dolphins",
+        "position": "WR",
+        "adp": 6,
+        "myIdealRound": 2
+    },
+    {
+        "name": "Bijan Robinson",
+        "team": "Falcons",
+        "position": "RB",
+        "adp": 7,
+        "myIdealRound": 2
+    },
+    {
+        "name": "Stephon Diggs",
+        "team": "Bills",
+        "position": "WR",
+        "adp": 8,
+        "myIdealRound": 2
+    },
+    {
+        "name": "Cooper Kupp",
+        "team": "Rams",
+        "position": "WR",
+        "adp": 9,
+        "myIdealRound": 3
+    },
+    {
+        "name": "Saquon Barkley",
+        "team": "Giants",
+        "position": "RB",
+        "adp": 10,
+        "myIdealRound": 4
+    },
+    {
+        "name": "Nick Chubb",
+        "team": "Browns",
+        "position": "RB",
+        "adp": 11,
+        "myIdealRound": 3
+    },
+    {
+        "name": "Josh Jacobs",
+        "team": "Raiders",
+        "position": "RB",
+        "adp": 12,
+        "myIdealRound": 3
+    },
+    {
+        "name": "Davonte Adams",
+        "team": "Raiders",
+        "position": "WR",
+        "adp": 13,
+        "myIdealRound": 2
+    },
+    {
+        "name": "Derrick Henry",
+        "team": "Titans",
+        "position": "RB",
+        "adp": 14,
+        "myIdealRound": 4
+    },
+    {
+        "name": "Patrick Mahomes",
+        "team": "Chiefs",
+        "position": "QB",
+        "adp": 15,
+        "myIdealRound": 3
+    },
+    {
+        "name": "Amon-Ra St. Brown",
+        "team": "Lions",
+        "position": "WR",
+        "adp": 16,
+        "myIdealRound": 3
+    },
+    {
+        "name": "Garrett Wilson",
+        "team": "Jets",
+        "position": "WR",
+        "adp": 17,
+        "myIdealRound": 2
+    },
+    {
+        "name": "CeeDee Lamb",
+        "team": "Cowboys",
+        "position": "WR",
+        "adp": 18,
+        "myIdealRound": 4
+    },
+    {
+        "name": "Jalen Hurts",
+        "team": "Eagles",
+        "position": "QB",
+        "adp": 19,
+        "myIdealRound": 4
+    },
+    {
+        "name": "Jonathon Taylor",
+        "team": "Colts",
+        "position": "RB",
+        "adp": 20,
+        "myIdealRound": 5
+    },
+    {
+        "name": "Tony Pollard",
+        "team": "Cowboys",
+        "position": "RB",
+        "adp": 21,
+        "myIdealRound": 3
+    },
+    {
+        "name": "Josh Allen",
+        "team": "Bills",
+        "position": "QB",
+        "adp": 22,
+        "myIdealRound": 3
+    },
+    {
+        "name": "Rhamondre Stevenson",
+        "team": "Patriots",
+        "position": "RB",
+        "adp": 23,
+        "myIdealRound": 5
+    },
+    {
+        "name": "Jaylen Waddle",
+        "team": "Dolphins",
+        "position": "WR",
+        "adp": 24,
+        "myIdealRound": 7
+    },
+    {
+        "name": "Chris Olave",
+        "team": "Saints",
+        "position": "WR",
+        "adp": 25,
+        "myIdealRound": 4
+    },
+    {
+        "name": "Najee Harris",
+        "team": "Steelers",
+        "position": "RB",
+        "adp": 26,
+        "myIdealRound": 8
+    },
+    {
+        "name": "Tee Higgins",
+        "team": "Bengals",
+        "position": "WR",
+        "adp": 27,
+        "myIdealRound": 4
+    },
+    {
+        "name": "Mark Andrews",
+        "team": "Ravens",
+        "position": "TE",
+        "adp": 28,
+        "myIdealRound": 6
+    },
+    {
+        "name": "Calvin Ridley",
+        "team": "Jaguars",
+        "position": "WR",
+        "adp": 29,
+        "myIdealRound": 4
+    },
+    {
+        "name": "Jamyhr Gibbs",
+        "team": "Lions",
+        "position": "RB",
+        "adp": 30,
+        "myIdealRound": 7
+    },
+    {
+        "name": "Joe Burrow",
+        "team": "Bengals",
+        "position": "QB",
+        "adp": 31,
+        "myIdealRound": 4
+    }
+]
