@@ -1,3 +1,31 @@
+
+# Player Drafting App
+
+## Description
+A simple React application to draft players based on their positions. Users can filter players by position, view their names, teams, and Average Draft Positions (ADP), and pick them from the list. Players and ADP are currently in a static json list. If interested in quick use, feel free to edit the data.json locally or add more dynamic player queries from APIs.
+
+## Features
+- **Position Filter**: Easily filter players by positions like `QB`, `RB`, `WR`, `TE`, `K`, `DEF`, or a combined option `WR/RB`. Also, view all players without any filter.
+- **Player List**: View players sorted by their ADP. Each player entry displays their name, team, and ADP.
+- **Drafting**: Pick players directly from the list. Once a player is picked, they are removed from the available options.
+
+## Installation and Setup
+1. Clone the repository: `git clone [your-repository-link]`
+2. Navigate to the project directory: `cd [your-project-directory-name]`
+3. Install the dependencies: `npm install`
+4. Run the application: `npm start`
+
+## Project Structure
+- `App.js`: Main application component.
+- `PlayerList.js`: Component to display the list of players.
+- `PositionSelector.js`: Dropdown component to filter players by position.
+- `data.json`: Contains the list of players with their details.
+- `App.css`: Main styling for the application.
+
+## Usage
+1. Use the position selector dropdown to filter players by position.
+2. Browse the list of players and pick your desired ones by clicking on the "Pick" button.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
