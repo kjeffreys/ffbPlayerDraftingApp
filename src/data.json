@@ -1,1101 +1,1017 @@
 [
     {
-        "name": "Ja'Marr Chase",
-        "team": "Bengals",
-        "position": "WR",
         "adp": 1,
-        "myIdealRound": 1
-    },
-    {
         "name": "Justin Jefferson",
         "team": "Vikings",
         "position": "WR",
+        "myIdealRound": 100
+    },
+    {
         "adp": 2,
-        "myIdealRound": 1
+        "name": "Ja'Marr Chase",
+        "team": "Bengals",
+        "position": "WR",
+        "myIdealRound": 100
     },
     {
-        "name": "Christian McCaffrey",
-        "team": "Panthers",
-        "position": "RB",
         "adp": 3,
-        "myIdealRound": 1
+        "name": "Christian McCaffrey",
+        "team": "49ers",
+        "position": "RB",
+        "myIdealRound": 100
     },
     {
-        "name": "Austin Ekeler",
-        "team": "Chargers",
-        "position": "RB",
         "adp": 4,
-        "myIdealRound": 2
-    },
-    {
-        "name": "Travis Kelce",
-        "team": "Chiefs",
-        "position": "TE",
-        "adp": 5,
-        "myIdealRound": 2
-    },
-    {
-        "name": "Tyreek Hill",
-        "team": "Dolphins",
-        "position": "WR",
-        "adp": 6,
-        "myIdealRound": 2
-    },
-    {
-        "name": "Bijan Robinson",
-        "team": "Falcons",
-        "position": "RB",
-        "adp": 7,
-        "myIdealRound": 2
-    },
-    {
-        "name": "Stephon Diggs",
-        "team": "Bills",
-        "position": "WR",
-        "adp": 8,
-        "myIdealRound": 2
-    },
-    {
-        "name": "Cooper Kupp",
-        "team": "Rams",
-        "position": "WR",
-        "adp": 9,
-        "myIdealRound": 3
-    },
-    {
-        "name": "Saquon Barkley",
-        "team": "Giants",
-        "position": "RB",
-        "adp": 10,
-        "myIdealRound": 4
-    },
-    {
-        "name": "Nick Chubb",
-        "team": "Browns",
-        "position": "RB",
-        "adp": 11,
-        "myIdealRound": 3
-    },
-    {
-        "name": "Josh Jacobs",
-        "team": "Raiders",
-        "position": "RB",
-        "adp": 12,
-        "myIdealRound": 3
-    },
-    {
-        "name": "Davonte Adams",
-        "team": "Raiders",
-        "position": "WR",
-        "adp": 13,
-        "myIdealRound": 2
-    },
-    {
-        "name": "Derrick Henry",
-        "team": "Titans",
-        "position": "RB",
-        "adp": 14,
-        "myIdealRound": 4
-    },
-    {
-        "name": "Patrick Mahomes",
-        "team": "Chiefs",
-        "position": "QB",
-        "adp": 15,
-        "myIdealRound": 3
-    },
-    {
-        "name": "Amon-Ra St. Brown",
-        "team": "Lions",
-        "position": "WR",
-        "adp": 16,
-        "myIdealRound": 3
-    },
-    {
         "name": "Garrett Wilson",
         "team": "Jets",
         "position": "WR",
-        "adp": 17,
-        "myIdealRound": 2
+        "myIdealRound": 100
     },
     {
-        "name": "CeeDee Lamb",
-        "team": "Cowboys",
+        "adp": 5,
+        "name": "Stefon Diggs",
+        "team": "Bills",
         "position": "WR",
-        "adp": 18,
-        "myIdealRound": 4
+        "myIdealRound": 100
     },
     {
-        "name": "Jalen Hurts",
-        "team": "Eagles",
-        "position": "QB",
-        "adp": 19,
-        "myIdealRound": 4
+        "adp": 6,
+        "name": "Tyreek Hill",
+        "team": "Dolphins",
+        "position": "WR",
+        "myIdealRound": 100
     },
     {
-        "name": "Jonathon Taylor",
-        "team": "Colts",
+        "adp": 7,
+        "name": "Austin Ekeler",
+        "team": "Chargers",
         "position": "RB",
-        "adp": 20,
-        "myIdealRound": 5
+        "myIdealRound": 100
     },
     {
+        "adp": 8,
+        "name": "Bijan Robinson",
+        "team": "Falcons",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 9,
+        "name": "Nick Chubb",
+        "team": "Browns",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 10,
+        "name": "Travis Kelce",
+        "team": "Chiefs",
+        "position": "TE",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 11,
         "name": "Tony Pollard",
         "team": "Cowboys",
         "position": "RB",
-        "adp": 21,
-        "myIdealRound": 3
+        "myIdealRound": 100
     },
     {
-        "name": "Josh Allen",
-        "team": "Bills",
-        "position": "QB",
-        "adp": 22,
-        "myIdealRound": 3
-    },
-    {
-        "name": "Rhamondre Stevenson",
-        "team": "Patriots",
+        "adp": 12,
+        "name": "Josh Jacobs",
+        "team": "Raiders",
         "position": "RB",
-        "adp": 23,
-        "myIdealRound": 5
+        "myIdealRound": 100
     },
     {
-        "name": "Jaylen Waddle",
-        "team": "Dolphins",
+        "adp": 13,
+        "name": "Amon-Ra St. Brown",
+        "team": "Lions",
         "position": "WR",
-        "adp": 24,
-        "myIdealRound": 7
+        "myIdealRound": 100
     },
     {
+        "adp": 14,
+        "name": "Davante Adams",
+        "team": "Raiders",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 15,
+        "name": "A.J. Brown",
+        "team": "Eagles",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 16,
+        "name": "CeeDee Lamb",
+        "team": "Cowboys",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 17,
         "name": "Chris Olave",
         "team": "Saints",
         "position": "WR",
-        "adp": 25,
-        "myIdealRound": 4
+        "myIdealRound": 100
     },
     {
-        "name": "Najee Harris",
-        "team": "Steelers",
+        "adp": 18,
+        "name": "Travis Etienne Jr.",
+        "team": "Jaguars",
         "position": "RB",
-        "adp": 26,
-        "myIdealRound": 8
+        "myIdealRound": 100
     },
     {
-        "name": "Tee Higgins",
-        "team": "Bengals",
-        "position": "WR",
-        "adp": 27,
-        "myIdealRound": 4
+        "adp": 19,
+        "name": "Jalen Hurts",
+        "team": "Eagles",
+        "position": "QB",
+        "myIdealRound": 100
     },
     {
-        "name": "Mark Andrews",
-        "team": "Ravens",
-        "position": "TE",
-        "adp": 28,
-        "myIdealRound": 6
-    },
-    {
+        "adp": 20,
         "name": "Calvin Ridley",
         "team": "Jaguars",
         "position": "WR",
-        "adp": 29,
-        "myIdealRound": 4
+        "myIdealRound": 100
     },
     {
-        "name": "Jamyhr Gibbs",
-        "team": "Lions",
-        "position": "RB",
-        "adp": 30,
-        "myIdealRound": 7
-    },
-    {
-        "name": "Joe Burrow",
+        "adp": 21,
+        "name": "Tee Higgins",
         "team": "Bengals",
-        "position": "QB",
-        "adp": 31,
-        "myIdealRound": 4
-    },
-    {
-        "team": "49ers",
         "position": "WR",
-        "adp": 32,
-        "myIdealRound": 100,
-        "name": "Deebo Samuel"
+        "myIdealRound": 100
     },
     {
-        "team": "Jaguars",
+        "adp": 22,
+        "name": "Cooper Kupp",
+        "team": "Rams",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 23,
+        "name": "Saquon Barkley",
+        "team": "Giants",
         "position": "RB",
-        "adp": 33,
-        "myIdealRound": 100,
-        "name": "Travis Etienne"
+        "myIdealRound": 100
     },
     {
+        "adp": 24,
+        "name": "Derrick Henry",
+        "team": "Titans",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 25,
+        "name": "Jaylen Waddle",
+        "team": "Dolphins",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 26,
+        "name": "DeVonta Smith",
         "team": "Eagles",
         "position": "WR",
-        "adp": 34,
-        "myIdealRound": 100,
-        "name": "Devonta Smith"
-    },
-    {
-        "team": "Jets",
-        "position": "RB",
-        "adp": 35,
-        "myIdealRound": 100,
-        "name": "Breece Hall"
-    },
-    {
-        "team": "Bengals",
-        "position": "RB",
-        "adp": 36,
-        "myIdealRound": 100,
-        "name": "Joe Mixon"
-    },
-    {
-        "team": "Ravens",
-        "position": "QB",
-        "adp": 37,
-        "myIdealRound": 100,
-        "name": "Lamar Jackson"
-    },
-    {
-        "team": "Packers",
-        "position": "RB",
-        "adp": 38,
-        "myIdealRound": 100,
-        "name": "Aaron Jones"
-    },
-    {
-        "team": "Seahawks",
-        "position": "WR",
-        "adp": 39,
-        "myIdealRound": 100,
-        "name": "Deekay Metcalf"
-    },
-    {
-        "team": "Seahawks",
-        "position": "RB",
-        "adp": 40,
-        "myIdealRound": 100,
-        "name": "Kenneth Walker"
-    },
-    {
-        "team": "49ers",
-        "position": "TE",
-        "adp": 41,
-        "myIdealRound": 100,
-        "name": "George Kittle"
-    },
-    {
-        "team": "Vikings",
-        "position": "TE",
-        "adp": 42,
-        "myIdealRound": 100,
-        "name": "Teejay Hockkenson"
-    },
-    {
-        "name": "Justin Herbert",
-        "team": "Chargers",
-        "position": "QB",
-        "adp": 43,
         "myIdealRound": 100
     },
     {
-        "name": "Dj Moore",
-        "team": "Bears",
-        "position": "WR",
-        "adp": 44,
+        "adp": 27,
+        "name": "Patrick Mahomes",
+        "team": "Chiefs",
+        "position": "QB",
         "myIdealRound": 100
     },
     {
+        "adp": 28,
+        "name": "Josh Allen",
+        "team": "Bills",
+        "position": "QB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 29,
+        "name": "DK Metcalf",
+        "team": "Seahawks",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 30,
         "name": "Amari Cooper",
         "team": "Browns",
         "position": "WR",
-        "adp": 45,
         "myIdealRound": 100
     },
     {
-        "name": "Miles Sanders",
-        "team": "Panthers",
+        "adp": 31,
+        "name": "Rhamondre Stevenson",
+        "team": "Patriots",
         "position": "RB",
-        "adp": 46,
         "myIdealRound": 100
     },
     {
-        "name": "Keenan Allen",
-        "team": "Chargers",
-        "position": "WR",
-        "adp": 47,
+        "adp": 32,
+        "name": "Jahmyr Gibbs",
+        "team": "Lions",
+        "position": "RB",
         "myIdealRound": 100
     },
     {
+        "adp": 33,
         "name": "Dameon Pierce",
         "team": "Texans",
         "position": "RB",
-        "adp": 48,
         "myIdealRound": 100
     },
     {
-        "name": "Jaykay Dobbins",
+        "adp": 34,
+        "name": "Mark Andrews",
         "team": "Ravens",
-        "position": "RB",
-        "adp": 49,
+        "position": "TE",
         "myIdealRound": 100
     },
     {
+        "adp": 35,
+        "name": "Deebo Samuel",
+        "team": "49ers",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 36,
+        "name": "Kenneth Walker III",
+        "team": "Seahawks",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 37,
+        "name": "Joe Mixon",
+        "team": "Bengals",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 38,
+        "name": "Aaron Jones",
+        "team": "Packers",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 39,
+        "name": "Najee Harris",
+        "team": "Steelers",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 40,
+        "name": "D.J. Moore",
+        "team": "Bears",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 41,
         "name": "Justin Fields",
         "team": "Bears",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 42,
+        "name": "Joe Burrow",
+        "team": "Bengals",
         "position": "QB",
-        "adp": 50,
         "myIdealRound": 100
     },
     {
-        "name": "Deandre Hopkins",
-        "team": "Titans",
-        "position": "WR",
-        "adp": 51,
+        "adp": 43,
+        "name": "Lamar Jackson",
+        "team": "Ravens",
+        "position": "QB",
         "myIdealRound": 100
     },
     {
-        "name": "Alexander Mattison",
-        "team": "Vikings",
+        "adp": 44,
+        "name": "Breece Hall",
+        "team": "Jets",
         "position": "RB",
-        "adp": 52,
         "myIdealRound": 100
     },
     {
-        "name": "Terry Mclaurin",
-        "team": "Commanders",
-        "position": "WR",
-        "adp": 53,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Jerry Jeudy",
-        "team": "Broncos",
-        "position": "WR",
-        "adp": 54,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Drake London",
-        "team": "Falcons",
-        "position": "WR",
-        "adp": 55,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Kyle Pitts",
-        "team": "Falcons",
-        "position": "TE",
-        "adp": 56,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Deandre Swift",
-        "team": "Eagles",
-        "position": "RB",
-        "adp": 57,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Javonte Williams",
-        "team": "Broncos",
-        "position": "RB",
-        "adp": 58,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Cam Akers",
-        "team": "Rams",
-        "position": "RB",
-        "adp": 59,
-        "myIdealRound": 100
-    },
-    {
-        "name": "James Conner",
-        "team": "Cardinals",
-        "position": "RB",
-        "adp": 60,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Chris Godwin",
-        "team": "Buccaneers",
-        "position": "WR",
-        "adp": 61,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Dallas Goedert",
-        "team": "Eagles",
-        "position": "TE",
-        "adp": 62,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Darren Waller",
-        "team": "Giants",
-        "position": "TE",
-        "adp": 63,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Alvin Kamara",
-        "team": "Saints",
-        "position": "RB",
-        "adp": 64,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Christian Watson",
-        "team": "Packers",
-        "position": "WR",
-        "adp": 65,
-        "myIdealRound": 100
-    },
-    {
+        "adp": 45,
         "name": "James Cook",
         "team": "Bills",
         "position": "RB",
-        "adp": 66,
         "myIdealRound": 100
     },
     {
-        "name": "Isaiah Pacheco",
-        "team": "Chiefs",
-        "position": "RB",
-        "adp": 67,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Brandon Aiyuk",
-        "team": "49ers",
-        "position": "WR",
-        "adp": 68,
-        "myIdealRound": 100
-    },
-    {
+        "adp": 46,
         "name": "Tyler Lockett",
         "team": "Seahawks",
         "position": "WR",
-        "adp": 69,
         "myIdealRound": 100
     },
     {
+        "adp": 47,
+        "name": "Keenan Allen",
+        "team": "Chargers",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 48,
+        "name": "Diontae Johnson",
+        "team": "Steelers",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 49,
+        "name": "Brandon Aiyuk",
+        "team": "49ers",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 50,
+        "name": "Alexander Mattison",
+        "team": "Vikings",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 51,
+        "name": "Christian Watson",
+        "team": "Packers",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 52,
+        "name": "Javonte Williams",
+        "team": "Broncos",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 53,
+        "name": "J.K. Dobbins",
+        "team": "Ravens",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 54,
+        "name": "Miles Sanders",
+        "team": "Panthers",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 55,
+        "name": "Drake London",
+        "team": "Falcons",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 56,
+        "name": "Terry McLaurin",
+        "team": "Commanders",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 57,
+        "name": "T.J. Hockenson",
+        "team": "Vikings",
+        "position": "TE",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 58,
+        "name": "Dallas Goedert",
+        "team": "Eagles",
+        "position": "TE",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 59,
+        "name": "Darren Waller",
+        "team": "Giants",
+        "position": "TE",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 60,
+        "name": "George Kittle",
+        "team": "49ers",
+        "position": "TE",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 61,
         "name": "Mike Williams",
         "team": "Chargers",
         "position": "WR",
-        "adp": 70,
         "myIdealRound": 100
     },
     {
-        "name": "Trevor Lawrence",
-        "team": "Jaguars",
-        "position": "QB",
-        "adp": 71,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Mike Evans",
-        "team": "Buccaneers",
+        "adp": 62,
+        "name": "DeAndre Hopkins",
+        "team": "Titans",
         "position": "WR",
-        "adp": 72,
         "myIdealRound": 100
     },
     {
-        "name": "Dalvin Cook",
-        "team": "Jets",
-        "position": "RB",
-        "adp": 73,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Marquise Brown",
-        "team": "Cardinals",
-        "position": "WR",
-        "adp": 74,
-        "myIdealRound": 100
-    },
-    {
-        "name": "George Pickens",
-        "team": "Steelers",
-        "position": "WR",
-        "adp": 75,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Christian Kirk",
-        "team": "Jaguars",
-        "position": "WR",
-        "adp": 76,
-        "myIdealRound": 100
-    },
-    {
-        "name": "David Montgomery",
-        "team": "Lions",
-        "position": "RB",
-        "adp": 77,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Michael Pittman",
-        "team": "Colts",
-        "position": "WR",
-        "adp": 78,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Rachaad White",
-        "team": "Buccaneers",
-        "position": "RB",
-        "adp": 79,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Diante Johnson",
-        "team": "Steelers",
-        "position": "WR",
-        "adp": 80,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Kadarius Toney",
-        "team": "Chiefs",
-        "position": "WR",
-        "adp": 81,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Khalil Herbert",
-        "team": "Bears",
-        "position": "RB",
-        "adp": 82,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Jaxon Smith-Njiba",
-        "team": "Seahawks",
-        "position": "WR",
-        "adp": 83,
-        "myIdealRound": 100
-    },
-    {
+        "adp": 63,
         "name": "Jahan Dotson",
         "team": "Commanders",
         "position": "WR",
-        "adp": 84,
         "myIdealRound": 100
     },
     {
-        "name": "Jordan Adison",
+        "adp": 64,
+        "name": "Marquise Brown",
+        "team": "Cardinals",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 65,
+        "name": "Dalvin Cook",
+        "team": "Jets",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 66,
+        "name": "Isiah Pacheco",
+        "team": "Chiefs",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 67,
+        "name": "George Pickens",
+        "team": "Steelers",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 68,
+        "name": "Kyle Pitts",
+        "team": "Falcons",
+        "position": "TE",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 69,
+        "name": "Michael Pittman Jr.",
+        "team": "Colts",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 70,
+        "name": "Trevor Lawrence",
+        "team": "Jaguars",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 71,
+        "name": "Jonathon Taylor",
+        "team": "Colts",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 72,
+        "name": "Christian Kirk",
+        "team": "Jaguars",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 73,
+        "name": "Justin Herbert",
+        "team": "Chargers",
+        "position": "QB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 74,
+        "name": "Cam Akers",
+        "team": "Rams",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 75,
+        "name": "James Conner",
+        "team": "Cardinals",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 76,
+        "name": "Khalil Herbert",
+        "team": "Bears",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 77,
+        "name": "David Montgomery",
+        "team": "Lions",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 78,
+        "name": "D'Andre Swift",
+        "team": "Eagles",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 79,
+        "name": "Jordan Addison",
         "team": "Vikings",
         "position": "WR",
-        "adp": 85,
         "myIdealRound": 100
     },
     {
-        "name": "Zach Charbonnet",
-        "team": "Seahwaks",
-        "position": "RB",
-        "adp": 86,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Antonio Gibson",
-        "team": "Commanders",
-        "position": "RB",
-        "adp": 87,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Brandon Cooks",
-        "team": "Cowboys",
-        "position": "WR",
-        "adp": 88,
-        "myIdealRound": 100
-    },
-    {
-        "name": "49ers",
-        "team": "49ers",
-        "position": "DEF",
-        "adp": 89,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Gabe Davis",
-        "team": "Bills",
-        "position": "WR",
-        "adp": 90,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Quentin Johnston",
-        "team": "Chargers",
-        "position": "WR",
-        "adp": 91,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Rashaad Penny",
-        "team": "Eagles",
-        "position": "RB",
-        "adp": 92,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Zay Flowers",
-        "team": "Ravens",
-        "position": "WR",
-        "adp": 93,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Eagles",
-        "team": "Eagles",
-        "position": "DEF",
-        "adp": 94,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Michael Thomas",
-        "team": "Saints",
-        "position": "WR",
-        "adp": 95,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Brian Robinson",
-        "team": "Commanders",
-        "position": "RB",
-        "adp": 96,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Devon Achane",
-        "team": "Dolphins",
-        "position": "RB",
-        "adp": 97,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Deshaun Watson",
-        "team": "Browns",
-        "position": "QB",
-        "adp": 98,
-        "myIdealRound": 100
-    },
-    {
+        "adp": 80,
         "name": "Pat Freiermuth",
         "team": "Steelers",
         "position": "TE",
-        "adp": 99,
         "myIdealRound": 100
     },
     {
+        "adp": 81,
+        "name": "Antonio Gibson",
+        "team": "Commanders",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 82,
         "name": "Evan Engram",
         "team": "Jaguars",
         "position": "TE",
-        "adp": 100,
         "myIdealRound": 100
     },
     {
-        "name": "David Njoku",
-        "team": "Browns",
-        "position": "TE",
-        "adp": 101,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Dak Prescott",
-        "team": "Cowboys",
-        "position": "QB",
-        "adp": 102,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Samaje Perine",
-        "team": "Broncos",
+        "adp": 83,
+        "name": "Alvin Kamara",
+        "team": "Saints",
         "position": "RB",
-        "adp": 103,
         "myIdealRound": 100
     },
     {
-        "name": "Tua Tagovailoa",
-        "team": "Dolphins",
-        "position": "QB",
-        "adp": 104,
+        "adp": 84,
+        "name": "Zach Charbonnet",
+        "team": "Seahawks",
+        "position": "RB",
         "myIdealRound": 100
     },
     {
+        "adp": 85,
+        "name": "Jaxon Smith-Njigba",
+        "team": "Seahawks",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 86,
+        "name": "Gabe Davis",
+        "team": "Bills",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 87,
         "name": "Jamaal Williams",
         "team": "Saints",
         "position": "RB",
-        "adp": 105,
         "myIdealRound": 100
     },
     {
-        "name": "Odell Beckham",
-        "team": "Ravens",
-        "position": "WR",
-        "adp": 106,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Patriots",
-        "team": "Patriots",
-        "position": "DEF",
-        "adp": 107,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Cowboys",
-        "team": "Cowboys",
-        "position": "DEF",
-        "adp": 108,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Elijah Mitchell",
-        "team": "49ers",
-        "position": "RB",
-        "adp": 109,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Aaron Rodgers",
-        "team": "Jets",
-        "position": "QB",
-        "adp": 110,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Anthony Richardson",
-        "team": "Colts",
-        "position": "QB",
-        "adp": 111,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Damien Harris",
-        "team": "Bills",
-        "position": "RB",
-        "adp": 112,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Dalton Kincaid",
-        "team": "Bills",
-        "position": "TE",
-        "adp": 113,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Tank Bigsby",
-        "team": "Jaguars",
-        "position": "RB",
-        "adp": 114,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Jerick McKinnon",
-        "team": "Chiefs",
-        "position": "RB",
-        "adp": 115,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Bills",
-        "team": "Bills",
-        "position": "DEF",
-        "adp": 116,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Treylon Burks",
-        "team": "Titans",
-        "position": "WR",
-        "adp": 117,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Juju Smith",
-        "team": "Patriots",
-        "position": "WR",
-        "adp": 118,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Ezekiel Elliot",
-        "team": "Patriots",
-        "position": "RB",
-        "adp": 119,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Colby Kmet",
-        "team": "Bears",
-        "position": "TE",
-        "adp": 120,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Tyler Allgeier",
-        "team": "Falcons",
-        "position": "RB",
-        "adp": 121,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Kirk Cousins",
-        "team": "Vikings",
-        "position": "QB",
-        "adp": 122,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Geno Smith",
-        "team": "Seahawks",
-        "position": "QB",
-        "adp": 123,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Dalton Schultz",
-        "team": "Texans",
-        "position": "TE",
-        "adp": 124,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Skyy Moore",
-        "team": "Chiefs",
-        "position": "WR",
-        "adp": 125,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Jets",
-        "team": "Jets",
-        "position": "DEF",
-        "adp": 126,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Raheem Mostert",
-        "team": "Dolphins",
-        "position": "RB",
-        "adp": 127,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Justin Tucker",
-        "team": "Ravens",
-        "position": "K",
-        "adp": 128,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Tyler Bass",
-        "team": "Bills",
-        "position": "K",
-        "adp": 129,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Adam Thielen",
-        "team": "Panthers",
-        "position": "WR",
-        "adp": 130,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Daniel Carlson",
-        "team": "Raiders",
-        "position": "K",
-        "adp": 131,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Evan McPherson",
-        "team": "Bengals",
-        "position": "K",
-        "adp": 132,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Harrison Butker",
-        "team": "Chiefs",
-        "position": "K",
-        "adp": 133,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Ravens",
-        "team": "Ravens",
-        "position": "DEF",
-        "adp": 134,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Youngho Koo",
-        "team": "Falcons",
-        "position": "K",
-        "adp": 135,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Saints",
-        "team": "Saints",
-        "position": "DEF",
-        "adp": 136,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Jake Elliot",
-        "team": "Eagles",
-        "position": "K",
-        "adp": 137,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Jaylen Warren",
-        "team": "Steelers",
-        "position": "RB",
-        "adp": 138,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Kay Miller",
-        "team": "Saints",
-        "position": "RB",
-        "adp": 139,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Donta Foreman",
-        "team": "Bears",
-        "position": "RB",
-        "adp": 140,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Greg Dulcich",
+        "adp": 88,
+        "name": "Samaje Perrine",
         "team": "Broncos",
-        "position": "TE",
-        "adp": 141,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Devon Singletary",
-        "team": "Texans",
         "position": "RB",
-        "adp": 142,
         "myIdealRound": 100
     },
     {
-        "name": "Chad Okonkwo",
-        "team": "Titans",
-        "position": "TE",
-        "adp": 143,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Courtland Sutton",
-        "team": "Broncos",
-        "position": "WR",
-        "adp": 144,
-        "myIdealRound": 100
-    },
-    {
+        "adp": 89,
         "name": "Elijah Moore",
         "team": "Browns",
         "position": "WR",
-        "adp": 145,
         "myIdealRound": 100
     },
     {
-        "name": "Allen Lazard",
-        "team": "Jets",
+        "adp": 90,
+        "name": "Raheem Mostert",
+        "team": "Dolphins",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 91,
+        "name": "Nico Collins",
+        "team": "Texans",
         "position": "WR",
-        "adp": 146,
         "myIdealRound": 100
     },
     {
+        "adp": 92,
+        "name": "Jaylen Warren",
+        "team": "Steelers",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 93,
         "name": "Rashod Bateman",
         "team": "Ravens",
         "position": "WR",
-        "adp": 147,
         "myIdealRound": 100
     },
     {
-        "name": "Jameson Williams",
-        "team": "Lions",
-        "position": "WR",
-        "adp": 148,
+        "adp": 94,
+        "name": "Elijah Mitchell",
+        "team": "49ers",
+        "position": "RB",
         "myIdealRound": 100
     },
     {
-        "name": "Tyler Boyd",
-        "team": "Bengals",
-        "position": "WR",
-        "adp": 149,
-        "myIdealRound": 100
-    },
-    {
-        "name": "R Rice",
+        "adp": 95,
+        "name": "Skyy Moore",
         "team": "Chiefs",
         "position": "WR",
-        "adp": 150,
         "myIdealRound": 100
     },
     {
-        "name": "Jakobi Meyers",
-        "team": "Raiders",
-        "position": "WR",
-        "adp": 151,
+        "adp": 96,
+        "name": "Dalton Kincaid",
+        "team": "Bills",
+        "position": "TE",
         "myIdealRound": 100
     },
     {
-        "name": "De Vaughn",
-        "team": "Cowboys",
+        "adp": 97,
+        "name": "Rashaad Penny",
+        "team": "Seahawks",
         "position": "RB",
-        "adp": 152,
         "myIdealRound": 100
     },
     {
-        "name": "Romeo Doubs",
+        "adp": 111,
+        "name": "Brandin Cooks",
+        "team": "Cowboys",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 112,
+        "name": "Courtland Sutton",
+        "team": "Broncos",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 100,
+        "name": "David Njoku",
+        "team": "Browns",
+        "position": "TE",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 101,
+        "name": "Jerick McKinnon",
+        "team": "Chiefs",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 102,
+        "name": "Aaron Rodgers",
         "team": "Packers",
-        "position": "WR",
-        "adp": 153,
+        "position": "QB",
         "myIdealRound": 100
     },
     {
-        "name": "Darnell Mooney",
-        "team": "Bears",
+        "adp": 103,
+        "name": "Zay Flowers",
+        "team": "Ravens",
         "position": "WR",
-        "adp": 154,
         "myIdealRound": 100
     },
     {
+        "adp": 104,
+        "name": "Adam Thielen",
+        "team": "Panthers",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 105,
+        "name": "Damien Harris",
+        "team": "Bills",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 106,
         "name": "Tyler Higbee",
         "team": "Rams",
         "position": "TE",
-        "adp": 155,
         "myIdealRound": 100
     },
     {
-        "name": "Jason Myers",
-        "team": "Seahawks",
-        "position": "K",
-        "adp": 156,
-        "myIdealRound": 100
-    },
-    {
-        "name": "Jay Hyatt",
-        "team": "Giants",
+        "adp": 107,
+        "name": "Michael Thomas",
+        "team": "Saints",
         "position": "WR",
-        "adp": 157,
+        "myIdealRound": 100
+    },
+    {
+        "adp": 108,
+        "name": "De'Von Achane",
+        "team": "Dolphins",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 109,
+        "name": "Tank Bigsby",
+        "team": "Jaguars",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 110,
+        "name": "Cole Kmet",
+        "team": "Bears",
+        "position": "TE",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 98,
+        "name": "Kadarius Toney",
+        "team": "Chiefs",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 99,
+        "name": "Quentin Johnston",
+        "team": "Chargers",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 113,
+        "name": "Roschon Johnson",
+        "team": "Bears",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 114,
+        "name": "San Francisco",
+        "team": "49ers",
+        "position": "DEF",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 115,
+        "name": "Dallas",
+        "team": "Cowboys",
+        "position": "DEF",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 116,
+        "name": "New England",
+        "team": "Patriots",
+        "position": "DEF",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 117,
+        "name": "New Orleans",
+        "team": "Saints",
+        "position": "DEF",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 118,
+        "name": "Tyler Boyd",
+        "team": "Bengals",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 119,
+        "name": "AJ Dillon",
+        "team": "Packers",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 120,
+        "name": "Jerry Jeudy",
+        "team": "Broncos",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 121,
+        "name": "Brian Robinson",
+        "team": "Commanders",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 122,
+        "name": "Geno Smith",
+        "team": "Seahawks",
+        "position": "QB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 123,
+        "name": "Dak Prescott",
+        "team": "Cowboys",
+        "position": "QB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 124,
+        "name": "Daniel Jones",
+        "team": "Giants",
+        "position": "QB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 125,
+        "name": "Deshaun Watson",
+        "team": "Browns",
+        "position": "QB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 126,
+        "name": "Tua Tagovailoa",
+        "team": "Dolphins",
+        "position": "QB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 127,
+        "name": "Anthony Richardson",
+        "team": "Colts",
+        "position": "QB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 128,
+        "name": "Treylon Burks",
+        "team": "Titans",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 129,
+        "name": "Juju Smith-Schuster",
+        "team": "Patriots",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 130,
+        "name": "Rachaad White",
+        "team": "Buccaneers",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 131,
+        "name": "Mike Evans",
+        "team": "Buccaneers",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 132,
+        "name": "Damien Harris",
+        "team": "Bills",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 133,
+        "name": "Ezekiel Elliot",
+        "team": "Patriots",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 134,
+        "name": "Tyler Allgeier",
+        "team": "Falcons",
+        "position": "RB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 135,
+        "name": "Kirk Cousins",
+        "team": "Vikings",
+        "position": "QB",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 136,
+        "name": "Jakobi Meyers",
+        "team": "Raiders",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 137,
+        "name": "Allen Lazard",
+        "team": "Jets",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 138,
+        "name": "Michael Gallup",
+        "team": "Cowboys",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 139,
+        "name": "Dalton Schultz",
+        "team": "Texans",
+        "position": "TE",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 140,
+        "name": "Jake Ferguson",
+        "team": "Cowboys",
+        "position": "TE",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 141,
+        "name": "Juwan Johnson",
+        "team": "Saints",
+        "position": "TE",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 142,
+        "name": "Darnell Mooney",
+        "team": "Bears",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 143,
+        "name": "Romeo Doubs",
+        "team": "Packers",
+        "position": "WR",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 144,
+        "name": "Gerald Everett",
+        "team": "Chargers",
+        "position": "TE",
+        "myIdealRound": 100
+    },
+    {
+        "adp": 145,
+        "name": "Greg Dulcich",
+        "team": "Broncos",
+        "position": "TE",
         "myIdealRound": 100
     }
 ]
