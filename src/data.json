@@ -917,13 +917,6 @@
         "myIdealRound": 100
     },
     {
-        "adp": 132,
-        "name": "Damien Harris",
-        "team": "Bills",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
         "adp": 133,
         "name": "Ezekiel Elliot",
         "team": "Patriots",
@@ -994,7 +987,7 @@
         "myIdealRound": 100
     },
     {
-        "adp": 143,
+        "adp": 132,
         "name": "Romeo Doubs",
         "team": "Packers",
         "position": "WR",
