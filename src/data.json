@@ -6,7 +6,7 @@
         "team": "SF",
         "adp": 1.0,
         "expected_points": 24.5,
-        "VOR": 12.7
+        "VOR": 9.5
     },
     {
         "player_id": "2",
@@ -15,7 +15,7 @@
         "team": "MIA",
         "adp": 2.0,
         "expected_points": 22,
-        "VOR": 11.8
+        "VOR": 8.7
     },
     {
         "player_id": "3",
@@ -24,7 +24,7 @@
         "team": "DAL",
         "adp": 3.3,
         "expected_points": 21,
-        "VOR": 10.8
+        "VOR": 7.699999999999999
     },
     {
         "player_id": "4",
@@ -33,7 +33,7 @@
         "team": "NYJ",
         "adp": 5.0,
         "expected_points": 21.5,
-        "VOR": 9.7
+        "VOR": 6.5
     },
     {
         "player_id": "5",
@@ -42,7 +42,7 @@
         "team": "ATL",
         "adp": 5.3,
         "expected_points": 21.5,
-        "VOR": 9.7
+        "VOR": 6.5
     },
     {
         "player_id": "6",
@@ -51,7 +51,7 @@
         "team": "MIN",
         "adp": 5.7,
         "expected_points": 16.1,
-        "VOR": 5.900000000000002
+        "VOR": 2.8000000000000007
     },
     {
         "player_id": "7",
@@ -60,7 +60,7 @@
         "team": "CIN",
         "adp": 6.3,
         "expected_points": 21,
-        "VOR": 10.8
+        "VOR": 7.699999999999999
     },
     {
         "player_id": "8",
@@ -69,7 +69,7 @@
         "team": "DET",
         "adp": 7.3,
         "expected_points": 17.5,
-        "VOR": 7.300000000000001
+        "VOR": 4.199999999999999
     },
     {
         "player_id": "9",
@@ -78,7 +78,7 @@
         "team": "PHI",
         "adp": 10.0,
         "expected_points": 17.5,
-        "VOR": 7.300000000000001
+        "VOR": 4.199999999999999
     },
     {
         "player_id": "10",
@@ -87,7 +87,7 @@
         "team": "IND",
         "adp": 10.0,
         "expected_points": 15.5,
-        "VOR": 3.6999999999999993
+        "VOR": 0.5
     },
     {
         "player_id": "11",
@@ -96,7 +96,7 @@
         "team": "PHI",
         "adp": 11.0,
         "expected_points": 17,
-        "VOR": 5.199999999999999
+        "VOR": 2
     },
     {
         "player_id": "12",
@@ -105,7 +105,7 @@
         "team": "NYJ",
         "adp": 12.0,
         "expected_points": 20,
-        "VOR": 9.8
+        "VOR": 6.699999999999999
     },
     {
         "player_id": "13",
@@ -114,7 +114,7 @@
         "team": "DET",
         "adp": 12.3,
         "expected_points": 19,
-        "VOR": 7.199999999999999
+        "VOR": 4
     },
     {
         "player_id": "14",
@@ -123,7 +123,7 @@
         "team": "LAR",
         "adp": 14.7,
         "expected_points": 18,
-        "VOR": 7.800000000000001
+        "VOR": 4.699999999999999
     },
     {
         "player_id": "15",
@@ -132,7 +132,7 @@
         "team": "ARI",
         "adp": 16.0,
         "expected_points": 14.5,
-        "VOR": 4.300000000000001
+        "VOR": 1.1999999999999993
     },
     {
         "player_id": "16",
@@ -141,7 +141,7 @@
         "team": "LAR",
         "adp": 16.3,
         "expected_points": 18.5,
-        "VOR": 6.699999999999999
+        "VOR": 3.5
     },
     {
         "player_id": "17",
@@ -150,7 +150,7 @@
         "team": "BAL",
         "adp": 17.0,
         "expected_points": 16.5,
-        "VOR": 4.699999999999999
+        "VOR": 1.5
     },
     {
         "player_id": "18",
@@ -159,7 +159,7 @@
         "team": "JAC",
         "adp": 17.0,
         "expected_points": 18.8,
-        "VOR": 7.0
+        "VOR": 3.8000000000000007
     },
     {
         "player_id": "19",
@@ -168,7 +168,7 @@
         "team": "LV",
         "adp": 19.3,
         "expected_points": 15.5,
-        "VOR": 5.300000000000001
+        "VOR": 2.1999999999999993
     },
     {
         "player_id": "20",
@@ -177,7 +177,7 @@
         "team": "KC",
         "adp": 22.0,
         "expected_points": 16.5,
-        "VOR": 4.699999999999999
+        "VOR": 1.5
     },
     {
         "player_id": "21",
@@ -186,7 +186,7 @@
         "team": "MIA",
         "adp": 22.0,
         "expected_points": 19.5,
-        "VOR": 7.699999999999999
+        "VOR": 4.5
     },
     {
         "player_id": "22",
@@ -195,7 +195,7 @@
         "team": "ATL",
         "adp": 22.7,
         "expected_points": 15.5,
-        "VOR": 5.300000000000001
+        "VOR": 2.1999999999999993
     },
     {
         "player_id": "23",
@@ -213,7 +213,7 @@
         "team": "NO",
         "adp": 25.0,
         "expected_points": 14.25,
-        "VOR": 4.050000000000001
+        "VOR": 0.9499999999999993
     },
     {
         "player_id": "25",
@@ -222,7 +222,7 @@
         "team": "GB",
         "adp": 25.3,
         "expected_points": 15,
-        "VOR": 3.1999999999999993
+        "VOR": 0
     },
     {
         "player_id": "26",
@@ -240,7 +240,7 @@
         "team": "SF",
         "adp": 27.0,
         "expected_points": 17.5,
-        "VOR": 7.300000000000001
+        "VOR": 4.199999999999999
     },
     {
         "player_id": "28",
@@ -258,7 +258,7 @@
         "team": "HOU",
         "adp": 31.0,
         "expected_points": 16.2,
-        "VOR": 6.0
+        "VOR": 2.8999999999999986
     },
     {
         "player_id": "30",
@@ -285,7 +285,7 @@
         "team": "TB",
         "adp": 31.7,
         "expected_points": 17.5,
-        "VOR": 7.300000000000001
+        "VOR": 4.199999999999999
     },
     {
         "player_id": "33",
@@ -294,7 +294,7 @@
         "team": "SF",
         "adp": 34.7,
         "expected_points": 15.5,
-        "VOR": 5.300000000000001
+        "VOR": 2.1999999999999993
     },
     {
         "player_id": "34",
@@ -303,7 +303,7 @@
         "team": "LAR",
         "adp": 34.7,
         "expected_points": 16.7,
-        "VOR": 6.5
+        "VOR": 3.3999999999999986
     },
     {
         "player_id": "35",
@@ -312,7 +312,7 @@
         "team": "TB",
         "adp": 35.3,
         "expected_points": 16.5,
-        "VOR": 4.699999999999999
+        "VOR": 1.5
     },
     {
         "player_id": "36",
@@ -321,7 +321,7 @@
         "team": "BUF",
         "adp": 36.7,
         "expected_points": 17,
-        "VOR": 5.199999999999999
+        "VOR": 2
     },
     {
         "player_id": "37",
@@ -330,7 +330,7 @@
         "team": "IND",
         "adp": 38.0,
         "expected_points": 14,
-        "VOR": 3.8000000000000007
+        "VOR": 0.6999999999999993
     },
     {
         "player_id": "38",
@@ -348,7 +348,7 @@
         "team": "MIA",
         "adp": 38.7,
         "expected_points": 12.5,
-        "VOR": 2.3000000000000007
+        "VOR": -0.8000000000000007
     },
     {
         "player_id": "40",
@@ -357,7 +357,7 @@
         "team": "SEA",
         "adp": 38.7,
         "expected_points": 14,
-        "VOR": 3.8000000000000007
+        "VOR": 0.6999999999999993
     },
     {
         "player_id": "41",
@@ -366,7 +366,7 @@
         "team": "CHI",
         "adp": 38.7,
         "expected_points": 16,
-        "VOR": 5.800000000000001
+        "VOR": 2.6999999999999993
     },
     {
         "player_id": "42",
@@ -375,7 +375,7 @@
         "team": "HOU",
         "adp": 39.3,
         "expected_points": 15.5,
-        "VOR": 3.6999999999999993
+        "VOR": 0.5
     },
     {
         "player_id": "43",
@@ -384,7 +384,7 @@
         "team": "HOU",
         "adp": 40.3,
         "expected_points": 15,
-        "VOR": 4.800000000000001
+        "VOR": 1.6999999999999993
     },
     {
         "player_id": "44",
@@ -393,7 +393,7 @@
         "team": "SEA",
         "adp": 42.3,
         "expected_points": 16.5,
-        "VOR": 4.699999999999999
+        "VOR": 1.5
     },
     {
         "player_id": "45",
@@ -402,7 +402,7 @@
         "team": "NO",
         "adp": 45.7,
         "expected_points": 16,
-        "VOR": 4.199999999999999
+        "VOR": 1
     },
     {
         "player_id": "46",
@@ -411,7 +411,7 @@
         "team": "PHI",
         "adp": 47.0,
         "expected_points": 13.3,
-        "VOR": 3.1000000000000014
+        "VOR": 0.0
     },
     {
         "player_id": "47",
@@ -438,7 +438,7 @@
         "team": "NYG",
         "adp": 48.3,
         "expected_points": 14.5,
-        "VOR": 4.300000000000001
+        "VOR": 1.1999999999999993
     },
     {
         "player_id": "50",
@@ -474,7 +474,7 @@
         "team": "MIN",
         "adp": 55.0,
         "expected_points": 12.5,
-        "VOR": 0.6999999999999993
+        "VOR": -2.5
     },
     {
         "player_id": "54",
@@ -483,7 +483,7 @@
         "team": "CLE",
         "adp": 55.3,
         "expected_points": 15.7,
-        "VOR": 5.5
+        "VOR": 2.3999999999999986
     },
     {
         "player_id": "55",
@@ -492,7 +492,7 @@
         "team": "ARI",
         "adp": 58.0,
         "expected_points": 15.8,
-        "VOR": 4.0
+        "VOR": 0.8000000000000007
     },
     {
         "player_id": "56",
@@ -501,7 +501,7 @@
         "team": "NE",
         "adp": 60.0,
         "expected_points": 12.7,
-        "VOR": 0.8999999999999986
+        "VOR": -2.3000000000000007
     },
     {
         "player_id": "57",
@@ -510,7 +510,7 @@
         "team": "DET",
         "adp": 61.0,
         "expected_points": 15,
-        "VOR": 3.1999999999999993
+        "VOR": 0
     },
     {
         "player_id": "58",
@@ -519,7 +519,7 @@
         "team": "CIN",
         "adp": 60.3,
         "expected_points": 13.8,
-        "VOR": 3.6000000000000014
+        "VOR": 0.5
     },
     {
         "player_id": "59",
@@ -537,7 +537,7 @@
         "team": "PIT",
         "adp": 61.0,
         "expected_points": 15,
-        "VOR": 4.800000000000001
+        "VOR": 1.6999999999999993
     },
     {
         "player_id": "61",
@@ -555,7 +555,7 @@
         "team": "DET",
         "adp": 62.7,
         "expected_points": 15,
-        "VOR": 3.1999999999999993
+        "VOR": 0
     },
     {
         "player_id": "63",
@@ -564,7 +564,7 @@
         "team": "BAL",
         "adp": 63.0,
         "expected_points": 12.2,
-        "VOR": 2.0
+        "VOR": -1.1000000000000014
     },
     {
         "player_id": "64",
@@ -582,7 +582,7 @@
         "team": "HOU",
         "adp": 64.3,
         "expected_points": 14.3,
-        "VOR": 4.100000000000001
+        "VOR": 1.0
     },
     {
         "player_id": "66",
@@ -600,7 +600,7 @@
         "team": "PIT",
         "adp": 66.3,
         "expected_points": 12.5,
-        "VOR": 0.6999999999999993
+        "VOR": -2.5
     },
     {
         "player_id": "68",
@@ -609,7 +609,7 @@
         "team": "LV",
         "adp": 68.3,
         "expected_points": 12.5,
-        "VOR": 0.6999999999999993
+        "VOR": -2.5
     },
     {
         "player_id": "69",
@@ -618,7 +618,7 @@
         "team": "WAS",
         "adp": 69.0,
         "expected_points": 12.5,
-        "VOR": 2.3000000000000007
+        "VOR": -0.8000000000000007
     },
     {
         "player_id": "70",
@@ -636,7 +636,7 @@
         "team": "MIA",
         "adp": 71.7,
         "expected_points": 16.5,
-        "VOR": 4.699999999999999
+        "VOR": 1.5
     },
     {
         "player_id": "72",
@@ -645,7 +645,7 @@
         "team": "JAC",
         "adp": 72.7,
         "expected_points": 12,
-        "VOR": 1.8000000000000007
+        "VOR": -1.3000000000000007
     },
     {
         "player_id": "73",
@@ -672,7 +672,7 @@
         "team": "CHI",
         "adp": 73.3,
         "expected_points": 14.2,
-        "VOR": 4.0
+        "VOR": 0.8999999999999986
     },
     {
         "player_id": "76",
@@ -681,7 +681,7 @@
         "team": "KC",
         "adp": 81.3,
         "expected_points": 15.2,
-        "VOR": 5.0
+        "VOR": 1.8999999999999986
     },
     {
         "player_id": "77",
@@ -690,7 +690,7 @@
         "team": "TB",
         "adp": 79.3,
         "expected_points": 12.3,
-        "VOR": 2.1000000000000014
+        "VOR": -1.0
     },
     {
         "player_id": "78",
@@ -699,7 +699,7 @@
         "team": "TEN",
         "adp": 82.3,
         "expected_points": 12.2,
-        "VOR": 0.3999999999999986
+        "VOR": -2.8000000000000007
     },
     {
         "player_id": "79",
@@ -708,7 +708,7 @@
         "team": "TEN",
         "adp": 82.3,
         "expected_points": 13.5,
-        "VOR": 3.3000000000000007
+        "VOR": 0.1999999999999993
     },
     {
         "player_id": "80",
@@ -726,7 +726,7 @@
         "team": "GB",
         "adp": 84.0,
         "expected_points": 11.5,
-        "VOR": 1.3000000000000007
+        "VOR": -1.8000000000000007
     },
     {
         "player_id": "82",
@@ -735,7 +735,7 @@
         "team": "DEN",
         "adp": 84.7,
         "expected_points": 13.2,
-        "VOR": 1.3999999999999986
+        "VOR": -1.8000000000000007
     },
     {
         "player_id": "83",
@@ -744,7 +744,7 @@
         "team": "NYG",
         "adp": 88.7,
         "expected_points": 11.8,
-        "VOR": 0.0
+        "VOR": -3.1999999999999993
     },
     {
         "player_id": "84",
@@ -753,7 +753,7 @@
         "team": "CIN",
         "adp": 89.3,
         "expected_points": 15.5,
-        "VOR": 3.6999999999999993
+        "VOR": 0.5
     },
     {
         "player_id": "85",
@@ -762,7 +762,7 @@
         "team": "CAR",
         "adp": 89.3,
         "expected_points": 13,
-        "VOR": 2.8000000000000007
+        "VOR": -0.3000000000000007
     },
     {
         "player_id": "86",
@@ -771,7 +771,7 @@
         "team": "PIT",
         "adp": 90.3,
         "expected_points": 10.7,
-        "VOR": -1.1000000000000014
+        "VOR": -4.300000000000001
     },
     {
         "player_id": "87",
@@ -789,7 +789,7 @@
         "team": "KC",
         "adp": 92.3,
         "expected_points": 12.2,
-        "VOR": 2.0
+        "VOR": -1.1000000000000014
     },
     {
         "player_id": "89",
@@ -798,7 +798,7 @@
         "team": "WAS",
         "adp": 93.0,
         "expected_points": 11,
-        "VOR": -0.8000000000000007
+        "VOR": -4
     },
     {
         "player_id": "90",
@@ -816,7 +816,7 @@
         "team": "CHI",
         "adp": 94.0,
         "expected_points": 9.3,
-        "VOR": -0.8999999999999986
+        "VOR": -4.0
     },
     {
         "player_id": "92",
@@ -825,7 +825,7 @@
         "team": "CLE",
         "adp": 94.0,
         "expected_points": 10,
-        "VOR": -1.8000000000000007
+        "VOR": -5
     },
     {
         "player_id": "93",
@@ -834,7 +834,7 @@
         "team": "WAS",
         "adp": 96.3,
         "expected_points": 9,
-        "VOR": -2.8000000000000007
+        "VOR": -6
     },
     {
         "player_id": "94",
@@ -843,7 +843,7 @@
         "team": "CAR",
         "adp": 97.0,
         "expected_points": 8.9,
-        "VOR": -2.9000000000000004
+        "VOR": -6.1
     },
     {
         "player_id": "95",
@@ -879,7 +879,7 @@
         "team": "KC",
         "adp": 100.7,
         "expected_points": 9.3,
-        "VOR": -0.8999999999999986
+        "VOR": -4.0
     },
     {
         "player_id": "99",
@@ -888,7 +888,7 @@
         "team": "TEN",
         "adp": 102.7,
         "expected_points": 8.9,
-        "VOR": -2.9000000000000004
+        "VOR": -6.1
     },
     {
         "player_id": "100",
@@ -897,7 +897,7 @@
         "team": "GB",
         "adp": 103.3,
         "expected_points": 10.2,
-        "VOR": 0.0
+        "VOR": -3.1000000000000014
     },
     {
         "player_id": "101",
@@ -906,7 +906,7 @@
         "team": "TEN",
         "adp": 103.7,
         "expected_points": 9,
-        "VOR": -1.1999999999999993
+        "VOR": -4.300000000000001
     },
     {
         "player_id": "102",
@@ -915,7 +915,7 @@
         "team": "MIN",
         "adp": 104.0,
         "expected_points": 9.1,
-        "VOR": -1.0999999999999996
+        "VOR": -4.200000000000001
     },
     {
         "player_id": "103",
@@ -942,7 +942,7 @@
         "team": "SEA",
         "adp": 107.0,
         "expected_points": 9.3,
-        "VOR": -0.8999999999999986
+        "VOR": -4.0
     },
     {
         "player_id": "106",
@@ -951,7 +951,7 @@
         "team": "LAC",
         "adp": 108.7,
         "expected_points": 9,
-        "VOR": -1.1999999999999993
+        "VOR": -4.300000000000001
     },
     {
         "player_id": "107",
@@ -960,7 +960,7 @@
         "team": "CIN",
         "adp": 110.3,
         "expected_points": 9.3,
-        "VOR": -2.5
+        "VOR": -5.699999999999999
     },
     {
         "player_id": "108",
@@ -969,7 +969,7 @@
         "team": "DAL",
         "adp": 111.3,
         "expected_points": 8.2,
-        "VOR": -3.6000000000000014
+        "VOR": -6.800000000000001
     },
     {
         "player_id": "109",
@@ -987,7 +987,7 @@
         "team": "ARI",
         "adp": 114.0,
         "expected_points": 6.5,
-        "VOR": -5.300000000000001
+        "VOR": -8.5
     },
     {
         "player_id": "111",
@@ -996,7 +996,7 @@
         "team": "LAC",
         "adp": 114.7,
         "expected_points": 9,
-        "VOR": -2.8000000000000007
+        "VOR": -6
     },
     {
         "player_id": "112",
@@ -1005,7 +1005,7 @@
         "team": "DEN",
         "adp": 115.0,
         "expected_points": 9.7,
-        "VOR": -0.5
+        "VOR": -3.6000000000000014
     },
     {
         "player_id": "113",
@@ -1014,7 +1014,7 @@
         "team": "CLE",
         "adp": 115.7,
         "expected_points": 13,
-        "VOR": 1.1999999999999993
+        "VOR": -2
     },
     {
         "player_id": "114",
@@ -1032,7 +1032,7 @@
         "team": "BUF",
         "adp": 116.3,
         "expected_points": 8.2,
-        "VOR": -2.0
+        "VOR": -5.100000000000001
     },
     {
         "player_id": "116",
@@ -1050,7 +1050,7 @@
         "team": "JAC",
         "adp": 118.7,
         "expected_points": 10.8,
-        "VOR": 0.6000000000000014
+        "VOR": -2.5
     },
     {
         "player_id": "118",
@@ -1059,7 +1059,7 @@
         "team": "DET",
         "adp": 119.7,
         "expected_points": 8.5,
-        "VOR": -1.6999999999999993
+        "VOR": -4.800000000000001
     },
     {
         "player_id": "119",
@@ -1068,7 +1068,7 @@
         "team": "LAR",
         "adp": 123.3,
         "expected_points": 6.5,
-        "VOR": -5.300000000000001
+        "VOR": -8.5
     },
     {
         "player_id": "120",
@@ -1140,7 +1140,7 @@
         "team": "BUF",
         "adp": 135.0,
         "expected_points": 9,
-        "VOR": -1.1999999999999993
+        "VOR": -4.300000000000001
     },
     {
         "player_id": "128",
@@ -1149,7 +1149,7 @@
         "team": "WAS",
         "adp": 136.3,
         "expected_points": 8,
-        "VOR": -2.1999999999999993
+        "VOR": -5.300000000000001
     },
     {
         "player_id": "129",
@@ -1176,7 +1176,7 @@
         "team": "DAL",
         "adp": 139.3,
         "expected_points": 7,
-        "VOR": -4.800000000000001
+        "VOR": -8
     },
     {
         "player_id": "132",
@@ -1194,7 +1194,7 @@
         "team": "BAL",
         "adp": 140.3,
         "expected_points": 8,
-        "VOR": -3.8000000000000007
+        "VOR": -7
     },
     {
         "player_id": "134",
@@ -1212,7 +1212,7 @@
         "team": "GB",
         "adp": 140.7,
         "expected_points": 8.2,
-        "VOR": -2.0
+        "VOR": -5.100000000000001
     },
     {
         "player_id": "136",
@@ -1230,7 +1230,7 @@
         "team": "SEA",
         "adp": 141.0,
         "expected_points": 10,
-        "VOR": -0.1999999999999993
+        "VOR": -3.3000000000000007
     },
     {
         "player_id": "138",
@@ -1248,7 +1248,7 @@
         "team": "CAR",
         "adp": 145.0,
         "expected_points": 7,
-        "VOR": -4.800000000000001
+        "VOR": -8
     },
     {
         "player_id": "140",
@@ -1266,7 +1266,7 @@
         "team": "CAR",
         "adp": 147.7,
         "expected_points": 10.5,
-        "VOR": -1.3000000000000007
+        "VOR": -4.5
     },
     {
         "player_id": "142",
@@ -1302,7 +1302,7 @@
         "team": "MIA",
         "adp": 151.7,
         "expected_points": 3.5,
-        "VOR": -8.3
+        "VOR": -11.5
     },
     {
         "player_id": "146",
@@ -1311,7 +1311,7 @@
         "team": "LV",
         "adp": 152.3,
         "expected_points": 9.8,
-        "VOR": -0.3999999999999986
+        "VOR": -3.5
     },
     {
         "player_id": "147",
@@ -1329,7 +1329,7 @@
         "team": "MIN",
         "adp": 156.0,
         "expected_points": 4.2,
-        "VOR": -7.6000000000000005
+        "VOR": -10.8
     },
     {
         "player_id": "149",
@@ -1347,7 +1347,7 @@
         "team": "LAC",
         "adp": 156.3,
         "expected_points": 8,
-        "VOR": -2.1999999999999993
+        "VOR": -5.300000000000001
     },
     {
         "player_id": "151",
@@ -1356,7 +1356,7 @@
         "team": "DAL",
         "adp": 156.3,
         "expected_points": 8,
-        "VOR": -2.1999999999999993
+        "VOR": -5.300000000000001
     },
     {
         "player_id": "152",
@@ -1365,7 +1365,7 @@
         "team": "DEN",
         "adp": 157.0,
         "expected_points": 8,
-        "VOR": -3.8000000000000007
+        "VOR": -7
     },
     {
         "player_id": "153",
@@ -1374,7 +1374,7 @@
         "team": "CLE",
         "adp": 157.0,
         "expected_points": 7.7,
-        "VOR": -2.499999999999999
+        "VOR": -5.6000000000000005
     },
     {
         "player_id": "154",
@@ -1392,7 +1392,7 @@
         "team": "WAS",
         "adp": 159.3,
         "expected_points": 5.5,
-        "VOR": -6.300000000000001
+        "VOR": -9.5
     },
     {
         "player_id": "156",
@@ -1401,7 +1401,7 @@
         "team": "NO",
         "adp": 159.7,
         "expected_points": 8.1,
-        "VOR": -2.0999999999999996
+        "VOR": -5.200000000000001
     },
     {
         "player_id": "157",
@@ -1419,7 +1419,7 @@
         "team": "GB",
         "adp": 161.3,
         "expected_points": 6.8,
-        "VOR": -3.3999999999999995
+        "VOR": -6.500000000000001
     },
     {
         "player_id": "159",
@@ -1428,7 +1428,7 @@
         "team": "BUF",
         "adp": 163.0,
         "expected_points": 5,
-        "VOR": -6.800000000000001
+        "VOR": -10
     },
     {
         "player_id": "160",
@@ -1437,7 +1437,7 @@
         "team": "IND",
         "adp": 163.3,
         "expected_points": 6.2,
-        "VOR": -3.999999999999999
+        "VOR": -7.1000000000000005
     },
     {
         "player_id": "161",
@@ -1446,7 +1446,7 @@
         "team": "ATL",
         "adp": 163.3,
         "expected_points": 6.3,
-        "VOR": -5.500000000000001
+        "VOR": -8.7
     },
     {
         "player_id": "162",
@@ -1455,7 +1455,7 @@
         "team": "NYJ",
         "adp": 164.0,
         "expected_points": 10,
-        "VOR": -0.1999999999999993
+        "VOR": -3.3000000000000007
     },
     {
         "player_id": "163",
@@ -1464,7 +1464,7 @@
         "team": "CAR",
         "adp": 164.0,
         "expected_points": 9,
-        "VOR": -1.1999999999999993
+        "VOR": -4.300000000000001
     },
     {
         "player_id": "162",
@@ -1473,7 +1473,7 @@
         "team": "CAR",
         "adp": 164.7,
         "expected_points": 5.7,
-        "VOR": -4.499999999999999
+        "VOR": -7.6000000000000005
     },
     {
         "player_id": "163",
@@ -1482,7 +1482,7 @@
         "team": "JAC",
         "adp": 166.7,
         "expected_points": 8.1,
-        "VOR": -2.0999999999999996
+        "VOR": -5.200000000000001
     },
     {
         "player_id": "164",
@@ -1500,7 +1500,7 @@
         "team": "ARI",
         "adp": 168.5,
         "expected_points": 6.4,
-        "VOR": -3.799999999999999
+        "VOR": -6.9
     },
     {
         "player_id": "166",
@@ -1509,7 +1509,7 @@
         "team": "GB",
         "adp": 169.0,
         "expected_points": 2.5,
-        "VOR": -9.3
+        "VOR": -12.5
     },
     {
         "player_id": "167",
@@ -1518,7 +1518,7 @@
         "team": "NYG",
         "adp": 169.0,
         "expected_points": 4,
-        "VOR": -7.800000000000001
+        "VOR": -11
     },
     {
         "player_id": "168",
@@ -1545,7 +1545,7 @@
         "team": "NYG",
         "adp": 171.5,
         "expected_points": 3.5,
-        "VOR": -8.3
+        "VOR": -11.5
     },
     {
         "player_id": "171",
@@ -1572,7 +1572,7 @@
         "team": "TB",
         "adp": 172.5,
         "expected_points": 4.8,
-        "VOR": -7.000000000000001
+        "VOR": -10.2
     },
     {
         "player_id": "174",
@@ -1581,7 +1581,7 @@
         "team": "LAC",
         "adp": 172.7,
         "expected_points": 3.1,
-        "VOR": -8.700000000000001
+        "VOR": -11.9
     },
     {
         "player_id": "175",
@@ -1617,7 +1617,7 @@
         "team": "ATL",
         "adp": 176.0,
         "expected_points": 8.5,
-        "VOR": -1.6999999999999993
+        "VOR": -4.800000000000001
     },
     {
         "player_id": "179",
@@ -1635,7 +1635,7 @@
         "team": "PHI",
         "adp": 177.0,
         "expected_points": 4.5,
-        "VOR": -5.699999999999999
+        "VOR": -8.8
     },
     {
         "player_id": "181",
@@ -1644,7 +1644,7 @@
         "team": "CHI",
         "adp": 177.7,
         "expected_points": 6,
-        "VOR": -4.199999999999999
+        "VOR": -7.300000000000001
     },
     {
         "player_id": "182",
@@ -1662,7 +1662,7 @@
         "team": "WAS",
         "adp": 178.0,
         "expected_points": 2.1,
-        "VOR": -8.1
+        "VOR": -11.200000000000001
     },
     {
         "player_id": "184",
@@ -1680,7 +1680,7 @@
         "team": "IND",
         "adp": 179.0,
         "expected_points": 5.5,
-        "VOR": -4.699999999999999
+        "VOR": -7.800000000000001
     },
     {
         "player_id": "186",
@@ -1698,7 +1698,7 @@
         "team": "SF",
         "adp": 180.3,
         "expected_points": 0.1,
-        "VOR": -11.700000000000001
+        "VOR": -14.9
     },
     {
         "player_id": "188",
@@ -1707,7 +1707,7 @@
         "team": "CHI",
         "adp": 181.7,
         "expected_points": 6,
-        "VOR": -5.800000000000001
+        "VOR": -9
     },
     {
         "player_id": "189",
@@ -1725,7 +1725,7 @@
         "team": "NO",
         "adp": 184.0,
         "expected_points": 0.3,
-        "VOR": -11.5
+        "VOR": -14.7
     },
     {
         "player_id": "191",
@@ -1743,7 +1743,7 @@
         "team": "SF",
         "adp": 187.7,
         "expected_points": 0.1,
-        "VOR": -10.1
+        "VOR": -13.200000000000001
     },
     {
         "player_id": "193",
@@ -1761,7 +1761,7 @@
         "team": "LAC",
         "adp": 189.0,
         "expected_points": 5,
-        "VOR": -5.199999999999999
+        "VOR": -8.3
     },
     {
         "player_id": "195",
@@ -1815,7 +1815,7 @@
         "team": "HOU",
         "adp": 193.0,
         "expected_points": 3.2,
-        "VOR": -8.600000000000001
+        "VOR": -11.8
     },
     {
         "player_id": "201",
@@ -1824,7 +1824,7 @@
         "team": "NE",
         "adp": 196.0,
         "expected_points": 7,
-        "VOR": -3.1999999999999993
+        "VOR": -6.300000000000001
     },
     {
         "player_id": "202",
@@ -1914,7 +1914,7 @@
         "team": "GB",
         "adp": 207.7,
         "expected_points": 0.1,
-        "VOR": -11.700000000000001
+        "VOR": -14.9
     },
     {
         "player_id": "212",
@@ -1941,7 +1941,7 @@
         "team": "KC",
         "adp": 210.0,
         "expected_points": 1.5,
-        "VOR": -10.3
+        "VOR": -13.5
     },
     {
         "player_id": "215",
@@ -1950,7 +1950,7 @@
         "team": "CHI",
         "adp": 210.3,
         "expected_points": 3,
-        "VOR": -8.8
+        "VOR": -12
     },
     {
         "player_id": "216",
