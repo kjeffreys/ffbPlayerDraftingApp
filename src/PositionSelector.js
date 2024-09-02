@@ -11,7 +11,7 @@ function PositionSelector({ onChange })
             <option value="TE">TE</option>
             <option value="WR/RB">WR/RB</option>
             <option value="K">K</option>
-            <option value="DEF">DEF</option>
+            <option value="DST">DEF</option>
         </select>
     );
 }
