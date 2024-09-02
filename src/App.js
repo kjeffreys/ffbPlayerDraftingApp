@@ -8,6 +8,7 @@ function App()
 {
   const [players, setPlayers] = useState(data);
   const [selectedPosition, setSelectedPosition] = useState('all');
+  const [currentPick, setCurrentPick] = useState(1);
 
   const filteredPlayers = players.filter(player =>
   {
@@ -19,10 +20,12 @@ function App()
   const handlePick = (pickedPlayer) =>
   {
     setPlayers(players => players.filter(player => player.name !== pickedPlayer.name));
+    setCurrentPick(currentPick + 1);
   };
 
   return (
     <div className="App">
+      <h2>Current Draft Pick: {currentPick}</h2>
       <PositionSelector onChange={setSelectedPosition} />
       <PlayerList players={filteredPlayers} onPick={handlePick} />
     </div>
