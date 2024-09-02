@@ -1,1010 +1,1982 @@
 [
     {
-        "adp": 1,
-        "name": "Justin Jefferson",
-        "team": "Vikings",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 2,
-        "name": "Ja'Marr Chase",
-        "team": "Bengals",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 3,
+        "player_id": "1",
         "name": "Christian McCaffrey",
-        "team": "49ers",
         "position": "RB",
-        "myIdealRound": 100
+        "team": "SF",
+        "adp": 1.0,
+        "expected_points": 24.5,
+        "VOR": 12.7
     },
     {
-        "adp": 4,
-        "name": "Garrett Wilson",
-        "team": "Jets",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 5,
-        "name": "Stefon Diggs",
-        "team": "Bills",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 6,
+        "player_id": "2",
         "name": "Tyreek Hill",
-        "team": "Dolphins",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "MIA",
+        "adp": 2.0,
+        "expected_points": 22,
+        "VOR": 11.8
     },
     {
-        "adp": 7,
-        "name": "Austin Ekeler",
-        "team": "Chargers",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 8,
-        "name": "Bijan Robinson",
-        "team": "Falcons",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 9,
-        "name": "Nick Chubb",
-        "team": "Browns",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 10,
-        "name": "Travis Kelce",
-        "team": "Chiefs",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 11,
-        "name": "Tony Pollard",
-        "team": "Cowboys",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 12,
-        "name": "Josh Jacobs",
-        "team": "Raiders",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 13,
-        "name": "Amon-Ra St. Brown",
-        "team": "Lions",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 14,
-        "name": "Davante Adams",
-        "team": "Raiders",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 15,
-        "name": "A.J. Brown",
-        "team": "Eagles",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 16,
+        "player_id": "3",
         "name": "CeeDee Lamb",
-        "team": "Cowboys",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "DAL",
+        "adp": 3.3,
+        "expected_points": 21,
+        "VOR": 10.8
     },
     {
-        "adp": 17,
-        "name": "Chris Olave",
-        "team": "Saints",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 18,
-        "name": "Travis Etienne Jr.",
-        "team": "Jaguars",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 19,
-        "name": "Jalen Hurts",
-        "team": "Eagles",
-        "position": "QB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 20,
-        "name": "Calvin Ridley",
-        "team": "Jaguars",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 21,
-        "name": "Tee Higgins",
-        "team": "Bengals",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 22,
-        "name": "Cooper Kupp",
-        "team": "Rams",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 23,
-        "name": "Saquon Barkley",
-        "team": "Giants",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 24,
-        "name": "Derrick Henry",
-        "team": "Titans",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 25,
-        "name": "Jaylen Waddle",
-        "team": "Dolphins",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 26,
-        "name": "DeVonta Smith",
-        "team": "Eagles",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 27,
-        "name": "Patrick Mahomes",
-        "team": "Chiefs",
-        "position": "QB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 28,
-        "name": "Josh Allen",
-        "team": "Bills",
-        "position": "QB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 29,
-        "name": "DK Metcalf",
-        "team": "Seahawks",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 30,
-        "name": "Amari Cooper",
-        "team": "Browns",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 31,
-        "name": "Rhamondre Stevenson",
-        "team": "Patriots",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 32,
-        "name": "Jahmyr Gibbs",
-        "team": "Lions",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 33,
-        "name": "Dameon Pierce",
-        "team": "Texans",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 34,
-        "name": "Mark Andrews",
-        "team": "Ravens",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 35,
-        "name": "Deebo Samuel",
-        "team": "49ers",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 36,
-        "name": "Kenneth Walker III",
-        "team": "Seahawks",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 37,
-        "name": "Joe Mixon",
-        "team": "Bengals",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 38,
-        "name": "Aaron Jones",
-        "team": "Packers",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 39,
-        "name": "Najee Harris",
-        "team": "Steelers",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 40,
-        "name": "D.J. Moore",
-        "team": "Bears",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 41,
-        "name": "Justin Fields",
-        "team": "Bears",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 42,
-        "name": "Joe Burrow",
-        "team": "Bengals",
-        "position": "QB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 43,
-        "name": "Lamar Jackson",
-        "team": "Ravens",
-        "position": "QB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 44,
+        "player_id": "4",
         "name": "Breece Hall",
-        "team": "Jets",
         "position": "RB",
-        "myIdealRound": 100
+        "team": "NYJ",
+        "adp": 5.0,
+        "expected_points": 21.5,
+        "VOR": 9.7
     },
     {
-        "adp": 45,
-        "name": "James Cook",
-        "team": "Bills",
+        "player_id": "5",
+        "name": "Bijan Robinson",
         "position": "RB",
-        "myIdealRound": 100
+        "team": "ATL",
+        "adp": 5.3,
+        "expected_points": 21.5,
+        "VOR": 9.7
     },
     {
-        "adp": 46,
-        "name": "Tyler Lockett",
-        "team": "Seahawks",
+        "player_id": "6",
+        "name": "Justin Jefferson",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "MIN",
+        "adp": 5.7,
+        "expected_points": 16.1,
+        "VOR": 5.900000000000002
     },
     {
-        "adp": 47,
-        "name": "Keenan Allen",
-        "team": "Chargers",
+        "player_id": "7",
+        "name": "Ja'Marr Chase",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "CIN",
+        "adp": 6.3,
+        "expected_points": 21,
+        "VOR": 10.8
     },
     {
-        "adp": 48,
-        "name": "Diontae Johnson",
-        "team": "Steelers",
+        "player_id": "8",
+        "name": "Amon-Ra St. Brown",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "DET",
+        "adp": 7.3,
+        "expected_points": 17.5,
+        "VOR": 7.300000000000001
     },
     {
-        "adp": 49,
-        "name": "Brandon Aiyuk",
-        "team": "49ers",
+        "player_id": "9",
+        "name": "A.J. Brown",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "PHI",
+        "adp": 10.0,
+        "expected_points": 17.5,
+        "VOR": 7.300000000000001
     },
     {
-        "adp": 50,
-        "name": "Alexander Mattison",
-        "team": "Vikings",
+        "player_id": "10",
+        "name": "Jonathan Taylor",
         "position": "RB",
-        "myIdealRound": 100
+        "team": "IND",
+        "adp": 10.0,
+        "expected_points": 15.5,
+        "VOR": 3.6999999999999993
     },
     {
-        "adp": 51,
-        "name": "Christian Watson",
-        "team": "Packers",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 52,
-        "name": "Javonte Williams",
-        "team": "Broncos",
+        "player_id": "11",
+        "name": "Saquon Barkley",
         "position": "RB",
-        "myIdealRound": 100
+        "team": "PHI",
+        "adp": 11.0,
+        "expected_points": 17,
+        "VOR": 5.199999999999999
     },
     {
-        "adp": 53,
-        "name": "J.K. Dobbins",
-        "team": "Ravens",
+        "player_id": "12",
+        "name": "Garrett Wilson",
+        "position": "WR",
+        "team": "NYJ",
+        "adp": 12.0,
+        "expected_points": 20,
+        "VOR": 9.8
+    },
+    {
+        "player_id": "13",
+        "name": "Jahmyr Gibbs",
         "position": "RB",
-        "myIdealRound": 100
+        "team": "DET",
+        "adp": 12.3,
+        "expected_points": 19,
+        "VOR": 7.199999999999999
     },
     {
-        "adp": 54,
-        "name": "Miles Sanders",
-        "team": "Panthers",
+        "player_id": "14",
+        "name": "Puka Nacua",
+        "position": "WR",
+        "team": "LAR",
+        "adp": 14.7,
+        "expected_points": 18,
+        "VOR": 7.800000000000001
+    },
+    {
+        "player_id": "15",
+        "name": "Marvin Harrison Jr.",
+        "position": "WR",
+        "team": "ARI",
+        "adp": 16.0,
+        "expected_points": 14.5,
+        "VOR": 4.300000000000001
+    },
+    {
+        "player_id": "16",
+        "name": "Kyren Williams",
         "position": "RB",
-        "myIdealRound": 100
+        "team": "LAR",
+        "adp": 16.3,
+        "expected_points": 18.5,
+        "VOR": 6.699999999999999
     },
     {
-        "adp": 55,
-        "name": "Drake London",
-        "team": "Falcons",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 56,
-        "name": "Terry McLaurin",
-        "team": "Commanders",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 57,
-        "name": "T.J. Hockenson",
-        "team": "Vikings",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 58,
-        "name": "Dallas Goedert",
-        "team": "Eagles",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 59,
-        "name": "Darren Waller",
-        "team": "Giants",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 60,
-        "name": "George Kittle",
-        "team": "49ers",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 61,
-        "name": "Mike Williams",
-        "team": "Chargers",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 62,
-        "name": "DeAndre Hopkins",
-        "team": "Titans",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 63,
-        "name": "Jahan Dotson",
-        "team": "Commanders",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 64,
-        "name": "Marquise Brown",
-        "team": "Cardinals",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 65,
-        "name": "Dalvin Cook",
-        "team": "Jets",
+        "player_id": "17",
+        "name": "Derrick Henry",
         "position": "RB",
-        "myIdealRound": 100
+        "team": "BAL",
+        "adp": 17.0,
+        "expected_points": 16.5,
+        "VOR": 4.699999999999999
     },
     {
-        "adp": 66,
+        "player_id": "18",
+        "name": "Travis Etienne Jr.",
+        "position": "RB",
+        "team": "JAC",
+        "adp": 17.0,
+        "expected_points": 18.8,
+        "VOR": 7.0
+    },
+    {
+        "player_id": "19",
+        "name": "Davante Adams",
+        "position": "WR",
+        "team": "LV",
+        "adp": 19.3,
+        "expected_points": 15.5,
+        "VOR": 5.300000000000001
+    },
+    {
+        "player_id": "20",
         "name": "Isiah Pacheco",
-        "team": "Chiefs",
         "position": "RB",
-        "myIdealRound": 100
+        "team": "KC",
+        "adp": 22.0,
+        "expected_points": 16.5,
+        "VOR": 4.699999999999999
     },
     {
-        "adp": 67,
-        "name": "George Pickens",
-        "team": "Steelers",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 68,
-        "name": "Kyle Pitts",
-        "team": "Falcons",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 69,
-        "name": "Michael Pittman Jr.",
-        "team": "Colts",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 70,
-        "name": "Trevor Lawrence",
-        "team": "Jaguars",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 71,
-        "name": "Jonathon Taylor",
-        "team": "Colts",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 72,
-        "name": "Christian Kirk",
-        "team": "Jaguars",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 73,
-        "name": "Justin Herbert",
-        "team": "Chargers",
-        "position": "QB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 74,
-        "name": "Cam Akers",
-        "team": "Rams",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 75,
-        "name": "James Conner",
-        "team": "Cardinals",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 76,
-        "name": "Khalil Herbert",
-        "team": "Bears",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 77,
-        "name": "David Montgomery",
-        "team": "Lions",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 78,
-        "name": "D'Andre Swift",
-        "team": "Eagles",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 79,
-        "name": "Jordan Addison",
-        "team": "Vikings",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 80,
-        "name": "Pat Freiermuth",
-        "team": "Steelers",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 81,
-        "name": "Antonio Gibson",
-        "team": "Commanders",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 82,
-        "name": "Evan Engram",
-        "team": "Jaguars",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 83,
-        "name": "Alvin Kamara",
-        "team": "Saints",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 84,
-        "name": "Zach Charbonnet",
-        "team": "Seahawks",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 85,
-        "name": "Jaxon Smith-Njigba",
-        "team": "Seahawks",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 86,
-        "name": "Gabe Davis",
-        "team": "Bills",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 87,
-        "name": "Jamaal Williams",
-        "team": "Saints",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 88,
-        "name": "Samaje Perrine",
-        "team": "Broncos",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 89,
-        "name": "Elijah Moore",
-        "team": "Browns",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 90,
-        "name": "Raheem Mostert",
-        "team": "Dolphins",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 91,
-        "name": "Nico Collins",
-        "team": "Texans",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 92,
-        "name": "Jaylen Warren",
-        "team": "Steelers",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 93,
-        "name": "Rashod Bateman",
-        "team": "Ravens",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 94,
-        "name": "Elijah Mitchell",
-        "team": "49ers",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 95,
-        "name": "Skyy Moore",
-        "team": "Chiefs",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 96,
-        "name": "Dalton Kincaid",
-        "team": "Bills",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 97,
-        "name": "Rashaad Penny",
-        "team": "Seahawks",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 111,
-        "name": "Brandin Cooks",
-        "team": "Cowboys",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 112,
-        "name": "Courtland Sutton",
-        "team": "Broncos",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 100,
-        "name": "David Njoku",
-        "team": "Browns",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 101,
-        "name": "Jerick McKinnon",
-        "team": "Chiefs",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 102,
-        "name": "Aaron Rodgers",
-        "team": "Packers",
-        "position": "QB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 103,
-        "name": "Zay Flowers",
-        "team": "Ravens",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 104,
-        "name": "Adam Thielen",
-        "team": "Panthers",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 105,
-        "name": "Damien Harris",
-        "team": "Bills",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 106,
-        "name": "Tyler Higbee",
-        "team": "Rams",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 107,
-        "name": "Michael Thomas",
-        "team": "Saints",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 108,
+        "player_id": "21",
         "name": "De'Von Achane",
-        "team": "Dolphins",
         "position": "RB",
-        "myIdealRound": 100
+        "team": "MIA",
+        "adp": 22.0,
+        "expected_points": 19.5,
+        "VOR": 7.699999999999999
     },
     {
-        "adp": 109,
-        "name": "Tank Bigsby",
-        "team": "Jaguars",
-        "position": "RB",
-        "myIdealRound": 100
+        "player_id": "22",
+        "name": "Drake London",
+        "position": "WR",
+        "team": "ATL",
+        "adp": 22.7,
+        "expected_points": 15.5,
+        "VOR": 5.300000000000001
     },
     {
-        "adp": 110,
-        "name": "Cole Kmet",
-        "team": "Bears",
+        "player_id": "23",
+        "name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "adp": 22.7,
+        "expected_points": 26.5,
+        "VOR": 7.300000000000001
+    },
+    {
+        "player_id": "24",
+        "name": "Chris Olave",
+        "position": "WR",
+        "team": "NO",
+        "adp": 25.0,
+        "expected_points": 14.25,
+        "VOR": 4.050000000000001
+    },
+    {
+        "player_id": "25",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "team": "GB",
+        "adp": 25.3,
+        "expected_points": 15,
+        "VOR": 3.1999999999999993
+    },
+    {
+        "player_id": "26",
+        "name": "Travis Kelce",
         "position": "TE",
-        "myIdealRound": 100
+        "team": "KC",
+        "adp": 27.0,
+        "expected_points": 14,
+        "VOR": 3
     },
     {
-        "adp": 98,
-        "name": "Kadarius Toney",
-        "team": "Chiefs",
+        "player_id": "27",
+        "name": "Deebo Samuel",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "SF",
+        "adp": 27.0,
+        "expected_points": 17.5,
+        "VOR": 7.300000000000001
     },
     {
-        "adp": 99,
-        "name": "Quentin Johnston",
-        "team": "Chargers",
+        "player_id": "28",
+        "name": "Sam LaPorta",
+        "position": "TE",
+        "team": "DET",
+        "adp": 30.3,
+        "expected_points": 14.6,
+        "VOR": 3.5999999999999996
+    },
+    {
+        "player_id": "29",
+        "name": "Nico Collins",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "HOU",
+        "adp": 31.0,
+        "expected_points": 16.2,
+        "VOR": 6.0
     },
     {
-        "adp": 113,
-        "name": "Roschon Johnson",
-        "team": "Bears",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 114,
-        "name": "San Francisco",
-        "team": "49ers",
-        "position": "DEF",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 115,
-        "name": "Dallas",
-        "team": "Cowboys",
-        "position": "DEF",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 116,
-        "name": "New England",
-        "team": "Patriots",
-        "position": "DEF",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 117,
-        "name": "New Orleans",
-        "team": "Saints",
-        "position": "DEF",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 118,
-        "name": "Tyler Boyd",
-        "team": "Bengals",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 119,
-        "name": "AJ Dillon",
-        "team": "Packers",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 120,
-        "name": "Jerry Jeudy",
-        "team": "Broncos",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 121,
-        "name": "Brian Robinson",
-        "team": "Commanders",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 122,
-        "name": "Geno Smith",
-        "team": "Seahawks",
+        "player_id": "30",
+        "name": "Patrick Mahomes",
         "position": "QB",
-        "myIdealRound": 100
+        "team": "KC",
+        "adp": 31.3,
+        "expected_points": 23.5,
+        "VOR": 4.300000000000001
     },
     {
-        "adp": 123,
-        "name": "Dak Prescott",
-        "team": "Cowboys",
+        "player_id": "31",
+        "name": "Jalen Hurts",
         "position": "QB",
-        "myIdealRound": 100
+        "team": "PHI",
+        "adp": 31.7,
+        "expected_points": 24,
+        "VOR": 4.800000000000001
     },
     {
-        "adp": 124,
-        "name": "Daniel Jones",
-        "team": "Giants",
-        "position": "QB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 125,
-        "name": "Deshaun Watson",
-        "team": "Browns",
-        "position": "QB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 126,
-        "name": "Tua Tagovailoa",
-        "team": "Dolphins",
-        "position": "QB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 127,
-        "name": "Anthony Richardson",
-        "team": "Colts",
-        "position": "QB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 128,
-        "name": "Treylon Burks",
-        "team": "Titans",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 129,
-        "name": "Juju Smith-Schuster",
-        "team": "Patriots",
-        "position": "WR",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 130,
-        "name": "Rachaad White",
-        "team": "Buccaneers",
-        "position": "RB",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 131,
+        "player_id": "32",
         "name": "Mike Evans",
-        "team": "Buccaneers",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "TB",
+        "adp": 31.7,
+        "expected_points": 17.5,
+        "VOR": 7.300000000000001
     },
     {
-        "adp": 133,
-        "name": "Ezekiel Elliot",
-        "team": "Patriots",
+        "player_id": "33",
+        "name": "Brandon Aiyuk",
+        "position": "WR",
+        "team": "SF",
+        "adp": 34.7,
+        "expected_points": 15.5,
+        "VOR": 5.300000000000001
+    },
+    {
+        "player_id": "34",
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "team": "LAR",
+        "adp": 34.7,
+        "expected_points": 16.7,
+        "VOR": 6.5
+    },
+    {
+        "player_id": "35",
+        "name": "Rachaad White",
         "position": "RB",
-        "myIdealRound": 100
+        "team": "TB",
+        "adp": 35.3,
+        "expected_points": 16.5,
+        "VOR": 4.699999999999999
     },
     {
-        "adp": 134,
-        "name": "Tyler Allgeier",
-        "team": "Falcons",
+        "player_id": "36",
+        "name": "James Cook",
         "position": "RB",
-        "myIdealRound": 100
+        "team": "BUF",
+        "adp": 36.7,
+        "expected_points": 17,
+        "VOR": 5.199999999999999
     },
     {
-        "adp": 135,
-        "name": "Kirk Cousins",
-        "team": "Vikings",
+        "player_id": "37",
+        "name": "Michael Pittman Jr.",
+        "position": "WR",
+        "team": "IND",
+        "adp": 38.0,
+        "expected_points": 14,
+        "VOR": 3.8000000000000007
+    },
+    {
+        "player_id": "38",
+        "name": "Lamar Jackson",
         "position": "QB",
-        "myIdealRound": 100
+        "team": "BAL",
+        "adp": 38.0,
+        "expected_points": 23.5,
+        "VOR": 4.300000000000001
     },
     {
-        "adp": 136,
-        "name": "Jakobi Meyers",
-        "team": "Raiders",
+        "player_id": "39",
+        "name": "Jaylen Waddle",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "MIA",
+        "adp": 38.7,
+        "expected_points": 12.5,
+        "VOR": 2.3000000000000007
     },
     {
-        "adp": 137,
-        "name": "Allen Lazard",
-        "team": "Jets",
+        "player_id": "40",
+        "name": "DK Metcalf",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "SEA",
+        "adp": 38.7,
+        "expected_points": 14,
+        "VOR": 3.8000000000000007
     },
     {
-        "adp": 138,
-        "name": "Michael Gallup",
-        "team": "Cowboys",
+        "player_id": "41",
+        "name": "DJ Moore",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "CHI",
+        "adp": 38.7,
+        "expected_points": 16,
+        "VOR": 5.800000000000001
     },
     {
-        "adp": 139,
-        "name": "Dalton Schultz",
-        "team": "Texans",
+        "player_id": "42",
+        "name": "Joe Mixon",
+        "position": "RB",
+        "team": "HOU",
+        "adp": 39.3,
+        "expected_points": 15.5,
+        "VOR": 3.6999999999999993
+    },
+    {
+        "player_id": "43",
+        "name": "Stefon Diggs",
+        "position": "WR",
+        "team": "HOU",
+        "adp": 40.3,
+        "expected_points": 15,
+        "VOR": 4.800000000000001
+    },
+    {
+        "player_id": "44",
+        "name": "Kenneth Walker III",
+        "position": "RB",
+        "team": "SEA",
+        "adp": 42.3,
+        "expected_points": 16.5,
+        "VOR": 4.699999999999999
+    },
+    {
+        "player_id": "45",
+        "name": "Alvin Kamara",
+        "position": "RB",
+        "team": "NO",
+        "adp": 45.7,
+        "expected_points": 16,
+        "VOR": 4.199999999999999
+    },
+    {
+        "player_id": "46",
+        "name": "DeVonta Smith",
+        "position": "WR",
+        "team": "PHI",
+        "adp": 47.0,
+        "expected_points": 13.3,
+        "VOR": 3.1000000000000014
+    },
+    {
+        "player_id": "47",
+        "name": "C.J. Stroud",
+        "position": "QB",
+        "team": "HOU",
+        "adp": 47.3,
+        "expected_points": 21.3,
+        "VOR": 2.1000000000000014
+    },
+    {
+        "player_id": "48",
+        "name": "Trey McBride",
         "position": "TE",
-        "myIdealRound": 100
+        "team": "ARI",
+        "adp": 47.7,
+        "expected_points": 13.8,
+        "VOR": 2.8000000000000007
     },
     {
-        "adp": 140,
+        "player_id": "49",
+        "name": "Malik Nabers",
+        "position": "WR",
+        "team": "NYG",
+        "adp": 48.3,
+        "expected_points": 14.5,
+        "VOR": 4.300000000000001
+    },
+    {
+        "player_id": "50",
+        "name": "Mark Andrews",
+        "position": "TE",
+        "team": "BAL",
+        "adp": 49.3,
+        "expected_points": 11.5,
+        "VOR": 0.5
+    },
+    {
+        "player_id": "51",
+        "name": "Anthony Richardson",
+        "position": "QB",
+        "team": "IND",
+        "adp": 50.0,
+        "expected_points": 20,
+        "VOR": 0.8000000000000007
+    },
+    {
+        "player_id": "52",
+        "name": "Dalton Kincaid",
+        "position": "TE",
+        "team": "BUF",
+        "adp": 52.3,
+        "expected_points": 12.3,
+        "VOR": 1.3000000000000007
+    },
+    {
+        "player_id": "53",
+        "name": "Aaron Jones",
+        "position": "RB",
+        "team": "MIN",
+        "adp": 55.0,
+        "expected_points": 12.5,
+        "VOR": 0.6999999999999993
+    },
+    {
+        "player_id": "54",
+        "name": "Amari Cooper",
+        "position": "WR",
+        "team": "CLE",
+        "adp": 55.3,
+        "expected_points": 15.7,
+        "VOR": 5.5
+    },
+    {
+        "player_id": "55",
+        "name": "James Conner",
+        "position": "RB",
+        "team": "ARI",
+        "adp": 58.0,
+        "expected_points": 15.8,
+        "VOR": 4.0
+    },
+    {
+        "player_id": "56",
+        "name": "Rhamondre Stevenson",
+        "position": "RB",
+        "team": "NE",
+        "adp": 60.0,
+        "expected_points": 12.7,
+        "VOR": 0.8999999999999986
+    },
+    {
+        "player_id": "57",
+        "name": "David Montgomery",
+        "position": "RB",
+        "team": "DET",
+        "adp": 61.0,
+        "expected_points": 15,
+        "VOR": 3.1999999999999993
+    },
+    {
+        "player_id": "58",
+        "name": "Tee Higgins",
+        "position": "WR",
+        "team": "CIN",
+        "adp": 60.3,
+        "expected_points": 13.8,
+        "VOR": 3.6000000000000014
+    },
+    {
+        "player_id": "59",
+        "name": "George Kittle",
+        "position": "TE",
+        "team": "SF",
+        "adp": 60.7,
+        "expected_points": 13.5,
+        "VOR": 2.5
+    },
+    {
+        "player_id": "60",
+        "name": "George Pickens",
+        "position": "WR",
+        "team": "PIT",
+        "adp": 61.0,
+        "expected_points": 15,
+        "VOR": 4.800000000000001
+    },
+    {
+        "player_id": "61",
+        "name": "Joe Burrow",
+        "position": "QB",
+        "team": "CIN",
+        "adp": 62.0,
+        "expected_points": 19,
+        "VOR": -0.1999999999999993
+    },
+    {
+        "player_id": "62",
+        "name": "D'Andre Swift",
+        "position": "RB",
+        "team": "DET",
+        "adp": 62.7,
+        "expected_points": 15,
+        "VOR": 3.1999999999999993
+    },
+    {
+        "player_id": "63",
+        "name": "Zay Flowers",
+        "position": "WR",
+        "team": "BAL",
+        "adp": 63.0,
+        "expected_points": 12.2,
+        "VOR": 2.0
+    },
+    {
+        "player_id": "64",
+        "name": "Kyler Murray",
+        "position": "QB",
+        "team": "ARI",
+        "adp": 63.7,
+        "expected_points": 18.2,
+        "VOR": -1.0
+    },
+    {
+        "player_id": "65",
+        "name": "Tank Dell",
+        "position": "WR",
+        "team": "HOU",
+        "adp": 64.3,
+        "expected_points": 14.3,
+        "VOR": 4.100000000000001
+    },
+    {
+        "player_id": "66",
+        "name": "Kyle Pitts",
+        "position": "TE",
+        "team": "ATL",
+        "adp": 65.0,
+        "expected_points": 16,
+        "VOR": 5
+    },
+    {
+        "player_id": "67",
+        "name": "Najee Harris",
+        "position": "RB",
+        "team": "PIT",
+        "adp": 66.3,
+        "expected_points": 12.5,
+        "VOR": 0.6999999999999993
+    },
+    {
+        "player_id": "68",
+        "name": "Zamir White",
+        "position": "RB",
+        "team": "LV",
+        "adp": 68.3,
+        "expected_points": 12.5,
+        "VOR": 0.6999999999999993
+    },
+    {
+        "player_id": "69",
+        "name": "Terry McLaurin",
+        "position": "WR",
+        "team": "WAS",
+        "adp": 69.0,
+        "expected_points": 12.5,
+        "VOR": 2.3000000000000007
+    },
+    {
+        "player_id": "70",
+        "name": "Evan Engram",
+        "position": "TE",
+        "team": "JAC",
+        "adp": 70.7,
+        "expected_points": 12,
+        "VOR": 1
+    },
+    {
+        "player_id": "71",
+        "name": "Raheem Mostert",
+        "position": "RB",
+        "team": "MIA",
+        "adp": 71.7,
+        "expected_points": 16.5,
+        "VOR": 4.699999999999999
+    },
+    {
+        "player_id": "72",
+        "name": "Christian Kirk",
+        "position": "WR",
+        "team": "JAC",
+        "adp": 72.7,
+        "expected_points": 12,
+        "VOR": 1.8000000000000007
+    },
+    {
+        "player_id": "73",
+        "name": "Jordan Love",
+        "position": "QB",
+        "team": "GB",
+        "adp": 73.0,
+        "expected_points": 20.5,
+        "VOR": 1.3000000000000007
+    },
+    {
+        "player_id": "74",
+        "name": "Dak Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "adp": 73.3,
+        "expected_points": 24.3,
+        "VOR": 5.100000000000001
+    },
+    {
+        "player_id": "75",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "CHI",
+        "adp": 73.3,
+        "expected_points": 14.2,
+        "VOR": 4.0
+    },
+    {
+        "player_id": "76",
+        "name": "Rashee Rice",
+        "position": "WR",
+        "team": "KC",
+        "adp": 81.3,
+        "expected_points": 15.2,
+        "VOR": 5.0
+    },
+    {
+        "player_id": "77",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "adp": 79.3,
+        "expected_points": 12.3,
+        "VOR": 2.1000000000000014
+    },
+    {
+        "player_id": "78",
+        "name": "Tony Pollard",
+        "position": "RB",
+        "team": "TEN",
+        "adp": 82.3,
+        "expected_points": 12.2,
+        "VOR": 0.3999999999999986
+    },
+    {
+        "player_id": "79",
+        "name": "Calvin Ridley",
+        "position": "WR",
+        "team": "TEN",
+        "adp": 82.3,
+        "expected_points": 13.5,
+        "VOR": 3.3000000000000007
+    },
+    {
+        "player_id": "80",
         "name": "Jake Ferguson",
-        "team": "Cowboys",
         "position": "TE",
-        "myIdealRound": 100
+        "team": "DAL",
+        "adp": 83.7,
+        "expected_points": 10.5,
+        "VOR": -0.5
     },
     {
-        "adp": 141,
-        "name": "Juwan Johnson",
-        "team": "Saints",
-        "position": "TE",
-        "myIdealRound": 100
-    },
-    {
-        "adp": 142,
-        "name": "Darnell Mooney",
-        "team": "Bears",
+        "player_id": "81",
+        "name": "Jayden Reed",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "GB",
+        "adp": 84.0,
+        "expected_points": 11.5,
+        "VOR": 1.3000000000000007
     },
     {
-        "adp": 132,
+        "player_id": "82",
+        "name": "Javonte Williams",
+        "position": "RB",
+        "team": "DEN",
+        "adp": 84.7,
+        "expected_points": 13.2,
+        "VOR": 1.3999999999999986
+    },
+    {
+        "player_id": "83",
+        "name": "Devin Singletary",
+        "position": "RB",
+        "team": "NYG",
+        "adp": 88.7,
+        "expected_points": 11.8,
+        "VOR": 0.0
+    },
+    {
+        "player_id": "84",
+        "name": "Zack Moss",
+        "position": "RB",
+        "team": "CIN",
+        "adp": 89.3,
+        "expected_points": 15.5,
+        "VOR": 3.6999999999999993
+    },
+    {
+        "player_id": "85",
+        "name": "Diontae Johnson",
+        "position": "WR",
+        "team": "CAR",
+        "adp": 89.3,
+        "expected_points": 13,
+        "VOR": 2.8000000000000007
+    },
+    {
+        "player_id": "86",
+        "name": "Jaylen Warren",
+        "position": "RB",
+        "team": "PIT",
+        "adp": 90.3,
+        "expected_points": 10.7,
+        "VOR": -1.1000000000000014
+    },
+    {
+        "player_id": "87",
+        "name": "David Njoku",
+        "position": "TE",
+        "team": "CLE",
+        "adp": 90.7,
+        "expected_points": 11.5,
+        "VOR": 0.5
+    },
+    {
+        "player_id": "88",
+        "name": "Xavier Worthy",
+        "position": "WR",
+        "team": "KC",
+        "adp": 92.3,
+        "expected_points": 12.2,
+        "VOR": 2.0
+    },
+    {
+        "player_id": "89",
+        "name": "Brian Robinson Jr.",
+        "position": "RB",
+        "team": "WAS",
+        "adp": 93.0,
+        "expected_points": 11,
+        "VOR": -0.8000000000000007
+    },
+    {
+        "player_id": "90",
+        "name": "Brock Purdy",
+        "position": "QB",
+        "team": "SF",
+        "adp": 93.3,
+        "expected_points": 17,
+        "VOR": -2.1999999999999993
+    },
+    {
+        "player_id": "91",
+        "name": "Rome Odunze",
+        "position": "WR",
+        "team": "CHI",
+        "adp": 94.0,
+        "expected_points": 9.3,
+        "VOR": -0.8999999999999986
+    },
+    {
+        "player_id": "92",
+        "name": "Nick Chubb",
+        "position": "RB",
+        "team": "CLE",
+        "adp": 94.0,
+        "expected_points": 10,
+        "VOR": -1.8000000000000007
+    },
+    {
+        "player_id": "93",
+        "name": "Austin Ekeler",
+        "position": "RB",
+        "team": "WAS",
+        "adp": 96.3,
+        "expected_points": 9,
+        "VOR": -2.8000000000000007
+    },
+    {
+        "player_id": "94",
+        "name": "IR Jonathon Brooks IR",
+        "position": "RB",
+        "team": "CAR",
+        "adp": 97.0,
+        "expected_points": 8.9,
+        "VOR": -2.9000000000000004
+    },
+    {
+        "player_id": "95",
+        "name": "Brock Bowers",
+        "position": "TE",
+        "team": "SF",
+        "adp": 98.0,
+        "expected_points": 8.5,
+        "VOR": -2.5
+    },
+    {
+        "player_id": "96",
+        "name": "Jayden Daniels",
+        "position": "QB",
+        "team": "WAS",
+        "adp": 100.0,
+        "expected_points": 18.5,
+        "VOR": -0.6999999999999993
+    },
+    {
+        "player_id": "97",
+        "name": "Caleb Williams",
+        "position": "QB",
+        "team": "CHI",
+        "adp": 100.3,
+        "expected_points": 17.5,
+        "VOR": -1.6999999999999993
+    },
+    {
+        "player_id": "98",
+        "name": "IR Hollywood Brown IR",
+        "position": "WR",
+        "team": "KC",
+        "adp": 100.7,
+        "expected_points": 9.3,
+        "VOR": -0.8999999999999986
+    },
+    {
+        "player_id": "99",
+        "name": "Tyjae Spears",
+        "position": "RB",
+        "team": "TEN",
+        "adp": 102.7,
+        "expected_points": 8.9,
+        "VOR": -2.9000000000000004
+    },
+    {
+        "player_id": "100",
+        "name": "Christian Watson",
+        "position": "WR",
+        "team": "GB",
+        "adp": 103.3,
+        "expected_points": 10.2,
+        "VOR": 0.0
+    },
+    {
+        "player_id": "101",
+        "name": "DeAndre Hopkins",
+        "position": "WR",
+        "team": "TEN",
+        "adp": 103.7,
+        "expected_points": 9,
+        "VOR": -1.1999999999999993
+    },
+    {
+        "player_id": "102",
+        "name": "Jordan Addison",
+        "position": "WR",
+        "team": "MIN",
+        "adp": 104.0,
+        "expected_points": 9.1,
+        "VOR": -1.0999999999999996
+    },
+    {
+        "player_id": "103",
+        "name": "Tua Tagovailoa",
+        "position": "QB",
+        "team": "MIA",
+        "adp": 104.7,
+        "expected_points": 18.4,
+        "VOR": -0.8000000000000007
+    },
+    {
+        "player_id": "104",
+        "name": "Jared Goff",
+        "position": "QB",
+        "team": "DET",
+        "adp": 105.7,
+        "expected_points": 18.4,
+        "VOR": -0.8000000000000007
+    },
+    {
+        "player_id": "105",
+        "name": "Jaxon Smith-Njigba",
+        "position": "WR",
+        "team": "SEA",
+        "adp": 107.0,
+        "expected_points": 9.3,
+        "VOR": -0.8999999999999986
+    },
+    {
+        "player_id": "106",
+        "name": "Ladd McConkey",
+        "position": "WR",
+        "team": "LAC",
+        "adp": 108.7,
+        "expected_points": 9,
+        "VOR": -1.1999999999999993
+    },
+    {
+        "player_id": "107",
+        "name": "Chase Brown",
+        "position": "RB",
+        "team": "CIN",
+        "adp": 110.3,
+        "expected_points": 9.3,
+        "VOR": -2.5
+    },
+    {
+        "player_id": "108",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "adp": 111.3,
+        "expected_points": 8.2,
+        "VOR": -3.6000000000000014
+    },
+    {
+        "player_id": "109",
+        "name": "Dallas Goedert",
+        "position": "TE",
+        "team": "PHI",
+        "adp": 112.7,
+        "expected_points": 11,
+        "VOR": 0
+    },
+    {
+        "player_id": "110",
+        "name": "Trey Benson",
+        "position": "RB",
+        "team": "ARI",
+        "adp": 114.0,
+        "expected_points": 6.5,
+        "VOR": -5.300000000000001
+    },
+    {
+        "player_id": "111",
+        "name": "Gus Edwards",
+        "position": "RB",
+        "team": "LAC",
+        "adp": 114.7,
+        "expected_points": 9,
+        "VOR": -2.8000000000000007
+    },
+    {
+        "player_id": "112",
+        "name": "Courtland Sutton",
+        "position": "WR",
+        "team": "DEN",
+        "adp": 115.0,
+        "expected_points": 9.7,
+        "VOR": -0.5
+    },
+    {
+        "player_id": "113",
+        "name": "Jerome Ford",
+        "position": "RB",
+        "team": "CLE",
+        "adp": 115.7,
+        "expected_points": 13,
+        "VOR": 1.1999999999999993
+    },
+    {
+        "player_id": "114",
+        "name": "Brandon Aubrey",
+        "position": "K",
+        "team": "DAL",
+        "adp": 116.0,
+        "expected_points": 9,
+        "VOR": 1.5
+    },
+    {
+        "player_id": "115",
+        "name": "Keon Coleman",
+        "position": "WR",
+        "team": "BUF",
+        "adp": 116.3,
+        "expected_points": 8.2,
+        "VOR": -2.0
+    },
+    {
+        "player_id": "116",
+        "name": "Justin Tucker",
+        "position": "K",
+        "team": "BAL",
+        "adp": 117.3,
+        "expected_points": 8,
+        "VOR": 0.5
+    },
+    {
+        "player_id": "117",
+        "name": "Brian Thomas Jr.",
+        "position": "WR",
+        "team": "JAC",
+        "adp": 118.7,
+        "expected_points": 10.8,
+        "VOR": 0.6000000000000014
+    },
+    {
+        "player_id": "118",
+        "name": "Jameson Williams",
+        "position": "WR",
+        "team": "DET",
+        "adp": 119.7,
+        "expected_points": 8.5,
+        "VOR": -1.6999999999999993
+    },
+    {
+        "player_id": "119",
+        "name": "Blake Corum",
+        "position": "RB",
+        "team": "LAR",
+        "adp": 123.3,
+        "expected_points": 6.5,
+        "VOR": -5.300000000000001
+    },
+    {
+        "player_id": "120",
+        "name": "Trevor Lawrence",
+        "position": "QB",
+        "team": "JAC",
+        "adp": 125.0,
+        "expected_points": 19.2,
+        "VOR": 0.0
+    },
+    {
+        "player_id": "121",
+        "name": "Harrison Butker",
+        "position": "K",
+        "team": "KC",
+        "adp": 125.3,
+        "expected_points": 11.5,
+        "VOR": 4.0
+    },
+    {
+        "player_id": "122",
+        "name": "Dalton Schultz",
+        "position": "TE",
+        "team": "HOU",
+        "adp": 127.3,
+        "expected_points": 6.1,
+        "VOR": -4.9
+    },
+    {
+        "player_id": "123",
+        "name": "San Francisco 49ers DST",
+        "position": "DST",
+        "team": "SF",
+        "adp": 129.3,
+        "expected_points": 9.5,
+        "VOR": 2.5999999999999996
+    },
+    {
+        "player_id": "124",
+        "name": "Justin Herbert",
+        "position": "QB",
+        "team": "LAC",
+        "adp": 130.3,
+        "expected_points": 18,
+        "VOR": -1.1999999999999993
+    },
+    {
+        "player_id": "125",
+        "name": "IR T.J. Hockenson IR",
+        "position": "TE",
+        "team": "MIN",
+        "adp": 132.3,
+        "expected_points": 8,
+        "VOR": -3
+    },
+    {
+        "player_id": "126",
+        "name": "New York Jets DST",
+        "position": "DST",
+        "team": "NYJ",
+        "adp": 134.0,
+        "expected_points": 10,
+        "VOR": 3.0999999999999996
+    },
+    {
+        "player_id": "127",
+        "name": "Khalil Shakir",
+        "position": "WR",
+        "team": "BUF",
+        "adp": 135.0,
+        "expected_points": 9,
+        "VOR": -1.1999999999999993
+    },
+    {
+        "player_id": "128",
+        "name": "Curtis Samuel",
+        "position": "WR",
+        "team": "WAS",
+        "adp": 136.3,
+        "expected_points": 8,
+        "VOR": -2.1999999999999993
+    },
+    {
+        "player_id": "129",
+        "name": "Pat Freiermuth",
+        "position": "TE",
+        "team": "PIT",
+        "adp": 136.7,
+        "expected_points": 7,
+        "VOR": -4
+    },
+    {
+        "player_id": "130",
+        "name": "Baltimore Ravens DST",
+        "position": "DST",
+        "team": "BAL",
+        "adp": 151.0,
+        "expected_points": 9.7,
+        "VOR": 2.799999999999999
+    },
+    {
+        "player_id": "131",
+        "name": "Rico Dowdle",
+        "position": "RB",
+        "team": "DAL",
+        "adp": 139.3,
+        "expected_points": 7,
+        "VOR": -4.800000000000001
+    },
+    {
+        "player_id": "132",
+        "name": "Dallas Cowboys DST",
+        "position": "DST",
+        "team": "DAL",
+        "adp": 140.3,
+        "expected_points": 8.5,
+        "VOR": 1.5999999999999996
+    },
+    {
+        "player_id": "133",
+        "name": "J.K. Dobbins",
+        "position": "RB",
+        "team": "BAL",
+        "adp": 140.3,
+        "expected_points": 8,
+        "VOR": -3.8000000000000007
+    },
+    {
+        "player_id": "134",
+        "name": "Aaron Rodgers",
+        "position": "QB",
+        "team": "NYJ",
+        "adp": 140.3,
+        "expected_points": 18.5,
+        "VOR": -0.6999999999999993
+    },
+    {
+        "player_id": "135",
         "name": "Romeo Doubs",
-        "team": "Packers",
         "position": "WR",
-        "myIdealRound": 100
+        "team": "GB",
+        "adp": 140.7,
+        "expected_points": 8.2,
+        "VOR": -2.0
     },
     {
-        "adp": 144,
-        "name": "Gerald Everett",
-        "team": "Chargers",
-        "position": "TE",
-        "myIdealRound": 100
+        "player_id": "136",
+        "name": "Kirk Cousins",
+        "position": "QB",
+        "team": "ATL",
+        "adp": 140.7,
+        "expected_points": 17,
+        "VOR": -2.1999999999999993
     },
     {
-        "adp": 145,
-        "name": "Greg Dulcich",
-        "team": "Broncos",
+        "player_id": "137",
+        "name": "Tyler Lockett",
+        "position": "WR",
+        "team": "SEA",
+        "adp": 141.0,
+        "expected_points": 10,
+        "VOR": -0.1999999999999993
+    },
+    {
+        "player_id": "138",
+        "name": "Cole Kmet",
         "position": "TE",
-        "myIdealRound": 100
+        "team": "CHI",
+        "adp": 144.3,
+        "expected_points": 6,
+        "VOR": -5
+    },
+    {
+        "player_id": "139",
+        "name": "Zach Charbonnet",
+        "position": "RB",
+        "team": "CAR",
+        "adp": 145.0,
+        "expected_points": 7,
+        "VOR": -4.800000000000001
+    },
+    {
+        "player_id": "140",
+        "name": "Chris Boswell",
+        "position": "K",
+        "team": "PIT",
+        "adp": 147.0,
+        "expected_points": 7.2,
+        "VOR": -0.2999999999999998
+    },
+    {
+        "player_id": "141",
+        "name": "Chuba Hubbard",
+        "position": "RB",
+        "team": "CAR",
+        "adp": 147.7,
+        "expected_points": 10.5,
+        "VOR": -1.3000000000000007
+    },
+    {
+        "player_id": "142",
+        "name": "Jake Elliott",
+        "position": "K",
+        "team": "PHI",
+        "adp": 149.0,
+        "expected_points": 8,
+        "VOR": 0.5
+    },
+    {
+        "player_id": "143",
+        "name": "Matthew Stafford",
+        "position": "QB",
+        "team": "LAR",
+        "adp": 149.7,
+        "expected_points": 19.8,
+        "VOR": 0.6000000000000014
+    },
+    {
+        "player_id": "144",
+        "name": "Ka'imi Fairbairn",
+        "position": "K",
+        "team": "HOU",
+        "adp": 151.7,
+        "expected_points": 7.9,
+        "VOR": 0.40000000000000036
+    },
+    {
+        "player_id": "145",
+        "name": "Jaylen Wright",
+        "position": "RB",
+        "team": "MIA",
+        "adp": 151.7,
+        "expected_points": 3.5,
+        "VOR": -8.3
+    },
+    {
+        "player_id": "146",
+        "name": "Jakobi Meyers",
+        "position": "WR",
+        "team": "LV",
+        "adp": 152.3,
+        "expected_points": 9.8,
+        "VOR": -0.3999999999999986
+    },
+    {
+        "player_id": "147",
+        "name": "Baker Mayfield",
+        "position": "QB",
+        "team": "TB",
+        "adp": 155.3,
+        "expected_points": 18.5,
+        "VOR": -0.6999999999999993
+    },
+    {
+        "player_id": "148",
+        "name": "Ty Chandler",
+        "position": "RB",
+        "team": "MIN",
+        "adp": 156.0,
+        "expected_points": 4.2,
+        "VOR": -7.6000000000000005
+    },
+    {
+        "player_id": "149",
+        "name": "Jake Moody",
+        "position": "K",
+        "team": "SF",
+        "adp": 156.3,
+        "expected_points": 5,
+        "VOR": -2.5
+    },
+    {
+        "player_id": "150",
+        "name": "Joshua Palmer",
+        "position": "WR",
+        "team": "LAC",
+        "adp": 156.3,
+        "expected_points": 8,
+        "VOR": -2.1999999999999993
+    },
+    {
+        "player_id": "151",
+        "name": "Brandin Cooks",
+        "position": "WR",
+        "team": "DAL",
+        "adp": 156.3,
+        "expected_points": 8,
+        "VOR": -2.1999999999999993
+    },
+    {
+        "player_id": "152",
+        "name": "Jaleel McLaughlin",
+        "position": "RB",
+        "team": "DEN",
+        "adp": 157.0,
+        "expected_points": 8,
+        "VOR": -3.8000000000000007
+    },
+    {
+        "player_id": "153",
+        "name": "Jerry Jeudy",
+        "position": "WR",
+        "team": "CLE",
+        "adp": 157.0,
+        "expected_points": 7.7,
+        "VOR": -2.499999999999999
+    },
+    {
+        "player_id": "154",
+        "name": "Cleveland Browns DST",
+        "position": "DST",
+        "team": "CLE",
+        "adp": 158.0,
+        "expected_points": 10.2,
+        "VOR": 3.299999999999999
+    },
+    {
+        "player_id": "155",
+        "name": "Antonio Gibson",
+        "position": "RB",
+        "team": "WAS",
+        "adp": 159.3,
+        "expected_points": 5.5,
+        "VOR": -6.300000000000001
+    },
+    {
+        "player_id": "156",
+        "name": "Rashid Shaheed",
+        "position": "WR",
+        "team": "NO",
+        "adp": 159.7,
+        "expected_points": 8.1,
+        "VOR": -2.0999999999999996
+    },
+    {
+        "player_id": "157",
+        "name": "Taysom Hill",
+        "position": "TE",
+        "team": "NO",
+        "adp": 161.0,
+        "expected_points": 9,
+        "VOR": -2
+    },
+    {
+        "player_id": "158",
+        "name": "Dontayvion Wicks",
+        "position": "WR",
+        "team": "GB",
+        "adp": 161.3,
+        "expected_points": 6.8,
+        "VOR": -3.3999999999999995
+    },
+    {
+        "player_id": "159",
+        "name": "Ray Davis",
+        "position": "RB",
+        "team": "BUF",
+        "adp": 163.0,
+        "expected_points": 5,
+        "VOR": -6.800000000000001
+    },
+    {
+        "player_id": "160",
+        "name": "Adonai Mitchell",
+        "position": "WR",
+        "team": "IND",
+        "adp": 163.3,
+        "expected_points": 6.2,
+        "VOR": -3.999999999999999
+    },
+    {
+        "player_id": "161",
+        "name": "Tyler Allgeier",
+        "position": "RB",
+        "team": "ATL",
+        "adp": 163.3,
+        "expected_points": 6.3,
+        "VOR": -5.500000000000001
+    },
+    {
+        "player_id": "162",
+        "name": "Mike Williams",
+        "position": "WR",
+        "team": "NYJ",
+        "adp": 164.0,
+        "expected_points": 10,
+        "VOR": -0.1999999999999993
+    },
+    {
+        "player_id": "163",
+        "name": "Adam Thielen",
+        "position": "WR",
+        "team": "CAR",
+        "adp": 164.0,
+        "expected_points": 9,
+        "VOR": -1.1999999999999993
+    },
+    {
+        "player_id": "162",
+        "name": "Xavier Leggette",
+        "position": "WR",
+        "team": "CAR",
+        "adp": 164.7,
+        "expected_points": 5.7,
+        "VOR": -4.499999999999999
+    },
+    {
+        "player_id": "163",
+        "name": "Gabe Davis",
+        "position": "WR",
+        "team": "JAC",
+        "adp": 166.7,
+        "expected_points": 8.1,
+        "VOR": -2.0999999999999996
+    },
+    {
+        "player_id": "164",
+        "name": "Younghoe Koo",
+        "position": "K",
+        "team": "ATL",
+        "adp": 168.3,
+        "expected_points": 8.5,
+        "VOR": 1.0
+    },
+    {
+        "player_id": "165",
+        "name": "Michael Wilson",
+        "position": "WR",
+        "team": "ARI",
+        "adp": 168.5,
+        "expected_points": 6.4,
+        "VOR": -3.799999999999999
+    },
+    {
+        "player_id": "166",
+        "name": "MarShawn Lloyd",
+        "position": "RB",
+        "team": "GB",
+        "adp": 169.0,
+        "expected_points": 2.5,
+        "VOR": -9.3
+    },
+    {
+        "player_id": "167",
+        "name": "Tyrone Tracy Jr.",
+        "position": "RB",
+        "team": "NYG",
+        "adp": 169.0,
+        "expected_points": 4,
+        "VOR": -7.800000000000001
+    },
+    {
+        "player_id": "168",
+        "name": "Will Levis",
+        "position": "QB",
+        "team": "TEN",
+        "adp": 169.3,
+        "expected_points": 15.5,
+        "VOR": -3.6999999999999993
+    },
+    {
+        "player_id": "169",
+        "name": "Jason Sanders",
+        "position": "K",
+        "team": "MIA",
+        "adp": 170.7,
+        "expected_points": 8,
+        "VOR": 0.5
+    },
+    {
+        "player_id": "170",
+        "name": "Braelon Allen",
+        "position": "RB",
+        "team": "NYG",
+        "adp": 171.5,
+        "expected_points": 3.5,
+        "VOR": -8.3
+    },
+    {
+        "player_id": "171",
+        "name": "Bo Nix",
+        "position": "QB",
+        "team": "DEN",
+        "adp": 172.0,
+        "expected_points": 14.4,
+        "VOR": -4.799999999999999
+    },
+    {
+        "player_id": "172",
+        "name": "Deshaun Watson",
+        "position": "QB",
+        "team": "CLE",
+        "adp": 172.0,
+        "expected_points": 15,
+        "VOR": -4.199999999999999
+    },
+    {
+        "player_id": "173",
+        "name": "Bucky Irving",
+        "position": "RB",
+        "team": "TB",
+        "adp": 172.5,
+        "expected_points": 4.8,
+        "VOR": -7.000000000000001
+    },
+    {
+        "player_id": "174",
+        "name": "Kimani Vidal",
+        "position": "RB",
+        "team": "LAC",
+        "adp": 172.7,
+        "expected_points": 3.1,
+        "VOR": -8.700000000000001
+    },
+    {
+        "player_id": "175",
+        "name": "Pittsburgh Steelers DST",
+        "position": "DST",
+        "team": "PIT",
+        "adp": 173.7,
+        "expected_points": 9.9,
+        "VOR": 3.0
+    },
+    {
+        "player_id": "176",
+        "name": "Luke Musgrave",
+        "position": "TE",
+        "team": "GB",
+        "adp": 174.0,
+        "expected_points": 5.7,
+        "VOR": -5.3
+    },
+    {
+        "player_id": "177",
+        "name": "Kansas City Chiefs DST",
+        "position": "DST",
+        "team": "KC",
+        "adp": 175.3,
+        "expected_points": 8.2,
+        "VOR": 1.299999999999999
+    },
+    {
+        "player_id": "178",
+        "name": "Darnell Mooney",
+        "position": "WR",
+        "team": "ATL",
+        "adp": 176.0,
+        "expected_points": 8.5,
+        "VOR": -1.6999999999999993
+    },
+    {
+        "player_id": "179",
+        "name": "Isaiah Likely",
+        "position": "TE",
+        "team": "BAL",
+        "adp": 177.0,
+        "expected_points": 3,
+        "VOR": -8
+    },
+    {
+        "player_id": "180",
+        "name": "Jahan Dotson",
+        "position": "WR",
+        "team": "PHI",
+        "adp": 177.0,
+        "expected_points": 4.5,
+        "VOR": -5.699999999999999
+    },
+    {
+        "player_id": "181",
+        "name": "Ja'Lynn Polk",
+        "position": "WR",
+        "team": "CHI",
+        "adp": 177.7,
+        "expected_points": 6,
+        "VOR": -4.199999999999999
+    },
+    {
+        "player_id": "182",
+        "name": "Miami Dolphins DST",
+        "position": "DST",
+        "team": "MIA",
+        "adp": 178.0,
+        "expected_points": 5,
+        "VOR": -1.9000000000000004
+    },
+    {
+        "player_id": "183",
+        "name": "Dyami Brown",
+        "position": "WR",
+        "team": "WAS",
+        "adp": 178.0,
+        "expected_points": 2.1,
+        "VOR": -8.1
+    },
+    {
+        "player_id": "184",
+        "name": "Evan McPherson",
+        "position": "K",
+        "team": "CIN",
+        "adp": 178.7,
+        "expected_points": 8.2,
+        "VOR": 0.6999999999999993
+    },
+    {
+        "player_id": "185",
+        "name": "Josh Downs",
+        "position": "WR",
+        "team": "IND",
+        "adp": 179.0,
+        "expected_points": 5.5,
+        "VOR": -4.699999999999999
+    },
+    {
+        "player_id": "186",
+        "name": "Justin Fields",
+        "position": "QB",
+        "team": "PIT",
+        "adp": 179.3,
+        "expected_points": 1,
+        "VOR": -18.2
+    },
+    {
+        "player_id": "187",
+        "name": "Elijah Mitchell",
+        "position": "RB",
+        "team": "SF",
+        "adp": 180.3,
+        "expected_points": 0.1,
+        "VOR": -11.700000000000001
+    },
+    {
+        "player_id": "188",
+        "name": "Khalil Herbert",
+        "position": "RB",
+        "team": "CHI",
+        "adp": 181.7,
+        "expected_points": 6,
+        "VOR": -5.800000000000001
+    },
+    {
+        "player_id": "189",
+        "name": "Russell Wilson",
+        "position": "QB",
+        "team": "PIT",
+        "adp": 184.3,
+        "expected_points": 13,
+        "VOR": -6.199999999999999
+    },
+    {
+        "player_id": "190",
+        "name": "Kendre Miller",
+        "position": "RB",
+        "team": "NO",
+        "adp": 184.0,
+        "expected_points": 0.3,
+        "VOR": -11.5
+    },
+    {
+        "player_id": "191",
+        "name": "Tyler Bass",
+        "position": "K",
+        "team": "BUF",
+        "adp": 185.3,
+        "expected_points": 8,
+        "VOR": 0.5
+    },
+    {
+        "player_id": "192",
+        "name": "Ricky Pearsall",
+        "position": "WR",
+        "team": "SF",
+        "adp": 187.7,
+        "expected_points": 0.1,
+        "VOR": -10.1
+    },
+    {
+        "player_id": "193",
+        "name": "Geno Smith",
+        "position": "QB",
+        "team": "SEA",
+        "adp": 188.0,
+        "expected_points": 14.5,
+        "VOR": -4.699999999999999
+    },
+    {
+        "player_id": "194",
+        "name": "Quentin Johnston",
+        "position": "WR",
+        "team": "LAC",
+        "adp": 189.0,
+        "expected_points": 5,
+        "VOR": -5.199999999999999
+    },
+    {
+        "player_id": "195",
+        "name": "Matt Prater",
+        "position": "K",
+        "team": "ARI",
+        "adp": 190.0,
+        "expected_points": 7,
+        "VOR": -0.5
+    },
+    {
+        "player_id": "196",
+        "name": "Jonnu Smith",
+        "position": "TE",
+        "team": "MIA",
+        "adp": 190.3,
+        "expected_points": 5,
+        "VOR": -6
+    },
+    {
+        "player_id": "197",
+        "name": "Buffalo Bills DST",
+        "position": "DST",
+        "team": "BUF",
+        "adp": 191.7,
+        "expected_points": 6,
+        "VOR": -0.9000000000000004
+    },
+    {
+        "player_id": "198",
+        "name": "Tyler Conklin",
+        "position": "TE",
+        "team": "NYJ",
+        "adp": 192.0,
+        "expected_points": 5.9,
+        "VOR": -5.1
+    },
+    {
+        "player_id": "199",
+        "name": "Hunter Henry",
+        "position": "TE",
+        "team": "NE",
+        "adp": 193.0,
+        "expected_points": 6.1,
+        "VOR": -4.9
+    },
+    {
+        "player_id": "200",
+        "name": "Dameon Pierce",
+        "position": "RB",
+        "team": "HOU",
+        "adp": 193.0,
+        "expected_points": 3.2,
+        "VOR": -8.600000000000001
+    },
+    {
+        "player_id": "201",
+        "name": "DeMario Douglas",
+        "position": "WR",
+        "team": "NE",
+        "adp": 196.0,
+        "expected_points": 7,
+        "VOR": -3.1999999999999993
+    },
+    {
+        "player_id": "202",
+        "name": "Bryce Young",
+        "position": "QB",
+        "team": "CAR",
+        "adp": 198.0,
+        "expected_points": 15.3,
+        "VOR": -3.8999999999999986
+    },
+    {
+        "player_id": "203",
+        "name": "Jacoby Brissett",
+        "position": "QB",
+        "team": "CLE",
+        "adp": 199.0,
+        "expected_points": 13.9,
+        "VOR": -5.299999999999999
+    },
+    {
+        "player_id": "204",
+        "name": "Derek Carr",
+        "position": "QB",
+        "team": "NO",
+        "adp": 202.5,
+        "expected_points": 15.3,
+        "VOR": -3.8999999999999986
+    },
+    {
+        "player_id": "205",
+        "name": "Ben Sinnott",
+        "position": "TE",
+        "team": "WAS",
+        "adp": 203.7,
+        "expected_points": 3.1,
+        "VOR": -7.9
+    },
+    {
+        "player_id": "206",
+        "name": "Cade Otton",
+        "position": "TE",
+        "team": "TB",
+        "adp": 203.7,
+        "expected_points": 5.7,
+        "VOR": -5.3
+    },
+    {
+        "player_id": "207",
+        "name": "Chigoziem Okonkwo",
+        "position": "TE",
+        "team": "TEN",
+        "adp": 204.0,
+        "expected_points": 4.8,
+        "VOR": -6.2
+    },
+    {
+        "player_id": "208",
+        "name": "Daniel Jones",
+        "position": "QB",
+        "team": "NYG",
+        "adp": 205.0,
+        "expected_points": 15.5,
+        "VOR": -3.6999999999999993
+    },
+    {
+        "player_id": "209",
+        "name": "Cameron Dicker",
+        "position": "K",
+        "team": "LAC",
+        "adp": 206.0,
+        "expected_points": 7.5,
+        "VOR": 0.0
+    },
+    {
+        "player_id": "210",
+        "name": "Drake Maye",
+        "position": "QB",
+        "team": "NYG",
+        "adp": 206.0,
+        "expected_points": 0.1,
+        "VOR": -19.099999999999998
+    },
+    {
+        "player_id": "211",
+        "name": "AJ Dillon",
+        "position": "RB",
+        "team": "GB",
+        "adp": 207.7,
+        "expected_points": 0.1,
+        "VOR": -11.700000000000001
+    },
+    {
+        "player_id": "212",
+        "name": "Sam Darnold",
+        "position": "QB",
+        "team": "MIN",
+        "adp": 209.0,
+        "expected_points": 15,
+        "VOR": -4.199999999999999
+    },
+    {
+        "player_id": "213",
+        "name": "Philadelphia Eagles DST",
+        "position": "DST",
+        "team": "PHI",
+        "adp": 210.0,
+        "expected_points": 6.9,
+        "VOR": 0.0
+    },
+    {
+        "player_id": "214",
+        "name": "Clyde Edwards-Helaire",
+        "position": "RB",
+        "team": "KC",
+        "adp": 210.0,
+        "expected_points": 1.5,
+        "VOR": -10.3
+    },
+    {
+        "player_id": "215",
+        "name": "Roschon Johnson",
+        "position": "RB",
+        "team": "CHI",
+        "adp": 210.3,
+        "expected_points": 3,
+        "VOR": -8.8
+    },
+    {
+        "player_id": "216",
+        "name": "Jason Myers",
+        "position": "K",
+        "team": "SEA",
+        "adp": 211.0,
+        "expected_points": 7.2,
+        "VOR": -0.2999999999999998
+    },
+    {
+        "player_id": "217",
+        "name": "Cincinatti Bengals DST",
+        "position": "DST",
+        "team": "CIN",
+        "adp": 212.0,
+        "expected_points": 8.4,
+        "VOR": 1.5
+    },
+    {
+        "player_id": "218",
+        "name": "New Orleans Saints DST",
+        "position": "DST",
+        "team": "NO",
+        "adp": 213.0,
+        "expected_points": 7.4,
+        "VOR": 0.5
     }
 ]
