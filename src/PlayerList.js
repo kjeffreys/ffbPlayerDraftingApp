@@ -6,7 +6,7 @@ function PlayerList({ players, onPick })
         <ul>
             {[...players].sort((a, b) => a.adp - b.adp).map(player => (
                 <li key={player.name} className={player.position}>
-                    {player.name} - {player.team} (ADP: {player.adp})
+                    {player.name} - {player.team} (ADP: {player.adp}) (VoR: {player.VOR})
                     <button onClick={() => onPick(player)}>Pick</button>
                 </li>
             ))}
