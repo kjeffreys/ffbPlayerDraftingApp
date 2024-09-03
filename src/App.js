@@ -36,7 +36,7 @@ function App()
     <div className="App">
       <h2>Current Draft Pick: {currentPick}</h2>
       <button onClick={() => setSortByADP(!sortByADP)}>
-        Sort by {SortByADP ? 'VOR' : 'ADP'}
+        Sort by {sortByADP ? 'VOR' : 'ADP'}
       </button>
       <PositionSelector onChange={setSelectedPosition} />
       <PlayerList players={sortedPlayers} onPick={handlePick} />
