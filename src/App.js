@@ -9,6 +9,7 @@ function App()
   const [players, setPlayers] = useState(data);
   const [selectedPosition, setSelectedPosition] = useState('all');
   const [currentPick, setCurrentPick] = useState(1);
+  const [sortByADP, setSortByADP] = useState(true); // state to toggle sorting by ADP or VOR
 
   const filteredPlayers = players.filter(player =>
   {
@@ -17,17 +18,28 @@ function App()
     return player.position === selectedPosition;
   });
 
+  const sortedPlayers = filteredPlayers.sort((a, b) => {
+    if (sortByADP) {
+      return a.adp - b.adp;
+    } else {
+      return b.VOR - a.VOR;
+    }
+  });
+
   const handlePick = (pickedPlayer) =>
   {
-    setPlayers(players => players.filter(player => player.name !== pickedPlayer.name));
+    setPlayers(players => players.filter(player => player.player_id !== pickedPlayer.player_id));
     setCurrentPick(currentPick + 1);
   };
 
   return (
     <div className="App">
       <h2>Current Draft Pick: {currentPick}</h2>
+      <button onClick={() => setSortByADP(!sortByADP)}>
+        Sort by {SsortByADP ? 'VOR' : 'ADP'}
+      </button>
       <PositionSelector onChange={setSelectedPosition} />
-      <PlayerList players={filteredPlayers} onPick={handlePick} />
+      <PlayerList players={sortedPlayers} onPick={handlePick} />
     </div>
   );
 }
