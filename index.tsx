@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { createRoot } from 'react-dom/client';
 
 /* ────────────────────
-   TYPE DEFINITIONS
+   TYPE DEFINITIONS
 ────────────────────── */
 interface Player
 {
@@ -12,6 +12,7 @@ interface Player
     position: 'QB' | 'RB' | 'WR' | 'TE' | 'K' | 'DEF';
     adp: number;
     vor: number;
+    ppg: number; // Added for data validation
     bye: number;
 }
 
@@ -21,7 +22,7 @@ type ViewType = 'draft' | 'byes';
 type ByeWeekCounts = Record<number, Player[]>;
 
 /* ────────────────────
-   DATA FETCH
+   DATA FETCH
 ────────────────────── */
 async function fetchPlayers(): Promise<Player[]>
 {
@@ -31,11 +32,13 @@ async function fetchPlayers(): Promise<Player[]>
 }
 
 /* ────────────────────
-   CONSTANTS & UTILS
+   CONSTANTS & UTILS
 ────────────────────── */
 const POSITIONS: Player['position'][] = ['QB', 'RB', 'WR', 'TE', 'K', 'DEF'];
 const getPositionColor = (pos: Player['position']) => `var(--pos-${pos.toLowerCase()})`;
-const VOR_THRESHOLD = 10;          // flame if drop‑off > 10
+const VOR_THRESHOLD = 10;          // flame if VOR based on total points (not PPG) has a large drop-off
+// Note: The python script calculates VOR from PPG now. This threshold might need adjustment.
+// For now, we'll keep it as is. A VOR dropoff of 10 PPG is huge. Let's base it on VOR directly.
 
 /* ────────────────────
    HEADER
@@ -47,52 +50,52 @@ const Header: React.FC<{
     resetDraft: () => void;
     currentPick: number;
 }> = ({ sortBy, setSortBy, filterBy, setFilterBy, view, setView, resetDraft, currentPick }) =>
-{
-    const filters: FilterByType[] = ['ALL', 'FLEX', ...POSITIONS];
-    const btn = (active: boolean) => ({
-        backgroundColor: active ? 'var(--color-accent)' : 'var(--color-surface)',
-        color: 'var(--color-text-primary)',
-    });
+    {
+        const filters: FilterByType[] = ['ALL', 'FLEX', ...POSITIONS];
+        const btn = (active: boolean) => ({
+            backgroundColor: active ? 'var(--color-accent)' : 'var(--color-surface)',
+            color: 'var(--color-text-primary)',
+        });
 
-    return (
-        <header style={{
-            display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem',
-            background: 'var(--color-surface)', borderRadius: 8
-        }}>
-            <div style={{
-                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                flexWrap: 'wrap', gap: 16
+        return (
+            <header style={{
+                display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem',
+                background: 'var(--color-surface)', borderRadius: 8
             }}>
-                <h1 style={{ margin: 0, fontSize: '1.5rem' }}>
-                    Fantasy Draft Assistant
-                    <span style={{ fontSize: '1rem', fontWeight: 400, color: 'var(--color-text-secondary)', marginLeft: 8 }}>
-                        · Pick #{currentPick}
-                    </span>
-                </h1>
-                <div style={{ display: 'flex', gap: 8 }}>
-                    <button style={btn(view === 'draft')} onClick={() => setView('draft')}>Draft Board</button>
-                    <button style={btn(view === 'byes')} onClick={() => setView('byes')}>Bye Weeks</button>
-                    <button style={{ background: 'var(--color-danger)', color: 'var(--color-text-primary)' }}
-                        onClick={resetDraft}>Reset Draft</button>
+                <div style={{
+                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                    flexWrap: 'wrap', gap: 16
+                }}>
+                    <h1 style={{ margin: 0, fontSize: '1.5rem' }}>
+                        Fantasy Draft Assistant
+                        <span style={{ fontSize: '1rem', fontWeight: 400, color: 'var(--color-text-secondary)', marginLeft: 8 }}>
+                            · Pick #{currentPick}
+                        </span>
+                    </h1>
+                    <div style={{ display: 'flex', gap: 8 }}>
+                        <button style={btn(view === 'draft')} onClick={() => setView('draft')}>Draft Board</button>
+                        <button style={btn(view === 'byes')} onClick={() => setView('byes')}>Bye Weeks</button>
+                        <button style={{ background: 'var(--color-danger)', color: 'var(--color-text-primary)' }}
+                            onClick={resetDraft}>Reset Draft</button>
+                    </div>
                 </div>
-            </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div>
-                    <span style={{ marginRight: 16, color: 'var(--color-text-secondary)' }}>Sort By:</span>
-                    <button style={btn(sortBy === 'adp')} onClick={() => setSortBy('adp')}>ADP</button>
-                    <button style={{ ...btn(sortBy === 'vor'), marginLeft: 8 }} onClick={() => setSortBy('vor')}>VOR</button>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                    <div>
+                        <span style={{ marginRight: 16, color: 'var(--color-text-secondary)' }}>Sort By:</span>
+                        <button style={btn(sortBy === 'adp')} onClick={() => setSortBy('adp')}>ADP</button>
+                        <button style={{ ...btn(sortBy === 'vor'), marginLeft: 8 }} onClick={() => setSortBy('vor')}>VOR</button>
+                    </div>
+                    <div>
+                        <span style={{ marginRight: 16, color: 'var(--color-text-secondary)' }}>Filter:</span>
+                        {filters.map(f => (
+                            <button key={f} style={{ ...btn(filterBy === f), marginRight: 4 }} onClick={() => setFilterBy(f)}>{f}</button>
+                        ))}
+                    </div>
                 </div>
-                <div>
-                    <span style={{ marginRight: 16, color: 'var(--color-text-secondary)' }}>Filter:</span>
-                    {filters.map(f => (
-                        <button key={f} style={{ ...btn(filterBy === f), marginRight: 4 }} onClick={() => setFilterBy(f)}>{f}</button>
-                    ))}
-                </div>
-            </div>
-        </header>
-    );
-};
+            </header>
+        );
+    };
 
 /* ────────────────────
    PLAYERCARD
@@ -103,44 +106,51 @@ const PlayerCard: React.FC<{
     isDanger: boolean;
     isSteal: boolean;
 }> = ({ player, onDraft, isDanger, isSteal }) =>
-{
-    const { name, team, position, bye, adp, vor } = player;
+    {
+        // Destructure all the player properties, including the new 'ppg'
+        const { name, team, position, bye, adp, vor, ppg } = player;
 
-    return (
-        <div style={{
-            display: 'flex', alignItems: 'center', background: 'var(--color-surface)',
-            padding: 16, borderRadius: 8, borderLeft: `5px solid ${getPositionColor(position)}`, gap: 16
-        }}>
+        return (
             <div style={{
-                flex: 1, display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit,minmax(120px,1fr))', gap: 16
+                display: 'flex', alignItems: 'center', background: 'var(--color-surface)',
+                padding: 16, borderRadius: 8, borderLeft: `5px solid ${getPositionColor(position)}`, gap: 16
             }}>
-                <div>
-                    <div style={{ fontWeight: 600, fontSize: '1.1rem' }}>{name}</div>
-                    <div style={{ color: 'var(--color-text-secondary)', fontSize: 14 }}>
-                        {team} · {position} · Bye {bye}
-                    </div>
-                </div>
-                <div>
-                    <div>ADP</div><div>{adp}</div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                <div style={{
+                    flex: 1, display: 'grid',
+                    // Adjusted grid to make space for the new PPG column
+                    gridTemplateColumns: 'repeat(auto-fit,minmax(100px,1fr))', gap: 16
+                }}>
                     <div>
-                        <div>VOR</div><div>{vor}</div>
+                        <div style={{ fontWeight: 600, fontSize: '1.1rem' }}>{name}</div>
+                        <div style={{ color: 'var(--color-text-secondary)', fontSize: 14 }}>
+                            {team} · {position} · Bye {bye}
+                        </div>
                     </div>
-                    {isDanger && <span style={{ fontSize: '1.25rem', color: 'var(--color-danger)' }} title='VOR drop‑off > 10'>🔥</span>}
-                    {isSteal && <span style={{ fontSize: '1.25rem' }} title='Steal vs ADP'>💰</span>}
+                    <div>
+                        <div style={{ color: 'var(--color-text-secondary)' }}>ADP</div><div>{adp}</div>
+                    </div>
+                    {/* START NEW PPG DISPLAY BLOCK */}
+                    <div>
+                        <div style={{ color: 'var(--color-text-secondary)' }}>PPG</div><div>{ppg.toFixed(2)}</div>
+                    </div>
+                    {/* END NEW PPG DISPLAY BLOCK */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                        <div>
+                            <div style={{ color: 'var(--color-text-secondary)' }}>VOR</div><div>{vor.toFixed(2)}</div>
+                        </div>
+                        {isDanger && <span style={{ fontSize: '1.25rem', color: 'var(--color-danger)' }} title={`VOR drop-off > ${VOR_THRESHOLD}`}>🔥</span>}
+                        {isSteal && <span style={{ fontSize: '1.25rem' }} title='Steal vs ADP'>💰</span>}
+                    </div>
                 </div>
-            </div>
 
-            <button style={{ background: 'var(--color-accent)', color: 'var(--color-text-primary)' }}
-                onClick={() => onDraft(player.id)}>Draft</button>
-        </div>
-    );
-};
+                <button style={{ background: 'var(--color-accent)', color: 'var(--color-text-primary)' }}
+                    onClick={() => onDraft(player.id)}>Draft</button>
+            </div>
+        );
+    };
 
 /* ────────────────────
-   BYE WEEK VIEW
+   BYE WEEK VIEW
 ────────────────────── */
 const ByeWeekView: React.FC<{ byeCounts: ByeWeekCounts }> = ({ byeCounts }) =>
 {
@@ -159,7 +169,7 @@ const ByeWeekView: React.FC<{ byeCounts: ByeWeekCounts }> = ({ byeCounts }) =>
             {weeks.map(w => (
                 <div key={w} style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: 16 }}>
                     <h3 style={{ color: byeCounts[w].length > 2 ? 'var(--color-danger)' : 'var(--color-accent)' }}>
-                        Week {w} ({byeCounts[w].length})
+                        Week {w} ({byeCounts[w].length})
                     </h3>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                         {byeCounts[w].map(p => (
@@ -178,7 +188,7 @@ const ByeWeekView: React.FC<{ byeCounts: ByeWeekCounts }> = ({ byeCounts }) =>
 };
 
 /* ────────────────────
-   MAIN APP
+   MAIN APP
 ────────────────────── */
 const App: React.FC = () =>
 {
@@ -210,10 +220,12 @@ const App: React.FC = () =>
         [allPlayers, draftedIds]
     );
 
-    /* Build per‑position VOR danger map */
+    /* Build per-position VOR danger map */
     const dangerMap = useMemo(() =>
     {
         const map = new Map<number, boolean>();
+        // Re-calculate danger based on VOR since it's now PPG-based
+        const VOR_DANGER_THRESHOLD = 2.0; // A 2.0 VOR dropoff is a significant tier break
 
         POSITIONS.forEach(pos =>
         {
@@ -222,7 +234,7 @@ const App: React.FC = () =>
 
             for (let i = 0; i < list.length - 1; i++)
             {
-                if (list[i].vor - list[i + 1].vor > VOR_THRESHOLD)
+                if (list[i].vor - list[i + 1].vor > VOR_DANGER_THRESHOLD)
                 {
                     map.set(list[i].id, true);
                 }
@@ -238,7 +250,7 @@ const App: React.FC = () =>
         const filtered = available.filter(p =>
         {
             if (filterBy === 'ALL') return true;
-            if (filterBy === 'FLEX') return p.position === 'RB' || p.position === 'WR';
+            if (filterBy === 'FLEX') return p.position === 'RB' || p.position === 'WR' || p.position === 'TE';
             return p.position === filterBy;
         });
 
@@ -279,8 +291,7 @@ const App: React.FC = () =>
                             key={p.id}
                             player={p}
                             onDraft={onDraft}
-                            isDanger={!!
-                                dangerMap.get(p.id)}
+                            isDanger={!!dangerMap.get(p.id)}
                             isSteal={currentPick - p.adp >= 20}
                         />
                     ))}

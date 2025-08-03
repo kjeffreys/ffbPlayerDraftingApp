@@ -24,3 +24,5 @@ yarn-error.log*
 
 analyze*
 file_contents.txt
+
+.vscode

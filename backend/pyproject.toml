@@ -1,0 +1,44 @@
+# /home/kyle/repos/ffbPlayerDraftingApp/backend/pyproject.toml
+
+[tool.poetry]
+name = "fantasy-football-backend"
+version = "0.1.0"
+description = "Data pipeline for fantasy football analysis."
+authors = ["Kyle <you@example.com>"]
+# Let poetry auto-discover packages like 'pipelines', 'transforms', etc.
+packages = [
+    { include = "pipelines" },
+    { include = "transforms" },
+    { include = "data_sources" },
+    { include = "storage" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.31.0"
+pydantic = "^2.7.1"
+pandas = "^2.2.2"
+click = "^8.1.7"
+python-json-logger = "^2.0.7"
+pydantic-settings = "^2.2.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+responses = "^0.25.0"
+ruff = "^0.4.4"
+
+[tool.poetry.scripts]
+# CRITICAL FIX: The command now correctly points to the 'cli' module
+# at the root of the 'backend/' directory.
+backend = "cli:cli"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.main:handle"
