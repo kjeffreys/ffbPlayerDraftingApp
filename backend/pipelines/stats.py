@@ -50,13 +50,41 @@ def run_stats(date_str: str | None = None):
             df["z_hist"].fillna(0) * cfg.weight_last_year
         )
         is_rookie = df["top_n_avg"].isna()
-        df.loc[is_rookie, "score"] *= 1 + cfg.rookie_bonus
-        df["expected_ppg"] = (df["score"] * df["projected_ppg"].std()) + df[
-            "projected_ppg"
-        ].mean()
+        df.loc[is_rookie, "score"] *= 1 + cfg.rookie_bonus  # pylint: disable=no-member
 
-        save_json(output_path, df.to_dict(orient="records"))
+        # --- THE DEFINITIVE SCALING FIX ---
+        # 8. Rescale the raw 'score' to an intuitive PPG range (e.g., max of ~25)
+        # First, find the max raw score from our composite calculation.
+        max_raw_score = df["score"].max()
+
+        # Define our desired max PPG for the top player.
+        target_max_ppg = 25.0
+
+        # Calculate a scaling factor.
+        # Avoid division by zero if all scores are zero.
+        scaling_factor = target_max_ppg / max_raw_score if max_raw_score > 0 else 0
+
+        # Apply the scaling factor to create the final, intuitive 'expected_ppg'.
+        df["expected_ppg"] = df["score"] * scaling_factor
+
+        log.info(
+            "Rescaled expected_ppg.",
+            extra={
+                "max_raw_score": round(max_raw_score, 2),
+                "scaling_factor": round(scaling_factor, 2),
+                "new_max_ppg": round(df["expected_ppg"].max(), 2),
+            },
+        )
+
+        # 9. Save results
+        output_data = df.reset_index().to_dict(orient="records")
+        save_json(output_path, output_data)
+
         log.info("Stats pipeline completed successfully.")
+
     except Exception as e:
-        log.exception("Stats pipeline failed.", extra={"error": str(e)})
+        log.exception(
+            "An unexpected error occurred in the stats pipeline.",
+            extra={"error": str(e)},
+        )
         raise
