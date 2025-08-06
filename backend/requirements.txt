@@ -1,0 +1,22 @@
+# Path: ffbPlayerDraftingApp/backend/requirements.txt
+
+# For making HTTP requests to APIs
+requests
+
+# For data validation and settings management
+pydantic
+pydantic-settings
+
+# For data manipulation and analysis, especially in transforms
+pandas
+
+# For creating the command-line interface
+click
+
+# For structured, machine-readable logging
+python-json-logger
+
+# For a robust linter and code formatter
+ruff
+
+lxml

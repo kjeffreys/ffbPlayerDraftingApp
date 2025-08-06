@@ -1,11 +1,9 @@
-# backend/backend/transforms/filter_players.py
-"""Functions for filtering lists of players based on rules."""
+# Path: ffbPlayerDraftingApp/backend/transforms/filter_players.py
 
+"""Functions for filtering lists of players based on defined rules."""
 
-from backend.logging_config import setup_logging
-from backend.models import PlayerRaw
-
-log = setup_logging(__name__)
+from backend.logging_config import log  # Corrected import path
+from backend.models import PlayerRaw  # Corrected import path
 
 
 def keep_rostered_and_relevant(

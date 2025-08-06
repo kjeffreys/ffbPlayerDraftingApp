@@ -1,29 +1,46 @@
-# backend/backend/data_sources/yahoo.py
-"""Data source for fetching projected points from Yahoo Fantasy Sports API.
+# Path: ffbPlayerDraftingApp/backend/data_sources/yahoo.py
+import io, pandas as pd, requests
+from backend.logging_config import log
+from backend.settings import settings
+from backend.utils import slugify
 
-NOTE: This is currently a stub. A full implementation requires OAuth2 authentication.
-"""
 
-
-from backend.logging_config import setup_logging
-
-log = setup_logging(__name__)
+def get_projection_url() -> str:
+    scoring = settings.league_config.scoring.lower()
+    return (
+        f"https://www.fantasypros.com/nfl/projections/all.php?scoring={scoring.upper()}"
+    )
 
 
 def fetch_projected_points() -> dict[str, float]:
-    """
-    Fetches projected fantasy points for players.
+    url = get_projection_url()
+    log.info("Fetching projections from FantasyPros.", extra={"url": url})
+    try:
+        headers = {"User-Agent": "Mozilla/5.0..."}
+        response = requests.get(url, headers=headers, timeout=15)
+        response.raise_for_status()
+        tables = pd.read_html(io.StringIO(response.text), attrs={"id": "data"})
+        if not tables:
+            raise ValueError("Projections table not found.")
+        df = tables[0]
 
-    Returns:
-        A dictionary mapping a slugified player name to their projected points.
-        e.g., {"patrick-mahomes": 350.5}.
-    """
-    log.warning(
-        "Yahoo projection fetching is not implemented. Returning empty data. This is a stub function."
-    )
-    # In a real implementation, this would involve:
-    # 1. Refreshing an OAuth2 token.
-    # 2. Making an authenticated request to the Yahoo Fantasy API.
-    # 3. Parsing the XML/JSON response.
-    # 4. Returning the map of player names to projections.
-    return {}
+        # --- DEFENSIVE CODING ---
+        player_col_tuple = ("Unnamed: 0_level_0", "Player")
+        fpts_col_tuple = ("MISC", "FPTS")
+        if player_col_tuple not in df.columns or fpts_col_tuple not in df.columns:
+            log.error(
+                f"Required projection columns not found. Discovered: {df.columns.values}"
+            )
+            return {}
+
+        proj_map = {}
+        for _, row in df.iterrows():
+            name = row[player_col_tuple].replace("*", "").replace("+", "").strip()
+            proj_map[slugify(name)] = float(row[fpts_col_tuple])
+        log.info(
+            "Successfully parsed projections.", extra={"player_count": len(proj_map)}
+        )
+        return proj_map
+    except Exception as e:
+        log.exception("Failed to fetch or parse projections.", extra={"error": str(e)})
+        raise

@@ -1,22 +1,19 @@
-# backend/backend/cli.py
-"""
-Command-Line Interface for the Fantasy Football Backend.
+# Path: ffbPlayerDraftingApp/backend/cli.py
 
-This module provides commands to run the data pipeline stages.
-"""
+"""Command-Line Interface for the Fantasy Football Backend."""
 
 import sys
 
 import click
 
-from logging_config import setup_logging
-from pipelines.clean import run_clean
-from pipelines.enrich import run_enrich
-from pipelines.ingest import run_ingest
-from pipelines.stats import run_stats
-from pipelines.vor import run_vor
-
-log = setup_logging(__name__)
+# The import paths are now relative to the 'backend' directory, which is
+# the root of our application when running with `python -m backend.cli`.
+from backend.logging_config import log
+from backend.pipelines.clean import run_clean
+from backend.pipelines.enrich import run_enrich
+from backend.pipelines.ingest import run_ingest
+from backend.pipelines.stats import run_stats
+from backend.pipelines.vor import run_vor
 
 
 # The @click.group decorator makes `cli` a parent command that can have subcommands.
@@ -30,7 +27,7 @@ log = setup_logging(__name__)
 def cli(ctx, date):
     """A CLI for the fantasy football data pipeline."""
     # The context object (ctx.obj) is a dictionary that we can use to pass
-    # state to subcommands. Here, we store the date.
+    # state (like the date) to subcommands.
     ctx.obj = {"date": date}
 
 
@@ -101,11 +98,11 @@ def all(ctx):
     log.info("CLI: Running all pipeline phases.")
     date = ctx.obj["date"]
     try:
-        log.info("--- Phase 1: Ingest ---")
-        run_ingest(date_str=date)
+        # log.info("--- Phase 1: Ingest ---")
+        # run_ingest(date_str=date)
 
-        log.info("--- Phase 2: Clean ---")
-        run_clean(date_str=date)
+        # log.info("--- Phase 2: Clean ---")
+        # run_clean(date_str=date)
 
         log.info("--- Phase 3: Enrich ---")
         run_enrich(date_str=date)
@@ -121,3 +118,7 @@ def all(ctx):
     except Exception:
         log.exception("CLI: The 'all' command failed during one of its phases.")
         sys.exit(1)
+
+
+if __name__ == "__main__":
+    cli()

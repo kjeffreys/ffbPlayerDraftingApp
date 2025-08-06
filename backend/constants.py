@@ -1,8 +1,7 @@
-# backend/backend/constants.py
-"""
-Project-wide constants.
+# Path: ffbPlayerDraftingApp/backend/constants.py
 
-Note: Most dynamic configuration (e.g., roster spots, scoring rules)
-is loaded from league_config.json via the Settings model.
-"""
-# This file is intentionally sparse for now.
+"""Project-wide, non-configurable constants."""
+
+# This file is intentionally sparse. Most configuration is handled by
+# settings.py loading league_config.json. This is a placeholder for any
+# truly universal constants that might arise.

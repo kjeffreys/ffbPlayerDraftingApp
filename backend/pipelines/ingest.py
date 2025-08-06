@@ -1,13 +1,14 @@
-# backend/backend/pipelines/ingest.py
+# Path: ffbPlayerDraftingApp/backend/pipelines/ingest.py
+
+"""Pipeline for ingesting raw player data from the Sleeper API."""
 
 import datetime
-import requests
-from data_sources.sleeper import fetch_all_players
-from logging_config import setup_logging
-from settings import settings
-from storage.file_store import save_json
+import requests  # Used implicitly by fetch_all_players, good to list for clarity
 
-log = setup_logging(__name__)
+from backend.data_sources.sleeper import fetch_all_players  # Corrected import path
+from backend.logging_config import log  # Corrected import path
+from backend.settings import settings  # Corrected import path
+from backend.storage.file_store import save_json  # Corrected import path
 
 
 def run_ingest(date_str: str | None = None):
@@ -41,9 +42,11 @@ def run_ingest(date_str: str | None = None):
 
         log.info("Ingest pipeline completed successfully.")
 
-    except Exception:
-        # The specific exceptions are logged by the lower-level functions.
-        # This top-level catch signals the entire pipeline step's failure.
+    except (requests.RequestException, IOError, TypeError):
+        # Catch specific, expected exceptions from the data source or file operations.
         log.exception("Ingest pipeline failed.")
-        # In a real-world scenario, you might want to raise this to the CLI
-        # to return a non-zero exit code. For now, logging is sufficient.
+        raise
+    except Exception:
+        # Catch any other unexpected errors.
+        log.exception("An unexpected error occurred in the ingest pipeline.")
+        raise

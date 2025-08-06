@@ -25,4 +25,50 @@ yarn-error.log*
 analyze*
 file_contents.txt
 
-.vscode
+######################
+#  Python
+######################
+# Byte-code
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.venv/
+env/
+ENV/
+
+# Packaging / build output
+build/
+dist/
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+wheels/
+
+# pytest / mypy / coverage caches
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+######################
+#  Node / Front-end
+######################
+node_modules/
+dist/
+build/
+.cache/
+.vite/
+*.log
+
+######################
+#  OS & Editor junk
+######################
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

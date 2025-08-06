@@ -1,13 +1,13 @@
-# backend/backend/data_sources/sleeper.py
+# Path: ffbPlayerDraftingApp/backend/data_sources/sleeper.py
+
+"""Data source for fetching player information from the Sleeper API."""
 
 from typing import Any
-
 import requests
 
-from logging_config import setup_logging
-from settings import settings
 
-log = setup_logging(__name__)
+from backend.logging_config import log  # Corrected import path
+from backend.settings import settings  # Corrected import path
 
 
 def fetch_all_players() -> dict[str, Any]:
@@ -35,5 +35,6 @@ def fetch_all_players() -> dict[str, Any]:
         )
         return players_data
     except requests.RequestException:
+        # log.exception automatically captures exception info
         log.exception("Sleeper API request failed.", extra={"url": url})
         raise  # Re-raise the exception to be handled by the calling pipeline

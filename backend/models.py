@@ -1,13 +1,14 @@
-# backend/backend/models.py
-"""Pydantic models for typed data structures."""
+# Path: ffbPlayerDraftingApp/backend/models.py
 
-from pydantic import BaseModel, Field
+"""Pydantic models for typed data structures throughout the pipeline."""
+
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class PlayerRaw(BaseModel):
     """
     Represents the raw player data structure from the Sleeper API.
-    Includes fields relevant for the initial cleaning and enrichment phases.
+    Only includes fields relevant for the initial cleaning and enrichment phases.
     """
 
     player_id: str
@@ -15,15 +16,11 @@ class PlayerRaw(BaseModel):
     last_name: str
     position: str | None = None
     team: str | None = None
+    # The 'alias' allows Pydantic to read from a different key name in the source JSON.
     bye_week: int | None = Field(default=None, alias="fantasy_data_tms_bye_week")
 
-    # This allows Pydantic to populate 'bye_week' from the 'fantasy_data_tms_bye_week' key in the source JSON
-    class Config:
-        populate_by_name = True
-
-    def model_dump(self, **kwargs) -> dict:
-        # We ensure the alias is used for dumping if needed, though for our use case it's less critical.
-        return super().model_dump(by_alias=True, **kwargs)
+    # This config tells Pydantic to respect the 'alias' when populating the model.
+    model_config = ConfigDict(populate_by_name=True)
 
 
 class PlayerEnriched(PlayerRaw):
@@ -38,7 +35,7 @@ class PlayerEnriched(PlayerRaw):
 
 class PlayerWithPPG(PlayerEnriched):
     """
-    Represents a player after the 'expected_ppg' score has been calculated.
+    Represents a player after the composite 'expected_ppg' score has been calculated.
     This model is primarily for data moving from the stats to the VOR phase.
     """
 

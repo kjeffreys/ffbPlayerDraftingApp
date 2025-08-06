@@ -1,12 +1,10 @@
-# backend/backend/transforms/merge_stats.py
+# Path: ffbPlayerDraftingApp/backend/transforms/merge_stats.py
+
 """Functions for merging external stats with player data."""
 
-
-from backend.logging_config import setup_logging
-from backend.models import PlayerEnriched, PlayerRaw
-from backend.utils import slugify
-
-log = setup_logging(__name__)
+from backend.logging_config import log  # Corrected import path
+from backend.models import PlayerRaw, PlayerEnriched  # Corrected import path
+from backend.utils import slugify  # Corrected import path
 
 
 def merge_external_data(
@@ -30,19 +28,23 @@ def merge_external_data(
     proj_matches = 0
 
     for player in players:
-        # Create a consistent key for lookups
+        # Create a consistent key for lookups from the player's full name.
         player_slug = slugify(f"{player.first_name} {player.last_name}")
 
+        # Look up the player in the ADP map.
         adp = adp_map.get(player_slug)
         if adp is not None:
             adp_matches += 1
 
+        # Look up the player in the projections map.
         projection = projections_map.get(player_slug)
         if projection is not None:
             proj_matches += 1
 
+        # Create a new PlayerEnriched object, inheriting all fields from the
+        # base player and adding the new, enriched data.
         enriched_player = PlayerEnriched(
-            **player.model_dump(),  # Inherit all fields from the base player
+            **player.model_dump(),  # Unpack all fields from the PlayerRaw object
             adp=adp,
             projected_points=projection,
         )
