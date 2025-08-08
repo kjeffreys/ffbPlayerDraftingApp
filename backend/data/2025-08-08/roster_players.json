@@ -1104,14 +1104,6 @@
     "fantasy_data_tms_bye_week": null
   },
   {
-    "player_id": "12549",
-    "first_name": "Jordan",
-    "last_name": "Petaia",
-    "position": "TE",
-    "team": "LAC",
-    "fantasy_data_tms_bye_week": null
-  },
-  {
     "player_id": "5121",
     "first_name": "Braxton",
     "last_name": "Berrios",
@@ -2021,14 +2013,6 @@
     "last_name": "Miller-Hines",
     "position": "RB",
     "team": "LAC",
-    "fantasy_data_tms_bye_week": null
-  },
-  {
-    "player_id": "12755",
-    "first_name": "Kelly",
-    "last_name": "Akharaiyi",
-    "position": "WR",
-    "team": "BUF",
     "fantasy_data_tms_bye_week": null
   },
   {
@@ -2989,6 +2973,14 @@
     "last_name": "Nacua",
     "position": "WR",
     "team": "LAR",
+    "fantasy_data_tms_bye_week": null
+  },
+  {
+    "player_id": "13149",
+    "first_name": "Caden",
+    "last_name": "Davis",
+    "position": "K",
+    "team": "BUF",
     "fantasy_data_tms_bye_week": null
   },
   {

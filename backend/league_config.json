@@ -12,7 +12,7 @@
     "scoring": "HALF",
     "week": 1,
     "games_divisor": 17,
-    "player_boost": ".90",
+    "player_boost": ".10",
     "top_game_count": 6,
     "weight_projection": 0.50,
     "weight_last_year": 0.50
