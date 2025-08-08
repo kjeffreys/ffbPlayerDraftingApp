@@ -52,7 +52,7 @@
     "slug": "ceedee-lamb",
     "adp": 5.5,
     "bye_week": 10.0,
-    "projected_points": 248.8
+    "projected_points": 248.9
   },
   {
     "player_id": "5038",
@@ -96,7 +96,7 @@
     "slug": "jerry-jeudy",
     "adp": 70.0,
     "bye_week": 9.0,
-    "projected_points": 173.5
+    "projected_points": 173.1
   },
   {
     "player_id": "11616",
@@ -547,7 +547,7 @@
     "slug": "justice-hill",
     "adp": 181.5,
     "bye_week": 7.0,
-    "projected_points": 72.0
+    "projected_points": 71.2
   },
   {
     "player_id": "12925",
@@ -734,7 +734,7 @@
     "slug": "jayden-reed",
     "adp": 100.0,
     "bye_week": 5.0,
-    "projected_points": 155.8
+    "projected_points": 155.9
   },
   {
     "player_id": "7534",
@@ -1999,7 +1999,7 @@
     "slug": "trey-benson",
     "adp": 139.5,
     "bye_week": 8.0,
-    "projected_points": 102.5
+    "projected_points": 102.4
   },
   {
     "player_id": "13237",
@@ -2527,7 +2527,7 @@
     "slug": "jalen-mcmillan",
     "adp": 165.0,
     "bye_week": 9.0,
-    "projected_points": 94.2
+    "projected_points": 94.1
   },
   {
     "player_id": "4219",
@@ -2846,7 +2846,7 @@
     "slug": "will-levis",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": NaN
+    "projected_points": 0.0
   },
   {
     "player_id": "12509",
@@ -3011,7 +3011,7 @@
     "slug": "emeka-egbuka",
     "adp": 114.0,
     "bye_week": 9.0,
-    "projected_points": 113.9
+    "projected_points": 113.8
   },
   {
     "player_id": "7605",
@@ -3396,7 +3396,7 @@
     "slug": "keaton-mitchell",
     "adp": 282.0,
     "bye_week": 7.0,
-    "projected_points": 51.7
+    "projected_points": 59.3
   },
   {
     "player_id": "7521",
@@ -3528,7 +3528,7 @@
     "slug": "kaleb-johnson",
     "adp": 68.0,
     "bye_week": 5.0,
-    "projected_points": 156.8
+    "projected_points": 156.9
   },
   {
     "player_id": "12079",
@@ -3979,7 +3979,7 @@
     "slug": "derrick-henry",
     "adp": 11.5,
     "bye_week": 7.0,
-    "projected_points": 258.1
+    "projected_points": 255.0
   },
   {
     "player_id": "4926",
@@ -4342,7 +4342,7 @@
     "slug": "diontae-johnson",
     "adp": 277.0,
     "bye_week": 9.0,
-    "projected_points": 86.2
+    "projected_points": 90.4
   },
   {
     "player_id": "4263",
@@ -4793,7 +4793,7 @@
     "slug": "rashid-shaheed",
     "adp": 144.0,
     "bye_week": 11.0,
-    "projected_points": 142.1
+    "projected_points": 142.0
   },
   {
     "player_id": "6271",
@@ -5145,7 +5145,7 @@
     "slug": "tyrone-tracy",
     "adp": 78.0,
     "bye_week": 14.0,
-    "projected_points": 150.8
+    "projected_points": 150.9
   },
   {
     "player_id": "12775",
@@ -6179,7 +6179,7 @@
     "slug": "cedric-tillman",
     "adp": 177.0,
     "bye_week": 9.0,
-    "projected_points": 117.4
+    "projected_points": 119.1
   },
   {
     "player_id": "7090",
@@ -6399,7 +6399,7 @@
     "slug": "trevor-etienne",
     "adp": 254.5,
     "bye_week": 14.0,
-    "projected_points": 42.7
+    "projected_points": 43.3
   },
   {
     "player_id": "6963",
@@ -6608,7 +6608,7 @@
     "slug": "quinshon-judkins",
     "adp": 81.0,
     "bye_week": 9.0,
-    "projected_points": 119.5
+    "projected_points": 119.4
   },
   {
     "player_id": "12634",
@@ -7565,7 +7565,7 @@
     "slug": "dylan-sampson",
     "adp": 156.5,
     "bye_week": 9.0,
-    "projected_points": 97.6
+    "projected_points": 97.5
   },
   {
     "player_id": "5285",
@@ -7664,7 +7664,7 @@
     "slug": "rashod-bateman",
     "adp": 166.5,
     "bye_week": 7.0,
-    "projected_points": 125.0
+    "projected_points": 125.1
   },
   {
     "player_id": "8783",
@@ -7741,7 +7741,7 @@
     "slug": "terry-mclaurin",
     "adp": 39.0,
     "bye_week": 12.0,
-    "projected_points": 202.7
+    "projected_points": 202.6
   },
   {
     "player_id": "4199",
@@ -7917,7 +7917,7 @@
     "slug": "tank-bigsby",
     "adp": 119.0,
     "bye_week": 8.0,
-    "projected_points": 109.2
+    "projected_points": 110.4
   },
   {
     "player_id": "DET",
@@ -8610,7 +8610,7 @@
     "slug": "donald-parham",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": NaN
+    "projected_points": 0.0
   },
   {
     "player_id": "11815",
@@ -9215,7 +9215,7 @@
     "slug": "wandale-robinson",
     "adp": 181.5,
     "bye_week": 14.0,
-    "projected_points": 113.7
+    "projected_points": 113.8
   },
   {
     "player_id": "11773",
@@ -9622,7 +9622,7 @@
     "slug": "bub-means",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": 19.4
+    "projected_points": 31.9
   },
   {
     "player_id": "5744",
@@ -11371,7 +11371,7 @@
     "slug": "jonathan-taylor",
     "adp": 22.0,
     "bye_week": 11.0,
-    "projected_points": 229.0
+    "projected_points": 229.1
   },
   {
     "player_id": "11564",
@@ -11558,7 +11558,7 @@
     "slug": "kenny-mcintosh",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": NaN
+    "projected_points": 10.9
   },
   {
     "player_id": "12505",
@@ -11580,7 +11580,7 @@
     "slug": "matthew-golden",
     "adp": 95.5,
     "bye_week": 5.0,
-    "projected_points": 152.9
+    "projected_points": 153.0
   },
   {
     "player_id": "3309",

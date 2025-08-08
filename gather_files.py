@@ -30,7 +30,14 @@ file_list = [
     # "backend/transforms/compute_ppg.py",
     # "backend/settings.py",
     # "backend/models.py",
-    "backend/pipelines/vor.py",
+    # "backend/pipelines/vor.py",
+    "index.html",
+    "index.tsx",
+    "metadata.json",
+    "package.json",
+    "README.md",
+    "tsconfig.json",
+    "vite.config.ts",
 ]
 
 #  Run the function to extract and write the contents

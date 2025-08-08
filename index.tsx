@@ -12,7 +12,7 @@ interface Player
     position: 'QB' | 'RB' | 'WR' | 'TE' | 'K' | 'DEF';
     adp: number;
     vor: number;
-    ppg: number; // Added for data validation
+    ppg: number;
     bye: number;
 }
 
@@ -20,6 +20,7 @@ type SortByType = 'adp' | 'vor';
 type FilterByType = 'ALL' | 'FLEX' | Player['position'];
 type ViewType = 'draft' | 'byes';
 type ByeWeekCounts = Record<number, Player[]>;
+type Owner = 'me' | 'other';
 
 /* ────────────────────
    DATA FETCH
@@ -36,9 +37,7 @@ async function fetchPlayers(): Promise<Player[]>
 ────────────────────── */
 const POSITIONS: Player['position'][] = ['QB', 'RB', 'WR', 'TE', 'K', 'DEF'];
 const getPositionColor = (pos: Player['position']) => `var(--pos-${pos.toLowerCase()})`;
-const VOR_THRESHOLD = 10;          // flame if VOR based on total points (not PPG) has a large drop-off
-// Note: The python script calculates VOR from PPG now. This threshold might need adjustment.
-// For now, we'll keep it as is. A VOR dropoff of 10 PPG is huge. Let's base it on VOR directly.
+const VOR_THRESHOLD = 10;
 
 /* ────────────────────
    HEADER
@@ -49,7 +48,15 @@ const Header: React.FC<{
     view: ViewType; setView: (v: ViewType) => void;
     resetDraft: () => void;
     currentPick: number;
-}> = ({ sortBy, setSortBy, filterBy, setFilterBy, view, setView, resetDraft, currentPick }) =>
+    pickingFor: Owner; setPickingFor: (o: Owner) => void;
+}> = ({
+    sortBy, setSortBy,
+    filterBy, setFilterBy,
+    view, setView,
+    resetDraft,
+    currentPick,
+    pickingFor, setPickingFor
+}) =>
     {
         const filters: FilterByType[] = ['ALL', 'FLEX', ...POSITIONS];
         const btn = (active: boolean) => ({
@@ -72,6 +79,26 @@ const Header: React.FC<{
                             · Pick #{currentPick}
                         </span>
                     </h1>
+
+                    {/* Picking-for toggle */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                        <span style={{ color: 'var(--color-text-secondary)' }}>Picking for:</span>
+                        <div style={{ display: 'inline-flex', background: 'var(--color-bg)', padding: 2, borderRadius: 10 }}>
+                            <button
+                                style={{ ...btn(pickingFor === 'me'), padding: '6px 10px', borderRadius: 8 }}
+                                onClick={() => setPickingFor('me')}
+                            >
+                                Me
+                            </button>
+                            <button
+                                style={{ ...btn(pickingFor === 'other'), padding: '6px 10px', borderRadius: 8, marginLeft: 4 }}
+                                onClick={() => setPickingFor('other')}
+                            >
+                                Other
+                            </button>
+                        </div>
+                    </div>
+
                     <div style={{ display: 'flex', gap: 8 }}>
                         <button style={btn(view === 'draft')} onClick={() => setView('draft')}>Draft Board</button>
                         <button style={btn(view === 'byes')} onClick={() => setView('byes')}>Bye Weeks</button>
@@ -106,48 +133,44 @@ const PlayerCard: React.FC<{
     isDanger: boolean;
     isSteal: boolean;
 }> = ({ player, onDraft, isDanger, isSteal }) =>
-    {
-        // Destructure all the player properties, including the new 'ppg'
-        const { name, team, position, bye, adp, vor, ppg } = player;
+{
+    const { name, team, position, bye, adp, vor, ppg } = player;
 
-        return (
+    return (
+        <div style={{
+            display: 'flex', alignItems: 'center', background: 'var(--color-surface)',
+            padding: 16, borderRadius: 8, borderLeft: `5px solid ${getPositionColor(position)}`, gap: 16
+        }}>
             <div style={{
-                display: 'flex', alignItems: 'center', background: 'var(--color-surface)',
-                padding: 16, borderRadius: 8, borderLeft: `5px solid ${getPositionColor(position)}`, gap: 16
+                flex: 1, display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit,minmax(100px,1fr))', gap: 16
             }}>
-                <div style={{
-                    flex: 1, display: 'grid',
-                    // Adjusted grid to make space for the new PPG column
-                    gridTemplateColumns: 'repeat(auto-fit,minmax(100px,1fr))', gap: 16
-                }}>
-                    <div>
-                        <div style={{ fontWeight: 600, fontSize: '1.1rem' }}>{name}</div>
-                        <div style={{ color: 'var(--color-text-secondary)', fontSize: 14 }}>
-                            {team} · {position} · Bye {bye}
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{ color: 'var(--color-text-secondary)' }}>ADP</div><div>{adp}</div>
-                    </div>
-                    {/* START NEW PPG DISPLAY BLOCK */}
-                    <div>
-                        <div style={{ color: 'var(--color-text-secondary)' }}>PPG</div><div>{ppg.toFixed(2)}</div>
-                    </div>
-                    {/* END NEW PPG DISPLAY BLOCK */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                        <div>
-                            <div style={{ color: 'var(--color-text-secondary)' }}>VOR</div><div>{vor.toFixed(2)}</div>
-                        </div>
-                        {isDanger && <span style={{ fontSize: '1.25rem', color: 'var(--color-danger)' }} title={`VOR drop-off > ${VOR_THRESHOLD}`}>🔥</span>}
-                        {isSteal && <span style={{ fontSize: '1.25rem' }} title='Steal vs ADP'>💰</span>}
+                <div>
+                    <div style={{ fontWeight: 600, fontSize: '1.1rem' }}>{name}</div>
+                    <div style={{ color: 'var(--color-text-secondary)', fontSize: 14 }}>
+                        {team} · {position} · Bye {bye}
                     </div>
                 </div>
-
-                <button style={{ background: 'var(--color-accent)', color: 'var(--color-text-primary)' }}
-                    onClick={() => onDraft(player.id)}>Draft</button>
+                <div>
+                    <div style={{ color: 'var(--color-text-secondary)' }}>ADP</div><div>{adp}</div>
+                </div>
+                <div>
+                    <div style={{ color: 'var(--color-text-secondary)' }}>PPG</div><div>{ppg.toFixed(2)}</div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                    <div>
+                        <div style={{ color: 'var(--color-text-secondary)' }}>VOR</div><div>{vor.toFixed(2)}</div>
+                    </div>
+                    {isDanger && <span style={{ fontSize: '1.25rem', color: 'var(--color-danger)' }} title={`VOR drop-off > ${VOR_THRESHOLD}`}>🔥</span>}
+                    {isSteal && <span style={{ fontSize: '1.25rem' }} title='Steal vs ADP'>💰</span>}
+                </div>
             </div>
-        );
-    };
+
+            <button style={{ background: 'var(--color-accent)', color: 'var(--color-text-primary)' }}
+                onClick={() => onDraft(player.id)}>Draft</button>
+        </div>
+    );
+};
 
 /* ────────────────────
    BYE WEEK VIEW
@@ -193,7 +216,9 @@ const ByeWeekView: React.FC<{ byeCounts: ByeWeekCounts }> = ({ byeCounts }) =>
 const App: React.FC = () =>
 {
     const [allPlayers, setAllPlayers] = useState<Player[]>([]);
-    const [draftedIds, setDraftedIds] = useState<Set<number>>(new Set());
+    // NEW: who drafted each player
+    const [draftedBy, setDraftedBy] = useState<Record<number, Owner>>({});
+    const [pickingFor, setPickingFor] = useState<Owner>('me');
 
     const [sortBy, setSortBy] = useState<SortByType>('adp');
     const [filterBy, setFilterBy] = useState<FilterByType>('ALL');
@@ -210,26 +235,33 @@ const App: React.FC = () =>
     }, []);
 
     /* Helpers */
-    const onDraft = (id: number) => setDraftedIds(prev => new Set(prev).add(id));
-    const resetDraft = () => setDraftedIds(new Set());
-    const currentPick = draftedIds.size + 1;
+    const onDraft = (id: number) =>
+        setDraftedBy(prev => ({ ...prev, [id]: pickingFor }));
+
+    const resetDraft = () =>
+    {
+        setDraftedBy({});
+        setPickingFor('me');
+    };
+
+    const currentPick = Object.keys(draftedBy).length + 1;
 
     /* Remaining pool */
     const available = useMemo(
-        () => allPlayers.filter(p => !draftedIds.has(p.id)),
-        [allPlayers, draftedIds]
+        () => allPlayers.filter(p => !(p.id in draftedBy)),
+        [allPlayers, draftedBy]
     );
 
     /* Build per-position VOR danger map */
     const dangerMap = useMemo(() =>
     {
         const map = new Map<number, boolean>();
-        // Re-calculate danger based on VOR since it's now PPG-based
-        const VOR_DANGER_THRESHOLD = 2.0; // A 2.0 VOR dropoff is a significant tier break
+        const VOR_DANGER_THRESHOLD = 2.0;
 
         POSITIONS.forEach(pos =>
         {
-            const list = available.filter(p => p.position === pos)
+            const list = available
+                .filter(p => p.position === pos)
                 .sort((a, b) => b.vor - a.vor);
 
             for (let i = 0; i < list.length - 1; i++)
@@ -259,18 +291,18 @@ const App: React.FC = () =>
         );
     }, [available, filterBy, sortBy]);
 
-    /* Bye week counts for drafted players */
+    /* Bye week counts – ONLY my players */
     const byeCounts = useMemo(() =>
     {
         const counts: ByeWeekCounts = {};
         allPlayers
-            .filter(p => draftedIds.has(p.id))
+            .filter(p => draftedBy[p.id] === 'me')
             .forEach(p =>
             {
                 (counts[p.bye] = counts[p.bye] || []).push(p);
             });
         return counts;
-    }, [draftedIds, allPlayers]);
+    }, [draftedBy, allPlayers]);
 
     if (loading) return <div>Loading players...</div>;
 
@@ -282,6 +314,7 @@ const App: React.FC = () =>
                 view={view} setView={setView}
                 resetDraft={resetDraft}
                 currentPick={currentPick}
+                pickingFor={pickingFor} setPickingFor={setPickingFor}
             />
 
             {view === 'draft' ? (
