@@ -34,11 +34,13 @@ def run_vor(date_str: str | None = None):
         formatted_df["position"] = final_df["position"]
         formatted_df["adp"] = final_df["adp"].round(1)
         formatted_df["vor"] = final_df["vor"].round(2)
-        # --- THE FIX ---
-        # The 'bye_week' column is passed from the initial load, not the ugly name
-        formatted_df["bye"] = final_df["bye_week"]
-        formatted_df["ppg"] = final_df["expected_ppg"].round(2)
 
+        # Convert the 'bye_week' column to a nullable integer type.
+        # This correctly handles NaN -> None while keeping integers as integers.
+        # The 'Int64' (capital 'I') dtype is crucial for this.
+        formatted_df["bye"] = final_df["bye_week"].astype("Int64")
+
+        formatted_df["ppg"] = final_df["expected_ppg"].round(2)
         output_data = formatted_df.replace({np.nan: None}).to_dict(orient="records")
         save_json(output_path, output_data)
         log.info(

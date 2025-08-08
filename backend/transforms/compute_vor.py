@@ -1,73 +1,54 @@
 # Path: ffbPlayerDraftingApp/backend/transforms/compute_vor.py
 
-"""Function for calculating Value over Replacement (VOR)."""
-
 import pandas as pd
-
-from backend.logging_config import log  # Corrected import path
-from backend.settings import settings  # Corrected import path
+from backend.logging_config import log
+from backend.settings import settings
 
 
 def calculate_vor(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Calculates Value over Replacement (VOR) for each player.
-
-    VOR is defined as a player's score minus the score of a "replacement-level"
-    player at the same position. The replacement level is determined by the last
-    expected starter based on league size and roster settings.
-
-    Args:
-        df: A DataFrame of players with 'position' and 'expected_ppg' columns.
-
-    Returns:
-        The same DataFrame with a 'vor' column added.
-    """
-    log.info("Calculating Value over Replacement (VOR).")
-
+    log.info("Calculating Value over Replacement (VOR) with FLEX logic.")
     cfg = settings.league_config
-    roster_cfg = cfg.roster  # pylint: disable=no-member
+    roster = cfg.roster
 
     replacement_levels = {}
 
-    # Determine the replacement level PPG for each core position
-    for position, num_starters in roster_cfg.model_dump().items():
-        # FLEX is handled by the value of RBs/WRs/TEs, so we skip it here.
-        # Also skip positions with 0 starters.
-        if position == "FLEX" or num_starters == 0:
+    # Step 1: Calculate replacement for dedicated positions
+    for pos, starters in roster.model_dump().items():
+        if pos == "FLEX":
             continue
-
-        # Filter the DataFrame to players of the current position
-        pos_df = df[df["position"] == position].sort_values(
-            by="expected_ppg", ascending=False
-        )
-
-        # The replacement level is the Nth player, where N = teams * starters
-        replacement_idx = cfg.teams * num_starters  # pylint: disable=no-member
-
-        # Ensure we don't go out of bounds if there are fewer players than starters
-        if replacement_idx > 0 and replacement_idx <= len(pos_df):
-            # The replacement player is at index N-1 (since it's 0-indexed)
-            replacement_player_ppg = pos_df.iloc[replacement_idx - 1]["expected_ppg"]
-            replacement_levels[position] = replacement_player_ppg
+        pos_df = df[df["position"] == pos].sort_values("expected_ppg", ascending=False)
+        replacement_idx = cfg.teams * starters
+        if 0 < replacement_idx <= len(pos_df):
+            replacement_levels[pos] = pos_df.iloc[replacement_idx - 1]["expected_ppg"]
         else:
-            # If not enough players, the replacement value is effectively zero.
-            replacement_levels[position] = 0.0
-            log.warning(
-                "Not enough players to determine replacement level for position.",
-                extra={
-                    "position": position,
-                    "needed_players": replacement_idx,
-                    "available_players": len(pos_df),
-                },
-            )
+            replacement_levels[pos] = 0.0
+
+    # Step 2: Calculate FLEX replacement level
+    flex_pool = pd.concat(
+        [
+            df[df["position"] == "RB"].iloc[cfg.teams * roster.RB :],
+            df[df["position"] == "WR"].iloc[cfg.teams * roster.WR :],
+            df[df["position"] == "TE"].iloc[cfg.teams * roster.TE :],
+        ]
+    ).sort_values("expected_ppg", ascending=False)
+
+    flex_replacement_idx = cfg.teams * roster.FLEX
+    if 0 < flex_replacement_idx <= len(flex_pool):
+        replacement_levels["FLEX"] = flex_pool.iloc[flex_replacement_idx - 1][
+            "expected_ppg"
+        ]
+    else:
+        replacement_levels["FLEX"] = 0.0
 
     log.info("Determined replacement levels (PPG).", extra=replacement_levels)
 
-    # Calculate VOR for each player by subtracting their position's replacement PPG.
-    # If a player's position has no defined replacement level, their VOR is 0.
-    df["vor"] = df.apply(
-        lambda row: row["expected_ppg"] - replacement_levels.get(row["position"], 0.0),
-        axis=1,
-    )
+    # Step 3: Calculate VOR for each player
+    def get_player_vor(row):
+        pos_vor = row["expected_ppg"] - replacement_levels.get(row["position"], 0.0)
+        if row["position"] in ["RB", "WR", "TE"]:
+            flex_vor = row["expected_ppg"] - replacement_levels.get("FLEX", 0.0)
+            return max(pos_vor, flex_vor)
+        return pos_vor
 
+    df["vor"] = df.apply(get_player_vor, axis=1)
     return df

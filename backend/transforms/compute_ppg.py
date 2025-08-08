@@ -1,33 +1,27 @@
 # Path: ffbPlayerDraftingApp/backend/transforms/compute_ppg.py
 
-"""Functions for computing various forms of points-per-game (PPG)."""
-
 import pandas as pd
+import numpy as np
 
 
 def calculate_top_n_games_avg(
-    player_ids: list[str], historical_stats: dict[str, list[float]], top_n: int
-) -> pd.Series:
+    slug_series: pd.Series, historical_stats: dict[str, list[float]], top_n: int
+) -> np.ndarray:
     """
     Calculates the average of each player's top N weekly scores from last year.
-
-    Args:
-        player_ids: The list of all player IDs being processed in this run.
-        historical_stats: A dict mapping player_id to their weekly scores.
-        top_n: The number of top games to consider (e.g., 6 from league_config).
-
-    Returns:
-        A pandas Series indexed by player_id with their top-N-game-avg PPG.
-        Players with no data or fewer than N games will have a NaN value.
+    Returns a NumPy array to ensure direct, index-free assignment to the DataFrame.
     """
-    ppg_data = {}
-    for player_id in player_ids:
-        scores = historical_stats.get(player_id)
-        # Only calculate if the player has historical scores and enough games.
-        if scores and len(scores) >= top_n:
-            top_scores = sorted(scores, reverse=True)[:top_n]
-            ppg_data[player_id] = sum(top_scores) / top_n
-
-    # Create a Series and reindex it to match the full list of players.
-    # This ensures that players without scores get a NaN value.
-    return pd.Series(ppg_data, name="top_n_avg").reindex(player_ids)
+    ppg_scores = []
+    for slug in slug_series:
+        scores = historical_stats.get(slug)
+        if scores:
+            sorted_scores = sorted(scores, reverse=True)
+            games_to_average = min(len(sorted_scores), top_n)
+            top_scores = sorted_scores[:games_to_average]
+            if games_to_average > 0:
+                ppg_scores.append(sum(top_scores) / games_to_average)
+            else:
+                ppg_scores.append(np.nan)
+        else:
+            ppg_scores.append(np.nan)
+    return np.array(ppg_scores)

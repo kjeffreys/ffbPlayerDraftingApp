@@ -34,7 +34,7 @@ class LeagueConfig(BaseModel):
     scoring: str
     week: int
     games_divisor: int
-    rookie_bonus: float
+    player_boost: float
     top_game_count: int
     weight_projection: float
     weight_last_year: float

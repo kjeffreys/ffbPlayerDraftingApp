@@ -5,29 +5,26 @@
 import pandas as pd
 
 
-def calculate_z_scores(series: pd.Series) -> pd.Series:
+def calculate_z_scores(df: pd.DataFrame, column_name: str) -> pd.Series:
     """
-    Calculates the z-score for each value in a pandas Series.
-    Z-score = (value - mean) / std_dev.
+    Calculates the z-score for each value in a column, grouped by position.
+    Z-score = (value - group_mean) / group_std_dev.
 
-    Missing values (NaN), such as for rookies with no historical data, will be
-    filled with 0. This correctly treats them as "average" in that category,
-    neither penalizing nor artificially boosting them.
+    This is critical for comparing players against their peers (e.g., a WR's
+    historical performance against other WRs, not against QBs).
 
     Args:
-        series: A pandas Series of numerical data (e.g., all player projections).
+        df: The main player DataFrame. Must contain 'position' and the target column.
+        column_name: The name of the column to calculate z-scores for (e.g., 'top_n_avg').
 
     Returns:
-        A pandas Series of the same shape containing z-scores.
+        A pandas Series containing the positionally-normalized z-scores.
     """
-    mean = series.mean()
-    std_dev = series.std()
+    # Use transform to apply the z-score calculation within each position group.
+    # The lambda function calculates the z-score for its subset (the series for one position).
+    z_scores = df.groupby("position")[column_name].transform(
+        lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0.0
+    )
 
-    # Avoid division by zero if all values in the series are identical.
-    if std_dev == 0:
-        return pd.Series(0.0, index=series.index)
-
-    z_scores = (series - mean) / std_dev
-
-    # Fill any missing values with 0, representing the mean (average).
+    # Fill any remaining NaNs (for players in groups with no data) with 0.
     return z_scores.fillna(0.0)

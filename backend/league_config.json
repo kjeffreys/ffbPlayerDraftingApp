@@ -1,9 +1,9 @@
 {
     "teams": 8,
     "roster": {
-        "QB": 2,
-        "RB": 3,
-        "WR": 3,
+        "QB": 1,
+        "RB": 2,
+        "WR": 2,
         "TE": 1,
         "FLEX": 2,
         "K": 1,
@@ -12,8 +12,8 @@
     "scoring": "HALF",
     "week": 1,
     "games_divisor": 17,
-    "rookie_bonus": 0.15,
+    "player_boost": ".90",
     "top_game_count": 6,
-    "weight_projection": 0.80,
-    "weight_last_year": 0.20
+    "weight_projection": 0.50,
+    "weight_last_year": 0.50
 }
