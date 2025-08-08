@@ -28,8 +28,9 @@ file_list = [
     # "backend/pipelines/enrich.py",
     # "backend/pipelines/stats.py",
     # "backend/transforms/compute_ppg.py",
-    "backend/settings.py",
-    "backend/models.py",
+    # "backend/settings.py",
+    # "backend/models.py",
+    "backend/pipelines/vor.py",
 ]
 
 #  Run the function to extract and write the contents
