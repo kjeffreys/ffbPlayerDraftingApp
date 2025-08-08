@@ -67,27 +67,35 @@ def run_stats(date_str: str | None = None):
         ]
         df["score"] = np.select(conditions, choices, default=0.0)
 
-        # --- PLAYER BOOST LOGIC (with robust path) ---
+        # --- TIERED PLAYER BOOST LOGIC ---
         boost_list_path = settings.BASE_DIR / "player_boost.json"
         if boost_list_path.exists():
             boost_data = load_json(boost_list_path)
-            slugs_to_boost = boost_data.get("player_slugs", [])
-            log.info(
-                f"Loaded {len(slugs_to_boost)} players to boost from {boost_list_path}."
-            )
+            log.info(f"Loaded tiered boost data from {boost_list_path}.")
 
-            is_boosted_player = df["slug"].isin(slugs_to_boost)
-            boost_factor = 1 + cfg.player_boost
-            df.loc[is_boosted_player, "score"] *= boost_factor
-            log.info(
-                f"Applied a {cfg.player_boost:.0%} boost to {is_boosted_player.sum()} players."
-            )
-            log.info(f"Boosted players: {df.loc[is_boosted_player, 'slug'].tolist()}")
+            # Define the tiers, mapping config keys to JSON keys
+            tiers = {
+                "large": (cfg.boost_large, "large_boost_slugs"),
+                "medium": (cfg.boost_medium, "medium_boost_slugs"),
+                "small": (cfg.boost_small, "small_boost_slugs"),
+            }
+
+            for tier_name, (boost_value, json_key) in tiers.items():
+                slugs_to_boost = boost_data.get(json_key, [])
+                if slugs_to_boost:
+                    is_boosted_player = df["slug"].isin(slugs_to_boost)
+                    boost_factor = 1 + boost_value
+                    df.loc[is_boosted_player, "score"] *= boost_factor
+
+                    log.info(
+                        f"Applied a {boost_value:.0%} '{tier_name}' boost to {is_boosted_player.sum()} players."
+                    )
+                    log.info(f"'{tier_name}' boosted players: {slugs_to_boost}")
+
         else:
             log.warning(
                 f"player_boost.json not found at {boost_list_path}. Skipping player boost."
             )
-
         df["expected_ppg"] = df["score"]
         log.info("Final 'expected_ppg' calculation complete.")
 

@@ -1,4 +1,4 @@
-# Path: ffbPlayerDraftingApp/backend/pipelines/vor.py (FINAL)
+# Path: ffbPlayerDraftingApp/backend/pipelines/vor.py (FINAL with Penalties)
 
 import datetime
 import pandas as pd
@@ -15,15 +15,23 @@ def run_vor(date_str: str | None = None):
         date_str = datetime.date.today().isoformat()
     log.info("Starting VOR pipeline.", extra={"date": date_str})
 
-    # --- FIX: Use the dynamic date_str passed in from the CLI ---
     input_path = settings.DATA_DIR / date_str / "players_with_ppg.json"
     output_path = settings.DATA_DIR / date_str / "players_final.json"
     try:
         ppg_data = load_json(input_path)
         df = pd.DataFrame(ppg_data)
+        cfg = settings.league_config
 
-        # --- NEW: Filter out players who do not have an ADP ---
-        # This cleans the final output for the UI.
+        # --- NEW: Apply Positional Penalties from Config ---
+        log.info("Applying positional penalties to expected_ppg.")
+        if hasattr(cfg, "positional_penalties"):
+            penalties = cfg.positional_penalties
+            for position, penalty in penalties.items():
+                if penalty < 1.0:  # Only apply penalties, not accidental boosts
+                    df.loc[df["position"] == position, "expected_ppg"] *= penalty
+                    log.info(f"Applied a x{penalty} penalty to {position} position.")
+
+        # --- Filter out players who do not have an ADP ---
         initial_count = len(df)
         df.dropna(subset=["adp"], inplace=True)
         final_count = len(df)
@@ -31,14 +39,14 @@ def run_vor(date_str: str | None = None):
             f"Filtered out players with no ADP. Removed: {initial_count - final_count}, Remaining: {final_count}"
         )
 
-        # Continue with VOR calculation on the cleaned DataFrame
+        # Continue with VOR calculation on the adjusted DataFrame
         df_with_vor = calculate_vor(df.copy())
         final_df = df_with_vor.sort_values(by="vor", ascending=False)
         final_df["rank"] = range(1, len(final_df) + 1)
 
         log.info("Formatting final output.")
 
-        # This formatting logic is good. No changes needed here.
+        # Formatting logic remains the same
         formatted_df = pd.DataFrame()
         formatted_df["id"] = final_df["rank"]
         formatted_df["name"] = final_df["first_name"] + " " + final_df["last_name"]

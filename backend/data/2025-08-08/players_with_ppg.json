@@ -25,17 +25,17 @@
     "position": "K",
     "team": "DAL",
     "slug": "brandon-aubrey",
-    "adp": 189.0,
+    "adp": 189.5,
     "bye_week": 10.0,
     "projected_points": 141.6,
-    "top_n_avg": 16.333333333333332,
+    "top_n_avg": 16.5,
     "projected_ppg": 8.329411764705881,
     "z_proj": 0.838431768743604,
-    "z_hist": 1.359628434641823,
-    "scaled_hist": 10.360453922489057,
+    "z_hist": 1.3586024591248478,
+    "scaled_hist": 10.35263592471967,
     "scaled_proj": 5.796453214323177,
-    "score": 8.078453568406117,
-    "expected_ppg": 8.078453568406117
+    "score": 8.074544569521423,
+    "expected_ppg": 8.074544569521423
   },
   {
     "player_id": "9487",
@@ -68,12 +68,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "6786",
@@ -91,8 +91,8 @@
     "z_hist": 1.6917690774840568,
     "scaled_hist": 12.891386446608692,
     "scaled_proj": 17.37215556424122,
-    "score": 18.158125206509947,
-    "expected_ppg": 18.158125206509947
+    "score": 19.671302307052443,
+    "expected_ppg": 19.671302307052443
   },
   {
     "player_id": "5038",
@@ -125,12 +125,12 @@
     "projected_points": 224.7,
     "top_n_avg": 20.266666666666666,
     "projected_ppg": 13.217647058823529,
-    "z_proj": 2.047049958517537,
+    "z_proj": 2.039924011629442,
     "z_hist": 1.3796400000338316,
     "scaled_hist": 10.512943305528033,
-    "scaled_proj": 14.152170461896777,
-    "score": 12.332556883712405,
-    "expected_ppg": 12.332556883712405
+    "scaled_proj": 14.102905609007806,
+    "score": 12.30792445726792,
+    "expected_ppg": 12.30792445726792
   },
   {
     "player_id": "11649",
@@ -144,12 +144,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "6783",
@@ -158,7 +158,7 @@
     "position": "WR",
     "team": "CLE",
     "slug": "jerry-jeudy",
-    "adp": 70.0,
+    "adp": 69.5,
     "bye_week": 9.0,
     "projected_points": 173.1,
     "top_n_avg": 19.55,
@@ -167,8 +167,8 @@
     "z_hist": 1.5053709752800737,
     "scaled_hist": 11.471021220404435,
     "scaled_proj": 9.946139874043256,
-    "score": 10.708580547223846,
-    "expected_ppg": 10.708580547223846
+    "score": 12.314867629307422,
+    "expected_ppg": 12.314867629307422
   },
   {
     "player_id": "11616",
@@ -253,7 +253,7 @@
     "position": "WR",
     "team": "NE",
     "slug": "kayshon-boutte",
-    "adp": 293.5,
+    "adp": 295.5,
     "bye_week": 14.0,
     "projected_points": 53.2,
     "top_n_avg": 9.516666666666667,
@@ -277,12 +277,12 @@
     "projected_points": 196.0,
     "top_n_avg": NaN,
     "projected_ppg": 11.529411764705882,
-    "z_proj": 1.6758210873049455,
+    "z_proj": 1.6692221380521455,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 11.585699505036096,
-    "score": 13.902839406043315,
-    "expected_ppg": 13.902839406043315
+    "scaled_proj": 11.540078022127753,
+    "score": 15.00210142876608,
+    "expected_ppg": 15.00210142876608
   },
   {
     "player_id": "11439",
@@ -291,17 +291,17 @@
     "position": "RB",
     "team": "DEN",
     "slug": "jaleel-mclaughlin",
-    "adp": 239.0,
+    "adp": 240.0,
     "bye_week": 12.0,
     "projected_points": 43.4,
     "top_n_avg": 8.766666666666667,
     "projected_ppg": 2.552941176470588,
-    "z_proj": -0.2980299840205413,
+    "z_proj": -0.30182684828567563,
     "z_hist": -0.03998323224423001,
     "scaled_hist": -0.30467473670308404,
-    "scaled_proj": -2.060414363149965,
-    "score": -1.1825445499265246,
-    "expected_ppg": -1.1825445499265246
+    "scaled_proj": -2.0866637812832574,
+    "score": -1.1956692589931708,
+    "expected_ppg": -1.1956692589931708
   },
   {
     "player_id": "11629",
@@ -329,7 +329,7 @@
     "position": "TE",
     "team": "LAC",
     "slug": "oronde-gadsden",
-    "adp": 288.0,
+    "adp": 291.0,
     "bye_week": 12.0,
     "projected_points": 33.4,
     "top_n_avg": NaN,
@@ -429,12 +429,12 @@
     "projected_points": 125.1,
     "top_n_avg": 15.266666666666666,
     "projected_ppg": 7.358823529411764,
-    "z_proj": 0.23648267510209492,
+    "z_proj": 0.22895692821915575,
     "z_hist": 0.19536055095734886,
     "scaled_hist": 1.4886596476624085,
-    "scaled_proj": 1.6349103329915282,
-    "score": 1.5617849903269683,
-    "expected_ppg": 1.5617849903269683
+    "scaled_proj": 1.5828814842097552,
+    "score": 1.5357705659360819,
+    "expected_ppg": 1.5357705659360819
   },
   {
     "player_id": "12967",
@@ -638,12 +638,12 @@
     "projected_points": 13.0,
     "top_n_avg": 4.1499999999999995,
     "projected_ppg": 0.7647058823529411,
-    "z_proj": -0.6912480218206383,
+    "z_proj": -0.6944866725626727,
     "z_hist": -0.6098899501297709,
     "scaled_hist": -4.647399660903114,
-    "scaled_proj": -4.778906247768944,
-    "score": -4.713152954336029,
-    "expected_ppg": -4.713152954336029
+    "scaled_proj": -4.801296486549933,
+    "score": -4.724348073726523,
+    "expected_ppg": -4.724348073726523
   },
   {
     "player_id": "7585",
@@ -657,12 +657,12 @@
     "projected_points": 8.6,
     "top_n_avg": 0.5666666666666668,
     "projected_ppg": 0.5058823529411764,
-    "z_proj": -0.6628160854868245,
+    "z_proj": -0.6683267250035421,
     "z_hist": -1.1943825712124163,
     "scaled_hist": -9.101270082020687,
-    "scaled_proj": -4.582343575771762,
-    "score": -6.841806828896225,
-    "expected_ppg": -6.841806828896225
+    "scaled_proj": -4.620441087495965,
+    "score": -6.860855584758326,
+    "expected_ppg": -6.860855584758326
   },
   {
     "player_id": "2359",
@@ -676,12 +676,12 @@
     "projected_points": 26.9,
     "top_n_avg": 14.35,
     "projected_ppg": 1.5823529411764705,
-    "z_proj": -0.5114542479580939,
+    "z_proj": -0.514948134488651,
     "z_hist": 0.6492541341516403,
     "scaled_hist": 4.94735721133666,
-    "scaled_proj": -3.535911603156977,
-    "score": 0.7057228040898418,
-    "expected_ppg": 0.7057228040898418
+    "scaled_proj": -3.56006640091813,
+    "score": 0.6936454052092651,
+    "expected_ppg": 0.6936454052092651
   },
   {
     "player_id": "5854",
@@ -695,12 +695,12 @@
     "projected_points": 8.4,
     "top_n_avg": 12.716666666666667,
     "projected_ppg": 0.49411764705882355,
-    "z_proj": -0.6643599460200244,
+    "z_proj": -0.6698671261249544,
     "z_hist": -0.045717337582304195,
     "scaled_hist": -0.3483689789152708,
-    "scaled_proj": -4.593016973040025,
-    "score": -2.4706929759776477,
-    "expected_ppg": -2.4706929759776477
+    "scaled_proj": -4.63109056830576,
+    "score": -2.4897297736105153,
+    "expected_ppg": -2.4897297736105153
   },
   {
     "player_id": "7593",
@@ -714,12 +714,12 @@
     "projected_points": 4.8,
     "top_n_avg": 5.983333333333333,
     "projected_ppg": 0.2823529411764706,
-    "z_proj": -0.7973134135956644,
+    "z_proj": -0.8004014935847575,
     "z_hist": -0.38357320295500735,
     "scaled_hist": -2.922851857069167,
-    "scaled_proj": -5.512183664014853,
-    "score": -4.21751776054201,
-    "expected_ppg": -4.21751776054201
+    "scaled_proj": -5.533532939944234,
+    "score": -4.2281923985067005,
+    "expected_ppg": -4.2281923985067005
   },
   {
     "player_id": "12832",
@@ -771,12 +771,12 @@
     "projected_points": 28.0,
     "top_n_avg": 5.016666666666667,
     "projected_ppg": 1.6470588235294117,
-    "z_proj": -0.4972259636955904,
+    "z_proj": -0.500740048741786,
     "z_hist": -0.5029038514653372,
     "scaled_hist": -3.8321588809088847,
-    "scaled_proj": -3.4375451204898426,
-    "score": -3.6348520006993636,
-    "expected_ppg": -3.6348520006993636
+    "scaled_proj": -3.461839559609139,
+    "score": -3.646999220259012,
+    "expected_ppg": -3.646999220259012
   },
   {
     "player_id": "HOU",
@@ -804,17 +804,17 @@
     "position": "QB",
     "team": "DAL",
     "slug": "dak-prescott",
-    "adp": 108.0,
+    "adp": 107.5,
     "bye_week": 10.0,
     "projected_points": 289.9,
     "top_n_avg": 17.966666666666665,
     "projected_ppg": 17.052941176470586,
-    "z_proj": 1.5086237544587808,
+    "z_proj": 1.4982474522629377,
     "z_hist": 0.45061949176404037,
     "scaled_hist": 3.433748781685834,
-    "scaled_proj": 10.42978968204037,
-    "score": 6.931769231863102,
-    "expected_ppg": 6.931769231863102
+    "scaled_proj": 10.358053671481022,
+    "score": 6.895901226583428,
+    "expected_ppg": 6.895901226583428
   },
   {
     "player_id": "421",
@@ -828,12 +828,12 @@
     "projected_points": 266.6,
     "top_n_avg": 21.366666666666664,
     "projected_ppg": 15.682352941176472,
-    "z_proj": 1.3287640023409972,
+    "z_proj": 1.3187907216183985,
     "z_hist": 0.7720566764835778,
     "scaled_hist": 5.883120283789406,
-    "scaled_proj": 9.186338900287714,
-    "score": 7.53472959203856,
-    "expected_ppg": 7.53472959203856
+    "scaled_proj": 9.11738915713988,
+    "score": 7.5002547204646435,
+    "expected_ppg": 7.5002547204646435
   },
   {
     "player_id": "11636",
@@ -861,7 +861,7 @@
     "position": "WR",
     "team": "BUF",
     "slug": "khalil-shakir",
-    "adp": 92.0,
+    "adp": 93.0,
     "bye_week": 7.0,
     "projected_points": 145.7,
     "top_n_avg": 14.383333333333333,
@@ -880,7 +880,7 @@
     "position": "TE",
     "team": "KC",
     "slug": "noah-gray",
-    "adp": 261.0,
+    "adp": 261.5,
     "bye_week": 10.0,
     "projected_points": 57.8,
     "top_n_avg": 11.4,
@@ -899,7 +899,7 @@
     "position": "DEF",
     "team": "NE",
     "slug": "new-england-patriots",
-    "adp": 272.5,
+    "adp": 276.5,
     "bye_week": 14.0,
     "projected_points": 85.3,
     "top_n_avg": 9.166666666666666,
@@ -923,12 +923,12 @@
     "projected_points": 9.7,
     "top_n_avg": NaN,
     "projected_ppg": 0.5705882352941176,
-    "z_proj": -0.6543248525542252,
+    "z_proj": -0.6598545188357741,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.523639890796314,
-    "score": -4.523639890796314,
-    "expected_ppg": -4.523639890796314
+    "scaled_proj": -4.561868943042091,
+    "score": -4.561868943042091,
+    "expected_ppg": -4.561868943042091
   },
   {
     "player_id": "5995",
@@ -937,17 +937,17 @@
     "position": "RB",
     "team": "BAL",
     "slug": "justice-hill",
-    "adp": 181.5,
+    "adp": 182.5,
     "bye_week": 7.0,
     "projected_points": 71.2,
     "top_n_avg": 12.533333333333333,
     "projected_ppg": 4.188235294117647,
-    "z_proj": 0.061557563704547465,
+    "z_proj": 0.05725022786236787,
     "z_hist": 0.424994811951193,
     "scaled_hist": 3.2384871148102956,
-    "scaled_proj": 0.4255749260739708,
-    "score": 1.8320310204421333,
-    "expected_ppg": 1.8320310204421333
+    "scaled_proj": 0.3957963899803481,
+    "score": 1.817141752395322,
+    "expected_ppg": 1.817141752395322
   },
   {
     "player_id": "12925",
@@ -984,8 +984,8 @@
     "z_hist": 0.0,
     "scaled_hist": 0.0,
     "scaled_proj": 9.748860016956533,
-    "score": 11.698632020347839,
-    "expected_ppg": 11.698632020347839
+    "score": 9.748860016956533,
+    "expected_ppg": 9.748860016956533
   },
   {
     "player_id": "8138",
@@ -999,12 +999,12 @@
     "projected_points": 211.8,
     "top_n_avg": 23.733333333333334,
     "projected_ppg": 12.458823529411765,
-    "z_proj": 1.8801909885299959,
+    "z_proj": 1.8733019151434795,
     "z_hist": 1.8075843946915662,
     "scaled_hist": 13.77390642550495,
-    "scaled_proj": 12.99859989243675,
-    "score": 13.38625315897085,
-    "expected_ppg": 13.38625315897085
+    "scaled_proj": 12.950972651838724,
+    "score": 13.362439538671836,
+    "expected_ppg": 13.362439538671836
   },
   {
     "player_id": "7262",
@@ -1056,12 +1056,12 @@
     "projected_points": 6.5,
     "top_n_avg": NaN,
     "projected_ppg": 0.38235294117647056,
-    "z_proj": -0.7753242470081589,
+    "z_proj": -0.778443542885057,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.360162736256555,
-    "score": -5.360162736256555,
-    "expected_ppg": -5.360162736256555
+    "scaled_proj": -5.381727821557611,
+    "score": -5.381727821557611,
+    "expected_ppg": -5.381727821557611
   },
   {
     "player_id": "12831",
@@ -1132,12 +1132,12 @@
     "projected_points": 120.8,
     "top_n_avg": 17.650000000000002,
     "projected_ppg": 7.105882352941176,
-    "z_proj": 0.7031238359047055,
+    "z_proj": 0.6979057306300999,
     "z_hist": 1.0566242790662148,
     "scaled_hist": 8.051543258237766,
-    "scaled_proj": 4.861009053610199,
-    "score": 6.456276155923982,
-    "expected_ppg": 6.456276155923982
+    "scaled_proj": 4.824933961731239,
+    "score": 6.438238609984502,
+    "expected_ppg": 6.438238609984502
   },
   {
     "player_id": "11610",
@@ -1170,12 +1170,12 @@
     "projected_points": 260.3,
     "top_n_avg": 25.266666666666666,
     "projected_ppg": 15.311764705882354,
-    "z_proj": 1.2801323955452015,
+    "z_proj": 1.270268086293909,
     "z_hist": 1.140764035426577,
     "scaled_hist": 8.6926934773788,
-    "scaled_proj": 8.850126886337424,
-    "score": 8.771410181858112,
-    "expected_ppg": 8.771410181858112
+    "scaled_proj": 8.78193051163133,
+    "score": 8.737311994505065,
+    "expected_ppg": 8.737311994505065
   },
   {
     "player_id": "10228",
@@ -1246,12 +1246,12 @@
     "projected_points": 8.1,
     "top_n_avg": 10.816666666666668,
     "projected_ppg": 0.4764705882352941,
-    "z_proj": -0.6666757368198241,
+    "z_proj": -0.672177727807073,
     "z_hist": -0.2253439996314574,
     "scaled_hist": -1.7171354065613844,
-    "scaled_proj": -4.609027068942419,
-    "score": -3.1630812377519018,
-    "expected_ppg": -3.1630812377519018
+    "scaled_proj": -4.647064789520453,
+    "score": -3.1821000980409186,
+    "expected_ppg": -3.1821000980409186
   },
   {
     "player_id": "10222",
@@ -1260,7 +1260,7 @@
     "position": "WR",
     "team": "GB",
     "slug": "jayden-reed",
-    "adp": 100.0,
+    "adp": 101.0,
     "bye_week": 5.0,
     "projected_points": 155.9,
     "top_n_avg": 18.366666666666667,
@@ -1360,12 +1360,12 @@
     "projected_points": 23.2,
     "top_n_avg": 4.3500000000000005,
     "projected_ppg": 1.3647058823529412,
-    "z_proj": -0.5593130222956056,
+    "z_proj": -0.5627389683644698,
     "z_hist": -0.5852008504379784,
     "scaled_hist": -4.459267173212138,
-    "scaled_proj": -3.8667806812191547,
-    "score": -4.163023927215646,
-    "expected_ppg": -4.163023927215646
+    "scaled_proj": -3.8904657762301933,
+    "score": -4.174866474721165,
+    "expected_ppg": -4.174866474721165
   },
   {
     "player_id": "11574",
@@ -1379,12 +1379,12 @@
     "projected_points": 2.9,
     "top_n_avg": NaN,
     "projected_ppg": 0.17058823529411765,
-    "z_proj": -0.8218895409581705,
+    "z_proj": -0.8249427326020699,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.68208940680354,
-    "score": -5.68208940680354,
-    "expected_ppg": -5.68208940680354
+    "scaled_proj": -5.703197484023401,
+    "score": -5.703197484023401,
+    "expected_ppg": -5.703197484023401
   },
   {
     "player_id": "6323",
@@ -1398,12 +1398,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "6927",
@@ -1450,7 +1450,7 @@
     "position": "TE",
     "team": "TB",
     "slug": "cade-otton",
-    "adp": 177.0,
+    "adp": 178.0,
     "bye_week": 9.0,
     "projected_points": 102.1,
     "top_n_avg": 13.583333333333334,
@@ -1531,12 +1531,12 @@
     "projected_points": 22.7,
     "top_n_avg": 4.316666666666666,
     "projected_ppg": 1.3352941176470587,
-    "z_proj": -0.5657804242331074,
+    "z_proj": -0.5691971891584993,
     "z_hist": -0.5893157003866105,
     "scaled_hist": -4.4906225878273,
-    "scaled_proj": -3.9114927187951256,
-    "score": -4.201057653311213,
-    "expected_ppg": -4.201057653311213
+    "scaled_proj": -3.9351143404615527,
+    "score": -4.212868464144426,
+    "expected_ppg": -4.212868464144426
   },
   {
     "player_id": "7608",
@@ -1550,12 +1550,12 @@
     "projected_points": 55.9,
     "top_n_avg": 2.3833333333333333,
     "projected_ppg": 3.288235294117647,
-    "z_proj": -0.13634493558300143,
+    "z_proj": -0.1403713284349367,
     "z_hist": -0.8279769974072703,
     "scaled_hist": -6.3092366355067355,
-    "scaled_proj": -0.9426134237507136,
-    "score": -3.6259250296287244,
-    "expected_ppg": -3.6259250296287244
+    "scaled_proj": -0.9704496754992623,
+    "score": -3.639843155502999,
+    "expected_ppg": -3.639843155502999
   },
   {
     "player_id": "4227",
@@ -1564,17 +1564,17 @@
     "position": "K",
     "team": "KC",
     "slug": "harrison-butker",
-    "adp": 227.0,
+    "adp": 227.5,
     "bye_week": 10.0,
     "projected_points": 128.3,
     "top_n_avg": 11.166666666666666,
     "projected_ppg": 7.5470588235294125,
     "z_proj": 0.5340839874299382,
-    "z_hist": -0.10959967773801227,
-    "scaled_hist": -0.8351564164097962,
+    "z_hist": -0.17019854982443205,
+    "scaled_hist": -1.2969236213385125,
     "scaled_proj": 3.6923610973089347,
-    "score": 1.4286023404495691,
-    "expected_ppg": 1.4286023404495691
+    "score": 1.1977187379852112,
+    "expected_ppg": 1.1977187379852112
   },
   {
     "player_id": "6402",
@@ -1645,12 +1645,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "11571",
@@ -1659,17 +1659,17 @@
     "position": "RB",
     "team": "NYJ",
     "slug": "isaiah-davis",
-    "adp": 319.0,
+    "adp": 318.0,
     "bye_week": 9.0,
     "projected_points": 31.9,
     "top_n_avg": 5.916666666666667,
     "projected_ppg": 1.8764705882352941,
-    "z_proj": -0.4467802285830779,
+    "z_proj": -0.45036592654835544,
     "z_hist": -0.3918029028522715,
     "scaled_hist": -2.985562686299492,
-    "scaled_proj": -3.0887912273972757,
-    "score": -3.037176956848384,
-    "expected_ppg": -3.037176956848384
+    "scaled_proj": -3.1135807586045328,
+    "score": -3.0495717224520122,
+    "expected_ppg": -3.0495717224520122
   },
   {
     "player_id": "7526",
@@ -1797,12 +1797,12 @@
     "projected_points": 20.3,
     "top_n_avg": 0.6666666666666666,
     "projected_ppg": 1.1941176470588235,
-    "z_proj": -0.5968239535331149,
+    "z_proj": -0.6001966489698413,
     "z_hist": -1.0398917697618215,
     "scaled_hist": -7.924040488187613,
-    "scaled_proj": -4.126110499159781,
-    "score": -6.025075493673697,
-    "expected_ppg": -6.025075493673697
+    "scaled_proj": -4.14942744877208,
+    "score": -6.0367339684798464,
+    "expected_ppg": -6.0367339684798464
   },
   {
     "player_id": "11931",
@@ -1811,17 +1811,17 @@
     "position": "QB",
     "team": "CHI",
     "slug": "austin-reed",
-    "adp": 259.0,
+    "adp": 258.0,
     "bye_week": 5.0,
     "projected_points": 95.9,
     "top_n_avg": NaN,
     "projected_ppg": 5.641176470588236,
-    "z_proj": 0.011079037254915228,
+    "z_proj": 0.0040583644929517715,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 0.07659433182510773,
-    "score": 0.07659433182510773,
-    "expected_ppg": 0.07659433182510773
+    "scaled_proj": 0.02805728597965271,
+    "score": 0.02805728597965271,
+    "expected_ppg": 0.02805728597965271
   },
   {
     "player_id": "4666",
@@ -1830,17 +1830,17 @@
     "position": "K",
     "team": "ATL",
     "slug": "younghoe-koo",
-    "adp": 282.0,
+    "adp": 275.5,
     "bye_week": 5.0,
     "projected_points": 126.2,
-    "top_n_avg": 12.166666666666666,
+    "top_n_avg": 12.833333333333334,
     "projected_ppg": 7.423529411764706,
     "z_proj": 0.48602907459093814,
-    "z_hist": 0.174767053690343,
-    "scaled_hist": 1.3317359072480468,
+    "z_hist": 0.3075517654722182,
+    "scaled_hist": 2.343563736804672,
     "scaled_proj": 3.360136026201421,
-    "score": 2.345935966724734,
-    "expected_ppg": 2.345935966724734
+    "score": 2.851849881503046,
+    "expected_ppg": 2.851849881503046
   },
   {
     "player_id": "2197",
@@ -1849,7 +1849,7 @@
     "position": "WR",
     "team": "NO",
     "slug": "brandin-cooks",
-    "adp": 291.0,
+    "adp": 291.5,
     "bye_week": 11.0,
     "projected_points": 79.4,
     "top_n_avg": 7.8,
@@ -1868,17 +1868,17 @@
     "position": "QB",
     "team": "IND",
     "slug": "daniel-jones",
-    "adp": 228.5,
+    "adp": 228.0,
     "bye_week": 11.0,
     "projected_points": 109.7,
     "top_n_avg": 18.533333333333335,
     "projected_ppg": 6.452941176470588,
-    "z_proj": 0.11760541404570565,
+    "z_proj": 0.11034604187040437,
     "z_hist": 0.5041923558839636,
     "scaled_hist": 3.841977365369765,
-    "scaled_proj": 0.8130587433352655,
-    "score": 2.3275180543525154,
-    "expected_ppg": 2.3275180543525154
+    "scaled_proj": 0.7628714618555232,
+    "score": 2.302424413612644,
+    "expected_ppg": 2.302424413612644
   },
   {
     "player_id": "7064",
@@ -1892,12 +1892,12 @@
     "projected_points": 5.9,
     "top_n_avg": 0.049999999999999996,
     "projected_ppg": 0.3470588235294118,
-    "z_proj": -0.7830851293331609,
+    "z_proj": -0.7861934078378925,
     "z_hist": -1.1160164938115145,
     "scaled_hist": -8.50411565856812,
-    "scaled_proj": -5.413817181347719,
-    "score": -6.958966419957919,
-    "expected_ppg": -6.958966419957919
+    "scaled_proj": -5.435306098635242,
+    "score": -6.969710878601681,
+    "expected_ppg": -6.969710878601681
   },
   {
     "player_id": "5844",
@@ -1950,11 +1950,11 @@
     "top_n_avg": 13.0,
     "projected_ppg": 7.211764705882352,
     "z_proj": 0.40364922400979497,
-    "z_hist": 0.4117393298806392,
-    "scaled_hist": 3.13747951029625,
+    "z_hist": 0.355326797001883,
+    "scaled_hist": 2.707612472618989,
     "scaled_proj": 2.790607332874254,
-    "score": 2.9640434215852522,
-    "expected_ppg": 2.9640434215852522
+    "score": 2.7491099027466213,
+    "expected_ppg": 2.7491099027466213
   },
   {
     "player_id": "12529",
@@ -1968,12 +1968,12 @@
     "projected_points": 171.5,
     "top_n_avg": NaN,
     "projected_ppg": 10.088235294117647,
-    "z_proj": 1.3589183923673673,
+    "z_proj": 1.352769319144697,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 9.394809663813565,
-    "score": 9.394809663813565,
-    "expected_ppg": 9.394809663813565
+    "scaled_proj": 9.352298374791122,
+    "score": 12.157987887228458,
+    "expected_ppg": 12.157987887228458
   },
   {
     "player_id": "7933",
@@ -2058,7 +2058,7 @@
     "position": "WR",
     "team": "DET",
     "slug": "isaac-teslaa",
-    "adp": 267.0,
+    "adp": 269.0,
     "bye_week": 8.0,
     "projected_points": 27.7,
     "top_n_avg": NaN,
@@ -2082,12 +2082,12 @@
     "projected_points": 185.3,
     "top_n_avg": 18.4,
     "projected_ppg": 10.9,
-    "z_proj": 1.5374186858424115,
+    "z_proj": 1.531016213059913,
     "z_hist": 1.149208402910436,
     "scaled_hist": 8.757040087078924,
-    "scaled_proj": 10.628861900910339,
-    "score": 11.631541192793557,
-    "expected_ppg": 11.631541192793557
+    "scaled_proj": 10.584598747576655,
+    "score": 12.572065242526126,
+    "expected_ppg": 12.572065242526126
   },
   {
     "player_id": "1373",
@@ -2101,12 +2101,12 @@
     "projected_points": 261.8,
     "top_n_avg": 21.733333333333334,
     "projected_ppg": 15.4,
-    "z_proj": 1.2917113495442005,
+    "z_proj": 1.2818210947045017,
     "z_hist": 0.8067214709141165,
     "scaled_hist": 6.14726819087901,
-    "scaled_proj": 8.930177365849397,
-    "score": 7.538722778364203,
-    "expected_ppg": 7.538722778364203
+    "scaled_proj": 8.861801617704794,
+    "score": 7.504534904291901,
+    "expected_ppg": 7.504534904291901
   },
   {
     "player_id": "12491",
@@ -2120,12 +2120,12 @@
     "projected_points": 1.7,
     "top_n_avg": NaN,
     "projected_ppg": 0.09999999999999999,
-    "z_proj": -0.8374113056081742,
+    "z_proj": -0.8404424625077408,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.789398296985867,
-    "score": -5.789398296985867,
-    "expected_ppg": -5.789398296985867
+    "scaled_proj": -5.810354038178665,
+    "score": -5.810354038178665,
+    "expected_ppg": -5.810354038178665
   },
   {
     "player_id": "6768",
@@ -2139,12 +2139,12 @@
     "projected_points": 263.0,
     "top_n_avg": 22.8,
     "projected_ppg": 15.470588235294118,
-    "z_proj": 1.3009745127433996,
+    "z_proj": 1.2910635014329759,
     "z_hist": 0.9075645092575009,
     "scaled_hist": 6.915698466048759,
-    "scaled_proj": 8.994217749458976,
-    "score": 7.954958107753868,
-    "expected_ppg": 7.954958107753868
+    "scaled_proj": 8.925698502563566,
+    "score": 7.920698484306163,
+    "expected_ppg": 7.920698484306163
   },
   {
     "player_id": "6130",
@@ -2153,17 +2153,17 @@
     "position": "RB",
     "team": "NYG",
     "slug": "devin-singletary",
-    "adp": 301.0,
+    "adp": 302.0,
     "bye_week": 14.0,
     "projected_points": 41.2,
     "top_n_avg": 10.433333333333334,
     "projected_ppg": 2.423529411764706,
-    "z_proj": -0.3264865525455482,
+    "z_proj": -0.3302430197794056,
     "z_hist": 0.16575926518737305,
     "scaled_hist": 1.2630959940550484,
-    "scaled_proj": -2.2571473284842325,
-    "score": -0.49702566721459207,
-    "expected_ppg": -0.49702566721459207
+    "scaled_proj": -2.28311746390124,
+    "score": -0.5100107349230958,
+    "expected_ppg": -0.5100107349230958
   },
   {
     "player_id": "5004",
@@ -2215,12 +2215,12 @@
     "projected_points": 356.6,
     "top_n_avg": 28.8,
     "projected_ppg": 20.976470588235294,
-    "z_proj": 2.023501242280935,
+    "z_proj": 2.0119712262539586,
     "z_hist": 1.4748065999390376,
     "scaled_hist": 11.238118763878594,
-    "scaled_proj": 13.989367671006136,
-    "score": 12.613743217442366,
-    "expected_ppg": 12.613743217442366
+    "scaled_proj": 13.90965552154773,
+    "score": 12.573887142713161,
+    "expected_ppg": 12.573887142713161
   },
   {
     "player_id": "7538",
@@ -2234,12 +2234,12 @@
     "projected_points": 11.8,
     "top_n_avg": NaN,
     "projected_ppg": 0.6941176470588236,
-    "z_proj": -0.6381143169556266,
+    "z_proj": -0.6436803070609443,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.41156921947955,
-    "score": -4.41156921947955,
-    "expected_ppg": -4.41156921947955
+    "scaled_proj": -4.45004939453924,
+    "score": -4.45004939453924,
+    "expected_ppg": -4.45004939453924
   },
   {
     "player_id": "7561",
@@ -2248,17 +2248,17 @@
     "position": "RB",
     "team": "KC",
     "slug": "elijah-mitchell",
-    "adp": 251.0,
+    "adp": 252.0,
     "bye_week": 10.0,
     "projected_points": 46.4,
     "top_n_avg": NaN,
     "projected_ppg": 2.7294117647058824,
-    "z_proj": -0.2592255723955317,
+    "z_proj": -0.26307752352149827,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -1.7921421376941442,
-    "score": -1.7921421376941442,
-    "expected_ppg": -1.7921421376941442
+    "scaled_proj": -1.8187723958950983,
+    "score": -1.8187723958950983,
+    "expected_ppg": -1.8187723958950983
   },
   {
     "player_id": "12898",
@@ -2289,14 +2289,14 @@
     "adp": NaN,
     "bye_week": NaN,
     "projected_points": 93.2,
-    "top_n_avg": 9.0,
+    "top_n_avg": 10.0,
     "projected_ppg": 5.482352941176471,
     "z_proj": -0.2691195557362042,
-    "z_hist": -0.7257275958327818,
-    "scaled_hist": -5.530089784335121,
+    "z_hist": -0.5046237705320868,
+    "scaled_hist": -3.8452647720387385,
     "scaled_proj": -1.8605436626309209,
-    "score": -3.6953167234830206,
-    "expected_ppg": -3.6953167234830206
+    "score": -2.85290421733483,
+    "expected_ppg": -2.85290421733483
   },
   {
     "player_id": "12950",
@@ -2362,17 +2362,17 @@
     "position": "RB",
     "team": "WAS",
     "slug": "brian-robinson",
-    "adp": 79.5,
+    "adp": 80.0,
     "bye_week": 12.0,
     "projected_points": 155.4,
     "top_n_avg": 15.700000000000001,
     "projected_ppg": 9.141176470588235,
-    "z_proj": 1.1506680499798159,
+    "z_proj": 1.1448146095769451,
     "z_hist": 0.8159055570712391,
     "scaled_hist": 6.21725150325075,
-    "scaled_proj": 7.9550820538673275,
-    "score": 7.086166778559038,
-    "expected_ppg": 7.086166778559038
+    "scaled_proj": 7.9146146065413365,
+    "score": 7.065933054896043,
+    "expected_ppg": 7.065933054896043
   },
   {
     "player_id": "7427",
@@ -2424,12 +2424,12 @@
     "projected_points": 11.2,
     "top_n_avg": NaN,
     "projected_ppg": 0.6588235294117647,
-    "z_proj": -0.6427458985552262,
+    "z_proj": -0.6483015104251814,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.44358941128434,
-    "score": -4.44358941128434,
-    "expected_ppg": -4.44358941128434
+    "scaled_proj": -4.481997836968627,
+    "score": -4.481997836968627,
+    "expected_ppg": -4.481997836968627
   },
   {
     "player_id": "13080",
@@ -2462,12 +2462,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "13129",
@@ -2571,7 +2571,7 @@
     "position": "DEF",
     "team": "PIT",
     "slug": "pittsburgh-steelers",
-    "adp": 173.5,
+    "adp": 172.0,
     "bye_week": 5.0,
     "projected_points": 110.7,
     "top_n_avg": 13.166666666666666,
@@ -2609,17 +2609,17 @@
     "position": "QB",
     "team": "GB",
     "slug": "jordan-love",
-    "adp": 129.0,
+    "adp": 128.0,
     "bye_week": 5.0,
     "projected_points": 278.8,
     "top_n_avg": 22.400000000000002,
     "projected_ppg": 16.400000000000002,
-    "z_proj": 1.4229394948661889,
+    "z_proj": 1.4127551900245523,
     "z_hist": 0.8697483698787318,
     "scaled_hist": 6.627537112860104,
-    "scaled_proj": 9.837416133651768,
-    "score": 8.232476623255936,
-    "expected_ppg": 8.232476623255936
+    "scaled_proj": 9.767007486537391,
+    "score": 8.197272299698747,
+    "expected_ppg": 8.197272299698747
   },
   {
     "player_id": "5121",
@@ -2672,11 +2672,11 @@
     "top_n_avg": 10.666666666666666,
     "projected_ppg": 8.064705882352941,
     "z_proj": 0.7354569555171758,
-    "z_hist": -0.2517830434521899,
-    "scaled_hist": -1.9186025782387175,
+    "z_hist": -0.313523644413427,
+    "scaled_hist": -2.3890698287814667,
     "scaled_proj": 5.0845423476642235,
-    "score": 1.5829698847127531,
-    "expected_ppg": 1.5829698847127531
+    "score": 1.3477362594413784,
+    "expected_ppg": 1.3477362594413784
   },
   {
     "player_id": "IND",
@@ -2723,7 +2723,7 @@
     "position": "TE",
     "team": "NYJ",
     "slug": "zack-kuntz",
-    "adp": 250.0,
+    "adp": 249.5,
     "bye_week": NaN,
     "projected_points": 0.0,
     "top_n_avg": NaN,
@@ -2842,12 +2842,12 @@
     "projected_points": 8.7,
     "top_n_avg": 16.066666666666666,
     "projected_ppg": 0.5117647058823529,
-    "z_proj": -0.6620441552202245,
+    "z_proj": -0.6675565244428359,
     "z_hist": 0.2709928297148872,
     "scaled_hist": 2.0649823540397203,
-    "scaled_proj": -4.57700687713763,
-    "score": -1.2560122615489548,
-    "expected_ppg": -1.2560122615489548
+    "scaled_proj": -4.615116347091067,
+    "score": -1.2750669965256736,
+    "expected_ppg": -1.2750669965256736
   },
   {
     "player_id": "9998",
@@ -2861,12 +2861,12 @@
     "projected_points": 9.2,
     "top_n_avg": 0.45,
     "projected_ppg": 0.5411764705882353,
-    "z_proj": -0.6581845038872249,
+    "z_proj": -0.663705521639305,
     "z_hist": -1.205412278531224,
     "scaled_hist": -9.18531714336738,
-    "scaled_proj": -4.550323383966973,
-    "score": -6.867820263667176,
-    "expected_ppg": -6.867820263667176
+    "scaled_proj": -4.588492645066579,
+    "score": -6.886904894216979,
+    "expected_ppg": -6.886904894216979
   },
   {
     "player_id": "8500",
@@ -2932,7 +2932,7 @@
     "position": "WR",
     "team": "BAL",
     "slug": "anthony-miller",
-    "adp": 181.5,
+    "adp": 181.0,
     "bye_week": 11.0,
     "projected_points": 56.8,
     "top_n_avg": 0.35000000000000003,
@@ -2956,12 +2956,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "5906",
@@ -3108,12 +3108,12 @@
     "projected_points": 5.0,
     "top_n_avg": 0.13333333333333333,
     "projected_ppg": 0.29411764705882354,
-    "z_proj": -0.690605575084422,
+    "z_proj": -0.6960539451889645,
     "z_hist": -1.2353500555394163,
     "scaled_hist": -9.413444881308399,
-    "scaled_proj": -4.774464726600499,
-    "score": -7.093954803954449,
-    "expected_ppg": -7.093954803954449
+    "scaled_proj": -4.812131742072279,
+    "score": -7.112788311690339,
+    "expected_ppg": -7.112788311690339
   },
   {
     "player_id": "2711",
@@ -3127,12 +3127,12 @@
     "projected_points": 2.6,
     "top_n_avg": 0.5333333333333333,
     "projected_ppg": 0.15294117647058825,
-    "z_proj": -0.7091319014828202,
+    "z_proj": -0.7145387586459127,
     "z_hist": -1.197533916160647,
     "scaled_hist": -9.125283528119741,
-    "scaled_proj": -4.902545493819656,
-    "score": -7.013914510969698,
-    "expected_ppg": -7.013914510969698
+    "scaled_proj": -4.939925511789821,
+    "score": -7.032604519954781,
+    "expected_ppg": -7.032604519954781
   },
   {
     "player_id": "6857",
@@ -3165,12 +3165,12 @@
     "projected_points": 12.5,
     "top_n_avg": NaN,
     "projected_ppg": 0.7352941176470589,
-    "z_proj": -0.6327108050894271,
+    "z_proj": -0.6382889031360011,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.374212329040629,
-    "score": -4.374212329040629,
-    "expected_ppg": -4.374212329040629
+    "scaled_proj": -4.412776211704958,
+    "score": -4.412776211704958,
+    "expected_ppg": -4.412776211704958
   },
   {
     "player_id": "8259",
@@ -3179,17 +3179,17 @@
     "position": "K",
     "team": "LAC",
     "slug": "cameron-dicker",
-    "adp": 201.5,
+    "adp": 202.5,
     "bye_week": 12.0,
     "projected_points": 131.8,
     "top_n_avg": 15.0,
     "projected_ppg": 7.752941176470589,
     "z_proj": 0.6141755088282717,
-    "z_hist": 0.9804727927373498,
-    "scaled_hist": 7.471264157611936,
+    "z_hist": 0.9286271753578629,
+    "scaled_hist": 7.076197302390807,
     "scaled_proj": 4.2460695491547895,
-    "score": 5.858666853383363,
-    "expected_ppg": 5.858666853383363
+    "score": 5.661133425772798,
+    "expected_ppg": 5.661133425772798
   },
   {
     "player_id": "10220",
@@ -3255,17 +3255,17 @@
     "position": "RB",
     "team": "KC",
     "slug": "isiah-pacheco",
-    "adp": 63.5,
+    "adp": 63.0,
     "bye_week": 10.0,
     "projected_points": 161.0,
     "top_n_avg": 8.183333333333334,
     "projected_ppg": 9.470588235294118,
-    "z_proj": 1.2231029516798337,
+    "z_proj": 1.2171466824700763,
     "z_hist": -0.1119931063452912,
     "scaled_hist": -0.8533944924684312,
-    "scaled_proj": 8.455856874718192,
-    "score": 3.8012311911248804,
-    "expected_ppg": 3.8012311911248804
+    "scaled_proj": 8.414678525932567,
+    "score": 3.780642016732068,
+    "expected_ppg": 3.780642016732068
   },
   {
     "player_id": "1166",
@@ -3274,17 +3274,17 @@
     "position": "QB",
     "team": "ATL",
     "slug": "kirk-cousins",
-    "adp": 261.5,
+    "adp": 262.0,
     "bye_week": 5.0,
     "projected_points": 7.3,
     "top_n_avg": 20.650000000000002,
     "projected_ppg": 0.4294117647058823,
-    "z_proj": -0.6728511789526235,
+    "z_proj": -0.6783393322927224,
     "z_hist": 0.704302760096617,
     "scaled_hist": 5.366831192659736,
-    "scaled_proj": -4.6517206580154715,
-    "score": 0.35755526732213205,
-    "expected_ppg": 0.35755526732213205
+    "scaled_proj": -4.689662712759634,
+    "score": 0.33858423995005094,
+    "expected_ppg": 0.33858423995005094
   },
   {
     "player_id": "5185",
@@ -3407,7 +3407,7 @@
     "position": "TE",
     "team": "WAS",
     "slug": "zach-ertz",
-    "adp": 159.5,
+    "adp": 159.0,
     "bye_week": 12.0,
     "projected_points": 113.2,
     "top_n_avg": 14.15,
@@ -3445,17 +3445,17 @@
     "position": "RB",
     "team": "ARI",
     "slug": "trey-benson",
-    "adp": 139.5,
+    "adp": 140.0,
     "bye_week": 8.0,
     "projected_points": 102.4,
     "top_n_avg": 5.666666666666667,
     "projected_ppg": 6.023529411764706,
-    "z_proj": 0.4651234446046469,
+    "z_proj": 0.46024320540981223,
     "z_hist": -0.42266427746701196,
     "scaled_hist": -3.2207282959132124,
-    "scaled_proj": 3.2156060708145016,
-    "score": -0.0030733350592265117,
-    "expected_ppg": -0.0030733350592265117
+    "scaled_proj": 3.1818667980171993,
+    "score": -0.022345361290207543,
+    "expected_ppg": -0.022345361290207543
   },
   {
     "player_id": "13237",
@@ -3521,7 +3521,7 @@
     "position": "TE",
     "team": "BAL",
     "slug": "isaiah-likely",
-    "adp": 161.5,
+    "adp": 163.5,
     "bye_week": 7.0,
     "projected_points": 97.7,
     "top_n_avg": 12.333333333333334,
@@ -3545,12 +3545,12 @@
     "projected_points": 327.1,
     "top_n_avg": 23.333333333333332,
     "projected_ppg": 19.241176470588236,
-    "z_proj": 1.7957818136339554,
+    "z_proj": 1.7847620608456363,
     "z_hist": 0.9579860284291929,
     "scaled_hist": 7.299913603633632,
-    "scaled_proj": 12.41504157393732,
-    "score": 9.857477588785475,
-    "expected_ppg": 9.857477588785475
+    "scaled_proj": 12.338857102102937,
+    "score": 11.292293155798527,
+    "expected_ppg": 11.292293155798527
   },
   {
     "player_id": "ARI",
@@ -3559,7 +3559,7 @@
     "position": "DEF",
     "team": "ARI",
     "slug": "arizona-cardinals",
-    "adp": 258.0,
+    "adp": 255.0,
     "bye_week": 8.0,
     "projected_points": 97.1,
     "top_n_avg": 10.666666666666666,
@@ -3602,12 +3602,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "11608",
@@ -3635,17 +3635,17 @@
     "position": "QB",
     "team": "CLE",
     "slug": "shedeur-sanders",
-    "adp": 227.0,
+    "adp": 228.5,
     "bye_week": 9.0,
     "projected_points": 35.6,
     "top_n_avg": NaN,
     "projected_ppg": 2.0941176470588236,
-    "z_proj": -0.4543949135048431,
+    "z_proj": -0.46037257361287387,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -3.141434944556235,
-    "score": -3.141434944556235,
-    "expected_ppg": -3.141434944556235
+    "scaled_proj": -3.182761178173609,
+    "score": -3.182761178173609,
+    "expected_ppg": -3.182761178173609
   },
   {
     "player_id": "SEA",
@@ -3749,7 +3749,7 @@
     "position": "WR",
     "team": "JAX",
     "slug": "dyami-brown",
-    "adp": 248.5,
+    "adp": 248.0,
     "bye_week": 8.0,
     "projected_points": 91.1,
     "top_n_avg": 6.033333333333332,
@@ -3787,17 +3787,17 @@
     "position": "K",
     "team": "CIN",
     "slug": "evan-mcpherson",
-    "adp": 250.5,
+    "adp": 251.0,
     "bye_week": 10.0,
     "projected_points": 129.5,
     "top_n_avg": 11.166666666666666,
     "projected_ppg": 7.617647058823529,
     "z_proj": 0.5615439376236521,
-    "z_hist": -0.10959967773801227,
-    "scaled_hist": -0.8351564164097962,
+    "z_hist": -0.17019854982443205,
+    "scaled_hist": -1.2969236213385125,
     "scaled_proj": 3.882203995084653,
-    "score": 1.5235237893374283,
-    "expected_ppg": 1.5235237893374283
+    "score": 1.2926401868730704,
+    "expected_ppg": 1.2926401868730704
   },
   {
     "player_id": "12410",
@@ -3825,7 +3825,7 @@
     "position": "WR",
     "team": "DAL",
     "slug": "jalen-tolbert",
-    "adp": 303.5,
+    "adp": 304.5,
     "bye_week": 10.0,
     "projected_points": 78.8,
     "top_n_avg": 11.700000000000001,
@@ -3849,12 +3849,12 @@
     "projected_points": 292.3,
     "top_n_avg": 22.566666666666666,
     "projected_ppg": 17.194117647058825,
-    "z_proj": 1.5271500808571794,
+    "z_proj": 1.5167322657198863,
     "z_hist": 0.8855050946198855,
     "scaled_hist": 6.747604343355376,
-    "scaled_proj": 10.55787044925953,
-    "score": 8.652737396307453,
-    "expected_ppg": 8.652737396307453
+    "scaled_proj": 10.485847441198567,
+    "score": 8.616725892276971,
+    "expected_ppg": 8.616725892276971
   },
   {
     "player_id": "13041",
@@ -3882,7 +3882,7 @@
     "position": "WR",
     "team": "CIN",
     "slug": "tee-higgins",
-    "adp": 34.0,
+    "adp": 33.5,
     "bye_week": 10.0,
     "projected_points": 204.4,
     "top_n_avg": 22.333333333333332,
@@ -4015,7 +4015,7 @@
     "position": "WR",
     "team": "CLE",
     "slug": "jamari-thrash",
-    "adp": 246.5,
+    "adp": 244.0,
     "bye_week": NaN,
     "projected_points": 6.3,
     "top_n_avg": 0.6166666666666667,
@@ -4058,12 +4058,12 @@
     "projected_points": 17.9,
     "top_n_avg": NaN,
     "projected_ppg": 1.052941176470588,
-    "z_proj": -0.6278674828331227,
+    "z_proj": -0.6311961087811832,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.340728279524438,
-    "score": -4.340728279524438,
-    "expected_ppg": -4.340728279524438
+    "scaled_proj": -4.3637405570826076,
+    "score": -4.3637405570826076,
+    "expected_ppg": -4.3637405570826076
   },
   {
     "player_id": "6386",
@@ -4115,12 +4115,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "13088",
@@ -4186,7 +4186,7 @@
     "position": "WR",
     "team": "NE",
     "slug": "demario-douglas",
-    "adp": 190.5,
+    "adp": 189.5,
     "bye_week": 14.0,
     "projected_points": 103.0,
     "top_n_avg": 11.4,
@@ -4205,7 +4205,7 @@
     "position": "WR",
     "team": "MIN",
     "slug": "jalen-nailor",
-    "adp": 253.0,
+    "adp": 260.0,
     "bye_week": 6.0,
     "projected_points": 62.5,
     "top_n_avg": 10.966666666666667,
@@ -4229,12 +4229,12 @@
     "projected_points": 6.3,
     "top_n_avg": NaN,
     "projected_ppg": 0.37058823529411766,
-    "z_proj": -0.6805704816186228,
+    "z_proj": -0.686041337899784,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.705087644356787,
-    "score": -4.705087644356787,
-    "expected_ppg": -4.705087644356787
+    "scaled_proj": -4.742910116808609,
+    "score": -4.742910116808609,
+    "expected_ppg": -4.742910116808609
   },
   {
     "player_id": "12519",
@@ -4252,8 +4252,8 @@
     "z_hist": 0.0,
     "scaled_hist": 0.0,
     "scaled_proj": 3.284278832704715,
-    "score": 3.941134599245658,
-    "expected_ppg": 3.941134599245658
+    "score": 4.26956248251613,
+    "expected_ppg": 4.26956248251613
   },
   {
     "player_id": "9486",
@@ -4262,7 +4262,7 @@
     "position": "WR",
     "team": "GB",
     "slug": "dontayvion-wicks",
-    "adp": 267.0,
+    "adp": 263.5,
     "bye_week": 5.0,
     "projected_points": 65.7,
     "top_n_avg": 11.116666666666667,
@@ -4281,7 +4281,7 @@
     "position": "DEF",
     "team": "NYJ",
     "slug": "new-york-jets",
-    "adp": 274.0,
+    "adp": 272.0,
     "bye_week": 9.0,
     "projected_points": 98.5,
     "top_n_avg": 12.0,
@@ -4305,12 +4305,12 @@
     "projected_points": 31.0,
     "top_n_avg": 1.0,
     "projected_ppg": 1.8235294117647058,
-    "z_proj": -0.45842155207058083,
+    "z_proj": -0.4619907239776086,
     "z_hist": -0.9987432702755008,
     "scaled_hist": -7.610486342035985,
-    "scaled_proj": -3.1692728950340223,
-    "score": -5.389879618535003,
-    "expected_ppg": -5.389879618535003
+    "scaled_proj": -3.1939481742209797,
+    "score": -5.402217258128482,
+    "expected_ppg": -5.402217258128482
   },
   {
     "player_id": "4881",
@@ -4324,12 +4324,12 @@
     "projected_points": 375.7,
     "top_n_avg": 32.03333333333333,
     "projected_ppg": 22.099999999999998,
-    "z_proj": 2.170939923201521,
+    "z_proj": 2.1590795333488386,
     "z_hist": 1.7804870599174214,
     "scaled_hist": 13.567423035486893,
-    "scaled_proj": 15.008677110125264,
-    "score": 14.28805007280608,
-    "expected_ppg": 14.28805007280608
+    "scaled_proj": 14.926680938883175,
+    "score": 14.247051987185035,
+    "expected_ppg": 14.247051987185035
   },
   {
     "player_id": "10937",
@@ -4338,17 +4338,17 @@
     "position": "K",
     "team": "SF",
     "slug": "jake-moody",
-    "adp": 309.0,
+    "adp": 308.0,
     "bye_week": 14.0,
     "projected_points": 123.5,
     "top_n_avg": 12.666666666666666,
     "projected_ppg": 7.264705882352941,
     "z_proj": 0.4242441866550809,
-    "z_hist": 0.3169504194045206,
-    "scaled_hist": 2.415182069076968,
+    "z_hist": 0.2597767339425529,
+    "scaled_hist": 1.9795150009903515,
     "scaled_proj": 2.9329895062060465,
-    "score": 2.6740857876415074,
-    "expected_ppg": 2.6740857876415074
+    "score": 2.456252253598199,
+    "expected_ppg": 2.456252253598199
   },
   {
     "player_id": "11618",
@@ -4357,7 +4357,7 @@
     "position": "WR",
     "team": "TB",
     "slug": "jalen-mcmillan",
-    "adp": 165.0,
+    "adp": 167.0,
     "bye_week": 9.0,
     "projected_points": 94.1,
     "top_n_avg": 14.583333333333334,
@@ -4381,12 +4381,12 @@
     "projected_points": 13.8,
     "top_n_avg": 8.366666666666667,
     "projected_ppg": 0.8117647058823529,
-    "z_proj": -0.6809001787206357,
+    "z_proj": -0.6841535192922255,
     "z_hist": -0.08936143162781482,
     "scaled_hist": -0.6809397120850363,
-    "scaled_proj": -4.707366987647392,
-    "score": -2.6941533498662142,
-    "expected_ppg": -2.6941533498662142
+    "scaled_proj": -4.729858783779758,
+    "score": -2.705399247932397,
+    "expected_ppg": -2.705399247932397
   },
   {
     "player_id": "13202",
@@ -4438,12 +4438,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "2133",
@@ -4471,17 +4471,17 @@
     "position": "QB",
     "team": "PIT",
     "slug": "aaron-rodgers",
-    "adp": 183.0,
+    "adp": 182.0,
     "bye_week": 5.0,
     "projected_points": 237.0,
     "top_n_avg": 20.85,
     "projected_ppg": 13.941176470588236,
-    "z_proj": 1.1002726434274177,
+    "z_proj": 1.0908113556493695,
     "z_hist": 0.7232108297860015,
     "scaled_hist": 5.510911869254063,
-    "scaled_proj": 7.606676104584767,
-    "score": 6.558793986919415,
-    "expected_ppg": 6.558793986919415
+    "scaled_proj": 7.541265997290186,
+    "score": 6.526088933272124,
+    "expected_ppg": 6.526088933272124
   },
   {
     "player_id": "5872",
@@ -4490,7 +4490,7 @@
     "position": "WR",
     "team": "WAS",
     "slug": "deebo-samuel",
-    "adp": 83.5,
+    "adp": 83.0,
     "bye_week": 12.0,
     "projected_points": 163.2,
     "top_n_avg": 15.283333333333333,
@@ -4499,8 +4499,8 @@
     "z_hist": 0.9088970482273269,
     "scaled_hist": 6.925852496550806,
     "scaled_proj": 8.976251281260145,
-    "score": 9.54126226668657,
-    "expected_ppg": 9.54126226668657
+    "score": 10.336367455577118,
+    "expected_ppg": 10.336367455577118
   },
   {
     "player_id": "12941",
@@ -4528,7 +4528,7 @@
     "position": "TE",
     "team": "JAX",
     "slug": "brenton-strange",
-    "adp": 170.5,
+    "adp": 170.0,
     "bye_week": 8.0,
     "projected_points": 100.9,
     "top_n_avg": 8.549999999999999,
@@ -4552,12 +4552,12 @@
     "projected_points": 183.3,
     "top_n_avg": NaN,
     "projected_ppg": 10.782352941176471,
-    "z_proj": 0.6857460902632548,
+    "z_proj": 0.6772136545501517,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 4.740868938056108,
-    "score": 4.740868938056108,
-    "expected_ppg": 4.740868938056108
+    "scaled_proj": 4.681880399860168,
+    "score": 4.681880399860168,
+    "expected_ppg": 4.681880399860168
   },
   {
     "player_id": "827",
@@ -4571,12 +4571,12 @@
     "projected_points": 9.9,
     "top_n_avg": 3.3333333333333335,
     "projected_ppg": 0.5823529411764706,
-    "z_proj": -0.6527809920210254,
+    "z_proj": -0.6583141177143618,
     "z_hist": -0.9328209405092632,
     "scaled_hist": -7.108154055799153,
-    "scaled_proj": -4.512966493528051,
-    "score": -5.810560274663602,
-    "expected_ppg": -5.810560274663602
+    "scaled_proj": -4.551219462232297,
+    "score": -5.829686759015725,
+    "expected_ppg": -5.829686759015725
   },
   {
     "player_id": "6650",
@@ -4585,17 +4585,17 @@
     "position": "K",
     "team": "TB",
     "slug": "chase-mclaughlin",
-    "adp": 242.5,
+    "adp": 243.0,
     "bye_week": 9.0,
     "projected_points": 136.4,
     "top_n_avg": 14.666666666666666,
     "projected_ppg": 8.023529411764706,
     "z_proj": 0.7194386512375093,
-    "z_hist": 0.8856838822612312,
-    "scaled_hist": 6.748966716392654,
+    "z_hist": 0.8330771122985328,
+    "scaled_hist": 6.34809983076217,
     "scaled_proj": 4.973800657295053,
-    "score": 5.861383686843853,
-    "expected_ppg": 5.861383686843853
+    "score": 5.660950244028611,
+    "expected_ppg": 5.660950244028611
   },
   {
     "player_id": "4892",
@@ -4604,17 +4604,17 @@
     "position": "QB",
     "team": "TB",
     "slug": "baker-mayfield",
-    "adp": 72.0,
+    "adp": 71.5,
     "bye_week": 9.0,
     "projected_points": 321.6,
     "top_n_avg": 30.016666666666666,
     "projected_ppg": 18.91764705882353,
-    "z_proj": 1.7533256489709592,
+    "z_proj": 1.7424010300067965,
     "z_hist": 1.5898306905494606,
     "scaled_hist": 12.114609546494089,
-    "scaled_proj": 12.121523149060083,
-    "score": 12.118066347777086,
-    "expected_ppg": 12.118066347777086
+    "scaled_proj": 12.045996379833568,
+    "score": 12.080302963163827,
+    "expected_ppg": 12.080302963163827
   },
   {
     "player_id": "4137",
@@ -4628,12 +4628,12 @@
     "projected_points": 203.2,
     "top_n_avg": 21.599999999999998,
     "projected_ppg": 11.952941176470588,
-    "z_proj": 1.7689516752049685,
+    "z_proj": 1.7622205174861711,
     "z_hist": 1.5442339979791138,
     "scaled_hist": 11.767159890134536,
-    "scaled_proj": 12.229552846130066,
-    "score": 11.9983563681323,
-    "expected_ppg": 11.9983563681323
+    "scaled_proj": 12.183017347059335,
+    "score": 11.975088618596935,
+    "expected_ppg": 11.975088618596935
   },
   {
     "player_id": "10862",
@@ -4647,12 +4647,12 @@
     "projected_points": 0.0,
     "top_n_avg": 3.5,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": -0.9170642157681095,
     "scaled_hist": -6.9880868253038795,
-    "scaled_proj": -5.041299658307077,
-    "score": -6.014693241805478,
-    "expected_ppg": -6.014693241805478
+    "scaled_proj": -5.07836876231716,
+    "score": -6.03322779381052,
+    "expected_ppg": -6.03322779381052
   },
   {
     "player_id": "8145",
@@ -4718,7 +4718,7 @@
     "position": "TE",
     "team": "IND",
     "slug": "tyler-warren",
-    "adp": 109.5,
+    "adp": 108.0,
     "bye_week": 11.0,
     "projected_points": 117.6,
     "top_n_avg": NaN,
@@ -4780,12 +4780,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "9506",
@@ -4799,12 +4799,12 @@
     "projected_points": 35.5,
     "top_n_avg": 9.383333333333335,
     "projected_ppg": 2.088235294117647,
-    "z_proj": -0.4002149346330664,
+    "z_proj": -0.4038667368313426,
     "z_hist": 0.03614149180546321,
     "scaled_hist": 0.2754004336774256,
-    "scaled_proj": -2.766864556850291,
-    "score": -1.2457320615864327,
-    "expected_ppg": -1.2457320615864327
+    "scaled_proj": -2.792111096138742,
+    "score": -1.2583553312306583,
+    "expected_ppg": -1.2583553312306583
   },
   {
     "player_id": "7607",
@@ -4818,12 +4818,12 @@
     "projected_points": 14.6,
     "top_n_avg": 2.733333333333333,
     "projected_ppg": 0.8588235294117647,
-    "z_proj": -0.6705523356206331,
+    "z_proj": -0.6738203660217782,
     "z_hist": -0.7847710729466336,
     "scaled_hist": -5.980004782047527,
-    "scaled_proj": -4.6358277275258395,
-    "score": -5.307916254786683,
-    "expected_ppg": -5.307916254786683
+    "scaled_proj": -4.658421081009582,
+    "score": -5.319212931528554,
+    "expected_ppg": -5.319212931528554
   },
   {
     "player_id": "8167",
@@ -4856,12 +4856,12 @@
     "projected_points": 0.0,
     "top_n_avg": 0.6166666666666666,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": -1.0460640446847695,
     "scaled_hist": -7.971073610110356,
-    "scaled_proj": -5.941419224744166,
-    "score": -6.956246417427261,
-    "expected_ppg": -6.956246417427261
+    "scaled_proj": -5.9621591565652885,
+    "score": -6.966616383337822,
+    "expected_ppg": -6.966616383337822
   },
   {
     "player_id": "12897",
@@ -4910,15 +4910,15 @@
     "slug": "will-levis",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": 0.0,
+    "projected_points": NaN,
     "top_n_avg": 16.183333333333334,
-    "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "projected_ppg": NaN,
+    "z_proj": 0.0,
     "z_hist": 0.2820225370336949,
     "scaled_hist": 2.149029415386412,
-    "scaled_proj": -5.041299658307077,
-    "score": -1.4461351214603324,
-    "expected_ppg": -1.4461351214603324
+    "scaled_proj": 0.0,
+    "score": 2.149029415386412,
+    "expected_ppg": 2.149029415386412
   },
   {
     "player_id": "12509",
@@ -4927,7 +4927,7 @@
     "position": "WR",
     "team": "LAC",
     "slug": "tre-harris",
-    "adp": 135.5,
+    "adp": 136.0,
     "bye_week": 12.0,
     "projected_points": 102.3,
     "top_n_avg": NaN,
@@ -4946,7 +4946,7 @@
     "position": "WR",
     "team": "LV",
     "slug": "jakobi-meyers",
-    "adp": 93.0,
+    "adp": 92.5,
     "bye_week": 8.0,
     "projected_points": 169.7,
     "top_n_avg": 15.133333333333333,
@@ -4970,12 +4970,12 @@
     "projected_points": 10.7,
     "top_n_avg": NaN,
     "projected_ppg": 0.6294117647058823,
-    "z_proj": -0.6466055498882259,
+    "z_proj": -0.6521525132287124,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.4702729044549985,
-    "score": -4.4702729044549985,
-    "expected_ppg": -4.4702729044549985
+    "scaled_proj": -4.508621538993116,
+    "score": -4.508621538993116,
+    "expected_ppg": -4.508621538993116
   },
   {
     "player_id": "12778",
@@ -5027,12 +5027,12 @@
     "projected_points": 88.5,
     "top_n_avg": NaN,
     "projected_ppg": 5.205882352941177,
-    "z_proj": 0.28532967074210264,
+    "z_proj": 0.2807046673357906,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 1.9726114262025347,
-    "score": 1.9726114262025347,
-    "expected_ppg": 1.9726114262025347
+    "scaled_proj": 1.9406367123853971,
+    "score": 1.9406367123853971,
+    "expected_ppg": 1.9406367123853971
   },
   {
     "player_id": "12385",
@@ -5047,11 +5047,11 @@
     "top_n_avg": 0.6666666666666666,
     "projected_ppg": 0.0,
     "z_proj": -2.4018423541146787,
-    "z_hist": -3.0954503577357424,
-    "scaled_hist": -23.587525814817145,
+    "z_hist": -3.1800255361933263,
+    "scaled_hist": -24.231993977640556,
     "scaled_proj": -16.605008723211956,
-    "score": -20.09626726901455,
-    "expected_ppg": -20.09626726901455
+    "score": -20.418501350426254,
+    "expected_ppg": -20.418501350426254
   },
   {
     "player_id": "11960",
@@ -5098,7 +5098,7 @@
     "position": "TE",
     "team": "LAR",
     "slug": "tyler-higbee",
-    "adp": 282.5,
+    "adp": 282.0,
     "bye_week": 8.0,
     "projected_points": 87.0,
     "top_n_avg": 1.5833333333333333,
@@ -5160,12 +5160,12 @@
     "projected_points": 86.9,
     "top_n_avg": 9.116666666666667,
     "projected_ppg": 5.111764705882353,
-    "z_proj": 0.2646339845420976,
+    "z_proj": 0.26003836079489606,
     "z_hist": 0.003222692216406602,
     "scaled_hist": 0.02455711675612354,
-    "scaled_proj": 1.8295329059594307,
-    "score": 0.9270450113577772,
-    "expected_ppg": 0.9270450113577772
+    "scaled_proj": 1.7977613068450462,
+    "score": 0.9111592118005849,
+    "expected_ppg": 0.9111592118005849
   },
   {
     "player_id": "11638",
@@ -5174,7 +5174,7 @@
     "position": "WR",
     "team": "SF",
     "slug": "ricky-pearsall",
-    "adp": 100.0,
+    "adp": 99.5,
     "bye_week": 14.0,
     "projected_points": 143.7,
     "top_n_avg": 10.183333333333334,
@@ -5202,8 +5202,8 @@
     "z_hist": 0.0,
     "scaled_hist": 0.0,
     "scaled_proj": 4.1366051718171475,
-    "score": 4.9639262061805765,
-    "expected_ppg": 4.9639262061805765
+    "score": 5.377586723362292,
+    "expected_ppg": 5.377586723362292
   },
   {
     "player_id": "7605",
@@ -5217,12 +5217,12 @@
     "projected_points": 7.3,
     "top_n_avg": 0.03333333333333333,
     "projected_ppg": 0.4294117647058823,
-    "z_proj": -0.6728511789526235,
+    "z_proj": -0.6783393322927224,
     "z_hist": -1.2448040903841084,
     "scaled_hist": -9.485485219605561,
-    "scaled_proj": -4.6517206580154715,
-    "score": -7.068602938810516,
-    "expected_ppg": -7.068602938810516
+    "scaled_proj": -4.689662712759634,
+    "score": -7.087573966182598,
+    "expected_ppg": -7.087573966182598
   },
   {
     "player_id": "12791",
@@ -5274,12 +5274,12 @@
     "projected_points": 15.8,
     "top_n_avg": 2.5833333333333335,
     "projected_ppg": 0.9294117647058824,
-    "z_proj": -0.6550305709706292,
+    "z_proj": -0.6583206361161072,
     "z_hist": -0.8032878977154777,
     "scaled_hist": -6.121104147815758,
-    "scaled_proj": -4.528518837343511,
-    "score": -5.324811492579634,
-    "expected_ppg": -5.324811492579634
+    "scaled_proj": -4.551264526854318,
+    "score": -5.3361843373350375,
+    "expected_ppg": -5.3361843373350375
   },
   {
     "player_id": "9228",
@@ -5288,17 +5288,17 @@
     "position": "QB",
     "team": "CAR",
     "slug": "bryce-young",
-    "adp": 163.5,
+    "adp": 162.5,
     "bye_week": 14.0,
     "projected_points": 257.1,
     "top_n_avg": 18.95,
     "projected_ppg": 15.123529411764707,
-    "z_proj": 1.2554306270140039,
+    "z_proj": 1.2456216683513115,
     "z_hist": 0.5435841677368479,
     "scaled_hist": 4.142145441607947,
-    "scaled_proj": 8.679352530045215,
-    "score": 6.410748985826581,
-    "expected_ppg": 6.410748985826581
+    "scaled_proj": 8.611538818674607,
+    "score": 6.376842130141277,
+    "expected_ppg": 6.376842130141277
   },
   {
     "player_id": "12487",
@@ -5307,7 +5307,7 @@
     "position": "TE",
     "team": "LAR",
     "slug": "terrance-ferguson",
-    "adp": 243.5,
+    "adp": 248.5,
     "bye_week": 8.0,
     "projected_points": 45.6,
     "top_n_avg": NaN,
@@ -5326,7 +5326,7 @@
     "position": "DEF",
     "team": "DAL",
     "slug": "dallas-cowboys",
-    "adp": 258.5,
+    "adp": 258.0,
     "bye_week": 10.0,
     "projected_points": 111.6,
     "top_n_avg": 14.5,
@@ -5388,12 +5388,12 @@
     "projected_points": 123.6,
     "top_n_avg": 14.733333333333334,
     "projected_ppg": 7.270588235294118,
-    "z_proj": 0.7393412867547146,
+    "z_proj": 0.7340717670766655,
     "z_hist": 0.6965749085609093,
     "scaled_hist": 5.307944479411033,
-    "scaled_proj": 5.111396464035632,
-    "score": 5.209670471723332,
-    "expected_ppg": 5.209670471723332
+    "scaled_proj": 5.074965921426855,
+    "score": 5.191455200418944,
+    "expected_ppg": 5.191455200418944
   },
   {
     "player_id": "12884",
@@ -5426,12 +5426,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "10869",
@@ -5484,11 +5484,11 @@
     "top_n_avg": 13.0,
     "projected_ppg": 7.888235294117647,
     "z_proj": 0.6668070800328901,
-    "z_hist": 0.4117393298806392,
-    "scaled_hist": 3.13747951029625,
+    "z_hist": 0.355326797001883,
+    "scaled_hist": 2.707612472618989,
     "scaled_proj": 4.609935103224919,
-    "score": 3.8737073067605845,
-    "expected_ppg": 3.8737073067605845
+    "score": 3.6587737879219544,
+    "expected_ppg": 3.6587737879219544
   },
   {
     "player_id": "7021",
@@ -5502,12 +5502,12 @@
     "projected_points": 91.3,
     "top_n_avg": 16.583333333333332,
     "projected_ppg": 5.370588235294117,
-    "z_proj": 0.3215471215921114,
+    "z_proj": 0.316870703782356,
     "z_hist": 0.9249490807099885,
     "scaled_hist": 7.048169990552558,
-    "scaled_proj": 2.222998836627966,
-    "score": 4.635584413590262,
-    "expected_ppg": 4.635584413590262
+    "scaled_proj": 2.1906686720810113,
+    "score": 4.619419331316784,
+    "expected_ppg": 4.619419331316784
   },
   {
     "player_id": "11895",
@@ -5535,7 +5535,7 @@
     "position": "WR",
     "team": "PIT",
     "slug": "roman-wilson",
-    "adp": 286.5,
+    "adp": 287.0,
     "bye_week": 5.0,
     "projected_points": 49.9,
     "top_n_avg": NaN,
@@ -5559,12 +5559,12 @@
     "projected_points": 2.2,
     "top_n_avg": 8.833333333333334,
     "projected_ppg": 0.12941176470588237,
-    "z_proj": -0.71221962254922,
+    "z_proj": -0.7176195608887374,
     "z_hist": -0.41284902405118773,
     "scaled_hist": -3.1459354494551364,
-    "scaled_proj": -4.923892288356182,
-    "score": -4.034913868905659,
-    "expected_ppg": -4.034913868905659
+    "scaled_proj": -4.961224473409412,
+    "score": -4.053579961432274,
+    "expected_ppg": -4.053579961432274
   },
   {
     "player_id": "12735",
@@ -5611,17 +5611,17 @@
     "position": "RB",
     "team": "MIA",
     "slug": "alexander-mattison",
-    "adp": 237.0,
+    "adp": 242.0,
     "bye_week": 12.0,
     "projected_points": 43.9,
     "top_n_avg": 12.933333333333332,
     "projected_ppg": 2.5823529411764703,
-    "z_proj": -0.2915625820830397,
+    "z_proj": -0.2953686274916461,
     "z_hist": 0.47437301133477755,
     "scaled_hist": 3.6147520901922463,
-    "scaled_proj": -2.015702325573995,
-    "score": 0.7995248823091257,
-    "expected_ppg": 0.7995248823091257
+    "scaled_proj": -2.042015217051898,
+    "score": 0.7863684365701742,
+    "expected_ppg": 0.7863684365701742
   },
   {
     "player_id": "8135",
@@ -5711,12 +5711,12 @@
     "projected_points": 5.4,
     "top_n_avg": 2.4833333333333334,
     "projected_ppg": 0.31764705882352945,
-    "z_proj": -0.6875178540180222,
+    "z_proj": -0.6929731429461398,
     "z_hist": -1.0131802366891478,
     "scaled_hist": -7.720496931325047,
-    "scaled_proj": -4.753117932063972,
-    "score": -6.23680743169451,
-    "expected_ppg": -6.23680743169451
+    "scaled_proj": -4.790832780452688,
+    "score": -6.255664855888868,
+    "expected_ppg": -6.255664855888868
   },
   {
     "player_id": "11597",
@@ -5749,12 +5749,12 @@
     "projected_points": 76.4,
     "top_n_avg": 9.200000000000001,
     "projected_ppg": 4.4941176470588236,
-    "z_proj": 0.128818543854564,
+    "z_proj": 0.12441572412027523,
     "z_hist": 0.013509817087986832,
     "scaled_hist": 0.10294565329403074,
-    "scaled_proj": 0.8905801168640591,
-    "score": 0.4967628850790449,
-    "expected_ppg": 0.4967628850790449
+    "scaled_proj": 0.8601414579864897,
+    "score": 0.4815435556402602,
+    "expected_ppg": 0.4815435556402602
   },
   {
     "player_id": "7596",
@@ -5763,7 +5763,7 @@
     "position": "WR",
     "team": "BUF",
     "slug": "elijah-moore",
-    "adp": 316.0,
+    "adp": 317.0,
     "bye_week": 7.0,
     "projected_points": 30.6,
     "top_n_avg": 10.450000000000001,
@@ -5801,7 +5801,7 @@
     "position": "WR",
     "team": "NYJ",
     "slug": "garrett-wilson",
-    "adp": 34.0,
+    "adp": 34.5,
     "bye_week": 9.0,
     "projected_points": 188.7,
     "top_n_avg": 18.599999999999998,
@@ -5810,8 +5810,8 @@
     "z_hist": 1.3725623274597352,
     "scaled_hist": 10.459010996733896,
     "scaled_proj": 11.4744491717621,
-    "score": 13.160076101097598,
-    "expected_ppg": 13.160076101097598
+    "score": 12.611739596885197,
+    "expected_ppg": 12.611739596885197
   },
   {
     "player_id": "6040",
@@ -5839,17 +5839,17 @@
     "position": "RB",
     "team": "WAS",
     "slug": "austin-ekeler",
-    "adp": 133.0,
+    "adp": 133.5,
     "bye_week": 12.0,
     "projected_points": 131.5,
     "top_n_avg": 13.4,
     "projected_ppg": 7.735294117647059,
-    "z_proj": 0.8415262373672397,
+    "z_proj": 0.8361116556223326,
     "z_hist": 0.5319809106156267,
     "scaled_hist": 4.053727894804526,
-    "scaled_proj": 5.817846657735959,
-    "score": 4.935787276270243,
-    "expected_ppg": 4.935787276270243
+    "scaled_proj": 5.78041323628234,
+    "score": 4.917070565543433,
+    "expected_ppg": 4.917070565543433
   },
   {
     "player_id": "9511",
@@ -5858,17 +5858,17 @@
     "position": "RB",
     "team": "BAL",
     "slug": "keaton-mitchell",
-    "adp": 282.0,
+    "adp": 271.0,
     "bye_week": 7.0,
     "projected_points": 59.3,
     "top_n_avg": 0.8833333333333333,
     "projected_ppg": 3.488235294117647,
-    "z_proj": -0.09236660240799054,
+    "z_proj": -0.09645542703553565,
     "z_hist": -1.013145245095713,
     "scaled_hist": -7.720230293189054,
-    "scaled_proj": -0.6385715682341169,
-    "score": -4.179400930711585,
-    "expected_ppg": -4.179400930711585
+    "scaled_proj": -0.6668394387260155,
+    "score": -4.193534865957535,
+    "expected_ppg": -4.193534865957535
   },
   {
     "player_id": "7521",
@@ -5896,17 +5896,17 @@
     "position": "RB",
     "team": "CIN",
     "slug": "tahj-brooks",
-    "adp": 234.0,
+    "adp": 232.5,
     "bye_week": 10.0,
     "projected_points": 41.4,
     "top_n_avg": NaN,
     "projected_ppg": 2.4352941176470586,
-    "z_proj": -0.32389959177054767,
+    "z_proj": -0.3276597314617939,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -2.2392625134538453,
-    "score": -2.2392625134538453,
-    "expected_ppg": -2.2392625134538453
+    "scaled_proj": -2.265258038208697,
+    "score": -2.265258038208697,
+    "expected_ppg": -2.265258038208697
   },
   {
     "player_id": "7438",
@@ -5939,12 +5939,12 @@
     "projected_points": 1.7,
     "top_n_avg": 1.55,
     "projected_ppg": 0.09999999999999999,
-    "z_proj": -0.8374113056081742,
+    "z_proj": -0.8404424625077408,
     "z_hist": -0.9308482461230718,
     "scaled_hist": -7.093122000885802,
-    "scaled_proj": -5.789398296985867,
-    "score": -6.441260148935834,
-    "expected_ppg": -6.441260148935834
+    "scaled_proj": -5.810354038178665,
+    "score": -6.451738019532233,
+    "expected_ppg": -6.451738019532233
   },
   {
     "player_id": "1604",
@@ -5972,7 +5972,7 @@
     "position": "DEF",
     "team": "WAS",
     "slug": "washington-commanders",
-    "adp": 218.5,
+    "adp": 220.5,
     "bye_week": 12.0,
     "projected_points": 102.3,
     "top_n_avg": 9.333333333333334,
@@ -5991,17 +5991,17 @@
     "position": "RB",
     "team": "LAR",
     "slug": "blake-corum",
-    "adp": 199.0,
+    "adp": 199.5,
     "bye_week": 8.0,
     "projected_points": 65.5,
     "top_n_avg": 3.4166666666666665,
     "projected_ppg": 3.8529411764705883,
-    "z_proj": -0.012170818382970747,
+    "z_proj": -0.016373489189569126,
     "z_hist": -0.7004166489996763,
     "scaled_hist": -5.337218782436692,
-    "scaled_proj": -0.08414230229208805,
-    "score": -2.7106805423643903,
-    "expected_ppg": -2.7106805423643903
+    "scaled_proj": -0.11319724225715386,
+    "score": -2.725208012346923,
+    "expected_ppg": -2.725208012346923
   },
   {
     "player_id": "11139",
@@ -6091,12 +6091,12 @@
     "projected_points": 156.9,
     "top_n_avg": NaN,
     "projected_ppg": 9.229411764705883,
-    "z_proj": 1.170070255792321,
+    "z_proj": 1.1641892719590343,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 8.08921816659524,
-    "score": 8.08921816659524,
-    "expected_ppg": 8.08921816659524
+    "scaled_proj": 8.048560299235419,
+    "score": 8.048560299235419,
+    "expected_ppg": 8.048560299235419
   },
   {
     "player_id": "12079",
@@ -6143,17 +6143,17 @@
     "position": "RB",
     "team": "HOU",
     "slug": "woody-marks",
-    "adp": 223.0,
+    "adp": 220.5,
     "bye_week": 6.0,
     "projected_points": 65.0,
     "top_n_avg": NaN,
     "projected_ppg": 3.823529411764706,
-    "z_proj": -0.01863822032047232,
+    "z_proj": -0.02283170998359866,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -0.12885433986805794,
-    "score": -0.12885433986805794,
-    "expected_ppg": -0.12885433986805794
+    "scaled_proj": -0.15784580648851348,
+    "score": -0.15784580648851348,
+    "expected_ppg": -0.15784580648851348
   },
   {
     "player_id": "11644",
@@ -6167,12 +6167,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "6465",
@@ -6224,12 +6224,12 @@
     "projected_points": 0.0,
     "top_n_avg": 1.3166666666666667,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": -1.1234773098772242,
     "scaled_hist": -8.560967544791957,
-    "scaled_proj": -5.041299658307077,
-    "score": -6.801133601549517,
-    "expected_ppg": -6.801133601549517
+    "scaled_proj": -5.07836876231716,
+    "score": -6.8196681535545585,
+    "expected_ppg": -6.8196681535545585
   },
   {
     "player_id": "12171",
@@ -6243,12 +6243,12 @@
     "projected_points": 0.0,
     "top_n_avg": 0.03333333333333333,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": -1.1180739187858306,
     "scaled_hist": -8.519793365875703,
-    "scaled_proj": -5.941419224744166,
-    "score": -7.230606295309935,
-    "expected_ppg": -7.230606295309935
+    "scaled_proj": -5.9621591565652885,
+    "score": -7.240976261220496,
+    "expected_ppg": -7.240976261220496
   },
   {
     "player_id": "5110",
@@ -6295,7 +6295,7 @@
     "position": "WR",
     "team": "MIN",
     "slug": "tim-jones",
-    "adp": 63.0,
+    "adp": 62.5,
     "bye_week": 6.0,
     "projected_points": 15.1,
     "top_n_avg": 0.9333333333333332,
@@ -6338,12 +6338,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "LAC",
@@ -6390,7 +6390,7 @@
     "position": "WR",
     "team": "LAR",
     "slug": "tutu-atwell",
-    "adp": 297.0,
+    "adp": 301.5,
     "bye_week": 8.0,
     "projected_points": 84.8,
     "top_n_avg": 8.566666666666666,
@@ -6433,12 +6433,12 @@
     "projected_points": 89.5,
     "top_n_avg": 10.216666666666667,
     "projected_ppg": 5.264705882352941,
-    "z_proj": 0.29826447461710576,
+    "z_proj": 0.2936211089238496,
     "z_hist": 0.13901274052126464,
     "scaled_hist": 1.059285799056491,
-    "scaled_proj": 2.062035501354474,
-    "score": 1.5606606502054827,
-    "expected_ppg": 1.5606606502054827
+    "scaled_proj": 2.0299338408481162,
+    "score": 1.5446098199523037,
+    "expected_ppg": 1.5446098199523037
   },
   {
     "player_id": "12523",
@@ -6471,12 +6471,12 @@
     "projected_points": 11.6,
     "top_n_avg": 1.866666666666667,
     "projected_ppg": 0.6823529411764706,
-    "z_proj": -0.7093567472456426,
+    "z_proj": -0.7125696907859556,
     "z_hist": -0.891757171611067,
     "scaled_hist": -6.795245562041755,
-    "scaled_proj": -4.904099952981659,
-    "score": -5.849672757511707,
-    "expected_ppg": -5.849672757511707
+    "scaled_proj": -4.926312466397741,
+    "score": -5.860779014219748,
+    "expected_ppg": -5.860779014219748
   },
   {
     "player_id": "5288",
@@ -6528,12 +6528,12 @@
     "projected_points": 158.5,
     "top_n_avg": NaN,
     "projected_ppg": 9.323529411764707,
-    "z_proj": 1.190765941992326,
+    "z_proj": 1.1848555784999286,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 8.232296686838342,
-    "score": 9.87875602420601,
-    "expected_ppg": 9.87875602420601
+    "scaled_proj": 8.191435704775769,
+    "score": 9.420151060492133,
+    "expected_ppg": 9.420151060492133
   },
   {
     "player_id": "8157",
@@ -6547,12 +6547,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "8223",
@@ -6661,12 +6661,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "11959",
@@ -6813,12 +6813,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "11596",
@@ -6870,12 +6870,12 @@
     "projected_points": 255.0,
     "top_n_avg": 27.25,
     "projected_ppg": 15.0,
-    "z_proj": 2.4389745159301337,
+    "z_proj": 2.4312921917476333,
     "z_hist": 2.2417010642722484,
     "scaled_hist": 17.08190266740461,
-    "scaled_proj": 16.861719939000565,
-    "score": 16.971811303202585,
-    "expected_ppg": 16.971811303202585
+    "scaled_proj": 16.80860860142821,
+    "score": 16.945255634416412,
+    "expected_ppg": 16.945255634416412
   },
   {
     "player_id": "4926",
@@ -6908,12 +6908,12 @@
     "projected_points": 255.0,
     "top_n_avg": NaN,
     "projected_ppg": 15.0,
-    "z_proj": 1.2392200914154052,
+    "z_proj": 1.2294474565764815,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 8.567281858728451,
-    "score": 8.567281858728451,
-    "expected_ppg": 8.567281858728451
+    "scaled_proj": 8.499719270171756,
+    "score": 8.499719270171756,
+    "expected_ppg": 8.499719270171756
   },
   {
     "player_id": "8143",
@@ -6922,17 +6922,17 @@
     "position": "RB",
     "team": "CLE",
     "slug": "jerome-ford",
-    "adp": 134.5,
+    "adp": 135.0,
     "bye_week": 9.0,
     "projected_points": 105.1,
     "top_n_avg": 13.716666666666667,
     "projected_ppg": 6.18235294117647,
-    "z_proj": 0.5000474150671554,
+    "z_proj": 0.49511759769757174,
     "z_hist": 0.5710719851276312,
     "scaled_hist": 4.35160433364857,
-    "scaled_proj": 3.4570510737247395,
-    "score": 3.904327703686655,
-    "expected_ppg": 3.904327703686655
+    "scaled_proj": 3.4229690448665413,
+    "score": 3.8872866892575555,
+    "expected_ppg": 3.8872866892575555
   },
   {
     "player_id": "6694",
@@ -6946,12 +6946,12 @@
     "projected_points": 1.5,
     "top_n_avg": 3.9,
     "projected_ppg": 0.08823529411764706,
-    "z_proj": -0.8399982663831749,
+    "z_proj": -0.8430257508253526,
     "z_hist": -0.6407513247445112,
     "scaled_hist": -4.8825652705168325,
-    "scaled_proj": -5.807283112016255,
-    "score": -5.344924191266544,
-    "expected_ppg": -5.344924191266544
+    "scaled_proj": -5.828213463871209,
+    "score": -5.355389367194021,
+    "expected_ppg": -5.355389367194021
   },
   {
     "player_id": "12496",
@@ -7022,12 +7022,12 @@
     "projected_points": 0.0,
     "top_n_avg": 2.5,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": -1.0116045642150322,
     "scaled_hist": -7.708490208275518,
-    "scaled_proj": -5.041299658307077,
-    "score": -6.374894933291298,
-    "expected_ppg": -6.374894933291298
+    "scaled_proj": -5.07836876231716,
+    "score": -6.393429485296339,
+    "expected_ppg": -6.393429485296339
   },
   {
     "player_id": "2750",
@@ -7093,7 +7093,7 @@
     "position": "WR",
     "team": "CIN",
     "slug": "andrei-iosivas",
-    "adp": 277.0,
+    "adp": 278.0,
     "bye_week": 10.0,
     "projected_points": 71.8,
     "top_n_avg": 11.016666666666666,
@@ -7136,12 +7136,12 @@
     "projected_points": 2.0,
     "top_n_avg": 3.8666666666666667,
     "projected_ppg": 0.11764705882352941,
-    "z_proj": -0.8335308644456733,
+    "z_proj": -0.836567530031323,
     "z_hist": -0.6448661746931433,
     "scaled_hist": -4.913920685131996,
-    "scaled_proj": -5.762571074440285,
-    "score": -5.3382458797861405,
-    "expected_ppg": -5.3382458797861405
+    "scaled_proj": -5.783564899639848,
+    "score": -5.348742792385922,
+    "expected_ppg": -5.348742792385922
   },
   {
     "player_id": "12765",
@@ -7188,7 +7188,7 @@
     "position": "DEF",
     "team": "TB",
     "slug": "tampa-bay-buccaneers",
-    "adp": 239.5,
+    "adp": 241.0,
     "bye_week": 9.0,
     "projected_points": 102.9,
     "top_n_avg": 11.666666666666666,
@@ -7207,7 +7207,7 @@
     "position": "WR",
     "team": "TEN",
     "slug": "calvin-ridley",
-    "adp": 69.5,
+    "adp": 69.0,
     "bye_week": 10.0,
     "projected_points": 175.3,
     "top_n_avg": 16.983333333333334,
@@ -7326,12 +7326,12 @@
     "projected_points": 68.8,
     "top_n_avg": 4.383333333333334,
     "projected_ppg": 4.047058823529412,
-    "z_proj": -0.1981140649936661,
+    "z_proj": -0.20466598745842265,
     "z_hist": -0.8335535746399941,
     "scaled_hist": -6.35173050367893,
-    "scaled_proj": -1.3696509980245508,
-    "score": -3.8606907508517407,
-    "expected_ppg": -3.8606907508517407
+    "scaled_proj": -1.4149473637476013,
+    "score": -3.883338933713266,
+    "expected_ppg": -3.883338933713266
   },
   {
     "player_id": "9479",
@@ -7378,17 +7378,17 @@
     "position": "RB",
     "team": "PHI",
     "slug": "will-shipley",
-    "adp": 219.0,
+    "adp": 219.5,
     "bye_week": 9.0,
     "projected_points": 39.4,
     "top_n_avg": 0.8833333333333333,
     "projected_ppg": 2.317647058823529,
-    "z_proj": -0.3497691995205541,
+    "z_proj": -0.35349261463791215,
     "z_hist": -1.013145245095713,
     "scaled_hist": -7.720230293189054,
-    "scaled_proj": -2.4181106637577257,
-    "score": -5.06917047847339,
-    "expected_ppg": -5.06917047847339
+    "scaled_proj": -2.443852295134136,
+    "score": -5.082041294161595,
+    "expected_ppg": -5.082041294161595
   },
   {
     "player_id": "12540",
@@ -7416,7 +7416,7 @@
     "position": "DEF",
     "team": "CLE",
     "slug": "cleveland-browns",
-    "adp": 300.0,
+    "adp": 306.0,
     "bye_week": 9.0,
     "projected_points": 98.8,
     "top_n_avg": 8.333333333333334,
@@ -7459,12 +7459,12 @@
     "projected_points": 260.9,
     "top_n_avg": 6.716666666666666,
     "projected_ppg": 15.34705882352941,
-    "z_proj": 2.515289858792652,
+    "z_proj": 2.507499197117182,
     "z_hist": -0.2930465040851021,
     "scaled_hist": -2.233032735535589,
-    "scaled_proj": 17.389321982397007,
-    "score": 9.09377354811685,
-    "expected_ppg": 9.09377354811685
+    "scaled_proj": 17.335461659358256,
+    "score": 12.081943139058133,
+    "expected_ppg": 12.081943139058133
   },
   {
     "player_id": "6699",
@@ -7492,7 +7492,7 @@
     "position": "WR",
     "team": "CLE",
     "slug": "diontae-johnson",
-    "adp": 277.0,
+    "adp": 278.0,
     "bye_week": 9.0,
     "projected_points": 90.4,
     "top_n_avg": 11.183333333333332,
@@ -7568,17 +7568,17 @@
     "position": "QB",
     "team": "NYJ",
     "slug": "justin-fields",
-    "adp": 116.5,
+    "adp": 116.0,
     "bye_week": 9.0,
     "projected_points": 301.1,
     "top_n_avg": 19.05,
     "projected_ppg": 17.711764705882356,
-    "z_proj": 1.5950799443179737,
+    "z_proj": 1.58450991506203,
     "z_hist": 0.5530382025815404,
     "scaled_hist": 4.214185779905112,
-    "scaled_proj": 11.027499929063111,
-    "score": 7.620842854484112,
-    "expected_ppg": 7.620842854484112
+    "scaled_proj": 10.954424596829558,
+    "score": 7.584305188367335,
+    "expected_ppg": 7.584305188367335
   },
   {
     "player_id": "5134",
@@ -7611,12 +7611,12 @@
     "projected_points": 294.1,
     "top_n_avg": 33.199999999999996,
     "projected_ppg": 17.3,
-    "z_proj": 2.9447253474427586,
+    "z_proj": 2.9363250578407447,
     "z_hist": 2.976201780103071,
     "scaled_hist": 22.67884417621114,
-    "scaled_proj": 20.358201277441424,
-    "score": 21.518522726826284,
-    "expected_ppg": 21.518522726826284
+    "scaled_proj": 20.300126324320548,
+    "score": 21.489485250265844,
+    "expected_ppg": 21.489485250265844
   },
   {
     "player_id": "13217",
@@ -7720,17 +7720,17 @@
     "position": "K",
     "team": "MIA",
     "slug": "jason-sanders",
-    "adp": 256.5,
+    "adp": 256.0,
     "bye_week": 12.0,
     "projected_points": 133.4,
     "top_n_avg": 14.5,
     "projected_ppg": 7.847058823529412,
     "z_proj": 0.6507887757532238,
-    "z_hist": 0.8382894270231721,
-    "scaled_hist": 6.387817995783014,
+    "z_hist": 0.785302080768868,
+    "scaled_hist": 5.984051094947853,
     "scaled_proj": 4.4991934128557505,
-    "score": 5.443505704319382,
-    "expected_ppg": 5.443505704319382
+    "score": 5.241622253901802,
+    "expected_ppg": 5.241622253901802
   },
   {
     "player_id": "5967",
@@ -7739,17 +7739,17 @@
     "position": "RB",
     "team": "TEN",
     "slug": "tony-pollard",
-    "adp": 69.5,
+    "adp": 69.0,
     "bye_week": 10.0,
     "projected_points": 173.9,
     "top_n_avg": 16.95,
     "projected_ppg": 10.229411764705883,
-    "z_proj": 1.389961921667375,
+    "z_proj": 1.3837687789560391,
     "z_hist": 0.9702124301449413,
     "scaled_hist": 7.393079551319349,
-    "scaled_proj": 9.609427444178221,
-    "score": 8.501253497748785,
-    "expected_ppg": 8.501253497748785
+    "scaled_proj": 9.566611483101651,
+    "score": 8.4798455172105,
+    "expected_ppg": 8.4798455172105
   },
   {
     "player_id": "8076",
@@ -7801,12 +7801,12 @@
     "projected_points": 0.0,
     "top_n_avg": 0.2333333333333333,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": -1.0933848190940383,
     "scaled_hist": -8.331660878184726,
-    "scaled_proj": -5.941419224744166,
-    "score": -7.136540051464446,
-    "expected_ppg": -7.136540051464446
+    "scaled_proj": -5.9621591565652885,
+    "score": -7.146910017375007,
+    "expected_ppg": -7.146910017375007
   },
   {
     "player_id": "10217",
@@ -7820,12 +7820,12 @@
     "projected_points": 2.9,
     "top_n_avg": 0.06666666666666667,
     "projected_ppg": 0.17058823529411765,
-    "z_proj": -0.7068161106830204,
+    "z_proj": -0.7122281569637942,
     "z_hist": -1.2416527454358777,
     "scaled_hist": -9.461471773506506,
-    "scaled_proj": -4.886535397917261,
-    "score": -7.174003585711883,
-    "expected_ppg": -7.174003585711883
+    "scaled_proj": -4.923951290575128,
+    "score": -7.192711532040818,
+    "expected_ppg": -7.192711532040818
   },
   {
     "player_id": "12888",
@@ -7872,7 +7872,7 @@
     "position": "WR",
     "team": "LV",
     "slug": "tre-tucker",
-    "adp": 272.0,
+    "adp": 269.0,
     "bye_week": 8.0,
     "projected_points": 72.6,
     "top_n_avg": 12.200000000000001,
@@ -8010,12 +8010,12 @@
     "projected_points": 8.9,
     "top_n_avg": 1.1333333333333333,
     "projected_ppg": 0.5235294117647059,
-    "z_proj": -0.6605002946870246,
+    "z_proj": -0.6660161233214235,
     "z_hist": -1.1408097070924934,
     "scaled_hist": -8.69304149833676,
-    "scaled_proj": -4.566333479869367,
-    "score": -6.629687489103063,
-    "expected_ppg": -6.629687489103063
+    "scaled_proj": -4.604466866281272,
+    "score": -6.648754182309016,
+    "expected_ppg": -6.648754182309016
   },
   {
     "player_id": "7523",
@@ -8029,12 +8029,12 @@
     "projected_points": 273.8,
     "top_n_avg": 19.333333333333332,
     "projected_ppg": 16.105882352941176,
-    "z_proj": 1.384342981536192,
+    "z_proj": 1.374245161989243,
     "z_hist": 0.5798246346415016,
     "scaled_hist": 4.418300071747074,
-    "scaled_proj": 9.570581201945187,
-    "score": 8.393328764215356,
-    "expected_ppg": 8.393328764215356
+    "scaled_proj": 9.500770466292508,
+    "score": 8.00346555937276,
+    "expected_ppg": 8.00346555937276
   },
   {
     "player_id": "12508",
@@ -8043,17 +8043,17 @@
     "position": "QB",
     "team": "NYG",
     "slug": "jaxson-dart",
-    "adp": 228.0,
+    "adp": 225.5,
     "bye_week": 14.0,
     "projected_points": 55.4,
     "top_n_avg": NaN,
     "projected_ppg": 3.2588235294117647,
-    "z_proj": -0.30155272071805683,
+    "z_proj": -0.3078728625930505,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -2.0847686149981826,
-    "score": -2.0847686149981826,
-    "expected_ppg": -2.0847686149981826
+    "scaled_proj": -2.128462578003881,
+    "score": -2.128462578003881,
+    "expected_ppg": -2.128462578003881
   },
   {
     "player_id": "11605",
@@ -8100,17 +8100,17 @@
     "position": "RB",
     "team": "WAS",
     "slug": "jacory-croskey-merritt",
-    "adp": 249.0,
+    "adp": 247.5,
     "bye_week": 12.0,
     "projected_points": 28.2,
     "top_n_avg": NaN,
     "projected_ppg": 1.6588235294117646,
-    "z_proj": -0.49463900292058977,
+    "z_proj": -0.4981567604241742,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -3.4196603054594545,
-    "score": -3.4196603054594545,
-    "expected_ppg": -3.4196603054594545
+    "scaled_proj": -3.4439801339165954,
+    "score": -3.4439801339165954,
+    "expected_ppg": -3.4439801339165954
   },
   {
     "player_id": "3048",
@@ -8162,12 +8162,12 @@
     "projected_points": 50.3,
     "top_n_avg": 8.700000000000001,
     "projected_ppg": 2.9588235294117644,
-    "z_proj": -0.2087798372830193,
+    "z_proj": -0.21270340132806778,
     "z_hist": -0.048212932141494115,
     "scaled_hist": -0.3673855659334092,
-    "scaled_proj": -1.4433882446015782,
-    "score": -0.9053869052674937,
-    "expected_ppg": -0.9053869052674937
+    "scaled_proj": -1.4705135948904924,
+    "score": -0.9189495804119507,
+    "expected_ppg": -0.9189495804119507
   },
   {
     "player_id": "12787",
@@ -8219,12 +8219,12 @@
     "projected_points": 290.3,
     "top_n_avg": NaN,
     "projected_ppg": 17.076470588235296,
-    "z_proj": 1.511711475525181,
+    "z_proj": 1.5013282545057627,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 10.4511364765769,
-    "score": 10.4511364765769,
-    "expected_ppg": 10.4511364765769
+    "scaled_proj": 10.379352633100615,
+    "score": 10.379352633100615,
+    "expected_ppg": 10.379352633100615
   },
   {
     "player_id": "11859",
@@ -8257,12 +8257,12 @@
     "projected_points": 21.3,
     "top_n_avg": 4.033333333333333,
     "projected_ppg": 1.2529411764705882,
-    "z_proj": -0.5838891496581118,
+    "z_proj": -0.5872802073817821,
     "z_hist": -0.6242919249499831,
     "scaled_hist": -4.757143612056183,
-    "scaled_proj": -4.036686424007842,
-    "score": -4.396915018032012,
-    "expected_ppg": -4.396915018032012
+    "scaled_proj": -4.06013032030936,
+    "score": -4.408636966182772,
+    "expected_ppg": -4.408636966182772
   },
   {
     "player_id": "8676",
@@ -8328,17 +8328,17 @@
     "position": "K",
     "team": "MIN",
     "slug": "will-reichard",
-    "adp": 277.0,
+    "adp": 280.0,
     "bye_week": 6.0,
     "projected_points": 124.0,
     "top_n_avg": 13.5,
     "projected_ppg": 7.294117647058823,
     "z_proj": 0.4356858325691285,
-    "z_hist": 0.5539226955948169,
-    "scaled_hist": 4.220925672125172,
+    "z_hist": 0.498651891590878,
+    "scaled_hist": 3.7997586800619434,
     "scaled_proj": 3.012090713612597,
-    "score": 3.6165081928688845,
-    "expected_ppg": 3.6165081928688845
+    "score": 3.4059246968372703,
+    "expected_ppg": 3.4059246968372703
   },
   {
     "player_id": "6920",
@@ -8371,12 +8371,12 @@
     "projected_points": 240.5,
     "top_n_avg": NaN,
     "projected_ppg": 14.147058823529411,
-    "z_proj": 2.251419859742587,
+    "z_proj": 2.244003788720776,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 15.56507084929743,
-    "score": 18.678085019156914,
-    "expected_ppg": 18.678085019156914
+    "scaled_proj": 15.513800238718774,
+    "score": 24.82208038195004,
+    "expected_ppg": 24.82208038195004
   },
   {
     "player_id": "10225",
@@ -8409,12 +8409,12 @@
     "projected_points": 4.1,
     "top_n_avg": NaN,
     "projected_ppg": 0.24117647058823527,
-    "z_proj": -0.6975529474838214,
+    "z_proj": -0.7029857502353201,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.822495014307683,
-    "score": -4.822495014307683,
-    "expected_ppg": -4.822495014307683
+    "scaled_proj": -4.860054405716357,
+    "score": -4.860054405716357,
+    "expected_ppg": -4.860054405716357
   },
   {
     "player_id": "12473",
@@ -8485,12 +8485,12 @@
     "projected_points": 23.8,
     "top_n_avg": 5.166666666666667,
     "projected_ppg": 1.4000000000000001,
-    "z_proj": -0.5515521399706037,
+    "z_proj": -0.5549891034116343,
     "z_hist": -0.48438702669649286,
     "scaled_hist": -3.691059515140652,
-    "scaled_proj": -3.8131262361279905,
-    "score": -3.7520928756343213,
-    "expected_ppg": -3.7520928756343213
+    "scaled_proj": -3.8368874991525614,
+    "score": -3.7639735071466065,
+    "expected_ppg": -3.7639735071466065
   },
   {
     "player_id": "5917",
@@ -8527,8 +8527,8 @@
     "z_hist": 1.120924889484358,
     "scaled_hist": 8.541517941358151,
     "scaled_proj": 11.219730955475626,
-    "score": 9.880624448416889,
-    "expected_ppg": 9.880624448416889
+    "score": 11.36271811567942,
+    "expected_ppg": 11.36271811567942
   },
   {
     "player_id": "12460",
@@ -8556,7 +8556,7 @@
     "position": "TE",
     "team": "PHI",
     "slug": "dallas-goedert",
-    "adp": 137.5,
+    "adp": 137.0,
     "bye_week": 9.0,
     "projected_points": 114.4,
     "top_n_avg": 11.016666666666666,
@@ -8670,7 +8670,7 @@
     "position": "WR",
     "team": "CAR",
     "slug": "adam-thielen",
-    "adp": 183.5,
+    "adp": 183.0,
     "bye_week": 14.0,
     "projected_points": 119.5,
     "top_n_avg": 15.333333333333334,
@@ -8732,12 +8732,12 @@
     "projected_points": 22.5,
     "top_n_avg": NaN,
     "projected_ppg": 1.3235294117647058,
-    "z_proj": -0.568367385008108,
+    "z_proj": -0.5717804774761112,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -3.9293775338255137,
-    "score": -3.9293775338255137,
-    "expected_ppg": -3.9293775338255137
+    "scaled_proj": -3.952973766154097,
+    "score": -3.952973766154097,
+    "expected_ppg": -3.952973766154097
   },
   {
     "player_id": "4602",
@@ -8803,7 +8803,7 @@
     "position": "TE",
     "team": "LAC",
     "slug": "tyler-conklin",
-    "adp": 256.0,
+    "adp": 257.5,
     "bye_week": 12.0,
     "projected_points": 68.1,
     "top_n_avg": 11.133333333333333,
@@ -8846,12 +8846,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "8917",
@@ -8884,12 +8884,12 @@
     "projected_points": 150.9,
     "top_n_avg": 16.966666666666665,
     "projected_ppg": 8.876470588235295,
-    "z_proj": 1.0924614325423017,
+    "z_proj": 1.0866906224306794,
     "z_hist": 0.9722698551192571,
     "scaled_hist": 7.408757258626928,
-    "scaled_proj": 7.552673715683598,
-    "score": 7.480715487155264,
-    "expected_ppg": 7.480715487155264
+    "scaled_proj": 7.5127775284591,
+    "score": 7.460767393543014,
+    "expected_ppg": 7.460767393543014
   },
   {
     "player_id": "12775",
@@ -8936,7 +8936,7 @@
     "position": "WR",
     "team": "TEN",
     "slug": "tyler-lockett",
-    "adp": 252.5,
+    "adp": 251.0,
     "bye_week": 10.0,
     "projected_points": 102.0,
     "top_n_avg": 10.700000000000001,
@@ -8979,12 +8979,12 @@
     "projected_points": 7.6,
     "top_n_avg": 1.5833333333333333,
     "projected_ppg": 0.44705882352941173,
-    "z_proj": -0.6705353881528238,
+    "z_proj": -0.6760287306106038,
     "z_hist": -1.0982665502913782,
     "scaled_hist": -8.368859975999522,
-    "scaled_proj": -4.635710562113077,
-    "score": -6.5022852690562996,
-    "expected_ppg": -6.5022852690562996
+    "scaled_proj": -4.67368849154494,
+    "score": -6.521274233772231,
+    "expected_ppg": -6.521274233772231
   },
   {
     "player_id": "6268",
@@ -8996,14 +8996,14 @@
     "adp": NaN,
     "bye_week": NaN,
     "projected_points": 62.0,
-    "top_n_avg": 6.166666666666667,
+    "top_n_avg": 8.333333333333334,
     "projected_ppg": 3.6470588235294117,
     "z_proj": -0.9830782607727752,
-    "z_hist": -1.5314333348797884,
-    "scaled_hist": -11.669618034699008,
+    "z_hist": -0.9823740858287365,
+    "scaled_hist": -7.485752130181919,
     "scaled_proj": -6.79645900479968,
-    "score": -9.233038519749345,
-    "expected_ppg": -9.233038519749345
+    "score": -7.1411055674908,
+    "expected_ppg": -7.1411055674908
   },
   {
     "player_id": "10229",
@@ -9021,8 +9021,8 @@
     "z_hist": 0.004866252538007848,
     "scaled_hist": 0.03708114946015185,
     "scaled_proj": 8.114128087675159,
-    "score": 4.890725542281186,
-    "expected_ppg": 4.890725542281186
+    "score": 5.298286004137952,
+    "expected_ppg": 5.298286004137952
   },
   {
     "player_id": "3050",
@@ -9093,12 +9093,12 @@
     "projected_points": 254.7,
     "top_n_avg": 24.066666666666666,
     "projected_ppg": 14.98235294117647,
-    "z_proj": 2.435094074767633,
+    "z_proj": 2.4274172592712158,
     "z_hist": 1.8487328941778867,
     "scaled_hist": 14.087460571656576,
-    "scaled_proj": 16.83489271645498,
-    "score": 18.553411972866936,
-    "expected_ppg": 18.553411972866936
+    "scaled_proj": 16.781819462889395,
+    "score": 24.69542402763678,
+    "expected_ppg": 24.69542402763678
   },
   {
     "player_id": "9494",
@@ -9107,7 +9107,7 @@
     "position": "WR",
     "team": "DEN",
     "slug": "marvin-mims",
-    "adp": 136.0,
+    "adp": 135.5,
     "bye_week": 12.0,
     "projected_points": 132.1,
     "top_n_avg": 12.6,
@@ -9145,17 +9145,17 @@
     "position": "QB",
     "team": "ATL",
     "slug": "michael-penix",
-    "adp": 162.0,
+    "adp": 161.5,
     "bye_week": 5.0,
     "projected_points": 263.6,
     "top_n_avg": 3.533333333333333,
     "projected_ppg": 15.505882352941178,
-    "z_proj": 1.3056060943429995,
+    "z_proj": 1.295684704797213,
     "z_hist": -0.9139128708198787,
     "scaled_hist": -6.964073379204825,
-    "scaled_proj": 9.026237941263767,
-    "score": 1.0310822810294713,
-    "expected_ppg": 1.0310822810294713
+    "scaled_proj": 8.957646944992952,
+    "score": 0.9967867828940635,
+    "expected_ppg": 0.9967867828940635
   },
   {
     "player_id": "4993",
@@ -9164,7 +9164,7 @@
     "position": "TE",
     "team": "CIN",
     "slug": "mike-gesicki",
-    "adp": 190.0,
+    "adp": 191.5,
     "bye_week": 10.0,
     "projected_points": 99.1,
     "top_n_avg": 12.333333333333334,
@@ -9183,7 +9183,7 @@
     "position": "DEF",
     "team": "LAR",
     "slug": "los-angeles-rams",
-    "adp": 242.5,
+    "adp": 242.0,
     "bye_week": 8.0,
     "projected_points": 102.0,
     "top_n_avg": 14.0,
@@ -9207,12 +9207,12 @@
     "projected_points": 26.1,
     "top_n_avg": NaN,
     "projected_ppg": 1.535294117647059,
-    "z_proj": -0.5218020910580965,
+    "z_proj": -0.5252812877590982,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -3.607450863278529,
-    "score": -3.607450863278529,
-    "expected_ppg": -3.607450863278529
+    "scaled_proj": -3.6315041036883056,
+    "score": -3.6315041036883056,
+    "expected_ppg": -3.6315041036883056
   },
   {
     "player_id": "12113",
@@ -9378,12 +9378,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "6869",
@@ -9416,12 +9416,12 @@
     "projected_points": 289.0,
     "top_n_avg": 23.8,
     "projected_ppg": 17.0,
-    "z_proj": 2.8787578476802422,
+    "z_proj": 2.8704512057416434,
     "z_hist": 1.8158140945888304,
     "scaled_hist": 13.836617254735277,
-    "scaled_proj": 19.90213849416653,
-    "score": 16.869377874450905,
-    "expected_ppg": 16.869377874450905
+    "scaled_proj": 19.844710969160676,
+    "score": 16.840664111947977,
+    "expected_ppg": 16.840664111947977
   },
   {
     "player_id": "7525",
@@ -9458,8 +9458,8 @@
     "z_hist": 0.0,
     "scaled_hist": 0.0,
     "scaled_proj": 8.16311236003794,
-    "score": 9.795734832045529,
-    "expected_ppg": 9.795734832045529
+    "score": 10.612046068049324,
+    "expected_ppg": 10.612046068049324
   },
   {
     "player_id": "11292",
@@ -9473,12 +9473,12 @@
     "projected_points": 0.0,
     "top_n_avg": 2.25,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": -1.035239651326763,
     "scaled_hist": -7.888591054018429,
-    "scaled_proj": -5.041299658307077,
-    "score": -6.464945356162753,
-    "expected_ppg": -6.464945356162753
+    "scaled_proj": -5.07836876231716,
+    "score": -6.483479908167794,
+    "expected_ppg": -6.483479908167794
   },
   {
     "player_id": "12476",
@@ -9487,17 +9487,17 @@
     "position": "RB",
     "team": "NO",
     "slug": "devin-neal",
-    "adp": 217.5,
+    "adp": 218.5,
     "bye_week": 11.0,
     "projected_points": 38.9,
     "top_n_avg": NaN,
     "projected_ppg": 2.288235294117647,
-    "z_proj": -0.35623660145805564,
+    "z_proj": -0.3599508354319417,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -2.462822701333695,
-    "score": -2.462822701333695,
-    "expected_ppg": -2.462822701333695
+    "scaled_proj": -2.488500859365496,
+    "score": -2.488500859365496,
+    "expected_ppg": -2.488500859365496
   },
   {
     "player_id": "12511",
@@ -9511,12 +9511,12 @@
     "projected_points": 4.7,
     "top_n_avg": NaN,
     "projected_ppg": 0.27647058823529413,
-    "z_proj": -0.6929213658842217,
+    "z_proj": -0.698364546871083,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.790474822502893,
-    "score": -4.790474822502893,
-    "expected_ppg": -4.790474822502893
+    "scaled_proj": -4.828105963286972,
+    "score": -4.828105963286972,
+    "expected_ppg": -4.828105963286972
   },
   {
     "player_id": "8002",
@@ -9530,12 +9530,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "8118",
@@ -9568,12 +9568,12 @@
     "projected_points": 15.9,
     "top_n_avg": 6.266666666666667,
     "projected_ppg": 0.9352941176470588,
-    "z_proj": -0.6537370905831289,
+    "z_proj": -0.6570289919573014,
     "z_hist": -0.34859697839163484,
     "scaled_hist": -2.6563308328402844,
-    "scaled_proj": -4.519576429828318,
-    "score": -3.587953631334301,
-    "expected_ppg": -3.587953631334301
+    "scaled_proj": -4.542334814008046,
+    "score": -3.5993328234241653,
+    "expected_ppg": -3.5993328234241653
   },
   {
     "player_id": "12490",
@@ -9587,12 +9587,12 @@
     "projected_points": 79.7,
     "top_n_avg": NaN,
     "projected_ppg": 4.688235294117647,
-    "z_proj": 0.17150339664207456,
+    "z_proj": 0.16703998136087037,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 1.1856795648654617,
-    "score": 1.1856795648654617,
-    "expected_ppg": 1.1856795648654617
+    "scaled_proj": 1.1548219819134649,
+    "score": 1.1548219819134649,
+    "expected_ppg": 1.1548219819134649
   },
   {
     "player_id": "1945",
@@ -9601,17 +9601,17 @@
     "position": "K",
     "team": "PIT",
     "slug": "chris-boswell",
-    "adp": 249.5,
+    "adp": 249.0,
     "bye_week": 5.0,
     "projected_points": 126.0,
-    "top_n_avg": 17.5,
+    "top_n_avg": 18.5,
     "projected_ppg": 7.411764705882353,
     "z_proj": 0.48145241622531915,
-    "z_hist": 1.691389621308238,
-    "scaled_hist": 12.888494966756543,
+    "z_hist": 1.9319028374808278,
+    "scaled_hist": 14.721220754491489,
     "scaled_proj": 3.3284955432388013,
-    "score": 8.108495254997672,
-    "expected_ppg": 8.108495254997672
+    "score": 9.024858148865144,
+    "expected_ppg": 9.024858148865144
   },
   {
     "player_id": "12478",
@@ -9644,12 +9644,12 @@
     "projected_points": 88.9,
     "top_n_avg": NaN,
     "projected_ppg": 5.229411764705882,
-    "z_proj": 0.2905035922921039,
+    "z_proj": 0.2858712439710142,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 2.0083810562633104,
-    "score": 2.4100572675159726,
-    "expected_ppg": 2.4100572675159726
+    "scaled_proj": 1.9763555637704848,
+    "score": 2.56926223290163,
+    "expected_ppg": 2.56926223290163
   },
   {
     "player_id": "12548",
@@ -9715,17 +9715,17 @@
     "position": "RB",
     "team": "LV",
     "slug": "raheem-mostert",
-    "adp": 251.0,
+    "adp": 252.0,
     "bye_week": 8.0,
     "projected_points": 69.0,
     "top_n_avg": 8.083333333333334,
     "projected_ppg": 4.0588235294117645,
-    "z_proj": 0.03310099517954035,
+    "z_proj": 0.02883405636863772,
     "z_hist": -0.12433765619118733,
     "scaled_hist": -0.9474607363139188,
-    "scaled_proj": 0.22884196073970187,
-    "score": -0.35930938778710847,
-    "expected_ppg": -0.35930938778710847
+    "scaled_proj": 0.19934270736236434,
+    "score": -0.3740590144757772,
+    "expected_ppg": -0.3740590144757772
   },
   {
     "player_id": "8112",
@@ -9948,12 +9948,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "9229",
@@ -9967,12 +9967,12 @@
     "projected_points": 208.1,
     "top_n_avg": 21.416666666666668,
     "projected_ppg": 12.241176470588234,
-    "z_proj": 0.8771847963800374,
+    "z_proj": 0.8682233936052838,
     "z_hist": 0.7767836939059244,
     "scaled_hist": 5.919140452937992,
-    "scaled_proj": 6.064370199320739,
-    "score": 5.991755326129365,
-    "expected_ppg": 5.991755326129365
+    "scaled_proj": 6.002416020274775,
+    "score": 5.960778236606384,
+    "expected_ppg": 5.960778236606384
   },
   {
     "player_id": "6770",
@@ -9986,12 +9986,12 @@
     "projected_points": 341.6,
     "top_n_avg": 31.7,
     "projected_ppg": 20.094117647058823,
-    "z_proj": 1.907711702290945,
+    "z_proj": 1.896441142148032,
     "z_hist": 1.7489736104351135,
     "scaled_hist": 13.327288574496345,
-    "scaled_proj": 13.188862875886397,
-    "score": 13.258075725191372,
-    "expected_ppg": 13.258075725191372
+    "scaled_proj": 13.11094446081309,
+    "score": 13.219116517654719,
+    "expected_ppg": 13.219116517654719
   },
   {
     "player_id": "11624",
@@ -10000,7 +10000,7 @@
     "position": "WR",
     "team": "KC",
     "slug": "xavier-worthy",
-    "adp": 58.5,
+    "adp": 59.0,
     "bye_week": 10.0,
     "projected_points": 180.3,
     "top_n_avg": 16.983333333333334,
@@ -10009,8 +10009,8 @@
     "z_hist": 1.1465546285374058,
     "scaled_hist": 8.736818159961237,
     "scaled_proj": 10.65151339606734,
-    "score": 11.632998933617145,
-    "expected_ppg": 11.632998933617145
+    "score": 12.602415511418574,
+    "expected_ppg": 12.602415511418574
   },
   {
     "player_id": "11994",
@@ -10100,12 +10100,12 @@
     "projected_points": 12.1,
     "top_n_avg": 1.3499999999999999,
     "projected_ppg": 0.711764705882353,
-    "z_proj": -0.6357985261558269,
+    "z_proj": -0.6413697053788258,
     "z_hist": -1.1203259649289936,
     "scaled_hist": -8.536954098692904,
-    "scaled_proj": -4.395559123577156,
-    "score": -6.46625661113503,
-    "expected_ppg": -6.46625661113503
+    "scaled_proj": -4.4340751733245485,
+    "score": -6.485514636008727,
+    "expected_ppg": -6.485514636008727
   },
   {
     "player_id": "10866",
@@ -10119,12 +10119,12 @@
     "projected_points": 11.1,
     "top_n_avg": 12.65,
     "projected_ppg": 0.6529411764705882,
-    "z_proj": -0.6435178288218262,
+    "z_proj": -0.6490717109858876,
     "z_hist": -0.05202002747876569,
     "scaled_hist": -0.39639587111337987,
-    "scaled_proj": -4.448926109918472,
-    "score": -2.4226609905159258,
-    "expected_ppg": -2.4226609905159258
+    "scaled_proj": -4.487322577373524,
+    "score": -2.441859224243452,
+    "expected_ppg": -2.441859224243452
   },
   {
     "player_id": "6037",
@@ -10138,12 +10138,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "12499",
@@ -10152,7 +10152,7 @@
     "position": "WR",
     "team": "TEN",
     "slug": "elic-ayomanor",
-    "adp": 268.0,
+    "adp": 267.0,
     "bye_week": 10.0,
     "projected_points": 61.8,
     "top_n_avg": NaN,
@@ -10252,12 +10252,12 @@
     "projected_points": 287.8,
     "top_n_avg": 24.46666666666667,
     "projected_ppg": 16.929411764705883,
-    "z_proj": 2.8632360830302384,
+    "z_proj": 2.854951475835972,
     "z_hist": 1.8981110935614718,
     "scaled_hist": 14.46372554703853,
-    "scaled_proj": 19.794829603984198,
-    "score": 17.129277575511363,
-    "expected_ppg": 17.129277575511363
+    "scaled_proj": 19.737554415005413,
+    "score": 17.10063998102197,
+    "expected_ppg": 17.10063998102197
   },
   {
     "player_id": "6895",
@@ -10304,17 +10304,17 @@
     "position": "QB",
     "team": "DET",
     "slug": "jared-goff",
-    "adp": 98.5,
+    "adp": 98.0,
     "bye_week": 8.0,
     "projected_points": 290.8,
     "top_n_avg": 29.766666666666666,
     "projected_ppg": 17.105882352941176,
-    "z_proj": 1.5155711268581804,
+    "z_proj": 1.5051792573092935,
     "z_hist": 1.5661956034377298,
     "scaled_hist": 11.934508700751179,
-    "scaled_proj": 10.477819969747555,
-    "score": 11.206164335249367,
-    "expected_ppg": 11.206164335249367
+    "scaled_proj": 10.405976335125102,
+    "score": 11.17024251793814,
+    "expected_ppg": 11.17024251793814
   },
   {
     "player_id": "12891",
@@ -10389,8 +10389,8 @@
     "z_hist": 1.4238218055658307,
     "scaled_hist": 10.849611433940069,
     "scaled_proj": 7.6634727819375525,
-    "score": 11.107850529526573,
-    "expected_ppg": 11.107850529526573
+    "score": 12.033504740320454,
+    "expected_ppg": 12.033504740320454
   },
   {
     "player_id": "7610",
@@ -10404,12 +10404,12 @@
     "projected_points": 7.0,
     "top_n_avg": 0.26666666666666666,
     "projected_ppg": 0.4117647058823529,
-    "z_proj": -0.6751669697524233,
+    "z_proj": -0.6806499339748409,
     "z_hist": -1.222744675746493,
     "scaled_hist": -9.317391096912178,
-    "scaled_proj": -4.6677307539178665,
-    "score": -6.992560925415022,
-    "expected_ppg": -6.992560925415022
+    "scaled_proj": -4.7056369339743265,
+    "score": -7.011514015443252,
+    "expected_ppg": -7.011514015443252
   },
   {
     "player_id": "12483",
@@ -10513,7 +10513,7 @@
     "position": "DEF",
     "team": "GB",
     "slug": "green-bay-packers",
-    "adp": 251.0,
+    "adp": 251.5,
     "bye_week": 5.0,
     "projected_points": 108.6,
     "top_n_avg": 14.833333333333334,
@@ -10633,11 +10633,11 @@
     "top_n_avg": 11.333333333333334,
     "projected_ppg": 6.964705882352941,
     "z_proj": 0.3075393983317954,
-    "z_hist": -0.062205222499952716,
-    "scaled_hist": -0.4740076958001531,
+    "z_hist": -0.1224235182947667,
+    "scaled_hist": -0.9328748855241916,
     "scaled_proj": 2.126157190659231,
-    "score": 0.826074747429539,
-    "expected_ppg": 0.826074747429539
+    "score": 0.5966411525675197,
+    "expected_ppg": 0.5966411525675197
   },
   {
     "player_id": "8148",
@@ -10646,7 +10646,7 @@
     "position": "WR",
     "team": "DET",
     "slug": "jameson-williams",
-    "adp": 60.5,
+    "adp": 61.5,
     "bye_week": 8.0,
     "projected_points": 171.8,
     "top_n_avg": 19.866666666666667,
@@ -10684,7 +10684,7 @@
     "position": "WR",
     "team": "ATL",
     "slug": "darnell-mooney",
-    "adp": 120.5,
+    "adp": 121.0,
     "bye_week": 5.0,
     "projected_points": 142.7,
     "top_n_avg": 17.75,
@@ -10784,12 +10784,12 @@
     "projected_points": 8.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.47058823529411764,
-    "z_proj": -0.7559220411956541,
+    "z_proj": -0.7590688805029683,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.226026623528644,
-    "score": -5.226026623528644,
-    "expected_ppg": -5.226026623528644
+    "scaled_proj": -5.2477821288635305,
+    "score": -5.2477821288635305,
+    "expected_ppg": -5.2477821288635305
   },
   {
     "player_id": "11628",
@@ -10841,12 +10841,12 @@
     "projected_points": 16.0,
     "top_n_avg": 21.849999999999998,
     "projected_ppg": 0.9411764705882353,
-    "z_proj": -0.6056932457584295,
+    "z_proj": -0.6113318835112848,
     "z_hist": 0.8177511782329239,
     "scaled_hist": 6.2313152522256985,
-    "scaled_proj": -4.187427876846025,
-    "score": 1.021943687689837,
-    "expected_ppg": 1.021943687689837
+    "scaled_proj": -4.2264102975335405,
+    "score": 1.002452477346079,
+    "expected_ppg": 1.002452477346079
   },
   {
     "player_id": "4924",
@@ -10893,7 +10893,7 @@
     "position": "WR",
     "team": "LAC",
     "slug": "keenan-allen",
-    "adp": 180.0,
+    "adp": 176.0,
     "bye_week": 12.0,
     "projected_points": 127.8,
     "top_n_avg": 18.033333333333335,
@@ -10936,12 +10936,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "4381",
@@ -10950,7 +10950,7 @@
     "position": "TE",
     "team": "NO",
     "slug": "taysom-hill",
-    "adp": 281.0,
+    "adp": 282.5,
     "bye_week": 11.0,
     "projected_points": 31.0,
     "top_n_avg": 14.216666666666667,
@@ -10974,12 +10974,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "7204",
@@ -10993,12 +10993,12 @@
     "projected_points": 0.0,
     "top_n_avg": 0.049999999999999996,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": -1.1160164938115145,
     "scaled_hist": -8.50411565856812,
-    "scaled_proj": -5.941419224744166,
-    "score": -7.222767441656143,
-    "expected_ppg": -7.222767441656143
+    "scaled_proj": -5.9621591565652885,
+    "score": -7.233137407566704,
+    "expected_ppg": -7.233137407566704
   },
   {
     "player_id": "6167",
@@ -11050,12 +11050,12 @@
     "projected_points": 43.3,
     "top_n_avg": NaN,
     "projected_ppg": 2.5470588235294116,
-    "z_proj": -0.2993234644080416,
+    "z_proj": -0.3031184924444816,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -2.0693567706651588,
-    "score": -2.0693567706651588,
-    "expected_ppg": -2.0693567706651588
+    "scaled_proj": -2.0955934941295293,
+    "score": -2.0955934941295293,
+    "expected_ppg": -2.0955934941295293
   },
   {
     "player_id": "6963",
@@ -11069,12 +11069,12 @@
     "projected_points": 17.9,
     "top_n_avg": 2.6166666666666667,
     "projected_ppg": 1.052941176470588,
-    "z_proj": -0.6278674828331227,
+    "z_proj": -0.6311961087811832,
     "z_hist": -0.7991730477668457,
     "scaled_hist": -6.0897487332005955,
-    "scaled_proj": -4.340728279524438,
-    "score": -5.215238506362517,
-    "expected_ppg": -5.215238506362517
+    "scaled_proj": -4.3637405570826076,
+    "score": -5.2267446451416015,
+    "expected_ppg": -5.2267446451416015
   },
   {
     "player_id": "5101",
@@ -11221,12 +11221,12 @@
     "projected_points": 0.0,
     "top_n_avg": 0.3666666666666667,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": -1.07692541929951,
     "scaled_hist": -8.206239219724075,
-    "scaled_proj": -5.941419224744166,
-    "score": -7.073829222234121,
-    "expected_ppg": -7.073829222234121
+    "scaled_proj": -5.9621591565652885,
+    "score": -7.084199188144682,
+    "expected_ppg": -7.084199188144682
   },
   {
     "player_id": "12969",
@@ -11240,12 +11240,12 @@
     "projected_points": 2.5,
     "top_n_avg": NaN,
     "projected_ppg": 0.14705882352941177,
-    "z_proj": -0.8270634625081718,
+    "z_proj": -0.8301093092372935,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.717859036864316,
-    "score": -5.717859036864316,
-    "expected_ppg": -5.717859036864316
+    "scaled_proj": -5.738916335408489,
+    "score": -5.738916335408489,
+    "expected_ppg": -5.738916335408489
   },
   {
     "player_id": "12815",
@@ -11297,12 +11297,12 @@
     "projected_points": 309.6,
     "top_n_avg": 25.683333333333334,
     "projected_ppg": 18.211764705882356,
-    "z_proj": 1.6606940169789677,
+    "z_proj": 1.6499769627220553,
     "z_hist": 1.1801558472794615,
     "scaled_hist": 8.992861553616985,
-    "scaled_proj": 11.481119312964294,
-    "score": 10.23699043329064,
-    "expected_ppg": 10.23699043329064
+    "scaled_proj": 11.407027531245856,
+    "score": 10.199944542431421,
+    "expected_ppg": 10.199944542431421
   },
   {
     "player_id": "1234",
@@ -11311,17 +11311,17 @@
     "position": "QB",
     "team": "NYG",
     "slug": "russell-wilson",
-    "adp": 203.5,
+    "adp": 202.0,
     "bye_week": 14.0,
     "projected_points": 196.6,
     "top_n_avg": 20.5,
     "projected_ppg": 11.564705882352941,
-    "z_proj": 0.7884128157210455,
+    "z_proj": 0.7796503291240734,
     "z_hist": 0.6901217078295784,
     "scaled_hist": 5.258770685213988,
-    "scaled_proj": 5.450649856395607,
-    "score": 5.354710270804798,
-    "expected_ppg": 5.354710270804798
+    "scaled_proj": 5.39007087371155,
+    "score": 5.324420779462769,
+    "expected_ppg": 5.324420779462769
   },
   {
     "player_id": "12541",
@@ -11330,7 +11330,7 @@
     "position": "WR",
     "team": "LV",
     "slug": "donte-thornton",
-    "adp": 260.0,
+    "adp": 258.5,
     "bye_week": 8.0,
     "projected_points": 67.5,
     "top_n_avg": NaN,
@@ -11411,12 +11411,12 @@
     "projected_points": 119.4,
     "top_n_avg": NaN,
     "projected_ppg": 7.023529411764706,
-    "z_proj": 0.6850151104797011,
+    "z_proj": 0.6798227124068172,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 4.735815348397484,
-    "score": 4.735815348397484,
-    "expected_ppg": 4.735815348397484
+    "scaled_proj": 4.6999179818834325,
+    "score": 4.6999179818834325,
+    "expected_ppg": 4.6999179818834325
   },
   {
     "player_id": "12634",
@@ -11563,12 +11563,12 @@
     "projected_points": 1.9,
     "top_n_avg": NaN,
     "projected_ppg": 0.11176470588235293,
-    "z_proj": -0.8348243448331736,
+    "z_proj": -0.8378591741901289,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.771513481955479,
-    "score": -5.771513481955479,
-    "expected_ppg": -5.771513481955479
+    "scaled_proj": -5.79249461248612,
+    "score": -5.79249461248612,
+    "expected_ppg": -5.79249461248612
   },
   {
     "player_id": "8181",
@@ -11620,12 +11620,12 @@
     "projected_points": 201.2,
     "top_n_avg": 18.966666666666665,
     "projected_ppg": 11.835294117647058,
-    "z_proj": 1.7430820674549619,
+    "z_proj": 1.7363876343100526,
     "z_hist": 1.2191608520371808,
     "scaled_hist": 9.290082135536688,
-    "scaled_proj": 12.050704695826184,
-    "score": 10.670393415681435,
-    "expected_ppg": 10.670393415681435
+    "scaled_proj": 12.004423090133894,
+    "score": 10.647252612835292,
+    "expected_ppg": 10.647252612835292
   },
   {
     "player_id": "10236",
@@ -11634,7 +11634,7 @@
     "position": "TE",
     "team": "BUF",
     "slug": "dalton-kincaid",
-    "adp": 128.5,
+    "adp": 128.0,
     "bye_week": 7.0,
     "projected_points": 112.1,
     "top_n_avg": 8.666666666666666,
@@ -11696,12 +11696,12 @@
     "projected_points": 17.8,
     "top_n_avg": NaN,
     "projected_ppg": 1.0470588235294118,
-    "z_proj": -0.629160963220623,
+    "z_proj": -0.6324877529399889,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.349670687039632,
-    "score": -4.349670687039632,
-    "expected_ppg": -4.349670687039632
+    "scaled_proj": -4.372670269928879,
+    "score": -4.372670269928879,
+    "expected_ppg": -4.372670269928879
   },
   {
     "player_id": "12893",
@@ -11753,12 +11753,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "11474",
@@ -11919,17 +11919,17 @@
     "position": "RB",
     "team": "HOU",
     "slug": "dameon-pierce",
-    "adp": 317.0,
+    "adp": 316.0,
     "bye_week": 6.0,
     "projected_points": 18.3,
     "top_n_avg": 3.0833333333333335,
     "projected_ppg": 1.076470588235294,
-    "z_proj": -0.6226935612831214,
+    "z_proj": -0.6260295321459594,
     "z_hist": -0.7415651484859968,
     "scaled_hist": -5.650772928588318,
-    "scaled_proj": -4.304958649463662,
-    "score": -4.97786578902599,
-    "expected_ppg": -4.97786578902599
+    "scaled_proj": -4.328021705697519,
+    "score": -4.9893973171429185,
+    "expected_ppg": -4.9893973171429185
   },
   {
     "player_id": "11581",
@@ -11938,17 +11938,17 @@
     "position": "RB",
     "team": "GB",
     "slug": "marshawn-lloyd",
-    "adp": 202.5,
+    "adp": 203.5,
     "bye_week": 5.0,
     "projected_points": 78.9,
     "top_n_avg": 0.3833333333333333,
     "projected_ppg": 4.641176470588236,
-    "z_proj": 0.16115555354207206,
+    "z_proj": 0.1567068280904231,
     "z_hist": -1.074867994325194,
     "scaled_hist": -8.190561512416494,
-    "scaled_proj": 1.11414030474391,
-    "score": -3.538210603836292,
-    "expected_ppg": -3.538210603836292
+    "scaled_proj": 1.0833842791432893,
+    "score": -3.553588616636602,
+    "expected_ppg": -3.553588616636602
   },
   {
     "player_id": "4080",
@@ -11976,17 +11976,17 @@
     "position": "RB",
     "team": "CIN",
     "slug": "samaje-perine",
-    "adp": 290.0,
+    "adp": 288.0,
     "bye_week": 10.0,
     "projected_points": 64.2,
     "top_n_avg": 6.6000000000000005,
     "projected_ppg": 3.7764705882352945,
-    "z_proj": -0.028986063420474835,
+    "z_proj": -0.03316486325404592,
     "z_hist": -0.3074484789053141,
     "scaled_hist": -2.3427766866886572,
-    "scaled_proj": -0.2003935999896098,
-    "score": -1.2715851433391334,
-    "expected_ppg": -1.2715851433391334
+    "scaled_proj": -0.22928350925868893,
+    "score": -1.2860300979736732,
+    "expected_ppg": -1.2860300979736732
   },
   {
     "player_id": "11312",
@@ -12057,12 +12057,12 @@
     "projected_points": 0.0,
     "top_n_avg": 1.0,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": -0.9987432702755008,
     "scaled_hist": -7.610486342035985,
-    "scaled_proj": -5.941419224744166,
-    "score": -6.775952783390076,
-    "expected_ppg": -6.775952783390076
+    "scaled_proj": -5.9621591565652885,
+    "score": -6.786322749300637,
+    "expected_ppg": -6.786322749300637
   },
   {
     "player_id": "8416",
@@ -12114,12 +12114,12 @@
     "projected_points": 6.2,
     "top_n_avg": 0.9,
     "projected_ppg": 0.3647058823529412,
-    "z_proj": -0.7792046881706599,
+    "z_proj": -0.7823184753614747,
     "z_hist": -1.0110878201213969,
     "scaled_hist": -7.704552585881472,
-    "scaled_proj": -5.386989958802137,
-    "score": -6.5457712723418044,
-    "expected_ppg": -6.5457712723418044
+    "scaled_proj": -5.408516960096426,
+    "score": -6.5565347729889485,
+    "expected_ppg": -6.5565347729889485
   },
   {
     "player_id": "12536",
@@ -12128,7 +12128,7 @@
     "position": "WR",
     "team": "HOU",
     "slug": "jaylin-noel",
-    "adp": 229.5,
+    "adp": 230.0,
     "bye_week": 6.0,
     "projected_points": 61.2,
     "top_n_avg": NaN,
@@ -12152,12 +12152,12 @@
     "projected_points": 7.3,
     "top_n_avg": 2.0,
     "projected_ppg": 0.4294117647058823,
-    "z_proj": -0.7649764039081565,
+    "z_proj": -0.7681103896146098,
     "z_hist": -0.8752977718165389,
     "scaled_hist": -6.669823903581105,
-    "scaled_proj": -5.288623476135003,
-    "score": -5.979223689858054,
-    "expected_ppg": -5.979223689858054
+    "scaled_proj": -5.310290118787435,
+    "score": -5.99005701118427,
+    "expected_ppg": -5.99005701118427
   },
   {
     "player_id": "7597",
@@ -12185,7 +12185,7 @@
     "position": "WR",
     "team": "DEN",
     "slug": "pat-bryant",
-    "adp": 224.0,
+    "adp": 223.0,
     "bye_week": 12.0,
     "projected_points": 68.1,
     "top_n_avg": NaN,
@@ -12204,7 +12204,7 @@
     "position": "TE",
     "team": "CHI",
     "slug": "cole-kmet",
-    "adp": 253.0,
+    "adp": 254.5,
     "bye_week": 5.0,
     "projected_points": 56.7,
     "top_n_avg": 12.15,
@@ -12232,8 +12232,8 @@
     "z_hist": 0.0,
     "scaled_hist": 0.0,
     "scaled_proj": 7.9769721250593655,
-    "score": 9.572366550071239,
-    "expected_ppg": 9.572366550071239
+    "score": 16.592102020123484,
+    "expected_ppg": 16.592102020123484
   },
   {
     "player_id": "13225",
@@ -12242,7 +12242,7 @@
     "position": "WR",
     "team": "GB",
     "slug": "sam-brown",
-    "adp": 151.5,
+    "adp": 153.0,
     "bye_week": 10.0,
     "projected_points": 120.1,
     "top_n_avg": NaN,
@@ -12264,14 +12264,14 @@
     "adp": NaN,
     "bye_week": NaN,
     "projected_points": 111.0,
-    "top_n_avg": 11.666666666666666,
+    "top_n_avg": 12.0,
     "projected_ppg": 6.529411764705882,
     "z_proj": 0.13820303880389065,
-    "z_hist": 0.03258368797616537,
-    "scaled_hist": 0.24828974541912527,
+    "z_hist": 0.06867660782389308,
+    "scaled_hist": 0.5233200577330798,
     "scaled_proj": 0.955459321042281,
-    "score": 0.6018745332307032,
-    "expected_ppg": 0.6018745332307032
+    "score": 0.7393896893876803,
+    "expected_ppg": 0.7393896893876803
   },
   {
     "player_id": "12818",
@@ -12381,11 +12381,11 @@
     "top_n_avg": 15.333333333333334,
     "projected_ppg": 7.335294117647059,
     "z_proj": 0.45170413684879546,
-    "z_hist": 1.0752617032134684,
-    "scaled_hist": 8.193561598831218,
+    "z_hist": 1.024177238417193,
+    "scaled_hist": 7.804294774019444,
     "scaled_proj": 3.12283240398177,
-    "score": 5.658197001406494,
-    "expected_ppg": 5.658197001406494
+    "score": 5.463563589000607,
+    "expected_ppg": 5.463563589000607
   },
   {
     "player_id": "1984",
@@ -12437,12 +12437,12 @@
     "projected_points": 308.9,
     "top_n_avg": 24.55,
     "projected_ppg": 18.170588235294115,
-    "z_proj": 1.6552905051127675,
+    "z_proj": 1.6445855587971114,
     "z_hist": 1.0730101190396157,
     "scaled_hist": 8.176404386249127,
-    "scaled_proj": 11.443762422525369,
-    "score": 9.810083404387248,
-    "expected_ppg": 9.810083404387248
+    "scaled_proj": 11.369754348411568,
+    "score": 9.773079367330347,
+    "expected_ppg": 9.773079367330347
   },
   {
     "player_id": "2449",
@@ -12451,7 +12451,7 @@
     "position": "WR",
     "team": "NE",
     "slug": "stefon-diggs",
-    "adp": 90.0,
+    "adp": 90.5,
     "bye_week": 14.0,
     "projected_points": 155.5,
     "top_n_avg": 14.649999999999999,
@@ -12460,8 +12460,8 @@
     "z_hist": 0.8203579496804346,
     "scaled_hist": 6.251179014103782,
     "scaled_proj": 8.221893486873283,
-    "score": 7.236536250488532,
-    "expected_ppg": 7.236536250488532
+    "score": 9.407497125635093,
+    "expected_ppg": 9.407497125635093
   },
   {
     "player_id": "7567",
@@ -12470,17 +12470,17 @@
     "position": "RB",
     "team": "PIT",
     "slug": "kenneth-gainwell",
-    "adp": 306.0,
+    "adp": 294.0,
     "bye_week": 5.0,
     "projected_points": 38.9,
     "top_n_avg": 6.166666666666667,
     "projected_ppg": 2.288235294117647,
-    "z_proj": -0.35623660145805564,
+    "z_proj": -0.3599508354319417,
     "z_hist": -0.360941528237531,
     "scaled_hist": -2.7503970766857724,
-    "scaled_proj": -2.462822701333695,
-    "score": -2.606609889009734,
-    "expected_ppg": -2.606609889009734
+    "scaled_proj": -2.488500859365496,
+    "score": -2.619448968025634,
+    "expected_ppg": -2.619448968025634
   },
   {
     "player_id": "6540",
@@ -12508,17 +12508,17 @@
     "position": "RB",
     "team": "JAX",
     "slug": "travis-etienne",
-    "adp": 89.5,
+    "adp": 89.0,
     "bye_week": 8.0,
     "projected_points": 127.6,
     "top_n_avg": 10.533333333333333,
     "projected_ppg": 7.5058823529411764,
-    "z_proj": 0.7910805022547273,
+    "z_proj": 0.785737533428902,
     "z_hist": 0.1781038150332692,
     "scaled_hist": 1.357162237900536,
-    "scaled_proj": 5.469092764643393,
-    "score": 3.4131275012719646,
-    "expected_ppg": 3.4131275012719646
+    "scaled_proj": 5.432154435277734,
+    "score": 3.394658336589135,
+    "expected_ppg": 3.394658336589135
   },
   {
     "player_id": "12217",
@@ -12665,12 +12665,12 @@
     "projected_points": 117.0,
     "top_n_avg": 13.616666666666667,
     "projected_ppg": 6.882352941176471,
-    "z_proj": 0.6539715811796936,
+    "z_proj": 0.6488232525954755,
     "z_hist": 0.5587274352817351,
     "scaled_hist": 4.257538089803083,
-    "scaled_proj": 4.521197568032828,
-    "score": 4.389367828917955,
-    "expected_ppg": 4.389367828917955
+    "scaled_proj": 4.485604873572906,
+    "score": 4.371571481687994,
+    "expected_ppg": 4.371571481687994
   },
   {
     "player_id": "11570",
@@ -12684,12 +12684,12 @@
     "projected_points": 14.8,
     "top_n_avg": 0.5666666666666668,
     "projected_ppg": 0.8705882352941177,
-    "z_proj": -0.6679653748456325,
+    "z_proj": -0.6712370777041663,
     "z_hist": -1.0522363196077176,
     "scaled_hist": -8.018106732033099,
-    "scaled_proj": -4.617942912495452,
-    "score": -6.318024822264276,
-    "expected_ppg": -6.318024822264276
+    "scaled_proj": -4.640561655317038,
+    "score": -6.329334193675068,
+    "expected_ppg": -6.329334193675068
   },
   {
     "player_id": "12534",
@@ -12698,17 +12698,17 @@
     "position": "RB",
     "team": "CHI",
     "slug": "kyle-monangai",
-    "adp": 188.0,
+    "adp": 188.5,
     "bye_week": 5.0,
     "projected_points": 37.2,
     "top_n_avg": NaN,
     "projected_ppg": 2.1882352941176473,
-    "z_proj": -0.37822576804556096,
+    "z_proj": -0.3819087861316421,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -2.6148436290919927,
-    "score": -2.6148436290919927,
-    "expected_ppg": -2.6148436290919927
+    "scaled_proj": -2.6403059777521185,
+    "score": -2.6403059777521185,
+    "expected_ppg": -2.6403059777521185
   },
   {
     "player_id": "8195",
@@ -12722,12 +12722,12 @@
     "projected_points": 12.4,
     "top_n_avg": 0.9333333333333335,
     "projected_ppg": 0.7294117647058824,
-    "z_proj": -0.6990089041456401,
+    "z_proj": -0.7022365375155082,
     "z_hist": -1.0069729701727648,
     "scaled_hist": -7.67319717126631,
-    "scaled_proj": -4.832560692860108,
-    "score": -6.252878932063209,
-    "expected_ppg": -6.252878932063209
+    "scaled_proj": -4.854874763627564,
+    "score": -6.264035967446937,
+    "expected_ppg": -6.264035967446937
   },
   {
     "player_id": "4218",
@@ -12817,12 +12817,12 @@
     "projected_points": 0.0,
     "top_n_avg": 3.9166666666666665,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": -0.8776724039152249,
     "scaled_hist": -6.687918749065696,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.864609203686387,
-    "expected_ppg": -5.864609203686387
+    "scaled_proj": -5.07836876231716,
+    "score": -5.883143755691428,
+    "expected_ppg": -5.883143755691428
   },
   {
     "player_id": "2152",
@@ -12836,12 +12836,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "13101",
@@ -12888,17 +12888,17 @@
     "position": "RB",
     "team": "DET",
     "slug": "david-montgomery",
-    "adp": 56.5,
+    "adp": 57.0,
     "bye_week": 8.0,
     "projected_points": 180.2,
     "top_n_avg": 18.483333333333334,
     "projected_ppg": 10.6,
-    "z_proj": 1.471451186079895,
+    "z_proj": 1.4651423609608114,
     "z_hist": 1.1594955277820163,
     "scaled_hist": 8.835428623616831,
-    "scaled_proj": 10.172799117635442,
-    "score": 9.504113870626137,
-    "expected_ppg": 9.504113870626137
+    "scaled_proj": 10.129183392416783,
+    "score": 9.482306008016806,
+    "expected_ppg": 9.482306008016806
   },
   {
     "player_id": "13162",
@@ -12988,12 +12988,12 @@
     "projected_points": 2.1,
     "top_n_avg": NaN,
     "projected_ppg": 0.12352941176470589,
-    "z_proj": -0.8322373840581729,
+    "z_proj": -0.8352758858725171,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.753628666925091,
-    "score": -5.753628666925091,
-    "expected_ppg": -5.753628666925091
+    "scaled_proj": -5.774635186793577,
+    "score": -5.774635186793577,
+    "expected_ppg": -5.774635186793577
   },
   {
     "player_id": "11583",
@@ -13007,12 +13007,12 @@
     "projected_points": 0.0,
     "top_n_avg": 1.05,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": -0.9925709953525526,
     "scaled_hist": -7.56345322011324,
-    "scaled_proj": -5.941419224744166,
-    "score": -6.7524362224287025,
-    "expected_ppg": -6.7524362224287025
+    "scaled_proj": -5.9621591565652885,
+    "score": -6.762806188339264,
+    "expected_ppg": -6.762806188339264
   },
   {
     "player_id": "5127",
@@ -13026,12 +13026,12 @@
     "projected_points": 0.0,
     "top_n_avg": 0.13333333333333333,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": -1.2353500555394163,
     "scaled_hist": -9.413444881308399,
-    "scaled_proj": -5.041299658307077,
-    "score": -7.227372269807738,
-    "expected_ppg": -7.227372269807738
+    "scaled_proj": -5.07836876231716,
+    "score": -7.245906821812779,
+    "expected_ppg": -7.245906821812779
   },
   {
     "player_id": "12497",
@@ -13040,7 +13040,7 @@
     "position": "WR",
     "team": "SEA",
     "slug": "tory-horton",
-    "adp": 273.0,
+    "adp": 274.5,
     "bye_week": 8.0,
     "projected_points": 59.4,
     "top_n_avg": NaN,
@@ -13064,12 +13064,12 @@
     "projected_points": 97.5,
     "top_n_avg": NaN,
     "projected_ppg": 5.735294117647059,
-    "z_proj": 0.40174290561713133,
+    "z_proj": 0.3969526416283226,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 2.7774281025699956,
-    "score": 2.7774281025699956,
-    "expected_ppg": 2.7774281025699956
+    "scaled_proj": 2.7443108685498734,
+    "score": 2.7443108685498734,
+    "expected_ppg": 2.7443108685498734
   },
   {
     "player_id": "5285",
@@ -13230,7 +13230,7 @@
     "position": "WR",
     "team": "BAL",
     "slug": "rashod-bateman",
-    "adp": 166.5,
+    "adp": 167.0,
     "bye_week": 7.0,
     "projected_points": 125.1,
     "top_n_avg": 15.233333333333334,
@@ -13401,7 +13401,7 @@
     "position": "WR",
     "team": "HOU",
     "slug": "christian-kirk",
-    "adp": 147.5,
+    "adp": 148.0,
     "bye_week": 6.0,
     "projected_points": 110.0,
     "top_n_avg": 9.016666666666667,
@@ -13425,12 +13425,12 @@
     "projected_points": 2.3,
     "top_n_avg": NaN,
     "projected_ppg": 0.13529411764705881,
-    "z_proj": -0.8296504232831723,
+    "z_proj": -0.8326925975549053,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.735743851894703,
-    "score": -5.735743851894703,
-    "expected_ppg": -5.735743851894703
+    "scaled_proj": -5.756775761101033,
+    "score": -5.756775761101033,
+    "expected_ppg": -5.756775761101033
   },
   {
     "player_id": "12865",
@@ -13534,17 +13534,17 @@
     "position": "RB",
     "team": "NYG",
     "slug": "cam-skattebo",
-    "adp": 96.5,
+    "adp": 97.5,
     "bye_week": 14.0,
     "projected_points": 117.7,
     "top_n_avg": NaN,
     "projected_ppg": 6.923529411764706,
-    "z_proj": 0.6630259438921958,
+    "z_proj": 0.6578647617071168,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 4.583794420639187,
-    "score": 5.500553304767024,
-    "expected_ppg": 5.500553304767024
+    "scaled_proj": 4.54811286349681,
+    "score": 5.230329793021331,
+    "expected_ppg": 5.230329793021331
   },
   {
     "player_id": "10218",
@@ -13615,12 +13615,12 @@
     "projected_points": 6.0,
     "top_n_avg": 2.716666666666667,
     "projected_ppg": 0.35294117647058826,
-    "z_proj": -0.7817916489456606,
+    "z_proj": -0.7849017636790866,
     "z_hist": -0.7868284979209496,
     "scaled_hist": -5.995682489355108,
-    "scaled_proj": -5.404874773832525,
-    "score": -5.700278631593816,
-    "expected_ppg": -5.700278631593816
+    "scaled_proj": -5.426376385788971,
+    "score": -5.711029437572039,
+    "expected_ppg": -5.711029437572039
   },
   {
     "player_id": "11623",
@@ -13667,17 +13667,17 @@
     "position": "RB",
     "team": "JAX",
     "slug": "tank-bigsby",
-    "adp": 119.0,
+    "adp": 118.0,
     "bye_week": 8.0,
     "projected_points": 110.4,
     "top_n_avg": 15.016666666666666,
     "projected_ppg": 6.4941176470588236,
-    "z_proj": 0.5686018756046725,
+    "z_proj": 0.5635747381142852,
     "z_hist": 0.7315511331242815,
     "scaled_hist": 5.574465503639913,
-    "scaled_proj": 3.930998672030023,
-    "score": 5.703278505401961,
-    "expected_ppg": 5.703278505401961
+    "scaled_proj": 3.896243825718956,
+    "score": 6.1559610640832645,
+    "expected_ppg": 6.1559610640832645
   },
   {
     "player_id": "DET",
@@ -13686,7 +13686,7 @@
     "position": "DEF",
     "team": "DET",
     "slug": "detroit-lions",
-    "adp": 215.5,
+    "adp": 216.0,
     "bye_week": 8.0,
     "projected_points": 104.7,
     "top_n_avg": 11.5,
@@ -13705,17 +13705,17 @@
     "position": "RB",
     "team": "HOU",
     "slug": "joe-mixon",
-    "adp": 57.0,
+    "adp": 58.0,
     "bye_week": 6.0,
     "projected_points": 176.9,
     "top_n_avg": 25.416666666666668,
     "projected_ppg": 10.405882352941177,
-    "z_proj": 1.4287663332923846,
+    "z_proj": 1.4225181037202164,
     "z_hist": 2.0153843170974857,
     "scaled_hist": 15.357354863570666,
-    "scaled_proj": 9.87769966963404,
-    "score": 12.617527266602353,
-    "expected_ppg": 12.617527266602353
+    "scaled_proj": 9.834502868489809,
+    "score": 12.595928866030238,
+    "expected_ppg": 12.595928866030238
   },
   {
     "player_id": "13227",
@@ -13824,12 +13824,12 @@
     "projected_points": 73.3,
     "top_n_avg": 4.433333333333333,
     "projected_ppg": 4.311764705882353,
-    "z_proj": 0.08872065184205406,
+    "z_proj": 0.08437475519729191,
     "z_hist": -0.5749137255663984,
     "scaled_hist": -4.380878636674232,
-    "scaled_proj": 0.6133654838930443,
-    "score": -1.8837565763905937,
-    "expected_ppg": -1.8837565763905937
+    "scaled_proj": 0.5833203597520585,
+    "score": -1.8987791384610866,
+    "expected_ppg": -1.8987791384610866
   },
   {
     "player_id": "7670",
@@ -13862,12 +13862,12 @@
     "projected_points": 127.4,
     "top_n_avg": 17.833333333333332,
     "projected_ppg": 7.4941176470588236,
-    "z_proj": 0.7884935414797266,
+    "z_proj": 0.7831542451112902,
     "z_hist": 1.0792559537836908,
     "scaled_hist": 8.223998038621158,
-    "scaled_proj": 5.451207949613004,
-    "score": 6.837602994117081,
-    "expected_ppg": 6.837602994117081
+    "scaled_proj": 5.41429500958519,
+    "score": 6.819146524103173,
+    "expected_ppg": 6.819146524103173
   },
   {
     "player_id": "12547",
@@ -13876,7 +13876,7 @@
     "position": "WR",
     "team": "NE",
     "slug": "kyle-williams",
-    "adp": 162.0,
+    "adp": 165.0,
     "bye_week": 14.0,
     "projected_points": 86.6,
     "top_n_avg": NaN,
@@ -13938,12 +13938,12 @@
     "projected_points": 229.9,
     "top_n_avg": 21.8,
     "projected_ppg": 13.523529411764706,
-    "z_proj": 2.1143109386675536,
+    "z_proj": 2.1070895078873493,
     "z_hist": 1.5689230976709065,
     "scaled_hist": 11.955292377825517,
-    "scaled_proj": 14.617175652686866,
-    "score": 13.286234015256191,
-    "expected_ppg": 13.286234015256191
+    "scaled_proj": 14.567250677013947,
+    "score": 13.261271527419732,
+    "expected_ppg": 13.261271527419732
   },
   {
     "player_id": "PHI",
@@ -13952,7 +13952,7 @@
     "position": "DEF",
     "team": "PHI",
     "slug": "philadelphia-eagles",
-    "adp": 161.0,
+    "adp": 161.5,
     "bye_week": 9.0,
     "projected_points": 115.6,
     "top_n_avg": 13.333333333333334,
@@ -13971,7 +13971,7 @@
     "position": "WR",
     "team": "GB",
     "slug": "romeo-doubs",
-    "adp": 191.5,
+    "adp": 191.0,
     "bye_week": 5.0,
     "projected_points": 104.5,
     "top_n_avg": 12.833333333333334,
@@ -13995,12 +13995,12 @@
     "projected_points": 9.5,
     "top_n_avg": 3.9499999999999997,
     "projected_ppg": 0.5588235294117647,
-    "z_proj": -0.7365198353831495,
+    "z_proj": -0.7396942181208797,
     "z_hist": -0.6345790498215633,
     "scaled_hist": -4.8355321485940905,
-    "scaled_proj": -5.091890510800735,
-    "score": -4.9637113296974125,
-    "expected_ppg": -4.9637113296974125
+    "scaled_proj": -5.113836436169452,
+    "score": -4.974684292381771,
+    "expected_ppg": -4.974684292381771
   },
   {
     "player_id": "12705",
@@ -14014,12 +14014,12 @@
     "projected_points": 4.8,
     "top_n_avg": NaN,
     "projected_ppg": 0.2823529411764706,
-    "z_proj": -0.6921494356176219,
+    "z_proj": -0.6975943463103769,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.785138123868762,
-    "score": -4.785138123868762,
-    "expected_ppg": -4.785138123868762
+    "scaled_proj": -4.822781222882075,
+    "score": -4.822781222882075,
+    "expected_ppg": -4.822781222882075
   },
   {
     "player_id": "7600",
@@ -14090,12 +14090,12 @@
     "projected_points": 23.2,
     "top_n_avg": 6.416666666666667,
     "projected_ppg": 1.3647058823529412,
-    "z_proj": -0.5593130222956056,
+    "z_proj": -0.5627389683644698,
     "z_hist": -0.33008015362279053,
     "scaled_hist": -2.515231467072052,
-    "scaled_proj": -3.8667806812191547,
-    "score": -3.191006074145603,
-    "expected_ppg": -3.191006074145603
+    "scaled_proj": -3.8904657762301933,
+    "score": -3.202848621651123,
+    "expected_ppg": -3.202848621651123
   },
   {
     "player_id": "11645",
@@ -14147,12 +14147,12 @@
     "projected_points": 4.8,
     "top_n_avg": NaN,
     "projected_ppg": 0.2823529411764706,
-    "z_proj": -0.6921494356176219,
+    "z_proj": -0.6975943463103769,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.785138123868762,
-    "score": -4.785138123868762,
-    "expected_ppg": -4.785138123868762
+    "scaled_proj": -4.822781222882075,
+    "score": -4.822781222882075,
+    "expected_ppg": -4.822781222882075
   },
   {
     "player_id": "4922",
@@ -14185,12 +14185,12 @@
     "projected_points": 47.6,
     "top_n_avg": NaN,
     "projected_ppg": 2.8000000000000003,
-    "z_proj": -0.36176328151285136,
+    "z_proj": -0.3679485063281324,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -2.5010311084604453,
-    "score": -2.5010311084604453,
-    "expected_ppg": -2.5010311084604453
+    "scaled_proj": -2.543792329585895,
+    "score": -2.543792329585895,
+    "expected_ppg": -2.543792329585895
   },
   {
     "player_id": "10212",
@@ -14242,12 +14242,12 @@
     "projected_points": 16.2,
     "top_n_avg": 8.016666666666667,
     "projected_ppg": 0.9529411764705882,
-    "z_proj": -0.6041493852252297,
+    "z_proj": -0.6097914823898725,
     "z_hist": -0.4900569752828413,
     "scaled_hist": -3.7342648788819743,
-    "scaled_proj": -4.176754479577761,
-    "score": -3.955509679229868,
-    "expected_ppg": -3.955509679229868
+    "scaled_proj": -4.215760816723746,
+    "score": -3.9750128478028603,
+    "expected_ppg": -3.9750128478028603
   },
   {
     "player_id": "4951",
@@ -14280,12 +14280,12 @@
     "projected_points": 1.1,
     "top_n_avg": 1.1,
     "projected_ppg": 0.06470588235294118,
-    "z_proj": -0.8451721879331762,
+    "z_proj": -0.8481923274605762,
     "z_hist": -0.9863987204296046,
     "scaled_hist": -7.516420098190498,
-    "scaled_proj": -5.843052742077031,
-    "score": -6.679736420133764,
-    "expected_ppg": -6.679736420133764
+    "scaled_proj": -5.863932315256296,
+    "score": -6.690176206723397,
+    "expected_ppg": -6.690176206723397
   },
   {
     "player_id": "8228",
@@ -14299,12 +14299,12 @@
     "projected_points": 152.0,
     "top_n_avg": 10.833333333333334,
     "projected_ppg": 8.941176470588236,
-    "z_proj": 1.106689716804805,
+    "z_proj": 1.1008987081775443,
     "z_hist": 0.21513746457095786,
     "scaled_hist": 1.6393609694370008,
-    "scaled_proj": 7.6510401983507315,
-    "score": 4.645200583893866,
-    "expected_ppg": 4.645200583893866
+    "scaled_proj": 7.611004369768091,
+    "score": 4.625182669602546,
+    "expected_ppg": 4.625182669602546
   },
   {
     "player_id": "11562",
@@ -14313,17 +14313,17 @@
     "position": "QB",
     "team": "NO",
     "slug": "spencer-rattler",
-    "adp": 222.0,
+    "adp": 219.0,
     "bye_week": 11.0,
     "projected_points": 77.1,
     "top_n_avg": 9.583333333333334,
     "projected_ppg": 4.535294117647059,
-    "z_proj": -0.13404385286587184,
+    "z_proj": -0.14073934091980983,
     "z_hist": -0.34194376271599564,
     "scaled_hist": -2.605632912226407,
-    "scaled_proj": -0.9267050113916296,
-    "score": -1.7661689618090182,
-    "expected_ppg": -1.7661689618090182
+    "scaled_proj": -0.9729939101410991,
+    "score": -1.789313411183753,
+    "expected_ppg": -1.789313411183753
   },
   {
     "player_id": "8230",
@@ -14337,12 +14337,12 @@
     "projected_points": 21.1,
     "top_n_avg": 3.9499999999999997,
     "projected_ppg": 1.2411764705882353,
-    "z_proj": -0.5864761104331123,
+    "z_proj": -0.5898634956993939,
     "z_hist": -0.6345790498215633,
     "scaled_hist": -4.8355321485940905,
-    "scaled_proj": -4.0545712390382285,
-    "score": -4.4450516938161595,
-    "expected_ppg": -4.4450516938161595
+    "scaled_proj": -4.077989746001904,
+    "score": -4.456760947297997,
+    "expected_ppg": -4.456760947297997
   },
   {
     "player_id": "6011",
@@ -14356,12 +14356,12 @@
     "projected_points": 10.2,
     "top_n_avg": 14.566666666666668,
     "projected_ppg": 0.6,
-    "z_proj": -0.6504652012212256,
+    "z_proj": -0.6560035160322433,
     "z_hist": 0.12918230704450315,
     "scaled_hist": 0.984377279582263,
-    "scaled_proj": -4.496956397625657,
-    "score": -1.756289559021697,
-    "expected_ppg": -1.756289559021697
+    "scaled_proj": -4.535245241017604,
+    "score": -1.7754339807176704,
+    "expected_ppg": -1.7754339807176704
   },
   {
     "player_id": "5089",
@@ -14375,12 +14375,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "SF",
@@ -14389,7 +14389,7 @@
     "position": "DEF",
     "team": "SF",
     "slug": "san-francisco-49ers",
-    "adp": 202.0,
+    "adp": 201.5,
     "bye_week": 14.0,
     "projected_points": 103.9,
     "top_n_avg": 11.333333333333334,
@@ -14413,12 +14413,12 @@
     "projected_points": 8.8,
     "top_n_avg": NaN,
     "projected_ppg": 0.5176470588235295,
-    "z_proj": -0.6612722249536246,
+    "z_proj": -0.6667863238821297,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.571670178503498,
-    "score": -4.571670178503498,
-    "expected_ppg": -4.571670178503498
+    "scaled_proj": -4.609791606686169,
+    "score": -4.609791606686169,
+    "expected_ppg": -4.609791606686169
   },
   {
     "player_id": "12494",
@@ -14432,12 +14432,12 @@
     "projected_points": 4.8,
     "top_n_avg": NaN,
     "projected_ppg": 0.2823529411764706,
-    "z_proj": -0.6921494356176219,
+    "z_proj": -0.6975943463103769,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.785138123868762,
-    "score": -4.785138123868762,
-    "expected_ppg": -4.785138123868762
+    "scaled_proj": -4.822781222882075,
+    "score": -4.822781222882075,
+    "expected_ppg": -4.822781222882075
   },
   {
     "player_id": "11626",
@@ -14446,7 +14446,7 @@
     "position": "WR",
     "team": "CAR",
     "slug": "xavier-legette",
-    "adp": 176.0,
+    "adp": 176.5,
     "bye_week": 14.0,
     "projected_points": 112.8,
     "top_n_avg": 10.766666666666667,
@@ -14470,12 +14470,12 @@
     "projected_points": 12.2,
     "top_n_avg": 2.6166666666666667,
     "projected_ppg": 0.7176470588235294,
-    "z_proj": -0.7015958649206407,
+    "z_proj": -0.70481982583312,
     "z_hist": -0.7991730477668457,
     "scaled_hist": -6.0897487332005955,
-    "scaled_proj": -4.850445507890496,
-    "score": -5.470097120545546,
-    "expected_ppg": -5.470097120545546
+    "scaled_proj": -4.872734189320108,
+    "score": -5.4812414612603515,
+    "expected_ppg": -5.4812414612603515
   },
   {
     "player_id": "11637",
@@ -14484,7 +14484,7 @@
     "position": "WR",
     "team": "BUF",
     "slug": "keon-coleman",
-    "adp": 125.5,
+    "adp": 126.0,
     "bye_week": 7.0,
     "projected_points": 144.5,
     "top_n_avg": 11.266666666666666,
@@ -14493,8 +14493,8 @@
     "z_hist": 0.3473727653378269,
     "scaled_hist": 2.647002252610475,
     "scaled_proj": 7.144239494892047,
-    "score": 5.874745048501513,
-    "expected_ppg": 5.874745048501513
+    "score": 5.629964004813949,
+    "expected_ppg": 5.629964004813949
   },
   {
     "player_id": "9489",
@@ -14527,12 +14527,12 @@
     "projected_points": 8.7,
     "top_n_avg": NaN,
     "projected_ppg": 0.5117647058823529,
-    "z_proj": -0.7468676784831519,
+    "z_proj": -0.7500273713913269,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.163429770922287,
-    "score": -5.163429770922287,
-    "expected_ppg": -5.163429770922287
+    "scaled_proj": -5.1852741389396275,
+    "score": -5.1852741389396275,
+    "expected_ppg": -5.1852741389396275
   },
   {
     "player_id": "12817",
@@ -14560,7 +14560,7 @@
     "position": "TE",
     "team": "CIN",
     "slug": "noah-fant",
-    "adp": 284.0,
+    "adp": 285.0,
     "bye_week": 10.0,
     "projected_points": 69.7,
     "top_n_avg": 7.283333333333334,
@@ -14622,12 +14622,12 @@
     "projected_points": 7.4,
     "top_n_avg": NaN,
     "projected_ppg": 0.43529411764705883,
-    "z_proj": -0.6720792486860235,
+    "z_proj": -0.6775691317320162,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.64638395938134,
-    "score": -4.64638395938134,
-    "expected_ppg": -4.64638395938134
+    "scaled_proj": -4.6843379723547365,
+    "score": -4.6843379723547365,
+    "expected_ppg": -4.6843379723547365
   },
   {
     "player_id": "13065",
@@ -14679,12 +14679,12 @@
     "projected_points": 223.3,
     "top_n_avg": 21.316666666666666,
     "projected_ppg": 13.13529411764706,
-    "z_proj": 2.028941233092533,
+    "z_proj": 2.0218409934061596,
     "z_hist": 1.5092577734157415,
     "scaled_hist": 11.500638865905657,
-    "scaled_proj": 14.026976756684064,
-    "score": 12.76380781129486,
-    "expected_ppg": 12.76380781129486
+    "scaled_proj": 13.97788962916,
+    "score": 12.739264247532828,
+    "expected_ppg": 12.739264247532828
   },
   {
     "player_id": "12520",
@@ -14835,8 +14835,8 @@
     "z_hist": 0.0,
     "scaled_hist": 0.0,
     "scaled_proj": 3.7643247018599935,
-    "score": 4.517189642231992,
-    "expected_ppg": 4.517189642231992
+    "score": 4.328973407138992,
+    "expected_ppg": 4.328973407138992
   },
   {
     "player_id": "7595",
@@ -15035,7 +15035,7 @@
     "position": "TE",
     "team": "CAR",
     "slug": "jatavion-sanders",
-    "adp": 237.5,
+    "adp": 233.5,
     "bye_week": 14.0,
     "projected_points": 69.5,
     "top_n_avg": 7.366666666666667,
@@ -15078,12 +15078,12 @@
     "projected_points": 8.4,
     "top_n_avg": 1.6666666666666667,
     "projected_ppg": 0.49411764705882355,
-    "z_proj": -0.6643599460200244,
+    "z_proj": -0.6698671261249544,
     "z_hist": -1.0903881879208013,
     "scaled_hist": -8.308826360751885,
-    "scaled_proj": -4.593016973040025,
-    "score": -6.450921666895955,
-    "expected_ppg": -6.450921666895955
+    "scaled_proj": -4.63109056830576,
+    "score": -6.469958464528823,
+    "expected_ppg": -6.469958464528823
   },
   {
     "player_id": "5008",
@@ -15111,7 +15111,7 @@
     "position": "WR",
     "team": "LAC",
     "slug": "quentin-johnston",
-    "adp": 185.0,
+    "adp": 186.5,
     "bye_week": 12.0,
     "projected_points": 99.8,
     "top_n_avg": 14.850000000000001,
@@ -15130,7 +15130,7 @@
     "position": "DEF",
     "team": "NYG",
     "slug": "new-york-giants",
-    "adp": 245.0,
+    "adp": 244.5,
     "bye_week": 14.0,
     "projected_points": 108.3,
     "top_n_avg": 10.666666666666666,
@@ -15244,7 +15244,7 @@
     "position": "WR",
     "team": "IND",
     "slug": "adonai-mitchell",
-    "adp": 268.0,
+    "adp": 266.5,
     "bye_week": 11.0,
     "projected_points": 65.2,
     "top_n_avg": 5.483333333333333,
@@ -15287,12 +15287,12 @@
     "projected_points": 19.5,
     "top_n_avg": 9.450000000000001,
     "projected_ppg": 1.1470588235294117,
-    "z_proj": -0.6071717966331175,
+    "z_proj": -0.6105298022402885,
     "z_hist": 0.044371191702727304,
     "scaled_hist": 0.33811126290775073,
-    "scaled_proj": -4.197649759281333,
-    "score": -1.9297692481867912,
-    "expected_ppg": -1.9297692481867912
+    "scaled_proj": -4.220865151542256,
+    "score": -1.9413769443172526,
+    "expected_ppg": -1.9413769443172526
   },
   {
     "player_id": "4198",
@@ -15344,12 +15344,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "12471",
@@ -15358,17 +15358,17 @@
     "position": "RB",
     "team": "IND",
     "slug": "dj-giddens",
-    "adp": 205.0,
+    "adp": 204.0,
     "bye_week": 11.0,
     "projected_points": 30.5,
     "top_n_avg": NaN,
     "projected_ppg": 1.7941176470588236,
-    "z_proj": -0.46488895400808244,
+    "z_proj": -0.4684489447716382,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -3.2139849326099923,
-    "score": -3.2139849326099923,
-    "expected_ppg": -3.2139849326099923
+    "scaled_proj": -3.23859673845234,
+    "score": -3.23859673845234,
+    "expected_ppg": -3.23859673845234
   },
   {
     "player_id": "12467",
@@ -15377,17 +15377,17 @@
     "position": "RB",
     "team": "SF",
     "slug": "jordan-james",
-    "adp": 253.5,
+    "adp": 254.5,
     "bye_week": 14.0,
     "projected_points": 30.1,
     "top_n_avg": NaN,
     "projected_ppg": 1.7705882352941178,
-    "z_proj": -0.4700628755580837,
+    "z_proj": -0.4736155214068618,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -3.249754562670768,
-    "score": -3.249754562670768,
-    "expected_ppg": -3.249754562670768
+    "scaled_proj": -3.2743155898374274,
+    "score": -3.2743155898374274,
+    "expected_ppg": -3.2743155898374274
   },
   {
     "player_id": "8114",
@@ -15477,12 +15477,12 @@
     "projected_points": 376.7,
     "top_n_avg": 34.78333333333333,
     "projected_ppg": 22.158823529411762,
-    "z_proj": 2.178659225867521,
+    "z_proj": 2.1667815389559006,
     "z_hist": 2.040473018146459,
     "scaled_hist": 15.5485323386589,
-    "scaled_proj": 15.06204409646658,
-    "score": 15.30528821756274,
-    "expected_ppg": 15.30528821756274
+    "scaled_proj": 14.979928342932153,
+    "score": 15.264230340795526,
+    "expected_ppg": 15.264230340795526
   },
   {
     "player_id": "12938",
@@ -15554,11 +15554,11 @@
     "top_n_avg": 12.333333333333334,
     "projected_ppg": 6.576470588235294,
     "z_proj": 0.15650967226636675,
-    "z_hist": 0.22216150892840256,
-    "scaled_hist": 1.6928846278576897,
+    "z_hist": 0.16422667088322324,
+    "scaled_hist": 1.2514175293617174,
     "scaled_proj": 1.0820212528927615,
-    "score": 1.3874529403752256,
-    "expected_ppg": 1.3874529403752256
+    "score": 1.1667193911272395,
+    "expected_ppg": 1.1667193911272395
   },
   {
     "player_id": "9500",
@@ -15629,12 +15629,12 @@
     "projected_points": 18.2,
     "top_n_avg": NaN,
     "projected_ppg": 1.0705882352941176,
-    "z_proj": -0.6239870416706217,
+    "z_proj": -0.6273211763047654,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.313901056978856,
-    "score": -4.313901056978856,
-    "expected_ppg": -4.313901056978856
+    "scaled_proj": -4.336951418543792,
+    "score": -4.336951418543792,
+    "expected_ppg": -4.336951418543792
   },
   {
     "player_id": "12357",
@@ -15719,17 +15719,17 @@
     "position": "RB",
     "team": "BUF",
     "slug": "ty-johnson",
-    "adp": 298.0,
+    "adp": 287.0,
     "bye_week": 7.0,
     "projected_points": 59.2,
     "top_n_avg": 9.549999999999999,
     "projected_ppg": 3.4823529411764707,
-    "z_proj": -0.09366008279549085,
+    "z_proj": -0.09774707119434156,
     "z_hist": 0.05671574154862323,
     "scaled_hist": 0.4321775067532367,
-    "scaled_proj": -0.6475139757493108,
-    "score": -0.10766823449803706,
-    "expected_ppg": -0.10766823449803706
+    "scaled_proj": -0.6757691515722873,
+    "score": -0.12179582240952533,
+    "expected_ppg": -0.12179582240952533
   },
   {
     "player_id": "6803",
@@ -15762,12 +15762,12 @@
     "projected_points": 12.1,
     "top_n_avg": NaN,
     "projected_ppg": 0.711764705882353,
-    "z_proj": -0.7028893453081411,
+    "z_proj": -0.706111469991926,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.85938791540569,
-    "score": -4.85938791540569,
-    "expected_ppg": -4.85938791540569
+    "scaled_proj": -4.881663902166381,
+    "score": -4.881663902166381,
+    "expected_ppg": -4.881663902166381
   },
   {
     "player_id": "9997",
@@ -15814,7 +15814,7 @@
     "position": "TE",
     "team": "CLE",
     "slug": "harold-fannin",
-    "adp": 265.0,
+    "adp": 264.5,
     "bye_week": 9.0,
     "projected_points": 41.8,
     "top_n_avg": NaN,
@@ -15871,7 +15871,7 @@
     "position": "TE",
     "team": "PIT",
     "slug": "jonnu-smith",
-    "adp": 111.0,
+    "adp": 111.5,
     "bye_week": 5.0,
     "projected_points": 99.8,
     "top_n_avg": 17.816666666666666,
@@ -15933,12 +15933,12 @@
     "projected_points": 2.1,
     "top_n_avg": NaN,
     "projected_ppg": 0.12352941176470589,
-    "z_proj": -0.8322373840581729,
+    "z_proj": -0.8352758858725171,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.753628666925091,
-    "score": -5.753628666925091,
-    "expected_ppg": -5.753628666925091
+    "scaled_proj": -5.774635186793577,
+    "score": -5.774635186793577,
+    "expected_ppg": -5.774635186793577
   },
   {
     "player_id": "8249",
@@ -16124,11 +16124,11 @@
     "top_n_avg": 7.666666666666667,
     "projected_ppg": 0.0,
     "z_proj": -2.4018423541146787,
-    "z_hist": -1.1048832377372555,
-    "scaled_hist": -8.419279549212245,
+    "z_hist": -1.1734742119473967,
+    "scaled_hist": -8.941947073439193,
     "scaled_proj": -16.605008723211956,
-    "score": -12.5121441362121,
-    "expected_ppg": -12.5121441362121
+    "score": -12.773477898325574,
+    "expected_ppg": -12.773477898325574
   },
   {
     "player_id": "6528",
@@ -16143,11 +16143,11 @@
     "top_n_avg": 10.833333333333334,
     "projected_ppg": 6.429411764705883,
     "z_proj": 0.09930144269612892,
-    "z_hist": -0.20438858821413033,
-    "scaled_hist": -1.5574538576290744,
+    "z_hist": -0.26574861288376167,
+    "scaled_hist": -2.025021092967146,
     "scaled_proj": 0.68651521586001,
-    "score": -0.4354693208845322,
-    "expected_ppg": -0.4354693208845322
+    "score": -0.6692529385535682,
+    "expected_ppg": -0.6692529385535682
   },
   {
     "player_id": "8235",
@@ -16251,7 +16251,7 @@
     "position": "DEF",
     "team": "CHI",
     "slug": "chicago-bears",
-    "adp": 267.0,
+    "adp": 265.0,
     "bye_week": 5.0,
     "projected_points": 101.4,
     "top_n_avg": 12.333333333333334,
@@ -16332,12 +16332,12 @@
     "projected_points": 192.3,
     "top_n_avg": 22.96666666666667,
     "projected_ppg": 11.311764705882354,
-    "z_proj": 1.6279623129674339,
+    "z_proj": 1.6214313041763269,
     "z_hist": 1.712942845873029,
     "scaled_hist": 13.052731889356211,
-    "scaled_proj": 11.25483042697392,
-    "score": 12.153781158165065,
-    "expected_ppg": 12.153781158165065
+    "scaled_proj": 11.209678646815691,
+    "score": 12.131205268085951,
+    "expected_ppg": 12.131205268085951
   },
   {
     "player_id": "11508",
@@ -16365,7 +16365,7 @@
     "position": "WR",
     "team": "DEN",
     "slug": "devaughn-vele",
-    "adp": 274.0,
+    "adp": 276.0,
     "bye_week": 12.0,
     "projected_points": 52.6,
     "top_n_avg": 9.716666666666667,
@@ -16384,17 +16384,17 @@
     "position": "K",
     "team": "LAR",
     "slug": "joshua-karty",
-    "adp": 301.0,
+    "adp": 302.0,
     "bye_week": 8.0,
     "projected_points": 124.6,
     "top_n_avg": 12.333333333333334,
     "projected_ppg": 7.329411764705882,
     "z_proj": 0.4494158076659856,
-    "z_hist": 0.22216150892840256,
-    "scaled_hist": 1.6928846278576897,
+    "z_hist": 0.16422667088322324,
+    "scaled_hist": 1.2514175293617174,
     "scaled_proj": 3.1070121625004576,
-    "score": 2.3999483951790737,
-    "expected_ppg": 2.3999483951790737
+    "score": 2.1792148459310874,
+    "expected_ppg": 2.1792148459310874
   },
   {
     "player_id": "13208",
@@ -16460,7 +16460,7 @@
     "position": "WR",
     "team": "ATL",
     "slug": "ray-ray-mccloud",
-    "adp": 238.0,
+    "adp": 240.0,
     "bye_week": 5.0,
     "projected_points": 79.9,
     "top_n_avg": 9.966666666666667,
@@ -16484,12 +16484,12 @@
     "projected_points": 77.1,
     "top_n_avg": 16.483333333333334,
     "projected_ppg": 4.535294117647059,
-    "z_proj": 0.13787290656706622,
+    "z_proj": 0.13345723323191658,
     "z_hist": 0.9126045308640925,
     "scaled_hist": 6.954103746707072,
-    "scaled_proj": 0.953176969470417,
-    "score": 3.9536403580887445,
-    "expected_ppg": 3.9536403580887445
+    "scaled_proj": 0.9226494479103932,
+    "score": 3.9383765973087326,
+    "expected_ppg": 3.9383765973087326
   },
   {
     "player_id": "8127",
@@ -16579,12 +16579,12 @@
     "projected_points": 10.7,
     "top_n_avg": 6.333333333333333,
     "projected_ppg": 0.6294117647058823,
-    "z_proj": -0.7209980707331456,
+    "z_proj": -0.7241944882152087,
     "z_hist": -0.34036727849437076,
     "scaled_hist": -2.5936200036099595,
-    "scaled_proj": -4.984581620618407,
-    "score": -3.7891008121141834,
-    "expected_ppg": -3.7891008121141834
+    "scaled_proj": -5.006679882014188,
+    "score": -3.800149942812074,
+    "expected_ppg": -3.800149942812074
   },
   {
     "player_id": "7559",
@@ -16655,12 +16655,12 @@
     "projected_points": 4.3,
     "top_n_avg": 0.21666666666666667,
     "projected_ppg": 0.2529411764705882,
-    "z_proj": -0.8037808155331659,
+    "z_proj": -0.8068597143787871,
     "z_hist": -1.0954422440683542,
     "scaled_hist": -8.347338585492308,
-    "scaled_proj": -5.556895701590823,
-    "score": -6.952117143541566,
-    "expected_ppg": -6.952117143541566
+    "scaled_proj": -5.578181504175594,
+    "score": -6.962760044833951,
+    "expected_ppg": -6.962760044833951
   },
   {
     "player_id": "8200",
@@ -16688,17 +16688,17 @@
     "position": "RB",
     "team": "LAC",
     "slug": "najee-harris",
-    "adp": 102.0,
+    "adp": 103.0,
     "bye_week": 12.0,
     "projected_points": 117.0,
     "top_n_avg": 15.75,
     "projected_ppg": 6.882352941176471,
-    "z_proj": 0.6539715811796936,
+    "z_proj": 0.6488232525954755,
     "z_hist": 0.822077831994187,
     "scaled_hist": 6.2642846251734925,
-    "scaled_proj": 4.521197568032828,
-    "score": 5.39274109660316,
-    "expected_ppg": 5.39274109660316
+    "scaled_proj": 4.485604873572906,
+    "score": 5.374944749373199,
+    "expected_ppg": 5.374944749373199
   },
   {
     "player_id": "CIN",
@@ -16769,12 +16769,12 @@
     "projected_points": 14.6,
     "top_n_avg": 0.5499999999999999,
     "projected_ppg": 0.8588235294117647,
-    "z_proj": -0.6705523356206331,
+    "z_proj": -0.6738203660217782,
     "z_hist": -1.0542937445820335,
     "scaled_hist": -8.03378443934068,
-    "scaled_proj": -4.6358277275258395,
-    "score": -6.33480608343326,
-    "expected_ppg": -6.33480608343326
+    "scaled_proj": -4.658421081009582,
+    "score": -6.346102760175131,
+    "expected_ppg": -6.346102760175131
   },
   {
     "player_id": "9482",
@@ -16827,11 +16827,11 @@
     "top_n_avg": 10.333333333333334,
     "projected_ppg": 6.823529411764706,
     "z_proj": 0.25261949794436667,
-    "z_hist": -0.346571953928308,
-    "scaled_hist": -2.640900019457996,
+    "z_hist": -0.4090737074727567,
+    "scaled_hist": -3.117167300410101,
     "scaled_proj": 1.7464713951077866,
-    "score": -0.44721431217510466,
-    "expected_ppg": -0.44721431217510466
+    "score": -0.6853479526511572,
+    "expected_ppg": -0.6853479526511572
   },
   {
     "player_id": "7042",
@@ -16846,11 +16846,11 @@
     "top_n_avg": 12.333333333333334,
     "projected_ppg": 7.776470588235293,
     "z_proj": 0.623328825559509,
-    "z_hist": 0.22216150892840256,
-    "scaled_hist": 1.6928846278576897,
+    "z_hist": 0.16422667088322324,
+    "scaled_hist": 1.2514175293617174,
     "scaled_proj": 4.309350515080025,
-    "score": 3.0011175714688574,
-    "expected_ppg": 3.0011175714688574
+    "score": 2.780384022220871,
+    "expected_ppg": 2.780384022220871
   },
   {
     "player_id": "12803",
@@ -16935,17 +16935,17 @@
     "position": "RB",
     "team": "CHI",
     "slug": "roschon-johnson",
-    "adp": 181.0,
+    "adp": 183.0,
     "bye_week": 5.0,
     "projected_points": 88.2,
     "top_n_avg": 9.366666666666665,
     "projected_ppg": 5.188235294117647,
-    "z_proj": 0.28144922957960167,
+    "z_proj": 0.27682973485937284,
     "z_hist": 0.034084066831146856,
     "scaled_hist": 0.25972272636984184,
-    "scaled_proj": 1.9457842036569526,
-    "score": 1.1027534650133972,
-    "expected_ppg": 1.1027534650133972
+    "scaled_proj": 1.9138475738465812,
+    "score": 1.0867851501082115,
+    "expected_ppg": 1.0867851501082115
   },
   {
     "player_id": "12743",
@@ -16973,17 +16973,17 @@
     "position": "K",
     "team": "HOU",
     "slug": "kaimi-fairbairn",
-    "adp": 215.0,
+    "adp": 214.5,
     "bye_week": 6.0,
     "projected_points": 128.4,
     "top_n_avg": 15.166666666666666,
     "projected_ppg": 7.552941176470589,
     "z_proj": 0.5363723166127478,
-    "z_hist": 1.0278672479754087,
-    "scaled_hist": 7.832412878221574,
+    "z_hist": 0.9764022068875278,
+    "scaled_hist": 7.4402460382051245,
     "scaled_proj": 3.7081813387902445,
-    "score": 5.770297108505909,
-    "expected_ppg": 5.770297108505909
+    "score": 5.574213688497684,
+    "expected_ppg": 5.574213688497684
   },
   {
     "player_id": "3155",
@@ -17016,12 +17016,12 @@
     "projected_points": 10.5,
     "top_n_avg": 0.03333333333333333,
     "projected_ppg": 0.6176470588235294,
-    "z_proj": -0.6481494104214258,
+    "z_proj": -0.6536929143501247,
     "z_hist": -1.2448040903841084,
     "scaled_hist": -9.485485219605561,
-    "scaled_proj": -4.480946301723262,
-    "score": -6.983215760664411,
-    "expected_ppg": -6.983215760664411
+    "scaled_proj": -4.51927101980291,
+    "score": -7.002378119704236,
+    "expected_ppg": -7.002378119704236
   },
   {
     "player_id": "11560",
@@ -17030,17 +17030,17 @@
     "position": "QB",
     "team": "CHI",
     "slug": "caleb-williams",
-    "adp": 104.5,
+    "adp": 104.0,
     "bye_week": 5.0,
     "projected_points": 287.5,
     "top_n_avg": NaN,
     "projected_ppg": 16.91176470588235,
-    "z_proj": 1.4900974280603825,
+    "z_proj": 1.4797626388059895,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 10.301708914821212,
-    "score": 10.301708914821212,
-    "expected_ppg": 10.301708914821212
+    "scaled_proj": 10.23025990176348,
+    "score": 10.23025990176348,
+    "expected_ppg": 10.23025990176348
   },
   {
     "player_id": "6012",
@@ -17054,12 +17054,12 @@
     "projected_points": 14.0,
     "top_n_avg": 0.8166666666666668,
     "projected_ppg": 0.8235294117647058,
-    "z_proj": -0.678313217945635,
+    "z_proj": -0.6815702309746136,
     "z_hist": -1.0213749449929772,
     "scaled_hist": -7.7829411224193805,
-    "scaled_proj": -4.689482172617004,
-    "score": -6.236211647518193,
-    "expected_ppg": -6.236211647518193
+    "scaled_proj": -4.711999358087213,
+    "score": -6.247470240253296,
+    "expected_ppg": -6.247470240253296
   },
   {
     "player_id": "9490",
@@ -17149,12 +17149,12 @@
     "projected_points": 209.5,
     "top_n_avg": 23.099999999999998,
     "projected_ppg": 12.323529411764707,
-    "z_proj": 1.8504409396174886,
+    "z_proj": 1.8435940994909437,
     "z_hist": 1.7294022456675566,
     "scaled_hist": 13.178153547816857,
-    "scaled_proj": 12.792924519587288,
-    "score": 12.985539033702072,
-    "expected_ppg": 12.985539033702072
+    "scaled_proj": 12.745589256374469,
+    "score": 12.961871402095664,
+    "expected_ppg": 12.961871402095664
   },
   {
     "player_id": "8756",
@@ -17182,17 +17182,17 @@
     "position": "RB",
     "team": "LAR",
     "slug": "jarquez-hunter",
-    "adp": 204.5,
+    "adp": 205.0,
     "bye_week": 8.0,
     "projected_points": 48.1,
     "top_n_avg": NaN,
     "projected_ppg": 2.8294117647058825,
-    "z_proj": -0.2372364058080262,
+    "z_proj": -0.24111957282179775,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -1.6401212099358458,
-    "score": -1.6401212099358458,
-    "expected_ppg": -1.6401212099358458
+    "scaled_proj": -1.666967277508475,
+    "score": -1.666967277508475,
+    "expected_ppg": -1.666967277508475
   },
   {
     "player_id": "12114",
@@ -17264,11 +17264,11 @@
     "top_n_avg": 6.5,
     "projected_ppg": 6.088235294117647,
     "z_proj": -0.03342164990682358,
-    "z_hist": -1.43664442440367,
-    "scaled_hist": -10.947320593479729,
+    "z_hist": -1.5078994326550517,
+    "scaled_hist": -11.490288224139421,
     "scaled_proj": -0.23105879005597887,
-    "score": -5.589189691767854,
-    "expected_ppg": -5.589189691767854
+    "score": -5.8606735070977,
+    "expected_ppg": -5.8606735070977
   },
   {
     "player_id": "5113",
@@ -17353,17 +17353,17 @@
     "position": "RB",
     "team": "GB",
     "slug": "emanuel-wilson",
-    "adp": 312.0,
+    "adp": 311.0,
     "bye_week": 5.0,
     "projected_points": 39.4,
     "top_n_avg": 9.916666666666666,
     "projected_ppg": 2.317647058823529,
-    "z_proj": -0.3497691995205541,
+    "z_proj": -0.35349261463791215,
     "z_hist": 0.10197909098357598,
     "scaled_hist": 0.7770870675200264,
-    "scaled_proj": -2.4181106637577257,
-    "score": -0.8205117981188497,
-    "expected_ppg": -0.8205117981188497
+    "scaled_proj": -2.443852295134136,
+    "score": -0.8333826138070548,
+    "expected_ppg": -0.8333826138070548
   },
   {
     "player_id": "12746",
@@ -17397,11 +17397,11 @@
     "top_n_avg": 11.5,
     "projected_ppg": 6.835294117647059,
     "z_proj": 0.25719615630998605,
-    "z_hist": -0.014810767261893672,
-    "scaled_hist": -0.11285897519051394,
+    "z_hist": -0.07464848676510188,
+    "scaled_hist": -0.5688261497098748,
     "scaled_proj": 1.7781118780704093,
-    "score": 0.8326264514399476,
-    "expected_ppg": 0.8326264514399476
+    "score": 0.6046428641802672,
+    "expected_ppg": 0.6046428641802672
   },
   {
     "player_id": "3257",
@@ -17415,12 +17415,12 @@
     "projected_points": 10.5,
     "top_n_avg": 7.716666666666666,
     "projected_ppg": 0.6176470588235294,
-    "z_proj": -0.6481494104214258,
+    "z_proj": -0.6536929143501247,
     "z_hist": -0.5184190798169184,
     "scaled_hist": -3.950385893773468,
-    "scaled_proj": -4.480946301723262,
-    "score": -4.215666097748365,
-    "expected_ppg": -4.215666097748365
+    "scaled_proj": -4.51927101980291,
+    "score": -4.234828456788189,
+    "expected_ppg": -4.234828456788189
   },
   {
     "player_id": "9758",
@@ -17429,17 +17429,17 @@
     "position": "QB",
     "team": "HOU",
     "slug": "cj-stroud",
-    "adp": 129.0,
+    "adp": 128.5,
     "bye_week": 6.0,
     "projected_points": 279.8,
     "top_n_avg": 19.05,
     "projected_ppg": 16.458823529411767,
-    "z_proj": 1.4306587975321883,
+    "z_proj": 1.420457195631614,
     "z_hist": 0.5530382025815404,
     "scaled_hist": 4.214185779905112,
-    "scaled_proj": 9.890783119993085,
-    "score": 7.052484449949098,
-    "expected_ppg": 7.052484449949098
+    "scaled_proj": 9.820254890586366,
+    "score": 7.017220335245739,
+    "expected_ppg": 7.017220335245739
   },
   {
     "player_id": "10231",
@@ -17472,12 +17472,12 @@
     "projected_points": 18.8,
     "top_n_avg": 16.349999999999998,
     "projected_ppg": 1.1058823529411765,
-    "z_proj": -0.5840791982936315,
+    "z_proj": -0.5897662678115119,
     "z_hist": 0.2977792617748485,
     "scaled_hist": 2.2690966458816835,
-    "scaled_proj": -4.038000315090341,
-    "score": -0.8844518346043286,
-    "expected_ppg": -0.8844518346043286
+    "scaled_proj": -4.077317566196409,
+    "score": -0.9041104601573626,
+    "expected_ppg": -0.9041104601573626
   },
   {
     "player_id": "13153",
@@ -17510,12 +17510,12 @@
     "projected_points": 9.9,
     "top_n_avg": NaN,
     "projected_ppg": 0.5823529411764706,
-    "z_proj": -0.7313459138331481,
+    "z_proj": -0.734527641485656,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.056120880739958,
-    "score": -5.056120880739958,
-    "expected_ppg": -5.056120880739958
+    "scaled_proj": -5.078117584784364,
+    "score": -5.078117584784364,
+    "expected_ppg": -5.078117584784364
   },
   {
     "player_id": "8185",
@@ -17719,12 +17719,12 @@
     "projected_points": 13.1,
     "top_n_avg": 3.2833333333333337,
     "projected_ppg": 0.7705882352941176,
-    "z_proj": -0.6280792234898276,
+    "z_proj": -0.633667699771764,
     "z_hist": -0.9375479579316094,
     "scaled_hist": -7.144174224947735,
-    "scaled_proj": -4.34219213723584,
-    "score": -5.743183181091787,
-    "expected_ppg": -5.743183181091787
+    "scaled_proj": -4.380827769275572,
+    "score": -5.762500997111653,
+    "expected_ppg": -5.762500997111653
   },
   {
     "player_id": "8178",
@@ -17752,17 +17752,17 @@
     "position": "K",
     "team": "DET",
     "slug": "jake-bates",
-    "adp": 213.0,
+    "adp": 213.5,
     "bye_week": 8.0,
     "projected_points": 130.0,
-    "top_n_avg": 11.666666666666666,
+    "top_n_avg": 13.0,
     "projected_ppg": 7.647058823529412,
     "z_proj": 0.5729855835377,
-    "z_hist": 0.03258368797616537,
-    "scaled_hist": 0.24828974541912527,
+    "z_hist": 0.355326797001883,
+    "scaled_hist": 2.707612472618989,
     "scaled_proj": 3.961305202491206,
-    "score": 2.1047974739551654,
-    "expected_ppg": 2.1047974739551654
+    "score": 3.3344588375550974,
+    "expected_ppg": 3.3344588375550974
   },
   {
     "player_id": "1466",
@@ -17814,12 +17814,12 @@
     "projected_points": 10.9,
     "top_n_avg": 2.6833333333333336,
     "projected_ppg": 0.6411764705882353,
-    "z_proj": -0.7184111099581449,
+    "z_proj": -0.7216111998975969,
     "z_hist": -0.7909433478695815,
     "scaled_hist": -6.02703790397027,
-    "scaled_proj": -4.966696805588018,
-    "score": -5.496867354779145,
-    "expected_ppg": -5.496867354779145
+    "scaled_proj": -4.988820456321644,
+    "score": -5.507929180145958,
+    "expected_ppg": -5.507929180145958
   },
   {
     "player_id": "6149",
@@ -17890,12 +17890,12 @@
     "projected_points": 6.7,
     "top_n_avg": 12.416666666666666,
     "projected_ppg": 0.3941176470588235,
-    "z_proj": -0.6774827605522231,
+    "z_proj": -0.6829605356569594,
     "z_hist": -0.07407944211638111,
     "scaled_hist": -0.5644899938067631,
-    "scaled_proj": -4.6837408498202615,
-    "score": -2.6241154218135123,
-    "expected_ppg": -2.6241154218135123
+    "scaled_proj": -4.721611155189019,
+    "score": -2.643050574497891,
+    "expected_ppg": -2.643050574497891
   },
   {
     "player_id": "4464",
@@ -17909,12 +17909,12 @@
     "projected_points": 8.8,
     "top_n_avg": 0.26666666666666666,
     "projected_ppg": 0.5176470588235295,
-    "z_proj": -0.6612722249536246,
+    "z_proj": -0.6667863238821297,
     "z_hist": -1.222744675746493,
     "scaled_hist": -9.317391096912178,
-    "scaled_proj": -4.571670178503498,
-    "score": -6.944530637707839,
-    "expected_ppg": -6.944530637707839
+    "scaled_proj": -4.609791606686169,
+    "score": -6.963591351799174,
+    "expected_ppg": -6.963591351799174
   },
   {
     "player_id": "13011",
@@ -17947,12 +17947,12 @@
     "projected_points": 37.9,
     "top_n_avg": 4.25,
     "projected_ppg": 2.2294117647058824,
-    "z_proj": -0.36917140533305876,
+    "z_proj": -0.3728672770200007,
     "z_hist": -0.5975454002838746,
     "scaled_hist": -4.553333417057625,
-    "scaled_proj": -2.552246776485635,
-    "score": -3.55279009677163,
-    "expected_ppg": -3.55279009677163
+    "scaled_proj": -2.5777979878282147,
+    "score": -3.56556570244292,
+    "expected_ppg": -3.56556570244292
   },
   {
     "player_id": "11588",
@@ -17966,12 +17966,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.941419224744166,
-    "score": -5.941419224744166,
-    "expected_ppg": -5.941419224744166
+    "scaled_proj": -5.9621591565652885,
+    "score": -5.9621591565652885,
+    "expected_ppg": -5.9621591565652885
   },
   {
     "player_id": "5095",
@@ -17980,17 +17980,17 @@
     "position": "K",
     "team": "LV",
     "slug": "daniel-carlson",
-    "adp": 296.5,
+    "adp": 299.0,
     "bye_week": 8.0,
     "projected_points": 121.3,
     "top_n_avg": 14.0,
     "projected_ppg": 7.135294117647058,
     "z_proj": 0.3739009446332713,
-    "z_hist": 0.6961060613089944,
-    "scaled_hist": 5.304371833954093,
+    "z_hist": 0.641976986179873,
+    "scaled_hist": 4.891904887504898,
     "scaled_proj": 2.584944193617223,
-    "score": 3.944658013785658,
-    "expected_ppg": 3.944658013785658
+    "score": 3.7384245405610605,
+    "expected_ppg": 3.7384245405610605
   },
   {
     "player_id": "7809",
@@ -18004,12 +18004,12 @@
     "projected_points": 2.6,
     "top_n_avg": NaN,
     "projected_ppg": 0.15294117647058825,
-    "z_proj": -0.8257699821206714,
+    "z_proj": -0.8288176650784875,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.708916629349122,
-    "score": -5.708916629349122,
-    "expected_ppg": -5.708916629349122
+    "scaled_proj": -5.729986622562217,
+    "score": -5.729986622562217,
+    "expected_ppg": -5.729986622562217
   },
   {
     "player_id": "12510",
@@ -18018,17 +18018,17 @@
     "position": "QB",
     "team": "SEA",
     "slug": "jalen-milroe",
-    "adp": 251.5,
+    "adp": 252.5,
     "bye_week": 8.0,
     "projected_points": 26.6,
     "top_n_avg": NaN,
     "projected_ppg": 1.5647058823529412,
-    "z_proj": -0.5238686374988369,
+    "z_proj": -0.52969062407643,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -3.6217378216280776,
-    "score": -3.6217378216280776,
-    "expected_ppg": -3.6217378216280776
+    "scaled_proj": -3.6619878146143945,
+    "score": -3.6619878146143945,
+    "expected_ppg": -3.6619878146143945
   },
   {
     "player_id": "2505",
@@ -18037,7 +18037,7 @@
     "position": "TE",
     "team": "MIA",
     "slug": "darren-waller",
-    "adp": 224.0,
+    "adp": 223.5,
     "bye_week": 12.0,
     "projected_points": 104.2,
     "top_n_avg": NaN,
@@ -18061,12 +18061,12 @@
     "projected_points": 0.0,
     "top_n_avg": 0.09999999999999999,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": -1.1098442188885664,
     "scaled_hist": -8.457082536645377,
-    "scaled_proj": -5.941419224744166,
-    "score": -7.1992508806947715,
-    "expected_ppg": -7.1992508806947715
+    "scaled_proj": -5.9621591565652885,
+    "score": -7.209620846605333,
+    "expected_ppg": -7.209620846605333
   },
   {
     "player_id": "1426",
@@ -18075,7 +18075,7 @@
     "position": "WR",
     "team": "BAL",
     "slug": "deandre-hopkins",
-    "adp": 168.5,
+    "adp": 168.0,
     "bye_week": 7.0,
     "projected_points": 80.9,
     "top_n_avg": 13.783333333333333,
@@ -18099,12 +18099,12 @@
     "projected_points": 4.5,
     "top_n_avg": NaN,
     "projected_ppg": 0.2647058823529412,
-    "z_proj": -0.8011938547581653,
+    "z_proj": -0.8042764260611752,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.539010886560435,
-    "score": -5.539010886560435,
-    "expected_ppg": -5.539010886560435
+    "scaled_proj": -5.56032207848305,
+    "score": -5.56032207848305,
+    "expected_ppg": -5.56032207848305
   },
   {
     "player_id": "11034",
@@ -18189,7 +18189,7 @@
     "position": "TE",
     "team": "TEN",
     "slug": "chig-okonkwo",
-    "adp": 199.5,
+    "adp": 195.0,
     "bye_week": 10.0,
     "projected_points": 91.7,
     "top_n_avg": 10.316666666666666,
@@ -18208,17 +18208,17 @@
     "position": "RB",
     "team": "DAL",
     "slug": "miles-sanders",
-    "adp": 212.5,
+    "adp": 215.0,
     "bye_week": 10.0,
     "projected_points": 70.5,
     "top_n_avg": 5.95,
     "projected_ppg": 4.147058823529412,
-    "z_proj": 0.052503200992045265,
+    "z_proj": 0.04820871875072652,
     "z_hist": -0.3876880529036394,
     "scaled_hist": -2.9542072716843295,
-    "scaled_proj": 0.36297807346761296,
-    "score": -1.2956145991083583,
-    "expected_ppg": -1.2956145991083583
+    "scaled_proj": 0.3332884000564446,
+    "score": -1.3104594358139425,
+    "expected_ppg": -1.3104594358139425
   },
   {
     "player_id": "12670",
@@ -18227,7 +18227,7 @@
     "position": "WR",
     "team": "LAC",
     "slug": "keandre-lambert-smith",
-    "adp": 292.0,
+    "adp": 295.0,
     "bye_week": 12.0,
     "projected_points": 14.4,
     "top_n_avg": NaN,
@@ -18289,12 +18289,12 @@
     "projected_points": 8.2,
     "top_n_avg": 0.06666666666666667,
     "projected_ppg": 0.48235294117647054,
-    "z_proj": -0.6659038065532241,
+    "z_proj": -0.6714075272463668,
     "z_hist": -1.2416527454358777,
     "scaled_hist": -9.461471773506506,
-    "scaled_proj": -4.603690370308287,
-    "score": -7.032581071907397,
-    "expected_ppg": -7.032581071907397
+    "scaled_proj": -4.641740049115556,
+    "score": -7.0516059113110305,
+    "expected_ppg": -7.0516059113110305
   },
   {
     "player_id": "5086",
@@ -18327,12 +18327,12 @@
     "projected_points": 0.0,
     "top_n_avg": 0.4666666666666666,
     "projected_ppg": 0.0,
-    "z_proj": -0.8594004721956797,
+    "z_proj": -0.8624004132074413,
     "z_hist": -1.0645808694536139,
     "scaled_hist": -8.112172975878588,
-    "scaled_proj": -5.941419224744166,
-    "score": -7.026796100311377,
-    "expected_ppg": -7.026796100311377
+    "scaled_proj": -5.9621591565652885,
+    "score": -7.037166066221938,
+    "expected_ppg": -7.037166066221938
   },
   {
     "player_id": "12851",
@@ -18385,11 +18385,11 @@
     "top_n_avg": 11.166666666666666,
     "projected_ppg": 7.488235294117647,
     "z_proj": 0.5112006956018428,
-    "z_hist": -0.10959967773801227,
-    "scaled_hist": -0.8351564164097962,
+    "z_hist": -0.17019854982443205,
+    "scaled_hist": -1.2969236213385125,
     "scaled_proj": 3.5341586824958315,
-    "score": 1.3495011330430176,
-    "expected_ppg": 1.3495011330430176
+    "score": 1.1186175305786596,
+    "expected_ppg": 1.1186175305786596
   },
   {
     "player_id": "4490",
@@ -18479,12 +18479,12 @@
     "projected_points": 245.2,
     "top_n_avg": 23.150000000000002,
     "projected_ppg": 14.423529411764704,
-    "z_proj": 2.3122134379551023,
+    "z_proj": 2.3047110641846538,
     "z_hist": 1.7355745205905053,
     "scaled_hist": 13.225186669739605,
-    "scaled_proj": 15.985364002511549,
-    "score": 14.605275336125576,
-    "expected_ppg": 14.605275336125576
+    "scaled_proj": 15.933496742493556,
+    "score": 14.57934170611658,
+    "expected_ppg": 14.57934170611658
   },
   {
     "player_id": "9753",
@@ -18493,17 +18493,17 @@
     "position": "RB",
     "team": "SEA",
     "slug": "zach-charbonnet",
-    "adp": 103.0,
+    "adp": 103.5,
     "bye_week": 8.0,
     "projected_points": 123.5,
     "top_n_avg": NaN,
     "projected_ppg": 7.264705882352941,
-    "z_proj": 0.7380478063672142,
+    "z_proj": 0.7327801229178595,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 5.102454056520439,
-    "score": 5.102454056520439,
-    "expected_ppg": 5.102454056520439
+    "scaled_proj": 5.066036208580583,
+    "score": 5.066036208580583,
+    "expected_ppg": 5.066036208580583
   },
   {
     "player_id": "12267",
@@ -18574,12 +18574,12 @@
     "projected_points": 12.2,
     "top_n_avg": NaN,
     "projected_ppg": 0.7176470588235294,
-    "z_proj": -0.6350265958892269,
+    "z_proj": -0.6405995048181196,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -4.390222424943024,
-    "score": -4.390222424943024,
-    "expected_ppg": -4.390222424943024
+    "scaled_proj": -4.42875043291965,
+    "score": -4.42875043291965,
+    "expected_ppg": -4.42875043291965
   },
   {
     "player_id": "11452",
@@ -18612,12 +18612,12 @@
     "projected_points": 8.6,
     "top_n_avg": 1.1,
     "projected_ppg": 0.5058823529411764,
-    "z_proj": -0.7481611588706523,
+    "z_proj": -0.7513190155501329,
     "z_hist": -0.9863987204296046,
     "scaled_hist": -7.516420098190498,
-    "scaled_proj": -5.172372178437481,
-    "score": -6.344396138313989,
-    "expected_ppg": -6.344396138313989
+    "scaled_proj": -5.1942038517858995,
+    "score": -6.355311974988199,
+    "expected_ppg": -6.355311974988199
   },
   {
     "player_id": "6126",
@@ -18707,12 +18707,12 @@
     "projected_points": 355.8,
     "top_n_avg": 31.083333333333332,
     "projected_ppg": 20.929411764705883,
-    "z_proj": 2.0173258001481353,
+    "z_proj": 2.0058096217683095,
     "z_hist": 1.6906737288928444,
     "scaled_hist": 12.883039821663834,
-    "scaled_proj": 13.946674081933082,
-    "score": 13.414856951798459,
-    "expected_ppg": 13.414856951798459
+    "scaled_proj": 13.867057598308552,
+    "score": 13.375048709986192,
+    "expected_ppg": 13.375048709986192
   },
   {
     "player_id": "4319",
@@ -18784,11 +18784,11 @@
     "top_n_avg": 4.333333333333333,
     "projected_ppg": 6.7,
     "z_proj": 0.2045645851053669,
-    "z_hist": -2.05277234249844,
-    "scaled_hist": -15.642253961405055,
+    "z_hist": -2.1289748425406967,
+    "scaled_hist": -16.222921789725557,
     "scaled_proj": 1.4142463240002754,
-    "score": -7.11400381870239,
-    "expected_ppg": -7.11400381870239
+    "score": -7.404337732862641,
+    "expected_ppg": -7.404337732862641
   },
   {
     "player_id": "9495",
@@ -18835,7 +18835,7 @@
     "position": "TE",
     "team": "HOU",
     "slug": "dalton-schultz",
-    "adp": 206.5,
+    "adp": 207.0,
     "bye_week": 6.0,
     "projected_points": 94.5,
     "top_n_avg": 9.016666666666667,
@@ -18859,12 +18859,12 @@
     "projected_points": 79.5,
     "top_n_avg": 3.5,
     "projected_ppg": 4.676470588235294,
-    "z_proj": 0.16891643586707394,
+    "z_proj": 0.16445669304325855,
     "z_hist": -0.690129524128096,
     "scaled_hist": -5.2588302458987854,
-    "scaled_proj": 1.1677947498350738,
-    "score": -2.045517748031856,
-    "expected_ppg": -2.045517748031856
+    "scaled_proj": 1.136962556220921,
+    "score": -2.0609338448389325,
+    "expected_ppg": -2.0609338448389325
   },
   {
     "player_id": "12658",
@@ -18897,12 +18897,12 @@
     "projected_points": 0.0,
     "top_n_avg": NaN,
     "projected_ppg": 0.0,
-    "z_proj": -0.7292020884144185,
+    "z_proj": -0.7345639732242734,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.041299658307077,
-    "score": -5.041299658307077,
-    "expected_ppg": -5.041299658307077
+    "scaled_proj": -5.07836876231716,
+    "score": -5.07836876231716,
+    "expected_ppg": -5.07836876231716
   },
   {
     "player_id": "12788",
@@ -19025,7 +19025,7 @@
     "position": "TE",
     "team": "CLE",
     "slug": "david-njoku",
-    "adp": 103.5,
+    "adp": 104.0,
     "bye_week": 9.0,
     "projected_points": 139.4,
     "top_n_avg": 15.633333333333333,
@@ -19082,17 +19082,17 @@
     "position": "QB",
     "team": "ARI",
     "slug": "kyler-murray",
-    "adp": 92.0,
+    "adp": 91.0,
     "bye_week": 8.0,
     "projected_points": 319.1,
     "top_n_avg": 24.516666666666666,
     "projected_ppg": 18.77058823529412,
-    "z_proj": 1.7340273923059613,
+    "z_proj": 1.7231460159891423,
     "z_hist": 1.069858774091385,
     "scaled_hist": 8.152390940150072,
-    "scaled_proj": 11.988105683206795,
-    "score": 10.070248311678434,
-    "expected_ppg": 10.070248311678434
+    "scaled_proj": 11.91287786971113,
+    "score": 10.0326344049306,
+    "expected_ppg": 10.0326344049306
   },
   {
     "player_id": "5409",
@@ -19239,12 +19239,12 @@
     "projected_points": 93.3,
     "top_n_avg": 12.633333333333333,
     "projected_ppg": 5.488235294117647,
-    "z_proj": 0.3474167293421179,
+    "z_proj": 0.3427035869584743,
     "z_hist": 0.4373393617970891,
     "scaled_hist": 3.332553358655783,
-    "scaled_proj": 2.4018469869318473,
-    "score": 2.8672001727938152,
-    "expected_ppg": 2.8672001727938152
+    "scaled_proj": 2.369262929006451,
+    "score": 2.8509081438311172,
+    "expected_ppg": 2.8509081438311172
   },
   {
     "player_id": "7002",
@@ -19253,7 +19253,7 @@
     "position": "TE",
     "team": "NO",
     "slug": "juwan-johnson",
-    "adp": 241.5,
+    "adp": 242.0,
     "bye_week": 11.0,
     "projected_points": 94.0,
     "top_n_avg": 9.216666666666667,
@@ -19310,7 +19310,7 @@
     "position": "WR",
     "team": "CIN",
     "slug": "jermaine-burton",
-    "adp": 276.0,
+    "adp": 278.0,
     "bye_week": 10.0,
     "projected_points": 44.8,
     "top_n_avg": 2.1166666666666667,
@@ -19329,17 +19329,17 @@
     "position": "RB",
     "team": "DAL",
     "slug": "phil-mafah",
-    "adp": 318.0,
+    "adp": 319.0,
     "bye_week": 10.0,
     "projected_points": 1.7,
     "top_n_avg": NaN,
     "projected_ppg": 0.09999999999999999,
-    "z_proj": -0.8374113056081742,
+    "z_proj": -0.8404424625077408,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.789398296985867,
-    "score": -5.789398296985867,
-    "expected_ppg": -5.789398296985867
+    "scaled_proj": -5.810354038178665,
+    "score": -5.810354038178665,
+    "expected_ppg": -5.810354038178665
   },
   {
     "player_id": "11070",
@@ -19391,12 +19391,12 @@
     "projected_points": 207.2,
     "top_n_avg": 20.516666666666666,
     "projected_ppg": 12.188235294117646,
-    "z_proj": 1.820690890704981,
+    "z_proj": 1.8138862838384073,
     "z_hist": 1.410501374648572,
     "scaled_hist": 10.748108915141753,
-    "scaled_proj": 12.587249146737825,
-    "score": 11.667679030939789,
-    "expected_ppg": 11.667679030939789
+    "scaled_proj": 12.540205860910211,
+    "score": 11.644157388025981,
+    "expected_ppg": 11.644157388025981
   },
   {
     "player_id": "6814",
@@ -19462,7 +19462,7 @@
     "position": "DEF",
     "team": "KC",
     "slug": "kansas-city-chiefs",
-    "adp": 212.0,
+    "adp": 212.5,
     "bye_week": 10.0,
     "projected_points": 102.8,
     "top_n_avg": 11.333333333333334,
@@ -19619,12 +19619,12 @@
     "projected_points": 132.8,
     "top_n_avg": 19.150000000000002,
     "projected_ppg": 7.811764705882354,
-    "z_proj": 0.8583414824047441,
+    "z_proj": 0.8529030296868095,
     "z_hist": 1.2417925267546577,
     "scaled_hist": 9.462536915920086,
-    "scaled_proj": 5.934097955433483,
-    "score": 7.698317435676785,
-    "expected_ppg": 7.698317435676785
+    "scaled_proj": 5.896499503283876,
+    "score": 7.679518209601982,
+    "expected_ppg": 7.679518209601982
   },
   {
     "player_id": "6813",
@@ -19638,12 +19638,12 @@
     "projected_points": 229.1,
     "top_n_avg": 24.28333333333333,
     "projected_ppg": 13.476470588235294,
-    "z_proj": 2.103963095567551,
+    "z_proj": 2.096756354616902,
     "z_hist": 1.875479418843995,
     "scaled_hist": 14.291270766655133,
-    "scaled_proj": 14.545636392565314,
-    "score": 14.418453579610222,
-    "expected_ppg": 14.418453579610222
+    "scaled_proj": 14.495812974243773,
+    "score": 14.393541870449454,
+    "expected_ppg": 14.393541870449454
   },
   {
     "player_id": "11564",
@@ -19652,17 +19652,17 @@
     "position": "QB",
     "team": "NE",
     "slug": "drake-maye",
-    "adp": 127.5,
+    "adp": 127.0,
     "bye_week": 14.0,
     "projected_points": 274.1,
     "top_n_avg": 19.766666666666666,
     "projected_ppg": 16.123529411764707,
-    "z_proj": 1.3866587723359922,
+    "z_proj": 1.376555763671362,
     "z_hist": 0.6207921189685015,
     "scaled_hist": 4.730474871034785,
-    "scaled_proj": 9.586591297847583,
-    "score": 8.59023970132942,
-    "expected_ppg": 8.59023970132942
+    "scaled_proj": 9.516744687507202,
+    "score": 8.192151246161641,
+    "expected_ppg": 8.192151246161641
   },
   {
     "player_id": "13194",
@@ -19690,17 +19690,17 @@
     "position": "RB",
     "team": "PHI",
     "slug": "aj-dillon",
-    "adp": 236.0,
+    "adp": 235.0,
     "bye_week": 9.0,
     "projected_points": 39.1,
     "top_n_avg": NaN,
     "projected_ppg": 2.3000000000000003,
-    "z_proj": -0.35364964068305493,
+    "z_proj": -0.3573675471143298,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -2.444937886303307,
-    "score": -2.444937886303307,
-    "expected_ppg": -2.444937886303307
+    "scaled_proj": -2.4706414336729514,
+    "score": -2.4706414336729514,
+    "expected_ppg": -2.4706414336729514
   },
   {
     "player_id": "8840",
@@ -19785,17 +19785,17 @@
     "position": "RB",
     "team": "DAL",
     "slug": "javonte-williams",
-    "adp": 98.5,
+    "adp": 99.5,
     "bye_week": 10.0,
     "projected_points": 138.5,
     "top_n_avg": NaN,
     "projected_ppg": 8.147058823529411,
-    "z_proj": 0.9320698644922619,
+    "z_proj": 0.9265267467387461,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": 6.443815183799539,
-    "score": 6.443815183799539,
-    "expected_ppg": 6.443815183799539
+    "scaled_proj": 6.405493135521375,
+    "score": 6.405493135521375,
+    "expected_ppg": 6.405493135521375
   },
   {
     "player_id": "MIN",
@@ -19923,12 +19923,12 @@
     "projected_points": 1.7,
     "top_n_avg": NaN,
     "projected_ppg": 0.09999999999999999,
-    "z_proj": -0.8374113056081742,
+    "z_proj": -0.8404424625077408,
     "z_hist": 0.0,
     "scaled_hist": 0.0,
-    "scaled_proj": -5.789398296985867,
-    "score": -5.789398296985867,
-    "expected_ppg": -5.789398296985867
+    "scaled_proj": -5.810354038178665,
+    "score": -5.810354038178665,
+    "expected_ppg": -5.810354038178665
   },
   {
     "player_id": "6233",
@@ -19958,15 +19958,15 @@
     "slug": "kenny-mcintosh",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": 10.9,
+    "projected_points": NaN,
     "top_n_avg": 2.6666666666666665,
-    "projected_ppg": 0.6411764705882353,
-    "z_proj": -0.7184111099581449,
+    "projected_ppg": NaN,
+    "z_proj": 0.0,
     "z_hist": -0.7930007728438977,
     "scaled_hist": -6.042715611277853,
-    "scaled_proj": -4.966696805588018,
-    "score": -5.5047062084329355,
-    "expected_ppg": -5.5047062084329355
+    "scaled_proj": 0.0,
+    "score": -6.042715611277853,
+    "expected_ppg": -6.042715611277853
   },
   {
     "player_id": "12505",
@@ -19975,7 +19975,7 @@
     "position": "WR",
     "team": "KC",
     "slug": "jalen-royals",
-    "adp": 227.5,
+    "adp": 226.0,
     "bye_week": 10.0,
     "projected_points": 34.8,
     "top_n_avg": NaN,
@@ -20003,8 +20003,8 @@
     "z_hist": 0.0,
     "scaled_hist": 0.0,
     "scaled_proj": 7.9769721250593655,
-    "score": 9.572366550071239,
-    "expected_ppg": 9.572366550071239
+    "score": 10.370063762577175,
+    "expected_ppg": 10.370063762577175
   },
   {
     "player_id": "3309",

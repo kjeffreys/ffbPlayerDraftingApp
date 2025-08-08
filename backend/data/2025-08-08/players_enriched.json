@@ -17,7 +17,7 @@
     "position": "K",
     "team": "DAL",
     "slug": "brandon-aubrey",
-    "adp": 189.0,
+    "adp": 189.5,
     "bye_week": 10.0,
     "projected_points": 141.6
   },
@@ -94,7 +94,7 @@
     "position": "WR",
     "team": "CLE",
     "slug": "jerry-jeudy",
-    "adp": 70.0,
+    "adp": 69.5,
     "bye_week": 9.0,
     "projected_points": 173.1
   },
@@ -149,7 +149,7 @@
     "position": "WR",
     "team": "NE",
     "slug": "kayshon-boutte",
-    "adp": 293.5,
+    "adp": 295.5,
     "bye_week": 14.0,
     "projected_points": 53.2
   },
@@ -171,7 +171,7 @@
     "position": "RB",
     "team": "DEN",
     "slug": "jaleel-mclaughlin",
-    "adp": 239.0,
+    "adp": 240.0,
     "bye_week": 12.0,
     "projected_points": 43.4
   },
@@ -193,7 +193,7 @@
     "position": "TE",
     "team": "LAC",
     "slug": "oronde-gadsden",
-    "adp": 288.0,
+    "adp": 291.0,
     "bye_week": 12.0,
     "projected_points": 33.4
   },
@@ -468,7 +468,7 @@
     "position": "QB",
     "team": "DAL",
     "slug": "dak-prescott",
-    "adp": 108.0,
+    "adp": 107.5,
     "bye_week": 10.0,
     "projected_points": 289.9
   },
@@ -501,7 +501,7 @@
     "position": "WR",
     "team": "BUF",
     "slug": "khalil-shakir",
-    "adp": 92.0,
+    "adp": 93.0,
     "bye_week": 7.0,
     "projected_points": 145.7
   },
@@ -512,7 +512,7 @@
     "position": "TE",
     "team": "KC",
     "slug": "noah-gray",
-    "adp": 261.0,
+    "adp": 261.5,
     "bye_week": 10.0,
     "projected_points": 57.8
   },
@@ -523,7 +523,7 @@
     "position": "DEF",
     "team": "NE",
     "slug": "new-england-patriots",
-    "adp": 272.5,
+    "adp": 276.5,
     "bye_week": 14.0,
     "projected_points": 85.3
   },
@@ -545,7 +545,7 @@
     "position": "RB",
     "team": "BAL",
     "slug": "justice-hill",
-    "adp": 181.5,
+    "adp": 182.5,
     "bye_week": 7.0,
     "projected_points": 71.2
   },
@@ -732,7 +732,7 @@
     "position": "WR",
     "team": "GB",
     "slug": "jayden-reed",
-    "adp": 100.0,
+    "adp": 101.0,
     "bye_week": 5.0,
     "projected_points": 155.9
   },
@@ -842,7 +842,7 @@
     "position": "TE",
     "team": "TB",
     "slug": "cade-otton",
-    "adp": 177.0,
+    "adp": 178.0,
     "bye_week": 9.0,
     "projected_points": 102.1
   },
@@ -908,7 +908,7 @@
     "position": "K",
     "team": "KC",
     "slug": "harrison-butker",
-    "adp": 227.0,
+    "adp": 227.5,
     "bye_week": 10.0,
     "projected_points": 128.3
   },
@@ -963,7 +963,7 @@
     "position": "RB",
     "team": "NYJ",
     "slug": "isaiah-davis",
-    "adp": 319.0,
+    "adp": 318.0,
     "bye_week": 9.0,
     "projected_points": 31.9
   },
@@ -1051,7 +1051,7 @@
     "position": "QB",
     "team": "CHI",
     "slug": "austin-reed",
-    "adp": 259.0,
+    "adp": 258.0,
     "bye_week": 5.0,
     "projected_points": 95.9
   },
@@ -1062,7 +1062,7 @@
     "position": "K",
     "team": "ATL",
     "slug": "younghoe-koo",
-    "adp": 282.0,
+    "adp": 275.5,
     "bye_week": 5.0,
     "projected_points": 126.2
   },
@@ -1073,7 +1073,7 @@
     "position": "WR",
     "team": "NO",
     "slug": "brandin-cooks",
-    "adp": 291.0,
+    "adp": 291.5,
     "bye_week": 11.0,
     "projected_points": 79.4
   },
@@ -1084,7 +1084,7 @@
     "position": "QB",
     "team": "IND",
     "slug": "daniel-jones",
-    "adp": 228.5,
+    "adp": 228.0,
     "bye_week": 11.0,
     "projected_points": 109.7
   },
@@ -1194,7 +1194,7 @@
     "position": "WR",
     "team": "DET",
     "slug": "isaac-teslaa",
-    "adp": 267.0,
+    "adp": 269.0,
     "bye_week": 8.0,
     "projected_points": 27.7
   },
@@ -1249,7 +1249,7 @@
     "position": "RB",
     "team": "NYG",
     "slug": "devin-singletary",
-    "adp": 301.0,
+    "adp": 302.0,
     "bye_week": 14.0,
     "projected_points": 41.2
   },
@@ -1304,7 +1304,7 @@
     "position": "RB",
     "team": "KC",
     "slug": "elijah-mitchell",
-    "adp": 251.0,
+    "adp": 252.0,
     "bye_week": 10.0,
     "projected_points": 46.4
   },
@@ -1370,7 +1370,7 @@
     "position": "RB",
     "team": "WAS",
     "slug": "brian-robinson",
-    "adp": 79.5,
+    "adp": 80.0,
     "bye_week": 12.0,
     "projected_points": 155.4
   },
@@ -1491,7 +1491,7 @@
     "position": "DEF",
     "team": "PIT",
     "slug": "pittsburgh-steelers",
-    "adp": 173.5,
+    "adp": 172.0,
     "bye_week": 5.0,
     "projected_points": 110.7
   },
@@ -1513,7 +1513,7 @@
     "position": "QB",
     "team": "GB",
     "slug": "jordan-love",
-    "adp": 129.0,
+    "adp": 128.0,
     "bye_week": 5.0,
     "projected_points": 278.8
   },
@@ -1579,7 +1579,7 @@
     "position": "TE",
     "team": "NYJ",
     "slug": "zack-kuntz",
-    "adp": 250.0,
+    "adp": 249.5,
     "bye_week": NaN,
     "projected_points": 0.0
   },
@@ -1700,7 +1700,7 @@
     "position": "WR",
     "team": "BAL",
     "slug": "anthony-miller",
-    "adp": 181.5,
+    "adp": 181.0,
     "bye_week": 11.0,
     "projected_points": 56.8
   },
@@ -1843,7 +1843,7 @@
     "position": "K",
     "team": "LAC",
     "slug": "cameron-dicker",
-    "adp": 201.5,
+    "adp": 202.5,
     "bye_week": 12.0,
     "projected_points": 131.8
   },
@@ -1887,7 +1887,7 @@
     "position": "RB",
     "team": "KC",
     "slug": "isiah-pacheco",
-    "adp": 63.5,
+    "adp": 63.0,
     "bye_week": 10.0,
     "projected_points": 161.0
   },
@@ -1898,7 +1898,7 @@
     "position": "QB",
     "team": "ATL",
     "slug": "kirk-cousins",
-    "adp": 261.5,
+    "adp": 262.0,
     "bye_week": 5.0,
     "projected_points": 7.3
   },
@@ -1975,7 +1975,7 @@
     "position": "TE",
     "team": "WAS",
     "slug": "zach-ertz",
-    "adp": 159.5,
+    "adp": 159.0,
     "bye_week": 12.0,
     "projected_points": 113.2
   },
@@ -1997,7 +1997,7 @@
     "position": "RB",
     "team": "ARI",
     "slug": "trey-benson",
-    "adp": 139.5,
+    "adp": 140.0,
     "bye_week": 8.0,
     "projected_points": 102.4
   },
@@ -2041,7 +2041,7 @@
     "position": "TE",
     "team": "BAL",
     "slug": "isaiah-likely",
-    "adp": 161.5,
+    "adp": 163.5,
     "bye_week": 7.0,
     "projected_points": 97.7
   },
@@ -2063,7 +2063,7 @@
     "position": "DEF",
     "team": "ARI",
     "slug": "arizona-cardinals",
-    "adp": 258.0,
+    "adp": 255.0,
     "bye_week": 8.0,
     "projected_points": 97.1
   },
@@ -2107,7 +2107,7 @@
     "position": "QB",
     "team": "CLE",
     "slug": "shedeur-sanders",
-    "adp": 227.0,
+    "adp": 228.5,
     "bye_week": 9.0,
     "projected_points": 35.6
   },
@@ -2173,7 +2173,7 @@
     "position": "WR",
     "team": "JAX",
     "slug": "dyami-brown",
-    "adp": 248.5,
+    "adp": 248.0,
     "bye_week": 8.0,
     "projected_points": 91.1
   },
@@ -2195,7 +2195,7 @@
     "position": "K",
     "team": "CIN",
     "slug": "evan-mcpherson",
-    "adp": 250.5,
+    "adp": 251.0,
     "bye_week": 10.0,
     "projected_points": 129.5
   },
@@ -2217,7 +2217,7 @@
     "position": "WR",
     "team": "DAL",
     "slug": "jalen-tolbert",
-    "adp": 303.5,
+    "adp": 304.5,
     "bye_week": 10.0,
     "projected_points": 78.8
   },
@@ -2250,7 +2250,7 @@
     "position": "WR",
     "team": "CIN",
     "slug": "tee-higgins",
-    "adp": 34.0,
+    "adp": 33.5,
     "bye_week": 10.0,
     "projected_points": 204.4
   },
@@ -2327,7 +2327,7 @@
     "position": "WR",
     "team": "CLE",
     "slug": "jamari-thrash",
-    "adp": 246.5,
+    "adp": 244.0,
     "bye_week": NaN,
     "projected_points": 6.3
   },
@@ -2426,7 +2426,7 @@
     "position": "WR",
     "team": "NE",
     "slug": "demario-douglas",
-    "adp": 190.5,
+    "adp": 189.5,
     "bye_week": 14.0,
     "projected_points": 103.0
   },
@@ -2437,7 +2437,7 @@
     "position": "WR",
     "team": "MIN",
     "slug": "jalen-nailor",
-    "adp": 253.0,
+    "adp": 260.0,
     "bye_week": 6.0,
     "projected_points": 62.5
   },
@@ -2470,7 +2470,7 @@
     "position": "WR",
     "team": "GB",
     "slug": "dontayvion-wicks",
-    "adp": 267.0,
+    "adp": 263.5,
     "bye_week": 5.0,
     "projected_points": 65.7
   },
@@ -2481,7 +2481,7 @@
     "position": "DEF",
     "team": "NYJ",
     "slug": "new-york-jets",
-    "adp": 274.0,
+    "adp": 272.0,
     "bye_week": 9.0,
     "projected_points": 98.5
   },
@@ -2514,7 +2514,7 @@
     "position": "K",
     "team": "SF",
     "slug": "jake-moody",
-    "adp": 309.0,
+    "adp": 308.0,
     "bye_week": 14.0,
     "projected_points": 123.5
   },
@@ -2525,7 +2525,7 @@
     "position": "WR",
     "team": "TB",
     "slug": "jalen-mcmillan",
-    "adp": 165.0,
+    "adp": 167.0,
     "bye_week": 9.0,
     "projected_points": 94.1
   },
@@ -2591,7 +2591,7 @@
     "position": "QB",
     "team": "PIT",
     "slug": "aaron-rodgers",
-    "adp": 183.0,
+    "adp": 182.0,
     "bye_week": 5.0,
     "projected_points": 237.0
   },
@@ -2602,7 +2602,7 @@
     "position": "WR",
     "team": "WAS",
     "slug": "deebo-samuel",
-    "adp": 83.5,
+    "adp": 83.0,
     "bye_week": 12.0,
     "projected_points": 163.2
   },
@@ -2624,7 +2624,7 @@
     "position": "TE",
     "team": "JAX",
     "slug": "brenton-strange",
-    "adp": 170.5,
+    "adp": 170.0,
     "bye_week": 8.0,
     "projected_points": 100.9
   },
@@ -2657,7 +2657,7 @@
     "position": "K",
     "team": "TB",
     "slug": "chase-mclaughlin",
-    "adp": 242.5,
+    "adp": 243.0,
     "bye_week": 9.0,
     "projected_points": 136.4
   },
@@ -2668,7 +2668,7 @@
     "position": "QB",
     "team": "TB",
     "slug": "baker-mayfield",
-    "adp": 72.0,
+    "adp": 71.5,
     "bye_week": 9.0,
     "projected_points": 321.6
   },
@@ -2734,7 +2734,7 @@
     "position": "TE",
     "team": "IND",
     "slug": "tyler-warren",
-    "adp": 109.5,
+    "adp": 108.0,
     "bye_week": 11.0,
     "projected_points": 117.6
   },
@@ -2846,7 +2846,7 @@
     "slug": "will-levis",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": 0.0
+    "projected_points": NaN
   },
   {
     "player_id": "12509",
@@ -2855,7 +2855,7 @@
     "position": "WR",
     "team": "LAC",
     "slug": "tre-harris",
-    "adp": 135.5,
+    "adp": 136.0,
     "bye_week": 12.0,
     "projected_points": 102.3
   },
@@ -2866,7 +2866,7 @@
     "position": "WR",
     "team": "LV",
     "slug": "jakobi-meyers",
-    "adp": 93.0,
+    "adp": 92.5,
     "bye_week": 8.0,
     "projected_points": 169.7
   },
@@ -2954,7 +2954,7 @@
     "position": "TE",
     "team": "LAR",
     "slug": "tyler-higbee",
-    "adp": 282.5,
+    "adp": 282.0,
     "bye_week": 8.0,
     "projected_points": 87.0
   },
@@ -2998,7 +2998,7 @@
     "position": "WR",
     "team": "SF",
     "slug": "ricky-pearsall",
-    "adp": 100.0,
+    "adp": 99.5,
     "bye_week": 14.0,
     "projected_points": 143.7
   },
@@ -3064,7 +3064,7 @@
     "position": "QB",
     "team": "CAR",
     "slug": "bryce-young",
-    "adp": 163.5,
+    "adp": 162.5,
     "bye_week": 14.0,
     "projected_points": 257.1
   },
@@ -3075,7 +3075,7 @@
     "position": "TE",
     "team": "LAR",
     "slug": "terrance-ferguson",
-    "adp": 243.5,
+    "adp": 248.5,
     "bye_week": 8.0,
     "projected_points": 45.6
   },
@@ -3086,7 +3086,7 @@
     "position": "DEF",
     "team": "DAL",
     "slug": "dallas-cowboys",
-    "adp": 258.5,
+    "adp": 258.0,
     "bye_week": 10.0,
     "projected_points": 111.6
   },
@@ -3207,7 +3207,7 @@
     "position": "WR",
     "team": "PIT",
     "slug": "roman-wilson",
-    "adp": 286.5,
+    "adp": 287.0,
     "bye_week": 5.0,
     "projected_points": 49.9
   },
@@ -3251,7 +3251,7 @@
     "position": "RB",
     "team": "MIA",
     "slug": "alexander-mattison",
-    "adp": 237.0,
+    "adp": 242.0,
     "bye_week": 12.0,
     "projected_points": 43.9
   },
@@ -3339,7 +3339,7 @@
     "position": "WR",
     "team": "BUF",
     "slug": "elijah-moore",
-    "adp": 316.0,
+    "adp": 317.0,
     "bye_week": 7.0,
     "projected_points": 30.6
   },
@@ -3361,7 +3361,7 @@
     "position": "WR",
     "team": "NYJ",
     "slug": "garrett-wilson",
-    "adp": 34.0,
+    "adp": 34.5,
     "bye_week": 9.0,
     "projected_points": 188.7
   },
@@ -3383,7 +3383,7 @@
     "position": "RB",
     "team": "WAS",
     "slug": "austin-ekeler",
-    "adp": 133.0,
+    "adp": 133.5,
     "bye_week": 12.0,
     "projected_points": 131.5
   },
@@ -3394,7 +3394,7 @@
     "position": "RB",
     "team": "BAL",
     "slug": "keaton-mitchell",
-    "adp": 282.0,
+    "adp": 271.0,
     "bye_week": 7.0,
     "projected_points": 59.3
   },
@@ -3416,7 +3416,7 @@
     "position": "RB",
     "team": "CIN",
     "slug": "tahj-brooks",
-    "adp": 234.0,
+    "adp": 232.5,
     "bye_week": 10.0,
     "projected_points": 41.4
   },
@@ -3460,7 +3460,7 @@
     "position": "DEF",
     "team": "WAS",
     "slug": "washington-commanders",
-    "adp": 218.5,
+    "adp": 220.5,
     "bye_week": 12.0,
     "projected_points": 102.3
   },
@@ -3471,7 +3471,7 @@
     "position": "RB",
     "team": "LAR",
     "slug": "blake-corum",
-    "adp": 199.0,
+    "adp": 199.5,
     "bye_week": 8.0,
     "projected_points": 65.5
   },
@@ -3559,7 +3559,7 @@
     "position": "RB",
     "team": "HOU",
     "slug": "woody-marks",
-    "adp": 223.0,
+    "adp": 220.5,
     "bye_week": 6.0,
     "projected_points": 65.0
   },
@@ -3647,7 +3647,7 @@
     "position": "WR",
     "team": "MIN",
     "slug": "tim-jones",
-    "adp": 63.0,
+    "adp": 62.5,
     "bye_week": 6.0,
     "projected_points": 15.1
   },
@@ -3702,7 +3702,7 @@
     "position": "WR",
     "team": "LAR",
     "slug": "tutu-atwell",
-    "adp": 297.0,
+    "adp": 301.5,
     "bye_week": 8.0,
     "projected_points": 84.8
   },
@@ -4010,7 +4010,7 @@
     "position": "RB",
     "team": "CLE",
     "slug": "jerome-ford",
-    "adp": 134.5,
+    "adp": 135.0,
     "bye_week": 9.0,
     "projected_points": 105.1
   },
@@ -4109,7 +4109,7 @@
     "position": "WR",
     "team": "CIN",
     "slug": "andrei-iosivas",
-    "adp": 277.0,
+    "adp": 278.0,
     "bye_week": 10.0,
     "projected_points": 71.8
   },
@@ -4164,7 +4164,7 @@
     "position": "DEF",
     "team": "TB",
     "slug": "tampa-bay-buccaneers",
-    "adp": 239.5,
+    "adp": 241.0,
     "bye_week": 9.0,
     "projected_points": 102.9
   },
@@ -4175,7 +4175,7 @@
     "position": "WR",
     "team": "TEN",
     "slug": "calvin-ridley",
-    "adp": 69.5,
+    "adp": 69.0,
     "bye_week": 10.0,
     "projected_points": 175.3
   },
@@ -4274,7 +4274,7 @@
     "position": "RB",
     "team": "PHI",
     "slug": "will-shipley",
-    "adp": 219.0,
+    "adp": 219.5,
     "bye_week": 9.0,
     "projected_points": 39.4
   },
@@ -4296,7 +4296,7 @@
     "position": "DEF",
     "team": "CLE",
     "slug": "cleveland-browns",
-    "adp": 300.0,
+    "adp": 306.0,
     "bye_week": 9.0,
     "projected_points": 98.8
   },
@@ -4340,7 +4340,7 @@
     "position": "WR",
     "team": "CLE",
     "slug": "diontae-johnson",
-    "adp": 277.0,
+    "adp": 278.0,
     "bye_week": 9.0,
     "projected_points": 90.4
   },
@@ -4384,7 +4384,7 @@
     "position": "QB",
     "team": "NYJ",
     "slug": "justin-fields",
-    "adp": 116.5,
+    "adp": 116.0,
     "bye_week": 9.0,
     "projected_points": 301.1
   },
@@ -4472,7 +4472,7 @@
     "position": "K",
     "team": "MIA",
     "slug": "jason-sanders",
-    "adp": 256.5,
+    "adp": 256.0,
     "bye_week": 12.0,
     "projected_points": 133.4
   },
@@ -4483,7 +4483,7 @@
     "position": "RB",
     "team": "TEN",
     "slug": "tony-pollard",
-    "adp": 69.5,
+    "adp": 69.0,
     "bye_week": 10.0,
     "projected_points": 173.9
   },
@@ -4560,7 +4560,7 @@
     "position": "WR",
     "team": "LV",
     "slug": "tre-tucker",
-    "adp": 272.0,
+    "adp": 269.0,
     "bye_week": 8.0,
     "projected_points": 72.6
   },
@@ -4659,7 +4659,7 @@
     "position": "QB",
     "team": "NYG",
     "slug": "jaxson-dart",
-    "adp": 228.0,
+    "adp": 225.5,
     "bye_week": 14.0,
     "projected_points": 55.4
   },
@@ -4692,7 +4692,7 @@
     "position": "RB",
     "team": "WAS",
     "slug": "jacory-croskey-merritt",
-    "adp": 249.0,
+    "adp": 247.5,
     "bye_week": 12.0,
     "projected_points": 28.2
   },
@@ -4824,7 +4824,7 @@
     "position": "K",
     "team": "MIN",
     "slug": "will-reichard",
-    "adp": 277.0,
+    "adp": 280.0,
     "bye_week": 6.0,
     "projected_points": 124.0
   },
@@ -4956,7 +4956,7 @@
     "position": "TE",
     "team": "PHI",
     "slug": "dallas-goedert",
-    "adp": 137.5,
+    "adp": 137.0,
     "bye_week": 9.0,
     "projected_points": 114.4
   },
@@ -5022,7 +5022,7 @@
     "position": "WR",
     "team": "CAR",
     "slug": "adam-thielen",
-    "adp": 183.5,
+    "adp": 183.0,
     "bye_week": 14.0,
     "projected_points": 119.5
   },
@@ -5099,7 +5099,7 @@
     "position": "TE",
     "team": "LAC",
     "slug": "tyler-conklin",
-    "adp": 256.0,
+    "adp": 257.5,
     "bye_week": 12.0,
     "projected_points": 68.1
   },
@@ -5176,7 +5176,7 @@
     "position": "WR",
     "team": "TEN",
     "slug": "tyler-lockett",
-    "adp": 252.5,
+    "adp": 251.0,
     "bye_week": 10.0,
     "projected_points": 102.0
   },
@@ -5275,7 +5275,7 @@
     "position": "WR",
     "team": "DEN",
     "slug": "marvin-mims",
-    "adp": 136.0,
+    "adp": 135.5,
     "bye_week": 12.0,
     "projected_points": 132.1
   },
@@ -5297,7 +5297,7 @@
     "position": "QB",
     "team": "ATL",
     "slug": "michael-penix",
-    "adp": 162.0,
+    "adp": 161.5,
     "bye_week": 5.0,
     "projected_points": 263.6
   },
@@ -5308,7 +5308,7 @@
     "position": "TE",
     "team": "CIN",
     "slug": "mike-gesicki",
-    "adp": 190.0,
+    "adp": 191.5,
     "bye_week": 10.0,
     "projected_points": 99.1
   },
@@ -5319,7 +5319,7 @@
     "position": "DEF",
     "team": "LAR",
     "slug": "los-angeles-rams",
-    "adp": 242.5,
+    "adp": 242.0,
     "bye_week": 8.0,
     "projected_points": 102.0
   },
@@ -5495,7 +5495,7 @@
     "position": "RB",
     "team": "NO",
     "slug": "devin-neal",
-    "adp": 217.5,
+    "adp": 218.5,
     "bye_week": 11.0,
     "projected_points": 38.9
   },
@@ -5561,7 +5561,7 @@
     "position": "K",
     "team": "PIT",
     "slug": "chris-boswell",
-    "adp": 249.5,
+    "adp": 249.0,
     "bye_week": 5.0,
     "projected_points": 126.0
   },
@@ -5627,7 +5627,7 @@
     "position": "RB",
     "team": "LV",
     "slug": "raheem-mostert",
-    "adp": 251.0,
+    "adp": 252.0,
     "bye_week": 8.0,
     "projected_points": 69.0
   },
@@ -5792,7 +5792,7 @@
     "position": "WR",
     "team": "KC",
     "slug": "xavier-worthy",
-    "adp": 58.5,
+    "adp": 59.0,
     "bye_week": 10.0,
     "projected_points": 180.3
   },
@@ -5880,7 +5880,7 @@
     "position": "WR",
     "team": "TEN",
     "slug": "elic-ayomanor",
-    "adp": 268.0,
+    "adp": 267.0,
     "bye_week": 10.0,
     "projected_points": 61.8
   },
@@ -5968,7 +5968,7 @@
     "position": "QB",
     "team": "DET",
     "slug": "jared-goff",
-    "adp": 98.5,
+    "adp": 98.0,
     "bye_week": 8.0,
     "projected_points": 290.8
   },
@@ -6089,7 +6089,7 @@
     "position": "DEF",
     "team": "GB",
     "slug": "green-bay-packers",
-    "adp": 251.0,
+    "adp": 251.5,
     "bye_week": 5.0,
     "projected_points": 108.6
   },
@@ -6166,7 +6166,7 @@
     "position": "WR",
     "team": "DET",
     "slug": "jameson-williams",
-    "adp": 60.5,
+    "adp": 61.5,
     "bye_week": 8.0,
     "projected_points": 171.8
   },
@@ -6188,7 +6188,7 @@
     "position": "WR",
     "team": "ATL",
     "slug": "darnell-mooney",
-    "adp": 120.5,
+    "adp": 121.0,
     "bye_week": 5.0,
     "projected_points": 142.7
   },
@@ -6309,7 +6309,7 @@
     "position": "WR",
     "team": "LAC",
     "slug": "keenan-allen",
-    "adp": 180.0,
+    "adp": 176.0,
     "bye_week": 12.0,
     "projected_points": 127.8
   },
@@ -6342,7 +6342,7 @@
     "position": "TE",
     "team": "NO",
     "slug": "taysom-hill",
-    "adp": 281.0,
+    "adp": 282.5,
     "bye_week": 11.0,
     "projected_points": 31.0
   },
@@ -6551,7 +6551,7 @@
     "position": "QB",
     "team": "NYG",
     "slug": "russell-wilson",
-    "adp": 203.5,
+    "adp": 202.0,
     "bye_week": 14.0,
     "projected_points": 196.6
   },
@@ -6562,7 +6562,7 @@
     "position": "WR",
     "team": "LV",
     "slug": "donte-thornton",
-    "adp": 260.0,
+    "adp": 258.5,
     "bye_week": 8.0,
     "projected_points": 67.5
   },
@@ -6738,7 +6738,7 @@
     "position": "TE",
     "team": "BUF",
     "slug": "dalton-kincaid",
-    "adp": 128.5,
+    "adp": 128.0,
     "bye_week": 7.0,
     "projected_points": 112.1
   },
@@ -6903,7 +6903,7 @@
     "position": "RB",
     "team": "HOU",
     "slug": "dameon-pierce",
-    "adp": 317.0,
+    "adp": 316.0,
     "bye_week": 6.0,
     "projected_points": 18.3
   },
@@ -6914,7 +6914,7 @@
     "position": "RB",
     "team": "GB",
     "slug": "marshawn-lloyd",
-    "adp": 202.5,
+    "adp": 203.5,
     "bye_week": 5.0,
     "projected_points": 78.9
   },
@@ -6936,7 +6936,7 @@
     "position": "RB",
     "team": "CIN",
     "slug": "samaje-perine",
-    "adp": 290.0,
+    "adp": 288.0,
     "bye_week": 10.0,
     "projected_points": 64.2
   },
@@ -7024,7 +7024,7 @@
     "position": "WR",
     "team": "HOU",
     "slug": "jaylin-noel",
-    "adp": 229.5,
+    "adp": 230.0,
     "bye_week": 6.0,
     "projected_points": 61.2
   },
@@ -7057,7 +7057,7 @@
     "position": "WR",
     "team": "DEN",
     "slug": "pat-bryant",
-    "adp": 224.0,
+    "adp": 223.0,
     "bye_week": 12.0,
     "projected_points": 68.1
   },
@@ -7068,7 +7068,7 @@
     "position": "TE",
     "team": "CHI",
     "slug": "cole-kmet",
-    "adp": 253.0,
+    "adp": 254.5,
     "bye_week": 5.0,
     "projected_points": 56.7
   },
@@ -7090,7 +7090,7 @@
     "position": "WR",
     "team": "GB",
     "slug": "sam-brown",
-    "adp": 151.5,
+    "adp": 153.0,
     "bye_week": 10.0,
     "projected_points": 120.1
   },
@@ -7211,7 +7211,7 @@
     "position": "WR",
     "team": "NE",
     "slug": "stefon-diggs",
-    "adp": 90.0,
+    "adp": 90.5,
     "bye_week": 14.0,
     "projected_points": 155.5
   },
@@ -7222,7 +7222,7 @@
     "position": "RB",
     "team": "PIT",
     "slug": "kenneth-gainwell",
-    "adp": 306.0,
+    "adp": 294.0,
     "bye_week": 5.0,
     "projected_points": 38.9
   },
@@ -7244,7 +7244,7 @@
     "position": "RB",
     "team": "JAX",
     "slug": "travis-etienne",
-    "adp": 89.5,
+    "adp": 89.0,
     "bye_week": 8.0,
     "projected_points": 127.6
   },
@@ -7354,7 +7354,7 @@
     "position": "RB",
     "team": "CHI",
     "slug": "kyle-monangai",
-    "adp": 188.0,
+    "adp": 188.5,
     "bye_week": 5.0,
     "projected_points": 37.2
   },
@@ -7464,7 +7464,7 @@
     "position": "RB",
     "team": "DET",
     "slug": "david-montgomery",
-    "adp": 56.5,
+    "adp": 57.0,
     "bye_week": 8.0,
     "projected_points": 180.2
   },
@@ -7552,7 +7552,7 @@
     "position": "WR",
     "team": "SEA",
     "slug": "tory-horton",
-    "adp": 273.0,
+    "adp": 274.5,
     "bye_week": 8.0,
     "projected_points": 59.4
   },
@@ -7662,7 +7662,7 @@
     "position": "WR",
     "team": "BAL",
     "slug": "rashod-bateman",
-    "adp": 166.5,
+    "adp": 167.0,
     "bye_week": 7.0,
     "projected_points": 125.1
   },
@@ -7761,7 +7761,7 @@
     "position": "WR",
     "team": "HOU",
     "slug": "christian-kirk",
-    "adp": 147.5,
+    "adp": 148.0,
     "bye_week": 6.0,
     "projected_points": 110.0
   },
@@ -7838,7 +7838,7 @@
     "position": "RB",
     "team": "NYG",
     "slug": "cam-skattebo",
-    "adp": 96.5,
+    "adp": 97.5,
     "bye_week": 14.0,
     "projected_points": 117.7
   },
@@ -7915,7 +7915,7 @@
     "position": "RB",
     "team": "JAX",
     "slug": "tank-bigsby",
-    "adp": 119.0,
+    "adp": 118.0,
     "bye_week": 8.0,
     "projected_points": 110.4
   },
@@ -7926,7 +7926,7 @@
     "position": "DEF",
     "team": "DET",
     "slug": "detroit-lions",
-    "adp": 215.5,
+    "adp": 216.0,
     "bye_week": 8.0,
     "projected_points": 104.7
   },
@@ -7937,7 +7937,7 @@
     "position": "RB",
     "team": "HOU",
     "slug": "joe-mixon",
-    "adp": 57.0,
+    "adp": 58.0,
     "bye_week": 6.0,
     "projected_points": 176.9
   },
@@ -8036,7 +8036,7 @@
     "position": "WR",
     "team": "NE",
     "slug": "kyle-williams",
-    "adp": 162.0,
+    "adp": 165.0,
     "bye_week": 14.0,
     "projected_points": 86.6
   },
@@ -8080,7 +8080,7 @@
     "position": "DEF",
     "team": "PHI",
     "slug": "philadelphia-eagles",
-    "adp": 161.0,
+    "adp": 161.5,
     "bye_week": 9.0,
     "projected_points": 115.6
   },
@@ -8091,7 +8091,7 @@
     "position": "WR",
     "team": "GB",
     "slug": "romeo-doubs",
-    "adp": 191.5,
+    "adp": 191.0,
     "bye_week": 5.0,
     "projected_points": 104.5
   },
@@ -8289,7 +8289,7 @@
     "position": "QB",
     "team": "NO",
     "slug": "spencer-rattler",
-    "adp": 222.0,
+    "adp": 219.0,
     "bye_week": 11.0,
     "projected_points": 77.1
   },
@@ -8333,7 +8333,7 @@
     "position": "DEF",
     "team": "SF",
     "slug": "san-francisco-49ers",
-    "adp": 202.0,
+    "adp": 201.5,
     "bye_week": 14.0,
     "projected_points": 103.9
   },
@@ -8366,7 +8366,7 @@
     "position": "WR",
     "team": "CAR",
     "slug": "xavier-legette",
-    "adp": 176.0,
+    "adp": 176.5,
     "bye_week": 14.0,
     "projected_points": 112.8
   },
@@ -8388,7 +8388,7 @@
     "position": "WR",
     "team": "BUF",
     "slug": "keon-coleman",
-    "adp": 125.5,
+    "adp": 126.0,
     "bye_week": 7.0,
     "projected_points": 144.5
   },
@@ -8432,7 +8432,7 @@
     "position": "TE",
     "team": "CIN",
     "slug": "noah-fant",
-    "adp": 284.0,
+    "adp": 285.0,
     "bye_week": 10.0,
     "projected_points": 69.7
   },
@@ -8707,7 +8707,7 @@
     "position": "TE",
     "team": "CAR",
     "slug": "jatavion-sanders",
-    "adp": 237.5,
+    "adp": 233.5,
     "bye_week": 14.0,
     "projected_points": 69.5
   },
@@ -8751,7 +8751,7 @@
     "position": "WR",
     "team": "LAC",
     "slug": "quentin-johnston",
-    "adp": 185.0,
+    "adp": 186.5,
     "bye_week": 12.0,
     "projected_points": 99.8
   },
@@ -8762,7 +8762,7 @@
     "position": "DEF",
     "team": "NYG",
     "slug": "new-york-giants",
-    "adp": 245.0,
+    "adp": 244.5,
     "bye_week": 14.0,
     "projected_points": 108.3
   },
@@ -8828,7 +8828,7 @@
     "position": "WR",
     "team": "IND",
     "slug": "adonai-mitchell",
-    "adp": 268.0,
+    "adp": 266.5,
     "bye_week": 11.0,
     "projected_points": 65.2
   },
@@ -8894,7 +8894,7 @@
     "position": "RB",
     "team": "IND",
     "slug": "dj-giddens",
-    "adp": 205.0,
+    "adp": 204.0,
     "bye_week": 11.0,
     "projected_points": 30.5
   },
@@ -8905,7 +8905,7 @@
     "position": "RB",
     "team": "SF",
     "slug": "jordan-james",
-    "adp": 253.5,
+    "adp": 254.5,
     "bye_week": 14.0,
     "projected_points": 30.1
   },
@@ -9103,7 +9103,7 @@
     "position": "RB",
     "team": "BUF",
     "slug": "ty-johnson",
-    "adp": 298.0,
+    "adp": 287.0,
     "bye_week": 7.0,
     "projected_points": 59.2
   },
@@ -9158,7 +9158,7 @@
     "position": "TE",
     "team": "CLE",
     "slug": "harold-fannin",
-    "adp": 265.0,
+    "adp": 264.5,
     "bye_week": 9.0,
     "projected_points": 41.8
   },
@@ -9191,7 +9191,7 @@
     "position": "TE",
     "team": "PIT",
     "slug": "jonnu-smith",
-    "adp": 111.0,
+    "adp": 111.5,
     "bye_week": 5.0,
     "projected_points": 99.8
   },
@@ -9411,7 +9411,7 @@
     "position": "DEF",
     "team": "CHI",
     "slug": "chicago-bears",
-    "adp": 267.0,
+    "adp": 265.0,
     "bye_week": 5.0,
     "projected_points": 101.4
   },
@@ -9477,7 +9477,7 @@
     "position": "WR",
     "team": "DEN",
     "slug": "devaughn-vele",
-    "adp": 274.0,
+    "adp": 276.0,
     "bye_week": 12.0,
     "projected_points": 52.6
   },
@@ -9488,7 +9488,7 @@
     "position": "K",
     "team": "LAR",
     "slug": "joshua-karty",
-    "adp": 301.0,
+    "adp": 302.0,
     "bye_week": 8.0,
     "projected_points": 124.6
   },
@@ -9532,7 +9532,7 @@
     "position": "WR",
     "team": "ATL",
     "slug": "ray-ray-mccloud",
-    "adp": 238.0,
+    "adp": 240.0,
     "bye_week": 5.0,
     "projected_points": 79.9
   },
@@ -9664,7 +9664,7 @@
     "position": "RB",
     "team": "LAC",
     "slug": "najee-harris",
-    "adp": 102.0,
+    "adp": 103.0,
     "bye_week": 12.0,
     "projected_points": 117.0
   },
@@ -9807,7 +9807,7 @@
     "position": "RB",
     "team": "CHI",
     "slug": "roschon-johnson",
-    "adp": 181.0,
+    "adp": 183.0,
     "bye_week": 5.0,
     "projected_points": 88.2
   },
@@ -9829,7 +9829,7 @@
     "position": "K",
     "team": "HOU",
     "slug": "kaimi-fairbairn",
-    "adp": 215.0,
+    "adp": 214.5,
     "bye_week": 6.0,
     "projected_points": 128.4
   },
@@ -9862,7 +9862,7 @@
     "position": "QB",
     "team": "CHI",
     "slug": "caleb-williams",
-    "adp": 104.5,
+    "adp": 104.0,
     "bye_week": 5.0,
     "projected_points": 287.5
   },
@@ -9950,7 +9950,7 @@
     "position": "RB",
     "team": "LAR",
     "slug": "jarquez-hunter",
-    "adp": 204.5,
+    "adp": 205.0,
     "bye_week": 8.0,
     "projected_points": 48.1
   },
@@ -10049,7 +10049,7 @@
     "position": "RB",
     "team": "GB",
     "slug": "emanuel-wilson",
-    "adp": 312.0,
+    "adp": 311.0,
     "bye_week": 5.0,
     "projected_points": 39.4
   },
@@ -10093,7 +10093,7 @@
     "position": "QB",
     "team": "HOU",
     "slug": "cj-stroud",
-    "adp": 129.0,
+    "adp": 128.5,
     "bye_week": 6.0,
     "projected_points": 279.8
   },
@@ -10280,7 +10280,7 @@
     "position": "K",
     "team": "DET",
     "slug": "jake-bates",
-    "adp": 213.0,
+    "adp": 213.5,
     "bye_week": 8.0,
     "projected_points": 130.0
   },
@@ -10412,7 +10412,7 @@
     "position": "K",
     "team": "LV",
     "slug": "daniel-carlson",
-    "adp": 296.5,
+    "adp": 299.0,
     "bye_week": 8.0,
     "projected_points": 121.3
   },
@@ -10434,7 +10434,7 @@
     "position": "QB",
     "team": "SEA",
     "slug": "jalen-milroe",
-    "adp": 251.5,
+    "adp": 252.5,
     "bye_week": 8.0,
     "projected_points": 26.6
   },
@@ -10445,7 +10445,7 @@
     "position": "TE",
     "team": "MIA",
     "slug": "darren-waller",
-    "adp": 224.0,
+    "adp": 223.5,
     "bye_week": 12.0,
     "projected_points": 104.2
   },
@@ -10467,7 +10467,7 @@
     "position": "WR",
     "team": "BAL",
     "slug": "deandre-hopkins",
-    "adp": 168.5,
+    "adp": 168.0,
     "bye_week": 7.0,
     "projected_points": 80.9
   },
@@ -10533,7 +10533,7 @@
     "position": "TE",
     "team": "TEN",
     "slug": "chig-okonkwo",
-    "adp": 199.5,
+    "adp": 195.0,
     "bye_week": 10.0,
     "projected_points": 91.7
   },
@@ -10544,7 +10544,7 @@
     "position": "RB",
     "team": "DAL",
     "slug": "miles-sanders",
-    "adp": 212.5,
+    "adp": 215.0,
     "bye_week": 10.0,
     "projected_points": 70.5
   },
@@ -10555,7 +10555,7 @@
     "position": "WR",
     "team": "LAC",
     "slug": "keandre-lambert-smith",
-    "adp": 292.0,
+    "adp": 295.0,
     "bye_week": 12.0,
     "projected_points": 14.4
   },
@@ -10709,7 +10709,7 @@
     "position": "RB",
     "team": "SEA",
     "slug": "zach-charbonnet",
-    "adp": 103.0,
+    "adp": 103.5,
     "bye_week": 8.0,
     "projected_points": 123.5
   },
@@ -10907,7 +10907,7 @@
     "position": "TE",
     "team": "HOU",
     "slug": "dalton-schultz",
-    "adp": 206.5,
+    "adp": 207.0,
     "bye_week": 6.0,
     "projected_points": 94.5
   },
@@ -11017,7 +11017,7 @@
     "position": "TE",
     "team": "CLE",
     "slug": "david-njoku",
-    "adp": 103.5,
+    "adp": 104.0,
     "bye_week": 9.0,
     "projected_points": 139.4
   },
@@ -11050,7 +11050,7 @@
     "position": "QB",
     "team": "ARI",
     "slug": "kyler-murray",
-    "adp": 92.0,
+    "adp": 91.0,
     "bye_week": 8.0,
     "projected_points": 319.1
   },
@@ -11149,7 +11149,7 @@
     "position": "TE",
     "team": "NO",
     "slug": "juwan-johnson",
-    "adp": 241.5,
+    "adp": 242.0,
     "bye_week": 11.0,
     "projected_points": 94.0
   },
@@ -11182,7 +11182,7 @@
     "position": "WR",
     "team": "CIN",
     "slug": "jermaine-burton",
-    "adp": 276.0,
+    "adp": 278.0,
     "bye_week": 10.0,
     "projected_points": 44.8
   },
@@ -11193,7 +11193,7 @@
     "position": "RB",
     "team": "DAL",
     "slug": "phil-mafah",
-    "adp": 318.0,
+    "adp": 319.0,
     "bye_week": 10.0,
     "projected_points": 1.7
   },
@@ -11270,7 +11270,7 @@
     "position": "DEF",
     "team": "KC",
     "slug": "kansas-city-chiefs",
-    "adp": 212.0,
+    "adp": 212.5,
     "bye_week": 10.0,
     "projected_points": 102.8
   },
@@ -11380,7 +11380,7 @@
     "position": "QB",
     "team": "NE",
     "slug": "drake-maye",
-    "adp": 127.5,
+    "adp": 127.0,
     "bye_week": 14.0,
     "projected_points": 274.1
   },
@@ -11402,7 +11402,7 @@
     "position": "RB",
     "team": "PHI",
     "slug": "aj-dillon",
-    "adp": 236.0,
+    "adp": 235.0,
     "bye_week": 9.0,
     "projected_points": 39.1
   },
@@ -11457,7 +11457,7 @@
     "position": "RB",
     "team": "DAL",
     "slug": "javonte-williams",
-    "adp": 98.5,
+    "adp": 99.5,
     "bye_week": 10.0,
     "projected_points": 138.5
   },
@@ -11558,7 +11558,7 @@
     "slug": "kenny-mcintosh",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": 10.9
+    "projected_points": NaN
   },
   {
     "player_id": "12505",
@@ -11567,7 +11567,7 @@
     "position": "WR",
     "team": "KC",
     "slug": "jalen-royals",
-    "adp": 227.5,
+    "adp": 226.0,
     "bye_week": 10.0,
     "projected_points": 34.8
   },

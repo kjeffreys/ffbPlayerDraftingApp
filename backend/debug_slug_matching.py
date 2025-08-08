@@ -1,7 +1,6 @@
 import pandas as pd
 from thefuzz import process
 import sys
-import os
 
 from .data_sources import historical
 from .storage.file_store import load_json

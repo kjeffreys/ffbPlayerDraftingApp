@@ -1,30 +1,42 @@
 {
-    "player_slugs": [
+    "large_boost_slugs": [
         "ashton-jeanty",
         "tetairoa-mcmillan",
-        "cam-skattebo",
+        "devon-achane",
+        "christian-mccaffrey"
+    ],
+    "medium_boost_slugs": [
+        "tetairoa-mcmillan",
+        "matthew-golden",
         "omarion-hampton",
         "travis-hunter",
-        "colston-loveland",
-        "rj-harvey",
-        "trey-benson",
         "matthew-golden",
-        "jayden-higgins",
         "dandre-swift",
-        "devon-achane",
-        "christian-mccaffrey",
         "jaydon-blue",
         "tank-bigsby",
-        "drake-maye",
-        "trevor-lawrence",
         "ceedee-lamb",
         "xavier-worthy",
-        "garrett-wilson",
         "deebo-samuel",
         "rashee-rice",
         "cooper-kupp",
-        "emeka-egbuka",
         "luther-burden",
-        "keon-coleman"
+        "treveyon-henderson",
+        "stefon-diggs",
+        "emeka-egbuka"
+    ],
+    "small_boost_slugs": [
+        "jerry-jeudy",
+        "cam-skattebo",
+        "coston-loveland",
+        "rj-harvey",
+        "trey-benson",
+        "jayden-higgins",
+        "drake-maye",
+        "trevor-lawrence",
+        "garrett-wilson",
+        "keon-coleman",
+        "dj-moore",
+        "patrick-mahomes",
+        "cam-ward"
     ]
 }

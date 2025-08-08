@@ -33,10 +33,13 @@ class LeagueConfig(BaseModel):
     scoring: str
     week: int
     games_divisor: int
-    player_boost: float
+    boost_small: float
+    boost_medium: float
+    boost_large: float
     top_game_count: int
     weight_projection: float
     weight_last_year: float
+    positional_penalties: dict[str, float]
 
 
 def _load_league_config(path: Path) -> LeagueConfig:

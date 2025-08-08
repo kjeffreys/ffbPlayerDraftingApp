@@ -68,5 +68,5 @@ if __name__ == "__main__":
         diagnose_position_url(pos, SCORING)
         # Add a polite delay between requests to avoid being blocked.
         if pos != POSITIONS[-1]:
-            logging.info(f"Waiting 1 second before fetching next position...")
+            logging.info("Waiting 1 second before fetching next position...")
             time.sleep(1)

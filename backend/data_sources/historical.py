@@ -5,12 +5,9 @@ import time
 import pandas as pd
 import requests
 import re
-import datetime
 
 from backend.logging_config import log
 from backend.utils import slugify
-from backend.storage.file_store import save_json
-from backend.settings import settings
 
 BASE_URL = "https://www.fantasypros.com/nfl/stats/{pos}.php?week={week}&scoring=HALF&range=week"
 POSITIONS = ["qb", "rb", "wr", "te", "k", "dst"]

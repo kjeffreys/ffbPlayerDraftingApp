@@ -1,6 +1,5 @@
 # diagnose_stats.py
 import pandas as pd
-import numpy as np
 import datetime
 
 # This script needs to import functions from the project
