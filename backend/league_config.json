@@ -15,7 +15,7 @@
     "boost_small": 0.08,
     "boost_medium": 0.15,
     "boost_large": 0.20,
-    "boost_max": 1.80,
+    "boost_max": 1.75,
     "top_game_count": 6,
     "weight_projection": 0.50,
     "weight_last_year": 0.50,
