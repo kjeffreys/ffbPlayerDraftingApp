@@ -36,6 +36,7 @@ class LeagueConfig(BaseModel):
     boost_small: float
     boost_medium: float
     boost_large: float
+    boost_broken: float
     top_game_count: int
     weight_projection: float
     weight_last_year: float

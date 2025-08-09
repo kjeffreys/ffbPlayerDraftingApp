@@ -75,6 +75,7 @@ def run_stats(date_str: str | None = None):
 
             # Define the tiers, mapping config keys to JSON keys
             tiers = {
+                "broken": (cfg.boost_broken, "broken_boost_slugs"),
                 "large": (cfg.boost_large, "large_boost_slugs"),
                 "medium": (cfg.boost_medium, "medium_boost_slugs"),
                 "small": (cfg.boost_small, "small_boost_slugs"),
