@@ -8610,7 +8610,7 @@
     "slug": "donald-parham",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": 0.0
+    "projected_points": NaN
   },
   {
     "player_id": "11815",
@@ -9735,6 +9735,17 @@
     "projected_points": NaN
   },
   {
+    "player_id": "11924",
+    "first_name": "Tanner",
+    "last_name": "Mordecai",
+    "position": "QB",
+    "team": "SF",
+    "slug": "tanner-mordecai",
+    "adp": NaN,
+    "bye_week": NaN,
+    "projected_points": NaN
+  },
+  {
     "player_id": "2020",
     "first_name": "Cairo",
     "last_name": "Santos",
@@ -9755,6 +9766,17 @@
     "adp": 240.5,
     "bye_week": 7.0,
     "projected_points": 132.2
+  },
+  {
+    "player_id": "8800",
+    "first_name": "Malik",
+    "last_name": "Davis",
+    "position": "RB",
+    "team": "DAL",
+    "slug": "malik-davis",
+    "adp": NaN,
+    "bye_week": NaN,
+    "projected_points": NaN
   },
   {
     "player_id": "12803",
@@ -11558,7 +11580,18 @@
     "slug": "kenny-mcintosh",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": 10.9
+    "projected_points": NaN
+  },
+  {
+    "player_id": "12859",
+    "first_name": "Nate",
+    "last_name": "Noel",
+    "position": "RB",
+    "team": "IND",
+    "slug": "nate-noel",
+    "adp": NaN,
+    "bye_week": NaN,
+    "projected_points": NaN
   },
   {
     "player_id": "12505",

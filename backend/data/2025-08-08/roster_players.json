@@ -7080,6 +7080,14 @@
     "fantasy_data_tms_bye_week": null
   },
   {
+    "player_id": "11924",
+    "first_name": "Tanner",
+    "last_name": "Mordecai",
+    "position": "QB",
+    "team": "SF",
+    "fantasy_data_tms_bye_week": null
+  },
+  {
     "player_id": "2020",
     "first_name": "Cairo",
     "last_name": "Santos",
@@ -7093,6 +7101,14 @@
     "last_name": "Bass",
     "position": "K",
     "team": "BUF",
+    "fantasy_data_tms_bye_week": null
+  },
+  {
+    "player_id": "8800",
+    "first_name": "Malik",
+    "last_name": "Davis",
+    "position": "RB",
+    "team": "DAL",
     "fantasy_data_tms_bye_week": null
   },
   {
@@ -8405,6 +8421,14 @@
     "last_name": "McIntosh",
     "position": "RB",
     "team": "SEA",
+    "fantasy_data_tms_bye_week": null
+  },
+  {
+    "player_id": "12859",
+    "first_name": "Nate",
+    "last_name": "Noel",
+    "position": "RB",
+    "team": "IND",
     "fantasy_data_tms_bye_week": null
   },
   {

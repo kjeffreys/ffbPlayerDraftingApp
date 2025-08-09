@@ -75,7 +75,7 @@ def run_stats(date_str: str | None = None):
 
             # Define the tiers, mapping config keys to JSON keys
             tiers = {
-                "broken": (cfg.boost_broken, "broken_boost_slugs"),
+                "max": (cfg.boost_max, "max_boost_slugs"),
                 "large": (cfg.boost_large, "large_boost_slugs"),
                 "medium": (cfg.boost_medium, "medium_boost_slugs"),
                 "small": (cfg.boost_small, "small_boost_slugs"),
@@ -106,6 +106,9 @@ def run_stats(date_str: str | None = None):
         )
         log.info(
             f"Final check before saving. Data for Ashton Jeanty:\n{df[df['slug'] == 'ashton-jeanty'][['slug', 'top_n_avg', 'scaled_hist', 'scaled_proj', 'expected_ppg']].to_string()}"
+        )
+        log.info(
+            f"Final check before saving. Data for Christian McCaffrey:\n{df[df['slug'] == 'christian-mccaffrey'][['slug', 'top_n_avg', 'scaled_hist', 'scaled_proj', 'expected_ppg']].to_string()}"
         )
 
         save_json(output_path, df.to_dict(orient="records"))
