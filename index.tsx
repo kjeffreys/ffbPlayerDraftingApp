@@ -133,44 +133,44 @@ const PlayerCard: React.FC<{
     isDanger: boolean;
     isSteal: boolean;
 }> = ({ player, onDraft, isDanger, isSteal }) =>
-{
-    const { name, team, position, bye, adp, vor, ppg } = player;
+    {
+        const { name, team, position, bye, adp, vor, ppg } = player;
 
-    return (
-        <div style={{
-            display: 'flex', alignItems: 'center', background: 'var(--color-surface)',
-            padding: 16, borderRadius: 8, borderLeft: `5px solid ${getPositionColor(position)}`, gap: 16
-        }}>
+        return (
             <div style={{
-                flex: 1, display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit,minmax(100px,1fr))', gap: 16
+                display: 'flex', alignItems: 'center', background: 'var(--color-surface)',
+                padding: 16, borderRadius: 8, borderLeft: `5px solid ${getPositionColor(position)}`, gap: 16
             }}>
-                <div>
-                    <div style={{ fontWeight: 600, fontSize: '1.1rem' }}>{name}</div>
-                    <div style={{ color: 'var(--color-text-secondary)', fontSize: 14 }}>
-                        {team} · {position} · Bye {bye}
-                    </div>
-                </div>
-                <div>
-                    <div style={{ color: 'var(--color-text-secondary)' }}>ADP</div><div>{adp}</div>
-                </div>
-                <div>
-                    <div style={{ color: 'var(--color-text-secondary)' }}>PPG</div><div>{ppg.toFixed(2)}</div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                <div style={{
+                    flex: 1, display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit,minmax(100px,1fr))', gap: 16
+                }}>
                     <div>
-                        <div style={{ color: 'var(--color-text-secondary)' }}>VOR</div><div>{vor.toFixed(2)}</div>
+                        <div style={{ fontWeight: 600, fontSize: '1.1rem' }}>{name}</div>
+                        <div style={{ color: 'var(--color-text-secondary)', fontSize: 14 }}>
+                            {team} · {position} · Bye {bye}
+                        </div>
                     </div>
-                    {isDanger && <span style={{ fontSize: '1.25rem', color: 'var(--color-danger)' }} title={`VOR drop-off > ${VOR_THRESHOLD}`}>🔥</span>}
-                    {isSteal && <span style={{ fontSize: '1.25rem' }} title='Steal vs ADP'>💰</span>}
+                    <div>
+                        <div style={{ color: 'var(--color-text-secondary)' }}>ADP</div><div>{adp}</div>
+                    </div>
+                    <div>
+                        <div style={{ color: 'var(--color-text-secondary)' }}>PPG</div><div>{ppg.toFixed(2)}</div>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                        <div>
+                            <div style={{ color: 'var(--color-text-secondary)' }}>VOR</div><div>{vor.toFixed(2)}</div>
+                        </div>
+                        {isDanger && <span style={{ fontSize: '1.25rem', color: 'var(--color-danger)' }} title={`VOR drop-off > ${VOR_THRESHOLD}`}>🔥</span>}
+                        {isSteal && <span style={{ fontSize: '1.25rem' }} title='Steal vs ADP'>💰</span>}
+                    </div>
                 </div>
-            </div>
 
-            <button style={{ background: 'var(--color-accent)', color: 'var(--color-text-primary)' }}
-                onClick={() => onDraft(player.id)}>Draft</button>
-        </div>
-    );
-};
+                <button style={{ background: 'var(--color-accent)', color: 'var(--color-text-primary)' }}
+                    onClick={() => onDraft(player.id)}>Draft</button>
+            </div>
+        );
+    };
 
 /* ────────────────────
    BYE WEEK VIEW
@@ -236,7 +236,10 @@ const App: React.FC = () =>
 
     /* Helpers */
     const onDraft = (id: number) =>
+    {
         setDraftedBy(prev => ({ ...prev, [id]: pickingFor }));
+        if (pickingFor === 'me') setPickingFor('other'); // auto-swap only after my pick
+    };
 
     const resetDraft = () =>
     {
