@@ -2,9 +2,9 @@
     "teams": 12,
     "roster": {
         "QB": 1,
-        "RB": 3,
-        "WR": 3,
-        "TE": 1,
+        "RB": 4,
+        "WR": 4,
+        "TE": 2,
         "FLEX": 0,
         "K": 1,
         "DEF": 1
@@ -12,8 +12,8 @@
     "scoring": "HALF",
     "week": 1,
     "games_divisor": 17,
-    "boost_small": 0.02,
-    "boost_medium": 0.05,
+    "boost_small": 0.05,
+    "boost_medium": 0.07,
     "boost_large": 0.10,
     "boost_max": 1.39,
     "top_game_count": 6,
