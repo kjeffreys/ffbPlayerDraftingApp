@@ -3,7 +3,8 @@
         "christian-mccaffrey"
     ],
     "large_boost_slugs": [
-        "jamarr-chase"
+        "jamarr-chase",
+        "justin-herbert"
     ],
     "medium_boost_slugs": [
         "ceedee-lamb",
@@ -13,34 +14,48 @@
         "drake-maye",
         "emeka-egbuka",
         "jahymr-gibbs",
+        "jalen-hurts",
+        "jarquez-hunter",
+        "joe-burrow",
+        "josh-allen",
+        "justin-fields",
         "luther-burden",
         "matthew-golden",
         "omarion-hampton",
         "rashee-rice",
+        "ricky-pearsall",
         "rj-harvey",
         "stefon-diggs",
         "tetairoa-mcmillan",
         "treveyon-henderson",
-        "trevor-lawrence",
-        "tyreek-hill",
+        "travis-hunter",
         "xavier-worthy"
     ],
     "small_boost_slugs": [
         "ashton-jeanty",
         "braelon-allen",
+        "baker-mayfield",
         "cam-skattebo",
+        "dak-prescott",
         "deebo-samuel",
         "colston-loveland",
         "cooper-kupp",
+        "dalton-kincaid",
         "dj-moore",
         "garrett-wilson",
+        "jayden-daniels",
         "jayden-higgins",
         "jaydon-blue",
         "jerry-jeudy",
+        "joe-flacco",
         "keon-coleman",
+        "kyle-pitts",
+        "kyler-murray",
+        "lamar-jackson",
         "patrick-mahomes",
         "tank-bigsby",
-        "travis-hunter",
-        "trey-benson"
+        "trevor-lawrence",
+        "trey-benson",
+        "tyreek-hill"
     ]
 }

@@ -37,7 +37,19 @@ async function fetchPlayers(): Promise<Player[]>
 ────────────────────── */
 const POSITIONS: Player['position'][] = ['QB', 'RB', 'WR', 'TE', 'K', 'DEF'];
 const getPositionColor = (pos: Player['position']) => `var(--pos-${pos.toLowerCase()})`;
-const VOR_THRESHOLD = 10;
+
+/** Centralized metrics/config */
+const METRICS = {
+    stealDiscountPicks: 20,  // 💰 shows when currentPick - ADP >= 20
+    windowPicks: 30,         // 🔥 lookahead horizon
+    superiorityPct: 0.05,    // 🔥 must beat next-best position by ≥ 5%
+    includeKAndDef: true,    // 🔥 include K/DEF in cross-position comparison
+    topKPositions: 3,        // 🔥 flag up to 3 positions if each clearly leads
+    minAbsDrop: 1.0,         // 🔥 require at least this absolute VOR drop
+};
+
+const CONSIDERED_POSITIONS: Player['position'][] =
+    METRICS.includeKAndDef ? POSITIONS : (['QB', 'RB', 'WR', 'TE'] as const);
 
 /* ────────────────────
    HEADER
@@ -131,46 +143,58 @@ const PlayerCard: React.FC<{
     player: Player;
     onDraft: (id: number) => void;
     isDanger: boolean;
+    dangerDrop?: number | null;
     isSteal: boolean;
-}> = ({ player, onDraft, isDanger, isSteal }) =>
-    {
-        const { name, team, position, bye, adp, vor, ppg } = player;
+}> = ({ player, onDraft, isDanger, dangerDrop, isSteal }) =>
+{
+    const { name, team, position, bye, adp, vor, ppg } = player;
 
-        return (
+    return (
+        <div style={{
+            display: 'flex', alignItems: 'center', background: 'var(--color-surface)',
+            padding: 16, borderRadius: 8, borderLeft: `5px solid ${getPositionColor(position)}`, gap: 16
+        }}>
             <div style={{
-                display: 'flex', alignItems: 'center', background: 'var(--color-surface)',
-                padding: 16, borderRadius: 8, borderLeft: `5px solid ${getPositionColor(position)}`, gap: 16
+                flex: 1, display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit,minmax(100px,1fr))', gap: 16
             }}>
-                <div style={{
-                    flex: 1, display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit,minmax(100px,1fr))', gap: 16
-                }}>
-                    <div>
-                        <div style={{ fontWeight: 600, fontSize: '1.1rem' }}>{name}</div>
-                        <div style={{ color: 'var(--color-text-secondary)', fontSize: 14 }}>
-                            {team} · {position} · Bye {bye}
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{ color: 'var(--color-text-secondary)' }}>ADP</div><div>{adp}</div>
-                    </div>
-                    <div>
-                        <div style={{ color: 'var(--color-text-secondary)' }}>PPG</div><div>{ppg.toFixed(2)}</div>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                        <div>
-                            <div style={{ color: 'var(--color-text-secondary)' }}>VOR</div><div>{vor.toFixed(2)}</div>
-                        </div>
-                        {isDanger && <span style={{ fontSize: '1.25rem', color: 'var(--color-danger)' }} title={`VOR drop-off > ${VOR_THRESHOLD}`}>🔥</span>}
-                        {isSteal && <span style={{ fontSize: '1.25rem' }} title='Steal vs ADP'>💰</span>}
+                <div>
+                    <div style={{ fontWeight: 600, fontSize: '1.1rem' }}>{name}</div>
+                    <div style={{ color: 'var(--color-text-secondary)', fontSize: 14 }}>
+                        {team} · {position} · Bye {bye}
                     </div>
                 </div>
-
-                <button style={{ background: 'var(--color-accent)', color: 'var(--color-text-primary)' }}
-                    onClick={() => onDraft(player.id)}>Draft</button>
+                <div>
+                    <div style={{ color: 'var(--color-text-secondary)' }}>ADP</div><div>{adp}</div>
+                </div>
+                <div>
+                    <div style={{ color: 'var(--color-text-secondary)' }}>PPG</div><div>{ppg.toFixed(2)}</div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <div>
+                        <div style={{ color: 'var(--color-text-secondary)' }}>VOR</div><div>{vor.toFixed(2)}</div>
+                    </div>
+                    {isDanger && (
+                        <span
+                            style={{ fontSize: '1.25rem', color: 'var(--color-danger)' }}
+                            title={
+                                `Cross-position tier risk: ${position}. ` +
+                                `If you wait ~${METRICS.windowPicks} picks, est. VOR drop ≈ ${dangerDrop?.toFixed(2) ?? '—'} ` +
+                                `(must beat others by ≥ ${(METRICS.superiorityPct * 100).toFixed(0)}%).`
+                            }
+                        >
+                            🔥
+                        </span>
+                    )}
+                    {isSteal && <span style={{ fontSize: '1.25rem' }} title={`Steal vs ADP (≥ ${METRICS.stealDiscountPicks} picks)`}>💰</span>}
+                </div>
             </div>
-        );
-    };
+
+            <button style={{ background: 'var(--color-accent)', color: 'var(--color-text-primary)' }}
+                onClick={() => onDraft(player.id)}>Draft</button>
+        </div>
+    );
+};
 
 /* ────────────────────
    BYE WEEK VIEW
@@ -216,7 +240,7 @@ const ByeWeekView: React.FC<{ byeCounts: ByeWeekCounts }> = ({ byeCounts }) =>
 const App: React.FC = () =>
 {
     const [allPlayers, setAllPlayers] = useState<Player[]>([]);
-    // NEW: who drafted each player
+    // who drafted each player
     const [draftedBy, setDraftedBy] = useState<Record<number, Owner>>({});
     const [pickingFor, setPickingFor] = useState<Owner>('me');
 
@@ -255,29 +279,76 @@ const App: React.FC = () =>
         [allPlayers, draftedBy]
     );
 
-    /* Build per-position VOR danger map */
-    const dangerMap = useMemo(() =>
+    /* Cross-position VOR danger map (windowed lookahead) */
+    const { dangerMap, dropMap } = useMemo(() =>
     {
         const map = new Map<number, boolean>();
-        const VOR_DANGER_THRESHOLD = 2.0;
+        const drops = new Map<number, number>(); // for tooltip
 
-        POSITIONS.forEach(pos =>
+        if (!available.length) return { dangerMap: map, dropMap: drops };
+
+        const cutoff = currentPick + METRICS.windowPicks;
+
+        type PosStat = { pos: Player['position']; bestNowId: number; drop: number };
+        const posStats: PosStat[] = [];
+
+        CONSIDERED_POSITIONS.forEach(pos =>
         {
-            const list = available
-                .filter(p => p.position === pos)
-                .sort((a, b) => b.vor - a.vor);
+            const pool = available.filter(p => p.position === pos);
+            if (!pool.length) return;
 
-            for (let i = 0; i < list.length - 1; i++)
-            {
-                if (list[i].vor - list[i + 1].vor > VOR_DANGER_THRESHOLD)
-                {
-                    map.set(list[i].id, true);
-                }
-            }
+            // Best now by VOR
+            const bestNow = pool.reduce((a, b) => (a.vor >= b.vor ? a : b));
+            const bestNowVor = bestNow.vor;
+
+            // Best later (after window) by VOR
+            const laterPool = pool.filter(p => p.adp > cutoff);
+            const bestLaterVor = laterPool.length
+                ? laterPool.reduce((a, b) => (a.vor >= b.vor ? a : b)).vor
+                : 0;
+
+            const drop = Math.max(0, bestNowVor - bestLaterVor);
+            posStats.push({ pos, bestNowId: bestNow.id, drop });
         });
 
-        return map;
-    }, [available]);
+        if (!posStats.length) return { dangerMap: map, dropMap: drops };
+
+        // Sort positions by drop desc
+        posStats.sort((a, b) => b.drop - a.drop);
+
+        // Iteratively pick up to K positions where each is ≥ 5% greater than next-best and ≥ minAbsDrop
+        const picked: PosStat[] = [];
+        let pool = [...posStats];
+
+        while (picked.length < METRICS.topKPositions && pool.length > 0)
+        {
+            const [candidate, ...rest] = pool;
+            const restMax = rest.length ? Math.max(...rest.map(r => r.drop)) : 0;
+
+            const meetsRelative = rest.length === 0
+                ? candidate.drop >= METRICS.minAbsDrop // if it's the only one left, just check absolute
+                : candidate.drop >= (1 + METRICS.superiorityPct) * restMax;
+
+            const meetsAbsolute = candidate.drop >= METRICS.minAbsDrop;
+
+            if (meetsRelative && meetsAbsolute)
+            {
+                picked.push(candidate);
+                pool = rest;
+            } else
+            {
+                break;
+            }
+        }
+
+        picked.forEach(p =>
+        {
+            map.set(p.bestNowId, true);
+            drops.set(p.bestNowId, p.drop);
+        });
+
+        return { dangerMap: map, dropMap: drops };
+    }, [available, currentPick]);
 
     /* Filter + sort for UI */
     const visiblePlayers = useMemo(() =>
@@ -328,7 +399,8 @@ const App: React.FC = () =>
                             player={p}
                             onDraft={onDraft}
                             isDanger={!!dangerMap.get(p.id)}
-                            isSteal={currentPick - p.adp >= 20}
+                            dangerDrop={dropMap.get(p.id) ?? null}
+                            isSteal={currentPick - p.adp >= METRICS.stealDiscountPicks}
                         />
                     ))}
                 </main>
