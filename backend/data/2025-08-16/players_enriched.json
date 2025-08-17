@@ -393,7 +393,7 @@
     "slug": "ameer-abdullah",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": NaN
+    "projected_points": 2.3
   },
   {
     "player_id": "5854",
@@ -2824,7 +2824,7 @@
     "slug": "will-levis",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": 0.0
+    "projected_points": NaN
   },
   {
     "player_id": "12509",
@@ -3231,7 +3231,7 @@
     "slug": "alexander-mattison",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": NaN
+    "projected_points": 0.0
   },
   {
     "player_id": "8135",
@@ -3636,8 +3636,8 @@
     "position": "WR",
     "team": "MIN",
     "slug": "tim-jones",
-    "adp": 63.5,
-    "bye_week": 6.0,
+    "adp": NaN,
+    "bye_week": NaN,
     "projected_points": 22.5
   },
   {
@@ -6498,7 +6498,7 @@
     "slug": "lan-larison",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": NaN
+    "projected_points": 2.5
   },
   {
     "player_id": "8423",
@@ -7312,7 +7312,7 @@
     "slug": "donovan-peoples-jones",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": 181.3
+    "projected_points": NaN
   },
   {
     "player_id": "12984",
@@ -7783,9 +7783,9 @@
     "position": "RB",
     "team": "MIN",
     "slug": "aaron-jones",
-    "adp": NaN,
-    "bye_week": NaN,
-    "projected_points": NaN
+    "adp": 63.5,
+    "bye_week": 6.0,
+    "projected_points": 181.3
   },
   {
     "player_id": "4950",
@@ -11624,7 +11624,7 @@
     "slug": "kenny-mcintosh",
     "adp": NaN,
     "bye_week": NaN,
-    "projected_points": NaN
+    "projected_points": 10.9
   },
   {
     "player_id": "12859",

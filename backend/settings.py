@@ -1,10 +1,15 @@
-# Path: ffbPlayerDraftingApp/backend/settings.py (FINAL)
+# Path: ffbPlayerDraftingApp/backend/settings.py (FIXED)
 
 import json
 from pathlib import Path
 
 from pydantic import BaseModel, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+# --- FIX: Import the log object ---
+from backend.logging_config import log
+
+# ------------------------------------
 
 # --- Define robust directory constants ---
 _BASE_DIR = Path(__file__).resolve().parent  # .../backend
@@ -46,6 +51,8 @@ class LeagueConfig(BaseModel):
 
 def _load_league_config(path: Path) -> LeagueConfig:
     """Loads and parses the league configuration JSON file."""
+    # --- This line will now work correctly ---
+    log.info(f"CRITICAL DIAGNOSTIC: Loading league configuration from: {path}")
     with open(path, "r", encoding="utf-8") as f:
         config_data = json.load(f)
     return LeagueConfig(**config_data)
@@ -65,7 +72,6 @@ class Settings(BaseSettings):
 
     # API URLs
     SLEEPER_API_URL: str = "https://api.sleeper.app/v1/players/nfl"
-    # This URL is now superseded by the dynamic URL in fantasypros.py, but can remain as a fallback/example.
     FANTASYPROS_ADP_URL: str = "https://www.fantasypros.com/nfl/adp/ppr-overall.php"
 
     # Secrets loaded from the environment

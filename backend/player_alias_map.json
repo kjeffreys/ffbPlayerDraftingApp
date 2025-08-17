@@ -1,12 +1,13 @@
 {
-    "aaron-jones": "aaron-jones-sr-min",
-    "michael-pittman-jr": "michael-pittman-jr-ind",
-    "albert-okwuegbunam": "albert-okwuegbunam-jr-lv",
-    "brian-robinson": "brian-robinson-jr-was",
-    "patrick-mahomes": "patrick-mahomes-ii-kc",
-    "dj-chark": "dj-chark-jr-atl",
-    "jeff-wilson": "jeff-wilson-jr-fa",
-    "gardner-minshew": "gardner-minshew-ii-fa",
-    "laviska-shenault": "laviska-shenault-jr-fa",
-    "dee-eskridge": "dwayne-eskridge-jr-sea"
+    "aaron-jones-sr": "aaron-jones",
+    "aaron-jones-sr-min": "aaron-jones",
+    "michael-pittman-jr-ind": "michael-pittman-jr",
+    "albert-okwuegbunam-jr-lv": "albert-okwuegbunam",
+    "brian-robinson-jr-was": "brian-robinson",
+    "patrick-mahomes-ii-kc": "patrick-mahomes",
+    "dj-chark-jr-atl": "dj-chark",
+    "jeff-wilson-jr-fa": "jeff-wilson",
+    "gardner-minshew-ii-fa": "gardner-minshew",
+    "laviska-shenault-jr-fa": "laviska-shenault",
+    "dwayne-eskridge-jr-sea": "dee-eskridge"
 }
