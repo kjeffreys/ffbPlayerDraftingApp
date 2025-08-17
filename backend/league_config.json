@@ -1,10 +1,10 @@
 {
-    "teams": 18,
+    "teams": 12,
     "roster": {
         "QB": 1,
         "RB": 4,
         "WR": 4,
-        "TE": 2,
+        "TE": 1,
         "FLEX": 0,
         "K": 1,
         "DEF": 1
@@ -21,7 +21,7 @@
     "weight_last_year": 0.50,
     "min_historical_score": 5.0,
     "positional_penalties": {
-        "DEF": 0.5,
-        "K": 0.5
+        "DEF": 0.3,
+        "K": 0.3
     }
 }

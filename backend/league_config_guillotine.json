@@ -16,14 +16,12 @@
     "boost_medium": 0.10,
     "boost_large": 0.12,
     "boost_max": 1.39,
-    "top_game_count": 6,
+    "top_game_count": 10,
     "weight_projection": 0.50,
     "weight_last_year": 0.50,
     "min_historical_score": 5.0,
     "positional_penalties": {
-        "DEF": 0.5,
-        "K": 0.5,
-        "TE": 0.98,
-        "RB": 0.99
+        "DEF": 0.3,
+        "K": 0.3
     }
 }
