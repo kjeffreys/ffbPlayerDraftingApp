@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 
 /* ────────────────────
@@ -40,7 +40,7 @@ const getPositionColor = (pos: Player['position']) => `var(--pos-${pos.toLowerCa
 
 /** Centralized metrics/config */
 const METRICS = {
-    stealDiscountPicks: 20,  // 💰 shows when currentPick - ADP >= 20
+    stealDiscountPicks: 20,  // 💰 shows when currentPick - ADP ≥ 20
     windowPicks: 30,         // 🔥 lookahead horizon
     superiorityPct: 0.05,    // 🔥 must beat next-best position by ≥ 5%
     includeKAndDef: true,    // 🔥 include K/DEF in cross-position comparison
@@ -61,13 +61,18 @@ const Header: React.FC<{
     resetDraft: () => void;
     currentPick: number;
     pickingFor: Owner; setPickingFor: (o: Owner) => void;
+
+    // Search
+    searchQuery: string; setSearchQuery: (v: string) => void;
+    onSearchEnter: () => void; // draft first visible match
 }> = ({
     sortBy, setSortBy,
     filterBy, setFilterBy,
     view, setView,
     resetDraft,
     currentPick,
-    pickingFor, setPickingFor
+    pickingFor, setPickingFor,
+    searchQuery, setSearchQuery, onSearchEnter
 }) =>
     {
         const filters: FilterByType[] = ['ALL', 'FLEX', ...POSITIONS];
@@ -76,8 +81,36 @@ const Header: React.FC<{
             color: 'var(--color-text-primary)',
         });
 
+        // Keyboard: "/" to focus search globally
+        const inputRef = useRef<HTMLInputElement | null>(null);
+        useEffect(() =>
+        {
+            const onKey = (e: KeyboardEvent) =>
+            {
+                const target = e.target as HTMLElement | null;
+                const isTyping = target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || (target as any).isContentEditable);
+                if (!isTyping && e.key === '/')
+                {
+                    e.preventDefault();
+                    inputRef.current?.focus();
+                }
+            };
+            window.addEventListener('keydown', onKey);
+            return () => window.removeEventListener('keydown', onKey);
+        }, []);
+
+        // Touch detection (for showing a Draft button)
+        const isTouch = typeof window !== 'undefined'
+            && !!window.matchMedia
+            && window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+        const placeholder = isTouch
+            ? 'Search players… (tap Draft to pick)'
+            : 'Quick search…  ( / to focus, Enter to draft )';
+
         return (
             <header style={{
+                position: 'sticky', top: 0, zIndex: 50, // ← sticky header
                 display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem',
                 background: 'var(--color-surface)', borderRadius: 8
             }}>
@@ -91,6 +124,64 @@ const Header: React.FC<{
                             · Pick #{currentPick}
                         </span>
                     </h1>
+
+                    {/* Quick search (tap anywhere in the bar to focus) */}
+                    <div
+                        onClick={() => inputRef.current?.focus()}
+                        style={{
+                            display: 'flex', alignItems: 'center', gap: 8,
+                            minWidth: 280, flex: 1, maxWidth: 420,
+                            background: 'var(--color-bg)',
+                            border: '1px solid var(--color-border)',
+                            padding: 6, borderRadius: 8,
+                            cursor: 'text'
+                        }}
+                    >
+                        <input
+                            ref={inputRef}
+                            value={searchQuery}
+                            onChange={e => setSearchQuery(e.target.value)}
+                            onKeyDown={e =>
+                            {
+                                if (e.key === 'Enter') onSearchEnter();
+                                if (e.key === 'Escape') setSearchQuery('');
+                            }}
+                            type="search"
+                            inputMode="text"
+                            enterKeyHint="go"
+                            autoCorrect="off"
+                            autoCapitalize="none"
+                            spellCheck={false}
+                            placeholder={placeholder}
+                            aria-label="Search players"
+                            style={{
+                                flex: 1,
+                                padding: '8px 8px',
+                                border: 'none',
+                                outline: 'none',
+                                background: 'transparent',
+                                color: 'var(--color-text-primary)'
+                            }}
+                        />
+                        {searchQuery && (
+                            <button
+                                onClick={(e) => { e.stopPropagation(); setSearchQuery(''); }}
+                                title="Clear"
+                                style={{ background: 'var(--color-surface)', color: 'var(--color-text-primary)', padding: '6px 10px', borderRadius: 6 }}
+                            >
+                                ×
+                            </button>
+                        )}
+                        {isTouch && (
+                            <button
+                                onClick={(e) => { e.stopPropagation(); onSearchEnter(); }}
+                                disabled={!searchQuery.trim()}
+                                style={{ background: 'var(--color-accent)', color: 'var(--color-text-primary)', padding: '6px 10px', borderRadius: 6 }}
+                            >
+                                Draft
+                            </button>
+                        )}
+                    </div>
 
                     {/* Picking-for toggle */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -248,6 +339,9 @@ const App: React.FC = () =>
     const [filterBy, setFilterBy] = useState<FilterByType>('ALL');
     const [view, setView] = useState<ViewType>('draft');
 
+    // Search
+    const [searchQuery, setSearchQuery] = useState('');
+
     const [loading, setLoading] = useState(true);
 
     /* Fetch once */
@@ -269,6 +363,7 @@ const App: React.FC = () =>
     {
         setDraftedBy({});
         setPickingFor('me');
+        setSearchQuery('');
     };
 
     const currentPick = Object.keys(draftedBy).length + 1;
@@ -326,7 +421,7 @@ const App: React.FC = () =>
             const restMax = rest.length ? Math.max(...rest.map(r => r.drop)) : 0;
 
             const meetsRelative = rest.length === 0
-                ? candidate.drop >= METRICS.minAbsDrop // if it's the only one left, just check absolute
+                ? candidate.drop >= METRICS.minAbsDrop
                 : candidate.drop >= (1 + METRICS.superiorityPct) * restMax;
 
             const meetsAbsolute = candidate.drop >= METRICS.minAbsDrop;
@@ -350,7 +445,7 @@ const App: React.FC = () =>
         return { dangerMap: map, dropMap: drops };
     }, [available, currentPick]);
 
-    /* Filter + sort for UI */
+    /* Filter + sort for UI, then apply search */
     const visiblePlayers = useMemo(() =>
     {
         const filtered = available.filter(p =>
@@ -360,10 +455,30 @@ const App: React.FC = () =>
             return p.position === filterBy;
         });
 
-        return filtered.sort((a, b) =>
+        const sorted = filtered.sort((a, b) =>
             sortBy === 'adp' ? a.adp - b.adp : b.vor - a.vor
         );
-    }, [available, filterBy, sortBy]);
+
+        const q = searchQuery.trim().toLowerCase();
+        if (!q) return sorted;
+
+        return sorted.filter(p =>
+            p.name.toLowerCase().includes(q) ||
+            p.team.toLowerCase().includes(q) ||
+            p.position.toLowerCase().includes(q)
+        );
+    }, [available, filterBy, sortBy, searchQuery]);
+
+    // Enter (or mobile Draft button) drafts the first visible result and clears the query
+    const draftFirstMatch = () =>
+    {
+        const first = visiblePlayers[0];
+        if (first)
+        {
+            onDraft(first.id);
+            setSearchQuery('');
+        }
+    };
 
     /* Bye week counts – ONLY my players */
     const byeCounts = useMemo(() =>
@@ -389,6 +504,8 @@ const App: React.FC = () =>
                 resetDraft={resetDraft}
                 currentPick={currentPick}
                 pickingFor={pickingFor} setPickingFor={setPickingFor}
+                searchQuery={searchQuery} setSearchQuery={setSearchQuery}
+                onSearchEnter={draftFirstMatch}
             />
 
             {view === 'draft' ? (
@@ -403,6 +520,11 @@ const App: React.FC = () =>
                             isSteal={currentPick - p.adp >= METRICS.stealDiscountPicks}
                         />
                     ))}
+                    {!visiblePlayers.length && (
+                        <div style={{ padding: 16, textAlign: 'center', color: 'var(--color-text-secondary)' }}>
+                            No matching players.
+                        </div>
+                    )}
                 </main>
             ) : (
                 <ByeWeekView byeCounts={byeCounts} />
