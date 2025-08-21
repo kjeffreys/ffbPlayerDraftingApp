@@ -4,7 +4,7 @@
         "QB": 3,
         "RB": 5,
         "WR": 6,
-        "TE": 2,
+        "TE": 1,
         "FLEX": 0,
         "K": 1,
         "DEF": 1
@@ -12,16 +12,16 @@
     "scoring": "HALF",
     "week": 1,
     "games_divisor": 17,
-    "boost_small": 0.07,
+    "boost_small": 0.10,
     "boost_medium": 0.17,
     "boost_large": 0.25,
     "boost_max": 1.39,
-    "top_game_count": 10,
+    "top_game_count": 6,
     "weight_projection": 0.50,
     "weight_last_year": 0.50,
     "min_historical_score": 5.0,
     "positional_penalties": {
-        "DEF": 0.5,
-        "K": 0.5
+        "DEF": 0.6,
+        "K": 0.6
     }
 }
