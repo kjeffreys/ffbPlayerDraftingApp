@@ -1,6 +1,12 @@
 {
     "max_boost_slugs": [],
-    "large_boost_slugs": [],
-    "medium_boost_slugs": [],
-    "small_boost_slugs": []
+    "large-boost": [],
+    "medium-boost": [
+        "ceedee-lamb"
+    ],
+    "small-boost": [
+        "nico-collins",
+        "brian-thomas-jr",
+        "keon-coleman"
+    ]
 }
