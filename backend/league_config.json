@@ -14,7 +14,7 @@
     "games_divisor": 17,
     "boost_small": 0.03,
     "boost_medium": 0.08,
-    "boost_large": 0.11,
+    "boost_large": 0.15,
     "boost_max": 1.39,
     "top_game_count": 8,
     "weight_projection": 0.50,
