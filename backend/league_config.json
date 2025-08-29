@@ -12,16 +12,16 @@
     "scoring": "HALF",
     "week": 1,
     "games_divisor": 17,
-    "boost_small": 0.07,
-    "boost_medium": 0.10,
-    "boost_large": 0.20,
+    "boost_small": 0.03,
+    "boost_medium": 0.08,
+    "boost_large": 0.11,
     "boost_max": 1.39,
-    "top_game_count": 10,
+    "top_game_count": 8,
     "weight_projection": 0.50,
     "weight_last_year": 0.50,
     "min_historical_score": 2.0,
     "positional_penalties": {
-        "DEF": 0.7,
-        "K": 0.7
+        "DEF": 0.2,
+        "K": 0.2
     }
 }

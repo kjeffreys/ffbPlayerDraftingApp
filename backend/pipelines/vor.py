@@ -36,6 +36,13 @@ def run_vor(date_str: str | None = None):
         log.info("Applying positional penalties to expected_ppg.")
         if hasattr(cfg, "positional_penalties"):
             penalties = cfg.positional_penalties
+
+            # --- START ADDITION: CRITICAL DIAGNOSTIC ---
+            log.info(
+                f"CRITICAL DIAGNOSTIC: Positional penalties loaded into VOR pipeline: {penalties}"
+            )
+            # --- END ADDITION ---
+
             for position, penalty in penalties.items():
                 if penalty < 1.0:
                     # Apply the penalty to the original ppg AND the calculated vor
