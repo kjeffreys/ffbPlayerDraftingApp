@@ -21,10 +21,9 @@
     "weight_last_year": 0.50,
     "min_historical_score": 0.0,
     "positional_penalties": {
-        "DEF": 0.2,
-        "K": 0.1,
-        "TE": 0.96,
-        "RB": 0.96,
-        "WR": 0.99
+        "DEF": 0.15,
+        "K": 0.05,
+        "TE": 0.75,
+        "RB": 0.75
     }
 }
