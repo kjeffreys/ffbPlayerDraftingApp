@@ -40,9 +40,9 @@ const getPositionColor = (pos: Player['position']) => `var(--pos-${pos.toLowerCa
 
 /** Centralized metrics/config */
 const METRICS = {
-    stealDiscountPicks: 5,  // 💰 shows when currentPick - ADP ≥ 3
+    stealDiscountPicks: 1,  // 💰 shows when currentPick - ADP ≥ 1
     windowPicks: 30,         // 🔥 lookahead horizon
-    superiorityPct: 0.04,    // 🔥 must beat next-best position by ≥ 4%
+    superiorityPct: 0.03,    // 🔥 must beat next-best position by ≥ 4%
     includeKAndDef: true,    // 🔥 include K/DEF in cross-position comparison
     topKPositions: 3,        // 🔥 flag up to 3 positions if each clearly leads
     minAbsDrop: 1.0,         // 🔥 require at least this absolute VOR drop
