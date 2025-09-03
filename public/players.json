@@ -711,6 +711,26 @@
   },
   {
     "id": 72,
+    "name": "Matthew Golden",
+    "team": "GB",
+    "position": "WR",
+    "adp": 89.5,
+    "vor": 3.65,
+    "bye": 5,
+    "ppg": 10.45
+  },
+  {
+    "id": 73,
+    "name": "Calvin Ridley",
+    "team": "TEN",
+    "position": "WR",
+    "adp": 67.5,
+    "vor": 3.65,
+    "bye": 10,
+    "ppg": 10.45
+  },
+  {
+    "id": 74,
     "name": "Zay Flowers",
     "team": "BAL",
     "position": "WR",
@@ -718,26 +738,6 @@
     "vor": 3.65,
     "bye": 7,
     "ppg": 10.45
-  },
-  {
-    "id": 73,
-    "name": "J.K. Dobbins",
-    "team": "DEN",
-    "position": "RB",
-    "adp": 110.5,
-    "vor": 3.54,
-    "bye": 12,
-    "ppg": 6.3
-  },
-  {
-    "id": 74,
-    "name": "Jordan Mason",
-    "team": "MIN",
-    "position": "RB",
-    "adp": 99.0,
-    "vor": 3.54,
-    "bye": 6,
-    "ppg": 6.3
   },
   {
     "id": 75,
@@ -751,6 +751,26 @@
   },
   {
     "id": 76,
+    "name": "Jordan Mason",
+    "team": "MIN",
+    "position": "RB",
+    "adp": 99.0,
+    "vor": 3.54,
+    "bye": 6,
+    "ppg": 6.3
+  },
+  {
+    "id": 77,
+    "name": "J.K. Dobbins",
+    "team": "DEN",
+    "position": "RB",
+    "adp": 110.5,
+    "vor": 3.54,
+    "bye": 12,
+    "ppg": 6.3
+  },
+  {
+    "id": 78,
     "name": "Marvin Harrison",
     "team": "ARI",
     "position": "WR",
@@ -760,7 +780,7 @@
     "ppg": 10.33
   },
   {
-    "id": 77,
+    "id": 79,
     "name": "J.J. McCarthy",
     "team": "MIN",
     "position": "QB",
@@ -770,7 +790,7 @@
     "ppg": 10.42
   },
   {
-    "id": 78,
+    "id": 80,
     "name": "Kyler Murray",
     "team": "ARI",
     "position": "QB",
@@ -780,7 +800,7 @@
     "ppg": 10.35
   },
   {
-    "id": 79,
+    "id": 81,
     "name": "DJ Moore",
     "team": "CHI",
     "position": "WR",
@@ -790,17 +810,7 @@
     "ppg": 10.16
   },
   {
-    "id": 80,
-    "name": "Drake Maye",
-    "team": "NE",
-    "position": "QB",
-    "adp": 127.0,
-    "vor": 3.32,
-    "bye": 14,
-    "ppg": 10.24
-  },
-  {
-    "id": 81,
+    "id": 82,
     "name": "Bo Nix",
     "team": "DEN",
     "position": "QB",
@@ -810,7 +820,17 @@
     "ppg": 10.24
   },
   {
-    "id": 82,
+    "id": 83,
+    "name": "Drake Maye",
+    "team": "NE",
+    "position": "QB",
+    "adp": 127.0,
+    "vor": 3.32,
+    "bye": 14,
+    "ppg": 10.24
+  },
+  {
+    "id": 84,
     "name": "Caleb Williams",
     "team": "CHI",
     "position": "QB",
@@ -820,7 +840,7 @@
     "ppg": 10.22
   },
   {
-    "id": 83,
+    "id": 85,
     "name": "David Njoku",
     "team": "CLE",
     "position": "TE",
@@ -830,7 +850,7 @@
     "ppg": 13.85
   },
   {
-    "id": 84,
+    "id": 86,
     "name": "DK Metcalf",
     "team": "PIT",
     "position": "WR",
@@ -840,37 +860,7 @@
     "ppg": 9.79
   },
   {
-    "id": 85,
-    "name": "Stefon Diggs",
-    "team": "NE",
-    "position": "WR",
-    "adp": 89.5,
-    "vor": 2.92,
-    "bye": 14,
-    "ppg": 9.72
-  },
-  {
-    "id": 86,
-    "name": "Emeka Egbuka",
-    "team": "TB",
-    "position": "WR",
-    "adp": 94.0,
-    "vor": 2.92,
-    "bye": 9,
-    "ppg": 9.72
-  },
-  {
     "id": 87,
-    "name": "Keon Coleman",
-    "team": "BUF",
-    "position": "WR",
-    "adp": 117.0,
-    "vor": 2.92,
-    "bye": 7,
-    "ppg": 9.72
-  },
-  {
-    "id": 88,
     "name": "Jordan Addison",
     "team": "MIN",
     "position": "WR",
@@ -880,24 +870,34 @@
     "ppg": 9.72
   },
   {
-    "id": 89,
-    "name": "Calvin Ridley",
-    "team": "TEN",
+    "id": 88,
+    "name": "Keon Coleman",
+    "team": "BUF",
     "position": "WR",
-    "adp": 67.5,
-    "vor": 2.89,
-    "bye": 10,
-    "ppg": 9.69
+    "adp": 117.0,
+    "vor": 2.92,
+    "bye": 7,
+    "ppg": 9.72
+  },
+  {
+    "id": 89,
+    "name": "Stefon Diggs",
+    "team": "NE",
+    "position": "WR",
+    "adp": 89.5,
+    "vor": 2.92,
+    "bye": 14,
+    "ppg": 9.72
   },
   {
     "id": 90,
-    "name": "Braelon Allen",
-    "team": "NYJ",
-    "position": "RB",
-    "adp": 140.5,
-    "vor": 2.85,
+    "name": "Emeka Egbuka",
+    "team": "TB",
+    "position": "WR",
+    "adp": 94.0,
+    "vor": 2.92,
     "bye": 9,
-    "ppg": 5.61
+    "ppg": 9.72
   },
   {
     "id": 91,
@@ -911,6 +911,16 @@
   },
   {
     "id": 92,
+    "name": "Braelon Allen",
+    "team": "NYJ",
+    "position": "RB",
+    "adp": 140.5,
+    "vor": 2.85,
+    "bye": 9,
+    "ppg": 5.61
+  },
+  {
+    "id": 93,
     "name": "Denver Broncos",
     "team": "DEN",
     "position": "DEF",
@@ -920,7 +930,7 @@
     "ppg": 2.97
   },
   {
-    "id": 93,
+    "id": 94,
     "name": "Pittsburgh Steelers",
     "team": "PIT",
     "position": "DEF",
@@ -930,7 +940,7 @@
     "ppg": 2.97
   },
   {
-    "id": 94,
+    "id": 95,
     "name": "Tyler Warren",
     "team": "IND",
     "position": "TE",
@@ -940,7 +950,7 @@
     "ppg": 12.97
   },
   {
-    "id": 95,
+    "id": 96,
     "name": "Jauan Jennings",
     "team": "SF",
     "position": "WR",
@@ -950,7 +960,7 @@
     "ppg": 9.06
   },
   {
-    "id": 96,
+    "id": 97,
     "name": "Sam Darnold",
     "team": "SEA",
     "position": "QB",
@@ -960,21 +970,11 @@
     "ppg": 9.17
   },
   {
-    "id": 97,
+    "id": 98,
     "name": "Quinshon Judkins",
     "team": "CLE",
     "position": "RB",
     "adp": 97.0,
-    "vor": 2.23,
-    "bye": 9,
-    "ppg": 4.99
-  },
-  {
-    "id": 98,
-    "name": "Dylan Sampson",
-    "team": "CLE",
-    "position": "RB",
-    "adp": 151.5,
     "vor": 2.23,
     "bye": 9,
     "ppg": 4.99
@@ -991,6 +991,16 @@
   },
   {
     "id": 100,
+    "name": "Dylan Sampson",
+    "team": "CLE",
+    "position": "RB",
+    "adp": 151.5,
+    "vor": 2.23,
+    "bye": 9,
+    "ppg": 4.99
+  },
+  {
+    "id": 101,
     "name": "Rachaad White",
     "team": "TB",
     "position": "RB",
@@ -1000,7 +1010,7 @@
     "ppg": 4.99
   },
   {
-    "id": 101,
+    "id": 102,
     "name": "Travis Hunter",
     "team": "JAX",
     "position": "WR",
@@ -1010,7 +1020,7 @@
     "ppg": 8.96
   },
   {
-    "id": 102,
+    "id": 103,
     "name": "Cooper Kupp",
     "team": "SEA",
     "position": "WR",
@@ -1018,16 +1028,6 @@
     "vor": 2.1,
     "bye": 8,
     "ppg": 8.89
-  },
-  {
-    "id": 103,
-    "name": "Matthew Golden",
-    "team": "GB",
-    "position": "WR",
-    "adp": 89.5,
-    "vor": 1.86,
-    "bye": 5,
-    "ppg": 8.65
   },
   {
     "id": 104,
