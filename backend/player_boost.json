@@ -1,13 +1,31 @@
 {
-    "max_boost_slugs": [],
-    "large-boost": [],
+    "max_boost_slugs": [
+        "ceedee-lamb",
+        "jaydon-blue",
+        "tank-bigsby"
+    ],
+    "large-boost": [
+        "chris-olave"
+    ],
     "medium-boost": [
-        "ceedee-lamb"
+        "adam-thielen",
+        "cam-skattebo",
+        "cedric-tillman",
+        "chase-brown",
+        "colston-loveland",
+        "matthew-golden",
+        "nico-collins",
+        "romeo-doubs",
+        "treveyon-henderson",
+        "woody-marks"
     ],
     "small-boost": [
-        "nico-collins",
-        "brian-thomas",
-        "keon-coleman",
-        "tony-pollard"
+        "bucky-irving",
+        "dandre-swift",
+        "dk-metcalf",
+        "drake-london",
+        "jaylen-waddle",
+        "puka-nacua",
+        "stefon-diggs"
     ]
 }

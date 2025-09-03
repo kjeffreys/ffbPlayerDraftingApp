@@ -31,6 +31,15 @@ def run_stats(date_str: str | None = None):
         df["top_n_avg"] = calculate_top_n_games_avg(
             df["slug"], mapped_hist_scores, cfg.top_game_count
         )
+
+        # --- THIS IS THE FIX ---
+        # A value of 0.0 in 'top_n_avg' for players with no history (rookies)
+        # was causing them to be misclassified as underperforming veterans.
+        # Replacing 0.0 with NaN ensures they are correctly identified as rookies
+        # so that only their projection data is used for scoring.
+        df["top_n_avg"] = df["top_n_avg"].replace(0.0, np.nan)
+        # --- END OF FIX ---
+
         df["projected_ppg"] = df["projected_points"] / cfg.games_divisor
 
         # --- Calculate Positional Z-Scores ---

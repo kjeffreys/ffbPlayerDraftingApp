@@ -101,11 +101,11 @@ def all(ctx):
         # log.info("--- Phase 1: Ingest ---")
         # run_ingest(date_str=date)
 
-        log.info("--- Phase 2: Clean ---")
-        run_clean(date_str=date)
+        # log.info("--- Phase 2: Clean ---" )
+        # run_clean(date_str=date)
 
-        log.info("--- Phase 3: Enrich ---")
-        run_enrich(date_str=date)
+        # log.info("--- Phase 3: Enrich ---")
+        # run_enrich(date_str=date)
 
         log.info("--- Phase 4: Stats ---")
         run_stats(date_str=date)

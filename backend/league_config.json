@@ -1,8 +1,8 @@
 {
-    "teams": 14,
+    "teams": 12,
     "roster": {
-        "QB": 1,
-        "RB": 3,
+        "QB": 2,
+        "RB": 4,
         "WR": 4,
         "TE": 1,
         "FLEX": 0,
@@ -12,16 +12,19 @@
     "scoring": "HALF",
     "week": 1,
     "games_divisor": 17,
-    "boost_small": 0.04,
-    "boost_medium": 0.10,
+    "boost_small": 0.05,
+    "boost_medium": 0.11,
     "boost_large": 0.15,
-    "boost_max": 1.39,
-    "top_game_count": 8,
+    "boost_max": 0.25,
+    "top_game_count": 9,
     "weight_projection": 0.50,
     "weight_last_year": 0.50,
-    "min_historical_score": 2.0,
+    "min_historical_score": 0.0,
     "positional_penalties": {
         "DEF": 0.2,
-        "K": 0.2
+        "K": 0.1,
+        "TE": 0.97,
+        "RB": 0.96,
+        "WR": 0.99
     }
 }
