@@ -8,9 +8,31 @@ from backend.data_sources.historical import fetch_last_year_weekly_stats
 from backend.logging_config import log
 from backend.settings import settings
 from backend.storage.file_store import load_json, save_json
-from backend.transforms.compute_ppg import calculate_top_n_games_avg
+from backend.transforms.compute_ppg import (
+    calculate_lower_quartile_score,
+    calculate_top_n_games_avg,
+)
 from backend.transforms.normalize import calculate_z_scores
 from backend.utils import create_hybrid_slug_map
+
+
+def normalize_boost_data(boost_data: dict) -> dict[str, list[str]]:
+    """Accept current and legacy boost key names, then emit canonical keys."""
+    key_map = {
+        "max_boost_slugs": ["max_boost_slugs", "max-boost"],
+        "large_boost_slugs": ["large_boost_slugs", "large-boost"],
+        "medium_boost_slugs": ["medium_boost_slugs", "medium-boost"],
+        "small_boost_slugs": ["small_boost_slugs", "small-boost"],
+    }
+    normalized: dict[str, list[str]] = {}
+    for canonical_key, accepted_keys in key_map.items():
+        slugs: list[str] = []
+        for key in accepted_keys:
+            raw_value = boost_data.get(key, [])
+            if isinstance(raw_value, list):
+                slugs.extend(str(slug) for slug in raw_value)
+        normalized[canonical_key] = sorted(set(slugs))
+    return normalized
 
 
 def run_stats(date_str: str | None = None):
@@ -31,6 +53,9 @@ def run_stats(date_str: str | None = None):
         df["top_n_avg"] = calculate_top_n_games_avg(
             df["slug"], mapped_hist_scores, cfg.top_game_count
         )
+        df["floor_avg"] = calculate_lower_quartile_score(
+            df["slug"], mapped_hist_scores
+        )
 
         # --- THIS IS THE FIX ---
         # A value of 0.0 in 'top_n_avg' for players with no history (rookies)
@@ -45,6 +70,7 @@ def run_stats(date_str: str | None = None):
         # --- Calculate Positional Z-Scores ---
         df["z_proj"] = calculate_z_scores(df, "projected_ppg")
         df["z_hist"] = calculate_z_scores(df, "top_n_avg")
+        df["z_floor"] = calculate_z_scores(df, "floor_avg")
 
         # --- FINAL SCORING LOGIC (Scale First, Then Blend) ---
         log.info("Applying final scoring logic (Scale First, Then Blend).")
@@ -54,26 +80,42 @@ def run_stats(date_str: str | None = None):
         max_z_proj = df["z_proj"].max()
         scaling_factor_proj = 25.0 / max_z_proj if max_z_proj > 0 else 0
         df["scaled_proj"] = df["z_proj"] * scaling_factor_proj
+        max_z_floor = df["z_floor"].max()
+        scaling_factor_floor = 25.0 / max_z_floor if max_z_floor > 0 else 0
+        df["scaled_floor"] = df["z_floor"] * scaling_factor_floor
         log.info(
             "Created independent scaled scores for historical and projection data."
         )
 
-        is_vet = df["top_n_avg"].notna() & df["projected_ppg"].notna()
-        is_rookie = df["projected_ppg"].notna() & df["top_n_avg"].isna()
-        is_history_only = df["top_n_avg"].notna() & df["projected_ppg"].isna()
-        conditions = [is_vet, is_rookie, is_history_only]
-        choices = [
-            (df["scaled_proj"] * cfg.weight_projection)
-            + (df["scaled_hist"] * cfg.weight_last_year),
-            df["scaled_proj"],
-            df["scaled_hist"],
-        ]
+        if cfg.league_type == "guillotine":
+            log.info("Using guillotine floor-weighted scoring model.")
+            is_vet = df["floor_avg"].notna() & df["projected_ppg"].notna()
+            is_rookie = df["projected_ppg"].notna() & df["floor_avg"].isna()
+            is_history_only = df["floor_avg"].notna() & df["projected_ppg"].isna()
+            conditions = [is_vet, is_rookie, is_history_only]
+            choices = [
+                (df["scaled_proj"] * cfg.weight_projection)
+                + (df["scaled_floor"] * (cfg.weight_floor or 0)),
+                df["scaled_proj"],
+                df["scaled_floor"],
+            ]
+        else:
+            is_vet = df["top_n_avg"].notna() & df["projected_ppg"].notna()
+            is_rookie = df["projected_ppg"].notna() & df["top_n_avg"].isna()
+            is_history_only = df["top_n_avg"].notna() & df["projected_ppg"].isna()
+            conditions = [is_vet, is_rookie, is_history_only]
+            choices = [
+                (df["scaled_proj"] * cfg.weight_projection)
+                + (df["scaled_hist"] * (cfg.weight_last_year or 0)),
+                df["scaled_proj"],
+                df["scaled_hist"],
+            ]
         df["score"] = np.select(conditions, choices, default=0.0)
 
         # --- TIERED PLAYER BOOST LOGIC ---
         boost_list_path = settings.BASE_DIR / "player_boost.json"
         if boost_list_path.exists():
-            boost_data = load_json(boost_list_path)
+            boost_data = normalize_boost_data(load_json(boost_list_path))
             log.info(f"Loaded tiered boost data from {boost_list_path}.")
             tiers = {
                 "max": (cfg.boost_max, "max_boost_slugs"),

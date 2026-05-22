@@ -1,4 +1,5 @@
 {
+    "league_type": "redraft",
     "teams": 14,
     "roster": {
         "QB": 1,

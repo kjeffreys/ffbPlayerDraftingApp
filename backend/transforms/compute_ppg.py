@@ -35,3 +35,30 @@ def calculate_top_n_games_avg(
         return sum(top_scores) / games_to_average
 
     return slug_series.apply(get_player_avg)
+
+
+def calculate_lower_quartile_score(
+    slug_series: pd.Series, historical_stats: dict[str, list[float]]
+) -> pd.Series:
+    """
+    Calculates a lower-quartile weekly score for survival formats.
+
+    Guillotine drafts reward stable weekly floors more than median or ceiling
+    outcomes, so this intentionally looks at the 25th percentile of each
+    player's usable historical games.
+    """
+    cfg = settings.league_config
+    min_score = cfg.min_historical_score
+
+    def get_player_floor(slug):
+        scores = historical_stats.get(slug)
+        if not scores:
+            return np.nan
+
+        filtered_scores = [s for s in scores if s >= min_score]
+        if not filtered_scores:
+            return np.nan
+
+        return float(np.percentile(filtered_scores, 25))
+
+    return slug_series.apply(get_player_floor)

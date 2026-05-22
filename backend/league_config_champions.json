@@ -1,4 +1,5 @@
 {
+    "league_type": "champions",
     "teams": 8,
     "roster": {
         "QB": 3,

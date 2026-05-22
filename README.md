@@ -1,133 +1,76 @@
 # Fantasy Football Draft Assistant
 
-A web-based draft assistant built with React and Vite, designed to help fantasy football players optimize their picks using sortable Value Over Replacement (VOR), Average Draft Position (ADP), and Bye Week tracking.
+A zero-budget draft cockpit for live fantasy football drafts. The app keeps private league data local, uses static hosting for the browser UI, and ranks players with VOR, ADP value, roster fit, tier dropoff, bye risk, manual adjustments, and league-specific tendencies.
 
-## ✨ Features
+## Run It
 
-- View and filter all available players by position
-- Sort by VOR or ADP
-- Visual indicators for positional scarcity
-- Draft tracking and reset functionality
-- Bye week clustering analysis for drafted team
-- JSON-based player data (fully editable)
-- Customizable weighting for rookies and projections
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/en/) 18+ (recommend using `nvm`)
-
-### Install & Run
-
-```bash
+```powershell
 npm install
-npm run 
+npm run dev -- --host 127.0.0.1
 ```
-Then visit: http://localhost:5173
 
-📁 File Structure
-index.html – Entrypoint for Vite app
+Then open `http://127.0.0.1:5173/`.
 
-index.tsx – Main React code and component logic
+For a production build:
 
-players.json – Source of all player data (ADP, VOR, etc.)
+```powershell
+npm run build
+```
 
-vite.config.ts – Vite bundler configuration
+## Draft-Day How To
 
-🧠 Data Logic & Scoring
-VOR (Value Over Replacement) is calculated based on:
+- Pick the league first: `Default / Current`, `VANY`, `Passion`, `Guillotine`, or `Champions`.
+- Use `Cockpit` for your private decision view. It shows the top recommendation, two backups, reasons, score components, and your roster snapshot.
+- Use `Show Top 10 backups` when the top option is unavailable or you want a wider emergency list.
+- Use `Board` when others can see your screen. This classic list hides recommendation reasons and looks like a normal ranked draft sheet.
+- Press `Ctrl + .` to quickly toggle between `Board` and `Cockpit`.
+- Mark picks with `Draft`. If `Picking for` is `Me`, that pick counts toward your roster and bye tracking.
+- Switch `Picking for` to `Other` and enter a manager/team name to track the rest of the draft.
+- Use `Undo` and `Redo` to correct mistakes.
+- Use `Avoid`, `Boost`, `Fade`, and concern flags in Cockpit for last-minute injury, role, legal, playoff, bye, or personal-fade context.
+- Use `Byes` to review your drafted players by bye week.
+- Use `Export session` and `Import session` to move draft state between devices.
 
-80% weight from expert 2025 PPG projections
+## Views
 
-20% weight from 2024 PPG stats
+- `Board`: snoop-safe classic ranked list. It is still powered by the recommendation model, but only shows rank, player, team, position, bye, ADP, VOR, and draft action.
+- `Cockpit`: private recommendation cockpit with Top 3, reasons, Top 10 drawer, manual flags, and roster context.
+- `Details`: deeper working board with recommendation score and adjustment controls.
+- `Byes`: your roster grouped by bye week.
 
-Optional rookie bonus adjustment (default +10%)
+Champions defaults to `Board` for in-person drafting. Online leagues default to `Cockpit`.
 
-All scores are standardized so rookies and veterans are comparable
+## Local History Tools
 
-Settings like rookie bonus or PPG weights can be toggled per draft strategy
+Private draft history stays local in `local/draft_history.sqlite`, which is ignored by git.
 
-🛠 To Do
-🔄 Fetch and preprocess updated 2025 player pool
+Create the database:
 
-📊 Automate VOR calculation from live projections
+```powershell
+python -m backend.cli history init
+```
 
-🧩 Allow users to adjust scoring weights and rookie bias interactively
+Create a manual CSV template:
 
-📤 Add export feature for drafted team
+```powershell
+python -m backend.cli history template local\draft_history_template.csv
+```
 
-⚖ License
-MIT License
+Import a manual CSV:
 
-yaml
-Copy
-Edit
+```powershell
+python -m backend.cli history import-csv local\draft_history_template.csv --league vany --season 2025 --platform sleeper
+```
 
----
+Import Sleeper draft picks by draft ID:
 
-## ✅ 2. How to Update `players.json` for 2025 (with Rookies)
+```powershell
+python -m backend.cli history import-sleeper --draft-id <draft_id> --league vany --season 2025
+```
 
-You’ll need three steps:
+## Recommended Next Steps
 
-### **Step 1: Get 2025 Player Pool**
-Sources:
-- [FantasyPros API (or CSV exports)](https://www.fantasypros.com/nfl/projections/qb.php)
-- [Sleeper API (via community wrappers)](https://api.sleeper.app/v1/)
-- [ESPN/FantasyData/Sportradar (paid/licensed)]
-- GitHub repos like [`nflfastR`](https://github.com/mrcaseb/nflfastR)
-
-We can write a script (Python or Node) to fetch or parse their data if you choose a source.
-
----
-
-### **Step 2: Normalize Data Structure**
-
-Each player needs:
-```json
-{
-  "id": 999,
-  "name": "Player Name",
-  "team": "ABC",
-  "position": "WR",
-  "adp": 28.3,
-  "vor": 56.7,
-  "bye": 7
-}
-You can use:
-
-Expert projected PPG (weighted 80%)
-
-2024 actual PPG (weighted 20%)
-
-Add +10% if rookie and use config.rookie_bonus = 1.1
-
-Step 3: Automate Scoring and VOR Calculation
-We can build a script to:
-
-Assign VOR = player_score - replacement_score
-
-Determine replacement values dynamically (e.g., RB#20 in 12-team league = baseline RB)
-
-Use a config file like:
-
-json
-Copy
-Edit
-{
-  "rookie_bonus": 0.10,
-  "projection_weight": 0.80,
-  "last_year_weight": 0.20,
-  "league": {
-    "teams": 12,
-    "positions": {
-      "QB": 1,
-      "RB": 2,
-      "WR": 2,
-      "TE": 1,
-      "FLEX": 1,
-      "K": 1,
-      "DEF": 1
-    }
-  }
-}
+- Import VANY history from Yahoo prior seasons and Sleeper last year into the local history store.
+- Add Yahoo draft-result import once league IDs/OAuth details are available.
+- Run simulated drafts against each league profile to tune recommendation weights.
+- Add more explicit Champions/pick-trade context for the five-year league.

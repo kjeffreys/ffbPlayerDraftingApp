@@ -74,3 +74,6 @@ Thumbs.db
 *.swp
 
 backend/data/*
+local/
+*.sqlite
+*.sqlite3
