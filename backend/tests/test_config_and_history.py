@@ -6,6 +6,8 @@ from pathlib import Path
 from pydantic import ValidationError
 
 from backend.history_store import import_csv, init_db, manager_tendencies
+from backend.data_sources.fantasypros import _parse_adp_player_name
+from backend.data_sources.source_diagnostics import table_has_keywords
 from backend.pipelines.stats import normalize_boost_data
 from backend.settings import LeagueConfig
 
@@ -58,6 +60,21 @@ class ConfigAndHistoryTests(unittest.TestCase):
         )
         self.assertEqual(boost_data["large_boost_slugs"], ["a-player", "b-player"])
         self.assertEqual(boost_data["small_boost_slugs"], ["c-player"])
+
+    def test_adp_player_name_parser_removes_duplicate_short_name(self):
+        self.assertEqual(
+            _parse_adp_player_name("Bijan Robinson B. Robinson ATL (11)"),
+            "Bijan Robinson",
+        )
+        self.assertEqual(
+            _parse_adp_player_name("Amon-Ra St. Brown A. St. Brown DET (6)"),
+            "Amon-Ra St. Brown",
+        )
+
+    def test_source_column_keyword_matching(self):
+        columns = ["Player Team (Bye)", "AVG", "Sleeper"]
+        self.assertTrue(table_has_keywords(columns, ["Player", "AVG"]))
+        self.assertFalse(table_has_keywords(columns, ["Player", "FPTS"]))
 
     def test_history_csv_import_and_tendencies(self):
         with tempfile.TemporaryDirectory() as tmp:

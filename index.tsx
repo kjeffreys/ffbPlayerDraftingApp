@@ -75,6 +75,13 @@ interface Recommendation {
     reasons: string[];
 }
 
+interface DataStatus {
+    status: 'stale' | 'draft-ready' | 'unknown';
+    generatedAt?: string;
+    label?: string;
+    message?: string;
+}
+
 const POSITIONS: Position[] = ['QB', 'RB', 'WR', 'TE', 'K', 'DEF'];
 const FILTERS: FilterByType[] = ['ALL', 'FLEX', ...POSITIONS];
 const STORAGE_PREFIX = 'draft-assistant-v2';
@@ -163,6 +170,16 @@ async function fetchPlayers(profile: LeagueProfile): Promise<Player[]> {
     const res = await fetch(`./${profile.file}`);
     if (!res.ok) throw new Error(`Failed to fetch ${profile.file}`);
     return res.json();
+}
+
+async function fetchDataStatus(): Promise<DataStatus | null> {
+    try {
+        const res = await fetch('./data_status.json', { cache: 'no-store' });
+        if (!res.ok) return null;
+        return res.json();
+    } catch {
+        return null;
+    }
 }
 
 function sessionKey(leagueId: string) {
@@ -713,6 +730,25 @@ const RosterSnapshot: React.FC<{
     </aside>
 );
 
+const DataStatusBanner: React.FC<{ status: DataStatus | null }> = ({ status }) => {
+    if (!status) {
+        return (
+            <section className="dataBanner warning">
+                <strong>Data status unknown.</strong>
+                <span>No source manifest was loaded. Verify player JSON before drafting.</span>
+            </section>
+        );
+    }
+    const isReady = status.status === 'draft-ready';
+    return (
+        <section className={`dataBanner ${isReady ? 'ready' : 'warning'}`}>
+            <strong>{isReady ? 'Data draft-ready' : 'Data needs refresh'}</strong>
+            <span>{status.label ?? status.generatedAt ?? 'No generation date'}.</span>
+            {status.message && <span>{status.message}</span>}
+        </section>
+    );
+};
+
 const App: React.FC = () => {
     const initialLeagueId = window.localStorage.getItem(selectedLeagueKey()) ?? 'default';
     const [leagueId, setLeagueId] = useState(initialLeagueId);
@@ -720,6 +756,7 @@ const App: React.FC = () => {
     const [session, setSession] = useState<DraftSession>(() => loadSession(profile.id));
     const [allPlayers, setAllPlayers] = useState<Player[]>([]);
     const [searchQuery, setSearchQuery] = useState('');
+    const [dataStatus, setDataStatus] = useState<DataStatus | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -761,6 +798,10 @@ const App: React.FC = () => {
             .catch(err => setError(err instanceof Error ? err.message : 'Unable to load players.'))
             .finally(() => setLoading(false));
     }, [profile]);
+
+    useEffect(() => {
+        fetchDataStatus().then(setDataStatus);
+    }, []);
 
     const pickedMap = useMemo(() => draftedMap(session.drafted), [session.drafted]);
     const available = useMemo(
@@ -949,6 +990,7 @@ const App: React.FC = () => {
 
     return (
         <>
+            <DataStatusBanner status={dataStatus} />
             <Header
                 profile={profile}
                 leagueId={leagueId}

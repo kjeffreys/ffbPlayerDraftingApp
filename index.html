@@ -155,6 +155,32 @@
             font-size: 0.86rem;
         }
 
+        .dataBanner {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+            padding: 0.65rem 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            background: var(--color-surface);
+            color: var(--color-text-secondary);
+            font-size: 0.88rem;
+        }
+
+        .dataBanner strong {
+            color: var(--color-text-primary);
+        }
+
+        .dataBanner.warning {
+            border-color: rgba(214, 74, 82, 0.65);
+        }
+
+        .dataBanner.ready {
+            border-color: rgba(47, 143, 107, 0.65);
+        }
+
         .searchBox {
             display: flex;
             align-items: center;

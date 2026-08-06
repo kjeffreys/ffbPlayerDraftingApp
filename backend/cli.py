@@ -12,6 +12,7 @@ import click
 # the root of our application when running with `python -m backend.cli`.
 from backend.logging_config import log
 from backend import history_store
+from backend.data_sources.source_diagnostics import run_source_diagnostics
 from backend.pipelines.clean import run_clean
 from backend.pipelines.enrich import run_enrich
 from backend.pipelines.ingest import run_ingest
@@ -122,6 +123,27 @@ def all(ctx):
         log.exception("CLI: The 'all' command failed during one of its phases.")
         sys.exit(1)
 
+
+@cli.group()
+def sources():
+    """External source diagnostics before refreshing draft data."""
+
+
+@sources.command("check")
+@click.option("--scoring", default="HALF", type=click.Choice(["HALF", "PPR", "STD"]))
+@click.option(
+    "--output",
+    "output_path",
+    default="local/source_manifest.json",
+    type=click.Path(path_type=str),
+    help="Where to write the source-check manifest.",
+)
+def sources_check(scoring, output_path):
+    """Check source URLs, tables, columns, and row counts."""
+    manifest = run_source_diagnostics(scoring=scoring, output_path=Path(output_path))
+    click.echo(json.dumps(manifest, indent=2))
+    if not manifest["ok"]:
+        sys.exit(1)
 
 @cli.group()
 @click.option(

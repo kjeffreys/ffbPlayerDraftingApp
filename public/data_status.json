@@ -1,0 +1,13 @@
+{
+  "status": "stale",
+  "generatedAt": "2026-05-22T10:29:52-04:00",
+  "label": "May 22, 2026 snapshot",
+  "message": "Player values are a stale offseason snapshot. Refresh and audit 2026 sources before using this for a real draft.",
+  "files": {
+    "players.json": "Default / Current",
+    "vany.json": "VANY",
+    "passion.json": "Passion",
+    "guillotine.json": "Guillotine",
+    "champions.json": "Champions"
+  }
+}

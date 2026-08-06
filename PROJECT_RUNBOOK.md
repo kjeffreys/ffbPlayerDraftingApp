@@ -105,6 +105,16 @@ Current trust warning:
 
 The checked-in public JSON files are snapshots. Before a real 2026 draft, regenerate them and keep the dated backend artifacts plus logs so each number can be audited.
 
+## Source Preflight
+
+Before regenerating player values, check whether the external tables still look parseable:
+
+```powershell
+cd D:\repos\ffbPlayerDraftingApp
+.\.venv\Scripts\python -m backend.cli sources check --scoring HALF --output local\source_manifest.json
+```
+
+If this command fails, do not refresh `public/*.json` yet. Inspect `local/source_manifest.json`, update URLs/table parsing/aliases, and rerun the check.
 ## Data Reliability Checklist
 
 Before trusting a draft file:
