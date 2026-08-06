@@ -10,6 +10,12 @@ from typing import Any
 import pandas as pd
 import requests
 
+from backend.refresh_data import (
+    DYNASTYPROCESS_RANKINGS_URL,
+    ESPN_PLAYERS_URL,
+    ESPN_POSITION_MAP,
+    _espn_filter,
+)
 from backend.storage.file_store import save_json
 
 
@@ -36,7 +42,7 @@ def _read_tables(html: str, attrs: dict[str, str] | None) -> list[pd.DataFrame]:
     try:
         if attrs:
             return pd.read_html(io.StringIO(html), attrs=attrs)
-    except ImportError:
+    except (ImportError, ValueError):
         pass
     return pd.read_html(io.StringIO(html))
 
@@ -93,43 +99,115 @@ def check_html_table(
     return result
 
 
-def fantasypros_adp_url(scoring: str) -> str:
-    scoring_map = {
-        "PPR": "ppr-overall.php",
-        "HALF": "half-point-ppr-overall.php",
-        "STD": "std-overall.php",
+def _has_stat(player: dict[str, Any], stat_id: str) -> bool:
+    return any(stat.get("id") == stat_id for stat in player.get("stats", []))
+
+
+def check_espn_current_players() -> dict[str, Any]:
+    result: dict[str, Any] = {
+        "name": "espn_2026_players",
+        "url": ESPN_PLAYERS_URL,
+        "ok": False,
+        "minRows": 500,
     }
-    return f"https://www.fantasypros.com/nfl/adp/{scoring_map.get(scoring.upper(), scoring_map['HALF'])}"
+    try:
+        response = requests.get(
+            ESPN_PLAYERS_URL,
+            headers={**HEADERS, "x-fantasy-filter": _espn_filter()},
+            timeout=30,
+        )
+        result["httpStatus"] = response.status_code
+        response.raise_for_status()
+        players = response.json().get("players", [])
+        parsed = [item.get("player", {}) for item in players]
+        fantasy_positions = [
+            player
+            for player in parsed
+            if player.get("defaultPositionId") in ESPN_POSITION_MAP
+        ]
+        with_adp = [
+            player
+            for player in fantasy_positions
+            if (player.get("ownership") or {}).get("averageDraftPosition")
+        ]
+        with_projection = [
+            player for player in fantasy_positions if _has_stat(player, "102026")
+        ]
+        position_counts: dict[str, int] = {}
+        for player in fantasy_positions:
+            position = ESPN_POSITION_MAP[player.get("defaultPositionId")]
+            position_counts[position] = position_counts.get(position, 0) + 1
+        result.update(
+            {
+                "rowCount": len(fantasy_positions),
+                "adpRows": len(with_adp),
+                "projectionRows": len(with_projection),
+                "positionCounts": position_counts,
+                "ok": len(fantasy_positions) >= 500
+                and len(with_adp) >= 300
+                and len(with_projection) >= 300,
+            }
+        )
+        if not result["ok"]:
+            result["error"] = "ESPN payload did not meet row, ADP, or projection thresholds."
+    except Exception as exc:
+        result["error"] = str(exc)
+    return result
+
+
+def check_dynastyprocess_rankings() -> dict[str, Any]:
+    result: dict[str, Any] = {
+        "name": "dynastyprocess_rankings",
+        "url": DYNASTYPROCESS_RANKINGS_URL,
+        "ok": False,
+        "minRows": 3000,
+    }
+    try:
+        response = requests.get(DYNASTYPROCESS_RANKINGS_URL, headers=HEADERS, timeout=30)
+        result["httpStatus"] = response.status_code
+        response.raise_for_status()
+        df = pd.read_csv(io.StringIO(response.text))
+        required_columns = {"player", "page_type", "ecr", "bye", "scrape_date"}
+        missing_columns = sorted(required_columns - set(df.columns))
+        page_types = set(df.get("page_type", pd.Series(dtype=str)).dropna().astype(str))
+        required_pages = {"redraft-overall", "redraft-op", "dynasty-overall"}
+        missing_pages = sorted(required_pages - page_types)
+        scrape_dates = sorted(
+            str(item) for item in df.get("scrape_date", pd.Series(dtype=str)).dropna().unique().tolist()
+        )
+        bye_rows = int(df.get("bye", pd.Series(dtype=float)).notna().sum())
+        result.update(
+            {
+                "rowCount": int(len(df)),
+                "columns": list(df.columns),
+                "scrapeDates": scrape_dates,
+                "byeRows": bye_rows,
+                "missingColumns": missing_columns,
+                "missingPageTypes": missing_pages,
+                "ok": len(df) >= 3000
+                and not missing_columns
+                and not missing_pages
+                and bye_rows >= 300,
+            }
+        )
+        if not result["ok"]:
+            result["error"] = "DynastyProcess rankings are missing required rows, columns, page types, or bye values."
+    except Exception as exc:
+        result["error"] = str(exc)
+    return result
 
 
 def run_source_diagnostics(
     scoring: str = "HALF", output_path: Path | None = None
 ) -> dict[str, Any]:
-    checks = [
-        check_html_table(
-            name="fantasypros_adp",
-            url=fantasypros_adp_url(scoring),
-            attrs={"id": "data"},
-            required_column_keywords=["Player", "AVG"],
-            min_rows=100,
-        )
-    ]
-
-    for position in ["qb", "rb", "wr", "te", "k", "dst"]:
-        checks.append(
-            check_html_table(
-                name=f"fantasypros_projection_{position}",
-                url=f"https://www.fantasypros.com/nfl/projections/{position}.php?scoring={scoring.upper()}&week=0",
-                required_column_keywords=["Player", "FPTS"],
-                min_rows=20 if position not in {"k", "dst"} else 10,
-            )
-        )
+    scoring = scoring.upper()
+    checks = [check_espn_current_players(), check_dynastyprocess_rankings()]
 
     for position in ["qb", "rb", "wr", "te"]:
         checks.append(
             check_html_table(
                 name=f"fantasypros_history_{position}_week1",
-                url=f"https://www.fantasypros.com/nfl/stats/{position}.php?week=1&scoring={scoring.upper()}&range=week",
+                url=f"https://www.fantasypros.com/nfl/stats/{position}.php?week=1&scoring={scoring}&range=week",
                 required_column_keywords=["Player", "FPTS"],
                 min_rows=20,
             )
@@ -137,10 +215,11 @@ def run_source_diagnostics(
 
     manifest = {
         "checkedAt": dt.datetime.now(dt.timezone.utc).isoformat(),
-        "scoring": scoring.upper(),
+        "scoring": scoring,
         "ok": all(check.get("ok") for check in checks),
         "checks": checks,
     }
     if output_path:
         save_json(output_path, manifest)
     return manifest
+

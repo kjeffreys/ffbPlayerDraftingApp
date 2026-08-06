@@ -1,13 +1,18 @@
 {
-  "status": "stale",
-  "generatedAt": "2026-05-22T10:29:52-04:00",
-  "label": "May 22, 2026 snapshot",
-  "message": "Player values are a stale offseason snapshot. Refresh and audit 2026 sources before using this for a real draft.",
+  "status": "draft-ready",
+  "generatedAt": "2026-08-06T18:01:40.023691+00:00",
+  "label": "2026-08-06 refresh",
+  "message": "2026 data refreshed from ESPN ADP/projections, DynastyProcess rankings/byes, and FantasyPros historical weekly stats.",
   "files": {
     "players.json": "Default / Current",
     "vany.json": "VANY",
     "passion.json": "Passion",
     "guillotine.json": "Guillotine",
     "champions.json": "Champions"
+  },
+  "sources": {
+    "espn": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026/segments/0/leaguedefaults/3?view=kona_player_info",
+    "dynastyprocess": "https://raw.githubusercontent.com/dynastyprocess/data/master/files/db_fpecr_latest.csv",
+    "historical": "https://www.fantasypros.com/nfl/stats/{pos}.php?week={week}&scoring=HALF&range=week"
   }
 }

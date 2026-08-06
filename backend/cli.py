@@ -18,6 +18,7 @@ from backend.pipelines.enrich import run_enrich
 from backend.pipelines.ingest import run_ingest
 from backend.pipelines.stats import run_stats
 from backend.pipelines.vor import run_vor
+from backend.refresh_data import refresh_all
 
 
 # The @click.group decorator makes `cli` a parent command that can have subcommands.
@@ -123,6 +124,19 @@ def all(ctx):
         log.exception("CLI: The 'all' command failed during one of its phases.")
         sys.exit(1)
 
+
+
+@cli.command("refresh-json")
+@click.pass_context
+def refresh_json(ctx):
+    """Refresh all draft-ready public JSON files from current free sources."""
+    log.info("CLI: Refreshing draft-ready public JSON files.")
+    try:
+        manifest = refresh_all(date_str=ctx.obj["date"])
+        click.echo(json.dumps(manifest, indent=2))
+    except Exception:
+        log.exception("CLI: refresh-json failed.")
+        sys.exit(1)
 
 @cli.group()
 def sources():
@@ -232,3 +246,5 @@ def history_tendencies(ctx):
 
 if __name__ == "__main__":
     cli()
+
+

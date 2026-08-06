@@ -50,7 +50,7 @@ npm run preview -- --host 127.0.0.1
 
 ## Deploy For Phone Access
 
-The repo now includes `netlify.toml` with the expected static settings:
+The repo includes `netlify.toml` with the expected static settings:
 
 ```text
 Build command: npm run build
@@ -78,65 +78,67 @@ public/vany.json
 public/passion.json
 public/guillotine.json
 public/champions.json
+public/data_status.json
 ```
 
-Those files contain:
+The league files contain:
 
 ```text
 id, name, team, position, adp, vor, bye, ppg
 ```
 
-They do not currently include source timestamps, confidence scores, source URLs, or mapping audit metadata.
+`public/data_status.json` tells the app whether the checked-in data is stale or draft-ready, when it was generated, and which source URLs powered the refresh.
 
-## Data Pipeline Shape
+## Refresh Draft Data
 
-The intended backend flow is:
+The current 2026 refresh path uses zero-budget public sources:
 
-1. Sleeper player pool for canonical player identities.
-2. FantasyPros ADP and bye data.
-3. FantasyPros preseason projections.
-4. FantasyPros prior-season weekly scoring.
-5. League-specific scoring weights.
-6. Manual boosts and rookie mimic overrides.
-7. VOR replacement-level calculation.
-8. Copy final league JSON into `public/`.
+```text
+ESPN fantasy endpoint: 2026 player pool, ADP, projections, team, position, injury flag
+DynastyProcess CSV: expert rankings, bye weeks, redraft/superflex/dynasty context
+FantasyPros weekly stats pages: prior-season weekly scoring history for floor/history modeling
+```
 
-Current trust warning:
-
-The checked-in public JSON files are snapshots. Before a real 2026 draft, regenerate them and keep the dated backend artifacts plus logs so each number can be audited.
-
-## Source Preflight
-
-Before regenerating player values, check whether the external tables still look parseable:
+Before regenerating player values, check whether the external inputs still look parseable:
 
 ```powershell
 cd D:\repos\ffbPlayerDraftingApp
 .\.venv\Scripts\python -m backend.cli sources check --scoring HALF --output local\source_manifest.json
 ```
 
-If this command fails, do not refresh `public/*.json` yet. Inspect `local/source_manifest.json`, update URLs/table parsing/aliases, and rerun the check.
+If that passes, regenerate all public draft JSON files:
+
+```powershell
+cd D:\repos\ffbPlayerDraftingApp
+.\.venv\Scripts\python -m backend.cli --date 2026-08-06 refresh-json
+```
+
+Use the actual run date in `YYYY-MM-DD` format. The command writes dated audit artifacts under `backend/data/<date>/` and updates the deployable static files under `public/`.
+
 ## Data Reliability Checklist
 
 Before trusting a draft file:
 
-1. Confirm every data source URL still returns the expected table.
+1. Run `sources check` and confirm it passes.
 2. Save raw/intermediate artifacts under a dated backend run folder.
-3. Produce a source manifest with fetch time, URL, row count, and parse status.
-4. Review fuzzy matches and add explicit aliases for suspicious names.
-5. Review unmatched projected players, unmatched ADP players, and missing bye weeks.
-6. Review rookies and mimic overrides manually.
-7. Compare top 50 by VOR against ADP and expert consensus for obvious breakage.
-8. Generate each league profile separately.
-9. Copy each audited `players_final.json` into its matching `public/*.json`.
-10. Build the app and spot-check the board before deploying.
+3. Confirm `public/data_status.json` says `draft-ready` and has today/tournament-day timestamps.
+4. Review source row counts in `backend/data/<date>/refresh_manifest.json`.
+5. Review fuzzy matches and add explicit aliases for suspicious names.
+6. Review unmatched or projection-only rookies manually.
+7. Compare the top 50 by VOR against ADP and expert consensus for obvious breakage.
+8. Generate each league profile separately through `refresh-json`.
+9. Build the app and spot-check the board before deploying.
+10. Commit and push the refreshed data before relying on Netlify/Vercel.
+
+## Current Data Notes
+
+As of the August 6, 2026 refresh, the pipeline produced 565 usable draft rows per league, matched 495 players to historical weekly scoring, used 6 ESPN 2025-history fallbacks, and had 0 missing bye rows. DynastyProcess reported a `2026-07-31` scrape date.
 
 ## What Needs Hardening Next
 
 Highest-value next work:
 
-1. Add a repeatable `refresh-data` command that regenerates all league JSONs.
-2. Add source manifests and audit reports.
-3. Make fuzzy matching reviewable in a generated CSV.
-4. Connect local league-history tendencies into the recommendation model.
-5. Add a visible data timestamp/confidence panel in the app.
-
+1. Generate a reviewable fuzzy-match CSV for suspicious or low-confidence matches.
+2. Add manager/league-history tendencies into the recommendation model.
+3. Add a top-50 audit page or CSV comparing VOR rank, ADP, ESPN rank, and DynastyProcess ECR.
+4. Add a one-command deploy checklist for Netlify/Vercel after data refresh.
