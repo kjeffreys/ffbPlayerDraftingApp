@@ -15,7 +15,7 @@ This guide is for running the pipeline to generate a new draft list.
 ### 1. Prerequisites
 *   Python 3.10+
 *   An active Python virtual environment (e.g., `venv`).
-*   Required packages installed via `pip install -r requirements.txt`.
+*   Required packages installed via `pip install -r backend/requirements.txt` from the repo root.
 
 ### 2. Configuration (The Three Key Files)
 
