@@ -91,10 +91,8 @@ During recent tuning and verification, several key aspects of the system's desig
 1.  **Player Slug Mapping is the Most Common Point of Failure:** The most significant bugs arose from external data sources using slightly different player slugs than our internal canonical format.
     *   **The Alias Map is the Solution:** The `player_alias_map.json` is the definitive, first-line tool for resolving these discrepancies. It is more reliable than fuzzy matching.
     *   **Fuzzy Matching is a Fallback, Not a Primary Tool:** The pipeline uses the `thefuzz` library to catch minor variations not covered by the alias map (e.g., `patrick-mahomes` vs. `patrick-mahomes-ii-kc`). However, it can be overly aggressive and create false positives (e.g., incorrectly mapping ADP from `aaron-jones-sr` to `tim-jones`). An explicit alias is always preferred.
-    *   **Enhanced Logging for Fuzzy Matches:** The `utils.py` module now logs every fuzzy match it makes, including the confidence score. If a mapping seems incorrect, the `report.log` is the first place to look for evidence. A typical entry looks like this:
-        ```json
-        {"asctime": "...", "message": "Fuzzy match found.", "canonical_slug": "patrick-mahomes", "matched_source_slug": "patrick-mahomes-ii", "score": 95}
-        ```
+    *   **Reviewable Match Audits:** The `utils.py` module can return structured audit rows for every direct, alias, fuzzy, and unmatched mapping. The 2026 `refresh-json` path writes these to `backend/data/<date>/audits/history_match_audit.csv` and the shorter `history_match_review.csv`. Treat the review CSV as the first place to look before draft day; add explicit aliases for correct low-confidence matches instead of trusting fuzzy matching forever.
+    *   **Integrity Gate:** The refresh path also writes `backend/data/<date>/audits/integrity_report.json` and fails before marking public data as `draft-ready` if required fields, bye weeks, row counts, or per-league output validation break.
 
 2.  **Rookie vs. Veteran Scoring:** The pre-boost score calculation in `stats.py` intentionally treats rookies differently from veterans. A veteran's score is a blend of their historical and projection data. A rookie's score is based **100% on their scaled projection**. This is to avoid penalizing them for having no historical data and provides a more accurate initial score.
 

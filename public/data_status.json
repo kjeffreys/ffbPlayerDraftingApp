@@ -1,7 +1,7 @@
 {
   "status": "draft-ready",
-  "generatedAt": "2026-08-06T18:01:40.023691+00:00",
-  "label": "2026-08-06 refresh",
+  "generatedAt": "2026-08-10T11:22:24.549824+00:00",
+  "label": "2026-08-10 refresh",
   "message": "2026 data refreshed from ESPN ADP/projections, DynastyProcess rankings/byes, and FantasyPros historical weekly stats.",
   "files": {
     "players.json": "Default / Current",
@@ -14,5 +14,82 @@
     "espn": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026/segments/0/leaguedefaults/3?view=kona_player_info",
     "dynastyprocess": "https://raw.githubusercontent.com/dynastyprocess/data/master/files/db_fpecr_latest.csv",
     "historical": "https://www.fantasypros.com/nfl/stats/{pos}.php?week={week}&scoring=HALF&range=week"
+  },
+  "integrity": {
+    "usableRows": 566,
+    "historyCoverage": 0.8534,
+    "missingByeRows": 0,
+    "matchAudit": {
+      "totalRows": 1078,
+      "byType": {
+        "alias": 43,
+        "fuzzy": 668,
+        "unmatched_canonical": 314,
+        "unmatched_source": 53
+      },
+      "needsReview": 0
+    },
+    "historyReviewRows": 5,
+    "leagueValidations": {
+      "default": {
+        "ok": true,
+        "rowCount": 566,
+        "top50Positions": {
+          "RB": 28,
+          "WR": 13,
+          "QB": 8,
+          "TE": 1
+        },
+        "issueCount": 0,
+        "warningCount": 0
+      },
+      "vany": {
+        "ok": true,
+        "rowCount": 566,
+        "top50Positions": {
+          "RB": 32,
+          "WR": 16,
+          "QB": 1,
+          "TE": 1
+        },
+        "issueCount": 0,
+        "warningCount": 0
+      },
+      "passion": {
+        "ok": true,
+        "rowCount": 566,
+        "top50Positions": {
+          "WR": 27,
+          "RB": 21,
+          "QB": 1,
+          "TE": 1
+        },
+        "issueCount": 0,
+        "warningCount": 0
+      },
+      "guillotine": {
+        "ok": true,
+        "rowCount": 566,
+        "top50Positions": {
+          "RB": 35,
+          "WR": 14,
+          "TE": 1
+        },
+        "issueCount": 0,
+        "warningCount": 0
+      },
+      "champions": {
+        "ok": true,
+        "rowCount": 566,
+        "top50Positions": {
+          "RB": 21,
+          "WR": 17,
+          "QB": 10,
+          "TE": 2
+        },
+        "issueCount": 0,
+        "warningCount": 0
+      }
+    }
   }
 }

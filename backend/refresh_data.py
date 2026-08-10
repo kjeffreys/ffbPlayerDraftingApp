@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import csv
 import datetime as dt
 import json
 import math
@@ -18,7 +19,7 @@ import requests
 from backend.data_sources.historical import fetch_last_year_weekly_stats
 from backend.settings import LeagueConfig
 from backend.storage.file_store import save_json
-from backend.utils import create_hybrid_slug_map, slugify
+from backend.utils import create_hybrid_slug_map_with_audit, slugify
 
 
 ESPN_PLAYERS_URL = (
@@ -186,6 +187,16 @@ def _parse_bye_maps(rankings: pd.DataFrame) -> tuple[dict[str, int], dict[str, i
     return player_byes, team_byes
 
 
+
+def _parse_player_team_map(rankings: pd.DataFrame) -> dict[str, str]:
+    player_teams: dict[str, str] = {}
+    for _, row in rankings.iterrows():
+        player = str(row.get("player") or "")
+        team = str(row.get("team") or row.get("tm") or "")
+        if player and team and team.lower() != "nan":
+            player_teams.setdefault(slugify(player), team)
+    return player_teams
+
 def _parse_ranking_maps(rankings: pd.DataFrame) -> dict[str, dict[str, float]]:
     maps: dict[str, dict[str, float]] = {"redraft": {}, "superflex": {}, "dynasty": {}}
     selections = {
@@ -232,6 +243,223 @@ def _load_config(path: Path) -> LeagueConfig:
     with open(path, "r", encoding="utf-8") as f:
         return LeagueConfig(**json.load(f))
 
+
+
+def _json_ready(value: Any) -> Any:
+    if isinstance(value, float) and (math.isnan(value) or math.isinf(value)):
+        return None
+    if isinstance(value, np.generic):
+        return value.item()
+    return value
+
+
+def save_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str] | None = None) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if fieldnames is None:
+        fieldnames = sorted({key for row in rows for key in row.keys()})
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({key: _json_ready(row.get(key)) for key in fieldnames})
+
+
+def _flatten_match_audit_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    flattened = []
+    for row in rows:
+        alternatives = row.get("alternatives") or []
+        flattened.append(
+            {
+                "canonical_slug": row.get("canonical_slug", ""),
+                "matched_source_slug": row.get("matched_source_slug", ""),
+                "match_type": row.get("match_type", ""),
+                "score": row.get("score"),
+                "needs_review": row.get("needs_review", False),
+                "review_reason": row.get("review_reason", ""),
+                "alternatives": "; ".join(
+                    f"{alt.get('source_slug')}:{alt.get('score')}" for alt in alternatives
+                ),
+            }
+        )
+    return flattened
+
+
+
+def _build_history_review_rows(
+    flattened_rows: list[dict[str, Any]], base: pd.DataFrame
+) -> list[dict[str, Any]]:
+    impact_rows = {
+        str(row["slug"]): row
+        for _, row in base.iterrows()
+        if _finite_float(row.get("adp")) is not None and float(row.get("adp")) <= 120
+    }
+    review_rows = []
+    for row in flattened_rows:
+        canonical_slug = str(row.get("canonical_slug") or "")
+        impact = impact_rows.get(canonical_slug)
+        low_confidence_fuzzy = row.get("match_type") == "fuzzy" and row.get("needs_review")
+        high_adp_missing_history = row.get("match_type") == "unmatched_canonical" and impact is not None
+        if not low_confidence_fuzzy and not high_adp_missing_history:
+            continue
+        review_row = dict(row)
+        if impact is not None:
+            review_row.update(
+                {
+                    "name": impact.get("name"),
+                    "team": impact.get("team"),
+                    "position": impact.get("position"),
+                    "adp": _json_ready(impact.get("adp")),
+                    "espn_rank": _json_ready(impact.get("espn_rank")),
+                }
+            )
+        review_row["review_scope"] = (
+            "low_confidence_fuzzy" if low_confidence_fuzzy else "top120_missing_history"
+        )
+        review_rows.append(review_row)
+    return sorted(
+        review_rows,
+        key=lambda row: (
+            0 if row.get("review_scope") == "low_confidence_fuzzy" else 1,
+            _finite_float(row.get("adp")) or 9999,
+            str(row.get("canonical_slug") or ""),
+        ),
+    )
+
+def _audit_counts(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    by_type: dict[str, int] = {}
+    for row in rows:
+        match_type = str(row.get("match_type") or "unknown")
+        by_type[match_type] = by_type.get(match_type, 0) + 1
+    return {
+        "totalRows": len(rows),
+        "byType": by_type,
+        "needsReview": sum(1 for row in rows if row.get("needs_review")),
+    }
+
+
+def _validate_final_rows(rows: list[dict[str, Any]], league_id: str) -> dict[str, Any]:
+    issues: list[str] = []
+    warnings: list[str] = []
+    required = ["id", "name", "team", "position", "adp", "vor", "bye", "ppg"]
+    if len(rows) < 300:
+        issues.append(f"{league_id}: expected at least 300 draftable rows, found {len(rows)}.")
+
+    seen_players: set[tuple[str, str, str]] = set()
+    reported_id_issue = False
+    for index, row in enumerate(rows, start=1):
+        if row.get("id") != index and not reported_id_issue:
+            issues.append(f"{league_id}: non-sequential id at row {index}.")
+            reported_id_issue = True
+        missing = [key for key in required if row.get(key) in (None, "")]
+        if missing:
+            issues.append(f"{league_id}: {row.get('name', '<unknown>')} missing {', '.join(missing)}.")
+        if row.get("bye", 0) <= 0:
+            issues.append(f"{league_id}: {row.get('name', '<unknown>')} missing bye week.")
+        if row.get("adp", 999) <= 0 or row.get("adp", 999) > 360:
+            warnings.append(f"{league_id}: {row.get('name', '<unknown>')} has unusual ADP {row.get('adp')}.")
+        player_key = (str(row.get("name")), str(row.get("team")), str(row.get("position")))
+        if player_key in seen_players:
+            issues.append(f"{league_id}: duplicate player row {player_key}.")
+        seen_players.add(player_key)
+
+    top50 = rows[:50]
+    top50_positions: dict[str, int] = {}
+    for row in top50:
+        position = str(row.get("position") or "")
+        top50_positions[position] = top50_positions.get(position, 0) + 1
+    if top50_positions.get("RB", 0) + top50_positions.get("WR", 0) < 20:
+        warnings.append(f"{league_id}: top 50 has unusually few RB/WR players.")
+
+    return {
+        "ok": not issues,
+        "issues": issues,
+        "warnings": warnings,
+        "rowCount": len(rows),
+        "top50Positions": top50_positions,
+    }
+
+
+def _top_player_audit_rows(df: pd.DataFrame, rows: list[dict[str, Any]], limit: int = 50) -> list[dict[str, Any]]:
+    by_name = {str(row["name"]): row for _, row in df.iterrows()}
+    audit_rows = []
+    for row in rows[:limit]:
+        source_row = by_name.get(row["name"])
+        audit_rows.append(
+            {
+                "rank": row["id"],
+                "name": row["name"],
+                "team": row["team"],
+                "position": row["position"],
+                "adp": row["adp"],
+                "vor": row["vor"],
+                "ppg": row["ppg"],
+                "bye": row["bye"],
+                "espn_rank": _json_ready(source_row.get("espn_rank")) if source_row is not None else None,
+                "redraft_ecr": _json_ready(source_row.get("redraft_ecr")) if source_row is not None else None,
+                "superflex_ecr": _json_ready(source_row.get("superflex_ecr")) if source_row is not None else None,
+                "dynasty_ecr": _json_ready(source_row.get("dynasty_ecr")) if source_row is not None else None,
+                "historical_match": bool(source_row.get("historical_match")) if source_row is not None else False,
+                "historical_game_count": len(source_row.get("historical_scores") or []) if source_row is not None else 0,
+                "projected_ppg_espn": _json_ready(source_row.get("projected_ppg_espn")) if source_row is not None else None,
+                "actual_2025_ppg_espn": _json_ready(source_row.get("actual_2025_ppg_espn")) if source_row is not None else None,
+            }
+        )
+    return audit_rows
+
+
+def _build_integrity_report(
+    *,
+    manifest: dict[str, Any],
+    match_audit_rows: list[dict[str, Any]],
+    league_validations: dict[str, dict[str, Any]],
+    history_review_rows: list[dict[str, Any]],
+) -> dict[str, Any]:
+    history_rows = manifest.get("historyPlayersMatched", 0) + manifest.get("espn2025HistoryFallbackRows", 0)
+    usable_rows = manifest.get("usableRows", 0) or 1
+    history_coverage = history_rows / usable_rows
+    issues: list[str] = []
+    warnings: list[str] = []
+    if manifest.get("usableRows", 0) < 500:
+        issues.append("Usable player pool below 500 rows.")
+    if manifest.get("missingByeRows", 0) != 0:
+        issues.append("One or more draftable players are missing bye weeks.")
+    if history_coverage < 0.75:
+        warnings.append(f"History coverage is {history_coverage:.1%}, below 75% review threshold.")
+
+    match_counts = _audit_counts(match_audit_rows)
+    fuzzy_review_rows = [
+        row for row in match_audit_rows
+        if row.get("match_type") == "fuzzy" and row.get("needs_review")
+    ]
+    if fuzzy_review_rows:
+        warnings.append(f"{len(fuzzy_review_rows)} low-confidence fuzzy matches need review.")
+
+    for validation in league_validations.values():
+        issues.extend(validation.get("issues", []))
+        warnings.extend(validation.get("warnings", []))
+
+    return {
+        "ok": not issues,
+        "issues": issues,
+        "warnings": warnings,
+        "summary": {
+            "usableRows": manifest.get("usableRows", 0),
+            "historyCoverage": round(history_coverage, 4),
+            "missingByeRows": manifest.get("missingByeRows", 0),
+            "matchAudit": match_counts,
+            "historyReviewRows": len(history_review_rows),
+            "leagueValidations": {
+                league_id: {
+                    "ok": validation.get("ok", False),
+                    "rowCount": validation.get("rowCount", 0),
+                    "top50Positions": validation.get("top50Positions", {}),
+                    "issueCount": len(validation.get("issues", [])),
+                    "warningCount": len(validation.get("warnings", [])),
+                }
+                for league_id, validation in league_validations.items()
+            },
+        },
+    }
 
 def _apply_boosts(df: pd.DataFrame, cfg: LeagueConfig, root: Path) -> pd.DataFrame:
     boost_path = root / "backend" / "player_boost.json"
@@ -405,13 +633,16 @@ def _format_final(df: pd.DataFrame) -> list[dict[str, Any]]:
     return rows
 
 
-def build_base_player_pool(root: Path, top_game_count: int) -> tuple[pd.DataFrame, dict[str, Any]]:
+def build_base_player_pool(root: Path, top_game_count: int) -> tuple[pd.DataFrame, dict[str, Any], list[dict[str, Any]]]:
     espn = fetch_espn_players()
     rankings = fetch_dynastyprocess_rankings()
     player_byes, team_byes = _parse_bye_maps(rankings)
+    player_teams = _parse_player_team_map(rankings)
     ranking_maps = _parse_ranking_maps(rankings)
     historical_scores = fetch_last_year_weekly_stats()
-    mapped_history = create_hybrid_slug_map(historical_scores, espn["slug"].tolist())
+    mapped_history, history_match_audit = create_hybrid_slug_map_with_audit(
+        historical_scores, espn["slug"].tolist(), score_cutoff=90, review_score_cutoff=95
+    )
 
     espn["projected_ppg"] = espn["projected_ppg_espn"].fillna(
         espn["projected_points"] / 17
@@ -422,6 +653,10 @@ def build_base_player_pool(root: Path, top_game_count: int) -> tuple[pd.DataFram
         lambda scores: _history_scores_average(scores, top_game_count)
     )
     espn["historical_floor"] = espn["historical_scores"].map(_history_scores_floor)
+    espn["team"] = espn.apply(
+        lambda row: row["team"] or player_teams.get(row["slug"]) or "FA",
+        axis=1,
+    )
     espn["redraft_ecr"] = espn["slug"].map(ranking_maps["redraft"])
     espn["superflex_ecr"] = espn["slug"].map(ranking_maps["superflex"])
     espn["dynasty_ecr"] = espn["slug"].map(ranking_maps["dynasty"])
@@ -459,7 +694,7 @@ def build_base_player_pool(root: Path, top_game_count: int) -> tuple[pd.DataFram
             "historical": "https://www.fantasypros.com/nfl/stats/{pos}.php?week={week}&scoring=HALF&range=week",
         },
     }
-    return base, manifest
+    return base, manifest, history_match_audit
 
 
 def refresh_all(root: Path | None = None, date_str: str | None = None) -> dict[str, Any]:
@@ -467,18 +702,87 @@ def refresh_all(root: Path | None = None, date_str: str | None = None) -> dict[s
     date_str = date_str or dt.date.today().isoformat()
     data_dir = root / "backend" / "data" / date_str
     public_dir = root / "public"
+    audit_dir = data_dir / "audits"
 
     configs = {target.profile_id: _load_config(root / target.config_path) for target in LEAGUE_TARGETS}
     top_game_count = max(config.top_game_count for config in configs.values())
-    base, manifest = build_base_player_pool(root, top_game_count)
+    base, manifest, history_match_audit = build_base_player_pool(root, top_game_count)
     save_json(data_dir / "players_base.json", base.replace({np.nan: None}).to_dict(orient="records"))
 
+    flattened_match_audit = _flatten_match_audit_rows(history_match_audit)
+    history_review_rows = _build_history_review_rows(flattened_match_audit, base)
+    save_json(audit_dir / "history_match_audit.json", history_match_audit)
+    save_csv(
+        audit_dir / "history_match_audit.csv",
+        flattened_match_audit,
+        [
+            "canonical_slug",
+            "matched_source_slug",
+            "match_type",
+            "score",
+            "needs_review",
+            "review_reason",
+            "review_scope",
+            "name",
+            "team",
+            "position",
+            "adp",
+            "espn_rank",
+            "alternatives",
+        ],
+    )
+    save_csv(
+        audit_dir / "history_match_review.csv",
+        history_review_rows,
+        [
+            "canonical_slug",
+            "matched_source_slug",
+            "match_type",
+            "score",
+            "needs_review",
+            "review_reason",
+            "review_scope",
+            "name",
+            "team",
+            "position",
+            "adp",
+            "espn_rank",
+            "alternatives",
+        ],
+    )
+
     league_summaries = {}
+    league_validations = {}
     for target in LEAGUE_TARGETS:
         cfg = configs[target.profile_id]
         scored = score_players(base, cfg, root)
         with_vor, replacement_levels = calculate_vor(scored, cfg)
         rows = _format_final(with_vor)
+        top_audit_rows = _top_player_audit_rows(with_vor, rows)
+        save_csv(
+            audit_dir / f"top50_{target.profile_id}.csv",
+            top_audit_rows,
+            [
+                "rank",
+                "name",
+                "team",
+                "position",
+                "adp",
+                "vor",
+                "ppg",
+                "bye",
+                "espn_rank",
+                "redraft_ecr",
+                "superflex_ecr",
+                "dynasty_ecr",
+                "historical_match",
+                "historical_game_count",
+                "projected_ppg_espn",
+                "actual_2025_ppg_espn",
+            ],
+        )
+        validation = _validate_final_rows(rows, target.profile_id)
+        league_validations[target.profile_id] = validation
         save_json(data_dir / target.profile_id / "players_final.json", rows)
         save_json(public_dir / target.public_file, rows)
         league_summaries[target.profile_id] = {
@@ -487,7 +791,21 @@ def refresh_all(root: Path | None = None, date_str: str | None = None) -> dict[s
             "count": len(rows),
             "replacementLevels": replacement_levels,
             "top10": rows[:10],
+            "validation": validation,
         }
+
+    integrity_report = _build_integrity_report(
+        manifest=manifest,
+        match_audit_rows=history_match_audit,
+        league_validations=league_validations,
+        history_review_rows=history_review_rows,
+    )
+    save_json(audit_dir / "integrity_report.json", integrity_report)
+    if not integrity_report["ok"]:
+        raise RuntimeError(
+            "Data integrity checks failed. Review "
+            f"{audit_dir / 'integrity_report.json'} before using public JSON files."
+        )
 
     status = {
         "status": "draft-ready",
@@ -496,16 +814,21 @@ def refresh_all(root: Path | None = None, date_str: str | None = None) -> dict[s
         "message": "2026 data refreshed from ESPN ADP/projections, DynastyProcess rankings/byes, and FantasyPros historical weekly stats.",
         "files": {target.public_file: target.label for target in LEAGUE_TARGETS},
         "sources": manifest["sources"],
+        "integrity": integrity_report["summary"],
     }
     save_json(public_dir / "data_status.json", status)
     full_manifest = {
         "generatedAt": status["generatedAt"],
         "date": date_str,
         **manifest,
+        "integrity": integrity_report,
         "leagues": league_summaries,
+        "auditFiles": {
+            "historyMatchAuditCsv": str(audit_dir / "history_match_audit.csv"),
+            "historyMatchReviewCsv": str(audit_dir / "history_match_review.csv"),
+            "integrityReportJson": str(audit_dir / "integrity_report.json"),
+            "top50CsvPattern": str(audit_dir / "top50_<league>.csv"),
+        },
     }
     save_json(data_dir / "refresh_manifest.json", full_manifest)
     return full_manifest
-
-
-

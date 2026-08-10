@@ -110,7 +110,7 @@ If that passes, regenerate all public draft JSON files:
 
 ```powershell
 cd D:\repos\ffbPlayerDraftingApp
-.\.venv\Scripts\python -m backend.cli --date 2026-08-06 refresh-json
+.\.venv\Scripts\python -m backend.cli --date 2026-08-10 refresh-json
 ```
 
 Use the actual run date in `YYYY-MM-DD` format. The command writes dated audit artifacts under `backend/data/<date>/` and updates the deployable static files under `public/`.
@@ -123,22 +123,34 @@ Before trusting a draft file:
 2. Save raw/intermediate artifacts under a dated backend run folder.
 3. Confirm `public/data_status.json` says `draft-ready` and has today/tournament-day timestamps.
 4. Review source row counts in `backend/data/<date>/refresh_manifest.json`.
-5. Review fuzzy matches and add explicit aliases for suspicious names.
+5. Review `backend/data/<date>/audits/history_match_review.csv` and add explicit aliases for suspicious names.
 6. Review unmatched or projection-only rookies manually.
-7. Compare the top 50 by VOR against ADP and expert consensus for obvious breakage.
+7. Review `backend/data/<date>/audits/top50_<league>.csv` for VOR vs ADP/ECR breakage.
 8. Generate each league profile separately through `refresh-json`.
 9. Build the app and spot-check the board before deploying.
 10. Commit and push the refreshed data before relying on Netlify/Vercel.
 
+## Audit Files
+
+Each `refresh-json` run writes local-only audit artifacts under `backend/data/<date>/audits/`:
+
+```text
+history_match_audit.csv      Full direct/alias/fuzzy/unmatched history map audit
+history_match_review.csv     Short review list: low-confidence fuzzy rows plus top-120 missing-history players
+top50_<league>.csv           Per-league top 50 with VOR, ADP, ESPN rank, ECR, and history flags
+integrity_report.json        Pass/fail report for row counts, missing fields, byes, match coverage, and league outputs
+```
+
+The refresh command will not write `public/data_status.json` as `draft-ready` if integrity issues are present. Warnings and review rows are preserved in the audit folder so you can decide whether to add aliases, accept rookie projection-only players, or manually adjust a player.
+
 ## Current Data Notes
 
-As of the August 6, 2026 refresh, the pipeline produced 565 usable draft rows per league, matched 495 players to historical weekly scoring, used 6 ESPN 2025-history fallbacks, and had 0 missing bye rows. DynastyProcess reported a `2026-07-31` scrape date.
+As of the August 10, 2026 refresh, the pipeline produced 566 usable draft rows per league, matched 481 players to historical weekly scoring, used 2 ESPN 2025-history fallbacks, had 0 missing bye rows, and had 0 low-confidence fuzzy matches needing review. The review CSV still flags 5 top-120 players with no historical match, which are rookie/new-context review items: Jeremiyah Love, Carnell Tate, Jadarian Price, Jordyn Tyson, and Makai Lemon. DynastyProcess reported a `2026-08-07` scrape date.
 
 ## What Needs Hardening Next
 
 Highest-value next work:
 
-1. Generate a reviewable fuzzy-match CSV for suspicious or low-confidence matches.
-2. Add manager/league-history tendencies into the recommendation model.
-3. Add a top-50 audit page or CSV comparing VOR rank, ADP, ESPN rank, and DynastyProcess ECR.
-4. Add a one-command deploy checklist for Netlify/Vercel after data refresh.
+1. Add manager/league-history tendencies into the recommendation model.
+2. Add a top-50 audit viewer in the app so the CSV can be reviewed without leaving the browser.
+3. Add a one-command deploy checklist for Netlify/Vercel after data refresh.

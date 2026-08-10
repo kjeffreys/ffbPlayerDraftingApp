@@ -10,6 +10,8 @@ from backend.data_sources.fantasypros import _parse_adp_player_name
 from backend.data_sources.source_diagnostics import table_has_keywords
 from backend.pipelines.stats import normalize_boost_data
 from backend.settings import LeagueConfig
+from backend.refresh_data import _validate_final_rows
+from backend.utils import create_hybrid_slug_map_with_audit
 
 
 BASE_CONFIG = {
@@ -114,6 +116,56 @@ class ConfigAndHistoryTests(unittest.TestCase):
             self.assertEqual(rows[0]["manager"], "Bills Fan")
             self.assertEqual(rows[0]["favorite_nfl_teams"], [("BUF", 1)])
 
+
+
+    def test_hybrid_slug_map_returns_reviewable_audit(self):
+        mapped, audit_rows = create_hybrid_slug_map_with_audit(
+            {
+                "direct-player": [1.0],
+                "aaron-jones-sr": [2.0],
+                "jamarr-chase-cin": [3.0],
+                "stray-source": [4.0],
+            },
+            ["direct-player", "aaron-jones", "jamarr-chase", "missing-player"],
+        )
+        self.assertEqual(mapped["direct-player"], [1.0])
+        self.assertEqual(mapped["aaron-jones"], [2.0])
+        self.assertEqual(mapped["jamarr-chase"], [3.0])
+
+        by_type = {}
+        for row in audit_rows:
+            by_type[row["match_type"]] = by_type.get(row["match_type"], 0) + 1
+        self.assertEqual(by_type["direct"], 1)
+        self.assertEqual(by_type["alias"], 1)
+        self.assertEqual(by_type["fuzzy"], 1)
+        self.assertEqual(by_type["unmatched_canonical"], 1)
+        self.assertEqual(by_type["unmatched_source"], 1)
+        missing_row = next(row for row in audit_rows if row["canonical_slug"] == "missing-player")
+        self.assertEqual(missing_row["match_type"], "unmatched_canonical")
+        self.assertFalse(missing_row["needs_review"])
+
+    def test_final_row_validator_catches_integrity_errors(self):
+        valid_rows = [
+            {
+                "id": index,
+                "name": f"Player {index}",
+                "team": "BUF",
+                "position": "RB" if index <= 25 else "WR",
+                "adp": float(index),
+                "vor": 50.0 - index,
+                "bye": 7,
+                "ppg": 20.0 - (index / 10),
+            }
+            for index in range(1, 301)
+        ]
+        self.assertTrue(_validate_final_rows(valid_rows, "test")["ok"])
+
+        broken_rows = [dict(row) for row in valid_rows]
+        broken_rows[0]["id"] = 99
+        broken_rows[1]["bye"] = 0
+        validation = _validate_final_rows(broken_rows, "test")
+        self.assertFalse(validation["ok"])
+        self.assertGreaterEqual(len(validation["issues"]), 2)
 
 if __name__ == "__main__":
     unittest.main()
