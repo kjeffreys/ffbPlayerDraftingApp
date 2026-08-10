@@ -3,12 +3,12 @@
         "jaydon-blue",
         "tank-bigsby"
     ],
-    "large-boost": [
+    "large_boost_slugs": [
         "ceedee-lamb",
         "chris-olave",
         "treveyon-henderson"
     ],
-    "medium-boost": [
+    "medium_boost_slugs": [
         "adam-thielen",
         "cam-skattebo",
         "cedric-tillman",
@@ -18,7 +18,7 @@
         "romeo-doubs",
         "woody-marks"
     ],
-    "small-boost": [
+    "small_boost_slugs": [
         "dandre-swift",
         "dk-metcalf",
         "drake-london",

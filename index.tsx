@@ -1,543 +1,1075 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 
-/* ────────────────────
-   TYPE DEFINITIONS
-────────────────────── */
-interface Player
-{
+type Position = 'QB' | 'RB' | 'WR' | 'TE' | 'K' | 'DEF';
+type FlexPosition = Position | 'FLEX';
+type Owner = 'me' | 'other';
+type ViewType = 'classic' | 'cockpit' | 'board' | 'byes';
+type SortByType = 'recommendation' | 'adp' | 'vor';
+type FilterByType = 'ALL' | 'FLEX' | Position;
+type Concern = 'injury' | 'role' | 'legal' | 'playoff' | 'bye' | 'fade';
+
+interface Player {
     id: number;
     name: string;
     team: string;
-    position: 'QB' | 'RB' | 'WR' | 'TE' | 'K' | 'DEF';
+    position: Position;
     adp: number;
     vor: number;
     ppg: number;
     bye: number;
 }
 
-type SortByType = 'adp' | 'vor';
-type FilterByType = 'ALL' | 'FLEX' | Player['position'];
-type ViewType = 'draft' | 'byes';
-type ByeWeekCounts = Record<number, Player[]>;
-type Owner = 'me' | 'other';
+interface LeagueProfile {
+    id: string;
+    label: string;
+    file: string;
+    teams: number;
+    mode: 'redraft' | 'guillotine' | 'champions';
+    roster: Record<FlexPosition, number>;
+    notes: string;
+}
 
-/* ────────────────────
-   DATA FETCH
-────────────────────── */
-async function fetchPlayers(): Promise<Player[]>
-{
-    const res = await fetch('./players.json');
-    if (!res.ok) throw new Error('Failed to fetch players.json');
+interface DraftPick {
+    playerId: number;
+    owner: Owner;
+    manager: string;
+    pick: number;
+    at: string;
+}
+
+interface PlayerAdjustment {
+    avoid?: boolean;
+    manual?: number;
+    concerns?: Concern[];
+}
+
+interface DraftSession {
+    drafted: DraftPick[];
+    undone: DraftPick[];
+    adjustments: Record<string, PlayerAdjustment>;
+    pickingFor: Owner;
+    currentManager: string;
+    view: ViewType;
+    sortBy: SortByType;
+    filterBy: FilterByType;
+    showTop10: boolean;
+}
+
+interface ScoreComponents {
+    vor: number;
+    adpValue: number;
+    tierDropoff: number;
+    availabilityNextPick: number;
+    rosterFit: number;
+    byeRisk: number;
+    historyAdjustment: number;
+    manualAdjustment: number;
+    concernPenalty: number;
+}
+
+interface Recommendation {
+    player: Player;
+    totalScore: number;
+    components: ScoreComponents;
+    reasons: string[];
+}
+
+interface DataStatus {
+    status: 'stale' | 'draft-ready' | 'unknown';
+    generatedAt?: string;
+    label?: string;
+    message?: string;
+}
+
+const POSITIONS: Position[] = ['QB', 'RB', 'WR', 'TE', 'K', 'DEF'];
+const FILTERS: FilterByType[] = ['ALL', 'FLEX', ...POSITIONS];
+const STORAGE_PREFIX = 'draft-assistant-v2';
+
+const LEAGUES: LeagueProfile[] = [
+    {
+        id: 'default',
+        label: 'Default / Current',
+        file: 'players.json',
+        teams: 12,
+        mode: 'redraft',
+        roster: { QB: 2, RB: 4, WR: 4, TE: 1, FLEX: 0, K: 1, DEF: 1 },
+        notes: 'Current generated player pool.',
+    },
+    {
+        id: 'vany',
+        label: 'VANY',
+        file: 'vany.json',
+        teams: 12,
+        mode: 'redraft',
+        roster: { QB: 1, RB: 4, WR: 4, TE: 1, FLEX: 0, K: 1, DEF: 1 },
+        notes: 'Back to Yahoo this year; local history can learn team bias.',
+    },
+    {
+        id: 'passion',
+        label: 'Passion',
+        file: 'passion.json',
+        teams: 14,
+        mode: 'redraft',
+        roster: { QB: 1, RB: 3, WR: 4, TE: 1, FLEX: 0, K: 1, DEF: 1 },
+        notes: '14-team redraft profile.',
+    },
+    {
+        id: 'guillotine',
+        label: 'Guillotine',
+        file: 'guillotine.json',
+        teams: 18,
+        mode: 'guillotine',
+        roster: { QB: 1, RB: 4, WR: 4, TE: 1, FLEX: 0, K: 1, DEF: 1 },
+        notes: 'Floor and survival matter more than ceiling.',
+    },
+    {
+        id: 'champions',
+        label: 'Champions',
+        file: 'champions.json',
+        teams: 8,
+        mode: 'champions',
+        roster: { QB: 3, RB: 5, WR: 6, TE: 2, FLEX: 0, K: 1, DEF: 1 },
+        notes: 'Live in-person, superflex-like, multi-year context.',
+    },
+];
+
+const CONCERN_LABELS: Record<Concern, string> = {
+    injury: 'Injury',
+    role: 'Role',
+    legal: 'Legal',
+    playoff: 'Playoff',
+    bye: 'Bye',
+    fade: 'Fade',
+};
+
+const EMPTY_SESSION: DraftSession = {
+    drafted: [],
+    undone: [],
+    adjustments: {},
+    pickingFor: 'me',
+    currentManager: 'Me',
+    view: 'cockpit',
+    sortBy: 'recommendation',
+    filterBy: 'ALL',
+    showTop10: false,
+};
+
+function defaultSessionForLeague(leagueId: string): DraftSession {
+    return {
+        ...EMPTY_SESSION,
+        view: leagueId === 'champions' ? 'classic' : 'cockpit',
+    };
+}
+
+const getPositionColor = (pos: Position) => `var(--pos-${pos.toLowerCase()})`;
+const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
+const round = (value: number) => Number(value.toFixed(2));
+
+async function fetchPlayers(profile: LeagueProfile): Promise<Player[]> {
+    const res = await fetch(`./${profile.file}`);
+    if (!res.ok) throw new Error(`Failed to fetch ${profile.file}`);
     return res.json();
 }
 
-/* ────────────────────
-   CONSTANTS & UTILS
-────────────────────── */
-const POSITIONS: Player['position'][] = ['QB', 'RB', 'WR', 'TE', 'K', 'DEF'];
-const getPositionColor = (pos: Player['position']) => `var(--pos-${pos.toLowerCase()})`;
+async function fetchDataStatus(): Promise<DataStatus | null> {
+    try {
+        const res = await fetch('./data_status.json', { cache: 'no-store' });
+        if (!res.ok) return null;
+        return res.json();
+    } catch {
+        return null;
+    }
+}
 
-/** Centralized metrics/config */
-const METRICS = {
-    stealDiscountPicks: 1,  // 💰 shows when currentPick - ADP ≥ 1
-    windowPicks: 30,         // 🔥 lookahead horizon
-    superiorityPct: 0.03,    // 🔥 must beat next-best position by ≥ 4%
-    includeKAndDef: true,    // 🔥 include K/DEF in cross-position comparison
-    topKPositions: 3,        // 🔥 flag up to 3 positions if each clearly leads
-    minAbsDrop: 1.0,         // 🔥 require at least this absolute VOR drop
-};
+function sessionKey(leagueId: string) {
+    return `${STORAGE_PREFIX}:session:${leagueId}`;
+}
 
-const CONSIDERED_POSITIONS: Player['position'][] =
-    METRICS.includeKAndDef ? POSITIONS : (['QB', 'RB', 'WR', 'TE'] as const);
+function selectedLeagueKey() {
+    return `${STORAGE_PREFIX}:selected-league`;
+}
 
-/* ────────────────────
-   HEADER
-────────────────────── */
+function loadSession(leagueId: string): DraftSession {
+    try {
+        const raw = window.localStorage.getItem(sessionKey(leagueId));
+        const defaultSession = defaultSessionForLeague(leagueId);
+        if (!raw) return defaultSession;
+        return { ...defaultSession, ...JSON.parse(raw) };
+    } catch {
+        return defaultSessionForLeague(leagueId);
+    }
+}
+
+function saveSession(leagueId: string, session: DraftSession) {
+    window.localStorage.setItem(sessionKey(leagueId), JSON.stringify(session));
+}
+
+function draftedMap(drafted: DraftPick[]) {
+    return new Map(drafted.map(pick => [pick.playerId, pick]));
+}
+
+function playerMatches(player: Player, query: string) {
+    const q = query.trim().toLowerCase();
+    if (!q) return true;
+    return [player.name, player.team, player.position].some(value =>
+        value.toLowerCase().includes(q)
+    );
+}
+
+function isFlexPosition(pos: Position) {
+    return pos === 'RB' || pos === 'WR' || pos === 'TE';
+}
+
+function rosterCounts(players: Player[], picks: DraftPick[]) {
+    const counts = Object.fromEntries(POSITIONS.map(pos => [pos, 0])) as Record<Position, number>;
+    const pickedIds = new Set(picks.filter(pick => pick.owner === 'me').map(pick => pick.playerId));
+    players.forEach(player => {
+        if (pickedIds.has(player.id)) counts[player.position] += 1;
+    });
+    return counts;
+}
+
+function byeCounts(players: Player[], picks: DraftPick[]) {
+    const pickedIds = new Set(picks.filter(pick => pick.owner === 'me').map(pick => pick.playerId));
+    return players.reduce<Record<number, Player[]>>((counts, player) => {
+        if (pickedIds.has(player.id)) {
+            counts[player.bye] = [...(counts[player.bye] ?? []), player];
+        }
+        return counts;
+    }, {});
+}
+
+function getLeagueHistoryAdjustment(profile: LeagueProfile, player: Player) {
+    if (profile.id === 'vany' && (player.team === 'BUF' || player.team === 'LAR')) {
+        return 0.9;
+    }
+    return 0;
+}
+
+function getRosterFit(profile: LeagueProfile, counts: Record<Position, number>, player: Player, currentPick: number) {
+    const target = profile.roster[player.position] ?? 0;
+    const count = counts[player.position] ?? 0;
+    if ((player.position === 'K' || player.position === 'DEF') && currentPick < profile.teams * 10) {
+        return -2.5;
+    }
+    if (count < target) return 2.4 - count * 0.35;
+    if (isFlexPosition(player.position) && count < target + 2) return 0.65;
+    if (count >= target + 3) return -1.2;
+    return 0;
+}
+
+function getByeRisk(myByes: Record<number, Player[]>, player: Player) {
+    const sameBye = myByes[player.bye] ?? [];
+    const samePosition = sameBye.filter(p => p.position === player.position).length;
+    return -(Math.max(0, sameBye.length - 1) * 0.75 + samePosition * 0.45);
+}
+
+function getTierDropoff(player: Player, available: Player[], nextPick: number) {
+    const samePosition = available.filter(p => p.position === player.position && p.id !== player.id);
+    const laterOptions = samePosition.filter(p => p.adp > nextPick);
+    const bestLaterVor = laterOptions.length ? Math.max(...laterOptions.map(p => p.vor)) : 0;
+    return Math.max(0, player.vor - bestLaterVor);
+}
+
+function scorePlayer(
+    profile: LeagueProfile,
+    player: Player,
+    available: Player[],
+    myRoster: Record<Position, number>,
+    myByes: Record<number, Player[]>,
+    currentPick: number,
+    adjustment: PlayerAdjustment | undefined
+): Recommendation {
+    const nextPick = currentPick + profile.teams;
+    const adpGap = currentPick - player.adp;
+    const tierDropoff = getTierDropoff(player, available, nextPick);
+    const concerns = adjustment?.concerns ?? [];
+    const components: ScoreComponents = {
+        vor: player.vor,
+        adpValue: clamp(adpGap * 0.25, -3, 4),
+        tierDropoff,
+        availabilityNextPick: clamp((nextPick - player.adp) / 8, -2, 5),
+        rosterFit: getRosterFit(profile, myRoster, player, currentPick),
+        byeRisk: getByeRisk(myByes, player),
+        historyAdjustment: getLeagueHistoryAdjustment(profile, player),
+        manualAdjustment: adjustment?.manual ?? 0,
+        concernPenalty: concerns.length * -0.85,
+    };
+    const totalScore =
+        components.vor +
+        components.adpValue +
+        components.tierDropoff * 0.65 +
+        components.availabilityNextPick +
+        components.rosterFit +
+        components.byeRisk +
+        components.historyAdjustment +
+        components.manualAdjustment +
+        components.concernPenalty;
+
+    return {
+        player,
+        totalScore: round(totalScore),
+        components: {
+            ...components,
+            tierDropoff: round(components.tierDropoff),
+        },
+        reasons: buildReasons(profile, player, components, concerns),
+    };
+}
+
+function buildReasons(
+    profile: LeagueProfile,
+    player: Player,
+    components: ScoreComponents,
+    concerns: Concern[]
+) {
+    const reasons: string[] = [];
+    if (components.adpValue >= 1.5) reasons.push(`ADP value: ${round(components.adpValue)} points past market.`);
+    if (components.tierDropoff >= 1.5) reasons.push(`Tier cliff: ${round(components.tierDropoff)} VOR drop if this ${player.position} tier dries up.`);
+    if (components.availabilityNextPick >= 2) reasons.push('Likely gone before your next estimated pick.');
+    if (components.rosterFit >= 1.5) reasons.push(`Roster fit: fills a ${player.position} need.`);
+    if (components.historyAdjustment > 0) reasons.push(`${profile.label} history: ${player.team} players may go early.`);
+    if (components.manualAdjustment > 0) reasons.push(`Manual boost: +${round(components.manualAdjustment)}.`);
+    if (components.manualAdjustment < 0) reasons.push(`Manual fade: ${round(components.manualAdjustment)}.`);
+    if (components.byeRisk < -0.5) reasons.push(`Bye risk: Week ${player.bye} is getting crowded.`);
+    if (concerns.length) reasons.push(`Concern flags: ${concerns.map(c => CONCERN_LABELS[c]).join(', ')}.`);
+    if (!reasons.length) reasons.push('Best balanced value across VOR, ADP, roster, and tier risk.');
+    return reasons.slice(0, 4);
+}
+
+function buttonStyle(active = false): React.CSSProperties {
+    return {
+        background: active ? 'var(--color-accent)' : 'var(--color-surface-2)',
+        color: 'var(--color-text-primary)',
+        border: '1px solid var(--color-border)',
+    };
+}
+
 const Header: React.FC<{
-    sortBy: SortByType; setSortBy: (s: SortByType) => void;
-    filterBy: FilterByType; setFilterBy: (f: FilterByType) => void;
-    view: ViewType; setView: (v: ViewType) => void;
-    resetDraft: () => void;
+    profile: LeagueProfile;
+    leagueId: string;
+    onLeagueChange: (leagueId: string) => void;
+    session: DraftSession;
+    updateSession: (patch: Partial<DraftSession>) => void;
     currentPick: number;
-    pickingFor: Owner; setPickingFor: (o: Owner) => void;
-
-    // Search
-    searchQuery: string; setSearchQuery: (v: string) => void;
-    onSearchEnter: () => void; // draft first visible match
+    searchQuery: string;
+    setSearchQuery: (value: string) => void;
+    draftFirstMatch: () => void;
+    undo: () => void;
+    redo: () => void;
+    resetDraft: () => void;
+    canUndo: boolean;
+    canRedo: boolean;
+    exportSession: () => void;
+    importSession: (file: File) => void;
 }> = ({
-    sortBy, setSortBy,
-    filterBy, setFilterBy,
-    view, setView,
-    resetDraft,
+    profile,
+    leagueId,
+    onLeagueChange,
+    session,
+    updateSession,
     currentPick,
-    pickingFor, setPickingFor,
-    searchQuery, setSearchQuery, onSearchEnter
-}) =>
-    {
-        const filters: FilterByType[] = ['ALL', 'FLEX', ...POSITIONS];
-        const btn = (active: boolean) => ({
-            backgroundColor: active ? 'var(--color-accent)' : 'var(--color-surface)',
-            color: 'var(--color-text-primary)',
-        });
+    searchQuery,
+    setSearchQuery,
+    draftFirstMatch,
+    undo,
+    redo,
+    resetDraft,
+    canUndo,
+    canRedo,
+    exportSession,
+    importSession,
+}) => {
+    const inputRef = useRef<HTMLInputElement | null>(null);
+    const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-        // Keyboard: "/" to focus search globally
-        const inputRef = useRef<HTMLInputElement | null>(null);
-        useEffect(() =>
-        {
-            const onKey = (e: KeyboardEvent) =>
-            {
-                const target = e.target as HTMLElement | null;
-                const isTyping = target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || (target as any).isContentEditable);
-                if (!isTyping && e.key === '/')
-                {
-                    e.preventDefault();
-                    inputRef.current?.focus();
-                }
-            };
-            window.addEventListener('keydown', onKey);
-            return () => window.removeEventListener('keydown', onKey);
-        }, []);
-
-        // Touch detection (for showing a Draft button)
-        const isTouch = typeof window !== 'undefined'
-            && !!window.matchMedia
-            && window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-
-        const placeholder = isTouch
-            ? 'Search players… (tap Draft to pick)'
-            : 'Quick search…  ( / to focus, Enter to draft )';
-
-        return (
-            <header style={{
-                position: 'sticky', top: 0, zIndex: 50, // ← sticky header
-                display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem',
-                background: 'var(--color-surface)', borderRadius: 8
-            }}>
-                <div style={{
-                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                    flexWrap: 'wrap', gap: 16
-                }}>
-                    <h1 style={{ margin: 0, fontSize: '1.5rem' }}>
-                        Fantasy Draft Assistant
-                        <span style={{ fontSize: '1rem', fontWeight: 400, color: 'var(--color-text-secondary)', marginLeft: 8 }}>
-                            · Pick #{currentPick}
-                        </span>
-                    </h1>
-
-                    {/* Quick search (tap anywhere in the bar to focus) */}
-                    <div
-                        onClick={() => inputRef.current?.focus()}
-                        style={{
-                            display: 'flex', alignItems: 'center', gap: 8,
-                            minWidth: 280, flex: 1, maxWidth: 420,
-                            background: 'var(--color-bg)',
-                            border: '1px solid var(--color-border)',
-                            padding: 6, borderRadius: 8,
-                            cursor: 'text'
-                        }}
-                    >
-                        <input
-                            ref={inputRef}
-                            value={searchQuery}
-                            onChange={e => setSearchQuery(e.target.value)}
-                            onKeyDown={e =>
-                            {
-                                if (e.key === 'Enter') onSearchEnter();
-                                if (e.key === 'Escape') setSearchQuery('');
-                            }}
-                            type="search"
-                            inputMode="text"
-                            enterKeyHint="go"
-                            autoCorrect="off"
-                            autoCapitalize="none"
-                            spellCheck={false}
-                            placeholder={placeholder}
-                            aria-label="Search players"
-                            style={{
-                                flex: 1,
-                                padding: '8px 8px',
-                                border: 'none',
-                                outline: 'none',
-                                background: 'transparent',
-                                color: 'var(--color-text-primary)'
-                            }}
-                        />
-                        {searchQuery && (
-                            <button
-                                onClick={(e) => { e.stopPropagation(); setSearchQuery(''); }}
-                                title="Clear"
-                                style={{ background: 'var(--color-surface)', color: 'var(--color-text-primary)', padding: '6px 10px', borderRadius: 6 }}
-                            >
-                                ×
-                            </button>
-                        )}
-                        {isTouch && (
-                            <button
-                                onClick={(e) => { e.stopPropagation(); onSearchEnter(); }}
-                                disabled={!searchQuery.trim()}
-                                style={{ background: 'var(--color-accent)', color: 'var(--color-text-primary)', padding: '6px 10px', borderRadius: 6 }}
-                            >
-                                Draft
-                            </button>
-                        )}
-                    </div>
-
-                    {/* Picking-for toggle */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <span style={{ color: 'var(--color-text-secondary)' }}>Picking for:</span>
-                        <div style={{ display: 'inline-flex', background: 'var(--color-bg)', padding: 2, borderRadius: 10 }}>
-                            <button
-                                style={{ ...btn(pickingFor === 'me'), padding: '6px 10px', borderRadius: 8 }}
-                                onClick={() => setPickingFor('me')}
-                            >
-                                Me
-                            </button>
-                            <button
-                                style={{ ...btn(pickingFor === 'other'), padding: '6px 10px', borderRadius: 8, marginLeft: 4 }}
-                                onClick={() => setPickingFor('other')}
-                            >
-                                Other
-                            </button>
-                        </div>
-                    </div>
-
-                    <div style={{ display: 'flex', gap: 8 }}>
-                        <button style={btn(view === 'draft')} onClick={() => setView('draft')}>Draft Board</button>
-                        <button style={btn(view === 'byes')} onClick={() => setView('byes')}>Bye Weeks</button>
-                        <button style={{ background: 'var(--color-danger)', color: 'var(--color-text-primary)' }}
-                            onClick={resetDraft}>Reset Draft</button>
-                    </div>
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                    <div>
-                        <span style={{ marginRight: 16, color: 'var(--color-text-secondary)' }}>Sort By:</span>
-                        <button style={btn(sortBy === 'adp')} onClick={() => setSortBy('adp')}>ADP</button>
-                        <button style={{ ...btn(sortBy === 'vor'), marginLeft: 8 }} onClick={() => setSortBy('vor')}>VOR</button>
-                    </div>
-                    <div>
-                        <span style={{ marginRight: 16, color: 'var(--color-text-secondary)' }}>Filter:</span>
-                        {filters.map(f => (
-                            <button key={f} style={{ ...btn(filterBy === f), marginRight: 4 }} onClick={() => setFilterBy(f)}>{f}</button>
-                        ))}
-                    </div>
-                </div>
-            </header>
-        );
-    };
-
-/* ────────────────────
-   PLAYERCARD
-────────────────────── */
-const PlayerCard: React.FC<{
-    player: Player;
-    onDraft: (id: number) => void;
-    isDanger: boolean;
-    dangerDrop?: number | null;
-    isSteal: boolean;
-}> = ({ player, onDraft, isDanger, dangerDrop, isSteal }) =>
-    {
-        const { name, team, position, bye, adp, vor, ppg } = player;
-
-        return (
-            <div style={{
-                display: 'flex', alignItems: 'center', background: 'var(--color-surface)',
-                padding: 16, borderRadius: 8, borderLeft: `5px solid ${getPositionColor(position)}`, gap: 16
-            }}>
-                <div style={{
-                    flex: 1, display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit,minmax(100px,1fr))', gap: 16
-                }}>
-                    <div>
-                        <div style={{ fontWeight: 600, fontSize: '1.1rem' }}>{name}</div>
-                        <div style={{ color: 'var(--color-text-secondary)', fontSize: 14 }}>
-                            {team} · {position} · Bye {bye}
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{ color: 'var(--color-text-secondary)' }}>ADP</div><div>{adp}</div>
-                    </div>
-                    <div>
-                        <div style={{ color: 'var(--color-text-secondary)' }}>PPG</div><div>{ppg.toFixed(2)}</div>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <div>
-                            <div style={{ color: 'var(--color-text-secondary)' }}>VOR</div><div>{vor.toFixed(2)}</div>
-                        </div>
-                        {isDanger && (
-                            <span
-                                style={{ fontSize: '1.25rem', color: 'var(--color-danger)' }}
-                                title={
-                                    `Cross-position tier risk: ${position}. ` +
-                                    `If you wait ~${METRICS.windowPicks} picks, est. VOR drop ≈ ${dangerDrop?.toFixed(2) ?? '—'} ` +
-                                    `(must beat others by ≥ ${(METRICS.superiorityPct * 100).toFixed(0)}%).`
-                                }
-                            >
-                                🔥
-                            </span>
-                        )}
-                        {isSteal && <span style={{ fontSize: '1.25rem' }} title={`Steal vs ADP (≥ ${METRICS.stealDiscountPicks} picks)`}>💰</span>}
-                    </div>
-                </div>
-
-                <button style={{ background: 'var(--color-accent)', color: 'var(--color-text-primary)' }}
-                    onClick={() => onDraft(player.id)}>Draft</button>
-            </div>
-        );
-    };
-
-/* ────────────────────
-   BYE WEEK VIEW
-────────────────────── */
-const ByeWeekView: React.FC<{ byeCounts: ByeWeekCounts }> = ({ byeCounts }) =>
-{
-    const weeks = Object.keys(byeCounts).map(Number).sort((a, b) => a - b);
-    if (!weeks.length)
-        return <div style={{ textAlign: 'center', padding: 32, background: 'var(--color-surface)', borderRadius: 8 }}>
-            No players drafted yet.
-        </div>;
+    useEffect(() => {
+        const onKey = (e: KeyboardEvent) => {
+            const target = e.target as HTMLElement | null;
+            const isTyping = target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName);
+            if (!isTyping && e.key === '/') {
+                e.preventDefault();
+                inputRef.current?.focus();
+            }
+        };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, []);
 
     return (
-        <div style={{
-            display: 'flex', flexDirection: 'column', gap: 16, padding: 16,
-            background: 'var(--color-surface)', borderRadius: 8
-        }}>
-            <h2 style={{ margin: 0 }}>Drafted Player Bye Weeks</h2>
-            {weeks.map(w => (
-                <div key={w} style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: 16 }}>
-                    <h3 style={{ color: byeCounts[w].length > 2 ? 'var(--color-danger)' : 'var(--color-accent)' }}>
-                        Week {w} ({byeCounts[w].length})
-                    </h3>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                        {byeCounts[w].map(p => (
-                            <div key={p.id} style={{
-                                background: 'var(--color-bg)', padding: '4px 8px',
-                                borderRadius: 4, fontSize: 14
-                            }}>
-                                <span style={{ color: getPositionColor(p.position) }}>●</span> {p.name} ({p.position})
-                            </div>
+        <header className="header">
+            <div className="headerTop">
+                <div>
+                    <div className="eyebrow">{session.view === 'classic' ? 'Draft board' : 'Draft cockpit'}</div>
+                    <h1>Pick #{currentPick}</h1>
+                    <div className="muted">{profile.notes}</div>
+                </div>
+                <div className="headerActions">
+                    <select value={leagueId} onChange={e => onLeagueChange(e.target.value)} aria-label="League">
+                        {LEAGUES.map(league => <option key={league.id} value={league.id}>{league.label}</option>)}
+                    </select>
+                    <button onClick={undo} disabled={!canUndo}>Undo</button>
+                    <button onClick={redo} disabled={!canRedo}>Redo</button>
+                    <button className="danger" onClick={resetDraft}>Reset</button>
+                </div>
+            </div>
+
+            <div className="toolbar">
+                <div className="searchBox" onClick={() => inputRef.current?.focus()}>
+                    <input
+                        ref={inputRef}
+                        value={searchQuery}
+                        onChange={e => setSearchQuery(e.target.value)}
+                        onKeyDown={e => {
+                            if (e.key === 'Enter') draftFirstMatch();
+                            if (e.key === 'Escape') setSearchQuery('');
+                        }}
+                        placeholder="Search player, team, or position"
+                        type="search"
+                        aria-label="Search players"
+                    />
+                    <button disabled={!searchQuery.trim()} onClick={draftFirstMatch}>Draft match</button>
+                </div>
+                <div className="viewControls">
+                    <div className="segmented subtle" aria-label="View">
+                        <span className="segmentLabel">View</span>
+                        <button
+                            style={buttonStyle(session.view === 'classic')}
+                            onClick={() => updateSession({ view: 'classic', sortBy: 'recommendation' })}
+                        >
+                            Board
+                        </button>
+                        <button
+                            style={buttonStyle(session.view === 'cockpit')}
+                            onClick={() => updateSession({ view: 'cockpit' })}
+                        >
+                            Cockpit
+                        </button>
+                    </div>
+                    <div className="segmented utilityViews">
+                        <button
+                            style={buttonStyle(session.view === 'board')}
+                            onClick={() => updateSession({ view: 'board' })}
+                        >
+                            Details
+                        </button>
+                        <button
+                            style={buttonStyle(session.view === 'byes')}
+                            onClick={() => updateSession({ view: 'byes' })}
+                        >
+                            Byes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div className="toolbar compact">
+                <label>
+                    Picking for
+                    <select
+                        value={session.pickingFor}
+                        onChange={e => updateSession({ pickingFor: e.target.value as Owner })}
+                    >
+                        <option value="me">Me</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+                <label>
+                    Manager/team
+                    <input
+                        value={session.currentManager}
+                        onChange={e => updateSession({ currentManager: e.target.value })}
+                        placeholder="Manager name"
+                    />
+                </label>
+                <label>
+                    Sort
+                    <select
+                        value={session.sortBy}
+                        onChange={e => updateSession({ sortBy: e.target.value as SortByType })}
+                    >
+                        <option value="recommendation">{session.view === 'classic' ? 'Rank' : 'Recommendation'}</option>
+                        <option value="adp">ADP</option>
+                        <option value="vor">VOR</option>
+                    </select>
+                </label>
+                <label>
+                    Filter
+                    <select
+                        value={session.filterBy}
+                        onChange={e => updateSession({ filterBy: e.target.value as FilterByType })}
+                    >
+                        {FILTERS.map(filter => <option key={filter} value={filter}>{filter}</option>)}
+                    </select>
+                </label>
+                <button onClick={exportSession}>Export session</button>
+                <button onClick={() => fileInputRef.current?.click()}>Import session</button>
+                <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="application/json"
+                    hidden
+                    onChange={e => {
+                        const file = e.target.files?.[0];
+                        if (file) importSession(file);
+                        e.currentTarget.value = '';
+                    }}
+                />
+            </div>
+        </header>
+    );
+};
+
+const RecommendationCard: React.FC<{
+    rec: Recommendation;
+    rank: number;
+    featured?: boolean;
+    onDraft: (id: number) => void;
+    adjustment?: PlayerAdjustment;
+    setAdjustment: (id: number, patch: Partial<PlayerAdjustment>) => void;
+    toggleConcern: (id: number, concern: Concern) => void;
+}> = ({ rec, rank, featured = false, onDraft, adjustment, setAdjustment, toggleConcern }) => {
+    const { player, components } = rec;
+    const concerns = adjustment?.concerns ?? [];
+    return (
+        <section className={featured ? 'recCard featured' : 'recCard'}>
+            <div className="recHeader">
+                <div className="rankBadge">#{rank}</div>
+                <div className="playerMain">
+                    <h2>{player.name}</h2>
+                    <div className="muted">
+                        <span style={{ color: getPositionColor(player.position) }}>{player.position}</span>
+                        {' '} {player.team} · Bye {player.bye} · ADP {player.adp}
+                    </div>
+                </div>
+                <div className="scoreBlock">
+                    <div className="score">{rec.totalScore}</div>
+                    <div className="muted">score</div>
+                </div>
+            </div>
+            <div className="reasonList">
+                {rec.reasons.map(reason => <div key={reason}>{reason}</div>)}
+            </div>
+            <div className="componentGrid">
+                <Metric label="VOR" value={components.vor} />
+                <Metric label="ADP" value={components.adpValue} />
+                <Metric label="Tier" value={components.tierDropoff} />
+                <Metric label="Gone" value={components.availabilityNextPick} />
+                <Metric label="Roster" value={components.rosterFit} />
+                <Metric label="Bye" value={components.byeRisk} />
+                <Metric label="History" value={components.historyAdjustment} />
+                <Metric label="Manual" value={components.manualAdjustment + components.concernPenalty} />
+            </div>
+            <div className="cardActions">
+                <button className="primary" onClick={() => onDraft(player.id)}>Draft</button>
+                <button onClick={() => setAdjustment(player.id, { avoid: !adjustment?.avoid })}>
+                    {adjustment?.avoid ? 'Unavoid' : 'Avoid'}
+                </button>
+                <button onClick={() => setAdjustment(player.id, { manual: (adjustment?.manual ?? 0) + 1 })}>Boost</button>
+                <button onClick={() => setAdjustment(player.id, { manual: (adjustment?.manual ?? 0) - 1 })}>Fade</button>
+                <button onClick={() => setAdjustment(player.id, { manual: 0, concerns: [] })}>Clear flags</button>
+            </div>
+            <div className="concernBar">
+                {(Object.keys(CONCERN_LABELS) as Concern[]).map(concern => (
+                    <button
+                        key={concern}
+                        style={buttonStyle(concerns.includes(concern))}
+                        onClick={() => toggleConcern(player.id, concern)}
+                    >
+                        {CONCERN_LABELS[concern]}
+                    </button>
+                ))}
+            </div>
+        </section>
+    );
+};
+
+const Metric: React.FC<{ label: string; value: number }> = ({ label, value }) => (
+    <div>
+        <div className="muted">{label}</div>
+        <div>{round(value)}</div>
+    </div>
+);
+
+const TopDrawer: React.FC<{
+    recommendations: Recommendation[];
+    open: boolean;
+    setOpen: (open: boolean) => void;
+    onDraft: (id: number) => void;
+}> = ({ recommendations, open, setOpen, onDraft }) => (
+    <section className="panel">
+        <button className="drawerButton" onClick={() => setOpen(!open)}>
+            {open ? 'Hide Top 10' : 'Show Top 10 backups'}
+        </button>
+        {open && (
+            <div className="drawerList">
+                {recommendations.map((rec, index) => (
+                    <div key={rec.player.id} className="drawerRow">
+                        <div className="rowRank">#{index + 1}</div>
+                        <div>
+                            <strong>{rec.player.name}</strong>
+                            <div className="muted">{rec.player.team} · {rec.player.position} · ADP {rec.player.adp}</div>
+                        </div>
+                        <div className="score">{rec.totalScore}</div>
+                        <button onClick={() => onDraft(rec.player.id)}>Draft</button>
+                    </div>
+                ))}
+            </div>
+        )}
+    </section>
+);
+
+const BoardView: React.FC<{
+    rows: Recommendation[];
+    adjustments: Record<string, PlayerAdjustment>;
+    onDraft: (id: number) => void;
+    setAdjustment: (id: number, patch: Partial<PlayerAdjustment>) => void;
+}> = ({ rows, adjustments, onDraft, setAdjustment }) => (
+    <main className="stack">
+        {rows.map(rec => {
+            const player = rec.player;
+            const adjustment = adjustments[String(player.id)];
+            return (
+                <div key={player.id} className={adjustment?.avoid ? 'playerRow avoided' : 'playerRow'}>
+                    <div className="posStripe" style={{ background: getPositionColor(player.position) }} />
+                    <div className="playerMain">
+                        <strong>{player.name}</strong>
+                        <div className="muted">{player.team} · {player.position} · Bye {player.bye}</div>
+                    </div>
+                    <Metric label="Score" value={rec.totalScore} />
+                    <Metric label="ADP" value={player.adp} />
+                    <Metric label="VOR" value={player.vor} />
+                    <button onClick={() => onDraft(player.id)}>Draft</button>
+                    <button onClick={() => setAdjustment(player.id, { avoid: !adjustment?.avoid })}>
+                        {adjustment?.avoid ? 'Unavoid' : 'Avoid'}
+                    </button>
+                </div>
+            );
+        })}
+        {!rows.length && <div className="empty">No matching players.</div>}
+    </main>
+);
+
+const ClassicBoardView: React.FC<{
+    rows: Recommendation[];
+    onDraft: (id: number) => void;
+}> = ({ rows, onDraft }) => (
+    <main className="classicBoard">
+        <div className="classicHeader">
+            <div>Rank</div>
+            <div>Player</div>
+            <div>Team</div>
+            <div>Pos</div>
+            <div>Bye</div>
+            <div>ADP</div>
+            <div>VOR</div>
+            <div />
+        </div>
+        {rows.map((rec, index) => {
+            const player = rec.player;
+            return (
+                <div key={player.id} className="classicRow">
+                    <div className="classicRank">{index + 1}</div>
+                    <div className="classicPlayer">{player.name}</div>
+                    <div>{player.team}</div>
+                    <div>
+                        <span className="positionPill" style={{ borderColor: getPositionColor(player.position) }}>
+                            {player.position}
+                        </span>
+                    </div>
+                    <div>{player.bye}</div>
+                    <div>{player.adp}</div>
+                    <div>{player.vor.toFixed(2)}</div>
+                    <button onClick={() => onDraft(player.id)}>Draft</button>
+                </div>
+            );
+        })}
+        {!rows.length && <div className="empty">No matching players.</div>}
+    </main>
+);
+
+const ByeWeekView: React.FC<{ byes: Record<number, Player[]> }> = ({ byes }) => {
+    const weeks = Object.keys(byes).map(Number).sort((a, b) => a - b);
+    if (!weeks.length) return <div className="empty">No players drafted for your roster yet.</div>;
+    return (
+        <main className="gridPanel">
+            {weeks.map(week => (
+                <section key={week} className="panel">
+                    <h3>Week {week} ({byes[week].length})</h3>
+                    <div className="chipWrap">
+                        {byes[week].map(player => (
+                            <span key={player.id} className="chip">
+                                <span style={{ color: getPositionColor(player.position) }}>{player.position}</span>
+                                {' '} {player.name}
+                            </span>
                         ))}
                     </div>
+                </section>
+            ))}
+        </main>
+    );
+};
+
+const RosterSnapshot: React.FC<{
+    profile: LeagueProfile;
+    counts: Record<Position, number>;
+    picks: DraftPick[];
+}> = ({ profile, counts, picks }) => (
+    <aside className="panel rosterPanel">
+        <h3>My roster</h3>
+        <div className="rosterGrid">
+            {POSITIONS.map(pos => (
+                <div key={pos}>
+                    <div className="muted">{pos}</div>
+                    <strong>{counts[pos]} / {profile.roster[pos]}</strong>
                 </div>
             ))}
         </div>
+        <div className="muted">{picks.filter(p => p.owner === 'me').length} of your players marked.</div>
+    </aside>
+);
+
+const DataStatusBanner: React.FC<{ status: DataStatus | null }> = ({ status }) => {
+    if (!status) {
+        return (
+            <section className="dataBanner warning">
+                <strong>Data status unknown.</strong>
+                <span>No source manifest was loaded. Verify player JSON before drafting.</span>
+            </section>
+        );
+    }
+    const isReady = status.status === 'draft-ready';
+    return (
+        <section className={`dataBanner ${isReady ? 'ready' : 'warning'}`}>
+            <strong>{isReady ? 'Data draft-ready' : 'Data needs refresh'}</strong>
+            <span>{status.label ?? status.generatedAt ?? 'No generation date'}.</span>
+            {status.message && <span>{status.message}</span>}
+        </section>
     );
 };
 
-/* ────────────────────
-   MAIN APP
-────────────────────── */
-const App: React.FC = () =>
-{
+const App: React.FC = () => {
+    const initialLeagueId = window.localStorage.getItem(selectedLeagueKey()) ?? 'default';
+    const [leagueId, setLeagueId] = useState(initialLeagueId);
+    const profile = LEAGUES.find(league => league.id === leagueId) ?? LEAGUES[0];
+    const [session, setSession] = useState<DraftSession>(() => loadSession(profile.id));
     const [allPlayers, setAllPlayers] = useState<Player[]>([]);
-    // who drafted each player
-    const [draftedBy, setDraftedBy] = useState<Record<number, Owner>>({});
-    const [pickingFor, setPickingFor] = useState<Owner>('me');
-
-    const [sortBy, setSortBy] = useState<SortByType>('adp');
-    const [filterBy, setFilterBy] = useState<FilterByType>('ALL');
-    const [view, setView] = useState<ViewType>('draft');
-
-    // Search
     const [searchQuery, setSearchQuery] = useState('');
-
+    const [dataStatus, setDataStatus] = useState<DataStatus | null>(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
-    /* Fetch once */
-    useEffect(() =>
-    {
-        fetchPlayers()
-            .then(setAllPlayers)
-            .finally(() => setLoading(false));
-    }, []);
-
-    /* Helpers */
-    const onDraft = (id: number) =>
-    {
-        setDraftedBy(prev => ({ ...prev, [id]: pickingFor }));
-        if (pickingFor === 'me') setPickingFor('other'); // auto-swap only after my pick
+    const updateSession = (patch: Partial<DraftSession>) => {
+        setSession(prev => ({ ...prev, ...patch }));
     };
 
-    const resetDraft = () =>
-    {
-        setDraftedBy({});
-        setPickingFor('me');
+    const handleLeagueChange = (nextLeagueId: string) => {
+        saveSession(profile.id, session);
+        window.localStorage.setItem(selectedLeagueKey(), nextLeagueId);
+        setLeagueId(nextLeagueId);
+        setSession(loadSession(nextLeagueId));
         setSearchQuery('');
     };
 
-    const currentPick = Object.keys(draftedBy).length + 1;
+    useEffect(() => {
+        const onKeyDown = (event: KeyboardEvent) => {
+            if (!event.ctrlKey || event.key !== '.') return;
+            event.preventDefault();
+            setSession(prev => ({
+                ...prev,
+                view: prev.view === 'cockpit' ? 'classic' : 'cockpit',
+                sortBy: prev.view === 'cockpit' ? 'recommendation' : prev.sortBy,
+            }));
+        };
+        window.addEventListener('keydown', onKeyDown);
+        return () => window.removeEventListener('keydown', onKeyDown);
+    }, []);
 
-    /* Remaining pool */
+    useEffect(() => {
+        saveSession(profile.id, session);
+    }, [profile.id, session]);
+
+    useEffect(() => {
+        setLoading(true);
+        setError(null);
+        fetchPlayers(profile)
+            .then(setAllPlayers)
+            .catch(err => setError(err instanceof Error ? err.message : 'Unable to load players.'))
+            .finally(() => setLoading(false));
+    }, [profile]);
+
+    useEffect(() => {
+        fetchDataStatus().then(setDataStatus);
+    }, []);
+
+    const pickedMap = useMemo(() => draftedMap(session.drafted), [session.drafted]);
     const available = useMemo(
-        () => allPlayers.filter(p => !(p.id in draftedBy)),
-        [allPlayers, draftedBy]
+        () => allPlayers.filter(player => !pickedMap.has(player.id)),
+        [allPlayers, pickedMap]
     );
+    const myRoster = useMemo(() => rosterCounts(allPlayers, session.drafted), [allPlayers, session.drafted]);
+    const myByes = useMemo(() => byeCounts(allPlayers, session.drafted), [allPlayers, session.drafted]);
+    const currentPick = session.drafted.length + 1;
 
-    /* Cross-position VOR danger map (windowed lookahead) */
-    const { dangerMap, dropMap } = useMemo(() =>
-    {
-        const map = new Map<number, boolean>();
-        const drops = new Map<number, number>(); // for tooltip
+    const recommendations = useMemo(() => {
+        return available
+            .filter(player => !session.adjustments[String(player.id)]?.avoid)
+            .map(player =>
+                scorePlayer(
+                    profile,
+                    player,
+                    available,
+                    myRoster,
+                    myByes,
+                    currentPick,
+                    session.adjustments[String(player.id)]
+                )
+            )
+            .sort((a, b) => b.totalScore - a.totalScore);
+    }, [available, currentPick, myByes, myRoster, profile, session.adjustments]);
 
-        if (!available.length) return { dangerMap: map, dropMap: drops };
+    const visibleRows = useMemo(() => {
+        const scored = available
+            .filter(player => {
+                if (session.filterBy === 'ALL') return true;
+                if (session.filterBy === 'FLEX') return isFlexPosition(player.position);
+                return player.position === session.filterBy;
+            })
+            .filter(player => {
+                if (session.view !== 'classic') return true;
+                return !session.adjustments[String(player.id)]?.avoid;
+            })
+            .filter(player => playerMatches(player, searchQuery))
+            .map(player =>
+                scorePlayer(
+                    profile,
+                    player,
+                    available,
+                    myRoster,
+                    myByes,
+                    currentPick,
+                    session.adjustments[String(player.id)]
+                )
+            );
 
-        const cutoff = currentPick + METRICS.windowPicks;
-
-        type PosStat = { pos: Player['position']; bestNowId: number; drop: number };
-        const posStats: PosStat[] = [];
-
-        CONSIDERED_POSITIONS.forEach(pos =>
-        {
-            const pool = available.filter(p => p.position === pos);
-            if (!pool.length) return;
-
-            // Best now by VOR
-            const bestNow = pool.reduce((a, b) => (a.vor >= b.vor ? a : b));
-            const bestNowVor = bestNow.vor;
-
-            // Best later (after window) by VOR
-            const laterPool = pool.filter(p => p.adp > cutoff);
-            const bestLaterVor = laterPool.length
-                ? laterPool.reduce((a, b) => (a.vor >= b.vor ? a : b)).vor
-                : 0;
-
-            const drop = Math.max(0, bestNowVor - bestLaterVor);
-            posStats.push({ pos, bestNowId: bestNow.id, drop });
+        return scored.sort((a, b) => {
+            if (session.sortBy === 'adp') return a.player.adp - b.player.adp;
+            if (session.sortBy === 'vor') return b.player.vor - a.player.vor;
+            return b.totalScore - a.totalScore;
         });
+    }, [
+        available,
+        currentPick,
+        myByes,
+        myRoster,
+        profile,
+        searchQuery,
+        session.adjustments,
+        session.filterBy,
+        session.sortBy,
+    ]);
 
-        if (!posStats.length) return { dangerMap: map, dropMap: drops };
-
-        // Sort positions by drop desc
-        posStats.sort((a, b) => b.drop - a.drop);
-
-        // Iteratively pick up to K positions where each is ≥ 5% greater than next-best and ≥ minAbsDrop
-        const picked: PosStat[] = [];
-        let pool = [...posStats];
-
-        while (picked.length < METRICS.topKPositions && pool.length > 0)
-        {
-            const [candidate, ...rest] = pool;
-            const restMax = rest.length ? Math.max(...rest.map(r => r.drop)) : 0;
-
-            const meetsRelative = rest.length === 0
-                ? candidate.drop >= METRICS.minAbsDrop
-                : candidate.drop >= (1 + METRICS.superiorityPct) * restMax;
-
-            const meetsAbsolute = candidate.drop >= METRICS.minAbsDrop;
-
-            if (meetsRelative && meetsAbsolute)
-            {
-                picked.push(candidate);
-                pool = rest;
-            } else
-            {
-                break;
-            }
-        }
-
-        picked.forEach(p =>
-        {
-            map.set(p.bestNowId, true);
-            drops.set(p.bestNowId, p.drop);
+    const setAdjustment = (id: number, patch: Partial<PlayerAdjustment>) => {
+        setSession(prev => {
+            const key = String(id);
+            const current = prev.adjustments[key] ?? {};
+            return {
+                ...prev,
+                adjustments: {
+                    ...prev.adjustments,
+                    [key]: { ...current, ...patch },
+                },
+            };
         });
+    };
 
-        return { dangerMap: map, dropMap: drops };
-    }, [available, currentPick]);
-
-    /* Filter + sort for UI, then apply search */
-    const visiblePlayers = useMemo(() =>
-    {
-        const filtered = available.filter(p =>
-        {
-            if (filterBy === 'ALL') return true;
-            if (filterBy === 'FLEX') return p.position === 'RB' || p.position === 'WR' || p.position === 'TE';
-            return p.position === filterBy;
+    const toggleConcern = (id: number, concern: Concern) => {
+        setSession(prev => {
+            const key = String(id);
+            const current = prev.adjustments[key] ?? {};
+            const concerns = current.concerns ?? [];
+            const nextConcerns = concerns.includes(concern)
+                ? concerns.filter(item => item !== concern)
+                : [...concerns, concern];
+            return {
+                ...prev,
+                adjustments: {
+                    ...prev.adjustments,
+                    [key]: { ...current, concerns: nextConcerns },
+                },
+            };
         });
+    };
 
-        const sorted = filtered.sort((a, b) =>
-            sortBy === 'adp' ? a.adp - b.adp : b.vor - a.vor
-        );
+    const draftPlayer = (playerId: number) => {
+        const manager = session.currentManager.trim() || (session.pickingFor === 'me' ? 'Me' : 'Other');
+        const pick: DraftPick = {
+            playerId,
+            owner: session.pickingFor,
+            manager,
+            pick: currentPick,
+            at: new Date().toISOString(),
+        };
+        setSession(prev => ({
+            ...prev,
+            drafted: [...prev.drafted, pick],
+            undone: [],
+            pickingFor: prev.pickingFor === 'me' ? 'other' : prev.pickingFor,
+            currentManager: prev.pickingFor === 'me' ? 'Other' : prev.currentManager,
+        }));
+        setSearchQuery('');
+    };
 
-        const q = searchQuery.trim().toLowerCase();
-        if (!q) return sorted;
+    const draftFirstMatch = () => {
+        const first = visibleRows[0];
+        if (first) draftPlayer(first.player.id);
+    };
 
-        return sorted.filter(p =>
-            p.name.toLowerCase().includes(q) ||
-            p.team.toLowerCase().includes(q) ||
-            p.position.toLowerCase().includes(q)
-        );
-    }, [available, filterBy, sortBy, searchQuery]);
+    const undo = () => {
+        setSession(prev => {
+            const last = prev.drafted.at(-1);
+            if (!last) return prev;
+            return {
+                ...prev,
+                drafted: prev.drafted.slice(0, -1),
+                undone: [last, ...prev.undone],
+            };
+        });
+    };
 
-    // Enter (or mobile Draft button) drafts the first visible result and clears the query
-    const draftFirstMatch = () =>
-    {
-        const first = visiblePlayers[0];
-        if (first)
-        {
-            onDraft(first.id);
+    const redo = () => {
+        setSession(prev => {
+            const [next, ...rest] = prev.undone;
+            if (!next) return prev;
+            return {
+                ...prev,
+                drafted: [...prev.drafted, { ...next, pick: prev.drafted.length + 1 }],
+                undone: rest,
+            };
+        });
+    };
+
+    const resetDraft = () => {
+        if (window.confirm('Reset this league draft session?')) {
+            setSession(defaultSessionForLeague(profile.id));
             setSearchQuery('');
         }
     };
 
-    /* Bye week counts – ONLY my players */
-    const byeCounts = useMemo(() =>
-    {
-        const counts: ByeWeekCounts = {};
-        allPlayers
-            .filter(p => draftedBy[p.id] === 'me')
-            .forEach(p =>
-            {
-                (counts[p.bye] = counts[p.bye] || []).push(p);
-            });
-        return counts;
-    }, [draftedBy, allPlayers]);
+    const exportSession = () => {
+        const payload = JSON.stringify({ leagueId: profile.id, session }, null, 2);
+        const url = URL.createObjectURL(new Blob([payload], { type: 'application/json' }));
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `${profile.id}-draft-session.json`;
+        link.click();
+        URL.revokeObjectURL(url);
+    };
 
-    if (loading) return <div>Loading players...</div>;
+    const importSession = (file: File) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            try {
+                const parsed = JSON.parse(String(reader.result));
+                const nextSession = parsed.session ?? parsed;
+                setSession({ ...defaultSessionForLeague(profile.id), ...nextSession });
+            } catch {
+                window.alert('Could not import that session JSON.');
+            }
+        };
+        reader.readAsText(file);
+    };
+
+    if (loading) return <div className="empty">Loading {profile.label} players...</div>;
+    if (error) return <div className="empty">{error}</div>;
+
+    const primary = recommendations[0];
+    const backups = recommendations.slice(1, 3);
+    const topTen = recommendations.slice(0, 10);
 
     return (
         <>
+            <DataStatusBanner status={dataStatus} />
             <Header
-                sortBy={sortBy} setSortBy={setSortBy}
-                filterBy={filterBy} setFilterBy={setFilterBy}
-                view={view} setView={setView}
-                resetDraft={resetDraft}
+                profile={profile}
+                leagueId={leagueId}
+                onLeagueChange={handleLeagueChange}
+                session={session}
+                updateSession={updateSession}
                 currentPick={currentPick}
-                pickingFor={pickingFor} setPickingFor={setPickingFor}
-                searchQuery={searchQuery} setSearchQuery={setSearchQuery}
-                onSearchEnter={draftFirstMatch}
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+                draftFirstMatch={draftFirstMatch}
+                undo={undo}
+                redo={redo}
+                resetDraft={resetDraft}
+                canUndo={session.drafted.length > 0}
+                canRedo={session.undone.length > 0}
+                exportSession={exportSession}
+                importSession={importSession}
             />
 
-            {view === 'draft' ? (
-                <main style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                    {visiblePlayers.map(p => (
-                        <PlayerCard
-                            key={p.id}
-                            player={p}
-                            onDraft={onDraft}
-                            isDanger={!!dangerMap.get(p.id)}
-                            dangerDrop={dropMap.get(p.id) ?? null}
-                            isSteal={currentPick - p.adp >= METRICS.stealDiscountPicks}
-                        />
-                    ))}
-                    {!visiblePlayers.length && (
-                        <div style={{ padding: 16, textAlign: 'center', color: 'var(--color-text-secondary)' }}>
-                            No matching players.
-                        </div>
-                    )}
-                </main>
-            ) : (
-                <ByeWeekView byeCounts={byeCounts} />
+            {session.view === 'classic' && (
+                <ClassicBoardView
+                    rows={visibleRows}
+                    onDraft={draftPlayer}
+                />
             )}
+
+            {session.view === 'cockpit' && (
+                <main className="cockpitLayout">
+                    <div className="stack">
+                        {primary ? (
+                            <RecommendationCard
+                                rec={primary}
+                                rank={1}
+                                featured
+                                onDraft={draftPlayer}
+                                adjustment={session.adjustments[String(primary.player.id)]}
+                                setAdjustment={setAdjustment}
+                                toggleConcern={toggleConcern}
+                            />
+                        ) : (
+                            <div className="empty">No recommendation available.</div>
+                        )}
+                        <div className="backupGrid">
+                            {backups.map((rec, index) => (
+                                <RecommendationCard
+                                    key={rec.player.id}
+                                    rec={rec}
+                                    rank={index + 2}
+                                    onDraft={draftPlayer}
+                                    adjustment={session.adjustments[String(rec.player.id)]}
+                                    setAdjustment={setAdjustment}
+                                    toggleConcern={toggleConcern}
+                                />
+                            ))}
+                        </div>
+                        <TopDrawer
+                            recommendations={topTen}
+                            open={session.showTop10}
+                            setOpen={showTop10 => updateSession({ showTop10 })}
+                            onDraft={draftPlayer}
+                        />
+                    </div>
+                    <RosterSnapshot profile={profile} counts={myRoster} picks={session.drafted} />
+                </main>
+            )}
+
+            {session.view === 'board' && (
+                <BoardView
+                    rows={visibleRows}
+                    adjustments={session.adjustments}
+                    onDraft={draftPlayer}
+                    setAdjustment={setAdjustment}
+                />
+            )}
+
+            {session.view === 'byes' && <ByeWeekView byes={myByes} />}
         </>
     );
 };
 
-/* ────────────────────
-   BOOTSTRAP
-────────────────────── */
 const container = document.getElementById('root');
-if (container)
-{
-    createRoot(container).render(<App />);
-}
+if (container) createRoot(container).render(<App />);

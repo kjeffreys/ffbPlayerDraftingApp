@@ -1,9 +1,10 @@
 # Path: ffbPlayerDraftingApp/backend/settings.py (FIXED)
 
-import json
 from pathlib import Path
+import json
+import os
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # --- FIX: Import the log object ---
@@ -15,11 +16,15 @@ from backend.logging_config import log
 _BASE_DIR = Path(__file__).resolve().parent  # .../backend
 ROOT_DIR = _BASE_DIR.parent  # .../ffbPlayerDraftingApp/
 
-_LEAGUE_CONFIG_PATH = _BASE_DIR / "league_config.json"  # Correct Path
+_LEAGUE_CONFIG_PATH = Path(
+    os.environ.get("LEAGUE_CONFIG_PATH", _BASE_DIR / "league_config.json")
+)
 
 
 class RosterSettings(BaseModel):
     """Defines the number of starters for each position."""
+
+    model_config = ConfigDict(extra="forbid")
 
     QB: int
     RB: int
@@ -33,6 +38,9 @@ class RosterSettings(BaseModel):
 class LeagueConfig(BaseModel):
     """Defines all league-specific rules and scoring weights."""
 
+    model_config = ConfigDict(extra="forbid")
+
+    league_type: str = "redraft"
     teams: int
     roster: RosterSettings
     scoring: str
@@ -44,9 +52,33 @@ class LeagueConfig(BaseModel):
     boost_max: float
     top_game_count: int
     weight_projection: float
-    weight_last_year: float
+    weight_last_year: float | None = None
+    weight_floor: float | None = None
     min_historical_score: float
     positional_penalties: dict[str, float]
+
+    @model_validator(mode="after")
+    def validate_scoring_weights(self) -> "LeagueConfig":
+        """Fail fast when a league config cannot drive its scoring model."""
+        if self.league_type == "guillotine":
+            if self.weight_floor is None:
+                raise ValueError("guillotine leagues require weight_floor")
+            total = self.weight_projection + self.weight_floor
+        else:
+            if self.weight_last_year is None:
+                raise ValueError("non-guillotine leagues require weight_last_year")
+            total = self.weight_projection + self.weight_last_year
+
+        if abs(total - 1.0) > 0.001:
+            raise ValueError(
+                "scoring weights must sum to 1.0 "
+                f"(got {total:.3f} for {self.league_type})"
+            )
+
+        if self.league_type not in {"redraft", "guillotine", "champions"}:
+            raise ValueError(f"unknown league_type: {self.league_type}")
+
+        return self
 
 
 def _load_league_config(path: Path) -> LeagueConfig:

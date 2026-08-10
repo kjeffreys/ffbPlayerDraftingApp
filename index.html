@@ -12,22 +12,28 @@
         rel="stylesheet">
     <style>
         :root {
-            --color-bg: #111827;
-            --color-surface: #1f2937;
-            --color-surface-hover: #374151;
-            --color-border: #374151;
-            --color-text-primary: #f9fafb;
-            --color-text-secondary: #9ca3af;
-            --color-accent: #3b82f6;
-            --color-accent-hover: #2563eb;
-            --color-danger: #ef4444;
+            --color-bg: #161613;
+            --color-surface: #22211d;
+            --color-surface-2: #2c2a25;
+            --color-surface-hover: #37342d;
+            --color-border: #444037;
+            --color-text-primary: #f7f3ea;
+            --color-text-secondary: #b7aea1;
+            --color-accent: #2f8f6b;
+            --color-accent-hover: #247756;
+            --color-danger: #c94c4c;
+            --color-warning: #c58a2a;
 
-            --pos-qb: #ef4444;
-            --pos-rb: #3b82f6;
-            --pos-wr: #22c55e;
-            --pos-te: #f97316;
-            --pos-k: #8b5cf6;
-            --pos-def: #6b7280;
+            --pos-qb: #d45b5b;
+            --pos-rb: #4f94c8;
+            --pos-wr: #42b883;
+            --pos-te: #d98d45;
+            --pos-k: #9a78c8;
+            --pos-def: #9c9488;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -44,18 +50,452 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            max-width: 1200px;
+            max-width: 1320px;
             margin: 0 auto;
         }
 
-        button {
+        button,
+        input,
+        select {
             font-family: 'Inter', sans-serif;
+        }
+
+        button {
             border: none;
             border-radius: 0.375rem;
             padding: 0.5rem 1rem;
             cursor: pointer;
             transition: background-color 0.2s;
             font-weight: 500;
+            background: var(--color-surface-2);
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border);
+        }
+
+        button:hover:not(:disabled) {
+            background: var(--color-surface-hover);
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.45;
+        }
+
+        input,
+        select {
+            background: var(--color-bg);
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border);
+            border-radius: 0.375rem;
+            padding: 0.5rem 0.65rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            padding: 1rem;
+            background: rgba(34, 33, 29, 0.96);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .headerTop,
+        .toolbar,
+        .headerActions,
+        .cardActions,
+        .concernBar,
+        .viewControls {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .headerTop {
+            justify-content: space-between;
+        }
+
+        .toolbar {
+            justify-content: space-between;
+        }
+
+        .toolbar.compact {
+            justify-content: flex-start;
+        }
+
+        .toolbar label {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--color-text-secondary);
+            font-size: 0.88rem;
+        }
+
+        .eyebrow {
+            color: var(--color-accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .muted {
+            color: var(--color-text-secondary);
+            font-size: 0.86rem;
+        }
+
+        .dataBanner {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+            padding: 0.65rem 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            background: var(--color-surface);
+            color: var(--color-text-secondary);
+            font-size: 0.88rem;
+        }
+
+        .dataBanner strong {
+            color: var(--color-text-primary);
+        }
+
+        .dataBanner.warning {
+            border-color: rgba(214, 74, 82, 0.65);
+        }
+
+        .dataBanner.ready {
+            border-color: rgba(47, 143, 107, 0.65);
+        }
+
+        .searchBox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+            min-width: min(100%, 320px);
+            max-width: 620px;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 0.35rem;
+        }
+
+        .searchBox input {
+            flex: 1;
+            min-width: 120px;
+            border: 0;
+            outline: 0;
+            background: transparent;
+        }
+
+        .segmented {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.2rem;
+            background: var(--color-bg);
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+        }
+
+        .segmented.subtle {
+            padding-left: 0.55rem;
+        }
+
+        .segmentLabel {
+            color: var(--color-text-secondary);
+            font-size: 0.82rem;
+            margin-right: 0.15rem;
+        }
+
+        .utilityViews button {
+            padding-inline: 0.75rem;
+        }
+
+        .cockpitLayout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 280px;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .backupGrid,
+        .gridPanel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .panel,
+        .recCard,
+        .playerRow,
+        .empty {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+        }
+
+        .panel,
+        .recCard,
+        .empty {
+            padding: 1rem;
+        }
+
+        .recCard {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .recCard.featured {
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 1px rgba(47, 143, 107, 0.35);
+        }
+
+        .recHeader,
+        .drawerRow,
+        .playerRow {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .rankBadge,
+        .rowRank {
+            width: 2.2rem;
+            height: 2.2rem;
+            display: grid;
+            place-items: center;
+            background: var(--color-accent);
+            border-radius: 8px;
+            font-weight: 800;
+        }
+
+        .playerMain {
+            min-width: 0;
+        }
+
+        .playerMain strong,
+        .playerMain h2 {
+            overflow-wrap: anywhere;
+        }
+
+        .scoreBlock {
+            text-align: right;
+        }
+
+        .score {
+            font-size: 1.35rem;
+            font-weight: 800;
+        }
+
+        .reasonList {
+            display: grid;
+            gap: 0.35rem;
+            color: var(--color-text-primary);
+        }
+
+        .componentGrid,
+        .rosterGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .componentGrid>div,
+        .rosterGrid>div {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 0.5rem;
+        }
+
+        .primary {
+            background: var(--color-accent);
+        }
+
+        .danger {
+            background: var(--color-danger);
+        }
+
+        .concernBar button {
+            padding: 0.35rem 0.6rem;
+            font-size: 0.8rem;
+        }
+
+        .drawerButton {
+            width: 100%;
+        }
+
+        .drawerList {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .drawerRow {
+            grid-template-columns: auto minmax(0, 1fr) auto auto;
+            padding: 0.65rem;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+        }
+
+        .playerRow {
+            grid-template-columns: 5px minmax(180px, 1fr) repeat(3, minmax(62px, auto)) auto auto;
+            padding: 0.7rem;
+        }
+
+        .playerRow.avoided {
+            opacity: 0.58;
+        }
+
+        .classicBoard {
+            display: flex;
+            flex-direction: column;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .classicHeader,
+        .classicRow {
+            display: grid;
+            grid-template-columns: 64px minmax(190px, 1fr) 72px 72px 72px 86px 86px auto;
+            gap: 0.75rem;
+            align-items: center;
+            padding: 0.7rem 0.85rem;
+        }
+
+        .classicHeader {
+            background: var(--color-surface-2);
+            color: var(--color-text-secondary);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .classicRow {
+            min-height: 54px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .classicRow:nth-child(odd) {
+            background: rgba(255, 255, 255, 0.018);
+        }
+
+        .classicRow:last-child {
+            border-bottom: 0;
+        }
+
+        .classicRank {
+            color: var(--color-text-secondary);
+            font-weight: 700;
+        }
+
+        .classicPlayer {
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
+
+        .positionPill {
+            display: inline-flex;
+            min-width: 42px;
+            justify-content: center;
+            border: 1px solid var(--color-border);
+            border-radius: 999px;
+            padding: 0.16rem 0.4rem;
+            font-weight: 700;
+            font-size: 0.78rem;
+        }
+
+        .posStripe {
+            align-self: stretch;
+            border-radius: 999px;
+        }
+
+        .chipWrap {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin-top: 0.75rem;
+        }
+
+        .chip {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 999px;
+            padding: 0.35rem 0.55rem;
+            font-size: 0.84rem;
+        }
+
+        .rosterPanel {
+            position: sticky;
+            top: 160px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .empty {
+            text-align: center;
+            color: var(--color-text-secondary);
+        }
+
+        @media (max-width: 860px) {
+            body {
+                padding: 0.6rem;
+            }
+
+            .cockpitLayout {
+                grid-template-columns: 1fr;
+            }
+
+            .rosterPanel {
+                position: static;
+            }
+
+            .playerRow,
+            .drawerRow {
+                grid-template-columns: auto minmax(0, 1fr);
+            }
+
+            .classicBoard {
+                overflow-x: auto;
+            }
+
+            .classicHeader,
+            .classicRow {
+                min-width: 760px;
+            }
+            .scoreBlock {
+                text-align: left;
+            }
         }
     </style>
     <script type="importmap">
