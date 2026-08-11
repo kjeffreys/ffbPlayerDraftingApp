@@ -84,7 +84,7 @@ public/data_status.json
 The league files contain:
 
 ```text
-id, name, team, position, adp, vor, bye, ppg
+id, name, team, position, adp, vor, bye, ppg, redraftEcr, superflexEcr, dynastyEcr
 ```
 
 `public/data_status.json` tells the app whether the checked-in data is stale or draft-ready, when it was generated, and which source URLs powered the refresh.
@@ -114,6 +114,19 @@ cd D:\repos\ffbPlayerDraftingApp
 ```
 
 Use the actual run date in `YYYY-MM-DD` format. The command writes dated audit artifacts under `backend/data/<date>/` and updates the deployable static files under `public/`.
+
+
+## Champions Model Notes
+
+Champions uses the actual Yahoo lineup from the 2026 screenshot:
+
+```text
+QB, WR, WR, WR, WR, RB, RB, RB, TE, W/R/T, W/R/T, Q/W/R/T, K, DEF, 6 BN, IR
+```
+
+Backend VOR is calculated from starting lineup slots, including `FLEX` and `SUPERFLEX`, instead of pretending Champions has three mandatory QB slots. The cockpit still uses soft draft targets for roster construction: `QB 2, RB 5, WR 7, TE 2, K 1, DEF 1`; QB3 should be earned by value, tier risk, and availability instead of forced by config.
+
+Champions also blends a small superflex/dynasty ECR signal into the model score and uses `superflexEcr` as the market rank for cockpit availability/tier/dropoff logic. Normal leagues continue to use ADP.
 
 ## Data Reliability Checklist
 

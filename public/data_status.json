@@ -1,6 +1,6 @@
 {
   "status": "draft-ready",
-  "generatedAt": "2026-08-10T11:22:24.549824+00:00",
+  "generatedAt": "2026-08-11T03:34:05.428297+00:00",
   "label": "2026-08-10 refresh",
   "message": "2026 data refreshed from ESPN ADP/projections, DynastyProcess rankings/byes, and FantasyPros historical weekly stats.",
   "files": {
@@ -82,10 +82,10 @@
         "ok": true,
         "rowCount": 566,
         "top50Positions": {
+          "WR": 23,
           "RB": 21,
-          "WR": 17,
-          "QB": 10,
-          "TE": 2
+          "QB": 2,
+          "TE": 4
         },
         "issueCount": 0,
         "warningCount": 0

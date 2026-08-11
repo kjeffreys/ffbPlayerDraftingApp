@@ -31,6 +31,7 @@ class RosterSettings(BaseModel):
     WR: int
     TE: int
     FLEX: int
+    SUPERFLEX: int = 0
     K: int
     DEF: int
 
@@ -43,6 +44,7 @@ class LeagueConfig(BaseModel):
     league_type: str = "redraft"
     teams: int
     roster: RosterSettings
+    draft_targets: dict[str, int] = Field(default_factory=dict)
     scoring: str
     week: int
     games_divisor: int
@@ -54,6 +56,8 @@ class LeagueConfig(BaseModel):
     weight_projection: float
     weight_last_year: float | None = None
     weight_floor: float | None = None
+    weight_superflex_ecr: float = 0.0
+    weight_dynasty_ecr: float = 0.0
     min_historical_score: float
     positional_penalties: dict[str, float]
 
@@ -74,6 +78,10 @@ class LeagueConfig(BaseModel):
                 "scoring weights must sum to 1.0 "
                 f"(got {total:.3f} for {self.league_type})"
             )
+
+        market_total = self.weight_superflex_ecr + self.weight_dynasty_ecr
+        if market_total < 0 or market_total > 0.5:
+            raise ValueError("market ranking weights must be between 0.0 and 0.5 total")
 
         if self.league_type not in {"redraft", "guillotine", "champions"}:
             raise ValueError(f"unknown league_type: {self.league_type}")

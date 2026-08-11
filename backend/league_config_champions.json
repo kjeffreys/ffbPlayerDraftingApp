@@ -2,11 +2,20 @@
     "league_type": "champions",
     "teams": 8,
     "roster": {
-        "QB": 3,
+        "QB": 1,
+        "RB": 3,
+        "WR": 4,
+        "TE": 1,
+        "FLEX": 2,
+        "SUPERFLEX": 1,
+        "K": 1,
+        "DEF": 1
+    },
+    "draft_targets": {
+        "QB": 2,
         "RB": 5,
-        "WR": 6,
+        "WR": 7,
         "TE": 2,
-        "FLEX": 0,
         "K": 1,
         "DEF": 1
     },
@@ -20,6 +29,8 @@
     "top_game_count": 10,
     "weight_projection": 0.50,
     "weight_last_year": 0.50,
+    "weight_superflex_ecr": 0.22,
+    "weight_dynasty_ecr": 0.08,
     "min_historical_score": 5.0,
     "positional_penalties": {
         "DEF": 0.5,

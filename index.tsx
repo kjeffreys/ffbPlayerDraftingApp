@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 
 type Position = 'QB' | 'RB' | 'WR' | 'TE' | 'K' | 'DEF';
-type FlexPosition = Position | 'FLEX';
+type RosterSlot = Position | 'FLEX' | 'SUPERFLEX';
 type Owner = 'me' | 'other';
 type ViewType = 'classic' | 'cockpit' | 'board' | 'byes';
 type SortByType = 'recommendation' | 'adp' | 'vor';
@@ -18,6 +18,9 @@ interface Player {
     vor: number;
     ppg: number;
     bye: number;
+    redraftEcr?: number | null;
+    superflexEcr?: number | null;
+    dynastyEcr?: number | null;
 }
 
 interface LeagueProfile {
@@ -26,7 +29,8 @@ interface LeagueProfile {
     file: string;
     teams: number;
     mode: 'redraft' | 'guillotine' | 'champions';
-    roster: Record<FlexPosition, number>;
+    roster: Record<Position, number>;
+    lineup?: Partial<Record<RosterSlot, number>>;
     notes: string;
 }
 
@@ -93,7 +97,7 @@ const LEAGUES: LeagueProfile[] = [
         file: 'players.json',
         teams: 12,
         mode: 'redraft',
-        roster: { QB: 2, RB: 4, WR: 4, TE: 1, FLEX: 0, K: 1, DEF: 1 },
+        roster: { QB: 2, RB: 4, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: 'Current generated player pool.',
     },
     {
@@ -102,7 +106,7 @@ const LEAGUES: LeagueProfile[] = [
         file: 'vany.json',
         teams: 12,
         mode: 'redraft',
-        roster: { QB: 1, RB: 4, WR: 4, TE: 1, FLEX: 0, K: 1, DEF: 1 },
+        roster: { QB: 1, RB: 4, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: 'Back to Yahoo this year; local history can learn team bias.',
     },
     {
@@ -111,7 +115,7 @@ const LEAGUES: LeagueProfile[] = [
         file: 'passion.json',
         teams: 14,
         mode: 'redraft',
-        roster: { QB: 1, RB: 3, WR: 4, TE: 1, FLEX: 0, K: 1, DEF: 1 },
+        roster: { QB: 1, RB: 3, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: '14-team redraft profile.',
     },
     {
@@ -120,7 +124,7 @@ const LEAGUES: LeagueProfile[] = [
         file: 'guillotine.json',
         teams: 18,
         mode: 'guillotine',
-        roster: { QB: 1, RB: 4, WR: 4, TE: 1, FLEX: 0, K: 1, DEF: 1 },
+        roster: { QB: 1, RB: 4, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: 'Floor and survival matter more than ceiling.',
     },
     {
@@ -129,8 +133,9 @@ const LEAGUES: LeagueProfile[] = [
         file: 'champions.json',
         teams: 8,
         mode: 'champions',
-        roster: { QB: 3, RB: 5, WR: 6, TE: 2, FLEX: 0, K: 1, DEF: 1 },
-        notes: 'Live in-person, superflex-like, multi-year context.',
+        roster: { QB: 2, RB: 5, WR: 7, TE: 2, K: 1, DEF: 1 },
+        lineup: { QB: 1, RB: 3, WR: 4, TE: 1, FLEX: 2, SUPERFLEX: 1, K: 1, DEF: 1 },
+        notes: 'Live in-person: 1 QB, 3 RB, 4 WR, TE, 2 flex, 1 superflex, K, DEF, 6 bench.',
     },
 ];
 
@@ -221,6 +226,25 @@ function isFlexPosition(pos: Position) {
     return pos === 'RB' || pos === 'WR' || pos === 'TE';
 }
 
+
+function formatLineup(lineup: Partial<Record<RosterSlot, number>>) {
+    const labels: Record<RosterSlot, string> = {
+        QB: 'QB',
+        RB: 'RB',
+        WR: 'WR',
+        TE: 'TE',
+        FLEX: 'W/R/T',
+        SUPERFLEX: 'Q/W/R/T',
+        K: 'K',
+        DEF: 'DEF',
+    };
+    return (['QB', 'WR', 'RB', 'TE', 'FLEX', 'SUPERFLEX', 'K', 'DEF'] as RosterSlot[])
+        .flatMap(slot => {
+            const count = lineup[slot] ?? 0;
+            return count > 0 ? [`${count} ${labels[slot]}`] : [];
+        })
+        .join(', ');
+}
 function rosterCounts(players: Player[], picks: DraftPick[]) {
     const counts = Object.fromEntries(POSITIONS.map(pos => [pos, 0])) as Record<Position, number>;
     const pickedIds = new Set(picks.filter(pick => pick.owner === 'me').map(pick => pick.playerId));
@@ -253,21 +277,37 @@ function getRosterFit(profile: LeagueProfile, counts: Record<Position, number>, 
     if ((player.position === 'K' || player.position === 'DEF') && currentPick < profile.teams * 10) {
         return -2.5;
     }
+    if (profile.id === 'champions' && player.position === 'QB') {
+        if (count < 2) return 2.6 - count * 0.45;
+        if (count === 2 && currentPick >= profile.teams * 9) return 0.45;
+        if (count >= 3) return -1.4;
+    }
     if (count < target) return 2.4 - count * 0.35;
     if (isFlexPosition(player.position) && count < target + 2) return 0.65;
     if (count >= target + 3) return -1.2;
     return 0;
 }
 
+
+function getMarketRank(profile: LeagueProfile, player: Player) {
+    if (profile.id === 'champions') {
+        return player.superflexEcr ?? player.dynastyEcr ?? player.adp;
+    }
+    return player.adp;
+}
+
+function getMarketLabel(profile: LeagueProfile) {
+    return profile.id === 'champions' ? 'SF' : 'ADP';
+}
 function getByeRisk(myByes: Record<number, Player[]>, player: Player) {
     const sameBye = myByes[player.bye] ?? [];
     const samePosition = sameBye.filter(p => p.position === player.position).length;
     return -(Math.max(0, sameBye.length - 1) * 0.75 + samePosition * 0.45);
 }
 
-function getTierDropoff(player: Player, available: Player[], nextPick: number) {
+function getTierDropoff(profile: LeagueProfile, player: Player, available: Player[], nextPick: number) {
     const samePosition = available.filter(p => p.position === player.position && p.id !== player.id);
-    const laterOptions = samePosition.filter(p => p.adp > nextPick);
+    const laterOptions = samePosition.filter(p => getMarketRank(profile, p) > nextPick);
     const bestLaterVor = laterOptions.length ? Math.max(...laterOptions.map(p => p.vor)) : 0;
     return Math.max(0, player.vor - bestLaterVor);
 }
@@ -282,14 +322,15 @@ function scorePlayer(
     adjustment: PlayerAdjustment | undefined
 ): Recommendation {
     const nextPick = currentPick + profile.teams;
-    const adpGap = currentPick - player.adp;
-    const tierDropoff = getTierDropoff(player, available, nextPick);
+    const marketRank = getMarketRank(profile, player);
+    const adpGap = currentPick - marketRank;
+    const tierDropoff = getTierDropoff(profile, player, available, nextPick);
     const concerns = adjustment?.concerns ?? [];
     const components: ScoreComponents = {
         vor: player.vor,
         adpValue: clamp(adpGap * 0.25, -3, 4),
         tierDropoff,
-        availabilityNextPick: clamp((nextPick - player.adp) / 8, -2, 5),
+        availabilityNextPick: clamp((nextPick - marketRank) / 8, -2, 5),
         rosterFit: getRosterFit(profile, myRoster, player, currentPick),
         byeRisk: getByeRisk(myByes, player),
         historyAdjustment: getLeagueHistoryAdjustment(profile, player),
@@ -325,7 +366,7 @@ function buildReasons(
     concerns: Concern[]
 ) {
     const reasons: string[] = [];
-    if (components.adpValue >= 1.5) reasons.push(`ADP value: ${round(components.adpValue)} points past market.`);
+    if (components.adpValue >= 1.5) reasons.push(`${getMarketLabel(profile)} value: ${round(components.adpValue)} points past market.`);
     if (components.tierDropoff >= 1.5) reasons.push(`Tier cliff: ${round(components.tierDropoff)} VOR drop if this ${player.position} tier dries up.`);
     if (components.availabilityNextPick >= 2) reasons.push('Likely gone before your next estimated pick.');
     if (components.rosterFit >= 1.5) reasons.push(`Roster fit: fills a ${player.position} need.`);
@@ -334,7 +375,7 @@ function buildReasons(
     if (components.manualAdjustment < 0) reasons.push(`Manual fade: ${round(components.manualAdjustment)}.`);
     if (components.byeRisk < -0.5) reasons.push(`Bye risk: Week ${player.bye} is getting crowded.`);
     if (concerns.length) reasons.push(`Concern flags: ${concerns.map(c => CONCERN_LABELS[c]).join(', ')}.`);
-    if (!reasons.length) reasons.push('Best balanced value across VOR, ADP, roster, and tier risk.');
+    if (!reasons.length) reasons.push('Best balanced value across VOR, market rank, roster, and tier risk.');
     return reasons.slice(0, 4);
 }
 
@@ -522,6 +563,7 @@ const Header: React.FC<{
 };
 
 const RecommendationCard: React.FC<{
+    profile: LeagueProfile;
     rec: Recommendation;
     rank: number;
     featured?: boolean;
@@ -529,7 +571,7 @@ const RecommendationCard: React.FC<{
     adjustment?: PlayerAdjustment;
     setAdjustment: (id: number, patch: Partial<PlayerAdjustment>) => void;
     toggleConcern: (id: number, concern: Concern) => void;
-}> = ({ rec, rank, featured = false, onDraft, adjustment, setAdjustment, toggleConcern }) => {
+}> = ({ profile, rec, rank, featured = false, onDraft, adjustment, setAdjustment, toggleConcern }) => {
     const { player, components } = rec;
     const concerns = adjustment?.concerns ?? [];
     return (
@@ -540,7 +582,7 @@ const RecommendationCard: React.FC<{
                     <h2>{player.name}</h2>
                     <div className="muted">
                         <span style={{ color: getPositionColor(player.position) }}>{player.position}</span>
-                        {' '} {player.team} · Bye {player.bye} · ADP {player.adp}
+                        {' '} {player.team} · Bye {player.bye} · {getMarketLabel(profile)} {getMarketRank(profile, player)}
                     </div>
                 </div>
                 <div className="scoreBlock">
@@ -553,7 +595,7 @@ const RecommendationCard: React.FC<{
             </div>
             <div className="componentGrid">
                 <Metric label="VOR" value={components.vor} />
-                <Metric label="ADP" value={components.adpValue} />
+                <Metric label={getMarketLabel(profile)} value={components.adpValue} />
                 <Metric label="Tier" value={components.tierDropoff} />
                 <Metric label="Gone" value={components.availabilityNextPick} />
                 <Metric label="Roster" value={components.rosterFit} />
@@ -593,11 +635,12 @@ const Metric: React.FC<{ label: string; value: number }> = ({ label, value }) =>
 );
 
 const TopDrawer: React.FC<{
+    profile: LeagueProfile;
     recommendations: Recommendation[];
     open: boolean;
     setOpen: (open: boolean) => void;
     onDraft: (id: number) => void;
-}> = ({ recommendations, open, setOpen, onDraft }) => (
+}> = ({ profile, recommendations, open, setOpen, onDraft }) => (
     <section className="panel">
         <button className="drawerButton" onClick={() => setOpen(!open)}>
             {open ? 'Hide Top 10' : 'Show Top 10 backups'}
@@ -609,7 +652,7 @@ const TopDrawer: React.FC<{
                         <div className="rowRank">#{index + 1}</div>
                         <div>
                             <strong>{rec.player.name}</strong>
-                            <div className="muted">{rec.player.team} · {rec.player.position} · ADP {rec.player.adp}</div>
+                            <div className="muted">{rec.player.team} · {rec.player.position} · {getMarketLabel(profile)} {getMarketRank(profile, rec.player)}</div>
                         </div>
                         <div className="score">{rec.totalScore}</div>
                         <button onClick={() => onDraft(rec.player.id)}>Draft</button>
@@ -621,11 +664,12 @@ const TopDrawer: React.FC<{
 );
 
 const BoardView: React.FC<{
+    profile: LeagueProfile;
     rows: Recommendation[];
     adjustments: Record<string, PlayerAdjustment>;
     onDraft: (id: number) => void;
     setAdjustment: (id: number, patch: Partial<PlayerAdjustment>) => void;
-}> = ({ rows, adjustments, onDraft, setAdjustment }) => (
+}> = ({ profile, rows, adjustments, onDraft, setAdjustment }) => (
     <main className="stack">
         {rows.map(rec => {
             const player = rec.player;
@@ -638,7 +682,7 @@ const BoardView: React.FC<{
                         <div className="muted">{player.team} · {player.position} · Bye {player.bye}</div>
                     </div>
                     <Metric label="Score" value={rec.totalScore} />
-                    <Metric label="ADP" value={player.adp} />
+                    <Metric label={getMarketLabel(profile)} value={getMarketRank(profile, player)} />
                     <Metric label="VOR" value={player.vor} />
                     <button onClick={() => onDraft(player.id)}>Draft</button>
                     <button onClick={() => setAdjustment(player.id, { avoid: !adjustment?.avoid })}>
@@ -652,9 +696,10 @@ const BoardView: React.FC<{
 );
 
 const ClassicBoardView: React.FC<{
+    profile: LeagueProfile;
     rows: Recommendation[];
     onDraft: (id: number) => void;
-}> = ({ rows, onDraft }) => (
+}> = ({ profile, rows, onDraft }) => (
     <main className="classicBoard">
         <div className="classicHeader">
             <div>Rank</div>
@@ -679,7 +724,7 @@ const ClassicBoardView: React.FC<{
                         </span>
                     </div>
                     <div>{player.bye}</div>
-                    <div>{player.adp}</div>
+                    <div>{getMarketRank(profile, player)}</div>
                     <div>{player.vor.toFixed(2)}</div>
                     <button onClick={() => onDraft(player.id)}>Draft</button>
                 </div>
@@ -718,6 +763,8 @@ const RosterSnapshot: React.FC<{
 }> = ({ profile, counts, picks }) => (
     <aside className="panel rosterPanel">
         <h3>My roster</h3>
+        {profile.lineup && <div className="muted">Lineup: {formatLineup(profile.lineup)}</div>}
+        <div className="muted">Soft draft targets</div>
         <div className="rosterGrid">
             {POSITIONS.map(pos => (
                 <div key={pos}>
@@ -854,7 +901,7 @@ const App: React.FC = () => {
             );
 
         return scored.sort((a, b) => {
-            if (session.sortBy === 'adp') return a.player.adp - b.player.adp;
+            if (session.sortBy === 'adp') return getMarketRank(profile, a.player) - getMarketRank(profile, b.player);
             if (session.sortBy === 'vor') return b.player.vor - a.player.vor;
             return b.totalScore - a.totalScore;
         });
@@ -1012,6 +1059,7 @@ const App: React.FC = () => {
 
             {session.view === 'classic' && (
                 <ClassicBoardView
+                    profile={profile}
                     rows={visibleRows}
                     onDraft={draftPlayer}
                 />
@@ -1022,6 +1070,7 @@ const App: React.FC = () => {
                     <div className="stack">
                         {primary ? (
                             <RecommendationCard
+                                profile={profile}
                                 rec={primary}
                                 rank={1}
                                 featured
@@ -1037,6 +1086,7 @@ const App: React.FC = () => {
                             {backups.map((rec, index) => (
                                 <RecommendationCard
                                     key={rec.player.id}
+                                    profile={profile}
                                     rec={rec}
                                     rank={index + 2}
                                     onDraft={draftPlayer}
@@ -1047,6 +1097,7 @@ const App: React.FC = () => {
                             ))}
                         </div>
                         <TopDrawer
+                            profile={profile}
                             recommendations={topTen}
                             open={session.showTop10}
                             setOpen={showTop10 => updateSession({ showTop10 })}
@@ -1059,6 +1110,7 @@ const App: React.FC = () => {
 
             {session.view === 'board' && (
                 <BoardView
+                    profile={profile}
                     rows={visibleRows}
                     adjustments={session.adjustments}
                     onDraft={draftPlayer}

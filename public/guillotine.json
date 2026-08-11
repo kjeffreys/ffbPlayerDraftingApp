@@ -7,7 +7,10 @@
     "adp": 2.6,
     "vor": 24.4,
     "bye": 11,
-    "ppg": 19.65
+    "ppg": 19.65,
+    "redraftEcr": 3.3,
+    "superflexEcr": 11.2,
+    "dynastyEcr": 3.8
   },
   {
     "id": 2,
@@ -17,27 +20,36 @@
     "adp": 12.4,
     "vor": 22.21,
     "bye": 6,
-    "ppg": 17.46
+    "ppg": 17.46,
+    "redraftEcr": 21.0,
+    "superflexEcr": 36.9,
+    "dynastyEcr": 15.1
   },
   {
     "id": 3,
     "name": "Chase Brown",
     "team": "CIN",
     "position": "RB",
-    "adp": 26.4,
+    "adp": 26.3,
     "vor": 22.21,
     "bye": 6,
-    "ppg": 17.46
+    "ppg": 17.46,
+    "redraftEcr": 18.6,
+    "superflexEcr": 33.7,
+    "dynastyEcr": 38.5
   },
   {
     "id": 4,
     "name": "Jeremiyah Love",
     "team": "ARI",
     "position": "RB",
-    "adp": 19.6,
+    "adp": 19.5,
     "vor": 21.52,
     "bye": 14,
-    "ppg": 16.77
+    "ppg": 16.77,
+    "redraftEcr": 38.4,
+    "superflexEcr": 55.2,
+    "dynastyEcr": 12.3
   },
   {
     "id": 5,
@@ -47,7 +59,10 @@
     "adp": 8.1,
     "vor": 21.05,
     "bye": 13,
-    "ppg": 16.3
+    "ppg": 16.3,
+    "redraftEcr": 11.8,
+    "superflexEcr": 24.8,
+    "dynastyEcr": 21.6
   },
   {
     "id": 6,
@@ -57,7 +72,10 @@
     "adp": 1.7,
     "vor": 20.72,
     "bye": 6,
-    "ppg": 15.97
+    "ppg": 15.97,
+    "redraftEcr": 3.3,
+    "superflexEcr": 11.3,
+    "dynastyEcr": 4.5
   },
   {
     "id": 7,
@@ -67,7 +85,10 @@
     "adp": 5.8,
     "vor": 19.72,
     "bye": 11,
-    "ppg": 19.77
+    "ppg": 19.77,
+    "redraftEcr": 4.5,
+    "superflexEcr": 12.7,
+    "dynastyEcr": 3.1
   },
   {
     "id": 8,
@@ -77,7 +98,10 @@
     "adp": 3.8,
     "vor": 19.53,
     "bye": 11,
-    "ppg": 19.58
+    "ppg": 19.58,
+    "redraftEcr": 3.1,
+    "superflexEcr": 10.7,
+    "dynastyEcr": 4.0
   },
   {
     "id": 9,
@@ -87,7 +111,10 @@
     "adp": 42.9,
     "vor": 18.35,
     "bye": 8,
-    "ppg": 13.61
+    "ppg": 13.61,
+    "redraftEcr": 53.6,
+    "superflexEcr": 74.3,
+    "dynastyEcr": 67.1
   },
   {
     "id": 10,
@@ -97,7 +124,10 @@
     "adp": 20.9,
     "vor": 17.93,
     "bye": 13,
-    "ppg": 13.18
+    "ppg": 13.18,
+    "redraftEcr": 37.6,
+    "superflexEcr": 55.0,
+    "dynastyEcr": 80.6
   },
   {
     "id": 11,
@@ -107,7 +137,10 @@
     "adp": 17.0,
     "vor": 17.93,
     "bye": 10,
-    "ppg": 13.18
+    "ppg": 13.18,
+    "redraftEcr": 25.2,
+    "superflexEcr": 41.4,
+    "dynastyEcr": 53.0
   },
   {
     "id": 12,
@@ -117,7 +150,10 @@
     "adp": 13.0,
     "vor": 17.89,
     "bye": 7,
-    "ppg": 13.14
+    "ppg": 13.14,
+    "redraftEcr": 19.1,
+    "superflexEcr": 34.5,
+    "dynastyEcr": 19.4
   },
   {
     "id": 13,
@@ -127,17 +163,23 @@
     "adp": 28.6,
     "vor": 17.68,
     "bye": 11,
-    "ppg": 12.93
+    "ppg": 12.93,
+    "redraftEcr": 43.9,
+    "superflexEcr": 62.8,
+    "dynastyEcr": 86.7
   },
   {
     "id": 14,
     "name": "Bucky Irving",
     "team": "TB",
     "position": "RB",
-    "adp": 55.9,
+    "adp": 56.0,
     "vor": 17.68,
     "bye": 10,
-    "ppg": 12.93
+    "ppg": 12.93,
+    "redraftEcr": 60.0,
+    "superflexEcr": 80.6,
+    "dynastyEcr": 69.8
   },
   {
     "id": 15,
@@ -147,7 +189,10 @@
     "adp": 6.6,
     "vor": 17.68,
     "bye": 8,
-    "ppg": 12.93
+    "ppg": 12.93,
+    "redraftEcr": 8.6,
+    "superflexEcr": 18.8,
+    "dynastyEcr": 55.2
   },
   {
     "id": 16,
@@ -157,37 +202,49 @@
     "adp": 39.0,
     "vor": 17.16,
     "bye": 14,
-    "ppg": 12.41
+    "ppg": 12.41,
+    "redraftEcr": 45.7,
+    "superflexEcr": 65.2,
+    "dynastyEcr": 68.8
   },
   {
     "id": 17,
     "name": "Travis Etienne Jr.",
     "team": "NO",
     "position": "RB",
-    "adp": 50.1,
+    "adp": 50.2,
     "vor": 16.3,
     "bye": 8,
-    "ppg": 11.56
+    "ppg": 11.56,
+    "redraftEcr": 49.7,
+    "superflexEcr": 69.6,
+    "dynastyEcr": 63.7
   },
   {
     "id": 18,
     "name": "Kyren Williams",
     "team": "LAR",
     "position": "RB",
-    "adp": 42.6,
+    "adp": 42.5,
     "vor": 16.17,
     "bye": 11,
-    "ppg": 11.42
+    "ppg": 11.42,
+    "redraftEcr": 42.0,
+    "superflexEcr": 61.2,
+    "dynastyEcr": 59.7
   },
   {
     "id": 19,
     "name": "Omarion Hampton",
     "team": "LAC",
     "position": "RB",
-    "adp": 22.1,
+    "adp": 22.0,
     "vor": 15.25,
     "bye": 7,
-    "ppg": 10.5
+    "ppg": 10.5,
+    "redraftEcr": 24.7,
+    "superflexEcr": 41.2,
+    "dynastyEcr": 16.1
   },
   {
     "id": 20,
@@ -197,7 +254,10 @@
     "adp": 72.8,
     "vor": 14.93,
     "bye": 10,
-    "ppg": 10.19
+    "ppg": 10.19,
+    "redraftEcr": 60.1,
+    "superflexEcr": 80.7,
+    "dynastyEcr": 88.8
   },
   {
     "id": 21,
@@ -207,7 +267,10 @@
     "adp": 17.9,
     "vor": 14.5,
     "bye": 13,
-    "ppg": 9.76
+    "ppg": 9.76,
+    "redraftEcr": 16.8,
+    "superflexEcr": 31.1,
+    "dynastyEcr": 9.5
   },
   {
     "id": 22,
@@ -217,7 +280,10 @@
     "adp": 10.6,
     "vor": 14.46,
     "bye": 14,
-    "ppg": 14.51
+    "ppg": 14.51,
+    "redraftEcr": 8.8,
+    "superflexEcr": 20.8,
+    "dynastyEcr": 10.3
   },
   {
     "id": 23,
@@ -227,7 +293,10 @@
     "adp": 24.8,
     "vor": 13.91,
     "bye": 5,
-    "ppg": 9.16
+    "ppg": 9.16,
+    "redraftEcr": 29.6,
+    "superflexEcr": 45.8,
+    "dynastyEcr": 27.1
   },
   {
     "id": 24,
@@ -237,7 +306,10 @@
     "adp": 81.2,
     "vor": 13.8,
     "bye": 11,
-    "ppg": 9.06
+    "ppg": 9.06,
+    "redraftEcr": 76.7,
+    "superflexEcr": 96.3,
+    "dynastyEcr": 68.2
   },
   {
     "id": 25,
@@ -247,47 +319,62 @@
     "adp": 8.3,
     "vor": 13.72,
     "bye": 6,
-    "ppg": 13.77
+    "ppg": 13.77,
+    "redraftEcr": 5.9,
+    "superflexEcr": 14.8,
+    "dynastyEcr": 6.8
   },
   {
     "id": 26,
     "name": "Jaylen Warren",
     "team": "PIT",
     "position": "RB",
-    "adp": 104.7,
+    "adp": 104.8,
     "vor": 12.93,
     "bye": 9,
-    "ppg": 8.18
+    "ppg": 8.18,
+    "redraftEcr": 75.3,
+    "superflexEcr": 95.1,
+    "dynastyEcr": 112.9
   },
   {
     "id": 27,
     "name": "Bhayshul Tuten",
     "team": "JAX",
     "position": "RB",
-    "adp": 79.6,
+    "adp": 79.7,
     "vor": 12.82,
     "bye": 7,
-    "ppg": 8.07
+    "ppg": 8.07,
+    "redraftEcr": 69.9,
+    "superflexEcr": 90.3,
+    "dynastyEcr": 82.7
   },
   {
     "id": 28,
     "name": "J.K. Dobbins",
     "team": "DEN",
     "position": "RB",
-    "adp": 124.3,
+    "adp": 124.5,
     "vor": 12.82,
     "bye": 10,
-    "ppg": 8.07
+    "ppg": 8.07,
+    "redraftEcr": 101.4,
+    "superflexEcr": 117.8,
+    "dynastyEcr": 155.5
   },
   {
     "id": 29,
     "name": "Jordan Mason",
     "team": "MIN",
     "position": "RB",
-    "adp": 157.0,
+    "adp": 157.1,
     "vor": 12.82,
     "bye": 6,
-    "ppg": 8.07
+    "ppg": 8.07,
+    "redraftEcr": 124.9,
+    "superflexEcr": 136.5,
+    "dynastyEcr": 171.4
   },
   {
     "id": 30,
@@ -297,7 +384,10 @@
     "adp": 4.7,
     "vor": 12.47,
     "bye": 6,
-    "ppg": 12.53
+    "ppg": 12.53,
+    "redraftEcr": 1.8,
+    "superflexEcr": 7.8,
+    "dynastyEcr": 1.1
   },
   {
     "id": 31,
@@ -307,87 +397,114 @@
     "adp": 35.4,
     "vor": 11.76,
     "bye": 8,
-    "ppg": 11.81
+    "ppg": 11.81,
+    "redraftEcr": 21.7,
+    "superflexEcr": 37.5,
+    "dynastyEcr": 27.2
   },
   {
     "id": 32,
     "name": "Aaron Jones Sr.",
     "team": "MIN",
     "position": "RB",
-    "adp": 123.4,
+    "adp": 123.5,
     "vor": 11.25,
     "bye": 6,
-    "ppg": 6.51
+    "ppg": 6.51,
+    "redraftEcr": 111.1,
+    "superflexEcr": 125.5,
+    "dynastyEcr": 192.5
   },
   {
     "id": 33,
     "name": "Zay Flowers",
     "team": "BAL",
     "position": "WR",
-    "adp": 42.7,
+    "adp": 42.6,
     "vor": 11.14,
     "bye": 13,
-    "ppg": 11.19
+    "ppg": 11.19,
+    "redraftEcr": 29.9,
+    "superflexEcr": 46.8,
+    "dynastyEcr": 34.1
   },
   {
     "id": 34,
     "name": "Matthew Golden",
     "team": "GB",
     "position": "WR",
-    "adp": 107.6,
+    "adp": 107.3,
     "vor": 11.14,
     "bye": 11,
-    "ppg": 11.19
+    "ppg": 11.19,
+    "redraftEcr": 136.1,
+    "superflexEcr": 145.6,
+    "dynastyEcr": 108.2
   },
   {
     "id": 35,
     "name": "Calvin Ridley",
     "team": "TEN",
     "position": "WR",
-    "adp": 167.0,
+    "adp": 167.1,
     "vor": 11.14,
     "bye": 9,
-    "ppg": 11.19
+    "ppg": 11.19,
+    "redraftEcr": 200.7,
+    "superflexEcr": 191.5,
+    "dynastyEcr": 224.3
   },
   {
     "id": 36,
     "name": "Tony Pollard",
     "team": "TEN",
     "position": "RB",
-    "adp": 90.6,
+    "adp": 90.7,
     "vor": 10.91,
     "bye": 9,
-    "ppg": 6.16
+    "ppg": 6.16,
+    "redraftEcr": 83.7,
+    "superflexEcr": 102.6,
+    "dynastyEcr": 143.1
   },
   {
     "id": 37,
     "name": "Rico Dowdle",
     "team": "PIT",
     "position": "RB",
-    "adp": 110.5,
+    "adp": 110.7,
     "vor": 10.81,
     "bye": 9,
-    "ppg": 6.06
+    "ppg": 6.06,
+    "redraftEcr": 88.8,
+    "superflexEcr": 106.9,
+    "dynastyEcr": 135.4
   },
   {
     "id": 38,
     "name": "TreVeyon Henderson",
     "team": "NE",
     "position": "RB",
-    "adp": 71.2,
+    "adp": 71.4,
     "vor": 10.79,
     "bye": 11,
-    "ppg": 6.04
+    "ppg": 6.04,
+    "redraftEcr": 64.1,
+    "superflexEcr": 84.8,
+    "dynastyEcr": 50.2
   },
   {
     "id": 39,
     "name": "Carnell Tate",
     "team": "TEN",
     "position": "WR",
-    "adp": 70.2,
+    "adp": 70.0,
     "vor": 10.56,
     "bye": 9,
-    "ppg": 10.61
+    "ppg": 10.61,
+    "redraftEcr": 66.8,
+    "superflexEcr": 86.7,
+    "dynastyEcr": 27.7
   },
   {
     "id": 40,
@@ -397,17 +514,23 @@
     "adp": 27.8,
     "vor": 10.28,
     "bye": 8,
-    "ppg": 10.34
+    "ppg": 10.34,
+    "redraftEcr": 16.6,
+    "superflexEcr": 31.1,
+    "dynastyEcr": 20.1
   },
   {
     "id": 41,
     "name": "David Montgomery",
     "team": "HOU",
     "position": "RB",
-    "adp": 75.5,
+    "adp": 75.7,
     "vor": 9.96,
     "bye": 8,
-    "ppg": 5.21
+    "ppg": 5.21,
+    "redraftEcr": 62.5,
+    "superflexEcr": 83.5,
+    "dynastyEcr": 95.2
   },
   {
     "id": 42,
@@ -417,37 +540,49 @@
     "adp": 12.1,
     "vor": 9.4,
     "bye": 6,
-    "ppg": 9.45
+    "ppg": 9.45,
+    "redraftEcr": 9.2,
+    "superflexEcr": 21.4,
+    "dynastyEcr": 7.4
   },
   {
     "id": 43,
     "name": "Malik Nabers",
     "team": "NYG",
     "position": "WR",
-    "adp": 38.2,
+    "adp": 38.1,
     "vor": 9.4,
     "bye": 8,
-    "ppg": 9.45
+    "ppg": 9.45,
+    "redraftEcr": 33.4,
+    "superflexEcr": 50.5,
+    "dynastyEcr": 10.3
   },
   {
     "id": 44,
     "name": "Kenny Gainwell",
     "team": "TB",
     "position": "RB",
-    "adp": 123.1,
+    "adp": 123.2,
     "vor": 9.25,
     "bye": 10,
-    "ppg": 4.5
+    "ppg": 4.5,
+    "redraftEcr": 100.3,
+    "superflexEcr": 117.1,
+    "dynastyEcr": 147.2
   },
   {
     "id": 45,
     "name": "Davante Adams",
     "team": "LAR",
     "position": "WR",
-    "adp": 47.2,
+    "adp": 47.3,
     "vor": 9.24,
     "bye": 11,
-    "ppg": 9.3
+    "ppg": 9.3,
+    "redraftEcr": 49.1,
+    "superflexEcr": 69.0,
+    "dynastyEcr": 97.8
   },
   {
     "id": 46,
@@ -457,7 +592,10 @@
     "adp": 19.4,
     "vor": 8.79,
     "bye": 14,
-    "ppg": 11.04
+    "ppg": 11.04,
+    "redraftEcr": 19.1,
+    "superflexEcr": 34.9,
+    "dynastyEcr": 25.8
   },
   {
     "id": 47,
@@ -467,7 +605,10 @@
     "adp": 170.6,
     "vor": 8.64,
     "bye": 13,
-    "ppg": 3.89
+    "ppg": 3.89,
+    "redraftEcr": 181.0,
+    "superflexEcr": 178.8,
+    "dynastyEcr": 206.4
   },
   {
     "id": 48,
@@ -477,7 +618,10 @@
     "adp": 112.7,
     "vor": 8.64,
     "bye": 11,
-    "ppg": 3.89
+    "ppg": 3.89,
+    "redraftEcr": 82.4,
+    "superflexEcr": 101.9,
+    "dynastyEcr": 127.8
   },
   {
     "id": 49,
@@ -487,7 +631,10 @@
     "adp": 38.5,
     "vor": 8.57,
     "bye": 13,
-    "ppg": 3.82
+    "ppg": 3.82,
+    "redraftEcr": 40.1,
+    "superflexEcr": 57.5,
+    "dynastyEcr": 35.1
   },
   {
     "id": 50,
@@ -497,27 +644,36 @@
     "adp": 129.4,
     "vor": 8.57,
     "bye": 10,
-    "ppg": 3.82
+    "ppg": 3.82,
+    "redraftEcr": 94.4,
+    "superflexEcr": 111.5,
+    "dynastyEcr": 108.1
   },
   {
     "id": 51,
     "name": "Zach Charbonnet",
     "team": "SEA",
     "position": "RB",
-    "adp": 149.9,
+    "adp": 150.0,
     "vor": 8.57,
     "bye": 11,
-    "ppg": 3.82
+    "ppg": 3.82,
+    "redraftEcr": 144.3,
+    "superflexEcr": 151.1,
+    "dynastyEcr": 122.8
   },
   {
     "id": 52,
     "name": "Jordyn Tyson",
     "team": "NO",
     "position": "WR",
-    "adp": 99.0,
+    "adp": 98.7,
     "vor": 8.5,
     "bye": 8,
-    "ppg": 8.55
+    "ppg": 8.55,
+    "redraftEcr": 88.8,
+    "superflexEcr": 106.8,
+    "dynastyEcr": 36.9
   },
   {
     "id": 53,
@@ -527,7 +683,10 @@
     "adp": 41.2,
     "vor": 8.45,
     "bye": 5,
-    "ppg": 8.51
+    "ppg": 8.51,
+    "redraftEcr": 33.5,
+    "superflexEcr": 50.5,
+    "dynastyEcr": 17.6
   },
   {
     "id": 54,
@@ -537,7 +696,10 @@
     "adp": 18.9,
     "vor": 8.38,
     "bye": 11,
-    "ppg": 8.44
+    "ppg": 8.44,
+    "redraftEcr": 12.9,
+    "superflexEcr": 26.3,
+    "dynastyEcr": 12.1
   },
   {
     "id": 55,
@@ -547,17 +709,23 @@
     "adp": 54.8,
     "vor": 8.38,
     "bye": 11,
-    "ppg": 3.63
+    "ppg": 3.63,
+    "redraftEcr": 60.8,
+    "superflexEcr": 81.4,
+    "dynastyEcr": 53.8
   },
   {
     "id": 56,
     "name": "Jacory Croskey-Merritt",
     "team": "WAS",
     "position": "RB",
-    "adp": 142.4,
+    "adp": 142.3,
     "vor": 8.38,
     "bye": 7,
-    "ppg": 3.63
+    "ppg": 3.63,
+    "redraftEcr": 123.4,
+    "superflexEcr": 135.7,
+    "dynastyEcr": 160.9
   },
   {
     "id": 57,
@@ -567,27 +735,36 @@
     "adp": 170.9,
     "vor": 8.38,
     "bye": 11,
-    "ppg": 3.63
+    "ppg": 3.63,
+    "redraftEcr": 148.3,
+    "superflexEcr": 156.0,
+    "dynastyEcr": 181.5
   },
   {
     "id": 58,
     "name": "Rachaad White",
     "team": "WAS",
     "position": "RB",
-    "adp": 127.9,
+    "adp": 128.1,
     "vor": 8.38,
     "bye": 7,
-    "ppg": 3.63
+    "ppg": 3.63,
+    "redraftEcr": 106.2,
+    "superflexEcr": 121.4,
+    "dynastyEcr": 154.1
   },
   {
     "id": 59,
     "name": "Josh Allen",
     "team": "BUF",
     "position": "QB",
-    "adp": 22.4,
+    "adp": 22.5,
     "vor": 8.25,
     "bye": 7,
-    "ppg": 24.25
+    "ppg": 24.25,
+    "redraftEcr": 25.9,
+    "superflexEcr": 1.0,
+    "dynastyEcr": 20.6
   },
   {
     "id": 60,
@@ -597,17 +774,23 @@
     "adp": 27.3,
     "vor": 8.23,
     "bye": 11,
-    "ppg": 8.28
+    "ppg": 8.28,
+    "redraftEcr": 15.2,
+    "superflexEcr": 28.8,
+    "dynastyEcr": 35.2
   },
   {
     "id": 61,
     "name": "Chuba Hubbard",
     "team": "CAR",
     "position": "RB",
-    "adp": 114.6,
+    "adp": 114.8,
     "vor": 8.09,
     "bye": 5,
-    "ppg": 3.35
+    "ppg": 3.35,
+    "redraftEcr": 85.8,
+    "superflexEcr": 104.5,
+    "dynastyEcr": 130.2
   },
   {
     "id": 62,
@@ -617,7 +800,10 @@
     "adp": 86.0,
     "vor": 8.03,
     "bye": 10,
-    "ppg": 8.08
+    "ppg": 8.08,
+    "redraftEcr": 82.7,
+    "superflexEcr": 101.0,
+    "dynastyEcr": 99.8
   },
   {
     "id": 63,
@@ -627,7 +813,10 @@
     "adp": 168.5,
     "vor": 7.99,
     "bye": 9,
-    "ppg": 3.24
+    "ppg": 3.24,
+    "redraftEcr": 143.2,
+    "superflexEcr": 151.3,
+    "dynastyEcr": 202.9
   },
   {
     "id": 64,
@@ -637,17 +826,23 @@
     "adp": 62.1,
     "vor": 7.94,
     "bye": 7,
-    "ppg": 8.0
+    "ppg": 8.0,
+    "redraftEcr": 43.7,
+    "superflexEcr": 62.5,
+    "dynastyEcr": 74.4
   },
   {
     "id": 65,
     "name": "Mike Evans",
     "team": "SF",
     "position": "WR",
-    "adp": 95.7,
+    "adp": 96.7,
     "vor": 7.68,
     "bye": 8,
-    "ppg": 7.73
+    "ppg": 7.73,
+    "redraftEcr": 51.7,
+    "superflexEcr": 71.9,
+    "dynastyEcr": 99.5
   },
   {
     "id": 66,
@@ -657,47 +852,62 @@
     "adp": 151.5,
     "vor": 7.62,
     "bye": 8,
-    "ppg": 2.87
+    "ppg": 2.87,
+    "redraftEcr": 139.2,
+    "superflexEcr": 148.2,
+    "dynastyEcr": 164.8
   },
   {
     "id": 67,
     "name": "Alvin Kamara",
     "team": "NO",
     "position": "RB",
-    "adp": 156.4,
+    "adp": 156.6,
     "vor": 7.56,
     "bye": 8,
-    "ppg": 2.81
+    "ppg": 2.81,
+    "redraftEcr": 145.7,
+    "superflexEcr": 152.9,
+    "dynastyEcr": 220.7
   },
   {
     "id": 68,
     "name": "Kyle Monangai",
     "team": "CHI",
     "position": "RB",
-    "adp": 133.5,
+    "adp": 133.2,
     "vor": 7.52,
     "bye": 10,
-    "ppg": 2.77
+    "ppg": 2.77,
+    "redraftEcr": 104.3,
+    "superflexEcr": 120.2,
+    "dynastyEcr": 116.5
   },
   {
     "id": 69,
     "name": "George Kittle",
     "team": "SF",
     "position": "TE",
-    "adp": 97.6,
+    "adp": 97.9,
     "vor": 7.43,
     "bye": 8,
-    "ppg": 9.67
+    "ppg": 9.67,
+    "redraftEcr": 106.2,
+    "superflexEcr": 122.1,
+    "dynastyEcr": 106.5
   },
   {
     "id": 70,
     "name": "Tee Higgins",
     "team": "CIN",
     "position": "WR",
-    "adp": 57.8,
+    "adp": 57.9,
     "vor": 7.31,
     "bye": 6,
-    "ppg": 7.36
+    "ppg": 7.36,
+    "redraftEcr": 35.3,
+    "superflexEcr": 52.3,
+    "dynastyEcr": 43.1
   },
   {
     "id": 71,
@@ -707,17 +917,23 @@
     "adp": 39.4,
     "vor": 7.13,
     "bye": 10,
-    "ppg": 7.18
+    "ppg": 7.18,
+    "redraftEcr": 24.4,
+    "superflexEcr": 40.8,
+    "dynastyEcr": 33.6
   },
   {
     "id": 72,
     "name": "Ricky Pearsall",
     "team": "SF",
     "position": "WR",
-    "adp": 170.3,
+    "adp": 170.2,
     "vor": 7.13,
     "bye": 8,
-    "ppg": 7.18
+    "ppg": 7.18,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 111.3
   },
   {
     "id": 73,
@@ -727,17 +943,23 @@
     "adp": 36.3,
     "vor": 7.11,
     "bye": 13,
-    "ppg": 7.16
+    "ppg": 7.16,
+    "redraftEcr": 30.7,
+    "superflexEcr": 47.9,
+    "dynastyEcr": 29.9
   },
   {
     "id": 74,
     "name": "Makai Lemon",
     "team": "PHI",
     "position": "WR",
-    "adp": 116.8,
+    "adp": 117.3,
     "vor": 7.11,
     "bye": 10,
-    "ppg": 7.16
+    "ppg": 7.16,
+    "redraftEcr": 101.9,
+    "superflexEcr": 118.2,
+    "dynastyEcr": 41.8
   },
   {
     "id": 75,
@@ -747,7 +969,10 @@
     "adp": 88.0,
     "vor": 6.71,
     "bye": 9,
-    "ppg": 6.76
+    "ppg": 6.76,
+    "redraftEcr": 78.0,
+    "superflexEcr": 97.7,
+    "dynastyEcr": 85.8
   },
   {
     "id": 76,
@@ -757,47 +982,62 @@
     "adp": 23.7,
     "vor": 6.63,
     "bye": 13,
-    "ppg": 8.88
+    "ppg": 8.88,
+    "redraftEcr": 20.4,
+    "superflexEcr": 37.1,
+    "dynastyEcr": 16.4
   },
   {
     "id": 77,
     "name": "Jaylen Waddle",
     "team": "DEN",
     "position": "WR",
-    "adp": 60.2,
+    "adp": 60.4,
     "vor": 6.38,
     "bye": 10,
-    "ppg": 6.43
+    "ppg": 6.43,
+    "redraftEcr": 37.4,
+    "superflexEcr": 54.9,
+    "dynastyEcr": 43.0
   },
   {
     "id": 78,
     "name": "Brock Purdy",
     "team": "SF",
     "position": "QB",
-    "adp": 104.8,
+    "adp": 105.1,
     "vor": 6.21,
     "bye": 8,
-    "ppg": 22.21
+    "ppg": 22.21,
+    "redraftEcr": 95.3,
+    "superflexEcr": 21.7,
+    "dynastyEcr": 69.6
   },
   {
     "id": 79,
     "name": "KC Concepcion",
     "team": "CLE",
     "position": "WR",
-    "adp": 150.0,
+    "adp": 150.3,
     "vor": 6.13,
     "bye": 11,
-    "ppg": 6.18
+    "ppg": 6.18,
+    "redraftEcr": 133.0,
+    "superflexEcr": 143.1,
+    "dynastyEcr": 70.2
   },
   {
     "id": 80,
     "name": "Blake Corum",
     "team": "LAR",
     "position": "RB",
-    "adp": 140.4,
+    "adp": 140.5,
     "vor": 6.05,
     "bye": 11,
-    "ppg": 1.3
+    "ppg": 1.3,
+    "redraftEcr": 110.1,
+    "superflexEcr": 124.5,
+    "dynastyEcr": 119.2
   },
   {
     "id": 81,
@@ -807,17 +1047,23 @@
     "adp": 167.4,
     "vor": 5.91,
     "bye": 8,
-    "ppg": 1.16
+    "ppg": 1.16,
+    "redraftEcr": 134.1,
+    "superflexEcr": 143.9,
+    "dynastyEcr": 171.0
   },
   {
     "id": 82,
     "name": "Isiah Pacheco",
     "team": "DET",
     "position": "RB",
-    "adp": 157.6,
+    "adp": 157.8,
     "vor": 5.9,
     "bye": 6,
-    "ppg": 1.15
+    "ppg": 1.15,
+    "redraftEcr": 151.2,
+    "superflexEcr": 157.1,
+    "dynastyEcr": 207.8
   },
   {
     "id": 83,
@@ -827,37 +1073,49 @@
     "adp": 102.1,
     "vor": 5.77,
     "bye": 11,
-    "ppg": 5.82
+    "ppg": 5.82,
+    "redraftEcr": 57.6,
+    "superflexEcr": 78.1,
+    "dynastyEcr": 65.2
   },
   {
     "id": 84,
     "name": "Brian Thomas Jr.",
     "team": "JAX",
     "position": "WR",
-    "adp": 106.1,
+    "adp": 106.0,
     "vor": 5.5,
     "bye": 7,
-    "ppg": 5.56
+    "ppg": 5.56,
+    "redraftEcr": 77.3,
+    "superflexEcr": 96.6,
+    "dynastyEcr": 62.2
   },
   {
     "id": 85,
     "name": "Keon Coleman",
     "team": "BUF",
     "position": "WR",
-    "adp": 170.3,
+    "adp": 170.2,
     "vor": 5.49,
     "bye": 7,
-    "ppg": 5.54
+    "ppg": 5.54,
+    "redraftEcr": 243.0,
+    "superflexEcr": 221.8,
+    "dynastyEcr": 221.9
   },
   {
     "id": 86,
     "name": "Stefon Diggs",
     "team": "WAS",
     "position": "WR",
-    "adp": 152.2,
+    "adp": 147.4,
     "vor": 5.49,
     "bye": 7,
-    "ppg": 5.54
+    "ppg": 5.54,
+    "redraftEcr": 144.4,
+    "superflexEcr": 150.6,
+    "dynastyEcr": 162.9
   },
   {
     "id": 87,
@@ -867,7 +1125,10 @@
     "adp": 44.6,
     "vor": 5.49,
     "bye": 10,
-    "ppg": 5.54
+    "ppg": 5.54,
+    "redraftEcr": 37.7,
+    "superflexEcr": 55.3,
+    "dynastyEcr": 22.0
   },
   {
     "id": 88,
@@ -877,7 +1138,10 @@
     "adp": 123.5,
     "vor": 5.49,
     "bye": 6,
-    "ppg": 5.54
+    "ppg": 5.54,
+    "redraftEcr": 106.3,
+    "superflexEcr": 121.2,
+    "dynastyEcr": 80.8
   },
   {
     "id": 89,
@@ -887,7 +1151,10 @@
     "adp": 136.8,
     "vor": 5.45,
     "bye": 5,
-    "ppg": 5.51
+    "ppg": 5.51,
+    "redraftEcr": 123.3,
+    "superflexEcr": 134.9,
+    "dynastyEcr": 106.8
   },
   {
     "id": 90,
@@ -897,7 +1164,10 @@
     "adp": 28.1,
     "vor": 5.45,
     "bye": 14,
-    "ppg": 5.51
+    "ppg": 5.51,
+    "redraftEcr": 19.1,
+    "superflexEcr": 34.9,
+    "dynastyEcr": 22.4
   },
   {
     "id": 91,
@@ -907,7 +1177,10 @@
     "adp": 67.2,
     "vor": 5.45,
     "bye": 6,
-    "ppg": 5.51
+    "ppg": 5.51,
+    "redraftEcr": 55.4,
+    "superflexEcr": 75.9,
+    "dynastyEcr": 55.5
   },
   {
     "id": 92,
@@ -917,17 +1190,23 @@
     "adp": 51.2,
     "vor": 5.43,
     "bye": 7,
-    "ppg": 21.43
+    "ppg": 21.43,
+    "redraftEcr": 51.0,
+    "superflexEcr": 6.1,
+    "dynastyEcr": 33.2
   },
   {
     "id": 93,
     "name": "Wan'Dale Robinson",
     "team": "TEN",
     "position": "WR",
-    "adp": 117.7,
+    "adp": 117.5,
     "vor": 5.2,
     "bye": 9,
-    "ppg": 5.25
+    "ppg": 5.25,
+    "redraftEcr": 87.3,
+    "superflexEcr": 105.5,
+    "dynastyEcr": 92.5
   },
   {
     "id": 94,
@@ -937,37 +1216,49 @@
     "adp": 140.7,
     "vor": 5.12,
     "bye": 11,
-    "ppg": 5.18
+    "ppg": 5.18,
+    "redraftEcr": 108.2,
+    "superflexEcr": 122.8,
+    "dynastyEcr": 107.8
   },
   {
     "id": 95,
     "name": "Alec Pierce",
     "team": "IND",
     "position": "WR",
-    "adp": 97.6,
+    "adp": 97.7,
     "vor": 5.12,
     "bye": 13,
-    "ppg": 5.17
+    "ppg": 5.17,
+    "redraftEcr": 82.7,
+    "superflexEcr": 101.2,
+    "dynastyEcr": 73.8
   },
   {
     "id": 96,
     "name": "Rome Odunze",
     "team": "CHI",
     "position": "WR",
-    "adp": 72.4,
+    "adp": 72.3,
     "vor": 5.11,
     "bye": 10,
-    "ppg": 5.17
+    "ppg": 5.17,
+    "redraftEcr": 59.4,
+    "superflexEcr": 79.9,
+    "dynastyEcr": 47.1
   },
   {
     "id": 97,
     "name": "Jakobi Meyers",
     "team": "JAX",
     "position": "WR",
-    "adp": 117.6,
+    "adp": 117.5,
     "vor": 4.9,
     "bye": 7,
-    "ppg": 4.95
+    "ppg": 4.95,
+    "redraftEcr": 99.5,
+    "superflexEcr": 115.2,
+    "dynastyEcr": 110.3
   },
   {
     "id": 98,
@@ -977,57 +1268,75 @@
     "adp": 170.2,
     "vor": 4.78,
     "bye": 8,
-    "ppg": 0.03
+    "ppg": 0.03,
+    "redraftEcr": 316.2,
+    "superflexEcr": 284.9,
+    "dynastyEcr": 368.0
   },
   {
     "id": 99,
     "name": "Ladd McConkey",
     "team": "LAC",
     "position": "WR",
-    "adp": 52.9,
+    "adp": 52.8,
     "vor": 4.66,
     "bye": 7,
-    "ppg": 4.71
+    "ppg": 4.71,
+    "redraftEcr": 35.9,
+    "superflexEcr": 53.1,
+    "dynastyEcr": 32.3
   },
   {
     "id": 100,
     "name": "Parker Washington",
     "team": "JAX",
     "position": "WR",
-    "adp": 103.3,
+    "adp": 103.0,
     "vor": 4.64,
     "bye": 7,
-    "ppg": 4.7
+    "ppg": 4.7,
+    "redraftEcr": 78.3,
+    "superflexEcr": 98.0,
+    "dynastyEcr": 83.3
   },
   {
     "id": 101,
     "name": "Rashid Shaheed",
     "team": "SEA",
     "position": "WR",
-    "adp": 156.7,
+    "adp": 157.2,
     "vor": 4.64,
     "bye": 11,
-    "ppg": 4.69
+    "ppg": 4.69,
+    "redraftEcr": 147.4,
+    "superflexEcr": 155.6,
+    "dynastyEcr": 145.6
   },
   {
     "id": 102,
     "name": "Quentin Johnston",
     "team": "LAC",
     "position": "WR",
-    "adp": 144.0,
+    "adp": 144.1,
     "vor": 4.53,
     "bye": 7,
-    "ppg": 4.59
+    "ppg": 4.59,
+    "redraftEcr": 100.2,
+    "superflexEcr": 116.6,
+    "dynastyEcr": 105.5
   },
   {
     "id": 103,
     "name": "Tucker Kraft",
     "team": "GB",
     "position": "TE",
-    "adp": 100.0,
+    "adp": 100.1,
     "vor": 4.41,
     "bye": 11,
-    "ppg": 6.65
+    "ppg": 6.65,
+    "redraftEcr": 75.6,
+    "superflexEcr": 95.2,
+    "dynastyEcr": 53.8
   },
   {
     "id": 104,
@@ -1037,7 +1346,10 @@
     "adp": 169.9,
     "vor": 4.38,
     "bye": 14,
-    "ppg": -0.37
+    "ppg": -0.37,
+    "redraftEcr": 263.7,
+    "superflexEcr": 238.3,
+    "dynastyEcr": 255.7
   },
   {
     "id": 105,
@@ -1047,17 +1359,23 @@
     "adp": 92.1,
     "vor": 4.33,
     "bye": 14,
-    "ppg": 4.38
+    "ppg": 4.38,
+    "redraftEcr": 70.2,
+    "superflexEcr": 90.3,
+    "dynastyEcr": 54.6
   },
   {
     "id": 106,
     "name": "Deebo Samuel Sr.",
     "team": "SF",
     "position": "WR",
-    "adp": 135.1,
+    "adp": 135.4,
     "vor": 4.28,
     "bye": 8,
-    "ppg": 4.34
+    "ppg": 4.34,
+    "redraftEcr": 148.9,
+    "superflexEcr": 153.4,
+    "dynastyEcr": 189.1
   },
   {
     "id": 107,
@@ -1067,27 +1385,36 @@
     "adp": 71.2,
     "vor": 4.25,
     "bye": 7,
-    "ppg": 4.31
+    "ppg": 4.31,
+    "redraftEcr": 53.6,
+    "superflexEcr": 73.5,
+    "dynastyEcr": 74.5
   },
   {
     "id": 108,
     "name": "Michael Wilson",
     "team": "ARI",
     "position": "WR",
-    "adp": 105.9,
+    "adp": 106.0,
     "vor": 4.2,
     "bye": 14,
-    "ppg": 4.25
+    "ppg": 4.25,
+    "redraftEcr": 89.2,
+    "superflexEcr": 107.4,
+    "dynastyEcr": 88.7
   },
   {
     "id": 109,
     "name": "Michael Pittman Jr.",
     "team": "PIT",
     "position": "WR",
-    "adp": 91.1,
+    "adp": 91.2,
     "vor": 4.17,
     "bye": 9,
-    "ppg": 4.23
+    "ppg": 4.23,
+    "redraftEcr": 82.5,
+    "superflexEcr": 100.9,
+    "dynastyEcr": 100.5
   },
   {
     "id": 110,
@@ -1097,17 +1424,23 @@
     "adp": 76.7,
     "vor": 4.0,
     "bye": 11,
-    "ppg": 6.25
+    "ppg": 6.25,
+    "redraftEcr": 75.1,
+    "superflexEcr": 94.4,
+    "dynastyEcr": 56.7
   },
   {
     "id": 111,
     "name": "Kenyon Sadiq",
     "team": "NYJ",
     "position": "TE",
-    "adp": 135.8,
+    "adp": 136.0,
     "vor": 3.94,
     "bye": 13,
-    "ppg": 6.18
+    "ppg": 6.18,
+    "redraftEcr": 211.1,
+    "superflexEcr": 199.1,
+    "dynastyEcr": 75.0
   },
   {
     "id": 112,
@@ -1117,17 +1450,23 @@
     "adp": 129.7,
     "vor": 3.93,
     "bye": 5,
-    "ppg": -0.82
+    "ppg": -0.82,
+    "redraftEcr": 115.4,
+    "superflexEcr": 129.2,
+    "dynastyEcr": 124.5
   },
   {
     "id": 113,
     "name": "Josh Downs",
     "team": "IND",
     "position": "WR",
-    "adp": 123.8,
+    "adp": 123.6,
     "vor": 3.85,
     "bye": 13,
-    "ppg": 3.91
+    "ppg": 3.91,
+    "redraftEcr": 87.8,
+    "superflexEcr": 105.9,
+    "dynastyEcr": 96.1
   },
   {
     "id": 114,
@@ -1137,37 +1476,49 @@
     "adp": 47.1,
     "vor": 3.83,
     "bye": 13,
-    "ppg": 6.08
+    "ppg": 6.08,
+    "redraftEcr": 53.7,
+    "superflexEcr": 74.7,
+    "dynastyEcr": 44.9
   },
   {
     "id": 115,
     "name": "Travis Kelce",
     "team": "KC",
     "position": "TE",
-    "adp": 101.9,
+    "adp": 102.1,
     "vor": 3.76,
     "bye": 5,
-    "ppg": 6.0
+    "ppg": 6.0,
+    "redraftEcr": 98.1,
+    "superflexEcr": 114.6,
+    "dynastyEcr": 159.2
   },
   {
     "id": 116,
     "name": "Chris Rodriguez Jr.",
     "team": "JAX",
     "position": "RB",
-    "adp": 168.6,
+    "adp": 168.5,
     "vor": 3.69,
     "bye": 7,
-    "ppg": -1.06
+    "ppg": -1.06,
+    "redraftEcr": 143.7,
+    "superflexEcr": 152.0,
+    "dynastyEcr": 183.0
   },
   {
     "id": 117,
     "name": "Romeo Doubs",
     "team": "NE",
     "position": "WR",
-    "adp": 151.4,
+    "adp": 151.7,
     "vor": 3.53,
     "bye": 11,
-    "ppg": 3.58
+    "ppg": 3.58,
+    "redraftEcr": 129.1,
+    "superflexEcr": 139.8,
+    "dynastyEcr": 125.0
   },
   {
     "id": 118,
@@ -1177,27 +1528,36 @@
     "adp": 166.7,
     "vor": 3.52,
     "bye": 11,
-    "ppg": -1.22
+    "ppg": -1.22,
+    "redraftEcr": 169.3,
+    "superflexEcr": 171.4,
+    "dynastyEcr": 221.0
   },
   {
     "id": 119,
     "name": "Tyler Allgeier",
     "team": "ARI",
     "position": "RB",
-    "adp": 169.3,
+    "adp": 169.4,
     "vor": 3.5,
     "bye": 14,
-    "ppg": -1.25
+    "ppg": -1.25,
+    "redraftEcr": 140.5,
+    "superflexEcr": 149.6,
+    "dynastyEcr": 165.5
   },
   {
     "id": 120,
     "name": "Denzel Boston",
     "team": "CLE",
     "position": "WR",
-    "adp": 166.9,
+    "adp": 166.8,
     "vor": 3.33,
     "bye": 11,
-    "ppg": 3.38
+    "ppg": 3.38,
+    "redraftEcr": 159.9,
+    "superflexEcr": 164.3,
+    "dynastyEcr": 97.7
   },
   {
     "id": 121,
@@ -1207,17 +1567,23 @@
     "adp": 66.5,
     "vor": 3.16,
     "bye": 6,
-    "ppg": 5.41
+    "ppg": 5.41,
+    "redraftEcr": 84.6,
+    "superflexEcr": 103.9,
+    "dynastyEcr": 62.4
   },
   {
     "id": 122,
     "name": "Texans D/ST",
     "team": "HOU",
     "position": "DEF",
-    "adp": 91.4,
+    "adp": 91.0,
     "vor": 3.16,
     "bye": 8,
-    "ppg": 2.38
+    "ppg": 2.38,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 123,
@@ -1227,27 +1593,36 @@
     "adp": 170.1,
     "vor": 3.03,
     "bye": 6,
-    "ppg": 3.08
+    "ppg": 3.08,
+    "redraftEcr": 154.8,
+    "superflexEcr": 159.3,
+    "dynastyEcr": 156.9
   },
   {
     "id": 124,
     "name": "Chris Godwin Jr.",
     "team": "TB",
     "position": "WR",
-    "adp": 146.7,
+    "adp": 147.1,
     "vor": 3.03,
     "bye": 10,
-    "ppg": 3.08
+    "ppg": 3.08,
+    "redraftEcr": 79.7,
+    "superflexEcr": 98.6,
+    "dynastyEcr": 113.8
   },
   {
     "id": 125,
     "name": "Daniel Jones",
     "team": "IND",
     "position": "QB",
-    "adp": 159.9,
+    "adp": 160.0,
     "vor": 3.01,
     "bye": 13,
-    "ppg": 19.01
+    "ppg": 19.01,
+    "redraftEcr": 156.3,
+    "superflexEcr": 68.8,
+    "dynastyEcr": 149.9
   },
   {
     "id": 126,
@@ -1257,7 +1632,10 @@
     "adp": 170.4,
     "vor": 2.91,
     "bye": 7,
-    "ppg": -1.84
+    "ppg": -1.84,
+    "redraftEcr": 254.9,
+    "superflexEcr": 230.6,
+    "dynastyEcr": 352.2
   },
   {
     "id": 127,
@@ -1267,17 +1645,23 @@
     "adp": 170.4,
     "vor": 2.89,
     "bye": 9,
-    "ppg": 2.94
+    "ppg": 2.94,
+    "redraftEcr": 229.6,
+    "superflexEcr": 212.5,
+    "dynastyEcr": 146.3
   },
   {
     "id": 128,
     "name": "Jalen Hurts",
     "team": "PHI",
     "position": "QB",
-    "adp": 53.8,
+    "adp": 53.9,
     "vor": 2.75,
     "bye": 10,
-    "ppg": 18.75
+    "ppg": 18.75,
+    "redraftEcr": 58.4,
+    "superflexEcr": 7.0,
+    "dynastyEcr": 56.4
   },
   {
     "id": 129,
@@ -1287,47 +1671,62 @@
     "adp": 170.8,
     "vor": 2.73,
     "bye": 13,
-    "ppg": -2.01
+    "ppg": -2.01,
+    "redraftEcr": 236.0,
+    "superflexEcr": 217.8,
+    "dynastyEcr": 328.0
   },
   {
     "id": 130,
     "name": "Rams D/ST",
     "team": "LAR",
     "position": "DEF",
-    "adp": 97.1,
+    "adp": 96.9,
     "vor": 2.62,
     "bye": 11,
-    "ppg": 1.84
+    "ppg": 1.84,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 131,
     "name": "Trevor Lawrence",
     "team": "JAX",
     "position": "QB",
-    "adp": 95.9,
+    "adp": 95.8,
     "vor": 2.59,
     "bye": 7,
-    "ppg": 18.59
+    "ppg": 18.59,
+    "redraftEcr": 77.3,
+    "superflexEcr": 14.8,
+    "dynastyEcr": 59.0
   },
   {
     "id": 132,
     "name": "Keaton Mitchell",
     "team": "LAC",
     "position": "RB",
-    "adp": 170.7,
+    "adp": 170.6,
     "vor": 2.51,
     "bye": 7,
-    "ppg": -2.24
+    "ppg": -2.24,
+    "redraftEcr": 155.8,
+    "superflexEcr": 161.3,
+    "dynastyEcr": 201.9
   },
   {
     "id": 133,
     "name": "Dalton Kincaid",
     "team": "BUF",
     "position": "TE",
-    "adp": 136.7,
+    "adp": 136.8,
     "vor": 2.48,
     "bye": 7,
-    "ppg": 4.72
+    "ppg": 4.72,
+    "redraftEcr": 114.7,
+    "superflexEcr": 128.4,
+    "dynastyEcr": 94.7
   },
   {
     "id": 134,
@@ -1337,17 +1736,23 @@
     "adp": 45.4,
     "vor": 2.48,
     "bye": 10,
-    "ppg": 4.72
+    "ppg": 4.72,
+    "redraftEcr": 37.3,
+    "superflexEcr": 54.0,
+    "dynastyEcr": 36.2
   },
   {
     "id": 135,
     "name": "Samaje Perine",
     "team": "CIN",
     "position": "RB",
-    "adp": 170.8,
+    "adp": 170.7,
     "vor": 2.45,
     "bye": 6,
-    "ppg": -2.3
+    "ppg": -2.3,
+    "redraftEcr": 269.8,
+    "superflexEcr": 244.2,
+    "dynastyEcr": 301.0
   },
   {
     "id": 136,
@@ -1357,37 +1762,49 @@
     "adp": 101.8,
     "vor": 2.43,
     "bye": 10,
-    "ppg": 4.67
+    "ppg": 4.67,
+    "redraftEcr": 122.4,
+    "superflexEcr": 134.3,
+    "dynastyEcr": 141.4
   },
   {
     "id": 137,
     "name": "Jake Ferguson",
     "team": "DAL",
     "position": "TE",
-    "adp": 112.4,
+    "adp": 112.5,
     "vor": 2.4,
     "bye": 14,
-    "ppg": 4.64
+    "ppg": 4.64,
+    "redraftEcr": 110.8,
+    "superflexEcr": 125.0,
+    "dynastyEcr": 110.8
   },
   {
     "id": 138,
     "name": "Matthew Stafford",
     "team": "LAR",
     "position": "QB",
-    "adp": 78.5,
+    "adp": 78.7,
     "vor": 2.38,
     "bye": 11,
-    "ppg": 18.37
+    "ppg": 18.37,
+    "redraftEcr": 104.1,
+    "superflexEcr": 30.7,
+    "dynastyEcr": 142.7
   },
   {
     "id": 139,
     "name": "Broncos D/ST",
     "team": "DEN",
     "position": "DEF",
-    "adp": 88.8,
+    "adp": 89.0,
     "vor": 2.28,
     "bye": 10,
-    "ppg": 1.5
+    "ppg": 1.5,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 140,
@@ -1397,7 +1814,10 @@
     "adp": 66.1,
     "vor": 2.21,
     "bye": 11,
-    "ppg": 4.45
+    "ppg": 4.45,
+    "redraftEcr": 80.4,
+    "superflexEcr": 99.4,
+    "dynastyEcr": 65.8
   },
   {
     "id": 141,
@@ -1407,7 +1827,10 @@
     "adp": 77.1,
     "vor": 2.1,
     "bye": 10,
-    "ppg": 2.16
+    "ppg": 2.16,
+    "redraftEcr": 45.3,
+    "superflexEcr": 64.7,
+    "dynastyEcr": 33.5
   },
   {
     "id": 142,
@@ -1417,27 +1840,36 @@
     "adp": 170.3,
     "vor": 2.1,
     "bye": 13,
-    "ppg": -2.65
+    "ppg": -2.65,
+    "redraftEcr": 209.4,
+    "superflexEcr": 198.9,
+    "dynastyEcr": 205.2
   },
   {
     "id": 143,
     "name": "Steelers D/ST",
     "team": "PIT",
     "position": "DEF",
-    "adp": 116.0,
+    "adp": 115.9,
     "vor": 2.07,
     "bye": 9,
-    "ppg": 1.29
+    "ppg": 1.29,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 144,
     "name": "Jason Myers",
     "team": "SEA",
     "position": "K",
-    "adp": 116.4,
+    "adp": 116.3,
     "vor": 2.03,
     "bye": 11,
-    "ppg": 4.0
+    "ppg": 4.0,
+    "redraftEcr": 200.8,
+    "superflexEcr": null,
+    "dynastyEcr": 273.7
   },
   {
     "id": 145,
@@ -1447,7 +1879,10 @@
     "adp": 134.1,
     "vor": 2.02,
     "bye": 8,
-    "ppg": 3.98
+    "ppg": 3.98,
+    "redraftEcr": 192.4,
+    "superflexEcr": null,
+    "dynastyEcr": 266.8
   },
   {
     "id": 146,
@@ -1457,37 +1892,49 @@
     "adp": 170.4,
     "vor": 1.89,
     "bye": 14,
-    "ppg": -2.86
+    "ppg": -2.86,
+    "redraftEcr": 186.7,
+    "superflexEcr": 182.8,
+    "dynastyEcr": 264.5
   },
   {
     "id": 147,
     "name": "Justin Herbert",
     "team": "LAC",
     "position": "QB",
-    "adp": 109.3,
+    "adp": 109.4,
     "vor": 1.82,
     "bye": 7,
-    "ppg": 17.82
+    "ppg": 17.82,
+    "redraftEcr": 69.6,
+    "superflexEcr": 11.0,
+    "dynastyEcr": 50.9
   },
   {
     "id": 148,
     "name": "Juwan Johnson",
     "team": "NO",
     "position": "TE",
-    "adp": 163.9,
+    "adp": 164.1,
     "vor": 1.79,
     "bye": 8,
-    "ppg": 4.04
+    "ppg": 4.04,
+    "redraftEcr": 148.3,
+    "superflexEcr": 154.9,
+    "dynastyEcr": 159.8
   },
   {
     "id": 149,
     "name": "Jaxson Dart",
     "team": "NYG",
     "position": "QB",
-    "adp": 75.6,
+    "adp": 75.7,
     "vor": 1.78,
     "bye": 8,
-    "ppg": 17.78
+    "ppg": 17.78,
+    "redraftEcr": 93.2,
+    "superflexEcr": 21.4,
+    "dynastyEcr": 70.3
   },
   {
     "id": 150,
@@ -1497,27 +1944,36 @@
     "adp": 170.4,
     "vor": 1.75,
     "bye": 7,
-    "ppg": -2.99
+    "ppg": -2.99,
+    "redraftEcr": 196.0,
+    "superflexEcr": 189.2,
+    "dynastyEcr": 227.0
   },
   {
     "id": 151,
     "name": "Jalen McMillan",
     "team": "TB",
     "position": "WR",
-    "adp": 167.1,
+    "adp": 167.2,
     "vor": 1.74,
     "bye": 10,
-    "ppg": 1.79
+    "ppg": 1.79,
+    "redraftEcr": 167.7,
+    "superflexEcr": 170.5,
+    "dynastyEcr": 145.2
   },
   {
     "id": 152,
     "name": "Eagles D/ST",
     "team": "PHI",
     "position": "DEF",
-    "adp": 134.1,
+    "adp": 134.3,
     "vor": 1.72,
     "bye": 10,
-    "ppg": 0.94
+    "ppg": 0.94,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 153,
@@ -1527,7 +1983,10 @@
     "adp": 168.2,
     "vor": 1.68,
     "bye": 13,
-    "ppg": 1.73
+    "ppg": 1.73,
+    "redraftEcr": 173.8,
+    "superflexEcr": 172.9,
+    "dynastyEcr": 218.9
   },
   {
     "id": 154,
@@ -1537,7 +1996,10 @@
     "adp": 107.2,
     "vor": 1.58,
     "bye": 11,
-    "ppg": 0.8
+    "ppg": 0.8,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 155,
@@ -1547,37 +2009,49 @@
     "adp": 169.3,
     "vor": 1.5,
     "bye": 10,
-    "ppg": 0.71
+    "ppg": 0.71,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 156,
     "name": "Jalen Coker",
     "team": "CAR",
     "position": "WR",
-    "adp": 160.0,
+    "adp": 160.1,
     "vor": 1.48,
     "bye": 5,
-    "ppg": 1.53
+    "ppg": 1.53,
+    "redraftEcr": 128.0,
+    "superflexEcr": 139.6,
+    "dynastyEcr": 124.7
   },
   {
     "id": 157,
     "name": "Hunter Henry",
     "team": "NE",
     "position": "TE",
-    "adp": 143.0,
+    "adp": 142.9,
     "vor": 1.48,
     "bye": 11,
-    "ppg": 3.72
+    "ppg": 3.72,
+    "redraftEcr": 163.9,
+    "superflexEcr": 166.0,
+    "dynastyEcr": 175.7
   },
   {
     "id": 158,
     "name": "Cameron Dicker",
     "team": "LAC",
     "position": "K",
-    "adp": 106.2,
+    "adp": 106.1,
     "vor": 1.47,
     "bye": 7,
-    "ppg": 3.43
+    "ppg": 3.43,
+    "redraftEcr": 195.0,
+    "superflexEcr": null,
+    "dynastyEcr": 261.8
   },
   {
     "id": 159,
@@ -1587,17 +2061,23 @@
     "adp": 169.5,
     "vor": 1.36,
     "bye": 8,
-    "ppg": 1.41
+    "ppg": 1.41,
+    "redraftEcr": 195.5,
+    "superflexEcr": 190.1,
+    "dynastyEcr": 137.1
   },
   {
     "id": 160,
     "name": "Patriots D/ST",
     "team": "NE",
     "position": "DEF",
-    "adp": 147.9,
+    "adp": 148.0,
     "vor": 1.35,
     "bye": 11,
-    "ppg": 0.57
+    "ppg": 0.57,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 161,
@@ -1607,37 +2087,49 @@
     "adp": 47.8,
     "vor": 1.35,
     "bye": 11,
-    "ppg": 17.35
+    "ppg": 17.35,
+    "redraftEcr": 38.3,
+    "superflexEcr": 3.5,
+    "dynastyEcr": 24.6
   },
   {
     "id": 162,
     "name": "Bo Nix",
     "team": "DEN",
     "position": "QB",
-    "adp": 91.1,
+    "adp": 91.2,
     "vor": 1.35,
     "bye": 10,
-    "ppg": 17.35
+    "ppg": 17.35,
+    "redraftEcr": 101.3,
+    "superflexEcr": 26.5,
+    "dynastyEcr": 74.6
   },
   {
     "id": 163,
     "name": "Kyler Murray",
     "team": "MIN",
     "position": "QB",
-    "adp": 150.7,
+    "adp": 151.1,
     "vor": 1.34,
     "bye": 6,
-    "ppg": 17.34
+    "ppg": 17.34,
+    "redraftEcr": 111.8,
+    "superflexEcr": 38.1,
+    "dynastyEcr": 131.2
   },
   {
     "id": 164,
     "name": "Brandon Aubrey",
     "team": "DAL",
     "position": "K",
-    "adp": 84.7,
+    "adp": 84.5,
     "vor": 1.27,
     "bye": 14,
-    "ppg": 3.24
+    "ppg": 3.24,
+    "redraftEcr": 186.6,
+    "superflexEcr": null,
+    "dynastyEcr": 244.6
   },
   {
     "id": 165,
@@ -1647,7 +2139,10 @@
     "adp": 169.4,
     "vor": 1.05,
     "bye": 13,
-    "ppg": 3.02
+    "ppg": 3.02,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 166,
@@ -1657,47 +2152,62 @@
     "adp": 166.0,
     "vor": 0.99,
     "bye": 6,
-    "ppg": 2.95
+    "ppg": 2.95,
+    "redraftEcr": 259.9,
+    "superflexEcr": null,
+    "dynastyEcr": 264.9
   },
   {
     "id": 167,
     "name": "Eddy Pineiro",
     "team": "SF",
     "position": "K",
-    "adp": 149.4,
+    "adp": 149.6,
     "vor": 0.98,
     "bye": 8,
-    "ppg": 2.94
+    "ppg": 2.94,
+    "redraftEcr": 207.4,
+    "superflexEcr": null,
+    "dynastyEcr": 302.4
   },
   {
     "id": 168,
     "name": "Jacoby Brissett",
     "team": "ARI",
     "position": "QB",
-    "adp": 170.0,
+    "adp": 170.1,
     "vor": 0.96,
     "bye": 14,
-    "ppg": 16.96
+    "ppg": 16.96,
+    "redraftEcr": 189.3,
+    "superflexEcr": 82.7,
+    "dynastyEcr": 218.3
   },
   {
     "id": 169,
     "name": "Travis Hunter",
     "team": "JAX",
     "position": "WR",
-    "adp": 116.9,
+    "adp": 116.8,
     "vor": 0.9,
     "bye": 7,
-    "ppg": 0.96
+    "ppg": 0.96,
+    "redraftEcr": 170.8,
+    "superflexEcr": 172.1,
+    "dynastyEcr": 124.7
   },
   {
     "id": 170,
     "name": "Rashee Rice",
     "team": "KC",
     "position": "WR",
-    "adp": 22.8,
+    "adp": 22.7,
     "vor": 0.9,
     "bye": 5,
-    "ppg": 0.96
+    "ppg": 0.96,
+    "redraftEcr": 20.1,
+    "superflexEcr": 35.7,
+    "dynastyEcr": 44.2
   },
   {
     "id": 171,
@@ -1707,7 +2217,10 @@
     "adp": 170.2,
     "vor": 0.89,
     "bye": 13,
-    "ppg": 0.94
+    "ppg": 0.94,
+    "redraftEcr": 164.4,
+    "superflexEcr": 167.7,
+    "dynastyEcr": 87.0
   },
   {
     "id": 172,
@@ -1717,17 +2230,23 @@
     "adp": 170.1,
     "vor": 0.87,
     "bye": 14,
-    "ppg": -3.87
+    "ppg": -3.87,
+    "redraftEcr": 311.4,
+    "superflexEcr": 280.6,
+    "dynastyEcr": 373.8
   },
   {
     "id": 173,
     "name": "Jerry Jeudy",
     "team": "CLE",
     "position": "WR",
-    "adp": 161.3,
+    "adp": 161.4,
     "vor": 0.87,
     "bye": 11,
-    "ppg": 0.92
+    "ppg": 0.92,
+    "redraftEcr": 159.6,
+    "superflexEcr": 163.5,
+    "dynastyEcr": 175.7
   },
   {
     "id": 174,
@@ -1737,7 +2256,10 @@
     "adp": 170.2,
     "vor": 0.85,
     "bye": 13,
-    "ppg": -3.89
+    "ppg": -3.89,
+    "redraftEcr": 247.3,
+    "superflexEcr": 225.4,
+    "dynastyEcr": 296.6
   },
   {
     "id": 175,
@@ -1747,7 +2269,10 @@
     "adp": 170.0,
     "vor": 0.79,
     "bye": 8,
-    "ppg": -3.96
+    "ppg": -3.96,
+    "redraftEcr": 287.2,
+    "superflexEcr": 259.0,
+    "dynastyEcr": null
   },
   {
     "id": 176,
@@ -1757,7 +2282,10 @@
     "adp": 167.1,
     "vor": 0.78,
     "bye": 10,
-    "ppg": 2.75
+    "ppg": 2.75,
+    "redraftEcr": 215.9,
+    "superflexEcr": null,
+    "dynastyEcr": 302.2
   },
   {
     "id": 177,
@@ -1767,7 +2295,10 @@
     "adp": 170.0,
     "vor": 0.75,
     "bye": 13,
-    "ppg": -0.03
+    "ppg": -0.03,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 178,
@@ -1777,17 +2308,23 @@
     "adp": 169.9,
     "vor": 0.72,
     "bye": 6,
-    "ppg": 2.68
+    "ppg": 2.68,
+    "redraftEcr": 301.1,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 179,
     "name": "Chargers D/ST",
     "team": "LAC",
     "position": "DEF",
-    "adp": 162.8,
+    "adp": 162.7,
     "vor": 0.61,
     "bye": 7,
-    "ppg": -0.17
+    "ppg": -0.17,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 180,
@@ -1797,7 +2334,10 @@
     "adp": 170.1,
     "vor": 0.53,
     "bye": 11,
-    "ppg": 0.58
+    "ppg": 0.58,
+    "redraftEcr": 228.7,
+    "superflexEcr": 212.1,
+    "dynastyEcr": 172.9
   },
   {
     "id": 181,
@@ -1807,17 +2347,23 @@
     "adp": 168.8,
     "vor": 0.49,
     "bye": 11,
-    "ppg": 0.54
+    "ppg": 0.54,
+    "redraftEcr": 222.3,
+    "superflexEcr": 205.6,
+    "dynastyEcr": 275.8
   },
   {
     "id": 182,
     "name": "Ja'Kobi Lane",
     "team": "BAL",
     "position": "WR",
-    "adp": 169.3,
+    "adp": 169.2,
     "vor": 0.49,
     "bye": 13,
-    "ppg": 0.54
+    "ppg": 0.54,
+    "redraftEcr": 280.8,
+    "superflexEcr": 253.6,
+    "dynastyEcr": 196.7
   },
   {
     "id": 183,
@@ -1827,7 +2373,10 @@
     "adp": 168.9,
     "vor": 0.45,
     "bye": 7,
-    "ppg": -0.33
+    "ppg": -0.33,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 184,
@@ -1837,17 +2386,23 @@
     "adp": 170.3,
     "vor": 0.44,
     "bye": 7,
-    "ppg": -4.3
+    "ppg": -4.3,
+    "redraftEcr": 263.7,
+    "superflexEcr": 238.1,
+    "dynastyEcr": 317.8
   },
   {
     "id": 185,
     "name": "Emari Demercado",
     "team": "KC",
     "position": "RB",
-    "adp": 170.2,
+    "adp": 170.3,
     "vor": 0.39,
     "bye": 5,
-    "ppg": -4.35
+    "ppg": -4.35,
+    "redraftEcr": 284.4,
+    "superflexEcr": 256.6,
+    "dynastyEcr": 344.9
   },
   {
     "id": 186,
@@ -1857,7 +2412,10 @@
     "adp": 151.0,
     "vor": 0.37,
     "bye": 6,
-    "ppg": -0.41
+    "ppg": -0.41,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 187,
@@ -1867,7 +2425,10 @@
     "adp": 170.1,
     "vor": 0.36,
     "bye": 5,
-    "ppg": -4.39
+    "ppg": -4.39,
+    "redraftEcr": 197.0,
+    "superflexEcr": 191.9,
+    "dynastyEcr": 179.4
   },
   {
     "id": 188,
@@ -1877,27 +2438,36 @@
     "adp": 170.8,
     "vor": 0.36,
     "bye": 11,
-    "ppg": -4.39
+    "ppg": -4.39,
+    "redraftEcr": 231.3,
+    "superflexEcr": 216.4,
+    "dynastyEcr": 241.8
   },
   {
     "id": 189,
     "name": "Harrison Mevis",
     "team": "LAR",
     "position": "K",
-    "adp": 131.5,
+    "adp": 131.4,
     "vor": 0.31,
     "bye": 11,
-    "ppg": 2.27
+    "ppg": 2.27,
+    "redraftEcr": 233.1,
+    "superflexEcr": null,
+    "dynastyEcr": 302.7
   },
   {
     "id": 190,
     "name": "Saints D/ST",
     "team": "NO",
     "position": "DEF",
-    "adp": 170.0,
+    "adp": 169.9,
     "vor": 0.3,
     "bye": 8,
-    "ppg": -0.48
+    "ppg": -0.48,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 191,
@@ -1907,7 +2477,10 @@
     "adp": 169.7,
     "vor": 0.29,
     "bye": 11,
-    "ppg": 2.26
+    "ppg": 2.26,
+    "redraftEcr": 279.8,
+    "superflexEcr": null,
+    "dynastyEcr": 302.8
   },
   {
     "id": 192,
@@ -1917,7 +2490,10 @@
     "adp": 170.3,
     "vor": 0.28,
     "bye": 6,
-    "ppg": -4.47
+    "ppg": -4.47,
+    "redraftEcr": 230.0,
+    "superflexEcr": 211.4,
+    "dynastyEcr": 263.6
   },
   {
     "id": 193,
@@ -1927,17 +2503,23 @@
     "adp": 92.5,
     "vor": 0.28,
     "bye": 10,
-    "ppg": 16.28
+    "ppg": 16.28,
+    "redraftEcr": 68.6,
+    "superflexEcr": 11.0,
+    "dynastyEcr": 46.0
   },
   {
     "id": 194,
     "name": "Jayden Higgins",
     "team": "HOU",
     "position": "WR",
-    "adp": 159.0,
+    "adp": 159.1,
     "vor": 0.24,
     "bye": 8,
-    "ppg": 0.3
+    "ppg": 0.3,
+    "redraftEcr": 120.8,
+    "superflexEcr": 132.9,
+    "dynastyEcr": 96.0
   },
   {
     "id": 195,
@@ -1947,37 +2529,49 @@
     "adp": 162.3,
     "vor": 0.24,
     "bye": 5,
-    "ppg": -0.54
+    "ppg": -0.54,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 196,
     "name": "Jordan James",
     "team": "SF",
     "position": "RB",
-    "adp": 170.8,
+    "adp": 170.7,
     "vor": 0.23,
     "bye": 8,
-    "ppg": -4.51
+    "ppg": -4.51,
+    "redraftEcr": 268.2,
+    "superflexEcr": 243.5,
+    "dynastyEcr": 272.9
   },
   {
     "id": 197,
     "name": "Kendre Miller",
     "team": "NO",
     "position": "RB",
-    "adp": 170.1,
+    "adp": 170.2,
     "vor": 0.21,
     "bye": 8,
-    "ppg": -4.53
+    "ppg": -4.53,
+    "redraftEcr": 279.4,
+    "superflexEcr": 251.8,
+    "dynastyEcr": 311.7
   },
   {
     "id": 198,
     "name": "Cam Little",
     "team": "JAX",
     "position": "K",
-    "adp": 136.0,
+    "adp": 135.9,
     "vor": 0.2,
     "bye": 7,
-    "ppg": 2.16
+    "ppg": 2.16,
+    "redraftEcr": 199.2,
+    "superflexEcr": null,
+    "dynastyEcr": 254.4
   },
   {
     "id": 199,
@@ -1987,27 +2581,36 @@
     "adp": 154.4,
     "vor": 0.18,
     "bye": 6,
-    "ppg": 2.15
+    "ppg": 2.15,
+    "redraftEcr": 224.4,
+    "superflexEcr": null,
+    "dynastyEcr": 284.6
   },
   {
     "id": 200,
     "name": "Browns D/ST",
     "team": "CLE",
     "position": "DEF",
-    "adp": 152.2,
+    "adp": 152.3,
     "vor": 0.18,
     "bye": 11,
-    "ppg": -0.6
+    "ppg": -0.6,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 201,
     "name": "Baker Mayfield",
     "team": "TB",
     "position": "QB",
-    "adp": 148.4,
+    "adp": 148.8,
     "vor": 0.17,
     "bye": 10,
-    "ppg": 16.17
+    "ppg": 16.17,
+    "redraftEcr": 118.2,
+    "superflexEcr": 44.2,
+    "dynastyEcr": 113.2
   },
   {
     "id": 202,
@@ -2017,17 +2620,23 @@
     "adp": 170.1,
     "vor": 0.16,
     "bye": 8,
-    "ppg": 2.12
+    "ppg": 2.12,
+    "redraftEcr": 283.2,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 203,
     "name": "Vikings D/ST",
     "team": "MIN",
     "position": "DEF",
-    "adp": 168.8,
+    "adp": 168.7,
     "vor": 0.13,
     "bye": 6,
-    "ppg": -0.65
+    "ppg": -0.65,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 204,
@@ -2037,7 +2646,10 @@
     "adp": 148.8,
     "vor": 0.1,
     "bye": 5,
-    "ppg": 2.07
+    "ppg": 2.07,
+    "redraftEcr": 240.3,
+    "superflexEcr": null,
+    "dynastyEcr": 281.8
   },
   {
     "id": 205,
@@ -2047,7 +2659,10 @@
     "adp": 170.2,
     "vor": 0.1,
     "bye": 11,
-    "ppg": 2.07
+    "ppg": 2.07,
+    "redraftEcr": 250.8,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 206,
@@ -2057,17 +2672,23 @@
     "adp": 169.4,
     "vor": 0.1,
     "bye": 10,
-    "ppg": -0.68
+    "ppg": -0.68,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 207,
     "name": "T.J. Hockenson",
     "team": "MIN",
     "position": "TE",
-    "adp": 133.7,
+    "adp": 133.8,
     "vor": 0.06,
     "bye": 6,
-    "ppg": 2.31
+    "ppg": 2.31,
+    "redraftEcr": 191.5,
+    "superflexEcr": 185.2,
+    "dynastyEcr": 161.6
   },
   {
     "id": 208,
@@ -2077,17 +2698,23 @@
     "adp": 163.2,
     "vor": 0.06,
     "bye": 13,
-    "ppg": 2.03
+    "ppg": 2.03,
+    "redraftEcr": 208.9,
+    "superflexEcr": null,
+    "dynastyEcr": 270.2
   },
   {
     "id": 209,
     "name": "Dak Prescott",
     "team": "DAL",
     "position": "QB",
-    "adp": 87.8,
+    "adp": 87.9,
     "vor": 0.0,
     "bye": 14,
-    "ppg": 16.0
+    "ppg": 16.0,
+    "redraftEcr": 80.0,
+    "superflexEcr": 15.5,
+    "dynastyEcr": 84.4
   },
   {
     "id": 210,
@@ -2097,7 +2724,10 @@
     "adp": 167.6,
     "vor": 0.0,
     "bye": 8,
-    "ppg": 2.24
+    "ppg": 2.24,
+    "redraftEcr": 181.0,
+    "superflexEcr": 179.1,
+    "dynastyEcr": 195.2
   },
   {
     "id": 211,
@@ -2107,47 +2737,62 @@
     "adp": 169.8,
     "vor": 0.0,
     "bye": 9,
-    "ppg": -0.78
+    "ppg": -0.78,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 212,
     "name": "Jared Goff",
     "team": "DET",
     "position": "QB",
-    "adp": 139.4,
+    "adp": 139.5,
     "vor": 0.0,
     "bye": 6,
-    "ppg": 16.0
+    "ppg": 16.0,
+    "redraftEcr": 108.1,
+    "superflexEcr": 34.1,
+    "dynastyEcr": 106.5
   },
   {
     "id": 213,
     "name": "Andy Borregales",
     "team": "NE",
     "position": "K",
-    "adp": 170.1,
+    "adp": 170.0,
     "vor": 0.0,
     "bye": 11,
-    "ppg": 1.97
+    "ppg": 1.97,
+    "redraftEcr": 219.1,
+    "superflexEcr": null,
+    "dynastyEcr": 288.6
   },
   {
     "id": 214,
     "name": "Malik Washington",
     "team": "MIA",
     "position": "WR",
-    "adp": 170.2,
+    "adp": 170.1,
     "vor": 0.0,
     "bye": 6,
-    "ppg": 0.05
+    "ppg": 0.05,
+    "redraftEcr": 201.0,
+    "superflexEcr": 193.9,
+    "dynastyEcr": 225.1
   },
   {
     "id": 215,
     "name": "Patrick Mahomes",
     "team": "KC",
     "position": "QB",
-    "adp": 107.7,
+    "adp": 108.3,
     "vor": 0.0,
     "bye": 5,
-    "ppg": 16.0
+    "ppg": 16.0,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 216,
@@ -2157,17 +2802,23 @@
     "adp": 170.3,
     "vor": 0.0,
     "bye": 11,
-    "ppg": -4.75
+    "ppg": -4.75,
+    "redraftEcr": 210.9,
+    "superflexEcr": 199.0,
+    "dynastyEcr": 253.2
   },
   {
     "id": 217,
     "name": "Chris Boswell",
     "team": "PIT",
     "position": "K",
-    "adp": 162.0,
+    "adp": 162.1,
     "vor": -0.0,
     "bye": 9,
-    "ppg": 1.97
+    "ppg": 1.97,
+    "redraftEcr": 241.9,
+    "superflexEcr": null,
+    "dynastyEcr": 280.6
   },
   {
     "id": 218,
@@ -2177,7 +2828,10 @@
     "adp": 169.8,
     "vor": -0.02,
     "bye": 8,
-    "ppg": 1.95
+    "ppg": 1.95,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 219,
@@ -2187,17 +2841,23 @@
     "adp": 167.6,
     "vor": -0.09,
     "bye": 11,
-    "ppg": -0.87
+    "ppg": -0.87,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 220,
     "name": "Bengals D/ST",
     "team": "CIN",
     "position": "DEF",
-    "adp": 169.6,
+    "adp": 169.5,
     "vor": -0.1,
     "bye": 6,
-    "ppg": -0.88
+    "ppg": -0.88,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 221,
@@ -2207,7 +2867,10 @@
     "adp": 169.9,
     "vor": -0.11,
     "bye": 9,
-    "ppg": 1.86
+    "ppg": 1.86,
+    "redraftEcr": 315.2,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 222,
@@ -2217,7 +2880,10 @@
     "adp": 167.6,
     "vor": -0.12,
     "bye": 7,
-    "ppg": 2.12
+    "ppg": 2.12,
+    "redraftEcr": 154.4,
+    "superflexEcr": 159.5,
+    "dynastyEcr": 114.0
   },
   {
     "id": 223,
@@ -2227,7 +2893,10 @@
     "adp": 170.4,
     "vor": -0.14,
     "bye": 10,
-    "ppg": -4.89
+    "ppg": -4.89,
+    "redraftEcr": 165.6,
+    "superflexEcr": 169.0,
+    "dynastyEcr": 142.8
   },
   {
     "id": 224,
@@ -2237,7 +2906,10 @@
     "adp": 170.3,
     "vor": -0.16,
     "bye": 11,
-    "ppg": -0.94
+    "ppg": -0.94,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 225,
@@ -2247,7 +2919,10 @@
     "adp": 170.1,
     "vor": -0.2,
     "bye": 8,
-    "ppg": -4.94
+    "ppg": -4.94,
+    "redraftEcr": 289.1,
+    "superflexEcr": 259.7,
+    "dynastyEcr": 320.7
   },
   {
     "id": 226,
@@ -2257,7 +2932,10 @@
     "adp": 169.1,
     "vor": -0.25,
     "bye": 10,
-    "ppg": 1.71
+    "ppg": 1.71,
+    "redraftEcr": 225.3,
+    "superflexEcr": null,
+    "dynastyEcr": 286.2
   },
   {
     "id": 227,
@@ -2267,17 +2945,23 @@
     "adp": 168.9,
     "vor": -0.26,
     "bye": 6,
-    "ppg": 1.71
+    "ppg": 1.71,
+    "redraftEcr": 214.5,
+    "superflexEcr": null,
+    "dynastyEcr": 288.3
   },
   {
     "id": 228,
     "name": "Devin Neal",
     "team": "NO",
     "position": "RB",
-    "adp": 170.0,
+    "adp": 169.9,
     "vor": -0.3,
     "bye": 8,
-    "ppg": -5.05
+    "ppg": -5.05,
+    "redraftEcr": 269.9,
+    "superflexEcr": 244.2,
+    "dynastyEcr": 265.0
   },
   {
     "id": 229,
@@ -2287,17 +2971,23 @@
     "adp": 170.1,
     "vor": -0.32,
     "bye": 14,
-    "ppg": -5.07
+    "ppg": -5.07,
+    "redraftEcr": 278.3,
+    "superflexEcr": 251.6,
+    "dynastyEcr": 316.6
   },
   {
     "id": 230,
     "name": "Mark Andrews",
     "team": "BAL",
     "position": "TE",
-    "adp": 123.0,
+    "adp": 123.2,
     "vor": -0.33,
     "bye": 13,
-    "ppg": 1.91
+    "ppg": 1.91,
+    "redraftEcr": 125.7,
+    "superflexEcr": 137.1,
+    "dynastyEcr": 136.3
   },
   {
     "id": 231,
@@ -2307,7 +2997,10 @@
     "adp": 170.2,
     "vor": -0.33,
     "bye": 11,
-    "ppg": -5.08
+    "ppg": -5.08,
+    "redraftEcr": 263.3,
+    "superflexEcr": 238.2,
+    "dynastyEcr": 310.1
   },
   {
     "id": 232,
@@ -2317,17 +3010,23 @@
     "adp": 169.9,
     "vor": -0.36,
     "bye": 13,
-    "ppg": 1.61
+    "ppg": 1.61,
+    "redraftEcr": 268.2,
+    "superflexEcr": null,
+    "dynastyEcr": 318.5
   },
   {
     "id": 233,
     "name": "Panthers D/ST",
     "team": "CAR",
     "position": "DEF",
-    "adp": 169.7,
+    "adp": 169.8,
     "vor": -0.46,
     "bye": 5,
-    "ppg": -1.24
+    "ppg": -1.24,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 234,
@@ -2337,17 +3036,23 @@
     "adp": 170.0,
     "vor": -0.47,
     "bye": 6,
-    "ppg": -0.42
+    "ppg": -0.42,
+    "redraftEcr": 337.5,
+    "superflexEcr": 308.0,
+    "dynastyEcr": null
   },
   {
     "id": 235,
     "name": "Commanders D/ST",
     "team": "WAS",
     "position": "DEF",
-    "adp": 169.6,
+    "adp": 169.5,
     "vor": -0.47,
     "bye": 7,
-    "ppg": -1.25
+    "ppg": -1.25,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 236,
@@ -2357,7 +3062,10 @@
     "adp": 170.2,
     "vor": -0.48,
     "bye": 11,
-    "ppg": -5.23
+    "ppg": -5.23,
+    "redraftEcr": 254.9,
+    "superflexEcr": 232.9,
+    "dynastyEcr": 325.8
   },
   {
     "id": 237,
@@ -2367,17 +3075,23 @@
     "adp": 170.2,
     "vor": -0.5,
     "bye": 10,
-    "ppg": -5.24
+    "ppg": -5.24,
+    "redraftEcr": 198.9,
+    "superflexEcr": 191.7,
+    "dynastyEcr": 255.0
   },
   {
     "id": 238,
     "name": "Jake Moody",
     "team": "WAS",
     "position": "K",
-    "adp": 169.8,
+    "adp": 169.7,
     "vor": -0.51,
     "bye": 7,
-    "ppg": 1.46
+    "ppg": 1.46,
+    "redraftEcr": 289.3,
+    "superflexEcr": null,
+    "dynastyEcr": 291.7
   },
   {
     "id": 239,
@@ -2387,7 +3101,10 @@
     "adp": 170.7,
     "vor": -0.53,
     "bye": 7,
-    "ppg": -5.28
+    "ppg": -5.28,
+    "redraftEcr": 199.4,
+    "superflexEcr": 192.0,
+    "dynastyEcr": 245.6
   },
   {
     "id": 240,
@@ -2397,7 +3114,10 @@
     "adp": 171.2,
     "vor": -0.6,
     "bye": 6,
-    "ppg": -0.54
+    "ppg": -0.54,
+    "redraftEcr": 243.2,
+    "superflexEcr": 222.0,
+    "dynastyEcr": 135.1
   },
   {
     "id": 241,
@@ -2407,17 +3127,23 @@
     "adp": 169.8,
     "vor": -0.64,
     "bye": 11,
-    "ppg": 1.33
+    "ppg": 1.33,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 242,
     "name": "Ravens D/ST",
     "team": "BAL",
     "position": "DEF",
-    "adp": 131.7,
+    "adp": 131.8,
     "vor": -0.65,
     "bye": 13,
-    "ppg": -1.43
+    "ppg": -1.43,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 243,
@@ -2427,7 +3153,10 @@
     "adp": 170.2,
     "vor": -0.68,
     "bye": 13,
-    "ppg": -5.43
+    "ppg": -5.43,
+    "redraftEcr": 264.9,
+    "superflexEcr": 239.6,
+    "dynastyEcr": 299.6
   },
   {
     "id": 244,
@@ -2437,7 +3166,10 @@
     "adp": 170.4,
     "vor": -0.73,
     "bye": 6,
-    "ppg": -5.47
+    "ppg": -5.47,
+    "redraftEcr": 240.8,
+    "superflexEcr": 221.7,
+    "dynastyEcr": 242.1
   },
   {
     "id": 245,
@@ -2447,7 +3179,10 @@
     "adp": 170.2,
     "vor": -0.74,
     "bye": 10,
-    "ppg": -5.48
+    "ppg": -5.48,
+    "redraftEcr": null,
+    "superflexEcr": 340.0,
+    "dynastyEcr": null
   },
   {
     "id": 246,
@@ -2457,7 +3192,10 @@
     "adp": 169.1,
     "vor": -0.8,
     "bye": 8,
-    "ppg": -1.58
+    "ppg": -1.58,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 247,
@@ -2467,27 +3205,36 @@
     "adp": 168.5,
     "vor": -0.87,
     "bye": 10,
-    "ppg": 1.09
+    "ppg": 1.09,
+    "redraftEcr": 284.1,
+    "superflexEcr": null,
+    "dynastyEcr": 324.2
   },
   {
     "id": 248,
     "name": "Wil Lutz",
     "team": "DEN",
     "position": "K",
-    "adp": 170.0,
+    "adp": 169.9,
     "vor": -0.87,
     "bye": 10,
-    "ppg": 1.09
+    "ppg": 1.09,
+    "redraftEcr": 265.1,
+    "superflexEcr": null,
+    "dynastyEcr": 287.1
   },
   {
     "id": 249,
     "name": "Dolphins D/ST",
     "team": "MIA",
     "position": "DEF",
-    "adp": 169.5,
+    "adp": 169.4,
     "vor": -0.9,
     "bye": 6,
-    "ppg": -1.69
+    "ppg": -1.69,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 250,
@@ -2497,7 +3244,10 @@
     "adp": 170.0,
     "vor": -0.93,
     "bye": 13,
-    "ppg": 1.04
+    "ppg": 1.04,
+    "redraftEcr": 262.0,
+    "superflexEcr": null,
+    "dynastyEcr": 281.3
   },
   {
     "id": 251,
@@ -2507,17 +3257,23 @@
     "adp": 170.1,
     "vor": -0.97,
     "bye": 10,
-    "ppg": -5.72
+    "ppg": -5.72,
+    "redraftEcr": 317.0,
+    "superflexEcr": 283.4,
+    "dynastyEcr": 326.4
   },
   {
     "id": 252,
     "name": "49ers D/ST",
     "team": "SF",
     "position": "DEF",
-    "adp": 168.3,
+    "adp": 168.4,
     "vor": -1.08,
     "bye": 8,
-    "ppg": -1.86
+    "ppg": -1.86,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 253,
@@ -2527,7 +3283,10 @@
     "adp": 170.0,
     "vor": -1.08,
     "bye": 14,
-    "ppg": -5.83
+    "ppg": -5.83,
+    "redraftEcr": 297.0,
+    "superflexEcr": 264.2,
+    "dynastyEcr": null
   },
   {
     "id": 254,
@@ -2537,7 +3296,10 @@
     "adp": 169.7,
     "vor": -1.08,
     "bye": 5,
-    "ppg": 0.88
+    "ppg": 0.88,
+    "redraftEcr": 274.9,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 255,
@@ -2547,7 +3309,10 @@
     "adp": 170.2,
     "vor": -1.09,
     "bye": 8,
-    "ppg": -1.03
+    "ppg": -1.03,
+    "redraftEcr": 261.8,
+    "superflexEcr": 236.9,
+    "dynastyEcr": 312.1
   },
   {
     "id": 256,
@@ -2557,7 +3322,10 @@
     "adp": 169.9,
     "vor": -1.11,
     "bye": 10,
-    "ppg": -1.06
+    "ppg": -1.06,
+    "redraftEcr": 278.3,
+    "superflexEcr": 250.3,
+    "dynastyEcr": 279.4
   },
   {
     "id": 257,
@@ -2567,17 +3335,23 @@
     "adp": 170.8,
     "vor": -1.14,
     "bye": 13,
-    "ppg": -1.08
+    "ppg": -1.08,
+    "redraftEcr": 223.4,
+    "superflexEcr": 207.7,
+    "dynastyEcr": 235.1
   },
   {
     "id": 258,
     "name": "Cowboys D/ST",
     "team": "DAL",
     "position": "DEF",
-    "adp": 166.9,
+    "adp": 166.8,
     "vor": -1.16,
     "bye": 14,
-    "ppg": -1.94
+    "ppg": -1.94,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 259,
@@ -2587,7 +3361,10 @@
     "adp": 169.6,
     "vor": -1.17,
     "bye": 13,
-    "ppg": -1.95
+    "ppg": -1.95,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 260,
@@ -2597,7 +3374,10 @@
     "adp": 170.4,
     "vor": -1.22,
     "bye": 8,
-    "ppg": -5.97
+    "ppg": -5.97,
+    "redraftEcr": 268.8,
+    "superflexEcr": 244.0,
+    "dynastyEcr": 241.5
   },
   {
     "id": 261,
@@ -2607,7 +3387,10 @@
     "adp": 169.8,
     "vor": -1.25,
     "bye": 14,
-    "ppg": 0.71
+    "ppg": 0.71,
+    "redraftEcr": 308.3,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 262,
@@ -2617,7 +3400,10 @@
     "adp": 168.8,
     "vor": -1.28,
     "bye": 7,
-    "ppg": 0.96
+    "ppg": 0.96,
+    "redraftEcr": 151.7,
+    "superflexEcr": 158.2,
+    "dynastyEcr": 132.3
   },
   {
     "id": 263,
@@ -2627,17 +3413,23 @@
     "adp": 170.1,
     "vor": -1.32,
     "bye": 6,
-    "ppg": -6.07
+    "ppg": -6.07,
+    "redraftEcr": 294.1,
+    "superflexEcr": 265.1,
+    "dynastyEcr": 316.4
   },
   {
     "id": 264,
     "name": "Jets D/ST",
     "team": "NYJ",
     "position": "DEF",
-    "adp": 170.0,
+    "adp": 169.9,
     "vor": -1.33,
     "bye": 13,
-    "ppg": -2.11
+    "ppg": -2.11,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 265,
@@ -2647,7 +3439,10 @@
     "adp": 170.4,
     "vor": -1.34,
     "bye": 6,
-    "ppg": -1.29
+    "ppg": -1.29,
+    "redraftEcr": 286.2,
+    "superflexEcr": 257.7,
+    "dynastyEcr": 251.7
   },
   {
     "id": 266,
@@ -2657,7 +3452,10 @@
     "adp": 170.1,
     "vor": -1.38,
     "bye": 5,
-    "ppg": -6.13
+    "ppg": -6.13,
+    "redraftEcr": 308.3,
+    "superflexEcr": 275.3,
+    "dynastyEcr": 313.0
   },
   {
     "id": 267,
@@ -2667,7 +3465,10 @@
     "adp": 170.1,
     "vor": -1.39,
     "bye": 5,
-    "ppg": -6.13
+    "ppg": -6.13,
+    "redraftEcr": 280.4,
+    "superflexEcr": 250.5,
+    "dynastyEcr": 305.3
   },
   {
     "id": 268,
@@ -2677,7 +3478,10 @@
     "adp": 170.0,
     "vor": -1.4,
     "bye": 7,
-    "ppg": -6.14
+    "ppg": -6.14,
+    "redraftEcr": null,
+    "superflexEcr": 238.0,
+    "dynastyEcr": null
   },
   {
     "id": 269,
@@ -2687,17 +3491,23 @@
     "adp": 170.8,
     "vor": -1.41,
     "bye": 10,
-    "ppg": -1.36
+    "ppg": -1.36,
+    "redraftEcr": 195.6,
+    "superflexEcr": 188.8,
+    "dynastyEcr": 183.9
   },
   {
     "id": 270,
     "name": "Cardinals D/ST",
     "team": "ARI",
     "position": "DEF",
-    "adp": 169.8,
+    "adp": 169.7,
     "vor": -1.42,
     "bye": 14,
-    "ppg": -2.2
+    "ppg": -2.2,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 271,
@@ -2707,7 +3517,10 @@
     "adp": 169.7,
     "vor": -1.48,
     "bye": 8,
-    "ppg": 0.49
+    "ppg": 0.49,
+    "redraftEcr": 298.2,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 272,
@@ -2717,27 +3530,36 @@
     "adp": 170.6,
     "vor": -1.48,
     "bye": 11,
-    "ppg": -1.43
+    "ppg": -1.43,
+    "redraftEcr": 192.3,
+    "superflexEcr": 186.3,
+    "dynastyEcr": 179.8
   },
   {
     "id": 273,
     "name": "Kaleb Johnson",
     "team": "PIT",
     "position": "RB",
-    "adp": 170.0,
+    "adp": 170.1,
     "vor": -1.52,
     "bye": 9,
-    "ppg": -6.26
+    "ppg": -6.26,
+    "redraftEcr": 268.3,
+    "superflexEcr": 241.7,
+    "dynastyEcr": 223.9
   },
   {
     "id": 274,
     "name": "Darnell Mooney",
     "team": "NYG",
     "position": "WR",
-    "adp": 170.7,
+    "adp": 170.6,
     "vor": -1.54,
     "bye": 8,
-    "ppg": -1.49
+    "ppg": -1.49,
+    "redraftEcr": 207.3,
+    "superflexEcr": 196.3,
+    "dynastyEcr": 225.2
   },
   {
     "id": 275,
@@ -2747,7 +3569,10 @@
     "adp": 136.9,
     "vor": -1.54,
     "bye": 7,
-    "ppg": -1.49
+    "ppg": -1.49,
+    "redraftEcr": 122.0,
+    "superflexEcr": 134.2,
+    "dynastyEcr": 129.4
   },
   {
     "id": 276,
@@ -2757,7 +3582,10 @@
     "adp": 170.7,
     "vor": -1.57,
     "bye": 7,
-    "ppg": -1.52
+    "ppg": -1.52,
+    "redraftEcr": 203.8,
+    "superflexEcr": 194.4,
+    "dynastyEcr": 123.3
   },
   {
     "id": 277,
@@ -2767,7 +3595,10 @@
     "adp": 170.3,
     "vor": -1.58,
     "bye": 13,
-    "ppg": -6.32
+    "ppg": -6.32,
+    "redraftEcr": 288.5,
+    "superflexEcr": 259.5,
+    "dynastyEcr": 284.8
   },
   {
     "id": 278,
@@ -2777,7 +3608,10 @@
     "adp": 170.0,
     "vor": -1.6,
     "bye": 7,
-    "ppg": -6.34
+    "ppg": -6.34,
+    "redraftEcr": 285.7,
+    "superflexEcr": 256.6,
+    "dynastyEcr": 320.8
   },
   {
     "id": 279,
@@ -2787,7 +3621,10 @@
     "adp": 170.1,
     "vor": -1.6,
     "bye": 14,
-    "ppg": -6.34
+    "ppg": -6.34,
+    "redraftEcr": 232.6,
+    "superflexEcr": 216.8,
+    "dynastyEcr": 273.1
   },
   {
     "id": 280,
@@ -2797,7 +3634,10 @@
     "adp": 170.0,
     "vor": -1.61,
     "bye": 10,
-    "ppg": -6.36
+    "ppg": -6.36,
+    "redraftEcr": null,
+    "superflexEcr": 277.0,
+    "dynastyEcr": null
   },
   {
     "id": 281,
@@ -2807,7 +3647,10 @@
     "adp": 170.0,
     "vor": -1.62,
     "bye": 13,
-    "ppg": -6.37
+    "ppg": -6.37,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 282,
@@ -2817,17 +3660,23 @@
     "adp": 170.0,
     "vor": -1.63,
     "bye": 11,
-    "ppg": -6.37
+    "ppg": -6.37,
+    "redraftEcr": null,
+    "superflexEcr": 332.0,
+    "dynastyEcr": null
   },
   {
     "id": 283,
     "name": "Demond Claiborne",
     "team": "MIN",
     "position": "RB",
-    "adp": 170.3,
+    "adp": 170.4,
     "vor": -1.67,
     "bye": 6,
-    "ppg": -6.42
+    "ppg": -6.42,
+    "redraftEcr": 252.8,
+    "superflexEcr": 231.4,
+    "dynastyEcr": 228.8
   },
   {
     "id": 284,
@@ -2837,7 +3686,10 @@
     "adp": 170.0,
     "vor": -1.69,
     "bye": 13,
-    "ppg": -6.43
+    "ppg": -6.43,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 285,
@@ -2847,7 +3699,10 @@
     "adp": 170.9,
     "vor": -1.69,
     "bye": 5,
-    "ppg": -1.64
+    "ppg": -1.64,
+    "redraftEcr": 258.6,
+    "superflexEcr": 233.7,
+    "dynastyEcr": 260.1
   },
   {
     "id": 286,
@@ -2857,7 +3712,10 @@
     "adp": 170.0,
     "vor": -1.7,
     "bye": 11,
-    "ppg": -6.45
+    "ppg": -6.45,
+    "redraftEcr": 331.0,
+    "superflexEcr": 294.0,
+    "dynastyEcr": null
   },
   {
     "id": 287,
@@ -2867,7 +3725,10 @@
     "adp": 170.0,
     "vor": -1.72,
     "bye": 10,
-    "ppg": -6.46
+    "ppg": -6.46,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 288,
@@ -2877,7 +3738,10 @@
     "adp": 170.0,
     "vor": -1.72,
     "bye": 6,
-    "ppg": -6.47
+    "ppg": -6.47,
+    "redraftEcr": 347.6,
+    "superflexEcr": 308.0,
+    "dynastyEcr": null
   },
   {
     "id": 289,
@@ -2887,17 +3751,23 @@
     "adp": 170.0,
     "vor": -1.72,
     "bye": 8,
-    "ppg": -6.47
+    "ppg": -6.47,
+    "redraftEcr": null,
+    "superflexEcr": 247.0,
+    "dynastyEcr": null
   },
   {
     "id": 290,
     "name": "Isaiah Likely",
     "team": "NYG",
     "position": "TE",
-    "adp": 129.7,
+    "adp": 129.6,
     "vor": -1.8,
     "bye": 8,
-    "ppg": 0.44
+    "ppg": 0.44,
+    "redraftEcr": 122.6,
+    "superflexEcr": 134.5,
+    "dynastyEcr": 98.1
   },
   {
     "id": 291,
@@ -2907,7 +3777,10 @@
     "adp": 170.4,
     "vor": -1.86,
     "bye": 6,
-    "ppg": 0.39
+    "ppg": 0.39,
+    "redraftEcr": 207.3,
+    "superflexEcr": 196.6,
+    "dynastyEcr": 196.0
   },
   {
     "id": 292,
@@ -2917,7 +3790,10 @@
     "adp": 170.2,
     "vor": -1.86,
     "bye": 14,
-    "ppg": -1.81
+    "ppg": -1.81,
+    "redraftEcr": 184.8,
+    "superflexEcr": 182.9,
+    "dynastyEcr": 222.7
   },
   {
     "id": 293,
@@ -2927,7 +3803,10 @@
     "adp": 170.0,
     "vor": -1.91,
     "bye": 8,
-    "ppg": -6.65
+    "ppg": -6.65,
+    "redraftEcr": null,
+    "superflexEcr": 304.0,
+    "dynastyEcr": null
   },
   {
     "id": 294,
@@ -2937,7 +3816,10 @@
     "adp": 170.1,
     "vor": -1.91,
     "bye": 13,
-    "ppg": -6.66
+    "ppg": -6.66,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 295,
@@ -2947,7 +3829,10 @@
     "adp": 170.1,
     "vor": -1.96,
     "bye": 8,
-    "ppg": -6.7
+    "ppg": -6.7,
+    "redraftEcr": 306.0,
+    "superflexEcr": 274.0,
+    "dynastyEcr": 327.2
   },
   {
     "id": 296,
@@ -2957,17 +3842,23 @@
     "adp": 170.1,
     "vor": -1.97,
     "bye": 13,
-    "ppg": -6.72
+    "ppg": -6.72,
+    "redraftEcr": 304.0,
+    "superflexEcr": 278.0,
+    "dynastyEcr": null
   },
   {
     "id": 297,
     "name": "Rasheen Ali",
     "team": "BAL",
     "position": "RB",
-    "adp": 170.0,
+    "adp": 170.1,
     "vor": -1.98,
     "bye": 13,
-    "ppg": -6.72
+    "ppg": -6.72,
+    "redraftEcr": 331.8,
+    "superflexEcr": 294.2,
+    "dynastyEcr": 367.5
   },
   {
     "id": 298,
@@ -2977,7 +3868,10 @@
     "adp": 170.0,
     "vor": -1.98,
     "bye": 6,
-    "ppg": -6.73
+    "ppg": -6.73,
+    "redraftEcr": 323.7,
+    "superflexEcr": 286.0,
+    "dynastyEcr": null
   },
   {
     "id": 299,
@@ -2987,7 +3881,10 @@
     "adp": 169.9,
     "vor": -1.99,
     "bye": 11,
-    "ppg": -1.93
+    "ppg": -1.93,
+    "redraftEcr": 271.5,
+    "superflexEcr": 245.0,
+    "dynastyEcr": 334.8
   },
   {
     "id": 300,
@@ -2997,17 +3894,23 @@
     "adp": 170.0,
     "vor": -1.99,
     "bye": 7,
-    "ppg": -6.73
+    "ppg": -6.73,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 301,
     "name": "Tre' Harris",
     "team": "LAC",
     "position": "WR",
-    "adp": 171.0,
+    "adp": 170.9,
     "vor": -1.99,
     "bye": 7,
-    "ppg": -1.94
+    "ppg": -1.94,
+    "redraftEcr": 182.2,
+    "superflexEcr": 180.1,
+    "dynastyEcr": 144.1
   },
   {
     "id": 302,
@@ -3017,7 +3920,10 @@
     "adp": 170.0,
     "vor": -1.99,
     "bye": 13,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 303,
@@ -3027,7 +3933,10 @@
     "adp": 168.7,
     "vor": -2.05,
     "bye": 11,
-    "ppg": 0.19
+    "ppg": 0.19,
+    "redraftEcr": 207.2,
+    "superflexEcr": 196.6,
+    "dynastyEcr": 148.2
   },
   {
     "id": 304,
@@ -3037,7 +3946,10 @@
     "adp": 170.3,
     "vor": -2.06,
     "bye": 9,
-    "ppg": -6.81
+    "ppg": -6.81,
+    "redraftEcr": 214.8,
+    "superflexEcr": 202.4,
+    "dynastyEcr": 170.2
   },
   {
     "id": 305,
@@ -3047,7 +3959,10 @@
     "adp": 169.9,
     "vor": -2.14,
     "bye": 14,
-    "ppg": -2.09
+    "ppg": -2.09,
+    "redraftEcr": 311.0,
+    "superflexEcr": 276.2,
+    "dynastyEcr": 342.0
   },
   {
     "id": 306,
@@ -3057,7 +3972,10 @@
     "adp": 168.9,
     "vor": -2.22,
     "bye": 9,
-    "ppg": 0.03
+    "ppg": 0.03,
+    "redraftEcr": 240.1,
+    "superflexEcr": 218.3,
+    "dynastyEcr": 207.5
   },
   {
     "id": 307,
@@ -3067,7 +3985,10 @@
     "adp": 169.5,
     "vor": -2.23,
     "bye": 13,
-    "ppg": -2.17
+    "ppg": -2.17,
+    "redraftEcr": 168.6,
+    "superflexEcr": 170.3,
+    "dynastyEcr": 179.8
   },
   {
     "id": 308,
@@ -3077,27 +3998,36 @@
     "adp": 169.8,
     "vor": -2.28,
     "bye": 13,
-    "ppg": -2.23
+    "ppg": -2.23,
+    "redraftEcr": 195.2,
+    "superflexEcr": 188.7,
+    "dynastyEcr": 189.7
   },
   {
     "id": 309,
     "name": "Jordan Love",
     "team": "GB",
     "position": "QB",
-    "adp": 159.2,
+    "adp": 159.3,
     "vor": -2.28,
     "bye": 11,
-    "ppg": 13.72
+    "ppg": 13.72,
+    "redraftEcr": 119.7,
+    "superflexEcr": 46.1,
+    "dynastyEcr": 90.8
   },
   {
     "id": 310,
     "name": "C.J. Stroud",
     "team": "HOU",
     "position": "QB",
-    "adp": 165.7,
+    "adp": 165.8,
     "vor": -2.34,
     "bye": 8,
-    "ppg": 13.66
+    "ppg": 13.66,
+    "redraftEcr": 142.3,
+    "superflexEcr": 62.8,
+    "dynastyEcr": 126.8
   },
   {
     "id": 311,
@@ -3107,7 +4037,10 @@
     "adp": 170.4,
     "vor": -2.43,
     "bye": 7,
-    "ppg": -7.17
+    "ppg": -7.17,
+    "redraftEcr": 222.2,
+    "superflexEcr": 207.5,
+    "dynastyEcr": 200.3
   },
   {
     "id": 312,
@@ -3117,7 +4050,10 @@
     "adp": 170.2,
     "vor": -2.43,
     "bye": 13,
-    "ppg": -7.18
+    "ppg": -7.18,
+    "redraftEcr": 295.2,
+    "superflexEcr": 266.6,
+    "dynastyEcr": 296.4
   },
   {
     "id": 313,
@@ -3127,7 +4063,10 @@
     "adp": 170.0,
     "vor": -2.47,
     "bye": 6,
-    "ppg": -0.51
+    "ppg": -0.51,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 314,
@@ -3137,7 +4076,10 @@
     "adp": 169.7,
     "vor": -2.48,
     "bye": 7,
-    "ppg": -0.23
+    "ppg": -0.23,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 315,
@@ -3147,7 +4089,10 @@
     "adp": 170.2,
     "vor": -2.49,
     "bye": 9,
-    "ppg": -0.24
+    "ppg": -0.24,
+    "redraftEcr": 217.9,
+    "superflexEcr": 203.8,
+    "dynastyEcr": 174.5
   },
   {
     "id": 316,
@@ -3157,7 +4102,10 @@
     "adp": 170.0,
     "vor": -2.67,
     "bye": 14,
-    "ppg": -2.62
+    "ppg": -2.62,
+    "redraftEcr": 305.7,
+    "superflexEcr": 272.9,
+    "dynastyEcr": 354.5
   },
   {
     "id": 317,
@@ -3167,7 +4115,10 @@
     "adp": 170.3,
     "vor": -2.74,
     "bye": 10,
-    "ppg": -2.68
+    "ppg": -2.68,
+    "redraftEcr": 253.3,
+    "superflexEcr": 230.3,
+    "dynastyEcr": 161.7
   },
   {
     "id": 318,
@@ -3177,7 +4128,10 @@
     "adp": 170.4,
     "vor": -2.82,
     "bye": 10,
-    "ppg": -0.58
+    "ppg": -0.58,
+    "redraftEcr": 243.3,
+    "superflexEcr": 220.7,
+    "dynastyEcr": 212.1
   },
   {
     "id": 319,
@@ -3187,17 +4141,23 @@
     "adp": 169.6,
     "vor": -2.85,
     "bye": 7,
-    "ppg": -0.88
+    "ppg": -0.88,
+    "redraftEcr": 292.3,
+    "superflexEcr": null,
+    "dynastyEcr": 323.8
   },
   {
     "id": 320,
     "name": "Marvin Mims Jr.",
     "team": "DEN",
     "position": "WR",
-    "adp": 170.1,
+    "adp": 170.0,
     "vor": -2.91,
     "bye": 10,
-    "ppg": -2.85
+    "ppg": -2.85,
+    "redraftEcr": 258.0,
+    "superflexEcr": 233.2,
+    "dynastyEcr": 239.7
   },
   {
     "id": 321,
@@ -3207,17 +4167,23 @@
     "adp": 167.7,
     "vor": -2.92,
     "bye": 10,
-    "ppg": -7.66
+    "ppg": -7.66,
+    "redraftEcr": 171.2,
+    "superflexEcr": 172.8,
+    "dynastyEcr": 206.4
   },
   {
     "id": 322,
     "name": "Tank Dell",
     "team": "HOU",
     "position": "WR",
-    "adp": 168.3,
+    "adp": 168.1,
     "vor": -2.95,
     "bye": 8,
-    "ppg": -2.9
+    "ppg": -2.9,
+    "redraftEcr": 220.8,
+    "superflexEcr": 204.9,
+    "dynastyEcr": 203.5
   },
   {
     "id": 323,
@@ -3227,7 +4193,10 @@
     "adp": 170.0,
     "vor": -2.98,
     "bye": 6,
-    "ppg": -7.73
+    "ppg": -7.73,
+    "redraftEcr": null,
+    "superflexEcr": 264.0,
+    "dynastyEcr": null
   },
   {
     "id": 324,
@@ -3237,7 +4206,10 @@
     "adp": 169.8,
     "vor": -3.0,
     "bye": 13,
-    "ppg": -1.03
+    "ppg": -1.03,
+    "redraftEcr": 382.7,
+    "superflexEcr": null,
+    "dynastyEcr": 286.6
   },
   {
     "id": 325,
@@ -3247,7 +4219,10 @@
     "adp": 169.9,
     "vor": -3.11,
     "bye": 11,
-    "ppg": -3.06
+    "ppg": -3.06,
+    "redraftEcr": 317.4,
+    "superflexEcr": 283.5,
+    "dynastyEcr": 259.7
   },
   {
     "id": 326,
@@ -3257,7 +4232,10 @@
     "adp": 170.3,
     "vor": -3.12,
     "bye": 10,
-    "ppg": -0.87
+    "ppg": -0.87,
+    "redraftEcr": 255.0,
+    "superflexEcr": 229.4,
+    "dynastyEcr": 280.9
   },
   {
     "id": 327,
@@ -3267,7 +4245,10 @@
     "adp": 170.0,
     "vor": -3.12,
     "bye": 9,
-    "ppg": -7.87
+    "ppg": -7.87,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 373.7
   },
   {
     "id": 328,
@@ -3277,7 +4258,10 @@
     "adp": 170.3,
     "vor": -3.14,
     "bye": 8,
-    "ppg": -0.9
+    "ppg": -0.9,
+    "redraftEcr": 274.7,
+    "superflexEcr": 247.1,
+    "dynastyEcr": 248.9
   },
   {
     "id": 329,
@@ -3287,17 +4271,23 @@
     "adp": 170.6,
     "vor": -3.16,
     "bye": 10,
-    "ppg": -3.11
+    "ppg": -3.11,
+    "redraftEcr": 202.4,
+    "superflexEcr": 193.8,
+    "dynastyEcr": 211.4
   },
   {
     "id": 330,
     "name": "Andrei Iosivas",
     "team": "CIN",
     "position": "WR",
-    "adp": 170.4,
+    "adp": 170.3,
     "vor": -3.24,
     "bye": 6,
-    "ppg": -3.18
+    "ppg": -3.18,
+    "redraftEcr": 272.0,
+    "superflexEcr": 245.5,
+    "dynastyEcr": 297.1
   },
   {
     "id": 331,
@@ -3307,7 +4297,10 @@
     "adp": 169.9,
     "vor": -3.27,
     "bye": 7,
-    "ppg": -3.22
+    "ppg": -3.22,
+    "redraftEcr": 295.2,
+    "superflexEcr": 268.3,
+    "dynastyEcr": 334.4
   },
   {
     "id": 332,
@@ -3317,27 +4310,36 @@
     "adp": 170.5,
     "vor": -3.53,
     "bye": 6,
-    "ppg": -3.48
+    "ppg": -3.48,
+    "redraftEcr": 289.1,
+    "superflexEcr": 261.5,
+    "dynastyEcr": 273.7
   },
   {
     "id": 333,
     "name": "Joe Burrow",
     "team": "CIN",
     "position": "QB",
-    "adp": 59.9,
+    "adp": 60.0,
     "vor": -3.54,
     "bye": 6,
-    "ppg": 12.46
+    "ppg": 12.46,
+    "redraftEcr": 46.4,
+    "superflexEcr": 5.2,
+    "dynastyEcr": 45.0
   },
   {
     "id": 334,
     "name": "Mike Gesicki",
     "team": "CIN",
     "position": "TE",
-    "adp": 170.5,
+    "adp": 170.4,
     "vor": -3.57,
     "bye": 6,
-    "ppg": -1.32
+    "ppg": -1.32,
+    "redraftEcr": 267.9,
+    "superflexEcr": 240.2,
+    "dynastyEcr": 282.4
   },
   {
     "id": 335,
@@ -3347,7 +4349,10 @@
     "adp": 39.2,
     "vor": -3.6,
     "bye": 13,
-    "ppg": 12.39
+    "ppg": 12.39,
+    "redraftEcr": 32.3,
+    "superflexEcr": 2.5,
+    "dynastyEcr": 37.2
   },
   {
     "id": 336,
@@ -3357,7 +4362,10 @@
     "adp": 170.0,
     "vor": -3.68,
     "bye": 9,
-    "ppg": -3.62
+    "ppg": -3.62,
+    "redraftEcr": 241.5,
+    "superflexEcr": 221.1,
+    "dynastyEcr": 203.3
   },
   {
     "id": 337,
@@ -3367,7 +4375,10 @@
     "adp": 171.4,
     "vor": -3.78,
     "bye": 13,
-    "ppg": -3.73
+    "ppg": -3.73,
+    "redraftEcr": 239.5,
+    "superflexEcr": 219.2,
+    "dynastyEcr": 199.6
   },
   {
     "id": 338,
@@ -3377,7 +4388,10 @@
     "adp": 168.2,
     "vor": -3.87,
     "bye": 5,
-    "ppg": 12.13
+    "ppg": 12.13,
+    "redraftEcr": 165.6,
+    "superflexEcr": 74.3,
+    "dynastyEcr": 147.2
   },
   {
     "id": 339,
@@ -3387,27 +4401,36 @@
     "adp": 171.0,
     "vor": -3.87,
     "bye": 10,
-    "ppg": -3.82
+    "ppg": -3.82,
+    "redraftEcr": 208.6,
+    "superflexEcr": 197.4,
+    "dynastyEcr": 185.6
   },
   {
     "id": 340,
     "name": "Tyler Shough",
     "team": "NO",
     "position": "QB",
-    "adp": 154.8,
+    "adp": 155.0,
     "vor": -3.89,
     "bye": 8,
-    "ppg": 12.11
+    "ppg": 12.11,
+    "redraftEcr": 121.9,
+    "superflexEcr": 47.4,
+    "dynastyEcr": 122.7
   },
   {
     "id": 341,
     "name": "Chimere Dike",
     "team": "TEN",
     "position": "WR",
-    "adp": 170.7,
+    "adp": 170.6,
     "vor": -3.89,
     "bye": 9,
-    "ppg": -3.84
+    "ppg": -3.84,
+    "redraftEcr": 228.6,
+    "superflexEcr": 211.9,
+    "dynastyEcr": 205.9
   },
   {
     "id": 342,
@@ -3417,7 +4440,10 @@
     "adp": 170.0,
     "vor": -3.94,
     "bye": 6,
-    "ppg": -3.89
+    "ppg": -3.89,
+    "redraftEcr": 329.2,
+    "superflexEcr": 293.1,
+    "dynastyEcr": 241.7
   },
   {
     "id": 343,
@@ -3427,7 +4453,10 @@
     "adp": 170.2,
     "vor": -3.98,
     "bye": 5,
-    "ppg": -3.93
+    "ppg": -3.93,
+    "redraftEcr": 264.6,
+    "superflexEcr": 239.7,
+    "dynastyEcr": 278.8
   },
   {
     "id": 344,
@@ -3437,7 +4466,10 @@
     "adp": 170.0,
     "vor": -4.0,
     "bye": 8,
-    "ppg": -3.95
+    "ppg": -3.95,
+    "redraftEcr": 327.7,
+    "superflexEcr": 291.5,
+    "dynastyEcr": 404.3
   },
   {
     "id": 345,
@@ -3447,7 +4479,10 @@
     "adp": 171.4,
     "vor": -4.02,
     "bye": 8,
-    "ppg": -3.96
+    "ppg": -3.96,
+    "redraftEcr": 195.3,
+    "superflexEcr": 187.9,
+    "dynastyEcr": 163.0
   },
   {
     "id": 346,
@@ -3457,7 +4492,10 @@
     "adp": 166.8,
     "vor": -4.03,
     "bye": 11,
-    "ppg": -1.79
+    "ppg": -1.79,
+    "redraftEcr": 239.3,
+    "superflexEcr": 218.5,
+    "dynastyEcr": 159.6
   },
   {
     "id": 347,
@@ -3467,7 +4505,10 @@
     "adp": 170.2,
     "vor": -4.04,
     "bye": 13,
-    "ppg": -3.99
+    "ppg": -3.99,
+    "redraftEcr": 252.1,
+    "superflexEcr": 228.7,
+    "dynastyEcr": 166.3
   },
   {
     "id": 348,
@@ -3477,27 +4518,36 @@
     "adp": 170.2,
     "vor": -4.05,
     "bye": 11,
-    "ppg": -3.99
+    "ppg": -3.99,
+    "redraftEcr": 288.2,
+    "superflexEcr": 262.4,
+    "dynastyEcr": 314.4
   },
   {
     "id": 349,
     "name": "Christian Kirk",
     "team": "SF",
     "position": "WR",
-    "adp": 170.7,
+    "adp": 170.6,
     "vor": -4.08,
     "bye": 8,
-    "ppg": -4.03
+    "ppg": -4.03,
+    "redraftEcr": 250.5,
+    "superflexEcr": 227.4,
+    "dynastyEcr": 255.4
   },
   {
     "id": 350,
     "name": "Aaron Rodgers",
     "team": "PIT",
     "position": "QB",
-    "adp": 169.0,
+    "adp": 169.1,
     "vor": -4.08,
     "bye": 9,
-    "ppg": 11.92
+    "ppg": 11.92,
+    "redraftEcr": 224.1,
+    "superflexEcr": 97.0,
+    "dynastyEcr": 230.7
   },
   {
     "id": 351,
@@ -3507,7 +4557,10 @@
     "adp": 170.1,
     "vor": -4.1,
     "bye": 11,
-    "ppg": -4.05
+    "ppg": -4.05,
+    "redraftEcr": 345.0,
+    "superflexEcr": 306.9,
+    "dynastyEcr": 326.7
   },
   {
     "id": 352,
@@ -3517,7 +4570,10 @@
     "adp": 170.0,
     "vor": -4.12,
     "bye": 11,
-    "ppg": -4.07
+    "ppg": -4.07,
+    "redraftEcr": 308.2,
+    "superflexEcr": 276.4,
+    "dynastyEcr": 377.0
   },
   {
     "id": 353,
@@ -3527,7 +4583,10 @@
     "adp": 169.8,
     "vor": -4.13,
     "bye": 7,
-    "ppg": -1.89
+    "ppg": -1.89,
+    "redraftEcr": 328.6,
+    "superflexEcr": 291.3,
+    "dynastyEcr": 348.3
   },
   {
     "id": 354,
@@ -3537,7 +4596,10 @@
     "adp": 170.3,
     "vor": -4.14,
     "bye": 6,
-    "ppg": -4.09
+    "ppg": -4.09,
+    "redraftEcr": 201.3,
+    "superflexEcr": 193.2,
+    "dynastyEcr": 185.9
   },
   {
     "id": 355,
@@ -3547,7 +4609,10 @@
     "adp": 169.6,
     "vor": -4.32,
     "bye": 7,
-    "ppg": -2.08
+    "ppg": -2.08,
+    "redraftEcr": 244.2,
+    "superflexEcr": 220.9,
+    "dynastyEcr": 211.9
   },
   {
     "id": 356,
@@ -3557,7 +4622,10 @@
     "adp": 170.2,
     "vor": -4.36,
     "bye": 7,
-    "ppg": -4.31
+    "ppg": -4.31,
+    "redraftEcr": 312.0,
+    "superflexEcr": 279.2,
+    "dynastyEcr": 364.2
   },
   {
     "id": 357,
@@ -3567,7 +4635,10 @@
     "adp": 169.9,
     "vor": -4.4,
     "bye": 13,
-    "ppg": -2.16
+    "ppg": -2.16,
+    "redraftEcr": 269.9,
+    "superflexEcr": 242.8,
+    "dynastyEcr": 199.8
   },
   {
     "id": 358,
@@ -3577,7 +4648,10 @@
     "adp": 170.9,
     "vor": -4.41,
     "bye": 11,
-    "ppg": -4.35
+    "ppg": -4.35,
+    "redraftEcr": 252.5,
+    "superflexEcr": 229.2,
+    "dynastyEcr": 207.5
   },
   {
     "id": 359,
@@ -3587,7 +4661,10 @@
     "adp": 169.5,
     "vor": -4.44,
     "bye": 9,
-    "ppg": -2.19
+    "ppg": -2.19,
+    "redraftEcr": 291.3,
+    "superflexEcr": 260.6,
+    "dynastyEcr": 269.9
   },
   {
     "id": 360,
@@ -3597,7 +4674,10 @@
     "adp": 170.8,
     "vor": -4.47,
     "bye": 11,
-    "ppg": -2.22
+    "ppg": -2.22,
+    "redraftEcr": 257.4,
+    "superflexEcr": 232.1,
+    "dynastyEcr": 269.6
   },
   {
     "id": 361,
@@ -3607,7 +4687,10 @@
     "adp": 170.1,
     "vor": -4.55,
     "bye": 13,
-    "ppg": -2.31
+    "ppg": -2.31,
+    "redraftEcr": 313.0,
+    "superflexEcr": 279.4,
+    "dynastyEcr": 233.6
   },
   {
     "id": 362,
@@ -3617,7 +4700,10 @@
     "adp": 170.8,
     "vor": -4.58,
     "bye": 8,
-    "ppg": -4.53
+    "ppg": -4.53,
+    "redraftEcr": 268.6,
+    "superflexEcr": 242.6,
+    "dynastyEcr": 281.5
   },
   {
     "id": 363,
@@ -3627,17 +4713,23 @@
     "adp": 170.0,
     "vor": -4.59,
     "bye": 13,
-    "ppg": -4.54
+    "ppg": -4.54,
+    "redraftEcr": 321.9,
+    "superflexEcr": 284.8,
+    "dynastyEcr": 407.5
   },
   {
     "id": 364,
     "name": "Greg Dortch",
     "team": "DET",
     "position": "WR",
-    "adp": 169.9,
+    "adp": 170.0,
     "vor": -4.64,
     "bye": 6,
-    "ppg": -4.59
+    "ppg": -4.59,
+    "redraftEcr": 331.0,
+    "superflexEcr": 289.2,
+    "dynastyEcr": null
   },
   {
     "id": 365,
@@ -3647,7 +4739,10 @@
     "adp": 169.7,
     "vor": -4.67,
     "bye": 5,
-    "ppg": -4.61
+    "ppg": -4.61,
+    "redraftEcr": 268.0,
+    "superflexEcr": 245.9,
+    "dynastyEcr": 268.0
   },
   {
     "id": 366,
@@ -3657,7 +4752,10 @@
     "adp": 169.9,
     "vor": -4.69,
     "bye": 6,
-    "ppg": -4.64
+    "ppg": -4.64,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 367,
@@ -3667,7 +4765,10 @@
     "adp": 170.0,
     "vor": -4.77,
     "bye": 13,
-    "ppg": -4.71
+    "ppg": -4.71,
+    "redraftEcr": 322.0,
+    "superflexEcr": 290.5,
+    "dynastyEcr": null
   },
   {
     "id": 368,
@@ -3677,7 +4778,10 @@
     "adp": 169.9,
     "vor": -4.77,
     "bye": 7,
-    "ppg": -4.71
+    "ppg": -4.71,
+    "redraftEcr": 281.6,
+    "superflexEcr": 255.6,
+    "dynastyEcr": 190.1
   },
   {
     "id": 369,
@@ -3687,27 +4791,36 @@
     "adp": 170.0,
     "vor": -4.79,
     "bye": 11,
-    "ppg": -4.73
+    "ppg": -4.73,
+    "redraftEcr": 290.4,
+    "superflexEcr": 260.1,
+    "dynastyEcr": 281.8
   },
   {
     "id": 370,
     "name": "Tyler Higbee",
     "team": "LAR",
     "position": "TE",
-    "adp": 169.9,
+    "adp": 169.8,
     "vor": -4.81,
     "bye": 11,
-    "ppg": -2.56
+    "ppg": -2.56,
+    "redraftEcr": 310.5,
+    "superflexEcr": 276.8,
+    "dynastyEcr": 354.6
   },
   {
     "id": 371,
     "name": "Bryce Lance",
     "team": "NO",
     "position": "WR",
-    "adp": 170.0,
+    "adp": 169.9,
     "vor": -4.81,
     "bye": 8,
-    "ppg": -4.76
+    "ppg": -4.76,
+    "redraftEcr": 314.3,
+    "superflexEcr": 280.6,
+    "dynastyEcr": 224.4
   },
   {
     "id": 372,
@@ -3717,7 +4830,10 @@
     "adp": 169.9,
     "vor": -4.82,
     "bye": 10,
-    "ppg": -4.77
+    "ppg": -4.77,
+    "redraftEcr": 311.2,
+    "superflexEcr": 275.1,
+    "dynastyEcr": null
   },
   {
     "id": 373,
@@ -3727,7 +4843,10 @@
     "adp": 170.1,
     "vor": -4.84,
     "bye": 7,
-    "ppg": -4.78
+    "ppg": -4.78,
+    "redraftEcr": 343.1,
+    "superflexEcr": 303.6,
+    "dynastyEcr": 316.0
   },
   {
     "id": 374,
@@ -3737,7 +4856,10 @@
     "adp": 170.0,
     "vor": -4.85,
     "bye": 6,
-    "ppg": -4.8
+    "ppg": -4.8,
+    "redraftEcr": 324.9,
+    "superflexEcr": 287.0,
+    "dynastyEcr": 332.7
   },
   {
     "id": 375,
@@ -3747,7 +4869,10 @@
     "adp": 169.9,
     "vor": -4.91,
     "bye": 8,
-    "ppg": -4.86
+    "ppg": -4.86,
+    "redraftEcr": 310.9,
+    "superflexEcr": 279.1,
+    "dynastyEcr": 312.4
   },
   {
     "id": 376,
@@ -3757,7 +4882,10 @@
     "adp": 170.0,
     "vor": -4.96,
     "bye": 8,
-    "ppg": -4.91
+    "ppg": -4.91,
+    "redraftEcr": null,
+    "superflexEcr": 344.0,
+    "dynastyEcr": null
   },
   {
     "id": 377,
@@ -3767,7 +4895,10 @@
     "adp": 170.2,
     "vor": -5.08,
     "bye": 7,
-    "ppg": -5.03
+    "ppg": -5.03,
+    "redraftEcr": 350.4,
+    "superflexEcr": 307.8,
+    "dynastyEcr": 358.5
   },
   {
     "id": 378,
@@ -3777,7 +4908,10 @@
     "adp": 170.0,
     "vor": -5.15,
     "bye": 8,
-    "ppg": -5.1
+    "ppg": -5.1,
+    "redraftEcr": 363.0,
+    "superflexEcr": 322.8,
+    "dynastyEcr": null
   },
   {
     "id": 379,
@@ -3787,7 +4921,10 @@
     "adp": 170.0,
     "vor": -5.16,
     "bye": 5,
-    "ppg": -2.91
+    "ppg": -2.91,
+    "redraftEcr": 316.8,
+    "superflexEcr": 281.5,
+    "dynastyEcr": 294.2
   },
   {
     "id": 380,
@@ -3797,7 +4934,10 @@
     "adp": 169.7,
     "vor": -5.24,
     "bye": 10,
-    "ppg": -2.99
+    "ppg": -2.99,
+    "redraftEcr": 321.9,
+    "superflexEcr": 285.9,
+    "dynastyEcr": 283.1
   },
   {
     "id": 381,
@@ -3807,7 +4947,10 @@
     "adp": 169.9,
     "vor": -5.28,
     "bye": 11,
-    "ppg": -5.23
+    "ppg": -5.23,
+    "redraftEcr": 341.6,
+    "superflexEcr": 298.0,
+    "dynastyEcr": 351.1
   },
   {
     "id": 382,
@@ -3817,7 +4960,10 @@
     "adp": 169.9,
     "vor": -5.34,
     "bye": 8,
-    "ppg": -3.37
+    "ppg": -3.37,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 383,
@@ -3827,7 +4973,10 @@
     "adp": 169.9,
     "vor": -5.34,
     "bye": 13,
-    "ppg": -3.37
+    "ppg": -3.37,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 384,
@@ -3837,7 +4986,10 @@
     "adp": 169.9,
     "vor": -5.34,
     "bye": 5,
-    "ppg": -5.28
+    "ppg": -5.28,
+    "redraftEcr": 365.5,
+    "superflexEcr": 323.0,
+    "dynastyEcr": 393.5
   },
   {
     "id": 385,
@@ -3847,7 +4999,10 @@
     "adp": 169.9,
     "vor": -5.36,
     "bye": 10,
-    "ppg": -5.31
+    "ppg": -5.31,
+    "redraftEcr": 344.8,
+    "superflexEcr": 306.1,
+    "dynastyEcr": 322.4
   },
   {
     "id": 386,
@@ -3857,7 +5012,10 @@
     "adp": 170.0,
     "vor": -5.55,
     "bye": 7,
-    "ppg": -5.49
+    "ppg": -5.49,
+    "redraftEcr": 351.0,
+    "superflexEcr": 311.5,
+    "dynastyEcr": null
   },
   {
     "id": 387,
@@ -3867,7 +5025,10 @@
     "adp": 169.9,
     "vor": -5.55,
     "bye": 8,
-    "ppg": -5.5
+    "ppg": -5.5,
+    "redraftEcr": 252.8,
+    "superflexEcr": 230.8,
+    "dynastyEcr": 186.2
   },
   {
     "id": 388,
@@ -3877,17 +5038,23 @@
     "adp": 170.0,
     "vor": -5.6,
     "bye": 11,
-    "ppg": -5.55
+    "ppg": -5.55,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 389,
     "name": "Odell Beckham Jr.",
     "team": "NYG",
     "position": "WR",
-    "adp": 169.2,
+    "adp": 169.1,
     "vor": -5.61,
     "bye": 8,
-    "ppg": -5.56
+    "ppg": -5.56,
+    "redraftEcr": 333.0,
+    "superflexEcr": 318.0,
+    "dynastyEcr": null
   },
   {
     "id": 390,
@@ -3897,7 +5064,10 @@
     "adp": 170.0,
     "vor": -5.62,
     "bye": 13,
-    "ppg": -5.56
+    "ppg": -5.56,
+    "redraftEcr": 320.0,
+    "superflexEcr": 284.2,
+    "dynastyEcr": 324.9
   },
   {
     "id": 391,
@@ -3907,7 +5077,10 @@
     "adp": 170.0,
     "vor": -5.73,
     "bye": 11,
-    "ppg": -5.67
+    "ppg": -5.67,
+    "redraftEcr": 298.5,
+    "superflexEcr": 267.9,
+    "dynastyEcr": 269.2
   },
   {
     "id": 392,
@@ -3917,17 +5090,23 @@
     "adp": 169.9,
     "vor": -5.73,
     "bye": 11,
-    "ppg": -5.67
+    "ppg": -5.67,
+    "redraftEcr": 294.4,
+    "superflexEcr": 263.1,
+    "dynastyEcr": 300.6
   },
   {
     "id": 393,
     "name": "Tez Johnson",
     "team": "TB",
     "position": "WR",
-    "adp": 169.9,
+    "adp": 170.0,
     "vor": -5.81,
     "bye": 10,
-    "ppg": -5.75
+    "ppg": -5.75,
+    "redraftEcr": 303.3,
+    "superflexEcr": 273.3,
+    "dynastyEcr": 257.6
   },
   {
     "id": 394,
@@ -3937,7 +5116,10 @@
     "adp": 170.0,
     "vor": -5.81,
     "bye": 7,
-    "ppg": -5.76
+    "ppg": -5.76,
+    "redraftEcr": 334.5,
+    "superflexEcr": 302.0,
+    "dynastyEcr": 355.8
   },
   {
     "id": 395,
@@ -3947,7 +5129,10 @@
     "adp": 169.9,
     "vor": -5.84,
     "bye": 13,
-    "ppg": -5.78
+    "ppg": -5.78,
+    "redraftEcr": 324.2,
+    "superflexEcr": 288.4,
+    "dynastyEcr": 332.0
   },
   {
     "id": 396,
@@ -3957,7 +5142,10 @@
     "adp": 169.9,
     "vor": -5.87,
     "bye": 8,
-    "ppg": -5.82
+    "ppg": -5.82,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 397,
@@ -3967,7 +5155,10 @@
     "adp": 170.3,
     "vor": -5.88,
     "bye": 13,
-    "ppg": 10.12
+    "ppg": 10.12,
+    "redraftEcr": 226.9,
+    "superflexEcr": 97.6,
+    "dynastyEcr": 222.4
   },
   {
     "id": 398,
@@ -3977,7 +5168,10 @@
     "adp": 163.1,
     "vor": -5.94,
     "bye": 11,
-    "ppg": 10.06
+    "ppg": 10.06,
+    "redraftEcr": 142.8,
+    "superflexEcr": 62.8,
+    "dynastyEcr": 134.6
   },
   {
     "id": 399,
@@ -3987,7 +5181,10 @@
     "adp": 169.9,
     "vor": -5.97,
     "bye": 11,
-    "ppg": -5.92
+    "ppg": -5.92,
+    "redraftEcr": 269.3,
+    "superflexEcr": 242.5,
+    "dynastyEcr": 222.1
   },
   {
     "id": 400,
@@ -3997,7 +5194,10 @@
     "adp": 169.9,
     "vor": -6.07,
     "bye": 5,
-    "ppg": -3.82
+    "ppg": -3.82,
+    "redraftEcr": 346.9,
+    "superflexEcr": 305.8,
+    "dynastyEcr": 402.5
   },
   {
     "id": 401,
@@ -4007,7 +5207,10 @@
     "adp": 169.9,
     "vor": -6.12,
     "bye": 7,
-    "ppg": -6.07
+    "ppg": -6.07,
+    "redraftEcr": 305.8,
+    "superflexEcr": 272.7,
+    "dynastyEcr": 312.4
   },
   {
     "id": 402,
@@ -4017,7 +5220,10 @@
     "adp": 170.0,
     "vor": -6.13,
     "bye": 5,
-    "ppg": -6.07
+    "ppg": -6.07,
+    "redraftEcr": 309.6,
+    "superflexEcr": 277.1,
+    "dynastyEcr": 275.1
   },
   {
     "id": 403,
@@ -4027,7 +5233,10 @@
     "adp": 170.0,
     "vor": -6.15,
     "bye": 13,
-    "ppg": -6.09
+    "ppg": -6.09,
+    "redraftEcr": 342.5,
+    "superflexEcr": 302.0,
+    "dynastyEcr": null
   },
   {
     "id": 404,
@@ -4037,7 +5246,10 @@
     "adp": 169.9,
     "vor": -6.16,
     "bye": 7,
-    "ppg": -6.11
+    "ppg": -6.11,
+    "redraftEcr": 309.0,
+    "superflexEcr": 275.5,
+    "dynastyEcr": 233.1
   },
   {
     "id": 405,
@@ -4047,7 +5259,10 @@
     "adp": 170.0,
     "vor": -6.17,
     "bye": 7,
-    "ppg": -6.12
+    "ppg": -6.12,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 406,
@@ -4057,27 +5272,36 @@
     "adp": 170.0,
     "vor": -6.3,
     "bye": 13,
-    "ppg": -6.25
+    "ppg": -6.25,
+    "redraftEcr": null,
+    "superflexEcr": 265.0,
+    "dynastyEcr": null
   },
   {
     "id": 407,
     "name": "Bo Melton",
     "team": "GB",
     "position": "WR",
-    "adp": 169.9,
+    "adp": 170.0,
     "vor": -6.37,
     "bye": 11,
-    "ppg": -6.31
+    "ppg": -6.31,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 408,
     "name": "Ben Skowronek",
     "team": "PIT",
     "position": "WR",
-    "adp": 169.9,
+    "adp": 170.0,
     "vor": -6.37,
     "bye": 9,
-    "ppg": -6.31
+    "ppg": -6.31,
+    "redraftEcr": null,
+    "superflexEcr": 277.0,
+    "dynastyEcr": null
   },
   {
     "id": 409,
@@ -4087,7 +5311,10 @@
     "adp": 170.0,
     "vor": -6.37,
     "bye": 7,
-    "ppg": -6.32
+    "ppg": -6.32,
+    "redraftEcr": 317.0,
+    "superflexEcr": 281.5,
+    "dynastyEcr": null
   },
   {
     "id": 410,
@@ -4097,7 +5324,10 @@
     "adp": 169.9,
     "vor": -6.37,
     "bye": 11,
-    "ppg": -6.32
+    "ppg": -6.32,
+    "redraftEcr": 301.5,
+    "superflexEcr": 267.0,
+    "dynastyEcr": null
   },
   {
     "id": 411,
@@ -4107,17 +5337,23 @@
     "adp": 170.0,
     "vor": -6.4,
     "bye": 8,
-    "ppg": -4.16
+    "ppg": -4.16,
+    "redraftEcr": 337.4,
+    "superflexEcr": 301.2,
+    "dynastyEcr": 336.4
   },
   {
     "id": 412,
     "name": "Tai Felton",
     "team": "MIN",
     "position": "WR",
-    "adp": 169.9,
+    "adp": 170.0,
     "vor": -6.46,
     "bye": 6,
-    "ppg": -6.41
+    "ppg": -6.41,
+    "redraftEcr": 340.2,
+    "superflexEcr": 302.2,
+    "dynastyEcr": 368.8
   },
   {
     "id": 413,
@@ -4127,7 +5363,10 @@
     "adp": 169.9,
     "vor": -6.48,
     "bye": 5,
-    "ppg": -4.23
+    "ppg": -4.23,
+    "redraftEcr": 325.4,
+    "superflexEcr": 290.0,
+    "dynastyEcr": 357.0
   },
   {
     "id": 414,
@@ -4137,7 +5376,10 @@
     "adp": 169.9,
     "vor": -6.48,
     "bye": 10,
-    "ppg": -6.42
+    "ppg": -6.42,
+    "redraftEcr": 344.0,
+    "superflexEcr": 304.8,
+    "dynastyEcr": 403.5
   },
   {
     "id": 415,
@@ -4147,7 +5389,10 @@
     "adp": 170.0,
     "vor": -6.48,
     "bye": 10,
-    "ppg": -6.43
+    "ppg": -6.43,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 416,
@@ -4157,7 +5402,10 @@
     "adp": 169.9,
     "vor": -6.49,
     "bye": 14,
-    "ppg": -6.43
+    "ppg": -6.43,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 417,
@@ -4167,7 +5415,10 @@
     "adp": 170.0,
     "vor": -6.49,
     "bye": 13,
-    "ppg": -6.44
+    "ppg": -6.44,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 418,
@@ -4177,7 +5428,10 @@
     "adp": 170.0,
     "vor": -6.5,
     "bye": 5,
-    "ppg": -6.44
+    "ppg": -6.44,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 419,
@@ -4187,7 +5441,10 @@
     "adp": 170.0,
     "vor": -6.65,
     "bye": 6,
-    "ppg": -4.4
+    "ppg": -4.4,
+    "redraftEcr": 349.5,
+    "superflexEcr": 309.0,
+    "dynastyEcr": null
   },
   {
     "id": 420,
@@ -4197,7 +5454,10 @@
     "adp": 170.0,
     "vor": -6.66,
     "bye": 10,
-    "ppg": -6.61
+    "ppg": -6.61,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 421,
@@ -4207,7 +5467,10 @@
     "adp": 170.0,
     "vor": -6.66,
     "bye": 13,
-    "ppg": -6.61
+    "ppg": -6.61,
+    "redraftEcr": null,
+    "superflexEcr": 333.0,
+    "dynastyEcr": null
   },
   {
     "id": 422,
@@ -4217,17 +5480,23 @@
     "adp": 170.0,
     "vor": -6.7,
     "bye": 8,
-    "ppg": -6.65
+    "ppg": -6.65,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 423,
     "name": "Charlie Jones",
     "team": "CIN",
     "position": "WR",
-    "adp": 169.9,
+    "adp": 170.0,
     "vor": -6.7,
     "bye": 6,
-    "ppg": -6.65
+    "ppg": -6.65,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 424,
@@ -4237,17 +5506,23 @@
     "adp": 170.0,
     "vor": -6.71,
     "bye": 10,
-    "ppg": -6.66
+    "ppg": -6.66,
+    "redraftEcr": null,
+    "superflexEcr": 308.0,
+    "dynastyEcr": null
   },
   {
     "id": 425,
     "name": "Myles Price",
     "team": "MIN",
     "position": "WR",
-    "adp": 169.9,
+    "adp": 170.0,
     "vor": -6.72,
     "bye": 6,
-    "ppg": -6.67
+    "ppg": -6.67,
+    "redraftEcr": null,
+    "superflexEcr": 295.0,
+    "dynastyEcr": null
   },
   {
     "id": 426,
@@ -4257,7 +5532,10 @@
     "adp": 170.0,
     "vor": -6.72,
     "bye": 13,
-    "ppg": -6.67
+    "ppg": -6.67,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 427,
@@ -4267,7 +5545,10 @@
     "adp": 170.0,
     "vor": -6.73,
     "bye": 10,
-    "ppg": -6.68
+    "ppg": -6.68,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 428,
@@ -4277,7 +5558,10 @@
     "adp": 170.0,
     "vor": -6.74,
     "bye": 5,
-    "ppg": -6.69
+    "ppg": -6.69,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 429,
@@ -4287,7 +5571,10 @@
     "adp": 170.0,
     "vor": -6.75,
     "bye": 8,
-    "ppg": -6.7
+    "ppg": -6.7,
+    "redraftEcr": 416.0,
+    "superflexEcr": 358.5,
+    "dynastyEcr": null
   },
   {
     "id": 430,
@@ -4297,7 +5584,10 @@
     "adp": 170.0,
     "vor": -6.76,
     "bye": 6,
-    "ppg": -6.7
+    "ppg": -6.7,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 431,
@@ -4307,7 +5597,10 @@
     "adp": 170.0,
     "vor": -6.76,
     "bye": 14,
-    "ppg": -6.71
+    "ppg": -6.71,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 432,
@@ -4317,7 +5610,10 @@
     "adp": 170.0,
     "vor": -6.77,
     "bye": 11,
-    "ppg": -6.71
+    "ppg": -6.71,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 433,
@@ -4327,7 +5623,10 @@
     "adp": 170.0,
     "vor": -6.77,
     "bye": 8,
-    "ppg": -6.72
+    "ppg": -6.72,
+    "redraftEcr": null,
+    "superflexEcr": 276.0,
+    "dynastyEcr": null
   },
   {
     "id": 434,
@@ -4337,7 +5636,10 @@
     "adp": 169.9,
     "vor": -6.77,
     "bye": 11,
-    "ppg": -6.72
+    "ppg": -6.72,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 381.0
   },
   {
     "id": 435,
@@ -4347,17 +5649,23 @@
     "adp": 169.9,
     "vor": -6.78,
     "bye": 11,
-    "ppg": -4.53
+    "ppg": -4.53,
+    "redraftEcr": 315.6,
+    "superflexEcr": 282.2,
+    "dynastyEcr": 218.9
   },
   {
     "id": 436,
     "name": "Skyy Moore",
     "team": "GB",
     "position": "WR",
-    "adp": 169.9,
+    "adp": 170.0,
     "vor": -6.78,
     "bye": 11,
-    "ppg": -6.72
+    "ppg": -6.72,
+    "redraftEcr": 378.0,
+    "superflexEcr": 334.0,
+    "dynastyEcr": null
   },
   {
     "id": 437,
@@ -4367,7 +5675,10 @@
     "adp": 170.0,
     "vor": -6.78,
     "bye": 13,
-    "ppg": -6.73
+    "ppg": -6.73,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 438,
@@ -4377,7 +5688,10 @@
     "adp": 170.0,
     "vor": -6.78,
     "bye": 14,
-    "ppg": -6.73
+    "ppg": -6.73,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 439,
@@ -4387,7 +5701,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 6,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": 337.5,
+    "superflexEcr": 319.5,
+    "dynastyEcr": null
   },
   {
     "id": 440,
@@ -4397,7 +5714,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 9,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 441,
@@ -4407,7 +5727,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 8,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 336.0
   },
   {
     "id": 442,
@@ -4417,7 +5740,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 8,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": 267.5,
+    "superflexEcr": 260.0,
+    "dynastyEcr": null
   },
   {
     "id": 443,
@@ -4427,7 +5753,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 6,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": 294.0,
+    "dynastyEcr": null
   },
   {
     "id": 444,
@@ -4437,7 +5766,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 14,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 445,
@@ -4447,7 +5779,10 @@
     "adp": 169.9,
     "vor": -6.79,
     "bye": 9,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": 329.0,
+    "superflexEcr": 296.0,
+    "dynastyEcr": 416.0
   },
   {
     "id": 446,
@@ -4457,7 +5792,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 8,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 447,
@@ -4467,7 +5805,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 5,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 448,
@@ -4477,7 +5818,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 13,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 449,
@@ -4487,7 +5831,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 8,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 450,
@@ -4497,7 +5844,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 11,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 451,
@@ -4507,7 +5857,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 9,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 452,
@@ -4517,7 +5870,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 11,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 453,
@@ -4527,7 +5883,10 @@
     "adp": 170.0,
     "vor": -6.79,
     "bye": 6,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": 281.0,
+    "dynastyEcr": null
   },
   {
     "id": 454,
@@ -4537,7 +5896,10 @@
     "adp": 170.0,
     "vor": -6.9,
     "bye": 11,
-    "ppg": -4.66
+    "ppg": -4.66,
+    "redraftEcr": 347.1,
+    "superflexEcr": 304.4,
+    "dynastyEcr": 373.5
   },
   {
     "id": 455,
@@ -4547,7 +5909,10 @@
     "adp": 169.9,
     "vor": -7.02,
     "bye": 14,
-    "ppg": -4.78
+    "ppg": -4.78,
+    "redraftEcr": 362.7,
+    "superflexEcr": 323.8,
+    "dynastyEcr": 355.8
   },
   {
     "id": 456,
@@ -4557,7 +5922,10 @@
     "adp": 170.0,
     "vor": -7.21,
     "bye": 6,
-    "ppg": -4.97
+    "ppg": -4.97,
+    "redraftEcr": 322.5,
+    "superflexEcr": 296.0,
+    "dynastyEcr": 356.3
   },
   {
     "id": 457,
@@ -4567,17 +5935,23 @@
     "adp": 170.0,
     "vor": -7.22,
     "bye": 13,
-    "ppg": -7.16
+    "ppg": -7.16,
+    "redraftEcr": 354.3,
+    "superflexEcr": 312.2,
+    "dynastyEcr": 311.4
   },
   {
     "id": 458,
     "name": "Jackson Hawes",
     "team": "BUF",
     "position": "TE",
-    "adp": 169.9,
+    "adp": 170.0,
     "vor": -7.24,
     "bye": 7,
-    "ppg": -4.99
+    "ppg": -4.99,
+    "redraftEcr": 366.8,
+    "superflexEcr": 324.0,
+    "dynastyEcr": null
   },
   {
     "id": 459,
@@ -4587,7 +5961,10 @@
     "adp": 167.4,
     "vor": -7.28,
     "bye": 9,
-    "ppg": 8.72
+    "ppg": 8.72,
+    "redraftEcr": 154.1,
+    "superflexEcr": 68.0,
+    "dynastyEcr": 119.0
   },
   {
     "id": 460,
@@ -4597,7 +5974,10 @@
     "adp": 169.9,
     "vor": -7.32,
     "bye": 11,
-    "ppg": -5.08
+    "ppg": -5.08,
+    "redraftEcr": 349.2,
+    "superflexEcr": 310.2,
+    "dynastyEcr": 358.0
   },
   {
     "id": 461,
@@ -4607,7 +5987,10 @@
     "adp": 170.0,
     "vor": -7.4,
     "bye": 11,
-    "ppg": -5.16
+    "ppg": -5.16,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 462,
@@ -4617,7 +6000,10 @@
     "adp": 169.9,
     "vor": -7.42,
     "bye": 10,
-    "ppg": -5.18
+    "ppg": -5.18,
+    "redraftEcr": 267.8,
+    "superflexEcr": 240.4,
+    "dynastyEcr": 87.2
   },
   {
     "id": 463,
@@ -4627,7 +6013,10 @@
     "adp": 169.9,
     "vor": -7.48,
     "bye": 11,
-    "ppg": -5.23
+    "ppg": -5.23,
+    "redraftEcr": 332.7,
+    "superflexEcr": 294.8,
+    "dynastyEcr": 195.2
   },
   {
     "id": 464,
@@ -4637,7 +6026,10 @@
     "adp": 170.0,
     "vor": -7.52,
     "bye": 6,
-    "ppg": -5.28
+    "ppg": -5.28,
+    "redraftEcr": 320.8,
+    "superflexEcr": 287.2,
+    "dynastyEcr": 355.3
   },
   {
     "id": 465,
@@ -4647,7 +6039,10 @@
     "adp": 169.9,
     "vor": -7.53,
     "bye": 6,
-    "ppg": -5.29
+    "ppg": -5.29,
+    "redraftEcr": 355.2,
+    "superflexEcr": 309.0,
+    "dynastyEcr": 385.5
   },
   {
     "id": 466,
@@ -4657,7 +6052,10 @@
     "adp": 166.9,
     "vor": -7.55,
     "bye": 13,
-    "ppg": 8.45
+    "ppg": 8.45,
+    "redraftEcr": 256.1,
+    "superflexEcr": 120.6,
+    "dynastyEcr": 112.7
   },
   {
     "id": 467,
@@ -4667,7 +6065,10 @@
     "adp": 170.0,
     "vor": -7.57,
     "bye": 6,
-    "ppg": -5.33
+    "ppg": -5.33,
+    "redraftEcr": 352.7,
+    "superflexEcr": 303.3,
+    "dynastyEcr": null
   },
   {
     "id": 468,
@@ -4677,7 +6078,10 @@
     "adp": 170.0,
     "vor": -7.67,
     "bye": 7,
-    "ppg": -5.43
+    "ppg": -5.43,
+    "redraftEcr": 341.8,
+    "superflexEcr": 296.4,
+    "dynastyEcr": 288.2
   },
   {
     "id": 469,
@@ -4687,7 +6091,10 @@
     "adp": 170.0,
     "vor": -7.69,
     "bye": 13,
-    "ppg": -5.45
+    "ppg": -5.45,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 408.0
   },
   {
     "id": 470,
@@ -4697,7 +6104,10 @@
     "adp": 170.0,
     "vor": -7.71,
     "bye": 5,
-    "ppg": -5.46
+    "ppg": -5.46,
+    "redraftEcr": 359.5,
+    "superflexEcr": 317.9,
+    "dynastyEcr": 323.0
   },
   {
     "id": 471,
@@ -4707,7 +6117,10 @@
     "adp": 170.0,
     "vor": -7.72,
     "bye": 8,
-    "ppg": -5.47
+    "ppg": -5.47,
+    "redraftEcr": 377.0,
+    "superflexEcr": 320.5,
+    "dynastyEcr": 386.0
   },
   {
     "id": 472,
@@ -4717,7 +6130,10 @@
     "adp": 170.0,
     "vor": -7.72,
     "bye": 7,
-    "ppg": -5.48
+    "ppg": -5.48,
+    "redraftEcr": 332.7,
+    "superflexEcr": 296.0,
+    "dynastyEcr": null
   },
   {
     "id": 473,
@@ -4727,7 +6143,10 @@
     "adp": 169.9,
     "vor": -7.77,
     "bye": 6,
-    "ppg": -7.71
+    "ppg": -7.71,
+    "redraftEcr": 347.8,
+    "superflexEcr": 311.6,
+    "dynastyEcr": 343.5
   },
   {
     "id": 474,
@@ -4737,17 +6156,23 @@
     "adp": 169.9,
     "vor": -7.78,
     "bye": 8,
-    "ppg": -7.72
+    "ppg": -7.72,
+    "redraftEcr": null,
+    "superflexEcr": 300.0,
+    "dynastyEcr": 362.6
   },
   {
     "id": 475,
     "name": "CJ Daniels",
     "team": "LAR",
     "position": "WR",
-    "adp": 169.9,
+    "adp": 170.0,
     "vor": -7.78,
     "bye": 11,
-    "ppg": -7.73
+    "ppg": -7.73,
+    "redraftEcr": 358.2,
+    "superflexEcr": 318.4,
+    "dynastyEcr": 319.3
   },
   {
     "id": 476,
@@ -4757,7 +6182,10 @@
     "adp": 170.7,
     "vor": -7.79,
     "bye": 8,
-    "ppg": -5.54
+    "ppg": -5.54,
+    "redraftEcr": 287.3,
+    "superflexEcr": 257.6,
+    "dynastyEcr": 275.7
   },
   {
     "id": 477,
@@ -4767,7 +6195,10 @@
     "adp": 170.0,
     "vor": -7.92,
     "bye": 14,
-    "ppg": -7.87
+    "ppg": -7.87,
+    "redraftEcr": 338.0,
+    "superflexEcr": 299.0,
+    "dynastyEcr": 385.3
   },
   {
     "id": 478,
@@ -4777,7 +6208,10 @@
     "adp": 170.0,
     "vor": -7.92,
     "bye": 9,
-    "ppg": -7.87
+    "ppg": -7.87,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 387.7
   },
   {
     "id": 479,
@@ -4787,7 +6221,10 @@
     "adp": 170.0,
     "vor": -7.94,
     "bye": 10,
-    "ppg": -5.69
+    "ppg": -5.69,
+    "redraftEcr": 371.8,
+    "superflexEcr": 322.3,
+    "dynastyEcr": 387.0
   },
   {
     "id": 480,
@@ -4797,7 +6234,10 @@
     "adp": 169.9,
     "vor": -7.97,
     "bye": 14,
-    "ppg": -5.73
+    "ppg": -5.73,
+    "redraftEcr": 368.6,
+    "superflexEcr": 317.8,
+    "dynastyEcr": null
   },
   {
     "id": 481,
@@ -4807,7 +6247,10 @@
     "adp": 170.0,
     "vor": -7.99,
     "bye": 13,
-    "ppg": -5.75
+    "ppg": -5.75,
+    "redraftEcr": 349.6,
+    "superflexEcr": 303.6,
+    "dynastyEcr": null
   },
   {
     "id": 482,
@@ -4817,17 +6260,23 @@
     "adp": 170.0,
     "vor": -8.01,
     "bye": 7,
-    "ppg": -5.77
+    "ppg": -5.77,
+    "redraftEcr": 347.7,
+    "superflexEcr": 310.7,
+    "dynastyEcr": 286.0
   },
   {
     "id": 483,
     "name": "Daniel Bellinger",
     "team": "TEN",
     "position": "TE",
-    "adp": 169.9,
+    "adp": 170.0,
     "vor": -8.01,
     "bye": 9,
-    "ppg": -5.77
+    "ppg": -5.77,
+    "redraftEcr": 361.7,
+    "superflexEcr": 320.8,
+    "dynastyEcr": 395.5
   },
   {
     "id": 484,
@@ -4837,7 +6286,10 @@
     "adp": 170.0,
     "vor": -8.12,
     "bye": 13,
-    "ppg": -5.88
+    "ppg": -5.88,
+    "redraftEcr": 354.0,
+    "superflexEcr": 300.0,
+    "dynastyEcr": null
   },
   {
     "id": 485,
@@ -4847,7 +6299,10 @@
     "adp": 170.0,
     "vor": -8.19,
     "bye": 7,
-    "ppg": -5.94
+    "ppg": -5.94,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 486,
@@ -4857,7 +6312,10 @@
     "adp": 170.0,
     "vor": -8.29,
     "bye": 8,
-    "ppg": -6.05
+    "ppg": -6.05,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 487,
@@ -4867,7 +6325,10 @@
     "adp": 170.0,
     "vor": -8.3,
     "bye": 10,
-    "ppg": -6.06
+    "ppg": -6.06,
+    "redraftEcr": null,
+    "superflexEcr": 327.0,
+    "dynastyEcr": null
   },
   {
     "id": 488,
@@ -4877,7 +6338,10 @@
     "adp": 169.9,
     "vor": -8.31,
     "bye": 6,
-    "ppg": -6.06
+    "ppg": -6.06,
+    "redraftEcr": 367.0,
+    "superflexEcr": 324.5,
+    "dynastyEcr": null
   },
   {
     "id": 489,
@@ -4887,7 +6351,10 @@
     "adp": 170.0,
     "vor": -8.32,
     "bye": 10,
-    "ppg": -6.08
+    "ppg": -6.08,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 490,
@@ -4897,7 +6364,10 @@
     "adp": 170.0,
     "vor": -8.42,
     "bye": 6,
-    "ppg": -6.18
+    "ppg": -6.18,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 491,
@@ -4907,7 +6377,10 @@
     "adp": 170.0,
     "vor": -8.62,
     "bye": 8,
-    "ppg": -6.38
+    "ppg": -6.38,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 492,
@@ -4917,7 +6390,10 @@
     "adp": 170.0,
     "vor": -8.63,
     "bye": 7,
-    "ppg": -8.57
+    "ppg": -8.57,
+    "redraftEcr": null,
+    "superflexEcr": 333.0,
+    "dynastyEcr": 334.8
   },
   {
     "id": 493,
@@ -4927,7 +6403,10 @@
     "adp": 170.0,
     "vor": -8.64,
     "bye": 14,
-    "ppg": -6.39
+    "ppg": -6.39,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 494,
@@ -4937,7 +6416,10 @@
     "adp": 170.0,
     "vor": -8.65,
     "bye": 11,
-    "ppg": -6.4
+    "ppg": -6.4,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 495,
@@ -4947,7 +6429,10 @@
     "adp": 170.0,
     "vor": -8.65,
     "bye": 10,
-    "ppg": -6.41
+    "ppg": -6.41,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 496,
@@ -4957,7 +6442,10 @@
     "adp": 170.0,
     "vor": -8.66,
     "bye": 5,
-    "ppg": -8.6
+    "ppg": -8.6,
+    "redraftEcr": 281.4,
+    "superflexEcr": 251.6,
+    "dynastyEcr": 194.7
   },
   {
     "id": 497,
@@ -4967,7 +6455,10 @@
     "adp": 170.0,
     "vor": -8.66,
     "bye": 6,
-    "ppg": -6.41
+    "ppg": -6.41,
+    "redraftEcr": 370.5,
+    "superflexEcr": 308.5,
+    "dynastyEcr": 333.0
   },
   {
     "id": 498,
@@ -4977,7 +6468,10 @@
     "adp": 170.0,
     "vor": -8.67,
     "bye": 13,
-    "ppg": -6.42
+    "ppg": -6.42,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 499,
@@ -4987,7 +6481,10 @@
     "adp": 170.0,
     "vor": -8.67,
     "bye": 11,
-    "ppg": -6.43
+    "ppg": -6.43,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 500,
@@ -4997,7 +6494,10 @@
     "adp": 170.0,
     "vor": -8.68,
     "bye": 14,
-    "ppg": -6.43
+    "ppg": -6.43,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 501,
@@ -5007,7 +6507,10 @@
     "adp": 170.0,
     "vor": -8.68,
     "bye": 13,
-    "ppg": -6.44
+    "ppg": -6.44,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 502,
@@ -5017,7 +6520,10 @@
     "adp": 170.0,
     "vor": -8.68,
     "bye": 11,
-    "ppg": -6.44
+    "ppg": -6.44,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 503,
@@ -5027,7 +6533,10 @@
     "adp": 170.0,
     "vor": -8.68,
     "bye": 10,
-    "ppg": -6.44
+    "ppg": -6.44,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 504,
@@ -5037,7 +6546,10 @@
     "adp": 170.0,
     "vor": -8.71,
     "bye": 11,
-    "ppg": -6.46
+    "ppg": -6.46,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 505,
@@ -5047,7 +6559,10 @@
     "adp": 170.0,
     "vor": -8.83,
     "bye": 8,
-    "ppg": -6.59
+    "ppg": -6.59,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 506,
@@ -5057,7 +6572,10 @@
     "adp": 170.0,
     "vor": -8.98,
     "bye": 6,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 507,
@@ -5067,7 +6585,10 @@
     "adp": 170.0,
     "vor": -8.98,
     "bye": 11,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 508,
@@ -5077,7 +6598,10 @@
     "adp": 170.0,
     "vor": -8.98,
     "bye": 13,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 509,
@@ -5087,7 +6611,10 @@
     "adp": 170.0,
     "vor": -8.98,
     "bye": 10,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 510,
@@ -5097,7 +6624,10 @@
     "adp": 170.0,
     "vor": -8.98,
     "bye": 11,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 511,
@@ -5107,7 +6637,10 @@
     "adp": 170.0,
     "vor": -8.98,
     "bye": 7,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 512,
@@ -5117,7 +6650,10 @@
     "adp": 170.0,
     "vor": -8.98,
     "bye": 10,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 421.0
   },
   {
     "id": 513,
@@ -5127,7 +6663,10 @@
     "adp": 170.0,
     "vor": -8.98,
     "bye": 10,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 514,
@@ -5137,7 +6676,10 @@
     "adp": 170.0,
     "vor": -9.17,
     "bye": 7,
-    "ppg": -6.92
+    "ppg": -6.92,
+    "redraftEcr": 339.7,
+    "superflexEcr": 294.3,
+    "dynastyEcr": 365.8
   },
   {
     "id": 515,
@@ -5147,17 +6689,23 @@
     "adp": 170.0,
     "vor": -9.37,
     "bye": 11,
-    "ppg": -7.13
+    "ppg": -7.13,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 365.5
   },
   {
     "id": 516,
     "name": "Malik Willis",
     "team": "MIA",
     "position": "QB",
-    "adp": 167.0,
+    "adp": 167.1,
     "vor": -9.6,
     "bye": 6,
-    "ppg": 6.4
+    "ppg": 6.4,
+    "redraftEcr": 131.5,
+    "superflexEcr": 53.6,
+    "dynastyEcr": 139.9
   },
   {
     "id": 517,
@@ -5167,7 +6715,10 @@
     "adp": 170.0,
     "vor": -9.94,
     "bye": 11,
-    "ppg": -7.7
+    "ppg": -7.7,
+    "redraftEcr": 312.9,
+    "superflexEcr": 280.2,
+    "dynastyEcr": 195.6
   },
   {
     "id": 518,
@@ -5177,7 +6728,10 @@
     "adp": 170.0,
     "vor": -9.98,
     "bye": 10,
-    "ppg": -7.73
+    "ppg": -7.73,
+    "redraftEcr": 339.1,
+    "superflexEcr": 301.0,
+    "dynastyEcr": 237.1
   },
   {
     "id": 519,
@@ -5187,7 +6741,10 @@
     "adp": 170.0,
     "vor": -10.01,
     "bye": 7,
-    "ppg": -7.76
+    "ppg": -7.76,
+    "redraftEcr": 341.0,
+    "superflexEcr": 307.5,
+    "dynastyEcr": 311.6
   },
   {
     "id": 520,
@@ -5197,7 +6754,10 @@
     "adp": 170.0,
     "vor": -10.03,
     "bye": 8,
-    "ppg": -7.79
+    "ppg": -7.79,
+    "redraftEcr": 300.0,
+    "superflexEcr": 268.5,
+    "dynastyEcr": 193.1
   },
   {
     "id": 521,
@@ -5207,7 +6767,10 @@
     "adp": 170.0,
     "vor": -10.04,
     "bye": 8,
-    "ppg": -7.79
+    "ppg": -7.79,
+    "redraftEcr": 334.0,
+    "superflexEcr": 292.2,
+    "dynastyEcr": 312.4
   },
   {
     "id": 522,
@@ -5217,7 +6780,10 @@
     "adp": 169.9,
     "vor": -10.05,
     "bye": 10,
-    "ppg": -7.81
+    "ppg": -7.81,
+    "redraftEcr": 355.0,
+    "superflexEcr": 301.7,
+    "dynastyEcr": 296.9
   },
   {
     "id": 523,
@@ -5227,7 +6793,10 @@
     "adp": 170.0,
     "vor": -10.06,
     "bye": 13,
-    "ppg": -7.82
+    "ppg": -7.82,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 524,
@@ -5237,7 +6806,10 @@
     "adp": 170.0,
     "vor": -10.06,
     "bye": 13,
-    "ppg": -7.82
+    "ppg": -7.82,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 383.0
   },
   {
     "id": 525,
@@ -5247,7 +6819,10 @@
     "adp": 169.2,
     "vor": -10.71,
     "bye": 11,
-    "ppg": 5.29
+    "ppg": 5.29,
+    "redraftEcr": 294.2,
+    "superflexEcr": 163.1,
+    "dynastyEcr": 210.0
   },
   {
     "id": 526,
@@ -5257,7 +6832,10 @@
     "adp": 170.0,
     "vor": -10.72,
     "bye": 11,
-    "ppg": 5.28
+    "ppg": 5.28,
+    "redraftEcr": 287.4,
+    "superflexEcr": 153.4,
+    "dynastyEcr": 178.5
   },
   {
     "id": 527,
@@ -5267,7 +6845,10 @@
     "adp": 170.0,
     "vor": -10.84,
     "bye": 11,
-    "ppg": 5.16
+    "ppg": 5.16,
+    "redraftEcr": 263.3,
+    "superflexEcr": 127.3,
+    "dynastyEcr": 192.7
   },
   {
     "id": 528,
@@ -5277,7 +6858,10 @@
     "adp": 170.0,
     "vor": -11.36,
     "bye": 8,
-    "ppg": 4.64
+    "ppg": 4.64,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 302.8
   },
   {
     "id": 529,
@@ -5287,7 +6871,10 @@
     "adp": 169.7,
     "vor": -13.32,
     "bye": 6,
-    "ppg": 2.68
+    "ppg": 2.68,
+    "redraftEcr": 321.2,
+    "superflexEcr": 182.8,
+    "dynastyEcr": 208.6
   },
   {
     "id": 530,
@@ -5297,7 +6884,10 @@
     "adp": 169.6,
     "vor": -13.42,
     "bye": 14,
-    "ppg": 2.58
+    "ppg": 2.58,
+    "redraftEcr": 328.9,
+    "superflexEcr": 121.2,
+    "dynastyEcr": 242.4
   },
   {
     "id": 531,
@@ -5307,7 +6897,10 @@
     "adp": 170.0,
     "vor": -16.26,
     "bye": 8,
-    "ppg": -0.26
+    "ppg": -0.26,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 352.0
   },
   {
     "id": 532,
@@ -5317,7 +6910,10 @@
     "adp": 169.9,
     "vor": -16.45,
     "bye": 8,
-    "ppg": -0.45
+    "ppg": -0.45,
+    "redraftEcr": 353.1,
+    "superflexEcr": 296.0,
+    "dynastyEcr": 296.3
   },
   {
     "id": 533,
@@ -5327,7 +6923,10 @@
     "adp": 170.0,
     "vor": -16.58,
     "bye": 13,
-    "ppg": -0.58
+    "ppg": -0.58,
+    "redraftEcr": 292.1,
+    "superflexEcr": 156.2,
+    "dynastyEcr": 259.4
   },
   {
     "id": 534,
@@ -5337,7 +6936,10 @@
     "adp": 170.0,
     "vor": -16.99,
     "bye": 10,
-    "ppg": -0.99
+    "ppg": -0.99,
+    "redraftEcr": null,
+    "superflexEcr": 177.0,
+    "dynastyEcr": 336.3
   },
   {
     "id": 535,
@@ -5347,7 +6949,10 @@
     "adp": 169.9,
     "vor": -17.0,
     "bye": 6,
-    "ppg": -1.0
+    "ppg": -1.0,
+    "redraftEcr": 344.3,
+    "superflexEcr": null,
+    "dynastyEcr": 291.4
   },
   {
     "id": 536,
@@ -5357,7 +6962,10 @@
     "adp": 169.9,
     "vor": -17.27,
     "bye": 11,
-    "ppg": -1.27
+    "ppg": -1.27,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 342.0
   },
   {
     "id": 537,
@@ -5367,7 +6975,10 @@
     "adp": 169.9,
     "vor": -17.47,
     "bye": 5,
-    "ppg": -1.47
+    "ppg": -1.47,
+    "redraftEcr": 345.9,
+    "superflexEcr": 219.3,
+    "dynastyEcr": 261.4
   },
   {
     "id": 538,
@@ -5377,7 +6988,10 @@
     "adp": 169.9,
     "vor": -18.02,
     "bye": 6,
-    "ppg": -2.02
+    "ppg": -2.02,
+    "redraftEcr": 351.8,
+    "superflexEcr": 243.5,
+    "dynastyEcr": 321.2
   },
   {
     "id": 539,
@@ -5387,7 +7001,10 @@
     "adp": 170.0,
     "vor": -18.11,
     "bye": 13,
-    "ppg": -2.11
+    "ppg": -2.11,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 540,
@@ -5397,7 +7014,10 @@
     "adp": 170.0,
     "vor": -18.22,
     "bye": 11,
-    "ppg": -2.22
+    "ppg": -2.22,
+    "redraftEcr": 287.9,
+    "superflexEcr": 156.6,
+    "dynastyEcr": 250.7
   },
   {
     "id": 541,
@@ -5407,7 +7027,10 @@
     "adp": 170.0,
     "vor": -19.17,
     "bye": 13,
-    "ppg": -3.17
+    "ppg": -3.17,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 359.0
   },
   {
     "id": 542,
@@ -5417,7 +7040,10 @@
     "adp": 169.9,
     "vor": -19.24,
     "bye": 8,
-    "ppg": -3.24
+    "ppg": -3.24,
+    "redraftEcr": 340.1,
+    "superflexEcr": 172.6,
+    "dynastyEcr": 220.8
   },
   {
     "id": 543,
@@ -5427,17 +7053,23 @@
     "adp": 170.0,
     "vor": -19.6,
     "bye": 7,
-    "ppg": -3.6
+    "ppg": -3.6,
+    "redraftEcr": 349.2,
+    "superflexEcr": 181.0,
+    "dynastyEcr": 291.6
   },
   {
     "id": 544,
     "name": "Tyler Huntley",
     "team": "BAL",
     "position": "QB",
-    "adp": 170.0,
+    "adp": 169.9,
     "vor": -19.64,
     "bye": 13,
-    "ppg": -3.64
+    "ppg": -3.64,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 350.3
   },
   {
     "id": 545,
@@ -5447,7 +7079,10 @@
     "adp": 170.0,
     "vor": -21.2,
     "bye": 7,
-    "ppg": -5.2
+    "ppg": -5.2,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 340.4
   },
   {
     "id": 546,
@@ -5457,7 +7092,10 @@
     "adp": 170.0,
     "vor": -21.81,
     "bye": 9,
-    "ppg": -5.81
+    "ppg": -5.81,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 339.5
   },
   {
     "id": 547,
@@ -5467,7 +7105,10 @@
     "adp": 169.9,
     "vor": -21.97,
     "bye": 10,
-    "ppg": -5.97
+    "ppg": -5.97,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 316.4
   },
   {
     "id": 548,
@@ -5477,7 +7118,10 @@
     "adp": 169.9,
     "vor": -22.36,
     "bye": 11,
-    "ppg": -6.36
+    "ppg": -6.36,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 549,
@@ -5487,7 +7131,10 @@
     "adp": 170.0,
     "vor": -22.39,
     "bye": 14,
-    "ppg": -6.39
+    "ppg": -6.39,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 550,
@@ -5497,7 +7144,10 @@
     "adp": 169.9,
     "vor": -22.41,
     "bye": 5,
-    "ppg": -6.41
+    "ppg": -6.41,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 367.5
   },
   {
     "id": 551,
@@ -5507,7 +7157,10 @@
     "adp": 169.9,
     "vor": -22.45,
     "bye": 11,
-    "ppg": -6.45
+    "ppg": -6.45,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 552,
@@ -5517,7 +7170,10 @@
     "adp": 170.0,
     "vor": -22.46,
     "bye": 10,
-    "ppg": -6.46
+    "ppg": -6.46,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 553,
@@ -5527,7 +7183,10 @@
     "adp": 169.9,
     "vor": -22.57,
     "bye": 7,
-    "ppg": -6.57
+    "ppg": -6.57,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 554,
@@ -5537,7 +7196,10 @@
     "adp": 170.0,
     "vor": -22.59,
     "bye": 7,
-    "ppg": -6.59
+    "ppg": -6.59,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 555,
@@ -5547,7 +7209,10 @@
     "adp": 169.9,
     "vor": -22.59,
     "bye": 10,
-    "ppg": -6.59
+    "ppg": -6.59,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 327.8
   },
   {
     "id": 556,
@@ -5557,7 +7222,10 @@
     "adp": 170.0,
     "vor": -22.65,
     "bye": 13,
-    "ppg": -6.65
+    "ppg": -6.65,
+    "redraftEcr": 357.8,
+    "superflexEcr": 181.0,
+    "dynastyEcr": 312.0
   },
   {
     "id": 557,
@@ -5567,7 +7235,10 @@
     "adp": 170.0,
     "vor": -22.74,
     "bye": 9,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 354.0
   },
   {
     "id": 558,
@@ -5577,7 +7248,10 @@
     "adp": 169.9,
     "vor": -22.74,
     "bye": 11,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 559,
@@ -5587,7 +7261,10 @@
     "adp": 170.0,
     "vor": -22.74,
     "bye": 9,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 301.5
   },
   {
     "id": 560,
@@ -5597,7 +7274,10 @@
     "adp": 170.0,
     "vor": -22.74,
     "bye": 6,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 561,
@@ -5607,17 +7287,23 @@
     "adp": 170.0,
     "vor": -22.74,
     "bye": 14,
-    "ppg": -6.74
+    "ppg": -6.74,
+    "redraftEcr": 358.5,
+    "superflexEcr": null,
+    "dynastyEcr": 354.8
   },
   {
     "id": 562,
     "name": "Teddy Bridgewater",
     "team": "DET",
     "position": "QB",
-    "adp": 169.9,
+    "adp": 170.0,
     "vor": -22.84,
     "bye": 6,
-    "ppg": -6.84
+    "ppg": -6.84,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": null
   },
   {
     "id": 563,
@@ -5627,7 +7313,10 @@
     "adp": 169.9,
     "vor": -22.89,
     "bye": 14,
-    "ppg": -6.89
+    "ppg": -6.89,
+    "redraftEcr": 353.1,
+    "superflexEcr": 238.5,
+    "dynastyEcr": 301.0
   },
   {
     "id": 564,
@@ -5637,7 +7326,10 @@
     "adp": 169.9,
     "vor": -23.69,
     "bye": 11,
-    "ppg": -7.69
+    "ppg": -7.69,
+    "redraftEcr": 341.1,
+    "superflexEcr": 197.2,
+    "dynastyEcr": 157.5
   },
   {
     "id": 565,
@@ -5647,7 +7339,10 @@
     "adp": 169.9,
     "vor": -23.74,
     "bye": 9,
-    "ppg": -7.74
+    "ppg": -7.74,
+    "redraftEcr": null,
+    "superflexEcr": null,
+    "dynastyEcr": 275.6
   },
   {
     "id": 566,
@@ -5657,6 +7352,9 @@
     "adp": 169.9,
     "vor": -23.86,
     "bye": 13,
-    "ppg": -7.86
+    "ppg": -7.86,
+    "redraftEcr": 348.2,
+    "superflexEcr": null,
+    "dynastyEcr": 272.4
   }
 ]

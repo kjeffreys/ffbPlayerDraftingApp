@@ -239,6 +239,13 @@ def _scale_positive(series: pd.Series) -> pd.Series:
     return series * (25.0 / max_value)
 
 
+
+
+def _scale_inverse_rank(series: pd.Series) -> pd.Series:
+    ranks = pd.to_numeric(series, errors="coerce")
+    scores = 25.0 * np.exp(-np.maximum(ranks - 1.0, 0.0) / 80.0)
+    return pd.Series(scores, index=series.index).where(ranks.notna())
+
 def _load_config(path: Path) -> LeagueConfig:
     with open(path, "r", encoding="utf-8") as f:
         return LeagueConfig(**json.load(f))
@@ -533,6 +540,8 @@ def score_players(base: pd.DataFrame, cfg: LeagueConfig, root: Path) -> pd.DataF
     df["scaled_proj"] = _scale_positive(df["z_proj"])
     df["scaled_hist"] = _scale_positive(df["z_hist"])
     df["scaled_floor"] = _scale_positive(df["z_floor"])
+    df["scaled_superflex_ecr"] = _scale_inverse_rank(df["superflex_ecr"])
+    df["scaled_dynasty_ecr"] = _scale_inverse_rank(df["dynasty_ecr"])
 
     if cfg.league_type == "guillotine":
         vet = df["scaled_proj"].notna() & df["scaled_floor"].notna()
@@ -563,46 +572,74 @@ def score_players(base: pd.DataFrame, cfg: LeagueConfig, root: Path) -> pd.DataF
             default=0.0,
         )
 
+    market_total = cfg.weight_superflex_ecr + cfg.weight_dynasty_ecr
+    if market_total > 0:
+        df["expected_ppg"] = (
+            df["expected_ppg"] * (1.0 - market_total)
+            + df["scaled_superflex_ecr"].fillna(df["expected_ppg"]) * cfg.weight_superflex_ecr
+            + df["scaled_dynasty_ecr"].fillna(df["expected_ppg"]) * cfg.weight_dynasty_ecr
+        )
+
     df = _apply_boosts(df, cfg, root)
     df = _apply_mimics(df, root)
     return df
 
 def calculate_vor(df: pd.DataFrame, cfg: LeagueConfig) -> tuple[pd.DataFrame, dict[str, float]]:
     replacement_levels: dict[str, float] = {}
+    active_slots: set[str] = set()
+    selected_indexes: set[Any] = set()
     roster = cfg.roster.model_dump()
-    for position, starters in roster.items():
-        if position == "FLEX":
-            continue
-        pos_df = df[df["position"] == position].sort_values("expected_ppg", ascending=False)
-        replacement_idx = cfg.teams * starters
-        if 0 < replacement_idx <= len(pos_df):
-            replacement_levels[position] = float(pos_df.iloc[replacement_idx - 1]["expected_ppg"])
-        else:
-            replacement_levels[position] = 0.0
+    slot_eligibility = {
+        "QB": {"QB"},
+        "RB": {"RB"},
+        "WR": {"WR"},
+        "TE": {"TE"},
+        "K": {"K"},
+        "DEF": {"DEF"},
+        "SUPERFLEX": {"QB", "RB", "WR", "TE"},
+        "FLEX": {"RB", "WR", "TE"},
+    }
+    slot_order = ["QB", "RB", "WR", "TE", "K", "DEF", "SUPERFLEX", "FLEX"]
 
-    if cfg.roster.FLEX > 0:
-        flex_pool = pd.concat(
-            [
-                df[df["position"] == "RB"].sort_values("expected_ppg", ascending=False).iloc[cfg.teams * cfg.roster.RB :],
-                df[df["position"] == "WR"].sort_values("expected_ppg", ascending=False).iloc[cfg.teams * cfg.roster.WR :],
-                df[df["position"] == "TE"].sort_values("expected_ppg", ascending=False).iloc[cfg.teams * cfg.roster.TE :],
-            ]
-        ).sort_values("expected_ppg", ascending=False)
-        replacement_idx = cfg.teams * cfg.roster.FLEX
-        replacement_levels["FLEX"] = (
-            float(flex_pool.iloc[replacement_idx - 1]["expected_ppg"])
-            if 0 < replacement_idx <= len(flex_pool)
+    for slot in slot_order:
+        starters = int(roster.get(slot, 0) or 0)
+        if starters <= 0:
+            replacement_levels[slot] = 0.0
+            continue
+        active_slots.add(slot)
+        eligible_positions = slot_eligibility[slot]
+        pool = df[
+            df["position"].isin(eligible_positions)
+            & ~df.index.isin(selected_indexes)
+        ].sort_values("expected_ppg", ascending=False)
+        demand = cfg.teams * starters
+        chosen = pool.iloc[:demand]
+        selected_indexes.update(chosen.index.tolist())
+        replacement_levels[slot] = (
+            float(chosen.iloc[-1]["expected_ppg"])
+            if 0 < demand <= len(chosen)
             else 0.0
         )
-    else:
-        replacement_levels["FLEX"] = 0.0
+
+    position_slots = {
+        "QB": ["QB", "SUPERFLEX"],
+        "RB": ["RB", "FLEX", "SUPERFLEX"],
+        "WR": ["WR", "FLEX", "SUPERFLEX"],
+        "TE": ["TE", "FLEX", "SUPERFLEX"],
+        "K": ["K"],
+        "DEF": ["DEF"],
+    }
 
     def player_vor(row: pd.Series) -> float:
-        pos_vor = row["expected_ppg"] - replacement_levels.get(row["position"], 0.0)
-        if row["position"] in {"RB", "WR", "TE"} and cfg.roster.FLEX > 0:
-            flex_vor = row["expected_ppg"] - replacement_levels.get("FLEX", 0.0)
-            return float(max(pos_vor, flex_vor))
-        return float(pos_vor)
+        eligible_slots = [
+            slot for slot in position_slots.get(row["position"], [])
+            if slot in active_slots
+        ]
+        replacement_floor = min(
+            (replacement_levels.get(slot, 0.0) for slot in eligible_slots),
+            default=0.0,
+        )
+        return float(row["expected_ppg"] - replacement_floor)
 
     df = df.copy()
     df["vor"] = df.apply(player_vor, axis=1)
@@ -611,7 +648,6 @@ def calculate_vor(df: pd.DataFrame, cfg: LeagueConfig) -> tuple[pd.DataFrame, di
             df.loc[df["position"] == position, "expected_ppg"] *= penalty
             df.loc[df["position"] == position, "vor"] *= penalty
     return df, replacement_levels
-
 
 def _format_final(df: pd.DataFrame) -> list[dict[str, Any]]:
     final = df.dropna(subset=["adp"]).sort_values("vor", ascending=False).copy()
@@ -628,6 +664,9 @@ def _format_final(df: pd.DataFrame) -> list[dict[str, Any]]:
                 "vor": round(float(row["vor"]), 2),
                 "bye": int(row["bye"]),
                 "ppg": round(float(row["expected_ppg"]), 2),
+                "redraftEcr": round(float(row["redraft_ecr"]), 1) if _finite_float(row.get("redraft_ecr")) is not None else None,
+                "superflexEcr": round(float(row["superflex_ecr"]), 1) if _finite_float(row.get("superflex_ecr")) is not None else None,
+                "dynastyEcr": round(float(row["dynasty_ecr"]), 1) if _finite_float(row.get("dynasty_ecr")) is not None else None,
             }
         )
     return rows
