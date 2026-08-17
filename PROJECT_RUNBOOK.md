@@ -89,6 +89,19 @@ id, name, team, position, adp, vor, bye, ppg, redraftEcr, superflexEcr, dynastyE
 
 `public/data_status.json` tells the app whether the checked-in data is stale or draft-ready, when it was generated, and which source URLs powered the refresh.
 
+## League Roster Updates
+
+Today, league roster settings live in two places:
+
+```text
+backend/league_config*.json  Backend VOR and refresh pipeline settings
+index.tsx                   Frontend league dropdown, roster targets, lineup notes, and public board labels
+```
+
+When a league changes its roster, update the matching backend config first, regenerate with `refresh-json`, then update the `LEAGUES` profile in `index.tsx` so the UI target counts and notes match the generated data.
+
+For the next hardening pass, consolidate these into one generated `public/league_profiles.json` file so roster settings have a single source of truth. Until then, go league-by-league before draft season and confirm teams, starters, flex/superflex slots, bench spots, K/DEF, scoring, and draft platform.
+
 ## Refresh Draft Data
 
 The current 2026 refresh path uses zero-budget public sources:

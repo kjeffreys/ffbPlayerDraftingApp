@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 type Position = 'QB' | 'RB' | 'WR' | 'TE' | 'K' | 'DEF';
 type RosterSlot = Position | 'FLEX' | 'SUPERFLEX';
 type Owner = 'me' | 'other';
-type ViewType = 'classic' | 'cockpit' | 'board' | 'byes';
+type ViewType = 'classic' | 'cockpit' | 'board' | 'byes' | 'picks';
 type SortByType = 'recommendation' | 'adp' | 'vor';
 type FilterByType = 'ALL' | 'FLEX' | Position;
 type Concern = 'injury' | 'role' | 'legal' | 'playoff' | 'bye' | 'fade';
@@ -32,6 +32,7 @@ interface LeagueProfile {
     roster: Record<Position, number>;
     lineup?: Partial<Record<RosterSlot, number>>;
     notes: string;
+    publicNotes: string;
 }
 
 interface DraftPick {
@@ -99,6 +100,7 @@ const LEAGUES: LeagueProfile[] = [
         mode: 'redraft',
         roster: { QB: 2, RB: 4, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: 'Current generated player pool.',
+        publicNotes: 'Draft board.',
     },
     {
         id: 'vany',
@@ -108,6 +110,7 @@ const LEAGUES: LeagueProfile[] = [
         mode: 'redraft',
         roster: { QB: 1, RB: 4, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: 'Back to Yahoo this year; local history can learn team bias.',
+        publicNotes: 'Yahoo draft board.',
     },
     {
         id: 'passion',
@@ -117,6 +120,7 @@ const LEAGUES: LeagueProfile[] = [
         mode: 'redraft',
         roster: { QB: 1, RB: 3, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: '14-team redraft profile.',
+        publicNotes: 'League draft board.',
     },
     {
         id: 'guillotine',
@@ -126,6 +130,7 @@ const LEAGUES: LeagueProfile[] = [
         mode: 'guillotine',
         roster: { QB: 1, RB: 4, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: 'Floor and survival matter more than ceiling.',
+        publicNotes: 'Draft board.',
     },
     {
         id: 'champions',
@@ -136,6 +141,7 @@ const LEAGUES: LeagueProfile[] = [
         roster: { QB: 2, RB: 5, WR: 7, TE: 2, K: 1, DEF: 1 },
         lineup: { QB: 1, RB: 3, WR: 4, TE: 1, FLEX: 2, SUPERFLEX: 1, K: 1, DEF: 1 },
         notes: 'Live in-person: 1 QB, 3 RB, 4 WR, TE, 2 flex, 1 superflex, K, DEF, 6 bench.',
+        publicNotes: 'Live draft board.',
     },
 ];
 
@@ -170,6 +176,10 @@ function defaultSessionForLeague(leagueId: string): DraftSession {
 const getPositionColor = (pos: Position) => `var(--pos-${pos.toLowerCase()})`;
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 const round = (value: number) => Number(value.toFixed(2));
+
+function isPublicView(view: ViewType) {
+    return view === 'classic' || view === 'picks';
+}
 
 async function fetchPlayers(profile: LeagueProfile): Promise<Player[]> {
     const res = await fetch(`./${profile.file}`);
@@ -212,6 +222,10 @@ function saveSession(leagueId: string, session: DraftSession) {
 
 function draftedMap(drafted: DraftPick[]) {
     return new Map(drafted.map(pick => [pick.playerId, pick]));
+}
+
+function renumberPicks(picks: DraftPick[]) {
+    return picks.map((pick, index) => ({ ...pick, pick: index + 1 }));
 }
 
 function playerMatches(player: Player, query: string) {
@@ -424,6 +438,9 @@ const Header: React.FC<{
 }) => {
     const inputRef = useRef<HTMLInputElement | null>(null);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
+    const publicView = isPublicView(session.view);
+    const headerTitle = session.view === 'picks' ? 'Drafted players' : session.view === 'classic' ? 'Draft board' : 'Draft cockpit';
+    const headerNote = publicView ? profile.publicNotes : profile.notes;
 
     useEffect(() => {
         const onKey = (e: KeyboardEvent) => {
@@ -442,9 +459,9 @@ const Header: React.FC<{
         <header className="header">
             <div className="headerTop">
                 <div>
-                    <div className="eyebrow">{session.view === 'classic' ? 'Draft board' : 'Draft cockpit'}</div>
+                    <div className="eyebrow">{headerTitle}</div>
                     <h1>Pick #{currentPick}</h1>
-                    <div className="muted">{profile.notes}</div>
+                    <div className="muted">{headerNote}</div>
                 </div>
                 <div className="headerActions">
                     <select value={leagueId} onChange={e => onLeagueChange(e.target.value)} aria-label="League">
@@ -501,6 +518,12 @@ const Header: React.FC<{
                         >
                             Byes
                         </button>
+                        <button
+                            style={buttonStyle(session.view === 'picks')}
+                            onClick={() => updateSession({ view: 'picks' })}
+                        >
+                            Drafted
+                        </button>
                     </div>
                 </div>
             </div>
@@ -530,7 +553,7 @@ const Header: React.FC<{
                         value={session.sortBy}
                         onChange={e => updateSession({ sortBy: e.target.value as SortByType })}
                     >
-                        <option value="recommendation">{session.view === 'classic' ? 'Rank' : 'Recommendation'}</option>
+                        <option value="recommendation">{publicView ? 'Rank' : 'Recommendation'}</option>
                         <option value="adp">ADP</option>
                         <option value="vor">VOR</option>
                     </select>
@@ -734,6 +757,50 @@ const ClassicBoardView: React.FC<{
     </main>
 );
 
+
+const DraftLogView: React.FC<{
+    picks: DraftPick[];
+    playerById: Map<number, Player>;
+    onUndoPick: (pick: number) => void;
+}> = ({ picks, playerById, onUndoPick }) => {
+    const rows = [...picks].sort((a, b) => b.pick - a.pick);
+    return (
+        <main className="draftLog">
+            <div className="draftHeader">
+                <div>Pick</div>
+                <div>Player</div>
+                <div>Manager</div>
+                <div>Team</div>
+                <div>Pos</div>
+                <div>Bye</div>
+                <div>Owner</div>
+                <div />
+            </div>
+            {rows.map(pick => {
+                const player = playerById.get(pick.playerId);
+                return (
+                    <div key={`${pick.pick}-${pick.playerId}-${pick.at}`} className="draftRow">
+                        <div className="classicRank">#{pick.pick}</div>
+                        <div className="classicPlayer">{player?.name ?? 'Unknown player'}</div>
+                        <div>{pick.manager}</div>
+                        <div>{player?.team ?? '-'}</div>
+                        <div>
+                            {player ? (
+                                <span className="positionPill" style={{ borderColor: getPositionColor(player.position) }}>
+                                    {player.position}
+                                </span>
+                            ) : '-'}
+                        </div>
+                        <div>{player?.bye ?? '-'}</div>
+                        <div>{pick.owner === 'me' ? 'Me' : 'Other'}</div>
+                        <button onClick={() => onUndoPick(pick.pick)}>Undo</button>
+                    </div>
+                );
+            })}
+            {!rows.length && <div className="empty">No picks marked yet.</div>}
+        </main>
+    );
+};
 const ByeWeekView: React.FC<{ byes: Record<number, Player[]> }> = ({ byes }) => {
     const weeks = Object.keys(byes).map(Number).sort((a, b) => a - b);
     if (!weeks.length) return <div className="empty">No players drafted for your roster yet.</div>;
@@ -850,6 +917,7 @@ const App: React.FC = () => {
         fetchDataStatus().then(setDataStatus);
     }, []);
 
+    const playerById = useMemo(() => new Map(allPlayers.map(player => [player.id, player])), [allPlayers]);
     const pickedMap = useMemo(() => draftedMap(session.drafted), [session.drafted]);
     const available = useMemo(
         () => allPlayers.filter(player => !pickedMap.has(player.id)),
@@ -915,6 +983,7 @@ const App: React.FC = () => {
         session.adjustments,
         session.filterBy,
         session.sortBy,
+        session.view,
     ]);
 
     const setAdjustment = (id: number, patch: Partial<PlayerAdjustment>) => {
@@ -979,7 +1048,7 @@ const App: React.FC = () => {
             if (!last) return prev;
             return {
                 ...prev,
-                drafted: prev.drafted.slice(0, -1),
+                drafted: renumberPicks(prev.drafted.slice(0, -1)),
                 undone: [last, ...prev.undone],
             };
         });
@@ -997,6 +1066,18 @@ const App: React.FC = () => {
         });
     };
 
+
+    const undoPick = (pickNumber: number) => {
+        setSession(prev => {
+            const removed = prev.drafted.find(pick => pick.pick === pickNumber);
+            if (!removed) return prev;
+            return {
+                ...prev,
+                drafted: renumberPicks(prev.drafted.filter(pick => pick.pick !== pickNumber)),
+                undone: [removed, ...prev.undone],
+            };
+        });
+    };
     const resetDraft = () => {
         if (window.confirm('Reset this league draft session?')) {
             setSession(defaultSessionForLeague(profile.id));
@@ -1037,7 +1118,7 @@ const App: React.FC = () => {
 
     return (
         <>
-            <DataStatusBanner status={dataStatus} />
+            {!isPublicView(session.view) && <DataStatusBanner status={dataStatus} />}
             <Header
                 profile={profile}
                 leagueId={leagueId}
@@ -1118,6 +1199,14 @@ const App: React.FC = () => {
                 />
             )}
 
+
+            {session.view === 'picks' && (
+                <DraftLogView
+                    picks={session.drafted}
+                    playerById={playerById}
+                    onUndoPick={undoPick}
+                />
+            )}
             {session.view === 'byes' && <ByeWeekView byes={myByes} />}
         </>
     );

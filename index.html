@@ -384,10 +384,25 @@
         .classicHeader,
         .classicRow {
             display: grid;
-            grid-template-columns: 64px minmax(190px, 1fr) 72px 72px 72px 86px 86px auto;
+            grid-template-columns: 64px minmax(240px, 1fr) 72px 64px 64px 86px 86px 78px;
             gap: 0.75rem;
             align-items: center;
             padding: 0.7rem 0.85rem;
+        }
+
+        .classicHeader > :nth-child(n + 3),
+        .classicRow > :nth-child(n + 3) {
+            justify-self: center;
+        }
+
+        .classicHeader > :nth-child(2),
+        .classicRow > :nth-child(2) {
+            justify-self: stretch;
+        }
+
+        .classicRow button {
+            justify-self: end;
+            width: 64px;
         }
 
         .classicHeader {
@@ -411,6 +426,57 @@
 
         .classicRow:last-child {
             border-bottom: 0;
+        }
+
+        .draftLog {
+            display: flex;
+            flex-direction: column;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .draftHeader,
+        .draftRow {
+            display: grid;
+            grid-template-columns: 72px minmax(220px, 1fr) minmax(140px, 0.8fr) 72px 64px 64px 84px 78px;
+            gap: 0.75rem;
+            align-items: center;
+            padding: 0.7rem 0.85rem;
+        }
+
+        .draftHeader {
+            background: var(--color-surface-2);
+            color: var(--color-text-secondary);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .draftRow {
+            min-height: 54px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .draftRow:nth-child(odd) {
+            background: rgba(255, 255, 255, 0.018);
+        }
+
+        .draftRow:last-child {
+            border-bottom: 0;
+        }
+
+        .draftHeader > :nth-child(n + 4),
+        .draftRow > :nth-child(n + 4) {
+            justify-self: center;
+        }
+
+        .draftRow button {
+            justify-self: end;
+            width: 64px;
         }
 
         .classicRank {
@@ -485,13 +551,16 @@
                 grid-template-columns: auto minmax(0, 1fr);
             }
 
-            .classicBoard {
+            .classicBoard,
+            .draftLog {
                 overflow-x: auto;
             }
 
             .classicHeader,
-            .classicRow {
-                min-width: 760px;
+            .classicRow,
+            .draftHeader,
+            .draftRow {
+                min-width: 820px;
             }
             .scoreBlock {
                 text-align: left;
