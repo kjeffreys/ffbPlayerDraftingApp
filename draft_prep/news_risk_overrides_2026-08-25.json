@@ -1,0 +1,164 @@
+{
+  "reviewedAt": "2026-08-25T17:55:00-04:00",
+  "scope": "Draft-relevant Passion Guillotine I players with Yahoo injury/status flags, top-120 ADP injury/discipline news, and major Week 1 role changes surfaced by Yahoo, FantasyPros, NBC Rotoworld, NFL.com, ESPN-linked reports, CBS, and team/beat reports.",
+  "sources": [
+    {
+      "name": "Yahoo fantasy training camp injury tracker",
+      "url": "https://sports.yahoo.com/fantasy/article/nfl-training-camp-injury-report-tracking-the-latest-news-updates-for-2026-fantasy-football-163938278.html"
+    },
+    {
+      "name": "FantasyPros player news and injury updates",
+      "url": "https://www.fantasypros.com/nfl/players/puka-nacua.php"
+    },
+    {
+      "name": "NBC Rotoworld player news",
+      "url": "https://www.nbcsports.com/fantasy/football/player-news"
+    },
+    {
+      "name": "NFL.com Jordyn Tyson report",
+      "url": "https://www.nfl.com/news/saints-rookie-wr-jordyn-tyson-hamstring-expected-to-miss-2-months"
+    },
+    {
+      "name": "ESPN 49ers Kittle/McCaffrey report",
+      "url": "https://www.espn.com/nfl/story/_/id/49702970/49ers-activate-star-te-george-kittle-pup-list"
+    }
+  ],
+  "overrides": [
+    {
+      "name": "Christian McCaffrey",
+      "marketLabel": "Risk Discount Needed",
+      "riskScore": 2.2,
+      "riskTags": "Q; tightness/returning to team drills; 15 projected games",
+      "joannaNote": "Still elite, but not a totally clean first-round safety pick. Treat the return-to-practice news as positive, then require a small guillotine discount.",
+      "jeffNote": "Returned to team work after unspecified tightness and would likely play in a real game, but prior soft-tissue history still matters in Week 1 survival."
+    },
+    {
+      "name": "Puka Nacua",
+      "marketLabel": "Risk Discount Needed",
+      "riskScore": 3.35,
+      "riskTags": "Q; Groin/psoas; possible short suspension risk; 15 projected games",
+      "injuryType": "Groin/psoas",
+      "joannaNote": "Elite WR, but not a normal first-round safety pick until the practice and discipline questions clear. Prefer safer first-round anchors unless he slides.",
+      "jeffNote": "Market still prices him around pick 5, but guillotine needs an uncertainty discount for groin/psoas plus possible short suspension risk. Do not pay #2 overall."
+    },
+    {
+      "name": "Ashton Jeanty",
+      "marketLabel": "Risk Discount Needed",
+      "riskScore": 3.0,
+      "riskTags": "Q; low ankle sprain; Week 1 uncertain; 14 projected games",
+      "joannaNote": "Exciting talent, but the ankle makes him a dangerous early anchor. Only draft if he slips well past the healthy-player price.",
+      "jeffNote": "Reports frame the ankle as more low than high and not long-term, but Week 1 uncertainty plus pick-14 cost is poor guillotine arbitrage."
+    },
+    {
+      "name": "Jeremiyah Love",
+      "marketLabel": "Risk Discount Needed",
+      "riskScore": 3.1,
+      "riskTags": "Q; high ankle sprain; out of practice this week; Week 1 uncertain; 15 projected games",
+      "joannaNote": "High-ankle sprains can linger. Do not use him as an early Week 1 floor piece.",
+      "jeffNote": "The ADP dip is explained by injury, not hidden value. Needs a real discount and a roster that already has stable starters."
+    },
+    {
+      "name": "Breece Hall",
+      "marketLabel": "Risk Discount Needed",
+      "riskScore": 2.1,
+      "riskTags": "Q; Groin; expected Week 1 but recent soft-tissue injury; 15 projected games",
+      "joannaNote": "Good player, but make sure the groin news stays positive before treating him as a normal starter.",
+      "jeffNote": "Current reports are optimistic for Week 1, so this is a modest discount rather than a full fade."
+    },
+    {
+      "name": "Josh Jacobs",
+      "marketLabel": "Risk Discount Needed",
+      "riskScore": 4.0,
+      "riskTags": "Q; Groin; possible discipline/suspension review; 14 projected games",
+      "joannaNote": "Name value is stronger than the safety profile right now. Do not click him as a normal RB anchor.",
+      "jeffNote": "Groin return-to-practice news helps, but unresolved discipline risk and RB age/workload make him a risky RB2 for guillotine."
+    },
+    {
+      "name": "Malik Nabers",
+      "marketLabel": "Risk Discount Needed",
+      "riskScore": 3.0,
+      "riskTags": "Q; ACL/meniscus recovery; returned to team drills; contact/ramp pending; 14 projected games",
+      "joannaNote": "Trending better, but ACL recovery is not the same as a clean Week 1 workload. Better as a discount than as a reach.",
+      "jeffNote": "Positive practice report softens the fade, but the early-season ramp and ADP still require a guillotine discount."
+    },
+    {
+      "name": "Tyler Warren",
+      "marketLabel": "Risk Discount Needed",
+      "riskScore": 2.2,
+      "riskTags": "Q; adductor/groin; Week 1 optimism but practice risk",
+      "joannaNote": "At TE, do not pay for uncertainty unless the discount is clear.",
+      "jeffNote": "Could be ready quickly, but adductor/groin tags are exactly the type of soft-tissue risk to break ties against."
+    },
+    {
+      "name": "George Kittle",
+      "marketLabel": "Risk Discount Needed",
+      "riskScore": 3.0,
+      "riskTags": "Q; Achilles; activated from PUP; ramp/age risk; 14 projected games",
+      "joannaNote": "Activation is good news, but an Achilles ramp for an older TE is not a normal starter profile.",
+      "jeffNote": "Week 1 hope is real, but ADP must fall because snap/route ramp and reinjury risk matter more in guillotine."
+    },
+    {
+      "name": "Chuba Hubbard",
+      "marketLabel": "Risk Discount Needed",
+      "riskScore": 2.4,
+      "riskTags": "Q; Hamstring; week-to-week; backfield role pressure",
+      "joannaNote": "Hamstring plus backfield uncertainty means he is not a boring-safe pick.",
+      "jeffNote": "The injury opened the door for Jonathon Brooks; take only if the market discount reflects the role risk."
+    },
+    {
+      "name": "Patrick Mahomes",
+      "marketLabel": "Trap",
+      "riskScore": 4.0,
+      "riskTags": "Q; ACL/LCL recovery; Week 1 not guaranteed; one-QB guillotine league",
+      "joannaNote": "Do not spend a meaningful pick on a QB with Week 1 knee uncertainty in this format.",
+      "jeffNote": "Even if he plays, one-QB replacement value and knee ramp make the ADP difficult to justify."
+    },
+    {
+      "name": "Alvin Kamara",
+      "marketLabel": "Trap",
+      "riskScore": 5.0,
+      "riskTags": "Q; MCL; expected out at least a month; 12 projected games",
+      "joannaNote": "Not a Week 1 survival pick. Avoid unless extremely late and clearly a stash.",
+      "jeffNote": "Expected multi-week absence makes him a poor guillotine draft asset before waivers reshape the league."
+    },
+    {
+      "name": "Jordyn Tyson",
+      "marketLabel": "Trap",
+      "riskScore": 5.0,
+      "riskTags": "D; Hamstring; expected to miss about two months; 11 projected games",
+      "joannaNote": "Do not draft for Week 1 survival. This is a stash profile, not a starter.",
+      "jeffNote": "NFL.com reported an approximately two-month absence; ADP has to crater before he becomes rational."
+    },
+    {
+      "name": "Travis Etienne Jr.",
+      "marketLabel": "Buy Ahead",
+      "riskScore": 0.35,
+      "riskTags": "15 projected games; Kamara injury may support early workload",
+      "joannaNote": "This is the kind of practical role boost that matters. Stronger target if the price stays in the fourth-round area.",
+      "jeffNote": "Kamara's MCL absence improves early-season workload path; keep the usual RB volatility, but this is positive news arbitrage."
+    },
+    {
+      "name": "Chris Olave",
+      "riskScore": 0.45,
+      "riskTags": "15 projected games; Saints injuries may concentrate targets but offense is fragile",
+      "joannaNote": "More target opportunity is good, but do not ignore the offense around him.",
+      "jeffNote": "Tyson/Kamara injuries can push volume toward Olave while also lowering touchdown environment."
+    },
+    {
+      "name": "Mike Washington Jr.",
+      "lateRoundLabel": "Contingent upside",
+      "riskScore": 0.8,
+      "riskTags": "Jeanty ankle contingency",
+      "joannaNote": "Only a late contingency pick. He matters if Jeanty is limited.",
+      "jeffNote": "Watch Raiders practice reports; he is a late-round leverage option if the room underreacts to Jeanty's ankle."
+    },
+    {
+      "name": "MarShawn Lloyd",
+      "lateRoundLabel": "Contingent upside",
+      "riskScore": 2.1,
+      "riskTags": "Jacobs groin/discipline contingency; own health history; 4 projected games",
+      "joannaNote": "Only late. He is a contingency, not a starter you can trust on draft night.",
+      "jeffNote": "Useful leverage if Jacobs' news worsens, but his own durability and low projection keep the price capped."
+    }
+  ]
+}

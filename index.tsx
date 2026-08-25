@@ -21,6 +21,18 @@ interface Player {
     redraftEcr?: number | null;
     superflexEcr?: number | null;
     dynastyEcr?: number | null;
+    fairRank?: number;
+    marketDelta?: number;
+    marketLabel?: string;
+    lateRoundLabel?: string;
+    joannaNote?: string;
+    jeffNote?: string;
+    status?: string | null;
+    riskTags?: string;
+    week1Projection?: number;
+    seasonProjection?: number;
+    projectedGames?: number;
+    riskScore?: number;
 }
 
 interface LeagueProfile {
@@ -69,6 +81,7 @@ interface ScoreComponents {
     rosterFit: number;
     byeRisk: number;
     historyAdjustment: number;
+    dataRiskPenalty: number;
     manualAdjustment: number;
     concernPenalty: number;
 }
@@ -85,11 +98,14 @@ interface DataStatus {
     generatedAt?: string;
     label?: string;
     message?: string;
+    files?: Record<string, string>;
+    sources?: Record<string, string>;
 }
 
 const POSITIONS: Position[] = ['QB', 'RB', 'WR', 'TE', 'K', 'DEF'];
 const FILTERS: FilterByType[] = ['ALL', 'FLEX', ...POSITIONS];
 const STORAGE_PREFIX = 'draft-assistant-v2';
+const DEFAULT_LEAGUE_ID = 'passion-guillotine-1-jeffreys';
 
 const LEAGUES: LeagueProfile[] = [
     {
@@ -124,13 +140,35 @@ const LEAGUES: LeagueProfile[] = [
     },
     {
         id: 'guillotine',
-        label: 'Guillotine',
+        label: 'Guillotine (Legacy)',
         file: 'guillotine.json',
         teams: 18,
         mode: 'guillotine',
         roster: { QB: 1, RB: 4, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: 'Floor and survival matter more than ceiling.',
         publicNotes: 'Draft board.',
+    },
+    {
+        id: 'passion-guillotine-1-jeffreys',
+        label: 'Passion Guillotine I - Jeffreys',
+        file: 'passion-guillotine-1.json',
+        teams: 18,
+        mode: 'guillotine',
+        roster: { QB: 1, RB: 5, WR: 5, TE: 2, K: 0, DEF: 0 },
+        lineup: { QB: 1, RB: 2, WR: 2, TE: 1, FLEX: 2 },
+        notes: 'Yahoo league 602515. Separate local session for Jeffreys.',
+        publicNotes: 'Passion Guillotine I draft board.',
+    },
+    {
+        id: 'passion-guillotine-1-joanna',
+        label: 'Passion Guillotine I - Joanna',
+        file: 'passion-guillotine-1.json',
+        teams: 18,
+        mode: 'guillotine',
+        roster: { QB: 1, RB: 5, WR: 5, TE: 2, K: 0, DEF: 0 },
+        lineup: { QB: 1, RB: 2, WR: 2, TE: 1, FLEX: 2 },
+        notes: 'Yahoo league 602515. Separate local session for Blitz Squad Joanna.',
+        publicNotes: 'Passion Guillotine I draft board.',
     },
     {
         id: 'champions',
@@ -203,6 +241,12 @@ function sessionKey(leagueId: string) {
 
 function selectedLeagueKey() {
     return `${STORAGE_PREFIX}:selected-league`;
+}
+
+function getInitialLeagueId() {
+    const saved = window.localStorage.getItem(selectedLeagueKey());
+    if (saved && LEAGUES.some(league => league.id === saved)) return saved;
+    return DEFAULT_LEAGUE_ID;
 }
 
 function loadSession(leagueId: string): DraftSession {
@@ -319,6 +363,24 @@ function getByeRisk(myByes: Record<number, Player[]>, player: Player) {
     return -(Math.max(0, sameBye.length - 1) * 0.75 + samePosition * 0.45);
 }
 
+function getDataRiskPenalty(profile: LeagueProfile, player: Player, currentPick: number) {
+    if (profile.mode !== 'guillotine') return 0;
+    const tags = `${player.status ?? ''} ${player.riskTags ?? ''}`.toLowerCase();
+    let penalty = 0;
+
+    if (player.status && player.status !== 'NA') penalty -= 0.45;
+    if (/(^|\s)(d|out|ir)(;|\s|$)|pup|not practicing|expected out|miss about|miss approximately|miss two months/.test(tags)) penalty -= 1.7;
+    if (/legal|discipline|suspension|civil|off[- ]field/.test(tags)) penalty -= 2.2;
+    if (/groin|psoas|hip|hamstring|ankle|soft tissue|knee|acl|mcl|achilles|toe|foot|calf|quad|quadriceps|shoulder|lower leg|lower body|abdomen|adductor/.test(tags)) penalty -= 0.75;
+    if (/week 1 uncertain|not guaranteed|ramp|returning|limited|contact\/ramp pending/.test(tags)) penalty -= 0.55;
+    if ((player.projectedGames ?? 17) < 16 || tags.includes('projected games')) penalty -= 0.3;
+    if (player.riskScore) penalty -= Math.min(1.3, player.riskScore * 0.35);
+
+    penalty *= 1.35;
+    if (currentPick <= profile.teams * 2) penalty *= 1.15;
+    return round(clamp(penalty, -5, 0));
+}
+
 function getTierDropoff(profile: LeagueProfile, player: Player, available: Player[], nextPick: number) {
     const samePosition = available.filter(p => p.position === player.position && p.id !== player.id);
     const laterOptions = samePosition.filter(p => getMarketRank(profile, p) > nextPick);
@@ -348,6 +410,7 @@ function scorePlayer(
         rosterFit: getRosterFit(profile, myRoster, player, currentPick),
         byeRisk: getByeRisk(myByes, player),
         historyAdjustment: getLeagueHistoryAdjustment(profile, player),
+        dataRiskPenalty: getDataRiskPenalty(profile, player, currentPick),
         manualAdjustment: adjustment?.manual ?? 0,
         concernPenalty: concerns.length * -0.85,
     };
@@ -359,6 +422,7 @@ function scorePlayer(
         components.rosterFit +
         components.byeRisk +
         components.historyAdjustment +
+        components.dataRiskPenalty +
         components.manualAdjustment +
         components.concernPenalty;
 
@@ -380,6 +444,13 @@ function buildReasons(
     concerns: Concern[]
 ) {
     const reasons: string[] = [];
+    if (player.marketLabel) {
+        const lateTag = player.lateRoundLabel ? ` / ${player.lateRoundLabel}` : '';
+        reasons.push(`${player.marketLabel}${lateTag}.`);
+    }
+    if (player.week1Projection) reasons.push(`Week 1 projection: ${round(player.week1Projection)}.`);
+    if (player.riskTags) reasons.push(`Risk/context: ${player.riskTags}.`);
+    if (components.dataRiskPenalty <= -1) reasons.push(`Guillotine uncertainty discount: ${round(components.dataRiskPenalty)}.`);
     if (components.adpValue >= 1.5) reasons.push(`${getMarketLabel(profile)} value: ${round(components.adpValue)} points past market.`);
     if (components.tierDropoff >= 1.5) reasons.push(`Tier cliff: ${round(components.tierDropoff)} VOR drop if this ${player.position} tier dries up.`);
     if (components.availabilityNextPick >= 2) reasons.push('Likely gone before your next estimated pick.');
@@ -390,7 +461,7 @@ function buildReasons(
     if (components.byeRisk < -0.5) reasons.push(`Bye risk: Week ${player.bye} is getting crowded.`);
     if (concerns.length) reasons.push(`Concern flags: ${concerns.map(c => CONCERN_LABELS[c]).join(', ')}.`);
     if (!reasons.length) reasons.push('Best balanced value across VOR, market rank, roster, and tier risk.');
-    return reasons.slice(0, 4);
+    return reasons.slice(0, 5);
 }
 
 function buttonStyle(active = false): React.CSSProperties {
@@ -597,6 +668,9 @@ const RecommendationCard: React.FC<{
 }> = ({ profile, rec, rank, featured = false, onDraft, adjustment, setAdjustment, toggleConcern }) => {
     const { player, components } = rec;
     const concerns = adjustment?.concerns ?? [];
+    const marketClass = player.marketLabel
+        ? `marketTag market-${player.marketLabel.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+        : 'marketTag';
     return (
         <section className={featured ? 'recCard featured' : 'recCard'}>
             <div className="recHeader">
@@ -607,6 +681,13 @@ const RecommendationCard: React.FC<{
                         <span style={{ color: getPositionColor(player.position) }}>{player.position}</span>
                         {' '} {player.team} · Bye {player.bye} · {getMarketLabel(profile)} {getMarketRank(profile, player)}
                     </div>
+                    {(player.marketLabel || player.lateRoundLabel || player.status) && (
+                        <div className="tagRow">
+                            {player.marketLabel && <span className={marketClass}>{player.marketLabel}</span>}
+                            {player.lateRoundLabel && <span className="marketTag subtleTag">{player.lateRoundLabel}</span>}
+                            {player.status && <span className="marketTag riskTag">{player.status}</span>}
+                        </div>
+                    )}
                 </div>
                 <div className="scoreBlock">
                     <div className="score">{rec.totalScore}</div>
@@ -616,6 +697,22 @@ const RecommendationCard: React.FC<{
             <div className="reasonList">
                 {rec.reasons.map(reason => <div key={reason}>{reason}</div>)}
             </div>
+            {(player.joannaNote || player.jeffNote) && (
+                <div className="noteGrid">
+                    {player.joannaNote && (
+                        <div className="noteBlock">
+                            <strong>Joanna</strong>
+                            <span>{player.joannaNote}</span>
+                        </div>
+                    )}
+                    {player.jeffNote && (
+                        <div className="noteBlock">
+                            <strong>Jeffreys</strong>
+                            <span>{player.jeffNote}</span>
+                        </div>
+                    )}
+                </div>
+            )}
             <div className="componentGrid">
                 <Metric label="VOR" value={components.vor} />
                 <Metric label={getMarketLabel(profile)} value={components.adpValue} />
@@ -624,6 +721,7 @@ const RecommendationCard: React.FC<{
                 <Metric label="Roster" value={components.rosterFit} />
                 <Metric label="Bye" value={components.byeRisk} />
                 <Metric label="History" value={components.historyAdjustment} />
+                <Metric label="Risk" value={components.dataRiskPenalty} />
                 <Metric label="Manual" value={components.manualAdjustment + components.concernPenalty} />
             </div>
             <div className="cardActions">
@@ -844,7 +942,19 @@ const RosterSnapshot: React.FC<{
     </aside>
 );
 
-const DataStatusBanner: React.FC<{ status: DataStatus | null }> = ({ status }) => {
+function isPassionGuillotineProfile(profile: LeagueProfile) {
+    return profile.file === 'passion-guillotine-1.json';
+}
+
+function getSourceSummary(profile: LeagueProfile) {
+    if (isPassionGuillotineProfile(profile)) {
+        return 'Yahoo league 602515 · Yahoo ADP/projections · manual news-risk overlay';
+    }
+    return 'Legacy baseline. Use the Jeffreys or Joanna Passion Guillotine I profile for Wednesday.';
+}
+
+const DataStatusBanner: React.FC<{ status: DataStatus | null; profile: LeagueProfile }> = ({ status, profile }) => {
+    const isPassion = isPassionGuillotineProfile(profile);
     if (!status) {
         return (
             <section className="dataBanner warning">
@@ -853,18 +963,23 @@ const DataStatusBanner: React.FC<{ status: DataStatus | null }> = ({ status }) =
             </section>
         );
     }
-    const isReady = status.status === 'draft-ready';
+    const isReady = status.status === 'draft-ready' && isPassion;
+    const heading = !isPassion
+        ? 'Wrong profile for Wednesday'
+        : isReady
+            ? 'Passion data ready'
+            : 'Passion data needs refresh';
     return (
         <section className={`dataBanner ${isReady ? 'ready' : 'warning'}`}>
-            <strong>{isReady ? 'Data draft-ready' : 'Data needs refresh'}</strong>
+            <strong>{heading}</strong>
             <span>{status.label ?? status.generatedAt ?? 'No generation date'}.</span>
-            {status.message && <span>{status.message}</span>}
+            <span className="dataDetail">{getSourceSummary(profile)}</span>
         </section>
     );
 };
 
 const App: React.FC = () => {
-    const initialLeagueId = window.localStorage.getItem(selectedLeagueKey()) ?? 'default';
+    const initialLeagueId = getInitialLeagueId();
     const [leagueId, setLeagueId] = useState(initialLeagueId);
     const profile = LEAGUES.find(league => league.id === leagueId) ?? LEAGUES[0];
     const [session, setSession] = useState<DraftSession>(() => loadSession(profile.id));
@@ -1118,7 +1233,7 @@ const App: React.FC = () => {
 
     return (
         <>
-            {!isPublicView(session.view) && <DataStatusBanner status={dataStatus} />}
+            {!isPublicView(session.view) && <DataStatusBanner status={dataStatus} profile={profile} />}
             <Header
                 profile={profile}
                 leagueId={leagueId}

@@ -1,19 +1,21 @@
 {
   "status": "draft-ready",
-  "generatedAt": "2026-08-11T03:34:05.428297+00:00",
-  "label": "2026-08-10 refresh",
-  "message": "2026 data refreshed from ESPN ADP/projections, DynastyProcess rankings/byes, and FantasyPros historical weekly stats.",
+  "generatedAt": "2026-08-25T17:25:00.000Z",
+  "label": "2026-08-25 Yahoo + top-player news-risk audit",
+  "message": "Passion Guillotine I uses Yahoo league 602515, Yahoo ADP/projections, and a dated top-player news-risk overlay. Legacy profiles are not Wednesday draft boards.",
   "files": {
     "players.json": "Default / Current",
     "vany.json": "VANY",
     "passion.json": "Passion",
-    "guillotine.json": "Guillotine",
+    "guillotine.json": "Guillotine (Legacy)",
+    "passion-guillotine-1.json": "Passion Guillotine I",
     "champions.json": "Champions"
   },
   "sources": {
     "espn": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026/segments/0/leaguedefaults/3?view=kona_player_info",
     "dynastyprocess": "https://raw.githubusercontent.com/dynastyprocess/data/master/files/db_fpecr_latest.csv",
-    "historical": "https://www.fantasypros.com/nfl/stats/{pos}.php?week={week}&scoring=HALF&range=week"
+    "historical": "https://www.fantasypros.com/nfl/stats/{pos}.php?week={week}&scoring=HALF&range=week",
+    "yahooLeague602515": "https://football.fantasysports.yahoo.com/f1/602515"
   },
   "integrity": {
     "usableRows": 566,

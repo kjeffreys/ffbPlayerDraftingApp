@@ -1,0 +1,35 @@
+{
+    "league_type": "guillotine",
+    "teams": 18,
+    "roster": {
+        "QB": 1,
+        "RB": 2,
+        "WR": 2,
+        "TE": 1,
+        "FLEX": 2,
+        "SUPERFLEX": 0,
+        "K": 0,
+        "DEF": 0
+    },
+    "draft_targets": {
+        "QB": 1,
+        "RB": 5,
+        "WR": 5,
+        "TE": 2
+    },
+    "scoring": "HALF",
+    "week": 1,
+    "games_divisor": 17,
+    "weight_projection": 0.75,
+    "weight_floor": 0.25,
+    "top_game_count": 17,
+    "min_historical_score": 0.0,
+    "positional_penalties": {
+        "K": 0.0,
+        "DEF": 0.0
+    },
+    "boost_small": 0.01,
+    "boost_medium": 0.05,
+    "boost_large": 0.08,
+    "boost_max": 1.39
+}
