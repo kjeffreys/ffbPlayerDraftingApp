@@ -19,7 +19,8 @@ npm run build
 
 ## Draft-Day How To
 
-- Pick the league first: `Default / Current`, `VANY`, `Passion`, `Guillotine`, or `Champions`.
+- Pick the league first: `Default / Current`, `VANY`, `Passion`, `Guillotine (Legacy)`, `Passion Guillotine I - Jeffreys`, `Passion Guillotine I - Joanna`, or `Champions`.
+- For Passion Guillotine I, use the Jeffreys and Joanna profiles as separate local sessions against the same Yahoo-derived player board.
 - Use `Cockpit` for your private decision view. It shows the top recommendation, two backups, reasons, score components, and your roster snapshot.
 - Use `Show Top 10 backups` when the top option is unavailable or you want a wider emergency list.
 - Use `Board` when others can see your screen. This classic list hides recommendation reasons and looks like a normal ranked draft sheet.

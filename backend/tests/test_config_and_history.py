@@ -3,6 +3,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import pandas as pd
+
 from pydantic import ValidationError
 
 from backend.history_store import import_csv, init_db, manager_tendencies
@@ -10,6 +12,8 @@ from backend.data_sources.fantasypros import _parse_adp_player_name
 from backend.data_sources.source_diagnostics import table_has_keywords
 from backend.pipelines.stats import normalize_boost_data
 from backend.settings import LeagueConfig
+from backend.refresh_data import _validate_final_rows, calculate_vor
+from backend.utils import create_hybrid_slug_map_with_audit
 
 
 BASE_CONFIG = {
@@ -49,6 +53,12 @@ class ConfigAndHistoryTests(unittest.TestCase):
         parsed = LeagueConfig(**config)
         self.assertEqual(parsed.league_type, "guillotine")
         self.assertEqual(parsed.weight_floor, 0.6)
+
+
+    def test_market_weights_are_bounded(self):
+        config = dict(BASE_CONFIG, weight_superflex_ecr=0.35, weight_dynasty_ecr=0.2)
+        with self.assertRaises(ValidationError):
+            LeagueConfig(**config)
 
     def test_legacy_boost_keys_are_normalized(self):
         boost_data = normalize_boost_data(
@@ -114,6 +124,96 @@ class ConfigAndHistoryTests(unittest.TestCase):
             self.assertEqual(rows[0]["manager"], "Bills Fan")
             self.assertEqual(rows[0]["favorite_nfl_teams"], [("BUF", 1)])
 
+
+
+    def test_hybrid_slug_map_returns_reviewable_audit(self):
+        mapped, audit_rows = create_hybrid_slug_map_with_audit(
+            {
+                "direct-player": [1.0],
+                "aaron-jones-sr": [2.0],
+                "jamarr-chase-cin": [3.0],
+                "stray-source": [4.0],
+            },
+            ["direct-player", "aaron-jones", "jamarr-chase", "missing-player"],
+        )
+        self.assertEqual(mapped["direct-player"], [1.0])
+        self.assertEqual(mapped["aaron-jones"], [2.0])
+        self.assertEqual(mapped["jamarr-chase"], [3.0])
+
+        by_type = {}
+        for row in audit_rows:
+            by_type[row["match_type"]] = by_type.get(row["match_type"], 0) + 1
+        self.assertEqual(by_type["direct"], 1)
+        self.assertEqual(by_type["alias"], 1)
+        self.assertEqual(by_type["fuzzy"], 1)
+        self.assertEqual(by_type["unmatched_canonical"], 1)
+        self.assertEqual(by_type["unmatched_source"], 1)
+        missing_row = next(row for row in audit_rows if row["canonical_slug"] == "missing-player")
+        self.assertEqual(missing_row["match_type"], "unmatched_canonical")
+        self.assertFalse(missing_row["needs_review"])
+
+
+    def test_superflex_vor_uses_lineup_slots(self):
+        config = dict(BASE_CONFIG)
+        config["teams"] = 2
+        config["roster"] = {
+            "QB": 1,
+            "RB": 1,
+            "WR": 1,
+            "TE": 0,
+            "FLEX": 1,
+            "SUPERFLEX": 1,
+            "K": 0,
+            "DEF": 0,
+        }
+        parsed = LeagueConfig(**config)
+        players = pd.DataFrame(
+            [
+                {"name": "QB1", "position": "QB", "expected_ppg": 30.0},
+                {"name": "QB2", "position": "QB", "expected_ppg": 20.0},
+                {"name": "QB3", "position": "QB", "expected_ppg": 19.0},
+                {"name": "QB4", "position": "QB", "expected_ppg": 18.0},
+                {"name": "RB1", "position": "RB", "expected_ppg": 22.0},
+                {"name": "RB2", "position": "RB", "expected_ppg": 16.0},
+                {"name": "RB3", "position": "RB", "expected_ppg": 15.0},
+                {"name": "WR1", "position": "WR", "expected_ppg": 21.0},
+                {"name": "WR2", "position": "WR", "expected_ppg": 14.0},
+                {"name": "WR3", "position": "WR", "expected_ppg": 13.0},
+            ]
+        )
+
+        with_vor, replacement_levels = calculate_vor(players, parsed)
+        by_name = with_vor.set_index("name")
+
+        self.assertEqual(replacement_levels["QB"], 20.0)
+        self.assertEqual(replacement_levels["SUPERFLEX"], 18.0)
+        self.assertEqual(replacement_levels["FLEX"], 13.0)
+        self.assertEqual(by_name.loc["QB1", "vor"], 12.0)
+        self.assertEqual(by_name.loc["RB1", "vor"], 9.0)
+        self.assertEqual(by_name.loc["WR1", "vor"], 8.0)
+
+    def test_final_row_validator_catches_integrity_errors(self):
+        valid_rows = [
+            {
+                "id": index,
+                "name": f"Player {index}",
+                "team": "BUF",
+                "position": "RB" if index <= 25 else "WR",
+                "adp": float(index),
+                "vor": 50.0 - index,
+                "bye": 7,
+                "ppg": 20.0 - (index / 10),
+            }
+            for index in range(1, 301)
+        ]
+        self.assertTrue(_validate_final_rows(valid_rows, "test")["ok"])
+
+        broken_rows = [dict(row) for row in valid_rows]
+        broken_rows[0]["id"] = 99
+        broken_rows[1]["bye"] = 0
+        validation = _validate_final_rows(broken_rows, "test")
+        self.assertFalse(validation["ok"])
+        self.assertGreaterEqual(len(validation["issues"]), 2)
 
 if __name__ == "__main__":
     unittest.main()

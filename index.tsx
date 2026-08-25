@@ -2,9 +2,9 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 
 type Position = 'QB' | 'RB' | 'WR' | 'TE' | 'K' | 'DEF';
-type FlexPosition = Position | 'FLEX';
+type RosterSlot = Position | 'FLEX' | 'SUPERFLEX';
 type Owner = 'me' | 'other';
-type ViewType = 'classic' | 'cockpit' | 'board' | 'byes';
+type ViewType = 'classic' | 'cockpit' | 'board' | 'byes' | 'picks';
 type SortByType = 'recommendation' | 'adp' | 'vor';
 type FilterByType = 'ALL' | 'FLEX' | Position;
 type Concern = 'injury' | 'role' | 'legal' | 'playoff' | 'bye' | 'fade';
@@ -18,6 +18,21 @@ interface Player {
     vor: number;
     ppg: number;
     bye: number;
+    redraftEcr?: number | null;
+    superflexEcr?: number | null;
+    dynastyEcr?: number | null;
+    fairRank?: number;
+    marketDelta?: number;
+    marketLabel?: string;
+    lateRoundLabel?: string;
+    joannaNote?: string;
+    jeffNote?: string;
+    status?: string | null;
+    riskTags?: string;
+    week1Projection?: number;
+    seasonProjection?: number;
+    projectedGames?: number;
+    riskScore?: number;
 }
 
 interface LeagueProfile {
@@ -26,8 +41,10 @@ interface LeagueProfile {
     file: string;
     teams: number;
     mode: 'redraft' | 'guillotine' | 'champions';
-    roster: Record<FlexPosition, number>;
+    roster: Record<Position, number>;
+    lineup?: Partial<Record<RosterSlot, number>>;
     notes: string;
+    publicNotes: string;
 }
 
 interface DraftPick {
@@ -64,6 +81,7 @@ interface ScoreComponents {
     rosterFit: number;
     byeRisk: number;
     historyAdjustment: number;
+    dataRiskPenalty: number;
     manualAdjustment: number;
     concernPenalty: number;
 }
@@ -80,11 +98,14 @@ interface DataStatus {
     generatedAt?: string;
     label?: string;
     message?: string;
+    files?: Record<string, string>;
+    sources?: Record<string, string>;
 }
 
 const POSITIONS: Position[] = ['QB', 'RB', 'WR', 'TE', 'K', 'DEF'];
 const FILTERS: FilterByType[] = ['ALL', 'FLEX', ...POSITIONS];
 const STORAGE_PREFIX = 'draft-assistant-v2';
+const DEFAULT_LEAGUE_ID = 'passion-guillotine-1-jeffreys';
 
 const LEAGUES: LeagueProfile[] = [
     {
@@ -93,8 +114,9 @@ const LEAGUES: LeagueProfile[] = [
         file: 'players.json',
         teams: 12,
         mode: 'redraft',
-        roster: { QB: 2, RB: 4, WR: 4, TE: 1, FLEX: 0, K: 1, DEF: 1 },
+        roster: { QB: 2, RB: 4, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: 'Current generated player pool.',
+        publicNotes: 'Draft board.',
     },
     {
         id: 'vany',
@@ -102,8 +124,9 @@ const LEAGUES: LeagueProfile[] = [
         file: 'vany.json',
         teams: 12,
         mode: 'redraft',
-        roster: { QB: 1, RB: 4, WR: 4, TE: 1, FLEX: 0, K: 1, DEF: 1 },
+        roster: { QB: 1, RB: 4, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: 'Back to Yahoo this year; local history can learn team bias.',
+        publicNotes: 'Yahoo draft board.',
     },
     {
         id: 'passion',
@@ -111,17 +134,41 @@ const LEAGUES: LeagueProfile[] = [
         file: 'passion.json',
         teams: 14,
         mode: 'redraft',
-        roster: { QB: 1, RB: 3, WR: 4, TE: 1, FLEX: 0, K: 1, DEF: 1 },
+        roster: { QB: 1, RB: 3, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: '14-team redraft profile.',
+        publicNotes: 'League draft board.',
     },
     {
         id: 'guillotine',
-        label: 'Guillotine',
+        label: 'Guillotine (Legacy)',
         file: 'guillotine.json',
         teams: 18,
         mode: 'guillotine',
-        roster: { QB: 1, RB: 4, WR: 4, TE: 1, FLEX: 0, K: 1, DEF: 1 },
+        roster: { QB: 1, RB: 4, WR: 4, TE: 1, K: 1, DEF: 1 },
         notes: 'Floor and survival matter more than ceiling.',
+        publicNotes: 'Draft board.',
+    },
+    {
+        id: 'passion-guillotine-1-jeffreys',
+        label: 'Passion Guillotine I - Jeffreys',
+        file: 'passion-guillotine-1.json',
+        teams: 18,
+        mode: 'guillotine',
+        roster: { QB: 1, RB: 5, WR: 5, TE: 2, K: 0, DEF: 0 },
+        lineup: { QB: 1, RB: 2, WR: 2, TE: 1, FLEX: 2 },
+        notes: 'Yahoo league 602515. Separate local session for Jeffreys.',
+        publicNotes: 'Passion Guillotine I draft board.',
+    },
+    {
+        id: 'passion-guillotine-1-joanna',
+        label: 'Passion Guillotine I - Joanna',
+        file: 'passion-guillotine-1.json',
+        teams: 18,
+        mode: 'guillotine',
+        roster: { QB: 1, RB: 5, WR: 5, TE: 2, K: 0, DEF: 0 },
+        lineup: { QB: 1, RB: 2, WR: 2, TE: 1, FLEX: 2 },
+        notes: 'Yahoo league 602515. Separate local session for Blitz Squad Joanna.',
+        publicNotes: 'Passion Guillotine I draft board.',
     },
     {
         id: 'champions',
@@ -129,8 +176,10 @@ const LEAGUES: LeagueProfile[] = [
         file: 'champions.json',
         teams: 8,
         mode: 'champions',
-        roster: { QB: 3, RB: 5, WR: 6, TE: 2, FLEX: 0, K: 1, DEF: 1 },
-        notes: 'Live in-person, superflex-like, multi-year context.',
+        roster: { QB: 2, RB: 5, WR: 7, TE: 2, K: 1, DEF: 1 },
+        lineup: { QB: 1, RB: 3, WR: 4, TE: 1, FLEX: 2, SUPERFLEX: 1, K: 1, DEF: 1 },
+        notes: 'Live in-person: 1 QB, 3 RB, 4 WR, TE, 2 flex, 1 superflex, K, DEF, 6 bench.',
+        publicNotes: 'Live draft board.',
     },
 ];
 
@@ -166,6 +215,10 @@ const getPositionColor = (pos: Position) => `var(--pos-${pos.toLowerCase()})`;
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 const round = (value: number) => Number(value.toFixed(2));
 
+function isPublicView(view: ViewType) {
+    return view === 'classic' || view === 'picks';
+}
+
 async function fetchPlayers(profile: LeagueProfile): Promise<Player[]> {
     const res = await fetch(`./${profile.file}`);
     if (!res.ok) throw new Error(`Failed to fetch ${profile.file}`);
@@ -190,6 +243,12 @@ function selectedLeagueKey() {
     return `${STORAGE_PREFIX}:selected-league`;
 }
 
+function getInitialLeagueId() {
+    const saved = window.localStorage.getItem(selectedLeagueKey());
+    if (saved && LEAGUES.some(league => league.id === saved)) return saved;
+    return DEFAULT_LEAGUE_ID;
+}
+
 function loadSession(leagueId: string): DraftSession {
     try {
         const raw = window.localStorage.getItem(sessionKey(leagueId));
@@ -209,6 +268,10 @@ function draftedMap(drafted: DraftPick[]) {
     return new Map(drafted.map(pick => [pick.playerId, pick]));
 }
 
+function renumberPicks(picks: DraftPick[]) {
+    return picks.map((pick, index) => ({ ...pick, pick: index + 1 }));
+}
+
 function playerMatches(player: Player, query: string) {
     const q = query.trim().toLowerCase();
     if (!q) return true;
@@ -221,6 +284,25 @@ function isFlexPosition(pos: Position) {
     return pos === 'RB' || pos === 'WR' || pos === 'TE';
 }
 
+
+function formatLineup(lineup: Partial<Record<RosterSlot, number>>) {
+    const labels: Record<RosterSlot, string> = {
+        QB: 'QB',
+        RB: 'RB',
+        WR: 'WR',
+        TE: 'TE',
+        FLEX: 'W/R/T',
+        SUPERFLEX: 'Q/W/R/T',
+        K: 'K',
+        DEF: 'DEF',
+    };
+    return (['QB', 'WR', 'RB', 'TE', 'FLEX', 'SUPERFLEX', 'K', 'DEF'] as RosterSlot[])
+        .flatMap(slot => {
+            const count = lineup[slot] ?? 0;
+            return count > 0 ? [`${count} ${labels[slot]}`] : [];
+        })
+        .join(', ');
+}
 function rosterCounts(players: Player[], picks: DraftPick[]) {
     const counts = Object.fromEntries(POSITIONS.map(pos => [pos, 0])) as Record<Position, number>;
     const pickedIds = new Set(picks.filter(pick => pick.owner === 'me').map(pick => pick.playerId));
@@ -253,21 +335,55 @@ function getRosterFit(profile: LeagueProfile, counts: Record<Position, number>, 
     if ((player.position === 'K' || player.position === 'DEF') && currentPick < profile.teams * 10) {
         return -2.5;
     }
+    if (profile.id === 'champions' && player.position === 'QB') {
+        if (count < 2) return 2.6 - count * 0.45;
+        if (count === 2 && currentPick >= profile.teams * 9) return 0.45;
+        if (count >= 3) return -1.4;
+    }
     if (count < target) return 2.4 - count * 0.35;
     if (isFlexPosition(player.position) && count < target + 2) return 0.65;
     if (count >= target + 3) return -1.2;
     return 0;
 }
 
+
+function getMarketRank(profile: LeagueProfile, player: Player) {
+    if (profile.id === 'champions') {
+        return player.superflexEcr ?? player.dynastyEcr ?? player.adp;
+    }
+    return player.adp;
+}
+
+function getMarketLabel(profile: LeagueProfile) {
+    return profile.id === 'champions' ? 'SF' : 'ADP';
+}
 function getByeRisk(myByes: Record<number, Player[]>, player: Player) {
     const sameBye = myByes[player.bye] ?? [];
     const samePosition = sameBye.filter(p => p.position === player.position).length;
     return -(Math.max(0, sameBye.length - 1) * 0.75 + samePosition * 0.45);
 }
 
-function getTierDropoff(player: Player, available: Player[], nextPick: number) {
+function getDataRiskPenalty(profile: LeagueProfile, player: Player, currentPick: number) {
+    if (profile.mode !== 'guillotine') return 0;
+    const tags = `${player.status ?? ''} ${player.riskTags ?? ''}`.toLowerCase();
+    let penalty = 0;
+
+    if (player.status && player.status !== 'NA') penalty -= 0.45;
+    if (/(^|\s)(d|out|ir)(;|\s|$)|pup|not practicing|expected out|miss about|miss approximately|miss two months/.test(tags)) penalty -= 1.7;
+    if (/legal|discipline|suspension|civil|off[- ]field/.test(tags)) penalty -= 2.2;
+    if (/groin|psoas|hip|hamstring|ankle|soft tissue|knee|acl|mcl|achilles|toe|foot|calf|quad|quadriceps|shoulder|lower leg|lower body|abdomen|adductor/.test(tags)) penalty -= 0.75;
+    if (/week 1 uncertain|not guaranteed|ramp|returning|limited|contact\/ramp pending/.test(tags)) penalty -= 0.55;
+    if ((player.projectedGames ?? 17) < 16 || tags.includes('projected games')) penalty -= 0.3;
+    if (player.riskScore) penalty -= Math.min(1.3, player.riskScore * 0.35);
+
+    penalty *= 1.35;
+    if (currentPick <= profile.teams * 2) penalty *= 1.15;
+    return round(clamp(penalty, -5, 0));
+}
+
+function getTierDropoff(profile: LeagueProfile, player: Player, available: Player[], nextPick: number) {
     const samePosition = available.filter(p => p.position === player.position && p.id !== player.id);
-    const laterOptions = samePosition.filter(p => p.adp > nextPick);
+    const laterOptions = samePosition.filter(p => getMarketRank(profile, p) > nextPick);
     const bestLaterVor = laterOptions.length ? Math.max(...laterOptions.map(p => p.vor)) : 0;
     return Math.max(0, player.vor - bestLaterVor);
 }
@@ -282,17 +398,19 @@ function scorePlayer(
     adjustment: PlayerAdjustment | undefined
 ): Recommendation {
     const nextPick = currentPick + profile.teams;
-    const adpGap = currentPick - player.adp;
-    const tierDropoff = getTierDropoff(player, available, nextPick);
+    const marketRank = getMarketRank(profile, player);
+    const adpGap = currentPick - marketRank;
+    const tierDropoff = getTierDropoff(profile, player, available, nextPick);
     const concerns = adjustment?.concerns ?? [];
     const components: ScoreComponents = {
         vor: player.vor,
         adpValue: clamp(adpGap * 0.25, -3, 4),
         tierDropoff,
-        availabilityNextPick: clamp((nextPick - player.adp) / 8, -2, 5),
+        availabilityNextPick: clamp((nextPick - marketRank) / 8, -2, 5),
         rosterFit: getRosterFit(profile, myRoster, player, currentPick),
         byeRisk: getByeRisk(myByes, player),
         historyAdjustment: getLeagueHistoryAdjustment(profile, player),
+        dataRiskPenalty: getDataRiskPenalty(profile, player, currentPick),
         manualAdjustment: adjustment?.manual ?? 0,
         concernPenalty: concerns.length * -0.85,
     };
@@ -304,6 +422,7 @@ function scorePlayer(
         components.rosterFit +
         components.byeRisk +
         components.historyAdjustment +
+        components.dataRiskPenalty +
         components.manualAdjustment +
         components.concernPenalty;
 
@@ -325,7 +444,14 @@ function buildReasons(
     concerns: Concern[]
 ) {
     const reasons: string[] = [];
-    if (components.adpValue >= 1.5) reasons.push(`ADP value: ${round(components.adpValue)} points past market.`);
+    if (player.marketLabel) {
+        const lateTag = player.lateRoundLabel ? ` / ${player.lateRoundLabel}` : '';
+        reasons.push(`${player.marketLabel}${lateTag}.`);
+    }
+    if (player.week1Projection) reasons.push(`Week 1 projection: ${round(player.week1Projection)}.`);
+    if (player.riskTags) reasons.push(`Risk/context: ${player.riskTags}.`);
+    if (components.dataRiskPenalty <= -1) reasons.push(`Guillotine uncertainty discount: ${round(components.dataRiskPenalty)}.`);
+    if (components.adpValue >= 1.5) reasons.push(`${getMarketLabel(profile)} value: ${round(components.adpValue)} points past market.`);
     if (components.tierDropoff >= 1.5) reasons.push(`Tier cliff: ${round(components.tierDropoff)} VOR drop if this ${player.position} tier dries up.`);
     if (components.availabilityNextPick >= 2) reasons.push('Likely gone before your next estimated pick.');
     if (components.rosterFit >= 1.5) reasons.push(`Roster fit: fills a ${player.position} need.`);
@@ -334,8 +460,8 @@ function buildReasons(
     if (components.manualAdjustment < 0) reasons.push(`Manual fade: ${round(components.manualAdjustment)}.`);
     if (components.byeRisk < -0.5) reasons.push(`Bye risk: Week ${player.bye} is getting crowded.`);
     if (concerns.length) reasons.push(`Concern flags: ${concerns.map(c => CONCERN_LABELS[c]).join(', ')}.`);
-    if (!reasons.length) reasons.push('Best balanced value across VOR, ADP, roster, and tier risk.');
-    return reasons.slice(0, 4);
+    if (!reasons.length) reasons.push('Best balanced value across VOR, market rank, roster, and tier risk.');
+    return reasons.slice(0, 5);
 }
 
 function buttonStyle(active = false): React.CSSProperties {
@@ -383,6 +509,9 @@ const Header: React.FC<{
 }) => {
     const inputRef = useRef<HTMLInputElement | null>(null);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
+    const publicView = isPublicView(session.view);
+    const headerTitle = session.view === 'picks' ? 'Drafted players' : session.view === 'classic' ? 'Draft board' : 'Draft cockpit';
+    const headerNote = publicView ? profile.publicNotes : profile.notes;
 
     useEffect(() => {
         const onKey = (e: KeyboardEvent) => {
@@ -401,9 +530,9 @@ const Header: React.FC<{
         <header className="header">
             <div className="headerTop">
                 <div>
-                    <div className="eyebrow">{session.view === 'classic' ? 'Draft board' : 'Draft cockpit'}</div>
+                    <div className="eyebrow">{headerTitle}</div>
                     <h1>Pick #{currentPick}</h1>
-                    <div className="muted">{profile.notes}</div>
+                    <div className="muted">{headerNote}</div>
                 </div>
                 <div className="headerActions">
                     <select value={leagueId} onChange={e => onLeagueChange(e.target.value)} aria-label="League">
@@ -460,6 +589,12 @@ const Header: React.FC<{
                         >
                             Byes
                         </button>
+                        <button
+                            style={buttonStyle(session.view === 'picks')}
+                            onClick={() => updateSession({ view: 'picks' })}
+                        >
+                            Drafted
+                        </button>
                     </div>
                 </div>
             </div>
@@ -489,7 +624,7 @@ const Header: React.FC<{
                         value={session.sortBy}
                         onChange={e => updateSession({ sortBy: e.target.value as SortByType })}
                     >
-                        <option value="recommendation">{session.view === 'classic' ? 'Rank' : 'Recommendation'}</option>
+                        <option value="recommendation">{publicView ? 'Rank' : 'Recommendation'}</option>
                         <option value="adp">ADP</option>
                         <option value="vor">VOR</option>
                     </select>
@@ -522,6 +657,7 @@ const Header: React.FC<{
 };
 
 const RecommendationCard: React.FC<{
+    profile: LeagueProfile;
     rec: Recommendation;
     rank: number;
     featured?: boolean;
@@ -529,9 +665,12 @@ const RecommendationCard: React.FC<{
     adjustment?: PlayerAdjustment;
     setAdjustment: (id: number, patch: Partial<PlayerAdjustment>) => void;
     toggleConcern: (id: number, concern: Concern) => void;
-}> = ({ rec, rank, featured = false, onDraft, adjustment, setAdjustment, toggleConcern }) => {
+}> = ({ profile, rec, rank, featured = false, onDraft, adjustment, setAdjustment, toggleConcern }) => {
     const { player, components } = rec;
     const concerns = adjustment?.concerns ?? [];
+    const marketClass = player.marketLabel
+        ? `marketTag market-${player.marketLabel.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+        : 'marketTag';
     return (
         <section className={featured ? 'recCard featured' : 'recCard'}>
             <div className="recHeader">
@@ -540,8 +679,15 @@ const RecommendationCard: React.FC<{
                     <h2>{player.name}</h2>
                     <div className="muted">
                         <span style={{ color: getPositionColor(player.position) }}>{player.position}</span>
-                        {' '} {player.team} · Bye {player.bye} · ADP {player.adp}
+                        {' '} {player.team} · Bye {player.bye} · {getMarketLabel(profile)} {getMarketRank(profile, player)}
                     </div>
+                    {(player.marketLabel || player.lateRoundLabel || player.status) && (
+                        <div className="tagRow">
+                            {player.marketLabel && <span className={marketClass}>{player.marketLabel}</span>}
+                            {player.lateRoundLabel && <span className="marketTag subtleTag">{player.lateRoundLabel}</span>}
+                            {player.status && <span className="marketTag riskTag">{player.status}</span>}
+                        </div>
+                    )}
                 </div>
                 <div className="scoreBlock">
                     <div className="score">{rec.totalScore}</div>
@@ -551,14 +697,31 @@ const RecommendationCard: React.FC<{
             <div className="reasonList">
                 {rec.reasons.map(reason => <div key={reason}>{reason}</div>)}
             </div>
+            {(player.joannaNote || player.jeffNote) && (
+                <div className="noteGrid">
+                    {player.joannaNote && (
+                        <div className="noteBlock">
+                            <strong>Joanna</strong>
+                            <span>{player.joannaNote}</span>
+                        </div>
+                    )}
+                    {player.jeffNote && (
+                        <div className="noteBlock">
+                            <strong>Jeffreys</strong>
+                            <span>{player.jeffNote}</span>
+                        </div>
+                    )}
+                </div>
+            )}
             <div className="componentGrid">
                 <Metric label="VOR" value={components.vor} />
-                <Metric label="ADP" value={components.adpValue} />
+                <Metric label={getMarketLabel(profile)} value={components.adpValue} />
                 <Metric label="Tier" value={components.tierDropoff} />
                 <Metric label="Gone" value={components.availabilityNextPick} />
                 <Metric label="Roster" value={components.rosterFit} />
                 <Metric label="Bye" value={components.byeRisk} />
                 <Metric label="History" value={components.historyAdjustment} />
+                <Metric label="Risk" value={components.dataRiskPenalty} />
                 <Metric label="Manual" value={components.manualAdjustment + components.concernPenalty} />
             </div>
             <div className="cardActions">
@@ -593,11 +756,12 @@ const Metric: React.FC<{ label: string; value: number }> = ({ label, value }) =>
 );
 
 const TopDrawer: React.FC<{
+    profile: LeagueProfile;
     recommendations: Recommendation[];
     open: boolean;
     setOpen: (open: boolean) => void;
     onDraft: (id: number) => void;
-}> = ({ recommendations, open, setOpen, onDraft }) => (
+}> = ({ profile, recommendations, open, setOpen, onDraft }) => (
     <section className="panel">
         <button className="drawerButton" onClick={() => setOpen(!open)}>
             {open ? 'Hide Top 10' : 'Show Top 10 backups'}
@@ -609,7 +773,7 @@ const TopDrawer: React.FC<{
                         <div className="rowRank">#{index + 1}</div>
                         <div>
                             <strong>{rec.player.name}</strong>
-                            <div className="muted">{rec.player.team} · {rec.player.position} · ADP {rec.player.adp}</div>
+                            <div className="muted">{rec.player.team} · {rec.player.position} · {getMarketLabel(profile)} {getMarketRank(profile, rec.player)}</div>
                         </div>
                         <div className="score">{rec.totalScore}</div>
                         <button onClick={() => onDraft(rec.player.id)}>Draft</button>
@@ -621,11 +785,12 @@ const TopDrawer: React.FC<{
 );
 
 const BoardView: React.FC<{
+    profile: LeagueProfile;
     rows: Recommendation[];
     adjustments: Record<string, PlayerAdjustment>;
     onDraft: (id: number) => void;
     setAdjustment: (id: number, patch: Partial<PlayerAdjustment>) => void;
-}> = ({ rows, adjustments, onDraft, setAdjustment }) => (
+}> = ({ profile, rows, adjustments, onDraft, setAdjustment }) => (
     <main className="stack">
         {rows.map(rec => {
             const player = rec.player;
@@ -638,7 +803,7 @@ const BoardView: React.FC<{
                         <div className="muted">{player.team} · {player.position} · Bye {player.bye}</div>
                     </div>
                     <Metric label="Score" value={rec.totalScore} />
-                    <Metric label="ADP" value={player.adp} />
+                    <Metric label={getMarketLabel(profile)} value={getMarketRank(profile, player)} />
                     <Metric label="VOR" value={player.vor} />
                     <button onClick={() => onDraft(player.id)}>Draft</button>
                     <button onClick={() => setAdjustment(player.id, { avoid: !adjustment?.avoid })}>
@@ -652,9 +817,10 @@ const BoardView: React.FC<{
 );
 
 const ClassicBoardView: React.FC<{
+    profile: LeagueProfile;
     rows: Recommendation[];
     onDraft: (id: number) => void;
-}> = ({ rows, onDraft }) => (
+}> = ({ profile, rows, onDraft }) => (
     <main className="classicBoard">
         <div className="classicHeader">
             <div>Rank</div>
@@ -679,7 +845,7 @@ const ClassicBoardView: React.FC<{
                         </span>
                     </div>
                     <div>{player.bye}</div>
-                    <div>{player.adp}</div>
+                    <div>{getMarketRank(profile, player)}</div>
                     <div>{player.vor.toFixed(2)}</div>
                     <button onClick={() => onDraft(player.id)}>Draft</button>
                 </div>
@@ -689,6 +855,50 @@ const ClassicBoardView: React.FC<{
     </main>
 );
 
+
+const DraftLogView: React.FC<{
+    picks: DraftPick[];
+    playerById: Map<number, Player>;
+    onUndoPick: (pick: number) => void;
+}> = ({ picks, playerById, onUndoPick }) => {
+    const rows = [...picks].sort((a, b) => b.pick - a.pick);
+    return (
+        <main className="draftLog">
+            <div className="draftHeader">
+                <div>Pick</div>
+                <div>Player</div>
+                <div>Manager</div>
+                <div>Team</div>
+                <div>Pos</div>
+                <div>Bye</div>
+                <div>Owner</div>
+                <div />
+            </div>
+            {rows.map(pick => {
+                const player = playerById.get(pick.playerId);
+                return (
+                    <div key={`${pick.pick}-${pick.playerId}-${pick.at}`} className="draftRow">
+                        <div className="classicRank">#{pick.pick}</div>
+                        <div className="classicPlayer">{player?.name ?? 'Unknown player'}</div>
+                        <div>{pick.manager}</div>
+                        <div>{player?.team ?? '-'}</div>
+                        <div>
+                            {player ? (
+                                <span className="positionPill" style={{ borderColor: getPositionColor(player.position) }}>
+                                    {player.position}
+                                </span>
+                            ) : '-'}
+                        </div>
+                        <div>{player?.bye ?? '-'}</div>
+                        <div>{pick.owner === 'me' ? 'Me' : 'Other'}</div>
+                        <button onClick={() => onUndoPick(pick.pick)}>Undo</button>
+                    </div>
+                );
+            })}
+            {!rows.length && <div className="empty">No picks marked yet.</div>}
+        </main>
+    );
+};
 const ByeWeekView: React.FC<{ byes: Record<number, Player[]> }> = ({ byes }) => {
     const weeks = Object.keys(byes).map(Number).sort((a, b) => a - b);
     if (!weeks.length) return <div className="empty">No players drafted for your roster yet.</div>;
@@ -718,6 +928,8 @@ const RosterSnapshot: React.FC<{
 }> = ({ profile, counts, picks }) => (
     <aside className="panel rosterPanel">
         <h3>My roster</h3>
+        {profile.lineup && <div className="muted">Lineup: {formatLineup(profile.lineup)}</div>}
+        <div className="muted">Soft draft targets</div>
         <div className="rosterGrid">
             {POSITIONS.map(pos => (
                 <div key={pos}>
@@ -730,7 +942,19 @@ const RosterSnapshot: React.FC<{
     </aside>
 );
 
-const DataStatusBanner: React.FC<{ status: DataStatus | null }> = ({ status }) => {
+function isPassionGuillotineProfile(profile: LeagueProfile) {
+    return profile.file === 'passion-guillotine-1.json';
+}
+
+function getSourceSummary(profile: LeagueProfile) {
+    if (isPassionGuillotineProfile(profile)) {
+        return 'Yahoo league 602515 · Yahoo ADP/projections · manual news-risk overlay';
+    }
+    return 'Legacy baseline. Use the Jeffreys or Joanna Passion Guillotine I profile for Wednesday.';
+}
+
+const DataStatusBanner: React.FC<{ status: DataStatus | null; profile: LeagueProfile }> = ({ status, profile }) => {
+    const isPassion = isPassionGuillotineProfile(profile);
     if (!status) {
         return (
             <section className="dataBanner warning">
@@ -739,18 +963,23 @@ const DataStatusBanner: React.FC<{ status: DataStatus | null }> = ({ status }) =
             </section>
         );
     }
-    const isReady = status.status === 'draft-ready';
+    const isReady = status.status === 'draft-ready' && isPassion;
+    const heading = !isPassion
+        ? 'Wrong profile for Wednesday'
+        : isReady
+            ? 'Passion data ready'
+            : 'Passion data needs refresh';
     return (
         <section className={`dataBanner ${isReady ? 'ready' : 'warning'}`}>
-            <strong>{isReady ? 'Data draft-ready' : 'Data needs refresh'}</strong>
+            <strong>{heading}</strong>
             <span>{status.label ?? status.generatedAt ?? 'No generation date'}.</span>
-            {status.message && <span>{status.message}</span>}
+            <span className="dataDetail">{getSourceSummary(profile)}</span>
         </section>
     );
 };
 
 const App: React.FC = () => {
-    const initialLeagueId = window.localStorage.getItem(selectedLeagueKey()) ?? 'default';
+    const initialLeagueId = getInitialLeagueId();
     const [leagueId, setLeagueId] = useState(initialLeagueId);
     const profile = LEAGUES.find(league => league.id === leagueId) ?? LEAGUES[0];
     const [session, setSession] = useState<DraftSession>(() => loadSession(profile.id));
@@ -803,6 +1032,7 @@ const App: React.FC = () => {
         fetchDataStatus().then(setDataStatus);
     }, []);
 
+    const playerById = useMemo(() => new Map(allPlayers.map(player => [player.id, player])), [allPlayers]);
     const pickedMap = useMemo(() => draftedMap(session.drafted), [session.drafted]);
     const available = useMemo(
         () => allPlayers.filter(player => !pickedMap.has(player.id)),
@@ -854,7 +1084,7 @@ const App: React.FC = () => {
             );
 
         return scored.sort((a, b) => {
-            if (session.sortBy === 'adp') return a.player.adp - b.player.adp;
+            if (session.sortBy === 'adp') return getMarketRank(profile, a.player) - getMarketRank(profile, b.player);
             if (session.sortBy === 'vor') return b.player.vor - a.player.vor;
             return b.totalScore - a.totalScore;
         });
@@ -868,6 +1098,7 @@ const App: React.FC = () => {
         session.adjustments,
         session.filterBy,
         session.sortBy,
+        session.view,
     ]);
 
     const setAdjustment = (id: number, patch: Partial<PlayerAdjustment>) => {
@@ -932,7 +1163,7 @@ const App: React.FC = () => {
             if (!last) return prev;
             return {
                 ...prev,
-                drafted: prev.drafted.slice(0, -1),
+                drafted: renumberPicks(prev.drafted.slice(0, -1)),
                 undone: [last, ...prev.undone],
             };
         });
@@ -950,6 +1181,18 @@ const App: React.FC = () => {
         });
     };
 
+
+    const undoPick = (pickNumber: number) => {
+        setSession(prev => {
+            const removed = prev.drafted.find(pick => pick.pick === pickNumber);
+            if (!removed) return prev;
+            return {
+                ...prev,
+                drafted: renumberPicks(prev.drafted.filter(pick => pick.pick !== pickNumber)),
+                undone: [removed, ...prev.undone],
+            };
+        });
+    };
     const resetDraft = () => {
         if (window.confirm('Reset this league draft session?')) {
             setSession(defaultSessionForLeague(profile.id));
@@ -990,7 +1233,7 @@ const App: React.FC = () => {
 
     return (
         <>
-            <DataStatusBanner status={dataStatus} />
+            {!isPublicView(session.view) && <DataStatusBanner status={dataStatus} profile={profile} />}
             <Header
                 profile={profile}
                 leagueId={leagueId}
@@ -1012,6 +1255,7 @@ const App: React.FC = () => {
 
             {session.view === 'classic' && (
                 <ClassicBoardView
+                    profile={profile}
                     rows={visibleRows}
                     onDraft={draftPlayer}
                 />
@@ -1022,6 +1266,7 @@ const App: React.FC = () => {
                     <div className="stack">
                         {primary ? (
                             <RecommendationCard
+                                profile={profile}
                                 rec={primary}
                                 rank={1}
                                 featured
@@ -1037,6 +1282,7 @@ const App: React.FC = () => {
                             {backups.map((rec, index) => (
                                 <RecommendationCard
                                     key={rec.player.id}
+                                    profile={profile}
                                     rec={rec}
                                     rank={index + 2}
                                     onDraft={draftPlayer}
@@ -1047,6 +1293,7 @@ const App: React.FC = () => {
                             ))}
                         </div>
                         <TopDrawer
+                            profile={profile}
                             recommendations={topTen}
                             open={session.showTop10}
                             setOpen={showTop10 => updateSession({ showTop10 })}
@@ -1059,6 +1306,7 @@ const App: React.FC = () => {
 
             {session.view === 'board' && (
                 <BoardView
+                    profile={profile}
                     rows={visibleRows}
                     adjustments={session.adjustments}
                     onDraft={draftPlayer}
@@ -1066,6 +1314,14 @@ const App: React.FC = () => {
                 />
             )}
 
+
+            {session.view === 'picks' && (
+                <DraftLogView
+                    picks={session.drafted}
+                    playerById={playerById}
+                    onUndoPick={undoPick}
+                />
+            )}
             {session.view === 'byes' && <ByeWeekView byes={myByes} />}
         </>
     );
