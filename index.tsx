@@ -243,6 +243,10 @@ function selectedLeagueKey() {
     return `${STORAGE_PREFIX}:selected-league`;
 }
 
+function defaultManagerNameFor(owner: Owner) {
+    return owner === 'me' ? 'Me' : '';
+}
+
 function getInitialLeagueId() {
     const saved = window.localStorage.getItem(selectedLeagueKey());
     if (saved && LEAGUES.some(league => league.id === saved)) return saved;
@@ -512,6 +516,12 @@ const Header: React.FC<{
     const publicView = isPublicView(session.view);
     const headerTitle = session.view === 'picks' ? 'Drafted players' : session.view === 'classic' ? 'Draft board' : 'Draft cockpit';
     const headerNote = publicView ? profile.publicNotes : profile.notes;
+    const handlePickingForChange = (nextOwner: Owner) => {
+        updateSession({
+            pickingFor: nextOwner,
+            currentManager: defaultManagerNameFor(nextOwner),
+        });
+    };
 
     useEffect(() => {
         const onKey = (e: KeyboardEvent) => {
@@ -604,7 +614,7 @@ const Header: React.FC<{
                     Picking for
                     <select
                         value={session.pickingFor}
-                        onChange={e => updateSession({ pickingFor: e.target.value as Owner })}
+                        onChange={e => handlePickingForChange(e.target.value as Owner)}
                     >
                         <option value="me">Me</option>
                         <option value="other">Other</option>
@@ -1147,7 +1157,7 @@ const App: React.FC = () => {
             drafted: [...prev.drafted, pick],
             undone: [],
             pickingFor: prev.pickingFor === 'me' ? 'other' : prev.pickingFor,
-            currentManager: prev.pickingFor === 'me' ? 'Other' : prev.currentManager,
+            currentManager: defaultManagerNameFor(prev.pickingFor === 'me' ? 'other' : prev.pickingFor),
         }));
         setSearchQuery('');
     };
