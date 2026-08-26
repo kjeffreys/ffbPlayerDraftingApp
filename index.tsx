@@ -247,6 +247,17 @@ function defaultManagerNameFor(owner: Owner) {
     return owner === 'me' ? 'Me' : '';
 }
 
+function normalizeSessionOwnerFields(session: DraftSession): DraftSession {
+    const manager = session.currentManager.trim().toLowerCase();
+    if (session.pickingFor === 'me' && (!manager || manager === 'other')) {
+        return { ...session, currentManager: 'Me' };
+    }
+    if (session.pickingFor === 'other' && (manager === 'me' || manager === 'other')) {
+        return { ...session, currentManager: '' };
+    }
+    return session;
+}
+
 function getInitialLeagueId() {
     const saved = window.localStorage.getItem(selectedLeagueKey());
     if (saved && LEAGUES.some(league => league.id === saved)) return saved;
@@ -258,7 +269,7 @@ function loadSession(leagueId: string): DraftSession {
         const raw = window.localStorage.getItem(sessionKey(leagueId));
         const defaultSession = defaultSessionForLeague(leagueId);
         if (!raw) return defaultSession;
-        return { ...defaultSession, ...JSON.parse(raw) };
+        return normalizeSessionOwnerFields({ ...defaultSession, ...JSON.parse(raw) });
     } catch {
         return defaultSessionForLeague(leagueId);
     }
