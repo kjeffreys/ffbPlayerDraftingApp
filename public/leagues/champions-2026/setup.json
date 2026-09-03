@@ -92,11 +92,11 @@
     "Mike"
   ],
   "yahooTeamManagers": {
-    "Kupp of Rice": "Jorshe",
+    "Kupp of Rice": "James",
     "Chasing LaPotty": "Chase",
     "COD With Kyler": "Jeff",
     "THE RUN FIRM": "Matt",
-    "Hard Nucks Fantasy": "James",
+    "Hard Nucks Fantasy": "Jorshe",
     "Run Warren Run!": "Kevin",
     "Equine Jerky": "Kyle",
     "No Chase—change your name back": "Mike"
@@ -121,7 +121,7 @@
       "pickInRound": 5,
       "overallPick": 5,
       "originalOwner": "Kevin",
-      "currentOwner": "James",
+      "currentOwner": "Jorshe",
       "status": "yahoo-current"
     },
     {
@@ -145,7 +145,7 @@
       "pickInRound": 8,
       "overallPick": 8,
       "originalOwner": "Mike",
-      "currentOwner": "Jorshe",
+      "currentOwner": "James",
       "status": "yahoo-current"
     },
     {
@@ -168,8 +168,8 @@
       "round": 3,
       "pickInRound": 1,
       "overallPick": 17,
-      "originalOwner": "James",
-      "currentOwner": "Jorshe",
+      "originalOwner": "Jorshe",
+      "currentOwner": "James",
       "status": "yahoo-current"
     },
     {
@@ -177,15 +177,15 @@
       "pickInRound": 5,
       "overallPick": 21,
       "originalOwner": "Kevin",
-      "currentOwner": "Jorshe",
+      "currentOwner": "James",
       "status": "yahoo-current"
     },
     {
       "round": 5,
       "pickInRound": 1,
       "overallPick": 33,
-      "originalOwner": "James",
-      "currentOwner": "Jorshe",
+      "originalOwner": "Jorshe",
+      "currentOwner": "James",
       "status": "yahoo-current"
     },
     {
@@ -193,7 +193,7 @@
       "pickInRound": 5,
       "overallPick": 37,
       "originalOwner": "Kevin",
-      "currentOwner": "Jorshe",
+      "currentOwner": "James",
       "status": "yahoo-current"
     },
     {
@@ -201,7 +201,7 @@
       "pickInRound": 8,
       "overallPick": 40,
       "originalOwner": "Mike",
-      "currentOwner": "James",
+      "currentOwner": "Jorshe",
       "status": "yahoo-current"
     },
     {
@@ -209,7 +209,7 @@
       "pickInRound": 1,
       "overallPick": 41,
       "originalOwner": "Mike",
-      "currentOwner": "James",
+      "currentOwner": "Jorshe",
       "status": "yahoo-current"
     },
     {
@@ -224,8 +224,8 @@
       "round": 6,
       "pickInRound": 7,
       "overallPick": 47,
-      "originalOwner": "Jorshe",
-      "currentOwner": "James",
+      "originalOwner": "James",
+      "currentOwner": "Jorshe",
       "status": "yahoo-current"
     },
     {
@@ -233,14 +233,14 @@
       "pickInRound": 5,
       "overallPick": 53,
       "originalOwner": "Kevin",
-      "currentOwner": "Jorshe",
+      "currentOwner": "James",
       "status": "yahoo-current"
     },
     {
       "round": 8,
       "pickInRound": 8,
       "overallPick": 64,
-      "originalOwner": "James",
+      "originalOwner": "Jorshe",
       "currentOwner": "Mike",
       "status": "yahoo-current"
     },
@@ -256,7 +256,7 @@
       "round": 10,
       "pickInRound": 8,
       "overallPick": 80,
-      "originalOwner": "James",
+      "originalOwner": "Jorshe",
       "currentOwner": "Mike",
       "status": "yahoo-current"
     },
@@ -272,7 +272,7 @@
       "round": 13,
       "pickInRound": 2,
       "overallPick": 98,
-      "originalOwner": "Jorshe",
+      "originalOwner": "James",
       "currentOwner": "Kevin",
       "status": "yahoo-current"
     },
@@ -288,7 +288,7 @@
       "round": 14,
       "pickInRound": 7,
       "overallPick": 111,
-      "originalOwner": "Jorshe",
+      "originalOwner": "James",
       "currentOwner": "Kevin",
       "status": "yahoo-current"
     },
@@ -296,7 +296,7 @@
       "round": 16,
       "pickInRound": 7,
       "overallPick": 127,
-      "originalOwner": "Jorshe",
+      "originalOwner": "James",
       "currentOwner": "Mike",
       "status": "yahoo-current"
     },
@@ -304,7 +304,7 @@
       "round": 17,
       "pickInRound": 2,
       "overallPick": 130,
-      "originalOwner": "Jorshe",
+      "originalOwner": "James",
       "currentOwner": "Kevin",
       "status": "yahoo-current"
     },
@@ -328,7 +328,7 @@
       "round": 18,
       "pickInRound": 7,
       "overallPick": 143,
-      "originalOwner": "Jorshe",
+      "originalOwner": "James",
       "currentOwner": "Kevin",
       "status": "yahoo-current"
     }
