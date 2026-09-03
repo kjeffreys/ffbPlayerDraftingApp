@@ -17,6 +17,7 @@ import pandas as pd
 import requests
 
 from backend.data_sources.historical import fetch_last_year_weekly_stats
+from backend.logging_config import log
 from backend.settings import LeagueConfig
 from backend.storage.file_store import save_json
 from backend.utils import create_hybrid_slug_map_with_audit, slugify
@@ -409,6 +410,12 @@ def _top_player_audit_rows(df: pd.DataFrame, rows: list[dict[str, Any]], limit: 
                 "historical_game_count": len(source_row.get("historical_scores") or []) if source_row is not None else 0,
                 "projected_ppg_espn": _json_ready(source_row.get("projected_ppg_espn")) if source_row is not None else None,
                 "actual_2025_ppg_espn": _json_ready(source_row.get("actual_2025_ppg_espn")) if source_row is not None else None,
+                "context_tags": _json_ready(source_row.get("context_tags")) if source_row is not None else None,
+                "context_adjustment_label": _json_ready(source_row.get("context_adjustment_label")) if source_row is not None else None,
+                "context_multiplier": _json_ready(source_row.get("context_multiplier")) if source_row is not None else None,
+                "context_confidence": _json_ready(source_row.get("context_confidence")) if source_row is not None else None,
+                "context_note": _json_ready(source_row.get("context_note")) if source_row is not None else None,
+                "superflex_qb_premium": _json_ready(source_row.get("superflex_qb_premium")) if source_row is not None else None,
             }
         )
     return audit_rows
@@ -501,6 +508,188 @@ def _apply_mimics(df: pd.DataFrame, root: Path) -> pd.DataFrame:
     return df
 
 
+def _context_override_path(root: Path, cfg: LeagueConfig) -> Path | None:
+    configured_path = getattr(cfg, "context_overrides_path", None)
+    if not configured_path:
+        return None
+    path = Path(configured_path)
+    return path if path.is_absolute() else root / path
+
+
+def _append_pipe_values(existing: Any, values: list[str]) -> str:
+    seen: list[str] = []
+    for value in _context_text(existing).split("|"):
+        clean = value.strip()
+        if clean and clean not in seen:
+            seen.append(clean)
+    for value in values:
+        clean = str(value or "").strip()
+        if clean and clean not in seen:
+            seen.append(clean)
+    return "|".join(seen)
+
+
+def _context_text(value: Any) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, float) and math.isnan(value):
+        return ""
+    text = str(value).strip()
+    return "" if text.lower() == "nan" else text
+
+
+def _context_slug_key(value: Any) -> str:
+    suffixes = {"jr", "sr", "ii", "iii", "iv", "v"}
+    parts = [
+        part
+        for part in str(value or "").lower().split("-")
+        if part and part not in suffixes
+    ]
+    return "-".join(parts)
+
+
+def _context_source_urls(override: dict[str, Any]) -> list[str]:
+    urls = []
+    for source in override.get("sources") or []:
+        if isinstance(source, str):
+            urls.append(source)
+        elif isinstance(source, dict) and source.get("url"):
+            urls.append(str(source["url"]))
+    return urls
+
+
+def _apply_context_overrides(
+    df: pd.DataFrame, cfg: LeagueConfig, root: Path
+) -> pd.DataFrame:
+    override_path = _context_override_path(root, cfg)
+    if override_path is None or not override_path.exists():
+        return df
+
+    with open(override_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    result = df.copy()
+    for column, default in {
+        "context_tags": "",
+        "context_note": "",
+        "context_confidence": "",
+        "context_adjustment_label": "",
+        "context_sources": "",
+        "context_multiplier": 1.0,
+    }.items():
+        if column not in result.columns:
+            result[column] = default
+
+    missing: list[str] = []
+    for override in data.get("overrides", []):
+        slug = str(override.get("slug") or slugify(str(override.get("name") or "")))
+        if not slug:
+            continue
+
+        target_rows = result["slug"].map(_context_slug_key) == _context_slug_key(slug)
+        if not target_rows.any():
+            missing.append(slug)
+            continue
+
+        mimic_slug = override.get("mimic_slug") or override.get("mimicSlug")
+        if mimic_slug:
+            source_rows = (
+                result["slug"].map(_context_slug_key)
+                == _context_slug_key(str(mimic_slug))
+            )
+            if source_rows.any():
+                result.loc[target_rows, "expected_ppg"] = result.loc[
+                    source_rows, "expected_ppg"
+                ].iloc[0]
+            else:
+                missing.append(f"{slug} mimic:{mimic_slug}")
+
+        multiplier = _finite_float(
+            override.get("expected_ppg_multiplier")
+            or override.get("expectedPpgMultiplier")
+        )
+        if multiplier is not None:
+            result.loc[target_rows, "expected_ppg"] *= multiplier
+
+        delta = _finite_float(
+            override.get("expected_ppg_delta") or override.get("expectedPpgDelta")
+        )
+        if delta is not None:
+            result.loc[target_rows, "expected_ppg"] += delta
+
+        indexes = result.index[target_rows].tolist()
+        tags = [str(tag) for tag in override.get("tags") or []]
+        source_urls = _context_source_urls(override)
+        label = str(override.get("adjustment_label") or "").strip()
+        note = str(override.get("note") or "").strip()
+        confidence = str(override.get("confidence") or "").strip()
+
+        for index in indexes:
+            result.at[index, "context_tags"] = _append_pipe_values(
+                result.at[index, "context_tags"], tags
+            )
+            result.at[index, "context_sources"] = _append_pipe_values(
+                result.at[index, "context_sources"], source_urls
+            )
+            if note:
+                result.at[index, "context_note"] = _append_pipe_values(
+                    result.at[index, "context_note"], [note]
+                )
+            if label:
+                result.at[index, "context_adjustment_label"] = _append_pipe_values(
+                    result.at[index, "context_adjustment_label"], [label]
+                )
+            if confidence:
+                result.at[index, "context_confidence"] = confidence
+            if multiplier is not None:
+                result.at[index, "context_multiplier"] = (
+                    _finite_float(result.at[index, "context_multiplier"]) or 1.0
+                ) * multiplier
+
+    if missing:
+        log.warning(
+            "Some context overrides could not be applied.",
+            extra={"path": str(override_path), "missing": missing},
+        )
+    else:
+        log.info(
+            "Applied context overrides.",
+            extra={
+                "path": str(override_path),
+                "count": len(data.get("overrides", [])),
+            },
+        )
+    return result
+
+
+def _apply_superflex_qb_premiums(df: pd.DataFrame, cfg: LeagueConfig) -> pd.DataFrame:
+    premiums = getattr(cfg, "superflex_qb_premiums", None) or []
+    if not premiums:
+        return df
+
+    result = df.copy()
+    if "superflex_qb_premium" not in result.columns:
+        result["superflex_qb_premium"] = 0.0
+
+    for premium in premiums:
+        max_ecr = _finite_float(premium.get("max_ecr"))
+        points = _finite_float(premium.get("points"))
+        if max_ecr is None or points is None or points <= 0:
+            continue
+        rows = (
+            (result["position"] == "QB")
+            & result["superflex_ecr"].notna()
+            & (result["superflex_ecr"] <= max_ecr)
+        )
+        result.loc[rows, "superflex_qb_premium"] = np.maximum(
+            result.loc[rows, "superflex_qb_premium"],
+            points,
+        )
+
+    result["expected_ppg"] += result["superflex_qb_premium"]
+    return result
+
+
 def _history_scores_average(scores: Any, top_game_count: int) -> float | None:
     if not isinstance(scores, list):
         return None
@@ -580,8 +769,10 @@ def score_players(base: pd.DataFrame, cfg: LeagueConfig, root: Path) -> pd.DataF
             + df["scaled_dynasty_ecr"].fillna(df["expected_ppg"]) * cfg.weight_dynasty_ecr
         )
 
+    df = _apply_superflex_qb_premiums(df, cfg)
     df = _apply_boosts(df, cfg, root)
     df = _apply_mimics(df, root)
+    df = _apply_context_overrides(df, cfg, root)
     return df
 
 def calculate_vor(df: pd.DataFrame, cfg: LeagueConfig) -> tuple[pd.DataFrame, dict[str, float]]:
@@ -654,21 +845,47 @@ def _format_final(df: pd.DataFrame) -> list[dict[str, Any]]:
     final["rank"] = range(1, len(final) + 1)
     rows = []
     for _, row in final.iterrows():
-        rows.append(
-            {
-                "id": int(row["rank"]),
-                "name": row["name"],
-                "team": row["team"],
-                "position": row["position"],
-                "adp": round(float(row["adp"]), 1),
-                "vor": round(float(row["vor"]), 2),
-                "bye": int(row["bye"]),
-                "ppg": round(float(row["expected_ppg"]), 2),
-                "redraftEcr": round(float(row["redraft_ecr"]), 1) if _finite_float(row.get("redraft_ecr")) is not None else None,
-                "superflexEcr": round(float(row["superflex_ecr"]), 1) if _finite_float(row.get("superflex_ecr")) is not None else None,
-                "dynastyEcr": round(float(row["dynasty_ecr"]), 1) if _finite_float(row.get("dynasty_ecr")) is not None else None,
-            }
-        )
+        item = {
+            "id": int(row["rank"]),
+            "name": row["name"],
+            "team": row["team"],
+            "position": row["position"],
+            "adp": round(float(row["adp"]), 1),
+            "vor": round(float(row["vor"]), 2),
+            "bye": int(row["bye"]),
+            "ppg": round(float(row["expected_ppg"]), 2),
+            "redraftEcr": round(float(row["redraft_ecr"]), 1) if _finite_float(row.get("redraft_ecr")) is not None else None,
+            "superflexEcr": round(float(row["superflex_ecr"]), 1) if _finite_float(row.get("superflex_ecr")) is not None else None,
+            "dynastyEcr": round(float(row["dynasty_ecr"]), 1) if _finite_float(row.get("dynasty_ecr")) is not None else None,
+        }
+        context_tags = [
+            tag.strip()
+            for tag in _context_text(row.get("context_tags")).split("|")
+            if tag.strip()
+        ]
+        context_sources = [
+            source.strip()
+            for source in _context_text(row.get("context_sources")).split("|")
+            if source.strip()
+        ]
+        context_note = _context_text(row.get("context_note"))
+        context_confidence = _context_text(row.get("context_confidence"))
+        context_adjustment_label = _context_text(row.get("context_adjustment_label"))
+        if context_tags:
+            item["contextTags"] = context_tags
+        if context_note:
+            item["contextNote"] = context_note
+        if context_confidence:
+            item["contextConfidence"] = context_confidence
+        if context_adjustment_label:
+            item["contextAdjustmentLabel"] = context_adjustment_label
+        if context_sources:
+            item["contextSources"] = context_sources
+        if _finite_float(row.get("context_multiplier")) not in (None, 1.0):
+            item["contextMultiplier"] = round(float(row["context_multiplier"]), 3)
+        if _finite_float(row.get("superflex_qb_premium")) not in (None, 0.0):
+            item["superflexQbPremium"] = round(float(row["superflex_qb_premium"]), 2)
+        rows.append(item)
     return rows
 
 
@@ -818,6 +1035,12 @@ def refresh_all(root: Path | None = None, date_str: str | None = None) -> dict[s
                 "historical_game_count",
                 "projected_ppg_espn",
                 "actual_2025_ppg_espn",
+                "context_tags",
+                "context_adjustment_label",
+                "context_multiplier",
+                "context_confidence",
+                "context_note",
+                "superflex_qb_premium",
             ],
         )
         validation = _validate_final_rows(rows, target.profile_id)

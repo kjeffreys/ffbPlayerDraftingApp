@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "leagueKey": "champions-2026",
+  "status": "seed",
+  "sources": {
+    "yahooSettingsPage": {
+      "capturedFromChrome": true,
+      "capturedDate": "2026-09-01",
+      "url": "https://football.fantasysports.yahoo.com/f1/372974/settings"
+    },
+    "keeperScreenshot": "Photo 1.jpg",
+    "draftOrderScreenshot": "Photo 2.jpg",
+    "userNotes": [
+      "All leagues are Yahoo for play in 2026.",
+      "Champions generally works off FantasyPros for superflex rankings.",
+      "CBS Sports Richard/Jamey are trusted for value and steal signals, but should not override the model alone.",
+      "Yahoo's current traded-picks page was reviewed at https://football.fantasysports.yahoo.com/f1/372974/showtradedpicks?view=current.",
+      "The commissioner has applied traded draft picks for the current season.",
+      "The app-facing pick-trade map uses the Yahoo current view and the team-name-to-manager mapping below.",
+      "Jorshe/James Yahoo team-name mapping corrected by user on 2026-09-02."
+    ]
+  },
+  "league": {
+    "name": "Champions League",
+    "platform": "yahoo",
+    "yahooLeagueId": "372974",
+    "customLeagueUrl": "https://football.fantasysports.yahoo.com/league/jorsheschampionsleague",
+    "teamName": "Equine Jerky",
+    "teamUrl": "https://football.fantasysports.yahoo.com/f1/372974/7",
+    "teams": 8,
+    "draftType": "Live Standard Draft",
+    "draftTime": "Mon Sep 7 7:00pm EDT",
+    "pickClock": "1 Minute",
+    "keeperLeague": true,
+    "keeperDeadline": "Sun Aug 30 3:00am EDT",
+    "scoringType": "Head-to-Head",
+    "startScoringWeek": 1,
+    "tradeReview": "Commissioner",
+    "allowDraftPickTrades": true,
+    "tradeDeadline": "November 28, 2026",
+    "waiverType": "FAB w/ Reverse order of standings tiebreak",
+    "weeklyWaivers": "Game Time - Tuesday",
+    "postDraftPlayers": "Free Agents",
+    "playoffs": {
+      "teams": 4,
+      "weeks": [
+        16,
+        17
+      ],
+      "tieBreaker": "Higher seed wins",
+      "reseeding": true
+    }
+  },
+  "roster": {
+    "lineupSlots": [
+      "QB",
+      "WR",
+      "WR",
+      "WR",
+      "WR",
+      "RB",
+      "RB",
+      "RB",
+      "TE",
+      "W/R/T",
+      "W/R/T",
+      "Q/W/R/T",
+      "K",
+      "DEF"
+    ],
+    "benchSlots": 6,
+    "irSlots": 1,
+    "derivedStarterCounts": {
+      "QB": 1,
+      "RB": 3,
+      "WR": 4,
+      "TE": 1,
+      "FLEX": 2,
+      "SUPERFLEX": 1,
+      "K": 1,
+      "DEF": 1
+    },
+    "softDraftTargets": {
+      "QB": 2,
+      "RB": 5,
+      "WR": 7,
+      "TE": 2,
+      "K": 1,
+      "DEF": 1
+    }
+  },
+  "scoring": {
+    "fractionalPoints": true,
+    "negativePoints": true,
+    "offense": {
+      "passingYards": "25 yards per point",
+      "passingTouchdowns": 4,
+      "interceptions": -1,
+      "rushingYards": "10 yards per point",
+      "rushingTouchdowns": 6,
+      "receptions": 0.5,
+      "receivingYards": "10 yards per point",
+      "receivingTouchdowns": 6,
+      "returnTouchdowns": 6,
+      "twoPointConversions": 2,
+      "fumblesLost": -2,
+      "offensiveFumbleReturnTd": 6
+    },
+    "kickers": {
+      "fieldGoals0To19": 3,
+      "fieldGoals20To29": 3,
+      "fieldGoals30To39": 3,
+      "fieldGoals40To49": 4,
+      "fieldGoals50Plus": 5,
+      "patMade": 1
+    },
+    "defenseSpecialTeams": {
+      "sack": 1,
+      "interception": 2,
+      "fumbleRecovery": 2,
+      "touchdown": 6,
+      "safety": 2,
+      "blockedKick": 2,
+      "kickoffAndPuntReturnTouchdowns": 6,
+      "pointsAllowed0": 10,
+      "pointsAllowed1To6": 7,
+      "pointsAllowed7To13": 4,
+      "pointsAllowed14To20": 1,
+      "pointsAllowed21To27": 0,
+      "pointsAllowed28To34": -1,
+      "pointsAllowed35Plus": -4,
+      "extraPointReturned": 2
+    }
+  },
+  "keeperRules": {
+    "regularKeeper": "Any player not drafted in the first 2 rounds last year.",
+    "franchisePlayer": "One keeper had to be a rookie or former rookie keeper.",
+    "needsRuleTextConfirmation": true,
+    "notes": "The second screenshot contains additional keeper-rule text, but part of it is hidden by the phone overlay."
+  },
+  "managers": [
+    "Jorshe",
+    "James",
+    "Jeff",
+    "Kyle",
+    "Kevin",
+    "Chase",
+    "Matt",
+    "Mike"
+  ],
+  "yahooTeamManagers": {
+    "Kupp of Rice": "Jorshe",
+    "Chasing LaPotty": "Chase",
+    "COD With Kyler": "Jeff",
+    "THE RUN FIRM": "Matt",
+    "Hard Nucks Fantasy": "James",
+    "Run Warren Run!": "Kevin",
+    "Equine Jerky": "Kyle",
+    "No Chase—change your name back": "Mike"
+  },
+  "baseDraftOrder": [
+    "Jorshe",
+    "James",
+    "Jeff",
+    "Kyle",
+    "Kevin",
+    "Chase",
+    "Matt",
+    "Mike"
+  ],
+  "draftFormat": {
+    "type": "snake",
+    "rounds": null,
+    "baseOrderIsPreTrade": true
+  },
+  "knownPickTrades": [
+    {
+      "round": 1,
+      "pickInRound": 5,
+      "overallPick": 5,
+      "originalOwner": "Kevin",
+      "currentOwner": "James",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 1,
+      "pickInRound": 6,
+      "overallPick": 6,
+      "originalOwner": "Chase",
+      "currentOwner": "Kyle",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 1,
+      "pickInRound": 7,
+      "overallPick": 7,
+      "originalOwner": "Matt",
+      "currentOwner": "Jeff",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 1,
+      "pickInRound": 8,
+      "overallPick": 8,
+      "originalOwner": "Mike",
+      "currentOwner": "Jorshe",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 2,
+      "pickInRound": 1,
+      "overallPick": 9,
+      "originalOwner": "Mike",
+      "currentOwner": "Jeff",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 2,
+      "pickInRound": 3,
+      "overallPick": 11,
+      "originalOwner": "Chase",
+      "currentOwner": "Kyle",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 3,
+      "pickInRound": 1,
+      "overallPick": 17,
+      "originalOwner": "James",
+      "currentOwner": "Jorshe",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 3,
+      "pickInRound": 5,
+      "overallPick": 21,
+      "originalOwner": "Kevin",
+      "currentOwner": "Jorshe",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 5,
+      "pickInRound": 1,
+      "overallPick": 33,
+      "originalOwner": "James",
+      "currentOwner": "Jorshe",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 5,
+      "pickInRound": 5,
+      "overallPick": 37,
+      "originalOwner": "Kevin",
+      "currentOwner": "Jorshe",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 5,
+      "pickInRound": 8,
+      "overallPick": 40,
+      "originalOwner": "Mike",
+      "currentOwner": "James",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 6,
+      "pickInRound": 1,
+      "overallPick": 41,
+      "originalOwner": "Mike",
+      "currentOwner": "James",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 6,
+      "pickInRound": 2,
+      "overallPick": 42,
+      "originalOwner": "Matt",
+      "currentOwner": "Jeff",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 6,
+      "pickInRound": 7,
+      "overallPick": 47,
+      "originalOwner": "Jorshe",
+      "currentOwner": "James",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 7,
+      "pickInRound": 5,
+      "overallPick": 53,
+      "originalOwner": "Kevin",
+      "currentOwner": "Jorshe",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 8,
+      "pickInRound": 8,
+      "overallPick": 64,
+      "originalOwner": "James",
+      "currentOwner": "Mike",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 9,
+      "pickInRound": 3,
+      "overallPick": 67,
+      "originalOwner": "Jeff",
+      "currentOwner": "Matt",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 10,
+      "pickInRound": 8,
+      "overallPick": 80,
+      "originalOwner": "James",
+      "currentOwner": "Mike",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 12,
+      "pickInRound": 6,
+      "overallPick": 94,
+      "originalOwner": "Jeff",
+      "currentOwner": "Matt",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 13,
+      "pickInRound": 2,
+      "overallPick": 98,
+      "originalOwner": "Jorshe",
+      "currentOwner": "Kevin",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 13,
+      "pickInRound": 3,
+      "overallPick": 99,
+      "originalOwner": "Jeff",
+      "currentOwner": "Mike",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 14,
+      "pickInRound": 7,
+      "overallPick": 111,
+      "originalOwner": "Jorshe",
+      "currentOwner": "Kevin",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 16,
+      "pickInRound": 7,
+      "overallPick": 127,
+      "originalOwner": "Jorshe",
+      "currentOwner": "Mike",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 17,
+      "pickInRound": 2,
+      "overallPick": 130,
+      "originalOwner": "Jorshe",
+      "currentOwner": "Kevin",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 17,
+      "pickInRound": 4,
+      "overallPick": 132,
+      "originalOwner": "Kyle",
+      "currentOwner": "Chase",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 18,
+      "pickInRound": 5,
+      "overallPick": 141,
+      "originalOwner": "Kyle",
+      "currentOwner": "Chase",
+      "status": "yahoo-current"
+    },
+    {
+      "round": 18,
+      "pickInRound": 7,
+      "overallPick": 143,
+      "originalOwner": "Jorshe",
+      "currentOwner": "Kevin",
+      "status": "yahoo-current"
+    }
+  ],
+  "keepers": [
+    {
+      "manager": "Matt",
+      "regularKeeper": "Jonathan Taylor",
+      "franchisePlayer": "Harold Fannin Jr"
+    },
+    {
+      "manager": "James",
+      "regularKeeper": "Brock Bowers",
+      "franchisePlayer": "Ashton Jeanty"
+    },
+    {
+      "manager": "Mike",
+      "regularKeeper": "Trey McBride",
+      "franchisePlayer": "Drake Maye"
+    },
+    {
+      "manager": "Kevin",
+      "regularKeeper": "Jaxon Smith-Njigba",
+      "franchisePlayer": "Quinshon Judkins"
+    },
+    {
+      "manager": "Jeff",
+      "regularKeeper": "Terry McLaurin",
+      "franchisePlayer": "Omarion Hampton"
+    },
+    {
+      "manager": "Kyle",
+      "regularKeeper": "Garrett Wilson",
+      "franchisePlayer": "Luther Burden"
+    },
+    {
+      "manager": "Jorshe",
+      "regularKeeper": "Kenneth Walker",
+      "franchisePlayer": "Malik Nabers"
+    },
+    {
+      "manager": "Chase",
+      "regularKeeper": "Emeka Egbuka",
+      "franchisePlayer": "Caleb Williams"
+    }
+  ],
+  "marketInputs": {
+    "primaryDraftRoom": "Yahoo",
+    "superflexRankSignal": "FantasyPros",
+    "trustedAdvisorySignals": [
+      {
+        "source": "CBS Sports",
+        "analysts": [
+          "Richard",
+          "Jamey"
+        ],
+        "role": "Value, steal, and sleeper nudge",
+        "maxUse": "Advisory only; do not override VOR, Yahoo timing, or severe risk flags alone."
+      }
+    ]
+  },
+  "tendencyCarryover": {
+    "fromGuillotineManagers": [
+      "Kyle",
+      "Chase",
+      "Jeff",
+      "Jorshe",
+      "Mike",
+      "Matt",
+      "Kevin"
+    ],
+    "caution": "Tendencies may travel, but guillotine redraft half-PPR behavior should not be overgeneralized to Champions superflex keeper strategy."
+  },
+  "openItems": [
+    "Get the full traded-pick map.",
+    "Confirm keeper slots if Yahoo assigns keepers to explicit draft picks.",
+    "Confirm whether CBS analyst names should be stored as Dave Richard and Jamey Eisenberg or the shorter Richard/Jamey labels.",
+    "Confirm manager display names or team names if different from the chat names."
+  ]
+}

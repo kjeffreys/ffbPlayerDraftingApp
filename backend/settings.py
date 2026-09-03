@@ -58,6 +58,8 @@ class LeagueConfig(BaseModel):
     weight_floor: float | None = None
     weight_superflex_ecr: float = 0.0
     weight_dynasty_ecr: float = 0.0
+    superflex_qb_premiums: list[dict[str, float]] = Field(default_factory=list)
+    context_overrides_path: str | None = None
     min_historical_score: float
     positional_penalties: dict[str, float]
 

@@ -12,7 +12,12 @@ from backend.data_sources.fantasypros import _parse_adp_player_name
 from backend.data_sources.source_diagnostics import table_has_keywords
 from backend.pipelines.stats import normalize_boost_data
 from backend.settings import LeagueConfig
-from backend.refresh_data import _validate_final_rows, calculate_vor
+from backend.refresh_data import (
+    _apply_context_overrides,
+    _apply_superflex_qb_premiums,
+    _validate_final_rows,
+    calculate_vor,
+)
 from backend.utils import create_hybrid_slug_map_with_audit
 
 
@@ -59,6 +64,91 @@ class ConfigAndHistoryTests(unittest.TestCase):
         config = dict(BASE_CONFIG, weight_superflex_ecr=0.35, weight_dynasty_ecr=0.2)
         with self.assertRaises(ValidationError):
             LeagueConfig(**config)
+
+    def test_context_override_path_is_optional(self):
+        parsed = LeagueConfig(**dict(BASE_CONFIG, context_overrides_path="context.json"))
+        self.assertEqual(parsed.context_overrides_path, "context.json")
+
+    def test_superflex_qb_premiums_apply_by_ecr_tier(self):
+        config = dict(
+            BASE_CONFIG,
+            superflex_qb_premiums=[
+                {"max_ecr": 3, "points": 4.0},
+                {"max_ecr": 8, "points": 2.5},
+            ],
+        )
+        parsed = LeagueConfig(**config)
+        players = pd.DataFrame(
+            [
+                {
+                    "slug": "elite-qb",
+                    "position": "QB",
+                    "expected_ppg": 20.0,
+                    "superflex_ecr": 1.0,
+                },
+                {
+                    "slug": "starter-qb",
+                    "position": "QB",
+                    "expected_ppg": 16.0,
+                    "superflex_ecr": 7.0,
+                },
+                {
+                    "slug": "elite-wr",
+                    "position": "WR",
+                    "expected_ppg": 20.0,
+                    "superflex_ecr": 2.0,
+                },
+            ]
+        )
+
+        adjusted = _apply_superflex_qb_premiums(players, parsed)
+        by_slug = adjusted.set_index("slug")
+
+        self.assertEqual(by_slug.loc["elite-qb", "expected_ppg"], 24.0)
+        self.assertEqual(by_slug.loc["starter-qb", "expected_ppg"], 18.5)
+        self.assertEqual(by_slug.loc["elite-wr", "expected_ppg"], 20.0)
+
+    def test_context_overrides_apply_mimic_and_multiplier(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            override_path = root / "context.json"
+            override_path.write_text(
+                """
+{
+  "overrides": [
+    {
+      "slug": "target-player",
+      "mimic_slug": "source-player",
+      "expected_ppg_multiplier": 1.1,
+      "confidence": "medium",
+      "adjustment_label": "Role change",
+      "tags": ["new-role"],
+      "note": "Target has a new usage path.",
+      "sources": [{"url": "https://example.com/source"}]
+    }
+  ]
+}
+""".strip(),
+                encoding="utf-8",
+            )
+            config = dict(BASE_CONFIG, context_overrides_path=str(override_path))
+            parsed = LeagueConfig(**config)
+            players = pd.DataFrame(
+                [
+                    {"slug": "target-player-jr", "expected_ppg": 8.0},
+                    {"slug": "source-player", "expected_ppg": 12.0},
+                ]
+            )
+
+            adjusted = _apply_context_overrides(players, parsed, root)
+            by_slug = adjusted.set_index("slug")
+
+            self.assertAlmostEqual(by_slug.loc["target-player-jr", "expected_ppg"], 13.2)
+            self.assertEqual(by_slug.loc["target-player-jr", "context_tags"], "new-role")
+            self.assertEqual(
+                by_slug.loc["target-player-jr", "context_adjustment_label"],
+                "Role change",
+            )
 
     def test_legacy_boost_keys_are_normalized(self):
         boost_data = normalize_boost_data(

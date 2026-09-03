@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "league": "champions",
+  "updated_at": "2026-09-02",
+  "policy": {
+    "purpose": "League-specific context adjustments for Champions before VOR is calculated.",
+    "guardrail": "Use only for verified role, injury, trade, legal, suspension, rookie, or depth-chart changes. Keep analyst opinion advisory and visible.",
+    "refresh_note": "Run the backend refresh after edits so VOR and public/champions.json both reflect the context layer."
+  },
+  "overrides": [
+    {
+      "slug": "josh-allen",
+      "name": "Josh Allen",
+      "expected_ppg_multiplier": 1.06,
+      "confidence": "high",
+      "adjustment_label": "Superflex anchor",
+      "tags": ["superflex", "elite-qb", "market-rising"],
+      "note": "Superflex ECR has Allen at the top of the board and CBS treats him as a standalone QB tier. Slightly elevate QB scarcity without forcing every QB up.",
+      "sources": [
+        {
+          "label": "CBS Jamey Eisenberg QB tiers, Aug 2026",
+          "url": "https://www.cbssports.com/fantasy/football/news/jamey-eisenbergs-fantasy-football-quarterback-tiers-3-0-the-definitive-plan-on-how-to-draft-qbs-in-2026/"
+        }
+      ]
+    },
+    {
+      "slug": "dj-moore",
+      "name": "D.J. Moore",
+      "expected_ppg_multiplier": 1.1,
+      "confidence": "medium",
+      "adjustment_label": "New WR1 path",
+      "tags": ["new-team", "role-upside", "bills-stack"],
+      "note": "Buffalo gives Moore a real WR1 path with Josh Allen, but the prior-year efficiency flags keep this to a moderate boost.",
+      "sources": [
+        {
+          "label": "FantasyPros player note, Aug 31 2026",
+          "url": "https://www.fantasypros.com/nfl/players/dj-moore-wr.php"
+        },
+        {
+          "label": "CBS trade fallout",
+          "url": "https://www.cbssports.com/fantasy/football/news/bills-trade-dj-moore-bears-fantasy-football-outlook/"
+        }
+      ]
+    },
+    {
+      "slug": "travis-etienne",
+      "name": "Travis Etienne Jr.",
+      "expected_ppg_multiplier": 1.08,
+      "confidence": "medium",
+      "adjustment_label": "New lead-back volume",
+      "tags": ["new-team", "volume", "rb2-plus"],
+      "note": "New Orleans role and expected volume support a bump, but Kamara overlap and per-touch concerns keep the boost restrained.",
+      "sources": [
+        {
+          "label": "FantasyPros player note, Sep 1 2026",
+          "url": "https://www.fantasypros.com/nfl/players/travis-etienne.php"
+        },
+        {
+          "label": "CBS Jamey Eisenberg trade fallout",
+          "url": "https://www.cbssports.com/fantasy/football/news/travis-etienne-signs-with-saints-new-orleans-backfield-shakeup-elevates-etiennes-fantasy-appeal/"
+        }
+      ]
+    },
+    {
+      "slug": "chris-godwin",
+      "name": "Chris Godwin Jr.",
+      "mimic_slug": "courtland-sutton",
+      "expected_ppg_multiplier": 1.03,
+      "confidence": "medium",
+      "adjustment_label": "Post-injury target rebound",
+      "tags": ["injury-return", "target-vacancy", "slot-role"],
+      "note": "Replace the stale Darnell Mooney mimic with a stable WR2/3 baseline, then add a small target-vacancy bump. Still needs discount because the injury recovery was uneven.",
+      "sources": [
+        {
+          "label": "Fantasy Life Godwin outlook, Aug 16 2026",
+          "url": "https://www.fantasylife.com/articles/fantasy/chris-godwin-fantasy-football-outlook-for-2026-the-most-underpri"
+        },
+        {
+          "label": "CBS player note",
+          "url": "https://www.cbssports.com/nfl/players/2818150/chris-godwin/fantasy/"
+        }
+      ]
+    },
+    {
+      "slug": "marshawn-lloyd",
+      "name": "MarShawn Lloyd",
+      "mimic_slug": "rhamondre-stevenson",
+      "expected_ppg_multiplier": 0.92,
+      "confidence": "medium",
+      "adjustment_label": "Contingent RB1 role",
+      "tags": ["legal-fallout", "depth-chart", "contingent-upside"],
+      "note": "Jacobs being unavailable creates a draftable Lloyd role, but committee and sample-size risk keep him below a locked-in starting RB baseline.",
+      "sources": [
+        {
+          "label": "CBS Jamey Eisenberg RB tiers, Aug 2026",
+          "url": "https://www.cbssports.com/fantasy/football/news/jamey-eisenberg-fantasy-football-running-back-rankings-tiers-2026/"
+        },
+        {
+          "label": "FTN Jacobs exempt-list impact",
+          "url": "https://ftnfantasy.com/nfl/josh-jacobs-placed-on-commissioners-exempt-list"
+        }
+      ]
+    },
+    {
+      "slug": "josh-jacobs",
+      "name": "Josh Jacobs",
+      "expected_ppg_multiplier": 0.45,
+      "confidence": "high",
+      "adjustment_label": "Exempt-list discount",
+      "tags": ["legal", "exempt-list", "availability-risk"],
+      "note": "Currently not eligible to practice or play while on the exempt list. Treat as a discount-only stash until the NFL gives a clearer return path.",
+      "sources": [
+        {
+          "label": "Yahoo fantasy impact",
+          "url": "https://sports.yahoo.com/fantasy/article/fantasy-football-impact-of-nfl-placing-packers-rb-josh-jacobs-on-commissioner-exempt-list-202836289.html"
+        },
+        {
+          "label": "FTN Jacobs exempt-list impact",
+          "url": "https://ftnfantasy.com/nfl/josh-jacobs-placed-on-commissioners-exempt-list"
+        }
+      ]
+    },
+    {
+      "slug": "puka-nacua",
+      "name": "Puka Nacua",
+      "confidence": "medium",
+      "adjustment_label": "Elite WR, verify risk",
+      "tags": ["elite-wr", "risk-watch", "superflex-compare"],
+      "note": "Do not auto-fade a true elite WR, but keep him visually flagged because any late groin or discipline risk changes the Allen/Puka decision fast.",
+      "sources": [
+        {
+          "label": "CBS risk note mention",
+          "url": "https://www.cbssports.com/fantasy/football/news/jamey-eisenberg-do-not-draft-list-fantasy-football-busts-2026/"
+        }
+      ]
+    }
+  ]
+}

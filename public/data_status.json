@@ -1,45 +1,43 @@
 {
   "status": "draft-ready",
-  "generatedAt": "2026-08-25T17:25:00.000Z",
-  "label": "2026-08-25 Yahoo + top-player news-risk audit",
-  "message": "Passion Guillotine I uses Yahoo league 602515, Yahoo ADP/projections, and a dated top-player news-risk overlay. Legacy profiles are not Wednesday draft boards.",
+  "generatedAt": "2026-09-02T16:50:06.048130+00:00",
+  "label": "2026-09-02 refresh",
+  "message": "2026 data refreshed from ESPN ADP/projections, DynastyProcess rankings/byes, and FantasyPros historical weekly stats.",
   "files": {
     "players.json": "Default / Current",
     "vany.json": "VANY",
     "passion.json": "Passion",
-    "guillotine.json": "Guillotine (Legacy)",
-    "passion-guillotine-1.json": "Passion Guillotine I",
+    "guillotine.json": "Guillotine",
     "champions.json": "Champions"
   },
   "sources": {
     "espn": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026/segments/0/leaguedefaults/3?view=kona_player_info",
     "dynastyprocess": "https://raw.githubusercontent.com/dynastyprocess/data/master/files/db_fpecr_latest.csv",
-    "historical": "https://www.fantasypros.com/nfl/stats/{pos}.php?week={week}&scoring=HALF&range=week",
-    "yahooLeague602515": "https://football.fantasysports.yahoo.com/f1/602515"
+    "historical": "https://www.fantasypros.com/nfl/stats/{pos}.php?week={week}&scoring=HALF&range=week"
   },
   "integrity": {
-    "usableRows": 566,
-    "historyCoverage": 0.8534,
+    "usableRows": 580,
+    "historyCoverage": 0.8448,
     "missingByeRows": 0,
     "matchAudit": {
-      "totalRows": 1078,
+      "totalRows": 1088,
       "byType": {
         "alias": 43,
         "fuzzy": 668,
-        "unmatched_canonical": 314,
+        "unmatched_canonical": 324,
         "unmatched_source": 53
       },
       "needsReview": 0
     },
-    "historyReviewRows": 5,
+    "historyReviewRows": 4,
     "leagueValidations": {
       "default": {
         "ok": true,
-        "rowCount": 566,
+        "rowCount": 580,
         "top50Positions": {
-          "RB": 28,
-          "WR": 13,
-          "QB": 8,
+          "RB": 31,
+          "WR": 12,
+          "QB": 6,
           "TE": 1
         },
         "issueCount": 0,
@@ -47,7 +45,7 @@
       },
       "vany": {
         "ok": true,
-        "rowCount": 566,
+        "rowCount": 580,
         "top50Positions": {
           "RB": 32,
           "WR": 16,
@@ -59,34 +57,35 @@
       },
       "passion": {
         "ok": true,
-        "rowCount": 566,
+        "rowCount": 580,
         "top50Positions": {
-          "WR": 27,
           "RB": 21,
+          "WR": 26,
           "QB": 1,
-          "TE": 1
+          "TE": 2
         },
         "issueCount": 0,
         "warningCount": 0
       },
       "guillotine": {
         "ok": true,
-        "rowCount": 566,
+        "rowCount": 580,
         "top50Positions": {
-          "RB": 35,
-          "WR": 14,
-          "TE": 1
+          "RB": 32,
+          "WR": 16,
+          "TE": 1,
+          "QB": 1
         },
         "issueCount": 0,
         "warningCount": 0
       },
       "champions": {
         "ok": true,
-        "rowCount": 566,
+        "rowCount": 580,
         "top50Positions": {
-          "WR": 23,
-          "RB": 21,
-          "QB": 2,
+          "WR": 21,
+          "RB": 19,
+          "QB": 6,
           "TE": 4
         },
         "issueCount": 0,

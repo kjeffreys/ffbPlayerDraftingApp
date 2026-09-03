@@ -29,8 +29,23 @@
     "top_game_count": 10,
     "weight_projection": 0.50,
     "weight_last_year": 0.50,
-    "weight_superflex_ecr": 0.22,
-    "weight_dynasty_ecr": 0.08,
+    "weight_superflex_ecr": 0.34,
+    "weight_dynasty_ecr": 0.06,
+    "superflex_qb_premiums": [
+        {
+            "max_ecr": 3,
+            "points": 4.0
+        },
+        {
+            "max_ecr": 8,
+            "points": 2.5
+        },
+        {
+            "max_ecr": 14,
+            "points": 1.25
+        }
+    ],
+    "context_overrides_path": "backend/player_context_overrides_champions.json",
     "min_historical_score": 5.0,
     "positional_penalties": {
         "DEF": 0.5,

@@ -21,6 +21,15 @@ interface Player {
     redraftEcr?: number | null;
     superflexEcr?: number | null;
     dynastyEcr?: number | null;
+    yahooAdp?: number | null;
+    fantasyProsEcr?: number | null;
+    fantasyProsPosRank?: string;
+    ffcalcAdp?: number | null;
+    ffcalcTimesDrafted?: number | null;
+    marketConsensusRank?: number | null;
+    marketConsensusDelta?: number | null;
+    marketAuditLabel?: string;
+    marketAuditSource?: string;
     fairRank?: number;
     marketDelta?: number;
     marketLabel?: string;
@@ -33,12 +42,21 @@ interface Player {
     seasonProjection?: number;
     projectedGames?: number;
     riskScore?: number;
+    contextTags?: string[];
+    contextNote?: string;
+    contextConfidence?: string;
+    contextAdjustmentLabel?: string;
+    contextSources?: string[];
+    contextMultiplier?: number;
+    superflexQbPremium?: number;
 }
 
 interface LeagueProfile {
     id: string;
     label: string;
     file: string;
+    setupFile?: string;
+    myManager?: string;
     teams: number;
     mode: 'redraft' | 'guillotine' | 'champions';
     roster: Record<Position, number>;
@@ -51,8 +69,62 @@ interface DraftPick {
     playerId: number;
     owner: Owner;
     manager: string;
+    originalManager?: string;
+    round?: number;
+    pickInRound?: number;
     pick: number;
     at: string;
+    source?: 'live' | 'keeper';
+}
+
+interface KeeperRow {
+    manager: string;
+    regularKeeper?: string;
+    franchisePlayer?: string;
+}
+
+interface PickTrade {
+    round: number;
+    pickInRound: number;
+    overallPick: number;
+    originalOwner: string;
+    currentOwner: string;
+    status?: 'known' | 'assumed' | string;
+}
+
+interface LeagueSetup {
+    schemaVersion: number;
+    leagueKey: string;
+    status: string;
+    managers: string[];
+    baseDraftOrder: string[];
+    knownPickTrades?: PickTrade[];
+    keepers?: KeeperRow[];
+    marketInputs?: {
+        primaryDraftRoom?: string;
+        superflexRankSignal?: string;
+        trustedAdvisorySignals?: Array<{
+            source: string;
+            analysts?: string[];
+            role?: string;
+            maxUse?: string;
+        }>;
+    };
+}
+
+interface PickAssignment {
+    pick: number;
+    round: number;
+    pickInRound: number;
+    originalOwner: string;
+    currentOwner: string;
+    tradeStatus?: string;
+}
+
+interface KeeperPlayer {
+    player: Player;
+    manager: string;
+    label: 'Keeper' | 'Franchise';
 }
 
 interface PlayerAdjustment {
@@ -82,6 +154,7 @@ interface ScoreComponents {
     byeRisk: number;
     historyAdjustment: number;
     dataRiskPenalty: number;
+    marketGuardrail: number;
     manualAdjustment: number;
     concernPenalty: number;
 }
@@ -174,6 +247,8 @@ const LEAGUES: LeagueProfile[] = [
         id: 'champions',
         label: 'Champions',
         file: 'champions.json',
+        setupFile: 'leagues/champions-2026/setup.json',
+        myManager: 'Kyle',
         teams: 8,
         mode: 'champions',
         roster: { QB: 2, RB: 5, WR: 7, TE: 2, K: 1, DEF: 1 },
@@ -219,6 +294,10 @@ function isPublicView(view: ViewType) {
     return view === 'classic' || view === 'picks';
 }
 
+function isPassionGuillotineProfile(profile: LeagueProfile) {
+    return profile.file === 'passion-guillotine-1.json';
+}
+
 async function fetchPlayers(profile: LeagueProfile): Promise<Player[]> {
     const res = await fetch(`./${profile.file}`);
     if (!res.ok) throw new Error(`Failed to fetch ${profile.file}`);
@@ -228,6 +307,17 @@ async function fetchPlayers(profile: LeagueProfile): Promise<Player[]> {
 async function fetchDataStatus(): Promise<DataStatus | null> {
     try {
         const res = await fetch('./data_status.json', { cache: 'no-store' });
+        if (!res.ok) return null;
+        return res.json();
+    } catch {
+        return null;
+    }
+}
+
+async function fetchLeagueSetup(profile: LeagueProfile): Promise<LeagueSetup | null> {
+    if (!profile.setupFile) return null;
+    try {
+        const res = await fetch(`./${profile.setupFile}`, { cache: 'no-store' });
         if (!res.ok) return null;
         return res.json();
     } catch {
@@ -285,6 +375,93 @@ function draftedMap(drafted: DraftPick[]) {
 
 function renumberPicks(picks: DraftPick[]) {
     return picks.map((pick, index) => ({ ...pick, pick: index + 1 }));
+}
+
+function managerIsMe(profile: LeagueProfile, manager: string) {
+    const me = (profile.myManager ?? 'Me').trim().toLowerCase();
+    const normalized = manager.trim().toLowerCase();
+    return normalized === me || normalized === 'me';
+}
+
+function nameKey(value: string) {
+    const suffixes = new Set(['jr', 'sr', 'ii', 'iii', 'iv', 'v']);
+    return value
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, ' ')
+        .split(/\s+/)
+        .filter(Boolean)
+        .filter(token => !suffixes.has(token))
+        .join('');
+}
+
+function findPlayerByName(players: Player[], name: string) {
+    const target = nameKey(name);
+    return players.find(player => nameKey(player.name) === target)
+        ?? players.find(player => {
+            const playerKey = nameKey(player.name);
+            return playerKey.includes(target) || target.includes(playerKey);
+        });
+}
+
+function getKeeperPlayers(players: Player[], setup: LeagueSetup | null): KeeperPlayer[] {
+    const used = new Set<number>();
+    const keepers = setup?.keepers ?? [];
+    return keepers.flatMap(row => {
+        const entries: Array<{ name?: string; label: KeeperPlayer['label'] }> = [
+            { name: row.regularKeeper, label: 'Keeper' },
+            { name: row.franchisePlayer, label: 'Franchise' },
+        ];
+        return entries.flatMap(entry => {
+            if (!entry.name) return [];
+            const player = findPlayerByName(players, entry.name);
+            if (!player || used.has(player.id)) return [];
+            used.add(player.id);
+            return [{ player, manager: row.manager, label: entry.label }];
+        });
+    });
+}
+
+function getKeeperPicks(profile: LeagueProfile, keepers: KeeperPlayer[]): DraftPick[] {
+    return keepers.map(keeper => ({
+        playerId: keeper.player.id,
+        owner: managerIsMe(profile, keeper.manager) ? 'me' : 'other',
+        manager: keeper.manager,
+        pick: 0,
+        at: 'keeper',
+        source: 'keeper',
+    }));
+}
+
+function getPickAssignment(setup: LeagueSetup | null, pick: number): PickAssignment | null {
+    const baseOrder = setup?.baseDraftOrder ?? [];
+    if (!baseOrder.length) return null;
+    const teamCount = baseOrder.length;
+    const round = Math.floor((pick - 1) / teamCount) + 1;
+    const zeroBasedPickInRound = (pick - 1) % teamCount;
+    const pickInRound = zeroBasedPickInRound + 1;
+    const draftSlot = round % 2 === 1 ? zeroBasedPickInRound : teamCount - 1 - zeroBasedPickInRound;
+    const originalOwner = baseOrder[draftSlot] ?? '';
+    const trade = setup?.knownPickTrades?.find(item => item.overallPick === pick)
+        ?? setup?.knownPickTrades?.find(item => item.round === round && item.originalOwner === originalOwner);
+    return {
+        pick,
+        round,
+        pickInRound,
+        originalOwner,
+        currentOwner: trade?.currentOwner ?? originalOwner,
+        tradeStatus: trade?.status,
+    };
+}
+
+function getUpcomingMyPicks(profile: LeagueProfile, setup: LeagueSetup | null, currentPick: number) {
+    if (!setup) return [];
+    const totalToCheck = setup.baseDraftOrder.length * 4;
+    const picks: PickAssignment[] = [];
+    for (let pick = currentPick; pick < currentPick + totalToCheck && picks.length < 3; pick += 1) {
+        const assignment = getPickAssignment(setup, pick);
+        if (assignment && managerIsMe(profile, assignment.currentOwner)) picks.push(assignment);
+    }
+    return picks;
 }
 
 function playerMatches(player: Player, query: string) {
@@ -366,12 +543,65 @@ function getMarketRank(profile: LeagueProfile, player: Player) {
     if (profile.id === 'champions') {
         return player.superflexEcr ?? player.dynastyEcr ?? player.adp;
     }
+    if (isPassionGuillotineProfile(profile)) {
+        return player.marketConsensusRank ?? player.yahooAdp ?? player.adp;
+    }
     return player.adp;
 }
 
 function getMarketLabel(profile: LeagueProfile) {
+    if (isPassionGuillotineProfile(profile)) return 'MKT';
     return profile.id === 'champions' ? 'SF' : 'ADP';
 }
+
+function formatMarketValue(value?: number | null) {
+    if (value === null || value === undefined || Number.isNaN(value)) return '-';
+    return String(round(value));
+}
+
+function formatMarketCheck(player: Player) {
+    const values = [
+        player.yahooAdp !== undefined ? `Yahoo ${formatMarketValue(player.yahooAdp)}` : '',
+        player.fantasyProsEcr !== undefined ? `FP ${formatMarketValue(player.fantasyProsEcr)}` : '',
+        player.ffcalcAdp !== undefined ? `FFC ${formatMarketValue(player.ffcalcAdp)}` : '',
+    ].filter(Boolean);
+    return values.length >= 2 ? `Market check: ${values.join(', ')}.` : '';
+}
+
+function getMarketGuardrail(profile: LeagueProfile, player: Player) {
+    if (!isPassionGuillotineProfile(profile) || !player.marketConsensusRank || !player.fairRank) return 0;
+    const modelEarlierThanMarket = player.marketConsensusRank - player.fairRank;
+    const marketEarlierThanModel = player.fairRank - player.marketConsensusRank;
+    const tags = `${player.marketLabel ?? ''} ${player.riskTags ?? ''}`.toLowerCase();
+    const severeRisk = /trap|pup|ir|acl|mcl|achilles|expected out|suspension|not guaranteed|miss about|miss approximately|miss two months|week 1 uncertain/.test(tags);
+
+    if (modelEarlierThanMarket > profile.teams) {
+        return -round(clamp((modelEarlierThanMarket - profile.teams) / 10, 0, 3.5));
+    }
+    if (marketEarlierThanModel > profile.teams && !severeRisk) {
+        return round(clamp((marketEarlierThanModel - profile.teams) / 14, 0, 1.5));
+    }
+    return 0;
+}
+
+function shouldShowMarketAudit(player: Player) {
+    if (!player.marketAuditLabel) return false;
+    return !['market aligned', 'yahoo only'].includes(player.marketAuditLabel.toLowerCase());
+}
+
+function getPlayerContextTags(player: Player) {
+    return [
+        player.superflexQbPremium ? `SF QB +${round(player.superflexQbPremium)}` : '',
+        player.contextAdjustmentLabel,
+        ...(player.contextTags ?? []),
+        player.contextConfidence ? `${player.contextConfidence} confidence` : '',
+    ].filter((tag): tag is string => Boolean(tag)).slice(0, 4);
+}
+
+function hasPlayerContext(player: Player) {
+    return getPlayerContextTags(player).length > 0 || Boolean(player.contextNote);
+}
+
 function getByeRisk(myByes: Record<number, Player[]>, player: Player) {
     const sameBye = myByes[player.bye] ?? [];
     const samePosition = sameBye.filter(p => p.position === player.position).length;
@@ -426,6 +656,7 @@ function scorePlayer(
         byeRisk: getByeRisk(myByes, player),
         historyAdjustment: getLeagueHistoryAdjustment(profile, player),
         dataRiskPenalty: getDataRiskPenalty(profile, player, currentPick),
+        marketGuardrail: getMarketGuardrail(profile, player),
         manualAdjustment: adjustment?.manual ?? 0,
         concernPenalty: concerns.length * -0.85,
     };
@@ -438,6 +669,7 @@ function scorePlayer(
         components.byeRisk +
         components.historyAdjustment +
         components.dataRiskPenalty +
+        components.marketGuardrail +
         components.manualAdjustment +
         components.concernPenalty;
 
@@ -465,7 +697,13 @@ function buildReasons(
     }
     if (player.week1Projection) reasons.push(`Week 1 projection: ${round(player.week1Projection)}.`);
     if (player.riskTags) reasons.push(`Risk/context: ${player.riskTags}.`);
+    if (player.superflexQbPremium) reasons.push(`Champions superflex QB premium: +${round(player.superflexQbPremium)}.`);
+    if (player.contextNote) reasons.push(`Model context: ${player.contextNote}.`);
     if (components.dataRiskPenalty <= -1) reasons.push(`Guillotine uncertainty discount: ${round(components.dataRiskPenalty)}.`);
+    const marketCheck = formatMarketCheck(player);
+    if (marketCheck) reasons.push(marketCheck);
+    if (components.marketGuardrail <= -1) reasons.push(`Market guardrail: ${round(components.marketGuardrail)} for a model rank much earlier than current market.`);
+    if (components.marketGuardrail >= 1) reasons.push(`Market guardrail: +${round(components.marketGuardrail)} because market is earlier than the model without a severe risk flag.`);
     if (components.adpValue >= 1.5) reasons.push(`${getMarketLabel(profile)} value: ${round(components.adpValue)} points past market.`);
     if (components.tierDropoff >= 1.5) reasons.push(`Tier cliff: ${round(components.tierDropoff)} VOR drop if this ${player.position} tier dries up.`);
     if (components.availabilityNextPick >= 2) reasons.push('Likely gone before your next estimated pick.');
@@ -494,6 +732,8 @@ const Header: React.FC<{
     session: DraftSession;
     updateSession: (patch: Partial<DraftSession>) => void;
     currentPick: number;
+    currentAssignment: PickAssignment | null;
+    upcomingMyPicks: PickAssignment[];
     searchQuery: string;
     setSearchQuery: (value: string) => void;
     draftFirstMatch: () => void;
@@ -511,6 +751,8 @@ const Header: React.FC<{
     session,
     updateSession,
     currentPick,
+    currentAssignment,
+    upcomingMyPicks,
     searchQuery,
     setSearchQuery,
     draftFirstMatch,
@@ -527,6 +769,7 @@ const Header: React.FC<{
     const publicView = isPublicView(session.view);
     const headerTitle = session.view === 'picks' ? 'Drafted players' : session.view === 'classic' ? 'Draft board' : 'Draft cockpit';
     const headerNote = publicView ? profile.publicNotes : profile.notes;
+    const hasPickMap = Boolean(currentAssignment);
     const handlePickingForChange = (nextOwner: Owner) => {
         updateSession({
             pickingFor: nextOwner,
@@ -564,6 +807,28 @@ const Header: React.FC<{
                     <button className="danger" onClick={resetDraft}>Reset</button>
                 </div>
             </div>
+
+            {currentAssignment && (
+                <div className="draftContextBar">
+                    <div className="contextItem">
+                        <span className="muted">On clock</span>
+                        <strong>{currentAssignment.currentOwner}</strong>
+                        <span className="muted">Round {currentAssignment.round}, pick {currentAssignment.pickInRound}</span>
+                    </div>
+                    {currentAssignment.currentOwner !== currentAssignment.originalOwner && (
+                        <span className="tradeBadge">
+                            from {currentAssignment.originalOwner}
+                            {currentAssignment.tradeStatus ? ` · ${currentAssignment.tradeStatus}` : ''}
+                        </span>
+                    )}
+                    {upcomingMyPicks.length > 0 && (
+                        <div className="contextItem wide">
+                            <span className="muted">Kyle picks</span>
+                            <strong>{upcomingMyPicks.map(pick => `#${pick.pick}`).join(', ')}</strong>
+                        </div>
+                    )}
+                </div>
+            )}
 
             <div className="toolbar">
                 <div className="searchBox" onClick={() => inputRef.current?.focus()}>
@@ -621,24 +886,28 @@ const Header: React.FC<{
             </div>
 
             <div className="toolbar compact">
-                <label>
-                    Picking for
-                    <select
-                        value={session.pickingFor}
-                        onChange={e => handlePickingForChange(e.target.value as Owner)}
-                    >
-                        <option value="me">Me</option>
-                        <option value="other">Other</option>
-                    </select>
-                </label>
-                <label>
-                    Manager/team
-                    <input
-                        value={session.currentManager}
-                        onChange={e => updateSession({ currentManager: e.target.value })}
-                        placeholder="Manager name"
-                    />
-                </label>
+                {!hasPickMap && (
+                    <>
+                        <label>
+                            Picking for
+                            <select
+                                value={session.pickingFor}
+                                onChange={e => handlePickingForChange(e.target.value as Owner)}
+                            >
+                                <option value="me">Me</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </label>
+                        <label>
+                            Manager/team
+                            <input
+                                value={session.currentManager}
+                                onChange={e => updateSession({ currentManager: e.target.value })}
+                                placeholder="Manager name"
+                            />
+                        </label>
+                    </>
+                )}
                 <label>
                     Sort
                     <select
@@ -689,6 +958,7 @@ const RecommendationCard: React.FC<{
 }> = ({ profile, rec, rank, featured = false, onDraft, adjustment, setAdjustment, toggleConcern }) => {
     const { player, components } = rec;
     const concerns = adjustment?.concerns ?? [];
+    const showMarketAudit = shouldShowMarketAudit(player);
     const marketClass = player.marketLabel
         ? `marketTag market-${player.marketLabel.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
         : 'marketTag';
@@ -702,11 +972,15 @@ const RecommendationCard: React.FC<{
                         <span style={{ color: getPositionColor(player.position) }}>{player.position}</span>
                         {' '} {player.team} · Bye {player.bye} · {getMarketLabel(profile)} {getMarketRank(profile, player)}
                     </div>
-                    {(player.marketLabel || player.lateRoundLabel || player.status) && (
+                    {(player.marketLabel || player.lateRoundLabel || player.status || hasPlayerContext(player)) && (
                         <div className="tagRow">
                             {player.marketLabel && <span className={marketClass}>{player.marketLabel}</span>}
+                            {showMarketAudit && <span className="marketTag auditTag">{player.marketAuditLabel}</span>}
                             {player.lateRoundLabel && <span className="marketTag subtleTag">{player.lateRoundLabel}</span>}
                             {player.status && <span className="marketTag riskTag">{player.status}</span>}
+                            {getPlayerContextTags(player).map(tag => (
+                                <span key={tag} className="marketTag contextTag">{tag}</span>
+                            ))}
                         </div>
                     )}
                 </div>
@@ -743,6 +1017,7 @@ const RecommendationCard: React.FC<{
                 <Metric label="Bye" value={components.byeRisk} />
                 <Metric label="History" value={components.historyAdjustment} />
                 <Metric label="Risk" value={components.dataRiskPenalty} />
+                <Metric label="Mkt Guard" value={components.marketGuardrail} />
                 <Metric label="Manual" value={components.manualAdjustment + components.concernPenalty} />
             </div>
             <div className="cardActions">
@@ -822,6 +1097,13 @@ const BoardView: React.FC<{
                     <div className="playerMain">
                         <strong>{player.name}</strong>
                         <div className="muted">{player.team} · {player.position} · Bye {player.bye}</div>
+                        {hasPlayerContext(player) && (
+                            <div className="contextTags">
+                                {getPlayerContextTags(player).map(tag => (
+                                    <span key={tag} className="marketTag contextTag">{tag}</span>
+                                ))}
+                            </div>
+                        )}
                     </div>
                     <Metric label="Score" value={rec.totalScore} />
                     <Metric label={getMarketLabel(profile)} value={getMarketRank(profile, player)} />
@@ -849,7 +1131,7 @@ const ClassicBoardView: React.FC<{
             <div>Team</div>
             <div>Pos</div>
             <div>Bye</div>
-            <div>ADP</div>
+            <div>{getMarketLabel(profile)}</div>
             <div>VOR</div>
             <div />
         </div>
@@ -858,17 +1140,39 @@ const ClassicBoardView: React.FC<{
             return (
                 <div key={player.id} className="classicRow">
                     <div className="classicRank">{index + 1}</div>
-                    <div className="classicPlayer">{player.name}</div>
-                    <div>{player.team}</div>
-                    <div>
+                    <div className="classicPlayer">
+                        {player.name}
+                        {hasPlayerContext(player) && (
+                            <div className="classicContextTags">
+                                {getPlayerContextTags(player).slice(0, 2).map(tag => (
+                                    <span key={tag} className="contextPill">{tag}</span>
+                                ))}
+                            </div>
+                        )}
+                        <div className="classicMobileMeta">
+                            <span className="positionPill" style={{ borderColor: getPositionColor(player.position) }}>
+                                {player.position}
+                            </span>
+                            <span>{player.team}</span>
+                            <span>Bye {player.bye}</span>
+                        </div>
+                    </div>
+                    <div className="classicTeam">{player.team}</div>
+                    <div className="classicPos">
                         <span className="positionPill" style={{ borderColor: getPositionColor(player.position) }}>
                             {player.position}
                         </span>
                     </div>
-                    <div>{player.bye}</div>
-                    <div>{getMarketRank(profile, player)}</div>
-                    <div>{player.vor.toFixed(2)}</div>
-                    <button onClick={() => onDraft(player.id)}>Draft</button>
+                    <div className="classicBye">{player.bye}</div>
+                    <div className="classicMarket">
+                        <span className="mobileLabel">{getMarketLabel(profile)}</span>
+                        {getMarketRank(profile, player)}
+                    </div>
+                    <div className="classicVor">
+                        <span className="mobileLabel">VOR</span>
+                        {player.vor.toFixed(2)}
+                    </div>
+                    <button className="classicDraftButton" onClick={() => onDraft(player.id)}>Draft</button>
                 </div>
             );
         })}
@@ -901,7 +1205,12 @@ const DraftLogView: React.FC<{
                     <div key={`${pick.pick}-${pick.playerId}-${pick.at}`} className="draftRow">
                         <div className="classicRank">#{pick.pick}</div>
                         <div className="classicPlayer">{player?.name ?? 'Unknown player'}</div>
-                        <div>{pick.manager}</div>
+                        <div>
+                            <strong>{pick.manager}</strong>
+                            {pick.originalManager && pick.originalManager !== pick.manager && (
+                                <div className="muted">from {pick.originalManager}</div>
+                            )}
+                        </div>
                         <div>{player?.team ?? '-'}</div>
                         <div>
                             {player ? (
@@ -947,7 +1256,7 @@ const RosterSnapshot: React.FC<{
     counts: Record<Position, number>;
     picks: DraftPick[];
 }> = ({ profile, counts, picks }) => (
-    <aside className="panel rosterPanel">
+    <section className="panel">
         <h3>My roster</h3>
         {profile.lineup && <div className="muted">Lineup: {formatLineup(profile.lineup)}</div>}
         <div className="muted">Soft draft targets</div>
@@ -959,23 +1268,89 @@ const RosterSnapshot: React.FC<{
                 </div>
             ))}
         </div>
-        <div className="muted">{picks.filter(p => p.owner === 'me').length} of your players marked.</div>
-    </aside>
+        <div className="muted">{picks.filter(p => p.owner === 'me').length} of your players rostered, including keepers.</div>
+    </section>
 );
 
-function isPassionGuillotineProfile(profile: LeagueProfile) {
-    return profile.file === 'passion-guillotine-1.json';
-}
+const LeagueSetupSnapshot: React.FC<{
+    profile: LeagueProfile;
+    setup: LeagueSetup | null;
+    keepers: KeeperPlayer[];
+    currentAssignment: PickAssignment | null;
+    upcomingMyPicks: PickAssignment[];
+}> = ({ profile, setup, keepers, currentAssignment, upcomingMyPicks }) => {
+    if (!setup) return null;
+    const expectedKeeperCount = (setup.keepers ?? []).reduce(
+        (count, row) => count + (row.regularKeeper ? 1 : 0) + (row.franchisePlayer ? 1 : 0),
+        0
+    );
+    const unmatchedKeeperCount = Math.max(0, expectedKeeperCount - keepers.length);
+    const myKeepers = keepers.filter(keeper => managerIsMe(profile, keeper.manager));
+    const trades = setup.knownPickTrades ?? [];
+    const analystSignal = setup.marketInputs?.trustedAdvisorySignals?.[0];
+
+    return (
+        <section className="panel setupPanel">
+            <h3>League setup</h3>
+            {currentAssignment && (
+                <div className="setupBlock">
+                    <div className="muted">Current pick owner</div>
+                    <strong>{currentAssignment.currentOwner}</strong>
+                    {currentAssignment.currentOwner !== currentAssignment.originalOwner && (
+                        <span className="tradeBadge inline">
+                            from {currentAssignment.originalOwner}
+                            {currentAssignment.tradeStatus ? ` · ${currentAssignment.tradeStatus}` : ''}
+                        </span>
+                    )}
+                </div>
+            )}
+            <div className="setupBlock">
+                <div className="muted">Next Kyle picks</div>
+                <strong>{upcomingMyPicks.length ? upcomingMyPicks.map(pick => `#${pick.pick}`).join(', ') : 'None in next 4 rounds'}</strong>
+            </div>
+            <div className="setupBlock">
+                <div className="muted">Keepers removed</div>
+                <strong>{keepers.length} / {expectedKeeperCount}</strong>
+                {unmatchedKeeperCount > 0 && <span className="warningText">{unmatchedKeeperCount} unmatched</span>}
+            </div>
+            {myKeepers.length > 0 && (
+                <div className="keeperList">
+                    {myKeepers.map(keeper => (
+                        <span key={`${keeper.manager}-${keeper.player.id}`} className="chip">
+                            {keeper.label}: {keeper.player.name}
+                        </span>
+                    ))}
+                </div>
+            )}
+            <div className="setupBlock">
+                <div className="muted">Pick trades loaded</div>
+                <strong>{trades.length}</strong>
+                <span className="muted">Assumed trades are labeled on the pick strip.</span>
+            </div>
+            {analystSignal && (
+                <div className="setupBlock">
+                    <div className="muted">{analystSignal.source}</div>
+                    <strong>{(analystSignal.analysts ?? []).join(' / ')}</strong>
+                    <span className="muted">{analystSignal.role}</span>
+                </div>
+            )}
+        </section>
+    );
+};
 
 function getSourceSummary(profile: LeagueProfile) {
     if (isPassionGuillotineProfile(profile)) {
-        return 'Yahoo league 602515 · Yahoo ADP/projections · manual news-risk overlay';
+        return 'Yahoo league 602515 · Yahoo ADP/projections · FantasyPros ECR · FFC mock ADP · news-risk overlay';
+    }
+    if (profile.id === 'champions') {
+        return 'Yahoo league 372974 · Yahoo settings · FantasyPros superflex context · keeper/trade seed · model context overlay';
     }
     return 'Legacy baseline. Use the Jeffreys or Joanna Passion Guillotine I profile for Wednesday.';
 }
 
 const DataStatusBanner: React.FC<{ status: DataStatus | null; profile: LeagueProfile }> = ({ status, profile }) => {
     const isPassion = isPassionGuillotineProfile(profile);
+    const isChampions = profile.id === 'champions';
     if (!status) {
         return (
             <section className="dataBanner warning">
@@ -984,12 +1359,14 @@ const DataStatusBanner: React.FC<{ status: DataStatus | null; profile: LeaguePro
             </section>
         );
     }
-    const isReady = status.status === 'draft-ready' && isPassion;
-    const heading = !isPassion
-        ? 'Wrong profile for Wednesday'
-        : isReady
-            ? 'Passion data ready'
-            : 'Passion data needs refresh';
+    const isReady = status.status === 'draft-ready' && (isPassion || isChampions);
+    const heading = isChampions
+        ? 'Champions setup loaded'
+        : !isPassion
+            ? 'Legacy profile selected'
+            : isReady
+                ? 'Passion data ready'
+                : 'Passion data needs refresh';
     return (
         <section className={`dataBanner ${isReady ? 'ready' : 'warning'}`}>
             <strong>{heading}</strong>
@@ -1005,6 +1382,7 @@ const App: React.FC = () => {
     const profile = LEAGUES.find(league => league.id === leagueId) ?? LEAGUES[0];
     const [session, setSession] = useState<DraftSession>(() => loadSession(profile.id));
     const [allPlayers, setAllPlayers] = useState<Player[]>([]);
+    const [leagueSetup, setLeagueSetup] = useState<LeagueSetup | null>(null);
     const [searchQuery, setSearchQuery] = useState('');
     const [dataStatus, setDataStatus] = useState<DataStatus | null>(null);
     const [loading, setLoading] = useState(true);
@@ -1050,18 +1428,40 @@ const App: React.FC = () => {
     }, [profile]);
 
     useEffect(() => {
+        let cancelled = false;
+        setLeagueSetup(null);
+        fetchLeagueSetup(profile).then(setup => {
+            if (!cancelled) setLeagueSetup(setup);
+        });
+        return () => {
+            cancelled = true;
+        };
+    }, [profile]);
+
+    useEffect(() => {
         fetchDataStatus().then(setDataStatus);
     }, []);
 
     const playerById = useMemo(() => new Map(allPlayers.map(player => [player.id, player])), [allPlayers]);
-    const pickedMap = useMemo(() => draftedMap(session.drafted), [session.drafted]);
+    const keeperPlayers = useMemo(() => getKeeperPlayers(allPlayers, leagueSetup), [allPlayers, leagueSetup]);
+    const keeperPicks = useMemo(() => getKeeperPicks(profile, keeperPlayers), [keeperPlayers, profile]);
+    const rosterPicks = useMemo(() => [...keeperPicks, ...session.drafted], [keeperPicks, session.drafted]);
+    const pickedMap = useMemo(() => draftedMap(rosterPicks), [rosterPicks]);
     const available = useMemo(
         () => allPlayers.filter(player => !pickedMap.has(player.id)),
         [allPlayers, pickedMap]
     );
-    const myRoster = useMemo(() => rosterCounts(allPlayers, session.drafted), [allPlayers, session.drafted]);
-    const myByes = useMemo(() => byeCounts(allPlayers, session.drafted), [allPlayers, session.drafted]);
+    const myRoster = useMemo(() => rosterCounts(allPlayers, rosterPicks), [allPlayers, rosterPicks]);
+    const myByes = useMemo(() => byeCounts(allPlayers, rosterPicks), [allPlayers, rosterPicks]);
     const currentPick = session.drafted.length + 1;
+    const currentAssignment = useMemo(
+        () => getPickAssignment(leagueSetup, currentPick),
+        [currentPick, leagueSetup]
+    );
+    const upcomingMyPicks = useMemo(
+        () => getUpcomingMyPicks(profile, leagueSetup, currentPick),
+        [currentPick, leagueSetup, profile]
+    );
 
     const recommendations = useMemo(() => {
         return available
@@ -1155,20 +1555,30 @@ const App: React.FC = () => {
     };
 
     const draftPlayer = (playerId: number) => {
-        const manager = session.currentManager.trim() || (session.pickingFor === 'me' ? 'Me' : 'Other');
+        const fallbackManager = session.currentManager.trim() || (session.pickingFor === 'me' ? 'Me' : 'Other');
+        const manager = currentAssignment?.currentOwner ?? fallbackManager;
+        const owner = currentAssignment
+            ? managerIsMe(profile, manager) ? 'me' : 'other'
+            : session.pickingFor;
         const pick: DraftPick = {
             playerId,
-            owner: session.pickingFor,
+            owner,
             manager,
+            originalManager: currentAssignment?.originalOwner,
+            round: currentAssignment?.round,
+            pickInRound: currentAssignment?.pickInRound,
             pick: currentPick,
             at: new Date().toISOString(),
+            source: 'live',
         };
         setSession(prev => ({
             ...prev,
             drafted: [...prev.drafted, pick],
             undone: [],
-            pickingFor: prev.pickingFor === 'me' ? 'other' : prev.pickingFor,
-            currentManager: defaultManagerNameFor(prev.pickingFor === 'me' ? 'other' : prev.pickingFor),
+            pickingFor: currentAssignment ? prev.pickingFor : prev.pickingFor === 'me' ? 'other' : prev.pickingFor,
+            currentManager: currentAssignment
+                ? prev.currentManager
+                : defaultManagerNameFor(prev.pickingFor === 'me' ? 'other' : prev.pickingFor),
         }));
         setSearchQuery('');
     };
@@ -1262,6 +1672,8 @@ const App: React.FC = () => {
                 session={session}
                 updateSession={updateSession}
                 currentPick={currentPick}
+                currentAssignment={currentAssignment}
+                upcomingMyPicks={upcomingMyPicks}
                 searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery}
                 draftFirstMatch={draftFirstMatch}
@@ -1321,7 +1733,16 @@ const App: React.FC = () => {
                             onDraft={draftPlayer}
                         />
                     </div>
-                    <RosterSnapshot profile={profile} counts={myRoster} picks={session.drafted} />
+                    <aside className="rosterPanel">
+                        <RosterSnapshot profile={profile} counts={myRoster} picks={rosterPicks} />
+                        <LeagueSetupSnapshot
+                            profile={profile}
+                            setup={leagueSetup}
+                            keepers={keeperPlayers}
+                            currentAssignment={currentAssignment}
+                            upcomingMyPicks={upcomingMyPicks}
+                        />
+                    </aside>
                 </main>
             )}
 
@@ -1349,4 +1770,9 @@ const App: React.FC = () => {
 };
 
 const container = document.getElementById('root');
-if (container) createRoot(container).render(<App />);
+if (container) {
+    const root = createRoot(container);
+    root.render(<App />);
+    const viteMeta = import.meta as ImportMeta & { hot?: { dispose: (callback: () => void) => void } };
+    viteMeta.hot?.dispose(() => root.unmount());
+}

@@ -141,6 +141,16 @@ Backend VOR is calculated from starting lineup slots, including `FLEX` and `SUPE
 
 Champions also blends a small superflex/dynasty ECR signal into the model score and uses `superflexEcr` as the market rank for cockpit availability/tier/dropoff logic. Normal leagues continue to use ADP.
 
+Champions has a league-specific context layer:
+
+```text
+backend/player_context_overrides_champions.json
+```
+
+Use this file for verified trade, injury, legal/suspension, rookie, role, and depth-chart exceptions. Each override is applied before VOR is calculated, so replacement value and final rank are recalculated from the adjusted player pool. Keep the layer narrow and auditable: add source URLs, a confidence level, a short note, and either a restrained `expected_ppg_multiplier` or a `mimic_slug` when a projection is clearly stale.
+
+For Champions, `weight_superflex_ecr` is intentionally stronger than the other leagues because the lineup includes one QB plus one superflex. The config also has a small `superflex_qb_premiums` curve for elite QBs. This corrects a failure mode where blending superflex ranks lifts the entire QB pool and therefore raises the QB replacement level, leaving the elite QBs too low by VOR. The goal is to respect superflex QB scarcity without blindly copying expert ranks.
+
 ## Data Reliability Checklist
 
 Before trusting a draft file:
