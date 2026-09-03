@@ -1,7 +1,7 @@
 {
   "status": "draft-ready",
-  "generatedAt": "2026-09-02T16:50:06.048130+00:00",
-  "label": "2026-09-02 refresh",
+  "generatedAt": "2026-09-03T02:52:09.686068+00:00",
+  "label": "2026-09-03 refresh",
   "message": "2026 data refreshed from ESPN ADP/projections, DynastyProcess rankings/byes, and FantasyPros historical weekly stats.",
   "files": {
     "players.json": "Default / Current",
@@ -16,8 +16,8 @@
     "historical": "https://www.fantasypros.com/nfl/stats/{pos}.php?week={week}&scoring=HALF&range=week"
   },
   "integrity": {
-    "usableRows": 580,
-    "historyCoverage": 0.8448,
+    "usableRows": 581,
+    "historyCoverage": 0.8451,
     "missingByeRows": 0,
     "matchAudit": {
       "totalRows": 1088,
@@ -33,7 +33,7 @@
     "leagueValidations": {
       "default": {
         "ok": true,
-        "rowCount": 580,
+        "rowCount": 581,
         "top50Positions": {
           "RB": 31,
           "WR": 12,
@@ -45,7 +45,7 @@
       },
       "vany": {
         "ok": true,
-        "rowCount": 580,
+        "rowCount": 581,
         "top50Positions": {
           "RB": 32,
           "WR": 16,
@@ -57,7 +57,7 @@
       },
       "passion": {
         "ok": true,
-        "rowCount": 580,
+        "rowCount": 581,
         "top50Positions": {
           "RB": 21,
           "WR": 26,
@@ -69,24 +69,23 @@
       },
       "guillotine": {
         "ok": true,
-        "rowCount": 580,
+        "rowCount": 581,
         "top50Positions": {
           "RB": 32,
-          "WR": 16,
-          "TE": 1,
-          "QB": 1
+          "WR": 17,
+          "TE": 1
         },
         "issueCount": 0,
         "warningCount": 0
       },
       "champions": {
         "ok": true,
-        "rowCount": 580,
+        "rowCount": 581,
         "top50Positions": {
-          "WR": 21,
+          "WR": 20,
           "RB": 19,
-          "QB": 6,
-          "TE": 4
+          "QB": 8,
+          "TE": 3
         },
         "issueCount": 0,
         "warningCount": 0

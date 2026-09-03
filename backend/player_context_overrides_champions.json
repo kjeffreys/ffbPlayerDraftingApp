@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "league": "champions",
-  "updated_at": "2026-09-02",
+  "updated_at": "2026-09-03",
   "policy": {
     "purpose": "League-specific context adjustments for Champions before VOR is calculated.",
     "guardrail": "Use only for verified role, injury, trade, legal, suspension, rookie, or depth-chart changes. Keep analyst opinion advisory and visible.",
@@ -117,6 +117,25 @@
         {
           "label": "FTN Jacobs exempt-list impact",
           "url": "https://ftnfantasy.com/nfl/josh-jacobs-placed-on-commissioners-exempt-list"
+        }
+      ]
+    },
+    {
+      "slug": "calvin-ridley",
+      "name": "Calvin Ridley",
+      "expected_ppg_multiplier": 0.78,
+      "confidence": "medium",
+      "adjustment_label": "Late dart only",
+      "tags": ["injury-recovery", "role-fade", "market-outlier"],
+      "note": "Prior-year efficiency should not overpower current role risk, age curve, and late market price. Treat as a late dart, not a core WR target.",
+      "sources": [
+        {
+          "label": "CBS player outlook",
+          "url": "https://www.cbssports.com/fantasy/football/news/2026-outlook-calvin-ridley/"
+        },
+        {
+          "label": "FantasyPros player page",
+          "url": "https://www.fantasypros.com/nfl/players/calvin-ridley.php"
         }
       ]
     },

@@ -45,10 +45,18 @@
             "points": 1.25
         }
     ],
-    "context_overrides_path": "backend/player_context_overrides_champions.json",
+    "context_overrides_path": [
+        "backend/player_availability_overrides_2026.json",
+        "backend/player_context_overrides_champions.json"
+    ],
+    "market_guardrail_min_market_rank": 80,
+    "market_guardrail_allowed_lead": 45,
+    "market_guardrail_context_bonus": 20,
+    "zero_projection_guardrail_min_market_rank": 80,
+    "zero_projection_multiplier": 0.05,
     "min_historical_score": 5.0,
     "positional_penalties": {
-        "DEF": 0.5,
-        "K": 0.5
+        "DEF": 0.2,
+        "K": 0.2
     }
 }

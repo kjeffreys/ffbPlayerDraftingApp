@@ -508,12 +508,21 @@ def _apply_mimics(df: pd.DataFrame, root: Path) -> pd.DataFrame:
     return df
 
 
-def _context_override_path(root: Path, cfg: LeagueConfig) -> Path | None:
-    configured_path = getattr(cfg, "context_overrides_path", None)
-    if not configured_path:
-        return None
-    path = Path(configured_path)
-    return path if path.is_absolute() else root / path
+def _context_override_paths(root: Path, cfg: LeagueConfig) -> list[Path]:
+    configured_paths = getattr(cfg, "context_overrides_path", None)
+    if not configured_paths:
+        return []
+
+    if isinstance(configured_paths, str):
+        raw_paths = [configured_paths]
+    else:
+        raw_paths = configured_paths
+
+    paths: list[Path] = []
+    for configured_path in raw_paths:
+        path = Path(configured_path)
+        paths.append(path if path.is_absolute() else root / path)
+    return paths
 
 
 def _append_pipe_values(existing: Any, values: list[str]) -> str:
@@ -558,15 +567,19 @@ def _context_source_urls(override: dict[str, Any]) -> list[str]:
     return urls
 
 
+def _override_float(override: dict[str, Any], *keys: str) -> float | None:
+    for key in keys:
+        if key in override:
+            return _finite_float(override.get(key))
+    return None
+
+
 def _apply_context_overrides(
     df: pd.DataFrame, cfg: LeagueConfig, root: Path
 ) -> pd.DataFrame:
-    override_path = _context_override_path(root, cfg)
-    if override_path is None or not override_path.exists():
+    override_paths = _context_override_paths(root, cfg)
+    if not override_paths:
         return df
-
-    with open(override_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
 
     result = df.copy()
     for column, default in {
@@ -580,85 +593,95 @@ def _apply_context_overrides(
         if column not in result.columns:
             result[column] = default
 
-    missing: list[str] = []
-    for override in data.get("overrides", []):
-        slug = str(override.get("slug") or slugify(str(override.get("name") or "")))
-        if not slug:
+    for override_path in override_paths:
+        if not override_path.exists():
+            log.warning(
+                "Context override file was not found.",
+                extra={"path": str(override_path)},
+            )
             continue
 
-        target_rows = result["slug"].map(_context_slug_key) == _context_slug_key(slug)
-        if not target_rows.any():
-            missing.append(slug)
-            continue
+        with open(override_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
 
-        mimic_slug = override.get("mimic_slug") or override.get("mimicSlug")
-        if mimic_slug:
-            source_rows = (
-                result["slug"].map(_context_slug_key)
-                == _context_slug_key(str(mimic_slug))
-            )
-            if source_rows.any():
-                result.loc[target_rows, "expected_ppg"] = result.loc[
-                    source_rows, "expected_ppg"
-                ].iloc[0]
-            else:
-                missing.append(f"{slug} mimic:{mimic_slug}")
+        missing: list[str] = []
+        for override in data.get("overrides", []):
+            slug = str(override.get("slug") or slugify(str(override.get("name") or "")))
+            if not slug:
+                continue
 
-        multiplier = _finite_float(
-            override.get("expected_ppg_multiplier")
-            or override.get("expectedPpgMultiplier")
-        )
-        if multiplier is not None:
-            result.loc[target_rows, "expected_ppg"] *= multiplier
+            target_rows = result["slug"].map(_context_slug_key) == _context_slug_key(slug)
+            if not target_rows.any():
+                missing.append(slug)
+                continue
 
-        delta = _finite_float(
-            override.get("expected_ppg_delta") or override.get("expectedPpgDelta")
-        )
-        if delta is not None:
-            result.loc[target_rows, "expected_ppg"] += delta
-
-        indexes = result.index[target_rows].tolist()
-        tags = [str(tag) for tag in override.get("tags") or []]
-        source_urls = _context_source_urls(override)
-        label = str(override.get("adjustment_label") or "").strip()
-        note = str(override.get("note") or "").strip()
-        confidence = str(override.get("confidence") or "").strip()
-
-        for index in indexes:
-            result.at[index, "context_tags"] = _append_pipe_values(
-                result.at[index, "context_tags"], tags
-            )
-            result.at[index, "context_sources"] = _append_pipe_values(
-                result.at[index, "context_sources"], source_urls
-            )
-            if note:
-                result.at[index, "context_note"] = _append_pipe_values(
-                    result.at[index, "context_note"], [note]
+            mimic_slug = override.get("mimic_slug") or override.get("mimicSlug")
+            if mimic_slug:
+                source_rows = (
+                    result["slug"].map(_context_slug_key)
+                    == _context_slug_key(str(mimic_slug))
                 )
-            if label:
-                result.at[index, "context_adjustment_label"] = _append_pipe_values(
-                    result.at[index, "context_adjustment_label"], [label]
-                )
-            if confidence:
-                result.at[index, "context_confidence"] = confidence
+                if source_rows.any():
+                    result.loc[target_rows, "expected_ppg"] = result.loc[
+                        source_rows, "expected_ppg"
+                    ].iloc[0]
+                else:
+                    missing.append(f"{slug} mimic:{mimic_slug}")
+
+            multiplier = _override_float(
+                override,
+                "expected_ppg_multiplier",
+                "expectedPpgMultiplier",
+            )
             if multiplier is not None:
-                result.at[index, "context_multiplier"] = (
-                    _finite_float(result.at[index, "context_multiplier"]) or 1.0
-                ) * multiplier
+                result.loc[target_rows, "expected_ppg"] *= multiplier
 
-    if missing:
-        log.warning(
-            "Some context overrides could not be applied.",
-            extra={"path": str(override_path), "missing": missing},
-        )
-    else:
-        log.info(
-            "Applied context overrides.",
-            extra={
-                "path": str(override_path),
-                "count": len(data.get("overrides", [])),
-            },
-        )
+            delta = _override_float(override, "expected_ppg_delta", "expectedPpgDelta")
+            if delta is not None:
+                result.loc[target_rows, "expected_ppg"] += delta
+
+            indexes = result.index[target_rows].tolist()
+            tags = [str(tag) for tag in override.get("tags") or []]
+            source_urls = _context_source_urls(override)
+            label = str(override.get("adjustment_label") or "").strip()
+            note = str(override.get("note") or "").strip()
+            confidence = str(override.get("confidence") or "").strip()
+
+            for index in indexes:
+                result.at[index, "context_tags"] = _append_pipe_values(
+                    result.at[index, "context_tags"], tags
+                )
+                result.at[index, "context_sources"] = _append_pipe_values(
+                    result.at[index, "context_sources"], source_urls
+                )
+                if note:
+                    result.at[index, "context_note"] = _append_pipe_values(
+                        result.at[index, "context_note"], [note]
+                    )
+                if label:
+                    result.at[index, "context_adjustment_label"] = _append_pipe_values(
+                        result.at[index, "context_adjustment_label"], [label]
+                    )
+                if confidence:
+                    result.at[index, "context_confidence"] = confidence
+                if multiplier is not None:
+                    result.at[index, "context_multiplier"] = (
+                        _finite_float(result.at[index, "context_multiplier"]) or 1.0
+                    ) * multiplier
+
+        if missing:
+            log.warning(
+                "Some context overrides could not be applied.",
+                extra={"path": str(override_path), "missing": missing},
+            )
+        else:
+            log.info(
+                "Applied context overrides.",
+                extra={
+                    "path": str(override_path),
+                    "count": len(data.get("overrides", [])),
+                },
+            )
     return result
 
 
@@ -687,6 +710,139 @@ def _apply_superflex_qb_premiums(df: pd.DataFrame, cfg: LeagueConfig) -> pd.Data
         )
 
     result["expected_ppg"] += result["superflex_qb_premium"]
+    return result
+
+
+def _numeric_column(df: pd.DataFrame, column: str) -> pd.Series:
+    if column not in df.columns:
+        return pd.Series(np.nan, index=df.index)
+    return pd.to_numeric(df[column], errors="coerce")
+
+
+def _primary_market_rank(df: pd.DataFrame, cfg: LeagueConfig) -> pd.Series:
+    if cfg.league_type == "champions" or cfg.weight_superflex_ecr > 0:
+        market_rank = _numeric_column(df, "superflex_ecr")
+        for column in ["redraft_ecr", "dynasty_ecr", "adp"]:
+            market_rank = market_rank.combine_first(_numeric_column(df, column))
+        return market_rank
+    return _numeric_column(df, "adp").combine_first(_numeric_column(df, "redraft_ecr"))
+
+
+def _expected_ppg_rank(df: pd.DataFrame) -> pd.Series:
+    ordered = df["expected_ppg"].sort_values(ascending=False)
+    return pd.Series(range(1, len(ordered) + 1), index=ordered.index).reindex(df.index)
+
+
+def _expected_ppg_at_rank(df: pd.DataFrame, rank: float) -> float:
+    ordered = df["expected_ppg"].sort_values(ascending=False).reset_index(drop=True)
+    if ordered.empty:
+        return 0.0
+    index = min(max(math.ceil(rank), 1), len(ordered)) - 1
+    value = _finite_float(ordered.iloc[index])
+    return value if value is not None else 0.0
+
+
+def _append_context(
+    df: pd.DataFrame,
+    rows: pd.Series,
+    *,
+    tags: list[str],
+    label: str,
+    note: str,
+    confidence: str,
+) -> None:
+    if not rows.any():
+        return
+    for column, default in {
+        "context_tags": "",
+        "context_note": "",
+        "context_confidence": "",
+        "context_adjustment_label": "",
+        "context_sources": "",
+        "context_multiplier": 1.0,
+    }.items():
+        if column not in df.columns:
+            df[column] = default
+
+    for index in df.index[rows]:
+        df.at[index, "context_tags"] = _append_pipe_values(df.at[index, "context_tags"], tags)
+        df.at[index, "context_adjustment_label"] = _append_pipe_values(
+            df.at[index, "context_adjustment_label"],
+            [label],
+        )
+        df.at[index, "context_note"] = _append_pipe_values(df.at[index, "context_note"], [note])
+        if not _context_text(df.at[index, "context_confidence"]):
+            df.at[index, "context_confidence"] = confidence
+
+
+def _apply_market_sanity_guardrails(df: pd.DataFrame, cfg: LeagueConfig) -> pd.DataFrame:
+    has_market_guardrail = cfg.market_guardrail_min_market_rank is not None
+    has_zero_guardrail = cfg.zero_projection_guardrail_min_market_rank is not None
+    if not has_market_guardrail and not has_zero_guardrail:
+        return df
+
+    result = df.copy()
+    market_rank = _primary_market_rank(result, cfg)
+    projected_ppg = _numeric_column(result, "projected_ppg_espn").combine_first(
+        _numeric_column(result, "projected_ppg")
+    )
+
+    if has_zero_guardrail:
+        zero_rows = (
+            projected_ppg.notna()
+            & (projected_ppg <= 0)
+            & market_rank.notna()
+            & (market_rank >= float(cfg.zero_projection_guardrail_min_market_rank or 0))
+            & result["position"].isin(["QB", "RB", "WR", "TE"])
+        )
+        if zero_rows.any():
+            result.loc[zero_rows, "expected_ppg"] *= cfg.zero_projection_multiplier
+            _append_context(
+                result,
+                zero_rows,
+                tags=["zero-projection", "stale-history-check"],
+                label="Zero projection guardrail",
+                note="Current projection is zero and market rank is late, so prior-year history is not allowed to drive draft value.",
+                confidence="high",
+            )
+
+    if not has_market_guardrail:
+        return result
+
+    model_rank = _expected_ppg_rank(result)
+    market_rank = _primary_market_rank(result, cfg)
+    context_multiplier = _numeric_column(result, "context_multiplier").fillna(1.0)
+    allowed_lead = pd.Series(cfg.market_guardrail_allowed_lead, index=result.index)
+    allowed_lead = allowed_lead + np.where(
+        context_multiplier > 1.0,
+        cfg.market_guardrail_context_bonus,
+        0.0,
+    )
+    guardrail_rows = (
+        market_rank.notna()
+        & model_rank.notna()
+        & (market_rank >= float(cfg.market_guardrail_min_market_rank or 0))
+        & ((market_rank - model_rank) > allowed_lead)
+    )
+
+    if guardrail_rows.any():
+        cap_source = result.copy()
+        for index in result.index[guardrail_rows]:
+            capped_rank = float(market_rank.loc[index] - allowed_lead.loc[index])
+            cap_value = _expected_ppg_at_rank(cap_source, capped_rank)
+            current_value = _finite_float(result.at[index, "expected_ppg"])
+            if current_value is not None and current_value > cap_value:
+                result.at[index, "expected_ppg"] = cap_value
+
+        _append_context(
+            result,
+            guardrail_rows,
+            tags=["market-outlier", "stale-projection-check"],
+            label="Market sanity cap",
+            note="Model rank was far earlier than superflex/redraft/dynasty/ADP market, so ceiling-history value was capped before VOR.",
+            confidence="medium",
+        )
+
     return result
 
 
@@ -773,6 +929,7 @@ def score_players(base: pd.DataFrame, cfg: LeagueConfig, root: Path) -> pd.DataF
     df = _apply_boosts(df, cfg, root)
     df = _apply_mimics(df, root)
     df = _apply_context_overrides(df, cfg, root)
+    df = _apply_market_sanity_guardrails(df, cfg)
     return df
 
 def calculate_vor(df: pd.DataFrame, cfg: LeagueConfig) -> tuple[pd.DataFrame, dict[str, float]]:

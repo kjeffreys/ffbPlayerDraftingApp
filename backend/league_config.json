@@ -18,6 +18,7 @@
     "boost_large": 0.15,
     "boost_max": 0.25,
     "top_game_count": 9,
+    "context_overrides_path": "backend/player_availability_overrides_2026.json",
     "weight_projection": 0.50,
     "weight_last_year": 0.50,
     "min_historical_score": 0.0,

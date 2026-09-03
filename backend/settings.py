@@ -59,7 +59,12 @@ class LeagueConfig(BaseModel):
     weight_superflex_ecr: float = 0.0
     weight_dynasty_ecr: float = 0.0
     superflex_qb_premiums: list[dict[str, float]] = Field(default_factory=list)
-    context_overrides_path: str | None = None
+    context_overrides_path: str | list[str] | None = None
+    market_guardrail_min_market_rank: float | None = None
+    market_guardrail_allowed_lead: float = 45.0
+    market_guardrail_context_bonus: float = 20.0
+    zero_projection_guardrail_min_market_rank: float | None = None
+    zero_projection_multiplier: float = 0.05
     min_historical_score: float
     positional_penalties: dict[str, float]
 
@@ -87,6 +92,20 @@ class LeagueConfig(BaseModel):
 
         if self.league_type not in {"redraft", "guillotine", "champions"}:
             raise ValueError(f"unknown league_type: {self.league_type}")
+
+        if self.market_guardrail_min_market_rank is not None and self.market_guardrail_min_market_rank <= 0:
+            raise ValueError("market_guardrail_min_market_rank must be positive")
+        if self.market_guardrail_allowed_lead <= 0:
+            raise ValueError("market_guardrail_allowed_lead must be positive")
+        if self.market_guardrail_context_bonus < 0:
+            raise ValueError("market_guardrail_context_bonus cannot be negative")
+        if (
+            self.zero_projection_guardrail_min_market_rank is not None
+            and self.zero_projection_guardrail_min_market_rank <= 0
+        ):
+            raise ValueError("zero_projection_guardrail_min_market_rank must be positive")
+        if self.zero_projection_multiplier < 0 or self.zero_projection_multiplier > 1:
+            raise ValueError("zero_projection_multiplier must be between 0.0 and 1.0")
 
         return self
 

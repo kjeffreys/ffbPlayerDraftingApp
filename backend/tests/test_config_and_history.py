@@ -14,6 +14,7 @@ from backend.pipelines.stats import normalize_boost_data
 from backend.settings import LeagueConfig
 from backend.refresh_data import (
     _apply_context_overrides,
+    _apply_market_sanity_guardrails,
     _apply_superflex_qb_premiums,
     _validate_final_rows,
     calculate_vor,
@@ -68,6 +69,10 @@ class ConfigAndHistoryTests(unittest.TestCase):
     def test_context_override_path_is_optional(self):
         parsed = LeagueConfig(**dict(BASE_CONFIG, context_overrides_path="context.json"))
         self.assertEqual(parsed.context_overrides_path, "context.json")
+        parsed = LeagueConfig(
+            **dict(BASE_CONFIG, context_overrides_path=["global.json", "league.json"])
+        )
+        self.assertEqual(parsed.context_overrides_path, ["global.json", "league.json"])
 
     def test_superflex_qb_premiums_apply_by_ecr_tier(self):
         config = dict(
@@ -125,6 +130,13 @@ class ConfigAndHistoryTests(unittest.TestCase):
       "tags": ["new-role"],
       "note": "Target has a new usage path.",
       "sources": [{"url": "https://example.com/source"}]
+    },
+    {
+      "slug": "out-player",
+      "expected_ppg_multiplier": 0.0,
+      "confidence": "high",
+      "adjustment_label": "Out",
+      "tags": ["do-not-draft"]
     }
   ]
 }
@@ -137,6 +149,7 @@ class ConfigAndHistoryTests(unittest.TestCase):
                 [
                     {"slug": "target-player-jr", "expected_ppg": 8.0},
                     {"slug": "source-player", "expected_ppg": 12.0},
+                    {"slug": "out-player", "expected_ppg": 9.0},
                 ]
             )
 
@@ -144,11 +157,146 @@ class ConfigAndHistoryTests(unittest.TestCase):
             by_slug = adjusted.set_index("slug")
 
             self.assertAlmostEqual(by_slug.loc["target-player-jr", "expected_ppg"], 13.2)
+            self.assertEqual(by_slug.loc["out-player", "expected_ppg"], 0.0)
             self.assertEqual(by_slug.loc["target-player-jr", "context_tags"], "new-role")
             self.assertEqual(
                 by_slug.loc["target-player-jr", "context_adjustment_label"],
                 "Role change",
             )
+
+    def test_context_override_files_apply_in_order(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            global_path = root / "global.json"
+            league_path = root / "league.json"
+            global_path.write_text(
+                """
+{
+  "overrides": [
+    {
+      "slug": "layered-player",
+      "expected_ppg_multiplier": 0.5,
+      "adjustment_label": "Global status",
+      "tags": ["global"]
+    }
+  ]
+}
+""".strip(),
+                encoding="utf-8",
+            )
+            league_path.write_text(
+                """
+{
+  "overrides": [
+    {
+      "slug": "layered-player",
+      "expected_ppg_delta": 1.0,
+      "adjustment_label": "League context",
+      "tags": ["league"]
+    }
+  ]
+}
+""".strip(),
+                encoding="utf-8",
+            )
+            config = dict(
+                BASE_CONFIG,
+                context_overrides_path=[str(global_path), str(league_path)],
+            )
+            parsed = LeagueConfig(**config)
+            players = pd.DataFrame([{"slug": "layered-player", "expected_ppg": 10.0}])
+
+            adjusted = _apply_context_overrides(players, parsed, root)
+            player = adjusted.iloc[0]
+
+            self.assertEqual(player["expected_ppg"], 6.0)
+            self.assertEqual(player["context_adjustment_label"], "Global status|League context")
+            self.assertEqual(player["context_tags"], "global|league")
+
+    def test_market_sanity_guardrail_caps_large_market_outlier(self):
+        config = dict(
+            BASE_CONFIG,
+            league_type="champions",
+            market_guardrail_min_market_rank=80,
+            market_guardrail_allowed_lead=10,
+            zero_projection_guardrail_min_market_rank=80,
+            zero_projection_multiplier=0.05,
+        )
+        parsed = LeagueConfig(**config)
+        rows = [
+            {
+                "slug": "outlier",
+                "position": "WR",
+                "expected_ppg": 100.0,
+                "projected_ppg_espn": 9.0,
+                "superflex_ecr": 100.0,
+                "redraft_ecr": 100.0,
+                "dynasty_ecr": 100.0,
+                "adp": 100.0,
+            }
+        ]
+        rows.extend(
+            {
+                "slug": f"player-{index}",
+                "position": "WR",
+                "expected_ppg": float(100 - index),
+                "projected_ppg_espn": 10.0,
+                "superflex_ecr": float(index),
+                "redraft_ecr": float(index),
+                "dynasty_ecr": float(index),
+                "adp": float(index),
+            }
+            for index in range(2, 121)
+        )
+
+        adjusted = _apply_market_sanity_guardrails(pd.DataFrame(rows), parsed)
+        outlier = adjusted.set_index("slug").loc["outlier"]
+
+        self.assertLess(outlier["expected_ppg"], 100.0)
+        self.assertIn("market-outlier", outlier["context_tags"])
+        self.assertIn("Market sanity cap", outlier["context_adjustment_label"])
+
+    def test_zero_projection_guardrail_blocks_history_only_value(self):
+        config = dict(
+            BASE_CONFIG,
+            league_type="champions",
+            market_guardrail_min_market_rank=80,
+            market_guardrail_allowed_lead=10,
+            zero_projection_guardrail_min_market_rank=80,
+            zero_projection_multiplier=0.05,
+        )
+        parsed = LeagueConfig(**config)
+        players = pd.DataFrame(
+            [
+                {
+                    "slug": "zero-projection",
+                    "position": "WR",
+                    "expected_ppg": 12.0,
+                    "projected_ppg_espn": 0.0,
+                    "superflex_ecr": None,
+                    "redraft_ecr": None,
+                    "dynasty_ecr": 126.0,
+                    "adp": 170.0,
+                },
+                {
+                    "slug": "real-player",
+                    "position": "WR",
+                    "expected_ppg": 10.0,
+                    "projected_ppg_espn": 10.0,
+                    "superflex_ecr": 20.0,
+                    "redraft_ecr": 20.0,
+                    "dynasty_ecr": 20.0,
+                    "adp": 20.0,
+                },
+            ]
+        )
+
+        adjusted = _apply_market_sanity_guardrails(players, parsed)
+        by_slug = adjusted.set_index("slug")
+
+        self.assertAlmostEqual(by_slug.loc["zero-projection", "expected_ppg"], 0.6)
+        self.assertIn("zero-projection", by_slug.loc["zero-projection", "context_tags"])
+        self.assertEqual(by_slug.loc["real-player", "expected_ppg"], 10.0)
 
     def test_legacy_boost_keys_are_normalized(self):
         boost_data = normalize_boost_data(
