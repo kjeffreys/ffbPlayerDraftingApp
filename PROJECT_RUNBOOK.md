@@ -17,7 +17,7 @@ https://github.com/kjeffreys/ffbPlayerDraftingApp.git
 Current working branch:
 
 ```text
-codex/draft-assistant-v2
+main
 ```
 
 The app is a static React/Vite site. The backend is a local Python data pipeline. Private league history should stay local and out of deployed hosting.
